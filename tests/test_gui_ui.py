@@ -20,6 +20,17 @@ def descendants(widget):
         child = child.get_next_sibling()
 
 
+def widget_geometry(widget, relative_to):
+    """Expose native allocation details when a layout assertion fails in CI."""
+    valid, bounds = widget.compute_bounds(relative_to)
+    return {
+        "visible": widget.get_visible(), "mapped": widget.get_mapped(),
+        "size": (widget.get_width(), widget.get_height()),
+        "bounds": (bounds.get_x(), bounds.get_y(), bounds.get_width(), bounds.get_height())
+                  if valid else None,
+    }
+
+
 class ReaderInterfaceTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -84,7 +95,9 @@ class ReaderInterfaceTests(unittest.TestCase):
         for control in buttons:
             self.assertIs(control.get_parent(), window.text_size_actions)
             self.assertTrue(control.is_ancestor(window.accessibility_content))
-        self.assertFalse(window.text_size_actions.is_ancestor(window.header))
+        # A MenuButton's popover remains in the header's widget ancestry even
+        # though it is displayed in a separate surface. Check its actual owner.
+        self.assertTrue(window.text_size_actions.is_ancestor(window.accessibility_popover))
         for obsolete in ("text_size_menu_button", "compact_text_size_buttons", "accessibility_text_increase"):
             self.assertFalse(hasattr(window, obsolete))
         self.open_text_book()
@@ -115,22 +128,31 @@ class ReaderInterfaceTests(unittest.TestCase):
         self.assertIsNotNone(self.window.lookup_action("preferences"))
 
     def test_interface_font_is_larger_without_changing_book_font(self):
+        self.open_text_book()
         # An unattached label has the native system font and no window rule.
+        # Compare visible plain labels; Adwaita gives headings a separate size.
         baseline = self.Gtk.Label(label="System font")
-        original = baseline.get_pango_context().get_font_description().get_size()
-        actual = self.window.reader_title.get_pango_context().get_font_description().get_size()
-        self.assertAlmostEqual(actual / original, 1.15, delta=0.04)
+        baseline_font = baseline.get_pango_context().get_font_description()
+        interface_font = self.window.reading_progress.get_pango_context().get_font_description()
+        original, actual = baseline_font.get_size(), interface_font.get_size()
+        font_details = {
+            "baseline": baseline_font.to_string(), "interface": interface_font.to_string(),
+            "gtk-font-name": self.Gtk.Settings.get_default().get_property("gtk-font-name"),
+        }
+        self.assertAlmostEqual(actual / original, 1.15, delta=0.04, msg=font_details)
         self.window.accessibility_popover.popup()
         self.pump()
-        heading = next(widget for widget in descendants(self.window.accessibility_content)
-                       if isinstance(widget, self.Gtk.Label))
-        menu_size = heading.get_pango_context().get_font_description().get_size()
-        self.assertAlmostEqual(menu_size / actual, 1.0, delta=0.04)
+        menu_font = self.window.speech_status.get_pango_context().get_font_description()
+        menu_size = menu_font.get_size()
+        self.assertAlmostEqual(menu_size / actual, 1.0, delta=0.04,
+                               msg={**font_details, "menu": menu_font.to_string()})
         self.assertEqual(self.window.font_size.get_value_as_int(), 20)
         self.window.preferences_window.present()
         self.pump()
-        preference_size = self.window.interface_language_selector.get_pango_context().get_font_description().get_size()
-        self.assertAlmostEqual(preference_size / actual, 1.0, delta=0.04)
+        preference_font = self.window.interface_language_selector.get_pango_context().get_font_description()
+        preference_size = preference_font.get_size()
+        self.assertAlmostEqual(preference_size / actual, 1.0, delta=0.04,
+                               msg={**font_details, "preferences": preference_font.to_string()})
 
     def test_scrollbar_has_its_own_space_in_ltr_and_rtl(self):
         window = self.window
@@ -148,9 +170,14 @@ class ReaderInterfaceTests(unittest.TestCase):
                 content_ok, content_bounds = window.accessibility_content.compute_bounds(scroll)
                 bar_ok, bar_bounds = bar.compute_bounds(scroll)
                 self.assertTrue(content_ok and bar_ok)
+                geometry = {name: widget_geometry(widget, scroll) for name, widget in (
+                    ("content", window.accessibility_content), ("viewport", scroll.get_child()),
+                    ("scrollbar", bar), ("scroller", scroll),
+                )}
                 self.assertTrue(
                     content_bounds.get_x() + content_bounds.get_width() <= bar_bounds.get_x() + 1
-                    or bar_bounds.get_x() + bar_bounds.get_width() <= content_bounds.get_x() + 1
+                    or bar_bounds.get_x() + bar_bounds.get_width() <= content_bounds.get_x() + 1,
+                    msg={"language": language, **geometry},
                 )
                 self.assertLessEqual(scroll.get_height(), window.get_height() - 80)
                 window.accessibility_popover.popdown()
@@ -176,7 +203,12 @@ class ReaderInterfaceTests(unittest.TestCase):
         window.set_default_size(900, 820)
         window.accessibility_popover.popup()
         self.pump()
-        self.assertIsNotNone(window._accessibility_resize_tick)
+        self.assertIsNotNone(window._accessibility_resize_tick, msg={
+            "popover": widget_geometry(window.accessibility_popover, window),
+            "button": widget_geometry(window.accessibility_button, window),
+            "window": widget_geometry(window, window),
+            "allocation": window._accessibility_allocation,
+        })
         self.assertEqual(window._accessibility_allocation, (window.get_width(), window.get_height()))
         window.set_default_size(560, 420)
         self.pump()
