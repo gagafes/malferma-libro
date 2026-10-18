@@ -11,7 +11,7 @@ from __future__ import annotations
 import logging
 import math
 
-from gi.repository import Gdk, Graphene, Gtk
+from gi.repository import Gdk, Graphene, Gtk, Pango
 
 from .live_i18n import localized as _
 
@@ -221,6 +221,9 @@ class AccessibilityMixin:
             box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL if stacked else Gtk.Orientation.HORIZONTAL,
                           spacing=6 if stacked else 12)
             title_label = label(title, wrap=True)
+            # A long word must not force the row past the viewport and under
+            # its reserved scrollbar when the menu is constrained by a screen.
+            title_label.set_wrap_mode(Pango.WrapMode.WORD_CHAR)
             title_label.set_max_width_chars(24)
             title_label.set_hexpand(True)
             widget.set_hexpand(stacked)

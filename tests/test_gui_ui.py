@@ -198,11 +198,16 @@ class ReaderInterfaceTests(unittest.TestCase):
             self.assertGreaterEqual(bounds.get_x(), -1)
             self.assertLessEqual(bounds.get_x() + bounds.get_width(), header_width + 1)
 
-    def test_open_accessibility_menu_follows_window_allocation_and_stops_observing(self):
+    def test_accessibility_menu_fits_resized_window_and_observes_only_while_mapped(self):
         window = self.window
         window.set_default_size(900, 820)
+        # GTK closes an existing popup while its native window is resized.
+        # Finish the initial resize before testing the popup's own observer.
+        self.pump()
         window.accessibility_popover.popup()
         self.pump()
+        self.assertTrue(window.accessibility_popover.get_visible())
+        self.assertTrue(window.accessibility_popover.get_mapped())
         self.assertIsNotNone(window._accessibility_resize_tick, msg={
             "popover": widget_geometry(window.accessibility_popover, window),
             "button": widget_geometry(window.accessibility_button, window),
@@ -212,6 +217,15 @@ class ReaderInterfaceTests(unittest.TestCase):
         self.assertEqual(window._accessibility_allocation, (window.get_width(), window.get_height()))
         window.set_default_size(560, 420)
         self.pump()
+        if not window.accessibility_popover.get_mapped():
+            # Native GTK may close a popup while resizing its parent window.
+            # Its observer must stop, and reopening must use the new allocation.
+            self.assertIsNone(window._accessibility_resize_tick)
+            window.accessibility_popover.popup()
+            self.pump()
+        self.assertTrue(window.accessibility_popover.get_visible())
+        self.assertTrue(window.accessibility_popover.get_mapped())
+        self.assertIsNotNone(window._accessibility_resize_tick)
         self.assertEqual(window._accessibility_allocation, (window.get_width(), window.get_height()))
         self.assertEqual(window.accessibility_scroll.get_max_content_height(),
                          max(120, min(560, window.get_height() - 96)))
