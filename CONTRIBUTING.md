@@ -1,56 +1,56 @@
-# Участие в разработке
+# Contributing
 
-Изменения проекта распространяются под GPL-3.0-or-later; сторонние файлы
-должны сохранять собственную лицензию и атрибуцию. Не включайте книги,
-голосовые модели, персональные настройки или токены доступа в репозиторий.
+Contributions to this project are licensed under GPL-3.0-or-later. Third-party
+files must retain their own licenses and attribution. Do not add books,
+voice models, personal settings, or access tokens to the repository.
 
-Используйте Debian 13 и системный `/usr/bin/python3`. Зависимости запуска и
-сборки перечислены в [README.md](README.md).
+Use Debian 13 and the system `/usr/bin/python3`. Runtime and build dependencies
+are listed in [README.md](README.md).
 
-1. Вносите небольшое изменение с одной понятной целью. Предпочитайте
-   обычные функции и существующие компоненты новым слоям абстракции.
-2. Если меняется поведение, добавляйте проверку, которая могла бы обнаружить
-   реальную регрессию. Не закрепляйте тестом случайное устройство кода.
-3. Выполните `make test` и `make translations`. Для изменений GTK также
-   проверьте окно в живом графическом сеансе: узкий размер, масштаб 200%,
-   светлую/тёмную тему, RTL, клавиатуру и меню специальных возможностей.
-4. Согласуйте поведение с руководствами RU/EN/DE/UK. Встроенные копии
-   документации должны соответствовать корневым файлам перед выпуском.
-5. В описании изменения укажите проблему, итоговое поведение и выполненные
-   проверки. Отдельно укажите проверки, которые провести не удалось.
+1. Keep each change small and focused on one clear goal. Prefer ordinary
+   functions and existing components over new layers of abstraction.
+2. When changing behavior, add a check that can catch a real regression.
+   Avoid tests that merely enforce incidental implementation details.
+3. Run `make test` and `make translations`. For GTK changes, also test the
+   window in a live graphical session: a narrow window, 200% scaling,
+   light and dark themes, RTL layout, keyboard navigation, and the
+   accessibility menu.
+4. Keep the RU/EN/DE/UK manuals consistent with the application's behavior.
+   Bundled documentation must match the root-level files before a release.
+5. Describe the problem, the resulting behavior, and the checks you ran.
+   State separately which checks you could not run.
 
-Редактируйте переводы в `po/*.po`; MO-файлы — результат компиляции.
-Проверка каталога: `/usr/bin/python3 packaging/translations.py --check`.
-Не меняйте автоматически версию для каждой правки. Текущая линия — 0.1.0;
-номер 1.0 предназначен для готового производственного выпуска.
+Edit translations in `po/*.po`; MO files are compiled output.
+Check the catalogs with `/usr/bin/python3 packaging/translations.py --check`.
+Do not automatically bump the version for every change. The current release
+line is 0.1.0; version 1.0 is reserved for a production-ready release.
 
-Архивы сборки, кэши, виртуальные окружения и пользовательские библиотеки
-исключены из Git. Перед коммитом проверьте `git status` и состав
-подготовленных файлов. Не добавляйте несуществующий адрес GitHub или имя
-владельца в метаданные.
+Build archives, caches, virtual environments, and personal book libraries are
+excluded from Git. Before committing, check `git status` and review the staged
+files. Do not add a nonexistent GitHub URL or repository owner to the metadata.
 
-## Работа с GitHub
+## Working with GitHub
 
-Проект опубликован в
-[gagafes/malferma-libro](https://github.com/gagafes/malferma-libro), ветка `main`.
-Исходники можно получить через **Code → Download ZIP** или клонировать:
+The project is hosted at
+[gagafes/malferma-libro](https://github.com/gagafes/malferma-libro) on the `main`
+branch. Get the source with **Code → Download ZIP**, or clone it:
 
 ```sh
 git clone https://github.com/gagafes/malferma-libro.git
 cd malferma-libro
 ```
 
-Для существующего рабочего дерева проверьте `git remote -v`. Уже настроенный
-`origin` не нужно добавлять или переопределять. Если у вас нет права записи
-в основной репозиторий, создайте fork в своём аккаунте, клонируйте его и
-предложите изменение через pull request.
+For an existing working tree, check `git remote -v`. Do not add or overwrite
+an `origin` that is already configured. If you do not have write access to the
+main repository, fork it to your account, clone your fork, and submit your
+change through a pull request.
 
-Перед первым коммитом проверьте имя и адрес автора с помощью
-`git config user.name` и `git config user.email`. Если они не заданы,
-укажите свои значения локально для этого репозитория. GitHub позволяет
-использовать свой адрес `noreply`, если вы не хотите публиковать личную почту.
+Before your first commit, check your author name and email address with
+`git config user.name` and `git config user.email`. If they are not set,
+configure your own values locally for this repository. GitHub lets you use
+your `noreply` address if you prefer to keep your personal email private.
 
-Из каталога проекта выполните:
+From the project directory, run:
 
 ```sh
 git switch -c short-description
@@ -62,25 +62,26 @@ git diff --cached --stat
 git diff --cached --check
 ```
 
-Просмотрите подготовленные изменения командой `git diff --cached`.
-В коммит должны входить код, ресурсы, переводы, тесты, лицензии, документация
-и сценарии сборки. `dist/`, пользовательские книги, модели голосов и секреты
-не должны попадать в коммит. Затем создайте коммит с понятным описанием и
-отправьте ветку в свой репозиторий:
+Review the staged changes with `git diff --cached`. Include code, resources,
+translations, tests, licenses, documentation, and build scripts in the commit.
+Keep `dist/`, personal books, voice models, and secrets out of the commit.
+Then create a commit with a clear description and push the branch to your
+repository:
 
 ```sh
 git commit -m "Describe the change"
 git push -u origin short-description
 ```
 
-Создайте pull request в `main` основного проекта. GitHub запрашивает авторизацию через
-поддерживаемый менеджер учётных данных, SSH или токен; не записывайте токен
-в URL, исходные файлы или инструкции проекта.
+Open a pull request against `main` in the main project. Authenticate to GitHub
+using a supported credential manager, SSH, or a token. Do not put a token in
+a URL, source file, or project instructions.
 
-GitHub Actions проверяет дерево и собирает файлы выпуска. Сам по себе push
-не публикует GitHub Release. После зелёного запуска **Check and build**
-в [Actions](https://github.com/gagafes/malferma-libro/actions) можно скачать
-артефакт `malferma-libro-current` с DEB, архивами исходников и `SHA256SUMS`;
-для скачивания требуется вход в GitHub. Release пока не опубликован.
-При публикации выпуска используйте файлы одной актуальной сборки из `dist/`,
-оставив старые сборки вне текущего дерева.
+GitHub Actions checks the source tree and builds the release files. Pushing
+alone does not publish a GitHub Release. After a successful **Check and build**
+run in [Actions](https://github.com/gagafes/malferma-libro/actions), download
+the `malferma-libro-current` artifact containing the DEB package, source
+archives, and `SHA256SUMS`. You must be signed in to GitHub to download it.
+No GitHub Release has been published yet. When publishing a release, use
+the files from one current build in `dist/`, keeping older builds outside
+the current source tree.

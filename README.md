@@ -2,46 +2,46 @@
 
 **0.1.0 · Debian 13 · GTK 4 / libadwaita · GPL-3.0-or-later**
 
-Свободная настольная читалка с локальной библиотекой и подключением к
-OPDS-каталогам. Основное пространство окна занимает книга; оглавление
-открывается в боковой панели, инструменты собраны на верхней панели.
+A free and open-source desktop ebook reader with a local library and support
+for OPDS catalogs. The book occupies most of the window; the table of contents
+opens in a sidebar, and reading tools are grouped in the top bar.
 
-Поддерживаются EPUB, FB2 и FB2.ZIP, TXT, PDF, DjVu, HTML/XHTML, Markdown и CBZ.
-Есть закладки и заметки, поиск, дневное и ночное оформление, настройка шрифта,
-нумерация страниц всей книги, полноэкранный режим, клавиатурная навигация,
-жесты мышью и средства доступности. Интерфейс переведён на 49 языков и
-письменных вариантов; язык меняется без перезапуска.
+Supported formats: EPUB, FB2 and FB2.ZIP, TXT, PDF, DjVu, HTML/XHTML, Markdown
+and CBZ. Features include bookmarks and notes, search, light and dark modes,
+font settings, page numbering across the entire book, fullscreen mode,
+keyboard navigation, mouse gestures and accessibility tools. The interface
+supports 49 languages and writing variants; language changes take effect
+without restarting the application.
 
-EPUB и FB2 отображаются как текст, без исходной книжной CSS-вёрстки и
-иллюстраций внутри текста. Для PDF/DjVu доступность поиска и озвучки зависит
-от текстового слоя. OCR и DRM не поддерживаются. CBZ отображается как
-последовательность изображений.
+EPUB and FB2 books are displayed as text, without their original CSS layout
+or inline illustrations. Search and narration in PDF/DjVu files depend on
+the availability of a text layer. OCR and DRM are not supported. CBZ files
+are displayed as a sequence of images.
 
-Исходный код опубликован в
-[gagafes/malferma-libro](https://github.com/gagafes/malferma-libro), ветка `main`.
-Чтобы скачать исходники без Git, откройте **Code → Download ZIP**.
+The source code is available at
+[gagafes/malferma-libro](https://github.com/gagafes/malferma-libro), on the `main` branch.
+To download the source without Git, choose **Code → Download ZIP**.
 
-## Установка и запуск
+## Installation and launch
 
-Сборки доступны после успешного запуска GitHub Actions: откройте
-[Actions](https://github.com/gagafes/malferma-libro/actions), выберите зелёный
-запуск **Check and build**, затем в разделе **Artifacts** скачайте
-`malferma-libro-current`. Для скачивания артефакта требуется вход в GitHub.
-В ZIP находятся DEB, архивы исходников и `SHA256SUMS`. GitHub Release пока
-не опубликован; версия 0.1.0 остаётся версией разработки.
+Builds are available after a successful GitHub Actions run: open
+[Actions](https://github.com/gagafes/malferma-libro/actions), select a green
+**Check and build** run, then download `malferma-libro-current` from the
+**Artifacts** section. You must be signed in to GitHub to download the artifact.
+The ZIP contains the DEB package, source archives and `SHA256SUMS`.
+No GitHub Release has been published yet; version 0.1.0 is a development version.
 
-Готовый пакет текущей версии после сборки находится в `dist/`:
+After building, the package for the current version is in `dist/`:
 
 ```sh
 sudo apt install ./dist/malferma-libro_0.1.0_all.deb
 malferma-libro
 ```
 
-Если на компьютере установлена прежняя сборка с большим номером версии,
-APT может сообщить о понижении версии: номер **0.1.0** назначен владельцем
-проекта для новой линии разработки.
+If an earlier build with a higher version number is installed, APT may report
+a downgrade: the project owner assigned **0.1.0** to this new development series.
 
-Для запуска из исходников на Debian 13:
+To run from source on Debian 13:
 
 ```sh
 sudo apt install python3 python3-gi gir1.2-gtk-4.0 gir1.2-adw-1 \
@@ -49,27 +49,29 @@ sudo apt install python3 python3-gi gir1.2-gtk-4.0 gir1.2-adw-1 \
 make run
 ```
 
-Используется системный `/usr/bin/python3`, чтобы были доступны зависимости
-PyGObject, установленные через APT. Приложение следует системной гарнитуре,
-масштабу и символическим значкам; оформление GTK/libadwaita зависит от рабочей
-среды и установленных тем.
+The application uses the system `/usr/bin/python3` so that PyGObject dependencies
+installed through APT are available. It follows the system font, scaling and
+symbolic icons; GTK/libadwaita appearance depends on the desktop environment
+and installed themes.
 
-Озвучка использует только **Piper**. Сам движок и модели голосов устанавливаются
-отдельно; они не включены в этот DEB или архив исходников.
-См. [руководство](MANUAL.md#озвучка) и [лицензии голосов](PIPER_LICENSES.md).
+Narration uses **Piper** exclusively. The engine and voice models must be
+installed separately; they are not included in this DEB package or source archive.
+See the [user guide](docs/MANUAL.en.md#narration) and
+[voice licensing notes](PIPER_LICENSES.md).
 
-## Документация
+## Documentation
 
-- Руководство: [русский](MANUAL.md), [English](docs/MANUAL.en.md),
-  [Deutsch](docs/MANUAL.de.md), [українська](docs/MANUAL.uk.md).
-- Консольная справка: `malferma-libro --help`, `--manual`, `--manual=en`,
-  `--version` и `--license`. Эти команды работают без графического сеанса.
-- Man-страница: `man malferma-libro` при установленном `man-db`.
-- [Сведения о восстановлении](RECOVERY.md) и [границы проверки](VALIDATION.md).
+- User guide: [Russian](MANUAL.md), [English](docs/MANUAL.en.md),
+  [German](docs/MANUAL.de.md), [Ukrainian](docs/MANUAL.uk.md).
+- Command-line help: `malferma-libro --help`, `--manual`, `--manual=en`,
+  `--version` and `--license`. These commands work without a graphical session.
+- Man page: `man malferma-libro`, with `man-db` installed.
+- [Recovery notes](RECOVERY.md) and [validation scope](VALIDATION.md).
 
-## Разработка и сборка
+## Development and building
 
-Для сборки DEB установите `dpkg-dev`. Сборка не загружает зависимости из сети.
+Install `dpkg-dev` to build the DEB package. The build does not download
+dependencies from the network.
 
 ```sh
 make test
@@ -77,32 +79,32 @@ make translations
 make release
 ```
 
-`make release` создаёт DEB и полные архивы исходников в форматах ZIP и TAR.GZ.
-Отдельные цели: `make deb` и `make source`. Для воспроизводимой сборки можно
-задать `SOURCE_DATE_EPOCH`; по умолчанию используется `0`.
+`make release` creates the DEB package and complete source archives in ZIP
+and TAR.GZ formats. Separate targets are available: `make deb` and `make source`.
+For reproducible builds, set `SOURCE_DATE_EPOCH`; the default is `0`.
 
 ```text
-src/malferma_libro/  приложение и встроенные ресурсы
-po/                 редактируемые каталоги переводов
-tests/              восстановленные проверки текущего проекта
-data/               desktop/AppStream, иконки и man-страницы
-docs/               переведённые руководства
-packaging/          единый сценарий сборки и лицензионные сведения
-dist/               результаты сборки, исключены из Git
+src/malferma_libro/  application and bundled resources
+po/                 editable translation catalogs
+tests/              tests reconstructed for the current project
+data/               desktop/AppStream files, icons and man pages
+docs/               translated user guides
+packaging/          shared build script and licensing information
+dist/               build output, excluded from Git
 ```
 
-Каталог проекта называется `malferma-libro`, Python-модуль — `malferma_libro`.
-Бренд и единственная команда запуска остаются **Malferma Libro** и
-`malferma-libro`. Стабильный идентификатор приложения сохранён для
-совместимости с установленными значками и интеграцией рабочего стола.
+The project directory is named `malferma-libro`; the Python package is
+`malferma_libro`. The application is named **Malferma Libro**, and its only
+launch command is `malferma-libro`. The stable application ID is retained
+for compatibility with installed icons and desktop integration.
 
-Порядок работы с изменениями и репозиторием GitHub — в
-[CONTRIBUTING.md](CONTRIBUTING.md#работа-с-github).
+See [CONTRIBUTING.md](CONTRIBUTING.md#working-with-github) for instructions
+on contributing changes and working with the GitHub repository.
 
-## Лицензия
+## License
 
-Код, переводы и документация: [GNU GPL v3 или более поздняя](LICENSE).
-Логотип: та же лицензия с [подтверждённым разрешением владельца](LOGO_LICENSE.md).
-Девять встроенных шрифтов сохраняют [SIL OFL 1.1](FONT_LICENSES.md),
-AppStream-метаданные — CC0-1.0. Системные зависимости и голосовые модели
-сохраняют собственные условия. См. [LICENSE_AUDIT.md](LICENSE_AUDIT.md).
+Code, translations and documentation: [GNU GPL v3 or later](LICENSE).
+The logo uses the same license, with [permission confirmed by its owner](LOGO_LICENSE.md).
+The nine bundled fonts retain their [SIL OFL 1.1](FONT_LICENSES.md) licenses;
+AppStream metadata is licensed under CC0-1.0. System dependencies and voice
+models retain their own license terms. See [LICENSE_AUDIT.md](LICENSE_AUDIT.md).
