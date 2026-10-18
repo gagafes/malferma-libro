@@ -82,6 +82,7 @@ alone does not publish a GitHub Release. After a successful **Check and build**
 run in [Actions](https://github.com/gagafes/malferma-libro/actions), download
 the `malferma-libro-current` artifact containing the DEB package, source
 archives, and `SHA256SUMS`. You must be signed in to GitHub to download it.
-No GitHub Release has been published yet. When publishing a release, use
-the files from one current build in `dist/`, keeping older builds outside
-the current source tree.
+The [0.1.0 development prerelease](https://github.com/gagafes/malferma-libro/releases/tag/v0.1.0)
+provides a direct DEB download, matching source archives, and checksums.
+When publishing a release, use the files from one current build in `dist/`,
+keeping older builds outside the current source tree.
