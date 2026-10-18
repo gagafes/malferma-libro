@@ -4,6 +4,12 @@ on:
   push:
   pull_request:
   workflow_dispatch:
+    inputs:
+      publish_release:
+        description: Publish the checked build as a development prerelease
+        type: boolean
+        required: false
+        default: false
 
 permissions:
   contents: read
@@ -38,3 +44,33 @@ jobs:
           name: malferma-libro-current
           path: dist/*
           if-no-files-found: error
+
+  publish:
+    if: github.event_name == 'workflow_dispatch' && inputs.publish_release
+    needs: linux
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: malferma-libro-current
+          path: dist
+      - name: Verify release checksums
+        working-directory: dist
+        run: sha256sum --check SHA256SUMS
+      - name: Publish development prerelease
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          version=$(PYTHONPATH=src /usr/bin/python3 -c 'from malferma_libro import __version__; print(__version__)')
+          gh release create "v$version" \
+            "dist/malferma-libro_${version}_all.deb" \
+            "dist/malferma-libro_${version}_source.zip" \
+            "dist/malferma-libro_${version}_source.tar.gz" \
+            dist/SHA256SUMS \
+            --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" \
+            --title "Malferma Libro $version (development prerelease)" \
+            --notes 'Development prerelease for Debian 13. Complete corresponding source archives, license notices and SHA256 checksums are attached. See README for installation.' \
+            --prerelease --latest=false

@@ -86,3 +86,7 @@ The [0.1.0 development prerelease](https://github.com/gagafes/malferma-libro/rel
 provides a direct DEB download, matching source archives, and checksums.
 When publishing a release, use the files from one current build in `dist/`,
 keeping older builds outside the current source tree.
+
+To publish a development prerelease, open **Actions → Check and build → Run workflow**
+on `main` and enable `publish_release`. Publication runs only after the checks
+and build succeed, using the DEB, source archives, and checksums from that run.
