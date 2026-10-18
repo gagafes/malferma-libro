@@ -244,7 +244,7 @@ msgstr "Dokónčene: {percent}%"
 msgid "Выполняемые действия"
 msgstr "Běžace akcije"
 
-#: src/malferma_libro/accessibility_ui.py:276 src/malferma_libro/app.py:1205
+#: src/malferma_libro/accessibility_ui.py:279 src/malferma_libro/app.py:1205
 msgid "Высокая контрастность"
 msgstr "Wysoki kontrast"
 
@@ -280,7 +280,7 @@ msgstr "Hłós je hotowy: {voice}"
 msgid "Голос установлен"
 msgstr "Hłós je instalowany"
 
-#: src/malferma_libro/accessibility_ui.py:263
+#: src/malferma_libro/accessibility_ui.py:266
 msgid "Голоса Piper"
 msgstr "Hłosy Piper"
 
@@ -596,7 +596,7 @@ msgstr "Kopěrowanje PDF njeje dokónčene: wulkosć knihi je so změniła"
 msgid "Копировать"
 msgstr "Kopěrować"
 
-#: src/malferma_libro/accessibility_ui.py:295
+#: src/malferma_libro/accessibility_ui.py:298
 msgid "Лупа области чтения"
 msgstr "Lupa čitanskeho wobłuka"
 
@@ -616,7 +616,7 @@ msgstr "Měritko PDF dyrbi pozitiwne čisło być"
 msgid "Масштаб страницы, %"
 msgstr "Měritko strony, %"
 
-#: src/malferma_libro/accessibility_ui.py:287 src/malferma_libro/app.py:1207
+#: src/malferma_libro/accessibility_ui.py:290 src/malferma_libro/app.py:1207
 msgid "Межстрочный интервал"
 msgstr "Wotstup mjez linkami"
 
@@ -1060,7 +1060,7 @@ msgstr "Čaka so na daty…"
 msgid "Озвучить"
 msgstr "Wótře čitać"
 
-#: src/malferma_libro/accessibility_ui.py:234 src/malferma_libro/app.py:1210
+#: src/malferma_libro/accessibility_ui.py:237 src/malferma_libro/app.py:1210
 msgid "Озвучка"
 msgstr "Wótře čitanje"
 
@@ -1248,7 +1248,7 @@ msgstr "Modus połneje wobrazowki"
 msgid "Положение в книге должно быть целым неотрицательным числом."
 msgstr "Pozicija w knize dyrbi njenegatiwne cyłe čisło być."
 
-#: src/malferma_libro/accessibility_ui.py:277 src/malferma_libro/app.py:1206
+#: src/malferma_libro/accessibility_ui.py:280 src/malferma_libro/app.py:1206
 msgid "Полужирный текст"
 msgstr "Tučny tekst"
 
@@ -1276,7 +1276,7 @@ msgstr "Předchadna namakanka"
 msgid "Приглушение цветов страницы; яркость монитора не меняется."
 msgstr "Barby strony poćěmni; swětłosć wobrazowki so njeměnja."
 
-#: src/malferma_libro/accessibility_ui.py:288 src/malferma_libro/app.py:1208
+#: src/malferma_libro/accessibility_ui.py:291 src/malferma_libro/app.py:1208
 msgid "Применить"
 msgstr "Nałožić"
 
@@ -1324,7 +1324,7 @@ msgstr "Wotrězk {number}"
 msgid "Размер ответа превышает допустимый предел."
 msgstr "Wulkosć wotmołwy dowoleny limit překročuje."
 
-#: src/malferma_libro/accessibility_ui.py:273 src/malferma_libro/app.py:1191
+#: src/malferma_libro/accessibility_ui.py:276 src/malferma_libro/app.py:1191
 msgid "Размер текста"
 msgstr "Wulkosć teksta"
 
@@ -1344,7 +1344,7 @@ msgstr "Wupakowana wulkosć knihi dowoleny limit překročuje"
 msgid "Режим"
 msgstr "Modus"
 
-#: src/malferma_libro/accessibility_ui.py:288 src/malferma_libro/app.py:1208
+#: src/malferma_libro/accessibility_ui.py:291 src/malferma_libro/app.py:1208
 msgid "Режим для слабовидящих"
 msgstr "Modus za ludźi ze słabym widźenjom"
 
@@ -1412,7 +1412,7 @@ msgstr "{format} sćahnyć"
 msgid "Скачивание книги…"
 msgstr "Kniha so sćahuje…"
 
-#: src/malferma_libro/accessibility_ui.py:262 src/malferma_libro/app.py:1218
+#: src/malferma_libro/accessibility_ui.py:265 src/malferma_libro/app.py:1218
 msgid "Скорость, %"
 msgstr "Spěšnosć, %"
 
@@ -1460,7 +1460,7 @@ msgstr "Składować"
 msgid "Сочетание занято: {action}"
 msgstr "Tastowa skrótšenka je hižo přirjadowana: {action}"
 
-#: src/malferma_libro/accessibility_ui.py:267 src/malferma_libro/accessibility_ui.py:315 src/malferma_libro/accessibility_ui.py:316 src/malferma_libro/app.py:1196 src/malferma_libro/app.py:529 src/malferma_libro/shortcuts.py:36
+#: src/malferma_libro/accessibility_ui.py:270 src/malferma_libro/accessibility_ui.py:318 src/malferma_libro/accessibility_ui.py:319 src/malferma_libro/app.py:1196 src/malferma_libro/app.py:529 src/malferma_libro/shortcuts.py:36
 msgid "Специальные возможности"
 msgstr "Přistupnosć"
 
@@ -1472,7 +1472,7 @@ msgstr "Lisćina knihow a nastajenja su so z poslednjeje zawěsćenskeje kopije 
 msgid "Стандартный размер текста"
 msgstr "Standardna wulkosć teksta"
 
-#: src/malferma_libro/accessibility_ui.py:238 src/malferma_libro/narration_ui.py:222 src/malferma_libro/shortcuts.py:64
+#: src/malferma_libro/accessibility_ui.py:241 src/malferma_libro/narration_ui.py:222 src/malferma_libro/shortcuts.py:64
 msgid "Стоп"
 msgstr "Stój"
 
@@ -1532,7 +1532,7 @@ msgstr "Tekstowa dataja je prózdna"
 msgid "Тёмный"
 msgstr "Ćmowy"
 
-#: src/malferma_libro/accessibility_ui.py:296
+#: src/malferma_libro/accessibility_ui.py:299
 msgid "Увеличение лупы"
 msgstr "Powjetšenje lupy"
 
@@ -1676,7 +1676,7 @@ msgstr "Tutón katalog je hižo přidaty."
 msgid "Этот формат книги не поддерживается."
 msgstr "Tutón format knihi so njepodpěruje."
 
-#: src/malferma_libro/accessibility_ui.py:258 src/malferma_libro/app.py:1217 src/malferma_libro/app.py:590 src/malferma_libro/app.py:591
+#: src/malferma_libro/accessibility_ui.py:261 src/malferma_libro/app.py:1217 src/malferma_libro/app.py:590 src/malferma_libro/app.py:591
 msgid "Язык"
 msgstr "Rěč"
 

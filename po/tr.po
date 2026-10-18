@@ -244,7 +244,7 @@ msgstr "Tamamlandı: {percent}%"
 msgid "Выполняемые действия"
 msgstr "Devam eden işlemler"
 
-#: src/malferma_libro/accessibility_ui.py:276 src/malferma_libro/app.py:1205
+#: src/malferma_libro/accessibility_ui.py:279 src/malferma_libro/app.py:1205
 msgid "Высокая контрастность"
 msgstr "Yüksek kontrast"
 
@@ -280,7 +280,7 @@ msgstr "Ses hazır: {voice}"
 msgid "Голос установлен"
 msgstr "Ses kurulu"
 
-#: src/malferma_libro/accessibility_ui.py:263
+#: src/malferma_libro/accessibility_ui.py:266
 msgid "Голоса Piper"
 msgstr "Piper sesleri"
 
@@ -596,7 +596,7 @@ msgstr "PDF kopyalanamadı: kitabın boyutu değişti"
 msgid "Копировать"
 msgstr "Kopyala"
 
-#: src/malferma_libro/accessibility_ui.py:295
+#: src/malferma_libro/accessibility_ui.py:298
 msgid "Лупа области чтения"
 msgstr "Okuma alanı büyüteci"
 
@@ -616,7 +616,7 @@ msgstr "PDF yakınlaştırma değeri pozitif bir sayı olmalıdır"
 msgid "Масштаб страницы, %"
 msgstr "Sayfa yakınlaştırması, %"
 
-#: src/malferma_libro/accessibility_ui.py:287 src/malferma_libro/app.py:1207
+#: src/malferma_libro/accessibility_ui.py:290 src/malferma_libro/app.py:1207
 msgid "Межстрочный интервал"
 msgstr "Satır aralığı"
 
@@ -1060,7 +1060,7 @@ msgstr "Veriler bekleniyor…"
 msgid "Озвучить"
 msgstr "Seslendir"
 
-#: src/malferma_libro/accessibility_ui.py:234 src/malferma_libro/app.py:1210
+#: src/malferma_libro/accessibility_ui.py:237 src/malferma_libro/app.py:1210
 msgid "Озвучка"
 msgstr "Seslendirme"
 
@@ -1248,7 +1248,7 @@ msgstr "Tam ekran modu"
 msgid "Положение в книге должно быть целым неотрицательным числом."
 msgstr "Kitaptaki konum negatif olmayan bir tam sayı olmalıdır."
 
-#: src/malferma_libro/accessibility_ui.py:277 src/malferma_libro/app.py:1206
+#: src/malferma_libro/accessibility_ui.py:280 src/malferma_libro/app.py:1206
 msgid "Полужирный текст"
 msgstr "Kalın metin"
 
@@ -1276,7 +1276,7 @@ msgstr "Önceki eşleşme"
 msgid "Приглушение цветов страницы; яркость монитора не меняется."
 msgstr "Sayfa renklerini soluklaştırır; monitörün parlaklığını değiştirmez."
 
-#: src/malferma_libro/accessibility_ui.py:288 src/malferma_libro/app.py:1208
+#: src/malferma_libro/accessibility_ui.py:291 src/malferma_libro/app.py:1208
 msgid "Применить"
 msgstr "Uygula"
 
@@ -1324,7 +1324,7 @@ msgstr "Kısım {number}"
 msgid "Размер ответа превышает допустимый предел."
 msgstr "Yanıt boyut sınırını aşıyor."
 
-#: src/malferma_libro/accessibility_ui.py:273 src/malferma_libro/app.py:1191
+#: src/malferma_libro/accessibility_ui.py:276 src/malferma_libro/app.py:1191
 msgid "Размер текста"
 msgstr "Metin boyutu"
 
@@ -1344,7 +1344,7 @@ msgstr "Arşivden çıkarılan kitap boyut sınırını aşıyor"
 msgid "Режим"
 msgstr "Mod"
 
-#: src/malferma_libro/accessibility_ui.py:288 src/malferma_libro/app.py:1208
+#: src/malferma_libro/accessibility_ui.py:291 src/malferma_libro/app.py:1208
 msgid "Режим для слабовидящих"
 msgstr "Az görenler için mod"
 
@@ -1412,7 +1412,7 @@ msgstr "{format} indir"
 msgid "Скачивание книги…"
 msgstr "Kitap indiriliyor…"
 
-#: src/malferma_libro/accessibility_ui.py:262 src/malferma_libro/app.py:1218
+#: src/malferma_libro/accessibility_ui.py:265 src/malferma_libro/app.py:1218
 msgid "Скорость, %"
 msgstr "Hız, %"
 
@@ -1460,7 +1460,7 @@ msgstr "Kaydet"
 msgid "Сочетание занято: {action}"
 msgstr "Kısayol zaten atanmış: {action}"
 
-#: src/malferma_libro/accessibility_ui.py:267 src/malferma_libro/accessibility_ui.py:315 src/malferma_libro/accessibility_ui.py:316 src/malferma_libro/app.py:1196 src/malferma_libro/app.py:529 src/malferma_libro/shortcuts.py:36
+#: src/malferma_libro/accessibility_ui.py:270 src/malferma_libro/accessibility_ui.py:318 src/malferma_libro/accessibility_ui.py:319 src/malferma_libro/app.py:1196 src/malferma_libro/app.py:529 src/malferma_libro/shortcuts.py:36
 msgid "Специальные возможности"
 msgstr "Erişilebilirlik"
 
@@ -1472,7 +1472,7 @@ msgstr "Kitap listesi ve ayarlar son yedekten geri yüklendi."
 msgid "Стандартный размер текста"
 msgstr "Varsayılan metin boyutu"
 
-#: src/malferma_libro/accessibility_ui.py:238 src/malferma_libro/narration_ui.py:222 src/malferma_libro/shortcuts.py:64
+#: src/malferma_libro/accessibility_ui.py:241 src/malferma_libro/narration_ui.py:222 src/malferma_libro/shortcuts.py:64
 msgid "Стоп"
 msgstr "Durdur"
 
@@ -1532,7 +1532,7 @@ msgstr "Metin dosyası boş"
 msgid "Тёмный"
 msgstr "Koyu"
 
-#: src/malferma_libro/accessibility_ui.py:296
+#: src/malferma_libro/accessibility_ui.py:299
 msgid "Увеличение лупы"
 msgstr "Büyüteç yakınlaştırması"
 
@@ -1676,7 +1676,7 @@ msgstr "Bu katalog zaten eklenmiş."
 msgid "Этот формат книги не поддерживается."
 msgstr "Bu kitap biçimi desteklenmiyor."
 
-#: src/malferma_libro/accessibility_ui.py:258 src/malferma_libro/app.py:1217 src/malferma_libro/app.py:590 src/malferma_libro/app.py:591
+#: src/malferma_libro/accessibility_ui.py:261 src/malferma_libro/app.py:1217 src/malferma_libro/app.py:590 src/malferma_libro/app.py:591
 msgid "Язык"
 msgstr "Dil"
 

@@ -244,7 +244,7 @@ msgstr "Completado: {percent}%"
 msgid "Выполняемые действия"
 msgstr "Operaciones en curso"
 
-#: src/malferma_libro/accessibility_ui.py:276 src/malferma_libro/app.py:1205
+#: src/malferma_libro/accessibility_ui.py:279 src/malferma_libro/app.py:1205
 msgid "Высокая контрастность"
 msgstr "Alto contraste"
 
@@ -280,7 +280,7 @@ msgstr "Voz preparada: {voice}"
 msgid "Голос установлен"
 msgstr "Voz instalada"
 
-#: src/malferma_libro/accessibility_ui.py:263
+#: src/malferma_libro/accessibility_ui.py:266
 msgid "Голоса Piper"
 msgstr "Voces Piper"
 
@@ -596,7 +596,7 @@ msgstr "No se completó la copia del PDF: el tamaño del libro cambió"
 msgid "Копировать"
 msgstr "Copiar"
 
-#: src/malferma_libro/accessibility_ui.py:295
+#: src/malferma_libro/accessibility_ui.py:298
 msgid "Лупа области чтения"
 msgstr "Lupa del área de lectura"
 
@@ -616,7 +616,7 @@ msgstr "El zoom del PDF debe ser un número positivo"
 msgid "Масштаб страницы, %"
 msgstr "Zoom de la página, %"
 
-#: src/malferma_libro/accessibility_ui.py:287 src/malferma_libro/app.py:1207
+#: src/malferma_libro/accessibility_ui.py:290 src/malferma_libro/app.py:1207
 msgid "Межстрочный интервал"
 msgstr "Interlineado"
 
@@ -1060,7 +1060,7 @@ msgstr "Esperando datos…"
 msgid "Озвучить"
 msgstr "Leer en voz alta"
 
-#: src/malferma_libro/accessibility_ui.py:234 src/malferma_libro/app.py:1210
+#: src/malferma_libro/accessibility_ui.py:237 src/malferma_libro/app.py:1210
 msgid "Озвучка"
 msgstr "Lectura en voz alta"
 
@@ -1248,7 +1248,7 @@ msgstr "Pantalla completa"
 msgid "Положение в книге должно быть целым неотрицательным числом."
 msgstr "La posición en el libro debe ser un número entero no negativo."
 
-#: src/malferma_libro/accessibility_ui.py:277 src/malferma_libro/app.py:1206
+#: src/malferma_libro/accessibility_ui.py:280 src/malferma_libro/app.py:1206
 msgid "Полужирный текст"
 msgstr "Texto en negrita"
 
@@ -1276,7 +1276,7 @@ msgstr "Coincidencia anterior"
 msgid "Приглушение цветов страницы; яркость монитора не меняется."
 msgstr "Atenúa los colores de la página; no cambia el brillo del monitor."
 
-#: src/malferma_libro/accessibility_ui.py:288 src/malferma_libro/app.py:1208
+#: src/malferma_libro/accessibility_ui.py:291 src/malferma_libro/app.py:1208
 msgid "Применить"
 msgstr "Aplicar"
 
@@ -1324,7 +1324,7 @@ msgstr "Sección {number}"
 msgid "Размер ответа превышает допустимый предел."
 msgstr "El tamaño de la respuesta supera el límite permitido."
 
-#: src/malferma_libro/accessibility_ui.py:273 src/malferma_libro/app.py:1191
+#: src/malferma_libro/accessibility_ui.py:276 src/malferma_libro/app.py:1191
 msgid "Размер текста"
 msgstr "Tamaño del texto"
 
@@ -1344,7 +1344,7 @@ msgstr "El tamaño del libro descomprimido supera el límite permitido"
 msgid "Режим"
 msgstr "Modo"
 
-#: src/malferma_libro/accessibility_ui.py:288 src/malferma_libro/app.py:1208
+#: src/malferma_libro/accessibility_ui.py:291 src/malferma_libro/app.py:1208
 msgid "Режим для слабовидящих"
 msgstr "Modo para personas con baja visión"
 
@@ -1412,7 +1412,7 @@ msgstr "Descargar {format}"
 msgid "Скачивание книги…"
 msgstr "Descargando libro…"
 
-#: src/malferma_libro/accessibility_ui.py:262 src/malferma_libro/app.py:1218
+#: src/malferma_libro/accessibility_ui.py:265 src/malferma_libro/app.py:1218
 msgid "Скорость, %"
 msgstr "Velocidad, %"
 
@@ -1460,7 +1460,7 @@ msgstr "Guardar"
 msgid "Сочетание занято: {action}"
 msgstr "Atajo ya asignado: {action}"
 
-#: src/malferma_libro/accessibility_ui.py:267 src/malferma_libro/accessibility_ui.py:315 src/malferma_libro/accessibility_ui.py:316 src/malferma_libro/app.py:1196 src/malferma_libro/app.py:529 src/malferma_libro/shortcuts.py:36
+#: src/malferma_libro/accessibility_ui.py:270 src/malferma_libro/accessibility_ui.py:318 src/malferma_libro/accessibility_ui.py:319 src/malferma_libro/app.py:1196 src/malferma_libro/app.py:529 src/malferma_libro/shortcuts.py:36
 msgid "Специальные возможности"
 msgstr "Accesibilidad"
 
@@ -1472,7 +1472,7 @@ msgstr "La lista de libros y las preferencias se han restaurado desde la última
 msgid "Стандартный размер текста"
 msgstr "Tamaño de texto predeterminado"
 
-#: src/malferma_libro/accessibility_ui.py:238 src/malferma_libro/narration_ui.py:222 src/malferma_libro/shortcuts.py:64
+#: src/malferma_libro/accessibility_ui.py:241 src/malferma_libro/narration_ui.py:222 src/malferma_libro/shortcuts.py:64
 msgid "Стоп"
 msgstr "Detener"
 
@@ -1532,7 +1532,7 @@ msgstr "El archivo de texto está vacío"
 msgid "Тёмный"
 msgstr "Oscuro"
 
-#: src/malferma_libro/accessibility_ui.py:296
+#: src/malferma_libro/accessibility_ui.py:299
 msgid "Увеличение лупы"
 msgstr "Ampliación de la lupa"
 
@@ -1676,7 +1676,7 @@ msgstr "Este catálogo ya está añadido."
 msgid "Этот формат книги не поддерживается."
 msgstr "Este formato de libro no es compatible."
 
-#: src/malferma_libro/accessibility_ui.py:258 src/malferma_libro/app.py:1217 src/malferma_libro/app.py:590 src/malferma_libro/app.py:591
+#: src/malferma_libro/accessibility_ui.py:261 src/malferma_libro/app.py:1217 src/malferma_libro/app.py:590 src/malferma_libro/app.py:591
 msgid "Язык"
 msgstr "Idioma"
 
