@@ -31,6 +31,24 @@ def widget_geometry(widget, relative_to):
     }
 
 
+def direct_children(widget):
+    child = widget.get_first_child()
+    while child is not None:
+        yield child
+        child = child.get_next_sibling()
+
+
+def widget_measure(widget, orientation):
+    minimum, natural, _minimum_baseline, _natural_baseline = widget.measure(orientation, -1)
+    details = {"type": type(widget).__name__, "minimum": minimum, "natural": natural}
+    for attribute in ("get_text", "get_label"):
+        getter = getattr(widget, attribute, None)
+        if getter is not None:
+            details[attribute.removeprefix("get_")] = getter()
+            break
+    return details
+
+
 class ReaderInterfaceTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -174,6 +192,20 @@ class ReaderInterfaceTests(unittest.TestCase):
                     ("content", window.accessibility_content), ("viewport", scroll.get_child()),
                     ("scrollbar", bar), ("scroller", scroll),
                 )}
+                horizontal = self.Gtk.Orientation.HORIZONTAL
+                geometry.update({
+                    "min_content_width": scroll.get_min_content_width(),
+                    "max_content_width": scroll.get_max_content_width(),
+                    "scroll_size_request": scroll.get_size_request(),
+                    "popover": widget_geometry(window.accessibility_popover, window),
+                    "window": widget_geometry(window, window),
+                    "content_measure": widget_measure(window.accessibility_content, horizontal),
+                    "rows": [
+                        {**widget_measure(row, horizontal),
+                         "children": [widget_measure(child, horizontal) for child in direct_children(row)]}
+                        for row in direct_children(window.accessibility_content)
+                    ],
+                })
                 self.assertTrue(
                     content_bounds.get_x() + content_bounds.get_width() <= bar_bounds.get_x() + 1
                     or bar_bounds.get_x() + bar_bounds.get_width() <= content_bounds.get_x() + 1,

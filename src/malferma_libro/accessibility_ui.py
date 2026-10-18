@@ -341,6 +341,9 @@ class AccessibilityMixin:
             self.accessibility_scroll.set_min_content_width(minimum_width)
         self.accessibility_scroll.set_max_content_width(maximum_width)
         self.accessibility_scroll.set_min_content_width(minimum_width)
+        # With horizontal scrolling disabled, min-content-width alone does not
+        # protect the viewport from a popover allocating less than its content.
+        self.accessibility_scroll.set_size_request(minimum_width, -1)
         self.accessibility_scroll.set_max_content_height(max(120, min(560, self.get_height() - 96)))
         self.update_accessibility_state()
 
