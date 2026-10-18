@@ -1,2 +1,2 @@
-# malferna-libro
+# malferma-libro
 opensource ebook reader
