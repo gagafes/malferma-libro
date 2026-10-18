@@ -2,6 +2,7 @@
 
 SPDX-License-Identifier: GPL-3.0-or-later
 """
+from email.parser import Parser
 import hashlib
 import importlib.util
 import io
@@ -178,7 +179,11 @@ class ReleaseBuildTests(unittest.TestCase):
             self.assertIn("malferma_libro/locale/en/LC_MESSAGES/malferma-libro.mo", names)
             self.assertFalse(any(".env" in name or name.endswith("~") for name in names))
             metadata = archive.read("malferma_libro-0.1.0.dist-info/METADATA").decode()
-            self.assertIn("Requires-Dist: PyGObject>=3.42", metadata)
+            # Setuptools versions differ in optional requirement whitespace.
+            # Compare metadata fields while keeping names and version bounds exact.
+            requirements = {"".join(value.split()) for value in
+                            Parser().parsestr(metadata).get_all("Requires-Dist", [])}
+            self.assertEqual(requirements, {"PyGObject>=3.42", "markdown-it-py>=3.0.0"})
             entry_points = archive.read("malferma_libro-0.1.0.dist-info/entry_points.txt").decode()
             self.assertIn("malferma-libro = malferma_libro.__main__:main", entry_points)
         with tarfile.open(next((self.root / "dist").glob("*.tar.gz"))) as archive:
