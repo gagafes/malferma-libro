@@ -1,0 +1,1709 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Translation source recovered from the installed GNU gettext catalog.
+
+msgid ""
+msgstr "Project-Id-Version: Malferma Libro 0.1.0\nLanguage: lv\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n!=0 ? 1 : 2);\n"
+
+#: src/malferma_libro/library_ui.py:105
+msgid " · Найдено: {count}"
+msgstr " · Atrasta: {count}"
+
+#: src/malferma_libro/app.py:884
+msgid "100% — по ширине окна; вёрстка PDF, DjVu и CBZ сохраняется"
+msgstr "100% — pēc loga platuma; PDF, DjVu un CBZ izkārtojums tiek saglabāts"
+
+#: src/malferma_libro/djvu.py:127
+msgid "DjVu с внешними файлами не поддерживается"
+msgstr "DjVu ar ārējiem failiem netiek atbalstīts"
+
+#: src/malferma_libro/library_ui.py:77
+msgid "EPUB · FB2 · FB2.ZIP · TXT · PDF · DjVu · HTML · Markdown · CBZ. Книги копируются в локальную библиотеку."
+msgstr "EPUB · FB2 · FB2.ZIP · TXT · PDF · DjVu · HTML · Markdown · CBZ. Grāmatas tiek kopētas vietējā bibliotēkā."
+
+#: src/malferma_libro/books.py:618
+msgid "EPUB не содержит доступных текстовых глав"
+msgstr "EPUB nesatur lasāmas teksta nodaļas"
+
+#: src/malferma_libro/books.py:543
+msgid "EPUB не содержит описания книги"
+msgstr "EPUB nesatur grāmatas aprakstu"
+
+#: src/malferma_libro/books.py:775
+msgid "FB2 не содержит доступного текста"
+msgstr "FB2 nesatur lasāmu tekstu"
+
+#: src/malferma_libro/app.py:2178 src/malferma_libro/app.py:2179
+msgid "OPDS-каталог"
+msgstr "OPDS katalogs"
+
+#: src/malferma_libro/pdf.py:114
+msgid "PDF защищён паролем. Откройте незашифрованную копию книги."
+msgstr "PDF ir aizsargāts ar paroli. Atveriet nešifrētu grāmatas kopiju."
+
+#: src/malferma_libro/app.py:1195
+msgid "PDF, DjVu и CBZ сохраняют исходные шрифты и цвета; размер меняется масштабом."
+msgstr "PDF, DjVu un CBZ saglabā sākotnējos fontus un krāsas; izmēru pielāgo, mainot mērogu."
+
+#: src/malferma_libro/app.py:1532
+msgid "Piper не установлен. Инструкция доступна в руководстве."
+msgstr "Piper nav instalēts. Norādījumi ir pieejami lietotāja rokasgrāmatā."
+
+#: src/malferma_libro/books.py:864
+msgid "TXT должен быть в кодировке UTF-8 или Windows-1251"
+msgstr "TXT kodējumam jābūt UTF-8 vai Windows-1251"
+
+#: src/malferma_libro/books.py:866
+msgid "TXT содержит двоичные данные"
+msgstr "TXT satur binārus datus"
+
+#: src/malferma_libro/bookmarks_ui.py:195
+msgid "{count} из {limit} символов"
+msgstr "{count} no {limit} rakstzīmēm"
+
+#: src/malferma_libro/books.py:144
+msgid "{label}: XML превышает допустимый размер"
+msgstr "{label}: XML pārsniedz atļauto izmēru"
+
+#: src/malferma_libro/books.py:377
+msgid "{label}: не удалось прочитать текст EPUB"
+msgstr "{label}: neizdevās nolasīt EPUB tekstu"
+
+#: src/malferma_libro/markup.py:106 src/malferma_libro/markup.py:352 src/malferma_libro/markup.py:425
+msgid "{label}: не удалось прочитать текст."
+msgstr "{label}: neizdevās nolasīt tekstu."
+
+#: src/malferma_libro/books.py:366
+msgid "{label}: объявления DTD запрещены"
+msgstr "{label}: DTD deklarācijas nav atļautas"
+
+#: src/malferma_libro/books.py:150 src/malferma_libro/books.py:156 src/malferma_libro/markup.py:126
+msgid "{label}: объявления DTD и сущностей XML запрещены"
+msgstr "{label}: DTD un XML entītiju deklarācijas nav atļautas"
+
+#: src/malferma_libro/books.py:363
+msgid "{label}: объявления сущностей запрещены"
+msgstr "{label}: entītiju deklarācijas nav atļautas"
+
+#: src/malferma_libro/books.py:162
+msgid "{label}: повреждённый XML"
+msgstr "{label}: bojāts XML"
+
+#: src/malferma_libro/app.py:2037 src/malferma_libro/library_ui.py:115 src/malferma_libro/library_ui.py:186
+msgid "{percent}% прочитано"
+msgstr "Izlasīti {percent}%"
+
+#: src/malferma_libro/narration_ui.py:78
+msgid "Автоматически"
+msgstr "Automātiski"
+
+#: src/malferma_libro/app.py:1189
+msgid "Автоматически скрывать панель в полном экране"
+msgstr "Automātiski slēpt rīkjoslu pilnekrāna režīmā"
+
+#: src/malferma_libro/pdf.py:117
+msgid "Автор PDF запретил извлечение текста из этого документа"
+msgstr "PDF autors ir aizliedzis teksta izgūšanu no šī dokumenta"
+
+#: src/malferma_libro/library_ui.py:183
+msgid "Автор не указан"
+msgstr "Autors nav norādīts"
+
+#: src/malferma_libro/app.py:2114
+msgid "Адрес OPDS-каталога"
+msgstr "OPDS kataloga adrese"
+
+#: src/malferma_libro/storage.py:188
+msgid "Адрес каталога должен начинаться с http:// или https:// и не содержать пароль."
+msgstr "Kataloga adresei jāsākas ar http:// vai https://, un tā nedrīkst saturēt paroli."
+
+#: src/malferma_libro/opds.py:118
+msgid "Адрес содержит недопустимые символы."
+msgstr "Adrese satur neatļautas rakstzīmes."
+
+#: src/malferma_libro/opds.py:124
+msgid "Адреса с логином или паролем не поддерживаются."
+msgstr "Adreses ar lietotājvārdu vai paroli netiek atbalstītas."
+
+#: src/malferma_libro/books.py:97
+msgid "Архив CBZ превышает допустимый размер (512 МиБ)"
+msgstr "CBZ arhīvs pārsniedz pieļaujamo izmēru (512 MiB)"
+
+#: src/malferma_libro/books.py:846
+msgid "Архив FB2 должен содержать ровно один файл .fb2"
+msgstr "FB2 arhīvā jābūt tieši vienam .fb2 failam"
+
+#: src/malferma_libro/opds.py:432
+msgid "Без названия"
+msgstr "Bez nosaukuma"
+
+#: src/malferma_libro/storage.py:197
+msgid "Библиотека создана более новой версией программы. Обновите приложение."
+msgstr "Bibliotēka ir izveidota ar jaunāku lietotnes versiju. Atjauniniet lietotni."
+
+#: src/malferma_libro/djvu.py:285
+msgid "В DjVu должно быть от 1 до {max_pages} страниц"
+msgstr "DjVu jābūt no 1 līdz {max_pages} lappusēm"
+
+#: src/malferma_libro/djvu.py:82
+msgid "В DjVu допускается не более {max_pages} страниц"
+msgstr "DjVu atļautas ne vairāk kā {max_pages} lappuses"
+
+#: src/malferma_libro/djvu.py:134
+msgid "В DjVu не найден корректный каталог страниц"
+msgstr "DjVu nav atrasts derīgs lappušu katalogs"
+
+#: src/malferma_libro/books.py:548
+msgid "В EPUB отсутствуют метаданные, список файлов или порядок глав"
+msgstr "EPUB trūkst metadatu, failu saraksta vai nodaļu secības"
+
+#: src/malferma_libro/pdf.py:171
+msgid "В PDF должно быть от 1 до {max_pages} страниц"
+msgstr "PDF jābūt no 1 līdz {max_pages} lappusēm"
+
+#: src/malferma_libro/cbz.py:425
+msgid "В архиве CBZ нет поддерживаемых изображений."
+msgstr "CBZ arhīvā nav atbalstītu attēlu."
+
+#: src/malferma_libro/books.py:427
+msgid "В книге отсутствует файл: {name}"
+msgstr "Grāmatā trūkst faila: {name}"
+
+#: src/malferma_libro/app.py:1193
+msgid "В пикселях; на широком окне текст располагается по центру."
+msgstr "Pikseļos; platā logā teksts tiek centrēts."
+
+#: src/malferma_libro/app.py:2215
+msgid "В этом разделе книг нет."
+msgstr "Šajā sadaļā nav grāmatu."
+
+#: src/malferma_libro/library_ui.py:29
+msgid "Ваша библиотека"
+msgstr "Jūsu bibliotēka"
+
+#: src/malferma_libro/search_ui.py:23
+msgid "Вернуться к месту до поиска"
+msgstr "Atgriezties vietā pirms meklēšanas"
+
+#: src/malferma_libro/app.py:480
+msgid "Включить дневной режим"
+msgstr "Ieslēgt dienas režīmu"
+
+#: src/malferma_libro/app.py:480
+msgid "Включить ночной режим"
+msgstr "Ieslēgt nakts režīmu"
+
+#: src/malferma_libro/books.py:453
+msgid "Внутренняя ссылка EPUB выходит за пределы архива"
+msgstr "Iekšējā EPUB saite ved ārpus arhīva"
+
+#: src/malferma_libro/books.py:445
+msgid "Внутренняя ссылка EPUB указывает за пределы книги"
+msgstr "Iekšējā EPUB saite ved ārpus grāmatas"
+
+#: src/malferma_libro/keybindings_ui.py:55
+msgid "Восстановить все сочетания"
+msgstr "Atjaunot visas taustiņu kombinācijas"
+
+#: src/malferma_libro/library_ui.py:38
+msgid "Все книги"
+msgstr "Visas grāmatas"
+
+#: src/malferma_libro/djvu.py:53
+msgid "Выберите обычный файл DjVu"
+msgstr "Izvēlieties parastu DjVu failu"
+
+#: src/malferma_libro/pdf.py:70
+msgid "Выберите обычный файл PDF"
+msgstr "Izvēlieties parastu PDF failu"
+
+#: src/malferma_libro/storage.py:608
+msgid "Выберите файл книги."
+msgstr "Izvēlieties grāmatas failu."
+
+#: src/malferma_libro/narration_ui.py:86
+msgid "Выберите язык или голос."
+msgstr "Izvēlieties valodu vai balsi."
+
+#: src/malferma_libro/task_ui.py:207 src/malferma_libro/task_ui.py:207
+msgid "Выбрать книгу…"
+msgstr "Izvēlēties grāmatu…"
+
+#: src/malferma_libro/app.py:1048
+msgid "Выделить всё"
+msgstr "Atlasīt visu"
+
+#: src/malferma_libro/app.py:465 src/malferma_libro/app.py:520
+msgid "Выйти из полноэкранного режима"
+msgstr "Iziet no pilnekrāna režīma"
+
+#: src/malferma_libro/task_ui.py:144
+msgid "Выполнено: {percent}%"
+msgstr "Pabeigts: {percent}%"
+
+#: src/malferma_libro/task_ui.py:52 src/malferma_libro/task_ui.py:70 src/malferma_libro/task_ui.py:71
+msgid "Выполняемые действия"
+msgstr "Notiekošās darbības"
+
+#: src/malferma_libro/accessibility_ui.py:276 src/malferma_libro/app.py:1205
+msgid "Высокая контрастность"
+msgstr "Augsts kontrasts"
+
+#: src/malferma_libro/books.py:578 src/malferma_libro/outline_ui.py:121
+msgid "Глава {number}"
+msgstr "Nodaļa {number}"
+
+#: src/malferma_libro/app.py:424 src/malferma_libro/app.py:425 src/malferma_libro/shortcuts.py:26
+msgid "Главное меню"
+msgstr "Galvenā izvēlne"
+
+#: src/malferma_libro/outline_ui.py:70
+msgid "Главы"
+msgstr "Nodaļas"
+
+#: src/malferma_libro/narration_ui.py:39
+msgid "Голос"
+msgstr "Balss"
+
+#: src/malferma_libro/speech.py:387
+msgid "Голос Piper «{language}» не установлен. Загрузите голос в настройках."
+msgstr "Valodai “{language}” nav instalēta Piper balss. Lejupielādējiet balsi iestatījumos."
+
+#: src/malferma_libro/voices.py:427
+msgid "Голос Piper для выбранного языка недоступен."
+msgstr "Izvēlētajai valodai nav pieejama Piper balss."
+
+#: src/malferma_libro/narration_ui.py:145 src/malferma_libro/narration_ui.py:193
+msgid "Голос готов: {voice}"
+msgstr "Balss ir gatava: {voice}"
+
+#: src/malferma_libro/narration_ui.py:89
+msgid "Голос установлен"
+msgstr "Balss ir instalēta"
+
+#: src/malferma_libro/accessibility_ui.py:263
+msgid "Голоса Piper"
+msgstr "Piper balsis"
+
+#: src/malferma_libro/app.py:421 src/malferma_libro/app.py:664 src/malferma_libro/keybindings_ui.py:39 src/malferma_libro/keybindings_ui.py:46 src/malferma_libro/shortcuts.py:44
+msgid "Горячие клавиши"
+msgstr "Tastatūras saīsnes"
+
+#: src/malferma_libro/app.py:1531
+msgid "Готово к озвучке"
+msgstr "Gatavs lasīšanai balsī"
+
+#: src/malferma_libro/app.py:2075
+msgid "Далее"
+msgstr "Tālāk"
+
+#: src/malferma_libro/djvu.py:185
+msgid "Данные страницы DjVu превышают допустимый размер"
+msgstr "DjVu lappuses dati pārsniedz atļauto izmēru"
+
+#: src/malferma_libro/pdf.py:120
+msgid "Данные страницы PDF превышают допустимый размер"
+msgstr "PDF lappuses dati pārsniedz atļauto izmēru"
+
+#: src/malferma_libro/task_ui.py:130
+msgid "Действие отменено: {action}. Уже выполненные изменения сохраняются."
+msgstr "Darbība atcelta: {action}. Jau veiktās izmaiņas tiek saglabātas."
+
+#: src/malferma_libro/speech.py:251
+msgid "Для воспроизведения озвучки установите paplay или aplay."
+msgstr "Lai atskaņotu lasījumu balsī, instalējiet paplay vai aplay."
+
+#: src/malferma_libro/__main__.py:110
+msgid "Для запуска нужны GTK 4, libadwaita и PyGObject. На Debian 13 выполните:\nsudo apt install python3-gi gir1.2-gtk-4.0 gir1.2-adw-1 poppler-utils djvulibre-bin\nЗапускайте приложение через /usr/bin/python3.\nПодробности: {error}"
+msgstr "Lai palaistu lietotni, nepieciešami GTK 4, libadwaita un PyGObject. Debian 13 sistēmā izpildiet:\nsudo apt install python3-gi gir1.2-gtk-4.0 gir1.2-adw-1 poppler-utils djvulibre-bin\nPalaidiet lietotni ar /usr/bin/python3.\nSīkāka informācija: {error}"
+
+#: src/malferma_libro/app.py:2118
+msgid "Для локального Calibre: http://адрес:8080/opds"
+msgstr "Vietējam Calibre: http://адрес:8080/opds"
+
+#: src/malferma_libro/speech.py:251
+msgid "Для озвучки установите Piper по инструкции в руководстве пользователя."
+msgstr "Lai lasītu balsī, instalējiet Piper saskaņā ar lietotāja rokasgrāmatā sniegtajiem norādījumiem."
+
+#: src/malferma_libro/narration_ui.py:54
+msgid "Для своего голоса выберите файл .onnx с соседним .onnx.json. Условия использования задаёт автор модели."
+msgstr "Savai balsij izvēlieties .onnx datni, kurai tajā pašā mapē ir atbilstošā .onnx.json datne. Lietošanas noteikumus nosaka modeļa autors."
+
+#: src/malferma_libro/djvu.py:39
+msgid "Для чтения DjVu установите пакет djvulibre-bin: sudo apt install djvulibre-bin."
+msgstr "Lai lasītu DjVu, instalējiet pakotni djvulibre-bin: sudo apt install djvulibre-bin."
+
+#: src/malferma_libro/markup.py:386
+msgid "Для чтения Markdown установите пакет python3-markdown-it."
+msgstr "Lai lasītu Markdown, instalējiet pakotni python3-markdown-it."
+
+#: src/malferma_libro/pdf.py:45
+msgid "Для чтения PDF установите пакет poppler-utils: sudo apt install poppler-utils."
+msgstr "Lai lasītu PDF, instalējiet pakotni poppler-utils: sudo apt install poppler-utils."
+
+#: src/malferma_libro/narration_ui.py:87
+msgid "Для этого языка добавьте свою модель Piper."
+msgstr "Šai valodai pievienojiet savu Piper modeli."
+
+#: src/malferma_libro/app.py:1175
+msgid "Дневной"
+msgstr "Dienas"
+
+#: src/malferma_libro/shortcuts.py:48
+msgid "Дневной / ночной режим"
+msgstr "Dienas / nakts režīms"
+
+#: src/malferma_libro/app.py:2108 src/malferma_libro/app.py:812 src/malferma_libro/desktop.py:252
+msgid "Добавить"
+msgstr "Pievienot"
+
+#: src/malferma_libro/app.py:2106
+msgid "Добавить OPDS-каталог"
+msgstr "Pievienot OPDS katalogu"
+
+#: src/malferma_libro/narration_ui.py:45
+msgid "Добавить голос…"
+msgstr "Pievienot balsi…"
+
+#: src/malferma_libro/app.py:2059
+msgid "Добавить каталог"
+msgstr "Pievienot katalogu"
+
+#: src/malferma_libro/narration_ui.py:158 src/malferma_libro/narration_ui.py:160
+msgid "Добавить модель Piper"
+msgstr "Pievienot Piper modeli"
+
+#: src/malferma_libro/narration_ui.py:196
+msgid "Добавление голоса…"
+msgstr "Pievieno balsi…"
+
+#: src/malferma_libro/app.py:858
+msgid "Добавление книг: {count}…"
+msgstr "Tiek pievienotas grāmatas: {count}…"
+
+#: src/malferma_libro/app.py:2055 src/malferma_libro/app.py:2103
+msgid "Добавьте каталог"
+msgstr "Pievienojiet katalogu"
+
+#: src/malferma_libro/app.py:387
+msgid "Добавьте книгу или подключите OPDS-каталог."
+msgstr "Pievienojiet grāmatu vai izveidojiet savienojumu ar OPDS katalogu."
+
+#: src/malferma_libro/app.py:1490
+msgid "Дождитесь загрузки страницы."
+msgstr "Uzgaidiet, līdz lappuse tiek ielādēta."
+
+#: src/malferma_libro/opds.py:122
+msgid "Допустимы только адреса HTTP и HTTPS."
+msgstr "Atļautas tikai HTTP un HTTPS adreses."
+
+#: src/malferma_libro/app.py:1209
+msgid "Жесты мышью"
+msgstr "Peles žesti"
+
+#: src/malferma_libro/narration_ui.py:44
+msgid "Загрузить голос"
+msgstr "Lejupielādēt balsi"
+
+#: src/malferma_libro/narration_ui.py:148
+msgid "Загрузка голоса: {voice}"
+msgstr "Lejupielādē balsi: {voice}"
+
+#: src/malferma_libro/app.py:2173
+msgid "Загрузка каталога…"
+msgstr "Ielādē katalogu…"
+
+#: src/malferma_libro/app.py:1744
+msgid "Загрузка страницы {page}"
+msgstr "Ielādē lappusi {page}"
+
+#: src/malferma_libro/app.py:1745 src/malferma_libro/app.py:1822
+msgid "Загрузка страницы {page}…"
+msgstr "Ielādē lappusi {page}…"
+
+#: src/malferma_libro/app.py:962
+msgid "Загрузка страницы…"
+msgstr "Ielādē lappusi…"
+
+#: src/malferma_libro/bookmarks_ui.py:37
+msgid "Закладка"
+msgstr "Grāmatzīme"
+
+#: src/malferma_libro/bookmarks_ui.py:64
+msgid "Закладка больше недоступна."
+msgstr "Grāmatzīme vairs nav pieejama."
+
+#: src/malferma_libro/bookmarks_ui.py:60
+msgid "Закладка добавлена."
+msgstr "Grāmatzīme ir pievienota."
+
+#: src/malferma_libro/app.py:904 src/malferma_libro/app.py:905
+msgid "Закладки"
+msgstr "Grāmatzīmes"
+
+#: src/malferma_libro/bookmarks_ui.py:105
+msgid "Закладок пока нет."
+msgstr "Vēl nav grāmatzīmju."
+
+#: src/malferma_libro/task_ui.py:202 src/malferma_libro/task_ui.py:202
+msgid "Закрыть"
+msgstr "Aizvērt"
+
+#: src/malferma_libro/shortcuts.py:46
+msgid "Закрыть приложение"
+msgstr "Aizvērt lietotni"
+
+#: src/malferma_libro/bookmarks_ui.py:132 src/malferma_libro/bookmarks_ui.py:173 src/malferma_libro/bookmarks_ui.py:187
+msgid "Заметка к закладке"
+msgstr "Piezīme pie grāmatzīmes"
+
+#: src/malferma_libro/bookmarks_ui.py:222
+msgid "Заметка слишком длинная: максимум {limit} символов."
+msgstr "Piezīme ir pārāk gara: ne vairāk kā {limit} rakstzīmes."
+
+#: src/malferma_libro/books.py:413
+msgid "Зашифрованные архивы книг не поддерживаются"
+msgstr "Šifrēti grāmatu arhīvi netiek atbalstīti"
+
+#: src/malferma_libro/app.py:1531
+msgid "Идёт озвучка текущей главы"
+msgstr "Pašreizējā nodaļa tiek lasīta balsī"
+
+#: src/malferma_libro/keybindings_ui.py:70
+msgid "Изменить сочетание"
+msgstr "Mainīt taustiņu kombināciju"
+
+#: src/malferma_libro/library_ui.py:190 src/malferma_libro/library_ui.py:191
+msgid "Изменить статус чтения"
+msgstr "Mainīt lasīšanas statusu"
+
+#: src/malferma_libro/djvu.py:182
+msgid "Изображение страницы DjVu превышает допустимый размер"
+msgstr "DjVu lappuses attēls pārsniedz atļauto izmēru"
+
+#: src/malferma_libro/pdf.py:302
+msgid "Изображение страницы PDF превышает допустимый размер"
+msgstr "PDF lappuses attēls pārsniedz atļauto izmēru"
+
+#: src/malferma_libro/app.py:1147
+msgid "Интерфейс"
+msgstr "Saskarne"
+
+#: src/malferma_libro/keybindings_ui.py:150
+msgid "Используйте Ctrl, Alt или функциональную клавишу."
+msgstr "Izmantojiet Ctrl, Alt vai funkciju taustiņu."
+
+#: src/malferma_libro/app.py:1150 src/malferma_libro/app.py:1175
+msgid "Как в системе"
+msgstr "Kā sistēmā"
+
+#: src/malferma_libro/opds.py:439
+msgid "Каталог"
+msgstr "Katalogs"
+
+#: src/malferma_libro/app.py:2216
+msgid "Каталог загружен. Записей: {count}."
+msgstr "Katalogs ir ielādēts. Ieraksti: {count}."
+
+#: src/malferma_libro/app.py:2071
+msgid "Каталог не открыт"
+msgstr "Katalogs nav atvērts"
+
+#: src/malferma_libro/opds.py:381
+msgid "Каталог слишком большой."
+msgstr "Katalogs ir pārāk liels."
+
+#: src/malferma_libro/app.py:2141
+msgid "Каталог удалён из списка."
+msgstr "Katalogs ir noņemts no saraksta."
+
+#: src/malferma_libro/opds.py:388
+msgid "Каталог: {exc}."
+msgstr "Katalogs: {exc}."
+
+#: src/malferma_libro/opds.py:384
+msgid "Каталоги с DTD или XML-сущностями не поддерживаются."
+msgstr "Katalogi ar DTD vai XML entītijām netiek atbalstīti."
+
+#: src/malferma_libro/library_ui.py:104
+msgid "Книг: {count}"
+msgstr "Grāmatas: {count}"
+
+#: src/malferma_libro/opds.py:447 src/malferma_libro/opds.py:463 src/malferma_libro/opds.py:469
+msgid "Книга"
+msgstr "Grāmata"
+
+#: src/malferma_libro/library_ui.py:256
+msgid "Книга «{title}» уже добавлена. Сохранённые закладки и место чтения будут использованы."
+msgstr "Grāmata “{title}” jau ir pievienota. Tiks izmantotas saglabātās grāmatzīmes un lasīšanas vieta."
+
+#: src/malferma_libro/app.py:787
+msgid "Книга готова к чтению в библиотеке."
+msgstr "Grāmata ir gatava lasīšanai bibliotēkā."
+
+#: src/malferma_libro/storage.py:709
+msgid "Книга не найдена: {book_id}"
+msgstr "Grāmata nav atrasta: {book_id}"
+
+#: src/malferma_libro/outline_ui.py:48
+msgid "Книга не открыта"
+msgstr "Grāmata nav atvērta"
+
+#: src/malferma_libro/app.py:1664
+msgid "Книга открыта. Позиция чтения сохраняется автоматически."
+msgstr "Grāmata ir atvērta. Lasīšanas vieta tiek saglabāta automātiski."
+
+#: src/malferma_libro/books.py:855 src/malferma_libro/books.py:98 src/malferma_libro/markup.py:63 src/malferma_libro/markup.py:67
+msgid "Книга превышает допустимый размер (64 МиБ)"
+msgstr "Grāmata pārsniedz atļauto izmēru (64 MiB)"
+
+#: src/malferma_libro/opds.py:533
+msgid "Книга превышает допустимый размер."
+msgstr "Grāmata pārsniedz atļauto izmēru."
+
+#: src/malferma_libro/library_ui.py:255
+msgid "Книга уже в библиотеке"
+msgstr "Grāmata jau ir bibliotēkā"
+
+#: src/malferma_libro/desktop.py:28
+msgid "Книги (EPUB, FB2, FB2.ZIP, TXT, PDF, DjVu, HTML, Markdown, CBZ)"
+msgstr "Grāmatas (EPUB, FB2, FB2.ZIP, TXT, PDF, DjVu, HTML, Markdown, CBZ)"
+
+#: src/malferma_libro/speech.py:471
+msgid "Код завершения {code}"
+msgstr "Izejas kods {code}"
+
+#: src/malferma_libro/books.py:753
+msgid "Комментарии"
+msgstr "Komentāri"
+
+#: src/malferma_libro/keyboard_navigation.py:30
+msgid "Конец главы или страницы"
+msgstr "Nodaļas vai lapas beigas"
+
+#: src/malferma_libro/keyboard_navigation.py:33
+msgid "Конец книги"
+msgstr "Grāmatas beigas"
+
+#: src/malferma_libro/djvu.py:296
+msgid "Копирование DjVu не завершено: размер книги изменился"
+msgstr "DjVu kopēšana nav pabeigta: grāmatas izmērs ir mainījies"
+
+#: src/malferma_libro/pdf.py:185
+msgid "Копирование PDF не завершено: размер книги изменился"
+msgstr "PDF kopēšana nav pabeigta: grāmatas izmērs ir mainījies"
+
+#: src/malferma_libro/app.py:1047
+msgid "Копировать"
+msgstr "Kopēt"
+
+#: src/malferma_libro/accessibility_ui.py:295
+msgid "Лупа области чтения"
+msgstr "Lasīšanas apgabala lupa"
+
+#: src/malferma_libro/app.py:1192
+msgid "Максимальная ширина текста"
+msgstr "Maksimālais teksta platums"
+
+#: src/malferma_libro/djvu.py:354
+msgid "Масштаб DjVu должен быть положительным числом"
+msgstr "DjVu mērogam jābūt pozitīvam skaitlim"
+
+#: src/malferma_libro/pdf.py:255
+msgid "Масштаб PDF должен быть положительным числом"
+msgstr "PDF mērogam jābūt pozitīvam skaitlim"
+
+#: src/malferma_libro/app.py:881 src/malferma_libro/app.py:885
+msgid "Масштаб страницы, %"
+msgstr "Lappuses mērogs, %"
+
+#: src/malferma_libro/accessibility_ui.py:287 src/malferma_libro/app.py:1207
+msgid "Межстрочный интервал"
+msgstr "Rindstarpa"
+
+#: src/malferma_libro/djvu.py:102
+msgid "Многофайловый DjVu не поддерживается. Сначала объедините книгу в один файл командой djvmcvt -b."
+msgstr "Vairākfailu DjVu netiek atbalstīts. Vispirms apvienojiet grāmatu vienā failā ar komandu djvmcvt -b."
+
+#: src/malferma_libro/narration_ui.py:162
+msgid "Модель Piper (*.onnx)"
+msgstr "Piper modelis (*.onnx)"
+
+#: src/malferma_libro/narration_ui.py:76 src/malferma_libro/narration_ui.py:84 src/malferma_libro/narration_ui.py:89
+msgid "Модель голоса не установлена"
+msgstr "Balss modelis nav instalēts"
+
+#: src/malferma_libro/app.py:366 src/malferma_libro/app.py:414 src/malferma_libro/shortcuts.py:38
+msgid "Мои книги"
+msgstr "Manas grāmatas"
+
+#: src/malferma_libro/app.py:2112
+msgid "Моя библиотека"
+msgstr "Mana bibliotēka"
+
+#: src/malferma_libro/keyboard_navigation.py:25
+msgid "На экран вверх"
+msgstr "Vienu ekrānu uz augšu"
+
+#: src/malferma_libro/keyboard_navigation.py:26
+msgid "На экран вниз"
+msgstr "Vienu ekrānu uz leju"
+
+#: src/malferma_libro/app.py:1493
+msgid "На этой странице нет доступного текста для озвучки. Распознавание сканов пока не поддерживается."
+msgstr "Šajā lappusē nav lasīšanai balsī pieejama teksta. Skenējumu teksta atpazīšana vēl netiek atbalstīta."
+
+#: src/malferma_libro/keybindings_ui.py:208 src/malferma_libro/keybindings_ui.py:221
+msgid "Нажмите новое сочетание клавиш."
+msgstr "Nospiediet jauno taustiņu kombināciju."
+
+#: src/malferma_libro/app.py:2068
+msgid "Назад"
+msgstr "Atpakaļ"
+
+#: src/malferma_libro/app.py:2111
+msgid "Название"
+msgstr "Nosaukums"
+
+#: src/malferma_libro/library_ui.py:33
+msgid "Название или автор"
+msgstr "Nosaukums vai autors"
+
+#: src/malferma_libro/search_ui.py:313
+msgid "Найдено в тексте страницы: {query}"
+msgstr "Atrasts lappuses tekstā: {query}"
+
+#: src/malferma_libro/search_ui.py:314
+msgid "Найдено: {query}"
+msgstr "Atrasts: {query}"
+
+#: src/malferma_libro/app.py:2083 src/malferma_libro/app.py:374 src/malferma_libro/app.py:375 src/malferma_libro/app.py:524 src/malferma_libro/app.py:899 src/malferma_libro/shortcuts.py:32
+msgid "Найти"
+msgstr "Meklēt"
+
+#: src/malferma_libro/app.py:1141 src/malferma_libro/app.py:1144 src/malferma_libro/app.py:419 src/malferma_libro/shortcuts.py:34
+msgid "Настройки"
+msgstr "Iestatījumi"
+
+#: src/malferma_libro/keyboard_navigation.py:29
+msgid "Начало главы или страницы"
+msgstr "Nodaļas vai lapas sākums"
+
+#: src/malferma_libro/keyboard_navigation.py:31
+msgid "Начало книги"
+msgstr "Grāmatas sākums"
+
+#: src/malferma_libro/library_ui.py:13
+msgid "Не начато"
+msgstr "Nav sākta"
+
+#: src/malferma_libro/speech.py:461
+msgid "Не удалось воспроизвести озвучку."
+msgstr "Neizdevās atskaņot lasījumu balsī."
+
+#: src/malferma_libro/app.py:625
+msgid "Не удалось выполнить действие"
+msgstr "Neizdevās veikt darbību"
+
+#: src/malferma_libro/search_ui.py:179
+msgid "Не удалось выполнить поиск."
+msgstr "Neizdevās veikt meklēšanu."
+
+#: src/malferma_libro/app.py:2128
+msgid "Не удалось добавить каталог"
+msgstr "Neizdevās pievienot katalogu"
+
+#: src/malferma_libro/speech.py:459
+msgid "Не удалось загрузить голос Piper."
+msgstr "Neizdevās ielādēt Piper balsi."
+
+#: src/malferma_libro/app.py:1815
+msgid "Не удалось загрузить страницу {page}"
+msgstr "Neizdevās ielādēt lappusi {page}"
+
+#: src/malferma_libro/app.py:1816
+msgid "Не удалось загрузить страницу. Нажмите «Повторить» или выберите другую страницу."
+msgstr "Neizdevās ielādēt lappusi. Nospiediet „Mēģināt vēlreiz“ vai izvēlieties citu lappusi."
+
+#: src/malferma_libro/speech.py:458
+msgid "Не удалось запустить Piper."
+msgstr "Neizdevās palaist Piper."
+
+#: src/malferma_libro/pdf.py:108
+msgid "Не удалось запустить обработчик PDF. "
+msgstr "Neizdevās palaist PDF apstrādes programmu. "
+
+#: src/malferma_libro/djvu.py:191
+msgid "Не удалось обработать DjVu. "
+msgstr "Neizdevās apstrādāt DjVu. "
+
+#: src/malferma_libro/cbz.py:384 src/malferma_libro/cbz.py:467
+msgid "Не удалось обработать изображение страницы CBZ."
+msgstr "Neizdevās apstrādāt CBZ lapas attēlu."
+
+#: src/malferma_libro/speech.py:453
+msgid "Не удалось озвучить текст: {error}"
+msgstr "Neizdevās nolasīt tekstu balsī: {error}"
+
+#: src/malferma_libro/speech.py:258
+msgid "Не удалось определить поддерживаемый язык озвучки. Выберите русский, украинский, английский, немецкий, французский, испанский, итальянский или португальский в настройках."
+msgstr "Neizdevās noteikt atbalstītu lasīšanas balsī valodu. Iestatījumos izvēlieties krievu, ukraiņu, angļu, vācu, franču, spāņu, itāļu vai portugāļu valodu."
+
+#: src/malferma_libro/djvu.py:320
+msgid "Не удалось определить размер страницы DjVu"
+msgstr "Neizdevās noteikt DjVu lappuses izmēru"
+
+#: src/malferma_libro/pdf.py:128
+msgid "Не удалось определить размер страницы PDF"
+msgstr "Neizdevās noteikt PDF lappuses izmēru"
+
+#: src/malferma_libro/app.py:238
+msgid "Не удалось открыть библиотеку"
+msgstr "Neizdevās atvērt bibliotēku"
+
+#: src/malferma_libro/djvu.py:51
+msgid "Не удалось открыть файл DjVu"
+msgstr "Neizdevās atvērt DjVu failu"
+
+#: src/malferma_libro/pdf.py:68
+msgid "Не удалось открыть файл PDF"
+msgstr "Neizdevās atvērt PDF failu"
+
+#: src/malferma_libro/opds.py:486
+msgid "Не удалось подобрать свободное имя файла."
+msgstr "Neizdevās atrast brīvu faila nosaukumu."
+
+#: src/malferma_libro/task_ui.py:195
+msgid "Не удалось получить данные. Проверьте соединение и адрес каталога, затем повторите действие."
+msgstr "Neizdevās saņemt datus. Pārbaudiet savienojumu un kataloga adresi un mēģiniet vēlreiz."
+
+#: src/malferma_libro/opds.py:220
+msgid "Не удалось получить данные: {exc}"
+msgstr "Neizdevās saņemt datus: {exc}"
+
+#: src/malferma_libro/cbz.py:54
+msgid "Не удалось прочитать CBZ: архив повреждён, не поддерживается или превышает допустимые ограничения."
+msgstr "Neizdevās nolasīt CBZ: arhīvs ir bojāts, netiek atbalstīts vai pārsniedz pieļaujamos ierobežojumus."
+
+#: src/malferma_libro/djvu.py:179
+msgid "Не удалось прочитать DjVu: файл повреждён или имеет неподдерживаемую структуру"
+msgstr "Neizdevās nolasīt DjVu: fails ir bojāts vai tā struktūra netiek atbalstīta"
+
+#: src/malferma_libro/pdf.py:118
+msgid "Не удалось прочитать PDF: файл повреждён или имеет неподдерживаемую структуру"
+msgstr "Neizdevās nolasīt PDF: fails ir bojāts vai tā struktūra netiek atbalstīta"
+
+#: src/malferma_libro/books.py:874 src/malferma_libro/markup.py:70
+msgid "Не удалось прочитать книгу: {exc}"
+msgstr "Neizdevās nolasīt grāmatu: {exc}"
+
+#: src/malferma_libro/search_ui.py:220
+msgid "Не удалось прочитать текст на страницах: {count}."
+msgstr "Neizdevās nolasīt tekstu {count} lappusēs."
+
+#: src/malferma_libro/books.py:432
+msgid "Не удалось распаковать файл книги: {name}"
+msgstr "Neizdevās izpakot failu no grāmatas arhīva: {name}"
+
+#: src/malferma_libro/speech.py:460
+msgid "Не удалось синтезировать речь Piper."
+msgstr "Neizdevās sintezēt runu ar Piper."
+
+#: src/malferma_libro/voices.py:416 src/malferma_libro/voices.py:418
+msgid "Не удалось скачать голос Piper."
+msgstr "Neizdevās lejupielādēt Piper balsi."
+
+#: src/malferma_libro/app.py:1580 src/malferma_libro/app.py:1610 src/malferma_libro/app.py:1632 src/malferma_libro/keybindings_ui.py:295 src/malferma_libro/library_ui.py:206
+msgid "Не удалось сохранить библиотеку"
+msgstr "Neizdevās saglabāt bibliotēku"
+
+#: src/malferma_libro/voices.py:448 src/malferma_libro/voices.py:516
+msgid "Не удалось сохранить голос Piper."
+msgstr "Neizdevās saglabāt Piper balsi."
+
+#: src/malferma_libro/bookmarks_ui.py:57
+msgid "Не удалось сохранить закладку"
+msgstr "Neizdevās saglabāt grāmatzīmi"
+
+#: src/malferma_libro/bookmarks_ui.py:227
+msgid "Не удалось сохранить заметку"
+msgstr "Neizdevās saglabāt piezīmi"
+
+#: src/malferma_libro/cbz.py:498
+msgid "Не удалось сохранить изображение страницы CBZ."
+msgstr "Neizdevās saglabāt CBZ lappuses attēlu."
+
+#: src/malferma_libro/djvu.py:391
+msgid "Не удалось сохранить изображение страницы DjVu"
+msgstr "Neizdevās saglabāt DjVu lappuses attēlu"
+
+#: src/malferma_libro/pdf.py:307
+msgid "Не удалось сохранить изображение страницы PDF"
+msgstr "Neizdevās saglabāt PDF lappuses attēlu"
+
+#: src/malferma_libro/app.py:2017
+msgid "Не удалось сохранить место чтения"
+msgstr "Neizdevās saglabāt lasīšanas vietu"
+
+#: src/malferma_libro/app.py:2143
+msgid "Не удалось сохранить список каталогов"
+msgstr "Neizdevās saglabāt katalogu sarakstu"
+
+#: src/malferma_libro/bookmarks_ui.py:85
+msgid "Не удалось удалить закладку"
+msgstr "Neizdevās noņemt grāmatzīmi"
+
+#: src/malferma_libro/opds.py:115
+msgid "Не указан адрес каталога."
+msgstr "Nav norādīta kataloga adrese."
+
+#: src/malferma_libro/opds.py:126 src/malferma_libro/opds.py:130 src/malferma_libro/opds.py:146
+msgid "Неверный адрес сервера."
+msgstr "Nederīga servera adrese."
+
+#: src/malferma_libro/library_ui.py:39
+msgid "Недавние"
+msgstr "Nesenās"
+
+#: src/malferma_libro/djvu.py:283
+msgid "Недопустимое количество страниц DjVu"
+msgstr "Nederīgs DjVu lappušu skaits"
+
+#: src/malferma_libro/pdf.py:169
+msgid "Недопустимое количество страниц PDF"
+msgstr "Nederīgs PDF lappušu skaits"
+
+#: src/malferma_libro/cbz.py:354 src/malferma_libro/cbz.py:453
+msgid "Недопустимые параметры страницы CBZ."
+msgstr "Nederīgi CBZ lapas parametri."
+
+#: src/malferma_libro/djvu.py:352
+msgid "Недопустимый масштаб DjVu"
+msgstr "Nederīgs DjVu mērogs"
+
+#: src/malferma_libro/pdf.py:253
+msgid "Недопустимый масштаб PDF"
+msgstr "Nederīgs PDF mērogs"
+
+#: src/malferma_libro/pdf.py:154
+msgid "Недопустимый пароль PDF"
+msgstr "Nederīga PDF parole"
+
+#: src/malferma_libro/books.py:408
+msgid "Недопустимый путь в архиве книги"
+msgstr "Nederīgs ceļš grāmatas arhīvā"
+
+#: src/malferma_libro/books.py:450
+msgid "Недопустимый путь во внутренней ссылке EPUB"
+msgstr "Nederīgs ceļš iekšējā EPUB saitē"
+
+#: src/malferma_libro/djvu.py:119
+msgid "Недопустимый размер страницы DjVu"
+msgstr "Nederīgs DjVu lappuses izmērs"
+
+#: src/malferma_libro/pdf.py:132 src/malferma_libro/pdf.py:134
+msgid "Недопустимый размер страницы PDF"
+msgstr "Nederīgs PDF lappuses izmērs"
+
+#: src/malferma_libro/storage.py:199
+msgid "Неизвестная версия файла библиотеки."
+msgstr "Nezināma bibliotēkas faila versija."
+
+#: src/malferma_libro/speech.py:237
+msgid "Неизвестный язык озвучки: {language}."
+msgstr "Nezināma lasīšanas balsī valoda: {language}."
+
+#: src/malferma_libro/storage.py:222 src/malferma_libro/storage.py:752 src/malferma_libro/storage.py:788
+msgid "Некорректная закладка."
+msgstr "Nederīga grāmatzīme."
+
+#: src/malferma_libro/storage.py:206
+msgid "Некорректная запись книги."
+msgstr "Nederīgs grāmatas ieraksts."
+
+#: src/malferma_libro/keybindings_ui.py:151
+msgid "Некорректное сочетание клавиш."
+msgstr "Nederīga taustiņu kombinācija."
+
+#: src/malferma_libro/storage.py:236
+msgid "Некорректные настройки библиотеки."
+msgstr "Nederīgi bibliotēkas iestatījumi."
+
+#: src/malferma_libro/storage.py:139 src/malferma_libro/storage.py:212 src/malferma_libro/storage.py:481 src/malferma_libro/storage.py:483 src/malferma_libro/storage.py:542
+msgid "Некорректные сведения о книге."
+msgstr "Nederīga grāmatas informācija."
+
+#: src/malferma_libro/storage.py:209
+msgid "Некорректный идентификатор книги."
+msgstr "Nederīgs grāmatas identifikators."
+
+#: src/malferma_libro/storage.py:242
+msgid "Некорректный каталог."
+msgstr "Nederīgs katalogs."
+
+#: src/malferma_libro/storage.py:214
+msgid "Некорректный путь к книге."
+msgstr "Nederīgs ceļš uz grāmatu."
+
+#: src/malferma_libro/storage.py:58
+msgid "Некорректный размер шрифта."
+msgstr "Nederīgs fonta izmērs."
+
+#: src/malferma_libro/storage.py:218
+msgid "Некорректный список закладок."
+msgstr "Nederīgs grāmatzīmju saraksts."
+
+#: src/malferma_libro/storage.py:239
+msgid "Некорректный список каталогов."
+msgstr "Nederīgs katalogu saraksts."
+
+#: src/malferma_libro/storage.py:201
+msgid "Некорректный список книг."
+msgstr "Nederīgs grāmatu saraksts."
+
+#: src/malferma_libro/storage.py:194 src/malferma_libro/storage.py:256
+msgid "Некорректный файл библиотеки."
+msgstr "Nederīgs bibliotēkas fails."
+
+#: src/malferma_libro/app.py:854
+msgid "Некоторые книги не удалось открыть"
+msgstr "Dažas grāmatas neizdevās atvērt"
+
+#: src/malferma_libro/cbz.py:487 src/malferma_libro/djvu.py:376 src/malferma_libro/pdf.py:279
+msgid "Нельзя заменить файл книги изображением страницы"
+msgstr "Grāmatas failu nevar aizstāt ar lappuses attēlu"
+
+#: src/malferma_libro/djvu.py:108
+msgid "Неподдерживаемая версия каталога DjVu"
+msgstr "Neatbalstīta DjVu kataloga versija"
+
+#: src/malferma_libro/djvu.py:96
+msgid "Неподдерживаемая структура документа DjVu"
+msgstr "Neatbalstīta DjVu dokumenta struktūra"
+
+#: src/malferma_libro/djvu.py:68
+msgid "Неподдерживаемый тип документа DjVu"
+msgstr "Neatbalstīts DjVu dokumenta tips"
+
+#: src/malferma_libro/books.py:596
+msgid "Неподдерживаемый формат главы EPUB: {media}"
+msgstr "Neatbalstīts EPUB nodaļas formāts: {media}"
+
+#: src/malferma_libro/task_ui.py:193
+msgid "Нет доступа. Проверьте права на файл или выберите другой каталог."
+msgstr "Piekļuve liegta. Pārbaudiet faila atļaujas vai izvēlieties citu mapi."
+
+#: src/malferma_libro/app.py:2209
+msgid "Нет поддерживаемой прямой загрузки"
+msgstr "Nav atbalstītas tiešās lejupielādes"
+
+#: src/malferma_libro/library_ui.py:160 src/malferma_libro/search_ui.py:218
+msgid "Ничего не найдено."
+msgstr "Nekas nav atrasts."
+
+#: src/malferma_libro/djvu.py:310
+msgid "Номер страницы DjVu вне допустимого диапазона"
+msgstr "DjVu lappuses numurs ir ārpus atļautā diapazona"
+
+#: src/malferma_libro/pdf.py:211
+msgid "Номер страницы PDF вне допустимого диапазона"
+msgstr "PDF lappuses numurs ir ārpus atļautā diapazona"
+
+#: src/malferma_libro/app.py:1175
+msgid "Ночной"
+msgstr "Nakts"
+
+#: src/malferma_libro/app.py:422
+msgid "О приложении"
+msgstr "Par lietotni"
+
+#: src/malferma_libro/cover_ui.py:112 src/malferma_libro/cover_ui.py:120
+msgid "Обложка книги «{title}»"
+msgstr "Grāmatas „{title}“ vāks"
+
+#: src/malferma_libro/cover_ui.py:130
+msgid "Обложка недоступна"
+msgstr "Grāmatas vāks nav pieejams"
+
+#: src/malferma_libro/djvu.py:175
+msgid "Обработка DjVu заняла слишком много времени"
+msgstr "DjVu apstrāde aizņēma pārāk ilgu laiku"
+
+#: src/malferma_libro/pdf.py:104
+msgid "Обработка PDF заняла слишком много времени"
+msgstr "PDF apstrāde aizņēma pārāk ilgu laiku"
+
+#: src/malferma_libro/djvu.py:245
+msgid "Обработчик DjVu создал недопустимое изображение страницы"
+msgstr "DjVu apstrādes programma izveidoja nederīgu lappuses attēlu"
+
+#: src/malferma_libro/pdf.py:291
+msgid "Обработчик PDF не создал изображение страницы"
+msgstr "PDF apstrādes programma neizveidoja lappuses attēlu"
+
+#: src/malferma_libro/pdf.py:295
+msgid "Обработчик PDF создал недопустимое изображение"
+msgstr "PDF apstrādes programma izveidoja nederīgu attēlu"
+
+#: src/malferma_libro/app.py:525 src/malferma_libro/app.py:865 src/malferma_libro/app.py:866 src/malferma_libro/outline_ui.py:36 src/malferma_libro/outline_ui.py:47 src/malferma_libro/shortcuts.py:60
+msgid "Оглавление"
+msgstr "Saturs"
+
+#: src/malferma_libro/opds.py:392
+msgid "Ожидался OPDS-каталог в формате Atom."
+msgstr "Tika gaidīts OPDS katalogs Atom formātā."
+
+#: src/malferma_libro/task_ui.py:106 src/malferma_libro/task_ui.py:147
+msgid "Ожидание данных…"
+msgstr "Gaida datus…"
+
+#: src/malferma_libro/app.py:1000 src/malferma_libro/app.py:1000 src/malferma_libro/app.py:1526 src/malferma_libro/shortcuts.py:63
+msgid "Озвучить"
+msgstr "Lasīt balsī"
+
+#: src/malferma_libro/accessibility_ui.py:234 src/malferma_libro/app.py:1210
+msgid "Озвучка"
+msgstr "Lasīšana balsī"
+
+#: src/malferma_libro/app.py:1574
+msgid "Озвучка книги завершена."
+msgstr "Grāmatas lasīšana balsī ir pabeigta."
+
+#: src/malferma_libro/app.py:1531
+msgid "Озвучка приостановлена"
+msgstr "Lasīšana balsī ir pauzēta"
+
+#: src/malferma_libro/app.py:993
+msgid "Озвучка через Piper"
+msgstr "Lasīšana balsī ar Piper"
+
+#: src/malferma_libro/keybindings_ui.py:211 src/malferma_libro/keybindings_ui.py:66
+msgid "Отключено"
+msgstr "Atspējots"
+
+#: src/malferma_libro/keybindings_ui.py:229
+msgid "Отключить"
+msgstr "Atspējot"
+
+#: src/malferma_libro/app.py:907
+msgid "Откройте книгу в библиотеке."
+msgstr "Atveriet grāmatu bibliotēkā."
+
+#: src/malferma_libro/library_ui.py:76
+msgid "Откройте книгу или подключите OPDS-каталог во вкладке «Сетевые библиотеки»."
+msgstr "Atveriet grāmatu vai izveidojiet savienojumu ar OPDS katalogu cilnē „Tīkla bibliotēkas“."
+
+#: src/malferma_libro/app.py:1171
+msgid "Открывать последнюю книгу при запуске"
+msgstr "Palaižot atvērt pēdējo grāmatu"
+
+#: src/malferma_libro/library_ui.py:247
+msgid "Открытие книги…"
+msgstr "Atver grāmatu…"
+
+#: src/malferma_libro/library_ui.py:258
+msgid "Открыть"
+msgstr "Atvērt"
+
+#: src/malferma_libro/bookmarks_ui.py:124
+msgid "Открыть закладку: {chapter}. {excerpt}"
+msgstr "Atvērt grāmatzīmi: {chapter}. {excerpt}"
+
+#: src/malferma_libro/app.py:523 src/malferma_libro/app.py:809 src/malferma_libro/desktop.py:257 src/malferma_libro/shortcuts.py:30
+msgid "Открыть книги"
+msgstr "Atvērt grāmatas"
+
+#: src/malferma_libro/app.py:2203
+msgid "Открыть раздел"
+msgstr "Atvērt sadaļu"
+
+#: src/malferma_libro/app.py:361 src/malferma_libro/narration_ui.py:159
+msgid "Открыть…"
+msgstr "Atvērt…"
+
+#: src/malferma_libro/app.py:2107 src/malferma_libro/app.py:813 src/malferma_libro/bookmarks_ui.py:175 src/malferma_libro/bookmarks_ui.py:175 src/malferma_libro/keybindings_ui.py:230 src/malferma_libro/library_ui.py:257 src/malferma_libro/narration_ui.py:159
+msgid "Отмена"
+msgstr "Atcelt"
+
+#: src/malferma_libro/task_ui.py:127
+msgid "Отмена запрошена"
+msgstr "Pieprasīta atcelšana"
+
+#: src/malferma_libro/task_ui.py:96 src/malferma_libro/task_ui.py:97
+msgid "Отменить"
+msgstr "Atcelt"
+
+#: src/malferma_libro/search_ui.py:25
+msgid "Отменить поиск"
+msgstr "Atcelt meklēšanu"
+
+#: src/malferma_libro/app.py:1170
+msgid "Оформление окна"
+msgstr "Loga noformējums"
+
+#: src/malferma_libro/app.py:1525
+msgid "Пауза"
+msgstr "Pauzēt"
+
+#: src/malferma_libro/library_ui.py:39
+msgid "По автору"
+msgstr "Pēc autora"
+
+#: src/malferma_libro/library_ui.py:39
+msgid "По названию"
+msgstr "Pēc nosaukuma"
+
+#: src/malferma_libro/app.py:1213
+msgid "По тексту главы"
+msgstr "Pēc nodaļas teksta"
+
+#: src/malferma_libro/keybindings_ui.py:227 src/malferma_libro/keybindings_ui.py:49
+msgid "По умолчанию"
+msgstr "Noklusējuma"
+
+#: src/malferma_libro/djvu.py:130
+msgid "Повреждена структура страницы DjVu"
+msgstr "Bojāta DjVu lappuses struktūra"
+
+#: src/malferma_libro/djvu.py:65 src/malferma_libro/djvu.py:87 src/malferma_libro/djvu.py:93
+msgid "Повреждена структура файла DjVu"
+msgstr "Bojāta DjVu faila struktūra"
+
+#: src/malferma_libro/djvu.py:111 src/malferma_libro/djvu.py:116
+msgid "Повреждён каталог страниц DjVu"
+msgstr "Bojāts DjVu lappušu katalogs"
+
+#: src/malferma_libro/books.py:448 src/malferma_libro/books.py:471
+msgid "Повреждённая внутренняя ссылка EPUB"
+msgstr "Bojāta iekšējā EPUB saite"
+
+#: src/malferma_libro/books.py:394
+msgid "Повреждённый ZIP-архив книги"
+msgstr "Bojāts grāmatas ZIP arhīvs"
+
+#: src/malferma_libro/app.py:1490
+msgid "Повторите загрузку страницы."
+msgstr "Mēģiniet ielādēt lappusi vēlreiz."
+
+#: src/malferma_libro/app.py:889 src/malferma_libro/task_ui.py:204 src/malferma_libro/task_ui.py:204
+msgid "Повторить"
+msgstr "Mēģināt vēlreiz"
+
+#: src/malferma_libro/books.py:410
+msgid "Повторяющиеся имена файлов в архиве книги"
+msgstr "Grāmatas arhīvā atkārtojas failu nosaukumi"
+
+#: src/malferma_libro/books.py:557
+msgid "Повторяющийся идентификатор в списке файлов EPUB"
+msgstr "EPUB failu sarakstā atkārtojas identifikators"
+
+#: src/malferma_libro/books.py:851
+msgid "Поддерживаются EPUB, FB2, FB2.ZIP, TXT, PDF, DjVu, HTML, Markdown и CBZ"
+msgstr "Tiek atbalstīti EPUB, FB2, FB2.ZIP, TXT, PDF, DjVu, HTML, Markdown un CBZ"
+
+#: src/malferma_libro/app.py:2097
+msgid "Поддерживаются прямые загрузки EPUB, FB2, TXT, PDF, DjVu, HTML, Markdown и CBZ. Каталоги с авторизацией и DRM пока не поддерживаются."
+msgstr "Tiek atbalstītas tiešās EPUB, FB2, TXT, PDF, DjVu, HTML, Markdown un CBZ lejupielādes. Katalogi ar autentifikāciju un DRM vēl netiek atbalstīti."
+
+#: src/malferma_libro/app.py:2051 src/malferma_libro/app.py:2095
+msgid "Подключите публичный OPDS 1.x каталог или каталог Calibre в локальной сети."
+msgstr "Izveidojiet savienojumu ar publisku OPDS 1.x katalogu vai Calibre katalogu vietējā tīklā."
+
+#: src/malferma_libro/app.py:2058 src/malferma_libro/app.py:2063 src/malferma_libro/app.py:2064
+msgid "Подключиться"
+msgstr "Savienoties"
+
+#: src/malferma_libro/app.py:2079
+msgid "Поиск (если каталог его поддерживает)"
+msgstr "Meklēšana (ja katalogs to atbalsta)"
+
+#: src/malferma_libro/app.py:1796 src/malferma_libro/app.py:1807
+msgid "Поиск и озвучка доступны в тексте страницы."
+msgstr "Lappuses tekstā ir pieejama meklēšana un lasīšana balsī."
+
+#: src/malferma_libro/search_ui.py:118 src/malferma_libro/search_ui.py:186
+msgid "Поиск отменён."
+msgstr "Meklēšana atcelta."
+
+#: src/malferma_libro/app.py:1640 src/malferma_libro/app.py:897 src/malferma_libro/search_ui.py:42
+msgid "Поиск по всей книге"
+msgstr "Meklēt visā grāmatā"
+
+#: src/malferma_libro/search_ui.py:156 src/malferma_libro/search_ui.py:189
+msgid "Поиск по книге…"
+msgstr "Meklē grāmatā…"
+
+#: src/malferma_libro/search_ui.py:216
+msgid "Показаны первые {count} совпадений. Уточните запрос."
+msgstr "Parādītas pirmās {count} atbilstības. Precizējiet vaicājumu."
+
+#: src/malferma_libro/shortcuts.py:42
+msgid "Показать верхнюю панель"
+msgstr "Rādīt augšējo joslu"
+
+#: src/malferma_libro/app.py:382 src/malferma_libro/app.py:465 src/malferma_libro/app.py:521 src/malferma_libro/shortcuts.py:41
+msgid "Полноэкранный режим"
+msgstr "Pilnekrāna režīms"
+
+#: src/malferma_libro/storage.py:126
+msgid "Положение в книге должно быть целым неотрицательным числом."
+msgstr "Vietai grāmatā jābūt nenegatīvam veselam skaitlim."
+
+#: src/malferma_libro/accessibility_ui.py:277 src/malferma_libro/app.py:1206
+msgid "Полужирный текст"
+msgstr "Treknraksts"
+
+#: src/malferma_libro/keybindings_ui.py:49
+msgid "Пользовательские"
+msgstr "Pielāgoti"
+
+#: src/malferma_libro/books.py:593
+msgid "Порядок глав EPUB ссылается на отсутствующий файл"
+msgstr "EPUB nodaļu secība norāda uz trūkstošu failu"
+
+#: src/malferma_libro/app.py:526 src/malferma_libro/app.py:869 src/malferma_libro/shortcuts.py:56
+msgid "Предыдущая глава"
+msgstr "Iepriekšējā nodaļa"
+
+#: src/malferma_libro/keyboard_navigation.py:27
+msgid "Предыдущая страница"
+msgstr "Iepriekšējā lappuse"
+
+#: src/malferma_libro/search_ui.py:19
+msgid "Предыдущее совпадение"
+msgstr "Iepriekšējā atbilstība"
+
+#: src/malferma_libro/app.py:1185
+msgid "Приглушение цветов страницы; яркость монитора не меняется."
+msgstr "Aptumšo lappuses krāsas; monitora spilgtums nemainās."
+
+#: src/malferma_libro/accessibility_ui.py:288 src/malferma_libro/app.py:1208
+msgid "Применить"
+msgstr "Lietot"
+
+#: src/malferma_libro/books.py:770
+msgid "Примечание {number}"
+msgstr "Piezīme {number}"
+
+#: src/malferma_libro/books.py:753 src/malferma_libro/outline_ui.py:119 src/malferma_libro/outline_ui.py:66
+msgid "Примечания"
+msgstr "Piezīmes"
+
+#: src/malferma_libro/task_ui.py:197
+msgid "Проверьте доступ к файлу или каталогу и повторите действие."
+msgstr "Pārbaudiet piekļuvi failam vai mapei un mēģiniet vēlreiz."
+
+#: src/malferma_libro/app.py:1525
+msgid "Продолжить"
+msgstr "Turpināt"
+
+#: src/malferma_libro/library_ui.py:117 src/malferma_libro/library_ui.py:60
+msgid "Продолжить чтение"
+msgstr "Turpināt lasīt"
+
+#: src/malferma_libro/keyboard_navigation.py:23
+msgid "Прокрутить вверх"
+msgstr "Ritināt uz augšu"
+
+#: src/malferma_libro/keyboard_navigation.py:24
+msgid "Прокрутить вниз"
+msgstr "Ritināt uz leju"
+
+#: src/malferma_libro/narration_ui.py:222 src/malferma_libro/narration_ui.py:50
+msgid "Прослушать образец"
+msgstr "Noklausīties paraugu"
+
+#: src/malferma_libro/library_ui.py:14
+msgid "Прочитано"
+msgstr "Izlasīta"
+
+#: src/malferma_libro/books.py:744
+msgid "Раздел {number}"
+msgstr "Sadaļa {number}"
+
+#: src/malferma_libro/opds.py:191 src/malferma_libro/opds.py:209
+msgid "Размер ответа превышает допустимый предел."
+msgstr "Atbildes izmērs pārsniedz atļauto robežu."
+
+#: src/malferma_libro/accessibility_ui.py:273 src/malferma_libro/app.py:1191
+msgid "Размер текста"
+msgstr "Teksta izmērs"
+
+#: src/malferma_libro/speech.py:128
+msgid "Размер фрагмента должен быть положительным."
+msgstr "Fragmenta izmēram jābūt pozitīvam."
+
+#: src/malferma_libro/app.py:876
+msgid "Размер шрифта"
+msgstr "Fonta izmērs"
+
+#: src/malferma_libro/books.py:420
+msgid "Распакованный размер книги превышает допустимый предел"
+msgstr "Atpakotās grāmatas izmērs pārsniedz atļauto robežu"
+
+#: src/malferma_libro/keybindings_ui.py:48 src/malferma_libro/keybindings_ui.py:51
+msgid "Режим"
+msgstr "Režīms"
+
+#: src/malferma_libro/accessibility_ui.py:288 src/malferma_libro/app.py:1208
+msgid "Режим для слабовидящих"
+msgstr "Režīms vājredzīgajiem"
+
+#: src/malferma_libro/search_ui.py:311
+msgid "Результат {number} из {count}"
+msgstr "Rezultāts {number} no {count}"
+
+#: src/malferma_libro/app.py:420 src/malferma_libro/app.py:582 src/malferma_libro/app.py:603 src/malferma_libro/shortcuts.py:43
+msgid "Руководство пользователя"
+msgstr "Lietotāja rokasgrāmata"
+
+#: src/malferma_libro/app.py:1150
+msgid "Светлый"
+msgstr "Gaišs"
+
+#: src/malferma_libro/app.py:1175
+msgid "Сепия"
+msgstr "Sēpija"
+
+#: src/malferma_libro/opds.py:390
+msgid "Сервер вернул некорректный XML-каталог."
+msgstr "Serveris atgrieza nederīgu XML katalogu."
+
+#: src/malferma_libro/opds.py:219
+msgid "Сервер вернул ошибку HTTP {code}."
+msgstr "Serveris atgrieza HTTP kļūdu {code}."
+
+#: src/malferma_libro/opds.py:543
+msgid "Сервер вернул пустой файл."
+msgstr "Serveris atgrieza tukšu failu."
+
+#: src/malferma_libro/opds.py:258 src/malferma_libro/opds.py:265 src/malferma_libro/opds.py:517
+msgid "Сервер вернул файл неподдерживаемого типа."
+msgstr "Serveris atgrieza neatbalstīta tipa failu."
+
+#: src/malferma_libro/opds.py:213 src/malferma_libro/opds.py:237 src/malferma_libro/opds.py:269 src/malferma_libro/opds.py:541 src/malferma_libro/opds.py:549
+msgid "Сервер передал неполный файл."
+msgstr "Serveris nosūtīja nepilnu failu."
+
+#: src/malferma_libro/app.py:368 src/malferma_libro/app.py:416 src/malferma_libro/shortcuts.py:40
+msgid "Сетевые библиотеки"
+msgstr "Tīkla bibliotēkas"
+
+#: src/malferma_libro/app.py:2050 src/malferma_libro/app.py:2094
+msgid "Сетевые библиотеки OPDS"
+msgstr "OPDS tīkla bibliotēkas"
+
+#: src/malferma_libro/books.py:415
+msgid "Символические ссылки в архиве книги запрещены"
+msgstr "Simboliskās saites grāmatas arhīvā nav atļautas"
+
+#: src/malferma_libro/app.py:1148
+msgid "Системные шрифты, масштаб и оконные кнопки задаёт рабочая среда. Виджеты используют libadwaita."
+msgstr "Sistēmas fontus, mērogu un loga pogas nosaka darbvirsmas vide. Vadīklas izmanto libadwaita."
+
+#: src/malferma_libro/app.py:1153 src/malferma_libro/appearance.py:22
+msgid "Системный"
+msgstr "Sistēmas"
+
+#: src/malferma_libro/app.py:2205
+msgid "Скачать {format}"
+msgstr "Lejupielādēt {format}"
+
+#: src/malferma_libro/app.py:2255
+msgid "Скачивание книги…"
+msgstr "Lejupielādē grāmatu…"
+
+#: src/malferma_libro/accessibility_ui.py:262 src/malferma_libro/app.py:1218
+msgid "Скорость, %"
+msgstr "Ātrums, %"
+
+#: src/malferma_libro/app.py:527 src/malferma_libro/app.py:870 src/malferma_libro/shortcuts.py:58
+msgid "Следующая глава"
+msgstr "Nākamā nodaļa"
+
+#: src/malferma_libro/keyboard_navigation.py:28
+msgid "Следующая страница"
+msgstr "Nākamā lappuse"
+
+#: src/malferma_libro/search_ui.py:21
+msgid "Следующее совпадение"
+msgstr "Nākamā atbilstība"
+
+#: src/malferma_libro/books.py:399
+msgid "Слишком много файлов в архиве книги"
+msgstr "Grāmatas arhīvā ir pārāk daudz failu"
+
+#: src/malferma_libro/djvu.py:77
+msgid "Слишком сложная структура документа DjVu"
+msgstr "DjVu dokumenta struktūra ir pārāk sarežģīta"
+
+#: src/malferma_libro/app.py:1480 src/malferma_libro/bookmarks_ui.py:41
+msgid "Сначала откройте книгу."
+msgstr "Vispirms atveriet grāmatu."
+
+#: src/malferma_libro/search_ui.py:217
+msgid "Совпадений: {count}"
+msgstr "Atbilstības: {count}"
+
+#: src/malferma_libro/storage.py:355 src/malferma_libro/storage.py:375
+msgid "Создана пустая библиотека. Файлы книг сохранены в папке books; их можно импортировать снова."
+msgstr "Izveidota tukša bibliotēka. Grāmatu faili ir saglabāti mapē books; tos var importēt vēlreiz."
+
+#: src/malferma_libro/library_ui.py:41 src/malferma_libro/library_ui.py:43
+msgid "Сортировка библиотеки"
+msgstr "Bibliotēkas kārtošana"
+
+#: src/malferma_libro/bookmarks_ui.py:176 src/malferma_libro/bookmarks_ui.py:176 src/malferma_libro/keybindings_ui.py:231
+msgid "Сохранить"
+msgstr "Saglabāt"
+
+#: src/malferma_libro/keybindings_ui.py:168
+msgid "Сочетание занято: {action}"
+msgstr "Taustiņu kombinācija jau piešķirta: {action}"
+
+#: src/malferma_libro/accessibility_ui.py:267 src/malferma_libro/accessibility_ui.py:315 src/malferma_libro/accessibility_ui.py:316 src/malferma_libro/app.py:1196 src/malferma_libro/app.py:529 src/malferma_libro/shortcuts.py:36
+msgid "Специальные возможности"
+msgstr "Piekļūstamība"
+
+#: src/malferma_libro/storage.py:357 src/malferma_libro/storage.py:377
+msgid "Список книг и настройки восстановлены из последней резервной копии."
+msgstr "Grāmatu saraksts un iestatījumi ir atjaunoti no jaunākās rezerves kopijas."
+
+#: src/malferma_libro/app.py:1006 src/malferma_libro/app.py:531 src/malferma_libro/shortcuts.py:54
+msgid "Стандартный размер текста"
+msgstr "Noklusējuma teksta lielums"
+
+#: src/malferma_libro/accessibility_ui.py:238 src/malferma_libro/narration_ui.py:222 src/malferma_libro/shortcuts.py:64
+msgid "Стоп"
+msgstr "Apturēt"
+
+#: src/malferma_libro/books.py:809 src/malferma_libro/books.py:823 src/malferma_libro/cbz.py:528 src/malferma_libro/outline_ui.py:120 src/malferma_libro/outline_ui.py:86
+msgid "Страница {number}"
+msgstr "Lappuse {number}"
+
+#: src/malferma_libro/bookmarks_ui.py:34 src/malferma_libro/bookmarks_ui.py:52
+msgid "Страница {page}"
+msgstr "Lappuse {page}"
+
+#: src/malferma_libro/app.py:1792 src/malferma_libro/pagination.py:152
+msgid "Страница {page} из {pages}"
+msgstr "Lappuse {page} no {pages}"
+
+#: src/malferma_libro/app.py:2033
+msgid "Страница {page} из {pages}  ·  {percent}% книги"
+msgstr "Lappuse {page} no {pages}  ·  {percent}% grāmatas"
+
+#: src/malferma_libro/app.py:1797 src/malferma_libro/app.py:1808
+msgid "Страница без текстового слоя. Скан доступен для просмотра; OCR пока не поддерживается."
+msgstr "Lappusei nav teksta slāņa. Skenējumu var apskatīt; OCR vēl netiek atbalstīts."
+
+#: src/malferma_libro/app.py:957 src/malferma_libro/app.py:960
+msgid "Страница документа"
+msgstr "Dokumenta lappuse"
+
+#: src/malferma_libro/app.py:1172 src/malferma_libro/app.py:943 src/malferma_libro/app.py:997 src/malferma_libro/app.py:998
+msgid "Страница книги"
+msgstr "Grāmatas lappuse"
+
+#: src/malferma_libro/outline_ui.py:68
+msgid "Страницы"
+msgstr "Lappuses"
+
+#: src/malferma_libro/pagination.py:153
+msgid "Страницы {first}–{last} из {pages}"
+msgstr "Lappuses {first}–{last} no {pages}"
+
+#: src/malferma_libro/books.py:577 src/malferma_libro/books.py:724 src/malferma_libro/markup.py:110 src/malferma_libro/markup.py:229 src/malferma_libro/markup.py:380 src/malferma_libro/markup.py:427
+msgid "Текст книги превышает допустимый размер"
+msgstr "Grāmatas teksts pārsniedz atļauto izmēru"
+
+#: src/malferma_libro/speech.py:235
+msgid "Текст озвучки должен быть строкой."
+msgstr "Lasīšanai balsī paredzētajam tekstam jābūt virknei."
+
+#: src/malferma_libro/app.py:984 src/malferma_libro/app.py:989
+msgid "Текст страницы · поиск и озвучка"
+msgstr "Lappuses teksts · meklēšana un lasīšana balsī"
+
+#: src/malferma_libro/books.py:869
+msgid "Текстовый файл пуст"
+msgstr "Teksta fails ir tukšs"
+
+#: src/malferma_libro/app.py:1150
+msgid "Тёмный"
+msgstr "Tumšs"
+
+#: src/malferma_libro/accessibility_ui.py:296
+msgid "Увеличение лупы"
+msgstr "Lupas palielinājums"
+
+#: src/malferma_libro/app.py:1008 src/malferma_libro/app.py:532 src/malferma_libro/shortcuts.py:50
+msgid "Увеличить текст"
+msgstr "Palielināt tekstu"
+
+#: src/malferma_libro/bookmarks_ui.py:135
+msgid "Удалить закладку"
+msgstr "Noņemt grāmatzīmi"
+
+#: src/malferma_libro/app.py:2060
+msgid "Удалить каталог из списка"
+msgstr "Noņemt katalogu no saraksta"
+
+#: src/malferma_libro/app.py:1204
+msgid "Удерживайте правую кнопку мыши и проведите влево или вправо для перехода между главами или страницами."
+msgstr "Turiet nospiestu peles labo pogu un pārvietojiet peli pa kreisi vai pa labi, lai pārslēgtos starp nodaļām vai lappusēm."
+
+#: src/malferma_libro/storage.py:824
+msgid "Укажите название каталога."
+msgstr "Norādiet kataloga nosaukumu."
+
+#: src/malferma_libro/storage.py:173
+msgid "Укажите полный адрес OPDS-каталога: https://example.org/opds."
+msgstr "Norādiet pilnu OPDS kataloga adresi: https://example.org/opds."
+
+#: src/malferma_libro/books.py:795
+msgid "Указанный путь не является файлом"
+msgstr "Norādītais ceļš nav fails"
+
+#: src/malferma_libro/app.py:1004 src/malferma_libro/app.py:530 src/malferma_libro/shortcuts.py:52
+msgid "Уменьшить текст"
+msgstr "Samazināt tekstu"
+
+#: src/malferma_libro/pagination.py:175 src/malferma_libro/pagination.py:177
+msgid "Условные страницы всей книги"
+msgstr "Visas grāmatas nosacītās lappuses"
+
+#: src/malferma_libro/narration_ui.py:52
+msgid "Установка Piper"
+msgstr "Piper instalēšana"
+
+#: src/malferma_libro/djvu.py:157
+msgid "Файл DjVu превышает допустимый размер 64 МиБ"
+msgstr "DjVu fails pārsniedz atļauto izmēru 64 MiB"
+
+#: src/malferma_libro/djvu.py:55
+msgid "Файл DjVu пуст или превышает допустимый размер 64 МиБ"
+msgstr "DjVu fails ir tukšs vai pārsniedz atļauto izmēru 64 MiB"
+
+#: src/malferma_libro/pdf.py:72
+msgid "Файл PDF пуст или превышает допустимый размер 64 МиБ"
+msgstr "PDF fails ir tukšs vai pārsniedz atļauto izmēru 64 MiB"
+
+#: src/malferma_libro/storage.py:354 src/malferma_libro/storage.py:369
+msgid "Файл библиотеки повреждён. Исходный файл сохранён: {preserved}"
+msgstr "Bibliotēkas fails ir bojāts. Sākotnējais fails ir saglabāts: {preserved}"
+
+#: src/malferma_libro/books.py:417 src/malferma_libro/books.py:434
+msgid "Файл внутри книги превышает допустимый размер"
+msgstr "Fails grāmatā pārsniedz atļauto izmēru"
+
+#: src/malferma_libro/task_ui.py:191
+msgid "Файл не найден. Выберите книгу снова или проверьте, доступен ли диск."
+msgstr "Fails nav atrasts. Izvēlieties grāmatu vēlreiz vai pārbaudiet, vai disks ir pieejams."
+
+#: src/malferma_libro/markup.py:354
+msgid "Файл не содержит доступного текста."
+msgstr "Datne nesatur lasāmu tekstu."
+
+#: src/malferma_libro/djvu.py:62
+msgid "Файл не является документом DjVu"
+msgstr "Fails nav DjVu dokuments"
+
+#: src/malferma_libro/books.py:705
+msgid "Файл не является книгой FB2"
+msgstr "Fails nav FB2 grāmata"
+
+#: src/malferma_libro/books.py:276 src/malferma_libro/markup.py:39
+msgid "Файл разметки слишком сложный."
+msgstr "Marķējuma datne ir pārāk sarežģīta."
+
+#: src/malferma_libro/markup.py:108
+msgid "Файл разметки содержит двоичные данные."
+msgstr "Marķējuma datne satur binārus datus."
+
+#: src/malferma_libro/voices.py:102 src/malferma_libro/voices.py:179 src/malferma_libro/voices.py:386 src/malferma_libro/voices.py:392 src/malferma_libro/voices.py:394 src/malferma_libro/voices.py:405 src/malferma_libro/voices.py:411 src/malferma_libro/voices.py:421 src/malferma_libro/voices.py:443 src/malferma_libro/voices.py:446 src/malferma_libro/voices.py:460 src/malferma_libro/voices.py:468 src/malferma_libro/voices.py:473 src/malferma_libro/voices.py:481 src/malferma_libro/voices.py:491
+msgid "Файлы голоса Piper не прошли проверку."
+msgstr "Piper balss faili neizturēja pārbaudi."
+
+#: src/malferma_libro/library_ui.py:40 src/malferma_libro/library_ui.py:42 src/malferma_libro/library_ui.py:48 src/malferma_libro/library_ui.py:50
+msgid "Фильтр библиотеки"
+msgstr "Bibliotēkas filtrs"
+
+#: src/malferma_libro/app.py:1188
+msgid "Фон страницы"
+msgstr "Lappuses fons"
+
+#: src/malferma_libro/opds.py:519
+msgid "Формат ответа не совпадает с форматом книги."
+msgstr "Atbildes formāts neatbilst grāmatas formātam."
+
+#: src/malferma_libro/app.py:1173
+msgid "Цвета и шрифты страницы настраиваются отдельно от интерфейса."
+msgstr "Lappuses krāsas un fontus iestata atsevišķi no saskarnes."
+
+#: src/malferma_libro/app.py:573
+msgid "Читалка EPUB, FB2, TXT, PDF, DjVu, HTML, Markdown и CBZ с локальной библиотекой и каталогами OPDS."
+msgstr "EPUB, FB2, TXT, PDF, DjVu, HTML, Markdown un CBZ lasītājs ar vietējo bibliotēku un OPDS katalogiem."
+
+#: src/malferma_libro/library_ui.py:13
+msgid "Читаю"
+msgstr "Lasu"
+
+#: src/malferma_libro/app.py:367 src/malferma_libro/app.py:415 src/malferma_libro/shortcuts.py:27 src/malferma_libro/shortcuts.py:39
+msgid "Чтение"
+msgstr "Lasīšana"
+
+#: src/malferma_libro/djvu.py:358
+msgid "Ширина страницы DjVu должна быть положительным целым числом"
+msgstr "DjVu lappuses platumam jābūt pozitīvam veselam skaitlim"
+
+#: src/malferma_libro/pdf.py:259
+msgid "Ширина страницы PDF должна быть положительным целым числом"
+msgstr "PDF lappuses platumam jābūt pozitīvam veselam skaitlim"
+
+#: src/malferma_libro/app.py:1190
+msgid "Шрифт книги"
+msgstr "Grāmatas fonts"
+
+#: src/malferma_libro/keybindings_ui.py:148
+msgid "Это сочетание зарезервировано системой."
+msgstr "Šo taustiņu kombināciju ir rezervējusi sistēma."
+
+#: src/malferma_libro/storage.py:827
+msgid "Этот каталог уже добавлен."
+msgstr "Šis katalogs jau ir pievienots."
+
+#: src/malferma_libro/opds.py:495
+msgid "Этот формат книги не поддерживается."
+msgstr "Šis grāmatas formāts netiek atbalstīts."
+
+#: src/malferma_libro/accessibility_ui.py:258 src/malferma_libro/app.py:1217 src/malferma_libro/app.py:590 src/malferma_libro/app.py:591
+msgid "Язык"
+msgstr "Valoda"
+
+#: src/malferma_libro/app.py:1169 src/malferma_libro/app.py:588
+msgid "Язык интерфейса"
+msgstr "Saskarnes valoda"
+
+#: src/malferma_libro/storage.py:263
+msgid "Язык озвучки «{language}» больше не поддерживается. Выбрано автоматическое определение языка."
+msgstr "Lasīšanas balsī valoda “{language}” vairs netiek atbalstīta. Izvēlēta automātiska valodas noteikšana."
+
+#: src/malferma_libro/app.py:1194
+msgid "Яркость страницы, %"
+msgstr "Lappuses spilgtums, %"
+
+#: src/malferma_libro/books.py:596
+msgid "не указан"
+msgstr "nav norādīts"
+
+#: src/malferma_libro/xmlutil.py:28
+msgid "слишком большая вложенность XML"
+msgstr "pārāk liels XML ligzdojuma dziļums"
+
+#: src/malferma_libro/xmlutil.py:26
+msgid "слишком много элементов XML"
+msgstr "pārāk daudz XML elementu"
+
+#: src/malferma_libro/bookmarks_ui.py:98 src/malferma_libro/shortcuts.py:61
+msgid "＋ Закладка"
+msgstr "＋ Grāmatzīme"

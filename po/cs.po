@@ -1,0 +1,1709 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Translation source recovered from the installed GNU gettext catalog.
+
+msgid ""
+msgstr "Project-Id-Version: Malferma Libro 0.1.0\nPO-Revision-Date: 2026-10-17 00:00+0000\nLanguage: cs\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=(n == 1 ? 0 : n >= 2 && n <= 4 ? 1 : 2);\n"
+
+#: src/malferma_libro/library_ui.py:105
+msgid " · Найдено: {count}"
+msgstr " · Nalezeno: {count}"
+
+#: src/malferma_libro/app.py:884
+msgid "100% — по ширине окна; вёрстка PDF, DjVu и CBZ сохраняется"
+msgstr "100% — přizpůsobení šířce okna; rozvržení PDF, DjVu a CBZ se zachová"
+
+#: src/malferma_libro/djvu.py:127
+msgid "DjVu с внешними файлами не поддерживается"
+msgstr "Dokumenty DjVu s externími soubory nejsou podporovány"
+
+#: src/malferma_libro/library_ui.py:77
+msgid "EPUB · FB2 · FB2.ZIP · TXT · PDF · DjVu · HTML · Markdown · CBZ. Книги копируются в локальную библиотеку."
+msgstr "EPUB · FB2 · FB2.ZIP · TXT · PDF · DjVu · HTML · Markdown · CBZ. Knihy se kopírují do místní knihovny."
+
+#: src/malferma_libro/books.py:618
+msgid "EPUB не содержит доступных текстовых глав"
+msgstr "EPUB neobsahuje žádné čitelné textové kapitoly"
+
+#: src/malferma_libro/books.py:543
+msgid "EPUB не содержит описания книги"
+msgstr "EPUB neobsahuje popis knihy"
+
+#: src/malferma_libro/books.py:775
+msgid "FB2 не содержит доступного текста"
+msgstr "FB2 neobsahuje čitelný text"
+
+#: src/malferma_libro/app.py:2178 src/malferma_libro/app.py:2179
+msgid "OPDS-каталог"
+msgstr "Katalog OPDS"
+
+#: src/malferma_libro/pdf.py:114
+msgid "PDF защищён паролем. Откройте незашифрованную копию книги."
+msgstr "PDF je chráněno heslem. Otevřete nešifrovanou kopii knihy."
+
+#: src/malferma_libro/app.py:1195
+msgid "PDF, DjVu и CBZ сохраняют исходные шрифты и цвета; размер меняется масштабом."
+msgstr "PDF, DjVu a CBZ zachovávají původní písma a barvy; velikost změníte přiblížením."
+
+#: src/malferma_libro/app.py:1532
+msgid "Piper не установлен. Инструкция доступна в руководстве."
+msgstr "Piper není nainstalován. Pokyny najdete v uživatelské příručce."
+
+#: src/malferma_libro/books.py:864
+msgid "TXT должен быть в кодировке UTF-8 или Windows-1251"
+msgstr "Soubory TXT musí být v kódování UTF-8 nebo Windows-1251"
+
+#: src/malferma_libro/books.py:866
+msgid "TXT содержит двоичные данные"
+msgstr "Soubor TXT obsahuje binární data"
+
+#: src/malferma_libro/bookmarks_ui.py:195
+msgid "{count} из {limit} символов"
+msgstr "{count} z {limit} znaků"
+
+#: src/malferma_libro/books.py:144
+msgid "{label}: XML превышает допустимый размер"
+msgstr "{label}: XML překračuje povolenou velikost"
+
+#: src/malferma_libro/books.py:377
+msgid "{label}: не удалось прочитать текст EPUB"
+msgstr "{label}: nepodařilo se přečíst text EPUB"
+
+#: src/malferma_libro/markup.py:106 src/malferma_libro/markup.py:352 src/malferma_libro/markup.py:425
+msgid "{label}: не удалось прочитать текст."
+msgstr "{label}: nepodařilo se přečíst text."
+
+#: src/malferma_libro/books.py:366
+msgid "{label}: объявления DTD запрещены"
+msgstr "{label}: deklarace DTD nejsou povoleny"
+
+#: src/malferma_libro/books.py:150 src/malferma_libro/books.py:156 src/malferma_libro/markup.py:126
+msgid "{label}: объявления DTD и сущностей XML запрещены"
+msgstr "{label}: deklarace DTD a entit XML nejsou povoleny"
+
+#: src/malferma_libro/books.py:363
+msgid "{label}: объявления сущностей запрещены"
+msgstr "{label}: deklarace entit nejsou povoleny"
+
+#: src/malferma_libro/books.py:162
+msgid "{label}: повреждённый XML"
+msgstr "{label}: nesprávně utvořené XML"
+
+#: src/malferma_libro/app.py:2037 src/malferma_libro/library_ui.py:115 src/malferma_libro/library_ui.py:186
+msgid "{percent}% прочитано"
+msgstr "{percent}% přečteno"
+
+#: src/malferma_libro/narration_ui.py:78
+msgid "Автоматически"
+msgstr "Automaticky"
+
+#: src/malferma_libro/app.py:1189
+msgid "Автоматически скрывать панель в полном экране"
+msgstr "Automaticky skrývat lištu v režimu celé obrazovky"
+
+#: src/malferma_libro/pdf.py:117
+msgid "Автор PDF запретил извлечение текста из этого документа"
+msgstr "Autor PDF zakázal extrakci textu z tohoto dokumentu"
+
+#: src/malferma_libro/library_ui.py:183
+msgid "Автор не указан"
+msgstr "Neznámý autor"
+
+#: src/malferma_libro/app.py:2114
+msgid "Адрес OPDS-каталога"
+msgstr "Adresa katalogu OPDS"
+
+#: src/malferma_libro/storage.py:188
+msgid "Адрес каталога должен начинаться с http:// или https:// и не содержать пароль."
+msgstr "Adresa katalogu musí začínat http:// nebo https:// a nesmí obsahovat heslo."
+
+#: src/malferma_libro/opds.py:118
+msgid "Адрес содержит недопустимые символы."
+msgstr "Adresa obsahuje nepovolené znaky."
+
+#: src/malferma_libro/opds.py:124
+msgid "Адреса с логином или паролем не поддерживаются."
+msgstr "Adresy s uživatelským jménem nebo heslem nejsou podporovány."
+
+#: src/malferma_libro/books.py:97
+msgid "Архив CBZ превышает допустимый размер (512 МиБ)"
+msgstr "Archiv CBZ překračuje povolenou velikost (512 MiB)"
+
+#: src/malferma_libro/books.py:846
+msgid "Архив FB2 должен содержать ровно один файл .fb2"
+msgstr "Archiv FB2 musí obsahovat právě jeden soubor .fb2"
+
+#: src/malferma_libro/opds.py:432
+msgid "Без названия"
+msgstr "Bez názvu"
+
+#: src/malferma_libro/storage.py:197
+msgid "Библиотека создана более новой версией программы. Обновите приложение."
+msgstr "Knihovna byla vytvořena novější verzí aplikace. Aktualizujte aplikaci."
+
+#: src/malferma_libro/djvu.py:285
+msgid "В DjVu должно быть от 1 до {max_pages} страниц"
+msgstr "DjVu musí obsahovat 1 až {max_pages} stránek"
+
+#: src/malferma_libro/djvu.py:82
+msgid "В DjVu допускается не более {max_pages} страниц"
+msgstr "DjVu může obsahovat nejvýše {max_pages} stránek"
+
+#: src/malferma_libro/djvu.py:134
+msgid "В DjVu не найден корректный каталог страниц"
+msgstr "V DjVu nebyl nalezen platný adresář stránek"
+
+#: src/malferma_libro/books.py:548
+msgid "В EPUB отсутствуют метаданные, список файлов или порядок глав"
+msgstr "V EPUB chybí metadata, seznam souborů nebo pořadí kapitol"
+
+#: src/malferma_libro/pdf.py:171
+msgid "В PDF должно быть от 1 до {max_pages} страниц"
+msgstr "PDF musí obsahovat 1 až {max_pages} stránek"
+
+#: src/malferma_libro/cbz.py:425
+msgid "В архиве CBZ нет поддерживаемых изображений."
+msgstr "Archiv CBZ neobsahuje žádné podporované obrázky."
+
+#: src/malferma_libro/books.py:427
+msgid "В книге отсутствует файл: {name}"
+msgstr "V knize chybí soubor: {name}"
+
+#: src/malferma_libro/app.py:1193
+msgid "В пикселях; на широком окне текст располагается по центру."
+msgstr "V pixelech; v širokých oknech je text vystředěný."
+
+#: src/malferma_libro/app.py:2215
+msgid "В этом разделе книг нет."
+msgstr "V této sekci nejsou žádné knihy."
+
+#: src/malferma_libro/library_ui.py:29
+msgid "Ваша библиотека"
+msgstr "Vaše knihovna"
+
+#: src/malferma_libro/search_ui.py:23
+msgid "Вернуться к месту до поиска"
+msgstr "Vrátit se na místo před hledáním"
+
+#: src/malferma_libro/app.py:480
+msgid "Включить дневной режим"
+msgstr "Zapnout denní režim"
+
+#: src/malferma_libro/app.py:480
+msgid "Включить ночной режим"
+msgstr "Zapnout noční režim"
+
+#: src/malferma_libro/books.py:453
+msgid "Внутренняя ссылка EPUB выходит за пределы архива"
+msgstr "Vnitřní odkaz EPUB směřuje mimo archiv"
+
+#: src/malferma_libro/books.py:445
+msgid "Внутренняя ссылка EPUB указывает за пределы книги"
+msgstr "Vnitřní odkaz EPUB směřuje mimo knihu"
+
+#: src/malferma_libro/keybindings_ui.py:55
+msgid "Восстановить все сочетания"
+msgstr "Obnovit všechny zkratky"
+
+#: src/malferma_libro/library_ui.py:38
+msgid "Все книги"
+msgstr "Všechny knihy"
+
+#: src/malferma_libro/djvu.py:53
+msgid "Выберите обычный файл DjVu"
+msgstr "Vyberte běžný soubor DjVu"
+
+#: src/malferma_libro/pdf.py:70
+msgid "Выберите обычный файл PDF"
+msgstr "Vyberte běžný soubor PDF"
+
+#: src/malferma_libro/storage.py:608
+msgid "Выберите файл книги."
+msgstr "Vyberte soubor knihy."
+
+#: src/malferma_libro/narration_ui.py:86
+msgid "Выберите язык или голос."
+msgstr "Vyberte jazyk nebo hlas."
+
+#: src/malferma_libro/task_ui.py:207 src/malferma_libro/task_ui.py:207
+msgid "Выбрать книгу…"
+msgstr "Vybrat knihu…"
+
+#: src/malferma_libro/app.py:1048
+msgid "Выделить всё"
+msgstr "Vybrat vše"
+
+#: src/malferma_libro/app.py:465 src/malferma_libro/app.py:520
+msgid "Выйти из полноэкранного режима"
+msgstr "Ukončit režim celé obrazovky"
+
+#: src/malferma_libro/task_ui.py:144
+msgid "Выполнено: {percent}%"
+msgstr "Dokončeno: {percent}%"
+
+#: src/malferma_libro/task_ui.py:52 src/malferma_libro/task_ui.py:70 src/malferma_libro/task_ui.py:71
+msgid "Выполняемые действия"
+msgstr "Probíhající činnosti"
+
+#: src/malferma_libro/accessibility_ui.py:276 src/malferma_libro/app.py:1205
+msgid "Высокая контрастность"
+msgstr "Vysoký kontrast"
+
+#: src/malferma_libro/books.py:578 src/malferma_libro/outline_ui.py:121
+msgid "Глава {number}"
+msgstr "Kapitola {number}"
+
+#: src/malferma_libro/app.py:424 src/malferma_libro/app.py:425 src/malferma_libro/shortcuts.py:26
+msgid "Главное меню"
+msgstr "Hlavní nabídka"
+
+#: src/malferma_libro/outline_ui.py:70
+msgid "Главы"
+msgstr "Kapitoly"
+
+#: src/malferma_libro/narration_ui.py:39
+msgid "Голос"
+msgstr "Hlas"
+
+#: src/malferma_libro/speech.py:387
+msgid "Голос Piper «{language}» не установлен. Загрузите голос в настройках."
+msgstr "Hlas Piper pro jazyk „{language}“ není nainstalován. Stáhněte hlas v nastavení."
+
+#: src/malferma_libro/voices.py:427
+msgid "Голос Piper для выбранного языка недоступен."
+msgstr "Hlas Piper pro vybraný jazyk není k dispozici."
+
+#: src/malferma_libro/narration_ui.py:145 src/malferma_libro/narration_ui.py:193
+msgid "Голос готов: {voice}"
+msgstr "Hlas je připraven: {voice}"
+
+#: src/malferma_libro/narration_ui.py:89
+msgid "Голос установлен"
+msgstr "Hlas je nainstalován"
+
+#: src/malferma_libro/accessibility_ui.py:263
+msgid "Голоса Piper"
+msgstr "Hlasy Piper"
+
+#: src/malferma_libro/app.py:421 src/malferma_libro/app.py:664 src/malferma_libro/keybindings_ui.py:39 src/malferma_libro/keybindings_ui.py:46 src/malferma_libro/shortcuts.py:44
+msgid "Горячие клавиши"
+msgstr "Klávesové zkratky"
+
+#: src/malferma_libro/app.py:1531
+msgid "Готово к озвучке"
+msgstr "Připraveno k předčítání"
+
+#: src/malferma_libro/app.py:2075
+msgid "Далее"
+msgstr "Další"
+
+#: src/malferma_libro/djvu.py:185
+msgid "Данные страницы DjVu превышают допустимый размер"
+msgstr "Data stránky DjVu překračují povolenou velikost"
+
+#: src/malferma_libro/pdf.py:120
+msgid "Данные страницы PDF превышают допустимый размер"
+msgstr "Data stránky PDF překračují povolenou velikost"
+
+#: src/malferma_libro/task_ui.py:130
+msgid "Действие отменено: {action}. Уже выполненные изменения сохраняются."
+msgstr "Činnost zrušena: {action}. Již provedené změny zůstávají zachovány."
+
+#: src/malferma_libro/speech.py:251
+msgid "Для воспроизведения озвучки установите paplay или aplay."
+msgstr "Pro přehrávání předčítání nainstalujte paplay nebo aplay."
+
+#: src/malferma_libro/__main__.py:110
+msgid "Для запуска нужны GTK 4, libadwaita и PyGObject. На Debian 13 выполните:\nsudo apt install python3-gi gir1.2-gtk-4.0 gir1.2-adw-1 poppler-utils djvulibre-bin\nЗапускайте приложение через /usr/bin/python3.\nПодробности: {error}"
+msgstr "Ke spuštění aplikace jsou potřeba GTK 4, libadwaita a PyGObject. V systému Debian 13 spusťte:\nsudo apt install python3-gi gir1.2-gtk-4.0 gir1.2-adw-1 poppler-utils djvulibre-bin\nAplikaci spouštějte pomocí /usr/bin/python3.\nPodrobnosti: {error}"
+
+#: src/malferma_libro/app.py:2118
+msgid "Для локального Calibre: http://адрес:8080/opds"
+msgstr "Pro místní server Calibre: http://адрес:8080/opds"
+
+#: src/malferma_libro/speech.py:251
+msgid "Для озвучки установите Piper по инструкции в руководстве пользователя."
+msgstr "Pro předčítání nainstalujte Piper podle pokynů v uživatelské příručce."
+
+#: src/malferma_libro/narration_ui.py:54
+msgid "Для своего голоса выберите файл .onnx с соседним .onnx.json. Условия использования задаёт автор модели."
+msgstr "Pro vlastní hlas vyberte soubor .onnx s odpovídajícím souborem .onnx.json ve stejné složce. Podmínky použití určuje autor modelu."
+
+#: src/malferma_libro/djvu.py:39
+msgid "Для чтения DjVu установите пакет djvulibre-bin: sudo apt install djvulibre-bin."
+msgstr "Pro čtení DjVu nainstalujte balíček djvulibre-bin: sudo apt install djvulibre-bin."
+
+#: src/malferma_libro/markup.py:386
+msgid "Для чтения Markdown установите пакет python3-markdown-it."
+msgstr "Pro čtení Markdownu nainstalujte balíček python3-markdown-it."
+
+#: src/malferma_libro/pdf.py:45
+msgid "Для чтения PDF установите пакет poppler-utils: sudo apt install poppler-utils."
+msgstr "Pro čtení PDF nainstalujte balíček poppler-utils: sudo apt install poppler-utils."
+
+#: src/malferma_libro/narration_ui.py:87
+msgid "Для этого языка добавьте свою модель Piper."
+msgstr "Pro tento jazyk přidejte vlastní model Piper."
+
+#: src/malferma_libro/app.py:1175
+msgid "Дневной"
+msgstr "Denní"
+
+#: src/malferma_libro/shortcuts.py:48
+msgid "Дневной / ночной режим"
+msgstr "Denní / noční režim"
+
+#: src/malferma_libro/app.py:2108 src/malferma_libro/app.py:812 src/malferma_libro/desktop.py:252
+msgid "Добавить"
+msgstr "Přidat"
+
+#: src/malferma_libro/app.py:2106
+msgid "Добавить OPDS-каталог"
+msgstr "Přidat katalog OPDS"
+
+#: src/malferma_libro/narration_ui.py:45
+msgid "Добавить голос…"
+msgstr "Přidat hlas…"
+
+#: src/malferma_libro/app.py:2059
+msgid "Добавить каталог"
+msgstr "Přidat katalog"
+
+#: src/malferma_libro/narration_ui.py:158 src/malferma_libro/narration_ui.py:160
+msgid "Добавить модель Piper"
+msgstr "Přidat model Piper"
+
+#: src/malferma_libro/narration_ui.py:196
+msgid "Добавление голоса…"
+msgstr "Přidávání hlasu…"
+
+#: src/malferma_libro/app.py:858
+msgid "Добавление книг: {count}…"
+msgstr "Přidávání knih: {count}…"
+
+#: src/malferma_libro/app.py:2055 src/malferma_libro/app.py:2103
+msgid "Добавьте каталог"
+msgstr "Přidejte katalog"
+
+#: src/malferma_libro/app.py:387
+msgid "Добавьте книгу или подключите OPDS-каталог."
+msgstr "Přidejte knihu nebo se připojte ke katalogu OPDS."
+
+#: src/malferma_libro/app.py:1490
+msgid "Дождитесь загрузки страницы."
+msgstr "Počkejte na načtení stránky."
+
+#: src/malferma_libro/opds.py:122
+msgid "Допустимы только адреса HTTP и HTTPS."
+msgstr "Jsou povoleny pouze adresy HTTP a HTTPS."
+
+#: src/malferma_libro/app.py:1209
+msgid "Жесты мышью"
+msgstr "Gesta myší"
+
+#: src/malferma_libro/narration_ui.py:44
+msgid "Загрузить голос"
+msgstr "Stáhnout hlas"
+
+#: src/malferma_libro/narration_ui.py:148
+msgid "Загрузка голоса: {voice}"
+msgstr "Stahování hlasu: {voice}"
+
+#: src/malferma_libro/app.py:2173
+msgid "Загрузка каталога…"
+msgstr "Načítání katalogu…"
+
+#: src/malferma_libro/app.py:1744
+msgid "Загрузка страницы {page}"
+msgstr "Načítání stránky {page}"
+
+#: src/malferma_libro/app.py:1745 src/malferma_libro/app.py:1822
+msgid "Загрузка страницы {page}…"
+msgstr "Načítání stránky {page}…"
+
+#: src/malferma_libro/app.py:962
+msgid "Загрузка страницы…"
+msgstr "Načítání stránky…"
+
+#: src/malferma_libro/bookmarks_ui.py:37
+msgid "Закладка"
+msgstr "Záložka"
+
+#: src/malferma_libro/bookmarks_ui.py:64
+msgid "Закладка больше недоступна."
+msgstr "Záložka již není dostupná."
+
+#: src/malferma_libro/bookmarks_ui.py:60
+msgid "Закладка добавлена."
+msgstr "Záložka přidána."
+
+#: src/malferma_libro/app.py:904 src/malferma_libro/app.py:905
+msgid "Закладки"
+msgstr "Záložky"
+
+#: src/malferma_libro/bookmarks_ui.py:105
+msgid "Закладок пока нет."
+msgstr "Zatím žádné záložky."
+
+#: src/malferma_libro/task_ui.py:202 src/malferma_libro/task_ui.py:202
+msgid "Закрыть"
+msgstr "Zavřít"
+
+#: src/malferma_libro/shortcuts.py:46
+msgid "Закрыть приложение"
+msgstr "Ukončit aplikaci"
+
+#: src/malferma_libro/bookmarks_ui.py:132 src/malferma_libro/bookmarks_ui.py:173 src/malferma_libro/bookmarks_ui.py:187
+msgid "Заметка к закладке"
+msgstr "Poznámka k záložce"
+
+#: src/malferma_libro/bookmarks_ui.py:222
+msgid "Заметка слишком длинная: максимум {limit} символов."
+msgstr "Poznámka je příliš dlouhá: nejvýše {limit} znaků."
+
+#: src/malferma_libro/books.py:413
+msgid "Зашифрованные архивы книг не поддерживаются"
+msgstr "Šifrované archivy knih nejsou podporovány"
+
+#: src/malferma_libro/app.py:1531
+msgid "Идёт озвучка текущей главы"
+msgstr "Předčítání aktuální kapitoly"
+
+#: src/malferma_libro/keybindings_ui.py:70
+msgid "Изменить сочетание"
+msgstr "Změnit zkratku"
+
+#: src/malferma_libro/library_ui.py:190 src/malferma_libro/library_ui.py:191
+msgid "Изменить статус чтения"
+msgstr "Změnit stav čtení"
+
+#: src/malferma_libro/djvu.py:182
+msgid "Изображение страницы DjVu превышает допустимый размер"
+msgstr "Obrázek stránky DjVu překračuje povolenou velikost"
+
+#: src/malferma_libro/pdf.py:302
+msgid "Изображение страницы PDF превышает допустимый размер"
+msgstr "Obrázek stránky PDF překračuje povolenou velikost"
+
+#: src/malferma_libro/app.py:1147
+msgid "Интерфейс"
+msgstr "Rozhraní"
+
+#: src/malferma_libro/keybindings_ui.py:150
+msgid "Используйте Ctrl, Alt или функциональную клавишу."
+msgstr "Použijte Ctrl, Alt nebo funkční klávesu."
+
+#: src/malferma_libro/app.py:1150 src/malferma_libro/app.py:1175
+msgid "Как в системе"
+msgstr "Podle systému"
+
+#: src/malferma_libro/opds.py:439
+msgid "Каталог"
+msgstr "Katalog"
+
+#: src/malferma_libro/app.py:2216
+msgid "Каталог загружен. Записей: {count}."
+msgstr "Katalog načten. Počet záznamů: {count}."
+
+#: src/malferma_libro/app.py:2071
+msgid "Каталог не открыт"
+msgstr "Žádný otevřený katalog"
+
+#: src/malferma_libro/opds.py:381
+msgid "Каталог слишком большой."
+msgstr "Katalog je příliš velký."
+
+#: src/malferma_libro/app.py:2141
+msgid "Каталог удалён из списка."
+msgstr "Katalog odstraněn ze seznamu."
+
+#: src/malferma_libro/opds.py:388
+msgid "Каталог: {exc}."
+msgstr "Katalog: {exc}."
+
+#: src/malferma_libro/opds.py:384
+msgid "Каталоги с DTD или XML-сущностями не поддерживаются."
+msgstr "Katalogy s DTD nebo entitami XML nejsou podporovány."
+
+#: src/malferma_libro/library_ui.py:104
+msgid "Книг: {count}"
+msgstr "Knihy: {count}"
+
+#: src/malferma_libro/opds.py:447 src/malferma_libro/opds.py:463 src/malferma_libro/opds.py:469
+msgid "Книга"
+msgstr "Kniha"
+
+#: src/malferma_libro/library_ui.py:256
+msgid "Книга «{title}» уже добавлена. Сохранённые закладки и место чтения будут использованы."
+msgstr "Kniha „{title}“ již byla přidána. Použijí se uložené záložky a pozice čtení."
+
+#: src/malferma_libro/app.py:787
+msgid "Книга готова к чтению в библиотеке."
+msgstr "Kniha je připravena ke čtení v knihovně."
+
+#: src/malferma_libro/storage.py:709
+msgid "Книга не найдена: {book_id}"
+msgstr "Kniha nenalezena: {book_id}"
+
+#: src/malferma_libro/outline_ui.py:48
+msgid "Книга не открыта"
+msgstr "Žádná otevřená kniha"
+
+#: src/malferma_libro/app.py:1664
+msgid "Книга открыта. Позиция чтения сохраняется автоматически."
+msgstr "Kniha otevřena. Pozice čtení se ukládá automaticky."
+
+#: src/malferma_libro/books.py:855 src/malferma_libro/books.py:98 src/malferma_libro/markup.py:63 src/malferma_libro/markup.py:67
+msgid "Книга превышает допустимый размер (64 МиБ)"
+msgstr "Kniha překračuje povolenou velikost (64 MiB)"
+
+#: src/malferma_libro/opds.py:533
+msgid "Книга превышает допустимый размер."
+msgstr "Kniha překračuje povolenou velikost."
+
+#: src/malferma_libro/library_ui.py:255
+msgid "Книга уже в библиотеке"
+msgstr "Kniha již je v knihovně"
+
+#: src/malferma_libro/desktop.py:28
+msgid "Книги (EPUB, FB2, FB2.ZIP, TXT, PDF, DjVu, HTML, Markdown, CBZ)"
+msgstr "Knihy (EPUB, FB2, FB2.ZIP, TXT, PDF, DjVu, HTML, Markdown, CBZ)"
+
+#: src/malferma_libro/speech.py:471
+msgid "Код завершения {code}"
+msgstr "Návratový kód {code}"
+
+#: src/malferma_libro/books.py:753
+msgid "Комментарии"
+msgstr "Komentáře"
+
+#: src/malferma_libro/keyboard_navigation.py:30
+msgid "Конец главы или страницы"
+msgstr "Konec kapitoly nebo stránky"
+
+#: src/malferma_libro/keyboard_navigation.py:33
+msgid "Конец книги"
+msgstr "Konec knihy"
+
+#: src/malferma_libro/djvu.py:296
+msgid "Копирование DjVu не завершено: размер книги изменился"
+msgstr "Kopírování DjVu nebylo dokončeno: velikost knihy se změnila"
+
+#: src/malferma_libro/pdf.py:185
+msgid "Копирование PDF не завершено: размер книги изменился"
+msgstr "Kopírování PDF nebylo dokončeno: velikost knihy se změnila"
+
+#: src/malferma_libro/app.py:1047
+msgid "Копировать"
+msgstr "Kopírovat"
+
+#: src/malferma_libro/accessibility_ui.py:295
+msgid "Лупа области чтения"
+msgstr "Lupa oblasti čtení"
+
+#: src/malferma_libro/app.py:1192
+msgid "Максимальная ширина текста"
+msgstr "Maximální šířka textu"
+
+#: src/malferma_libro/djvu.py:354
+msgid "Масштаб DjVu должен быть положительным числом"
+msgstr "Přiblížení DjVu musí být kladné číslo"
+
+#: src/malferma_libro/pdf.py:255
+msgid "Масштаб PDF должен быть положительным числом"
+msgstr "Přiblížení PDF musí být kladné číslo"
+
+#: src/malferma_libro/app.py:881 src/malferma_libro/app.py:885
+msgid "Масштаб страницы, %"
+msgstr "Přiblížení stránky, %"
+
+#: src/malferma_libro/accessibility_ui.py:287 src/malferma_libro/app.py:1207
+msgid "Межстрочный интервал"
+msgstr "Řádkování"
+
+#: src/malferma_libro/djvu.py:102
+msgid "Многофайловый DjVu не поддерживается. Сначала объедините книгу в один файл командой djvmcvt -b."
+msgstr "Vícesouborové dokumenty DjVu nejsou podporovány. Nejprve spojte knihu do jednoho souboru příkazem djvmcvt -b."
+
+#: src/malferma_libro/narration_ui.py:162
+msgid "Модель Piper (*.onnx)"
+msgstr "Model Piper (*.onnx)"
+
+#: src/malferma_libro/narration_ui.py:76 src/malferma_libro/narration_ui.py:84 src/malferma_libro/narration_ui.py:89
+msgid "Модель голоса не установлена"
+msgstr "Model hlasu není nainstalován"
+
+#: src/malferma_libro/app.py:366 src/malferma_libro/app.py:414 src/malferma_libro/shortcuts.py:38
+msgid "Мои книги"
+msgstr "Moje knihy"
+
+#: src/malferma_libro/app.py:2112
+msgid "Моя библиотека"
+msgstr "Moje knihovna"
+
+#: src/malferma_libro/keyboard_navigation.py:25
+msgid "На экран вверх"
+msgstr "O obrazovku nahoru"
+
+#: src/malferma_libro/keyboard_navigation.py:26
+msgid "На экран вниз"
+msgstr "O obrazovku dolů"
+
+#: src/malferma_libro/app.py:1493
+msgid "На этой странице нет доступного текста для озвучки. Распознавание сканов пока не поддерживается."
+msgstr "Na této stránce není čitelný text pro předčítání. Rozpoznávání textu ze skenů zatím není podporováno."
+
+#: src/malferma_libro/keybindings_ui.py:208 src/malferma_libro/keybindings_ui.py:221
+msgid "Нажмите новое сочетание клавиш."
+msgstr "Stiskněte novou klávesovou zkratku."
+
+#: src/malferma_libro/app.py:2068
+msgid "Назад"
+msgstr "Zpět"
+
+#: src/malferma_libro/app.py:2111
+msgid "Название"
+msgstr "Název"
+
+#: src/malferma_libro/library_ui.py:33
+msgid "Название или автор"
+msgstr "Název nebo autor"
+
+#: src/malferma_libro/search_ui.py:313
+msgid "Найдено в тексте страницы: {query}"
+msgstr "Nalezeno v textu stránky: {query}"
+
+#: src/malferma_libro/search_ui.py:314
+msgid "Найдено: {query}"
+msgstr "Nalezeno: {query}"
+
+#: src/malferma_libro/app.py:2083 src/malferma_libro/app.py:374 src/malferma_libro/app.py:375 src/malferma_libro/app.py:524 src/malferma_libro/app.py:899 src/malferma_libro/shortcuts.py:32
+msgid "Найти"
+msgstr "Najít"
+
+#: src/malferma_libro/app.py:1141 src/malferma_libro/app.py:1144 src/malferma_libro/app.py:419 src/malferma_libro/shortcuts.py:34
+msgid "Настройки"
+msgstr "Nastavení"
+
+#: src/malferma_libro/keyboard_navigation.py:29
+msgid "Начало главы или страницы"
+msgstr "Začátek kapitoly nebo stránky"
+
+#: src/malferma_libro/keyboard_navigation.py:31
+msgid "Начало книги"
+msgstr "Začátek knihy"
+
+#: src/malferma_libro/library_ui.py:13
+msgid "Не начато"
+msgstr "Nezahájeno"
+
+#: src/malferma_libro/speech.py:461
+msgid "Не удалось воспроизвести озвучку."
+msgstr "Nepodařilo se přehrát předčítání."
+
+#: src/malferma_libro/app.py:625
+msgid "Не удалось выполнить действие"
+msgstr "Nepodařilo se provést akci"
+
+#: src/malferma_libro/search_ui.py:179
+msgid "Не удалось выполнить поиск."
+msgstr "Hledání se nepodařilo provést."
+
+#: src/malferma_libro/app.py:2128
+msgid "Не удалось добавить каталог"
+msgstr "Nepodařilo se přidat katalog"
+
+#: src/malferma_libro/speech.py:459
+msgid "Не удалось загрузить голос Piper."
+msgstr "Nepodařilo se načíst hlas Piper."
+
+#: src/malferma_libro/app.py:1815
+msgid "Не удалось загрузить страницу {page}"
+msgstr "Nepodařilo se načíst stránku {page}"
+
+#: src/malferma_libro/app.py:1816
+msgid "Не удалось загрузить страницу. Нажмите «Повторить» или выберите другую страницу."
+msgstr "Nepodařilo se načíst stránku. Zvolte „Zkusit znovu“ nebo vyberte jinou stránku."
+
+#: src/malferma_libro/speech.py:458
+msgid "Не удалось запустить Piper."
+msgstr "Nepodařilo se spustit Piper."
+
+#: src/malferma_libro/pdf.py:108
+msgid "Не удалось запустить обработчик PDF. "
+msgstr "Nepodařilo se spustit nástroj pro zpracování PDF. "
+
+#: src/malferma_libro/djvu.py:191
+msgid "Не удалось обработать DjVu. "
+msgstr "Nepodařilo se zpracovat DjVu. "
+
+#: src/malferma_libro/cbz.py:384 src/malferma_libro/cbz.py:467
+msgid "Не удалось обработать изображение страницы CBZ."
+msgstr "Nepodařilo se zpracovat obrázek stránky CBZ."
+
+#: src/malferma_libro/speech.py:453
+msgid "Не удалось озвучить текст: {error}"
+msgstr "Nepodařilo se přečíst text nahlas: {error}"
+
+#: src/malferma_libro/speech.py:258
+msgid "Не удалось определить поддерживаемый язык озвучки. Выберите русский, украинский, английский, немецкий, французский, испанский, итальянский или португальский в настройках."
+msgstr "Nepodařilo se určit podporovaný jazyk předčítání. V nastavení vyberte ruštinu, ukrajinštinu, angličtinu, němčinu, francouzštinu, španělštinu, italštinu nebo portugalštinu."
+
+#: src/malferma_libro/djvu.py:320
+msgid "Не удалось определить размер страницы DjVu"
+msgstr "Nepodařilo se určit rozměry stránky DjVu"
+
+#: src/malferma_libro/pdf.py:128
+msgid "Не удалось определить размер страницы PDF"
+msgstr "Nepodařilo se určit rozměry stránky PDF"
+
+#: src/malferma_libro/app.py:238
+msgid "Не удалось открыть библиотеку"
+msgstr "Nepodařilo se otevřít knihovnu"
+
+#: src/malferma_libro/djvu.py:51
+msgid "Не удалось открыть файл DjVu"
+msgstr "Nepodařilo se otevřít soubor DjVu"
+
+#: src/malferma_libro/pdf.py:68
+msgid "Не удалось открыть файл PDF"
+msgstr "Nepodařilo se otevřít soubor PDF"
+
+#: src/malferma_libro/opds.py:486
+msgid "Не удалось подобрать свободное имя файла."
+msgstr "Nepodařilo se najít volný název souboru."
+
+#: src/malferma_libro/task_ui.py:195
+msgid "Не удалось получить данные. Проверьте соединение и адрес каталога, затем повторите действие."
+msgstr "Data se nepodařilo načíst. Zkontrolujte připojení a adresu katalogu a zkuste to znovu."
+
+#: src/malferma_libro/opds.py:220
+msgid "Не удалось получить данные: {exc}"
+msgstr "Nepodařilo se získat data: {exc}"
+
+#: src/malferma_libro/cbz.py:54
+msgid "Не удалось прочитать CBZ: архив повреждён, не поддерживается или превышает допустимые ограничения."
+msgstr "Nepodařilo se přečíst CBZ: archiv je poškozený, nepodporovaný nebo překračuje povolené limity."
+
+#: src/malferma_libro/djvu.py:179
+msgid "Не удалось прочитать DjVu: файл повреждён или имеет неподдерживаемую структуру"
+msgstr "Nepodařilo se přečíst DjVu: soubor je poškozený nebo má nepodporovanou strukturu"
+
+#: src/malferma_libro/pdf.py:118
+msgid "Не удалось прочитать PDF: файл повреждён или имеет неподдерживаемую структуру"
+msgstr "Nepodařilo se přečíst PDF: soubor je poškozený nebo má nepodporovanou strukturu"
+
+#: src/malferma_libro/books.py:874 src/malferma_libro/markup.py:70
+msgid "Не удалось прочитать книгу: {exc}"
+msgstr "Nepodařilo se přečíst knihu: {exc}"
+
+#: src/malferma_libro/search_ui.py:220
+msgid "Не удалось прочитать текст на страницах: {count}."
+msgstr "Počet stránek, na kterých se nepodařilo přečíst text: {count}."
+
+#: src/malferma_libro/books.py:432
+msgid "Не удалось распаковать файл книги: {name}"
+msgstr "Nepodařilo se rozbalit soubor z knihy: {name}"
+
+#: src/malferma_libro/speech.py:460
+msgid "Не удалось синтезировать речь Piper."
+msgstr "Nepodařilo se syntetizovat řeč pomocí programu Piper."
+
+#: src/malferma_libro/voices.py:416 src/malferma_libro/voices.py:418
+msgid "Не удалось скачать голос Piper."
+msgstr "Nepodařilo se stáhnout hlas Piper."
+
+#: src/malferma_libro/app.py:1580 src/malferma_libro/app.py:1610 src/malferma_libro/app.py:1632 src/malferma_libro/keybindings_ui.py:295 src/malferma_libro/library_ui.py:206
+msgid "Не удалось сохранить библиотеку"
+msgstr "Nepodařilo se uložit knihovnu"
+
+#: src/malferma_libro/voices.py:448 src/malferma_libro/voices.py:516
+msgid "Не удалось сохранить голос Piper."
+msgstr "Nepodařilo se uložit hlas Piper."
+
+#: src/malferma_libro/bookmarks_ui.py:57
+msgid "Не удалось сохранить закладку"
+msgstr "Nepodařilo se uložit záložku"
+
+#: src/malferma_libro/bookmarks_ui.py:227
+msgid "Не удалось сохранить заметку"
+msgstr "Poznámku se nepodařilo uložit"
+
+#: src/malferma_libro/cbz.py:498
+msgid "Не удалось сохранить изображение страницы CBZ."
+msgstr "Nepodařilo se uložit obrázek stránky CBZ."
+
+#: src/malferma_libro/djvu.py:391
+msgid "Не удалось сохранить изображение страницы DjVu"
+msgstr "Nepodařilo se uložit obrázek stránky DjVu"
+
+#: src/malferma_libro/pdf.py:307
+msgid "Не удалось сохранить изображение страницы PDF"
+msgstr "Nepodařilo se uložit obrázek stránky PDF"
+
+#: src/malferma_libro/app.py:2017
+msgid "Не удалось сохранить место чтения"
+msgstr "Nepodařilo se uložit pozici čtení"
+
+#: src/malferma_libro/app.py:2143
+msgid "Не удалось сохранить список каталогов"
+msgstr "Nepodařilo se uložit seznam katalogů"
+
+#: src/malferma_libro/bookmarks_ui.py:85
+msgid "Не удалось удалить закладку"
+msgstr "Nepodařilo se odstranit záložku"
+
+#: src/malferma_libro/opds.py:115
+msgid "Не указан адрес каталога."
+msgstr "Nebyla zadána adresa katalogu."
+
+#: src/malferma_libro/opds.py:126 src/malferma_libro/opds.py:130 src/malferma_libro/opds.py:146
+msgid "Неверный адрес сервера."
+msgstr "Neplatná adresa serveru."
+
+#: src/malferma_libro/library_ui.py:39
+msgid "Недавние"
+msgstr "Nedávné"
+
+#: src/malferma_libro/djvu.py:283
+msgid "Недопустимое количество страниц DjVu"
+msgstr "Neplatný počet stránek DjVu"
+
+#: src/malferma_libro/pdf.py:169
+msgid "Недопустимое количество страниц PDF"
+msgstr "Neplatný počet stránek PDF"
+
+#: src/malferma_libro/cbz.py:354 src/malferma_libro/cbz.py:453
+msgid "Недопустимые параметры страницы CBZ."
+msgstr "Neplatné parametry stránky CBZ."
+
+#: src/malferma_libro/djvu.py:352
+msgid "Недопустимый масштаб DjVu"
+msgstr "Neplatné přiblížení DjVu"
+
+#: src/malferma_libro/pdf.py:253
+msgid "Недопустимый масштаб PDF"
+msgstr "Neplatné přiblížení PDF"
+
+#: src/malferma_libro/pdf.py:154
+msgid "Недопустимый пароль PDF"
+msgstr "Neplatné heslo PDF"
+
+#: src/malferma_libro/books.py:408
+msgid "Недопустимый путь в архиве книги"
+msgstr "Neplatná cesta v archivu knihy"
+
+#: src/malferma_libro/books.py:450
+msgid "Недопустимый путь во внутренней ссылке EPUB"
+msgstr "Neplatná cesta ve vnitřním odkazu EPUB"
+
+#: src/malferma_libro/djvu.py:119
+msgid "Недопустимый размер страницы DjVu"
+msgstr "Neplatné rozměry stránky DjVu"
+
+#: src/malferma_libro/pdf.py:132 src/malferma_libro/pdf.py:134
+msgid "Недопустимый размер страницы PDF"
+msgstr "Neplatné rozměry stránky PDF"
+
+#: src/malferma_libro/storage.py:199
+msgid "Неизвестная версия файла библиотеки."
+msgstr "Neznámá verze souboru knihovny."
+
+#: src/malferma_libro/speech.py:237
+msgid "Неизвестный язык озвучки: {language}."
+msgstr "Neznámý jazyk předčítání: {language}."
+
+#: src/malferma_libro/storage.py:222 src/malferma_libro/storage.py:752 src/malferma_libro/storage.py:788
+msgid "Некорректная закладка."
+msgstr "Neplatná záložka."
+
+#: src/malferma_libro/storage.py:206
+msgid "Некорректная запись книги."
+msgstr "Neplatný záznam knihy."
+
+#: src/malferma_libro/keybindings_ui.py:151
+msgid "Некорректное сочетание клавиш."
+msgstr "Neplatná klávesová zkratka."
+
+#: src/malferma_libro/storage.py:236
+msgid "Некорректные настройки библиотеки."
+msgstr "Neplatné nastavení knihovny."
+
+#: src/malferma_libro/storage.py:139 src/malferma_libro/storage.py:212 src/malferma_libro/storage.py:481 src/malferma_libro/storage.py:483 src/malferma_libro/storage.py:542
+msgid "Некорректные сведения о книге."
+msgstr "Neplatná metadata knihy."
+
+#: src/malferma_libro/storage.py:209
+msgid "Некорректный идентификатор книги."
+msgstr "Neplatný identifikátor knihy."
+
+#: src/malferma_libro/storage.py:242
+msgid "Некорректный каталог."
+msgstr "Neplatný katalog."
+
+#: src/malferma_libro/storage.py:214
+msgid "Некорректный путь к книге."
+msgstr "Neplatná cesta ke knize."
+
+#: src/malferma_libro/storage.py:58
+msgid "Некорректный размер шрифта."
+msgstr "Neplatná velikost písma."
+
+#: src/malferma_libro/storage.py:218
+msgid "Некорректный список закладок."
+msgstr "Neplatný seznam záložek."
+
+#: src/malferma_libro/storage.py:239
+msgid "Некорректный список каталогов."
+msgstr "Neplatný seznam katalogů."
+
+#: src/malferma_libro/storage.py:201
+msgid "Некорректный список книг."
+msgstr "Neplatný seznam knih."
+
+#: src/malferma_libro/storage.py:194 src/malferma_libro/storage.py:256
+msgid "Некорректный файл библиотеки."
+msgstr "Neplatný soubor knihovny."
+
+#: src/malferma_libro/app.py:854
+msgid "Некоторые книги не удалось открыть"
+msgstr "Některé knihy se nepodařilo otevřít"
+
+#: src/malferma_libro/cbz.py:487 src/malferma_libro/djvu.py:376 src/malferma_libro/pdf.py:279
+msgid "Нельзя заменить файл книги изображением страницы"
+msgstr "Soubor knihy nelze nahradit obrázkem stránky"
+
+#: src/malferma_libro/djvu.py:108
+msgid "Неподдерживаемая версия каталога DjVu"
+msgstr "Nepodporovaná verze adresáře DjVu"
+
+#: src/malferma_libro/djvu.py:96
+msgid "Неподдерживаемая структура документа DjVu"
+msgstr "Nepodporovaná struktura dokumentu DjVu"
+
+#: src/malferma_libro/djvu.py:68
+msgid "Неподдерживаемый тип документа DjVu"
+msgstr "Nepodporovaný typ dokumentu DjVu"
+
+#: src/malferma_libro/books.py:596
+msgid "Неподдерживаемый формат главы EPUB: {media}"
+msgstr "Nepodporovaný formát kapitoly EPUB: {media}"
+
+#: src/malferma_libro/task_ui.py:193
+msgid "Нет доступа. Проверьте права на файл или выберите другой каталог."
+msgstr "Přístup odepřen. Zkontrolujte oprávnění souboru nebo vyberte jinou složku."
+
+#: src/malferma_libro/app.py:2209
+msgid "Нет поддерживаемой прямой загрузки"
+msgstr "Žádné podporované přímé stažení"
+
+#: src/malferma_libro/library_ui.py:160 src/malferma_libro/search_ui.py:218
+msgid "Ничего не найдено."
+msgstr "Nic nenalezeno."
+
+#: src/malferma_libro/djvu.py:310
+msgid "Номер страницы DjVu вне допустимого диапазона"
+msgstr "Číslo stránky DjVu je mimo povolený rozsah"
+
+#: src/malferma_libro/pdf.py:211
+msgid "Номер страницы PDF вне допустимого диапазона"
+msgstr "Číslo stránky PDF je mimo povolený rozsah"
+
+#: src/malferma_libro/app.py:1175
+msgid "Ночной"
+msgstr "Noční"
+
+#: src/malferma_libro/app.py:422
+msgid "О приложении"
+msgstr "O aplikaci"
+
+#: src/malferma_libro/cover_ui.py:112 src/malferma_libro/cover_ui.py:120
+msgid "Обложка книги «{title}»"
+msgstr "Obálka knihy „{title}“"
+
+#: src/malferma_libro/cover_ui.py:130
+msgid "Обложка недоступна"
+msgstr "Obálka není k dispozici"
+
+#: src/malferma_libro/djvu.py:175
+msgid "Обработка DjVu заняла слишком много времени"
+msgstr "Vypršel časový limit pro zpracování DjVu"
+
+#: src/malferma_libro/pdf.py:104
+msgid "Обработка PDF заняла слишком много времени"
+msgstr "Vypršel časový limit pro zpracování PDF"
+
+#: src/malferma_libro/djvu.py:245
+msgid "Обработчик DjVu создал недопустимое изображение страницы"
+msgstr "Nástroj pro zpracování DjVu vytvořil neplatný obrázek stránky"
+
+#: src/malferma_libro/pdf.py:291
+msgid "Обработчик PDF не создал изображение страницы"
+msgstr "Nástroj pro zpracování PDF nevytvořil obrázek stránky"
+
+#: src/malferma_libro/pdf.py:295
+msgid "Обработчик PDF создал недопустимое изображение"
+msgstr "Nástroj pro zpracování PDF vytvořil neplatný obrázek"
+
+#: src/malferma_libro/app.py:525 src/malferma_libro/app.py:865 src/malferma_libro/app.py:866 src/malferma_libro/outline_ui.py:36 src/malferma_libro/outline_ui.py:47 src/malferma_libro/shortcuts.py:60
+msgid "Оглавление"
+msgstr "Obsah"
+
+#: src/malferma_libro/opds.py:392
+msgid "Ожидался OPDS-каталог в формате Atom."
+msgstr "Očekáván katalog OPDS ve formátu Atom."
+
+#: src/malferma_libro/task_ui.py:106 src/malferma_libro/task_ui.py:147
+msgid "Ожидание данных…"
+msgstr "Čekání na data…"
+
+#: src/malferma_libro/app.py:1000 src/malferma_libro/app.py:1000 src/malferma_libro/app.py:1526 src/malferma_libro/shortcuts.py:63
+msgid "Озвучить"
+msgstr "Číst nahlas"
+
+#: src/malferma_libro/accessibility_ui.py:234 src/malferma_libro/app.py:1210
+msgid "Озвучка"
+msgstr "Předčítání"
+
+#: src/malferma_libro/app.py:1574
+msgid "Озвучка книги завершена."
+msgstr "Předčítání knihy dokončeno."
+
+#: src/malferma_libro/app.py:1531
+msgid "Озвучка приостановлена"
+msgstr "Předčítání pozastaveno"
+
+#: src/malferma_libro/app.py:993
+msgid "Озвучка через Piper"
+msgstr "Předčítání pomocí Piper"
+
+#: src/malferma_libro/keybindings_ui.py:211 src/malferma_libro/keybindings_ui.py:66
+msgid "Отключено"
+msgstr "Vypnuto"
+
+#: src/malferma_libro/keybindings_ui.py:229
+msgid "Отключить"
+msgstr "Vypnout"
+
+#: src/malferma_libro/app.py:907
+msgid "Откройте книгу в библиотеке."
+msgstr "Otevřete knihu z knihovny."
+
+#: src/malferma_libro/library_ui.py:76
+msgid "Откройте книгу или подключите OPDS-каталог во вкладке «Сетевые библиотеки»."
+msgstr "Otevřete knihu nebo se připojte ke katalogu OPDS na kartě „Síťové knihovny“."
+
+#: src/malferma_libro/app.py:1171
+msgid "Открывать последнюю книгу при запуске"
+msgstr "Při spuštění otevřít poslední knihu"
+
+#: src/malferma_libro/library_ui.py:247
+msgid "Открытие книги…"
+msgstr "Otevírání knihy…"
+
+#: src/malferma_libro/library_ui.py:258
+msgid "Открыть"
+msgstr "Otevřít"
+
+#: src/malferma_libro/bookmarks_ui.py:124
+msgid "Открыть закладку: {chapter}. {excerpt}"
+msgstr "Otevřít záložku: {chapter}. {excerpt}"
+
+#: src/malferma_libro/app.py:523 src/malferma_libro/app.py:809 src/malferma_libro/desktop.py:257 src/malferma_libro/shortcuts.py:30
+msgid "Открыть книги"
+msgstr "Otevřít knihy"
+
+#: src/malferma_libro/app.py:2203
+msgid "Открыть раздел"
+msgstr "Otevřít sekci"
+
+#: src/malferma_libro/app.py:361 src/malferma_libro/narration_ui.py:159
+msgid "Открыть…"
+msgstr "Otevřít…"
+
+#: src/malferma_libro/app.py:2107 src/malferma_libro/app.py:813 src/malferma_libro/bookmarks_ui.py:175 src/malferma_libro/bookmarks_ui.py:175 src/malferma_libro/keybindings_ui.py:230 src/malferma_libro/library_ui.py:257 src/malferma_libro/narration_ui.py:159
+msgid "Отмена"
+msgstr "Zrušit"
+
+#: src/malferma_libro/task_ui.py:127
+msgid "Отмена запрошена"
+msgstr "Požádáno o zrušení"
+
+#: src/malferma_libro/task_ui.py:96 src/malferma_libro/task_ui.py:97
+msgid "Отменить"
+msgstr "Zrušit"
+
+#: src/malferma_libro/search_ui.py:25
+msgid "Отменить поиск"
+msgstr "Zrušit hledání"
+
+#: src/malferma_libro/app.py:1170
+msgid "Оформление окна"
+msgstr "Vzhled okna"
+
+#: src/malferma_libro/app.py:1525
+msgid "Пауза"
+msgstr "Pozastavit"
+
+#: src/malferma_libro/library_ui.py:39
+msgid "По автору"
+msgstr "Podle autora"
+
+#: src/malferma_libro/library_ui.py:39
+msgid "По названию"
+msgstr "Podle názvu"
+
+#: src/malferma_libro/app.py:1213
+msgid "По тексту главы"
+msgstr "Rozpoznat podle textu kapitoly"
+
+#: src/malferma_libro/keybindings_ui.py:227 src/malferma_libro/keybindings_ui.py:49
+msgid "По умолчанию"
+msgstr "Výchozí"
+
+#: src/malferma_libro/djvu.py:130
+msgid "Повреждена структура страницы DjVu"
+msgstr "Struktura stránky DjVu je poškozená"
+
+#: src/malferma_libro/djvu.py:65 src/malferma_libro/djvu.py:87 src/malferma_libro/djvu.py:93
+msgid "Повреждена структура файла DjVu"
+msgstr "Struktura souboru DjVu je poškozená"
+
+#: src/malferma_libro/djvu.py:111 src/malferma_libro/djvu.py:116
+msgid "Повреждён каталог страниц DjVu"
+msgstr "Adresář stránek DjVu je poškozený"
+
+#: src/malferma_libro/books.py:448 src/malferma_libro/books.py:471
+msgid "Повреждённая внутренняя ссылка EPUB"
+msgstr "Nesprávně utvořený vnitřní odkaz EPUB"
+
+#: src/malferma_libro/books.py:394
+msgid "Повреждённый ZIP-архив книги"
+msgstr "Poškozený archiv ZIP knihy"
+
+#: src/malferma_libro/app.py:1490
+msgid "Повторите загрузку страницы."
+msgstr "Zkuste stránku načíst znovu."
+
+#: src/malferma_libro/app.py:889 src/malferma_libro/task_ui.py:204 src/malferma_libro/task_ui.py:204
+msgid "Повторить"
+msgstr "Zkusit znovu"
+
+#: src/malferma_libro/books.py:410
+msgid "Повторяющиеся имена файлов в архиве книги"
+msgstr "Duplicitní názvy souborů v archivu knihy"
+
+#: src/malferma_libro/books.py:557
+msgid "Повторяющийся идентификатор в списке файлов EPUB"
+msgstr "Duplicitní identifikátor v seznamu souborů EPUB"
+
+#: src/malferma_libro/books.py:851
+msgid "Поддерживаются EPUB, FB2, FB2.ZIP, TXT, PDF, DjVu, HTML, Markdown и CBZ"
+msgstr "Podporované formáty: EPUB, FB2, FB2.ZIP, TXT, PDF, DjVu, HTML, Markdown a CBZ"
+
+#: src/malferma_libro/app.py:2097
+msgid "Поддерживаются прямые загрузки EPUB, FB2, TXT, PDF, DjVu, HTML, Markdown и CBZ. Каталоги с авторизацией и DRM пока не поддерживаются."
+msgstr "Je podporováno přímé stahování EPUB, FB2, TXT, PDF, DjVu, HTML, Markdown a CBZ. Katalogy vyžadující přihlášení nebo DRM zatím nejsou podporovány."
+
+#: src/malferma_libro/app.py:2051 src/malferma_libro/app.py:2095
+msgid "Подключите публичный OPDS 1.x каталог или каталог Calibre в локальной сети."
+msgstr "Připojte se k veřejnému katalogu OPDS 1.x nebo ke katalogu Calibre v místní síti."
+
+#: src/malferma_libro/app.py:2058 src/malferma_libro/app.py:2063 src/malferma_libro/app.py:2064
+msgid "Подключиться"
+msgstr "Připojit"
+
+#: src/malferma_libro/app.py:2079
+msgid "Поиск (если каталог его поддерживает)"
+msgstr "Hledat (pokud to katalog podporuje)"
+
+#: src/malferma_libro/app.py:1796 src/malferma_libro/app.py:1807
+msgid "Поиск и озвучка доступны в тексте страницы."
+msgstr "V textu stránky je dostupné hledání a předčítání."
+
+#: src/malferma_libro/search_ui.py:118 src/malferma_libro/search_ui.py:186
+msgid "Поиск отменён."
+msgstr "Hledání zrušeno."
+
+#: src/malferma_libro/app.py:1640 src/malferma_libro/app.py:897 src/malferma_libro/search_ui.py:42
+msgid "Поиск по всей книге"
+msgstr "Prohledat celou knihu"
+
+#: src/malferma_libro/search_ui.py:156 src/malferma_libro/search_ui.py:189
+msgid "Поиск по книге…"
+msgstr "Prohledávání knihy…"
+
+#: src/malferma_libro/search_ui.py:216
+msgid "Показаны первые {count} совпадений. Уточните запрос."
+msgstr "Zobrazuje se prvních {count} shod. Upřesněte dotaz."
+
+#: src/malferma_libro/shortcuts.py:42
+msgid "Показать верхнюю панель"
+msgstr "Zobrazit horní lištu"
+
+#: src/malferma_libro/app.py:382 src/malferma_libro/app.py:465 src/malferma_libro/app.py:521 src/malferma_libro/shortcuts.py:41
+msgid "Полноэкранный режим"
+msgstr "Celá obrazovka"
+
+#: src/malferma_libro/storage.py:126
+msgid "Положение в книге должно быть целым неотрицательным числом."
+msgstr "Pozice v knize musí být nezáporné celé číslo."
+
+#: src/malferma_libro/accessibility_ui.py:277 src/malferma_libro/app.py:1206
+msgid "Полужирный текст"
+msgstr "Tučný text"
+
+#: src/malferma_libro/keybindings_ui.py:49
+msgid "Пользовательские"
+msgstr "Vlastní"
+
+#: src/malferma_libro/books.py:593
+msgid "Порядок глав EPUB ссылается на отсутствующий файл"
+msgstr "Pořadí kapitol EPUB odkazuje na chybějící soubor"
+
+#: src/malferma_libro/app.py:526 src/malferma_libro/app.py:869 src/malferma_libro/shortcuts.py:56
+msgid "Предыдущая глава"
+msgstr "Předchozí kapitola"
+
+#: src/malferma_libro/keyboard_navigation.py:27
+msgid "Предыдущая страница"
+msgstr "Předchozí stránka"
+
+#: src/malferma_libro/search_ui.py:19
+msgid "Предыдущее совпадение"
+msgstr "Předchozí shoda"
+
+#: src/malferma_libro/app.py:1185
+msgid "Приглушение цветов страницы; яркость монитора не меняется."
+msgstr "Ztlumí barvy stránky; nemění jas monitoru."
+
+#: src/malferma_libro/accessibility_ui.py:288 src/malferma_libro/app.py:1208
+msgid "Применить"
+msgstr "Použít"
+
+#: src/malferma_libro/books.py:770
+msgid "Примечание {number}"
+msgstr "Poznámka {number}"
+
+#: src/malferma_libro/books.py:753 src/malferma_libro/outline_ui.py:119 src/malferma_libro/outline_ui.py:66
+msgid "Примечания"
+msgstr "Poznámky"
+
+#: src/malferma_libro/task_ui.py:197
+msgid "Проверьте доступ к файлу или каталогу и повторите действие."
+msgstr "Zkontrolujte přístup k souboru nebo složce a zkuste to znovu."
+
+#: src/malferma_libro/app.py:1525
+msgid "Продолжить"
+msgstr "Pokračovat"
+
+#: src/malferma_libro/library_ui.py:117 src/malferma_libro/library_ui.py:60
+msgid "Продолжить чтение"
+msgstr "Pokračovat ve čtení"
+
+#: src/malferma_libro/keyboard_navigation.py:23
+msgid "Прокрутить вверх"
+msgstr "Posunout nahoru"
+
+#: src/malferma_libro/keyboard_navigation.py:24
+msgid "Прокрутить вниз"
+msgstr "Posunout dolů"
+
+#: src/malferma_libro/narration_ui.py:222 src/malferma_libro/narration_ui.py:50
+msgid "Прослушать образец"
+msgstr "Poslechnout ukázku"
+
+#: src/malferma_libro/library_ui.py:14
+msgid "Прочитано"
+msgstr "Přečteno"
+
+#: src/malferma_libro/books.py:744
+msgid "Раздел {number}"
+msgstr "Sekce {number}"
+
+#: src/malferma_libro/opds.py:191 src/malferma_libro/opds.py:209
+msgid "Размер ответа превышает допустимый предел."
+msgstr "Odpověď překračuje povolenou velikost."
+
+#: src/malferma_libro/accessibility_ui.py:273 src/malferma_libro/app.py:1191
+msgid "Размер текста"
+msgstr "Velikost textu"
+
+#: src/malferma_libro/speech.py:128
+msgid "Размер фрагмента должен быть положительным."
+msgstr "Velikost úseku musí být kladná."
+
+#: src/malferma_libro/app.py:876
+msgid "Размер шрифта"
+msgstr "Velikost písma"
+
+#: src/malferma_libro/books.py:420
+msgid "Распакованный размер книги превышает допустимый предел"
+msgstr "Rozbalená kniha překračuje povolenou velikost"
+
+#: src/malferma_libro/keybindings_ui.py:48 src/malferma_libro/keybindings_ui.py:51
+msgid "Режим"
+msgstr "Režim"
+
+#: src/malferma_libro/accessibility_ui.py:288 src/malferma_libro/app.py:1208
+msgid "Режим для слабовидящих"
+msgstr "Režim pro slabozraké"
+
+#: src/malferma_libro/search_ui.py:311
+msgid "Результат {number} из {count}"
+msgstr "Výsledek {number} z {count}"
+
+#: src/malferma_libro/app.py:420 src/malferma_libro/app.py:582 src/malferma_libro/app.py:603 src/malferma_libro/shortcuts.py:43
+msgid "Руководство пользователя"
+msgstr "Uživatelská příručka"
+
+#: src/malferma_libro/app.py:1150
+msgid "Светлый"
+msgstr "Světlý"
+
+#: src/malferma_libro/app.py:1175
+msgid "Сепия"
+msgstr "Sépie"
+
+#: src/malferma_libro/opds.py:390
+msgid "Сервер вернул некорректный XML-каталог."
+msgstr "Server vrátil nesprávně utvořený katalog XML."
+
+#: src/malferma_libro/opds.py:219
+msgid "Сервер вернул ошибку HTTP {code}."
+msgstr "Server vrátil chybu HTTP {code}."
+
+#: src/malferma_libro/opds.py:543
+msgid "Сервер вернул пустой файл."
+msgstr "Server vrátil prázdný soubor."
+
+#: src/malferma_libro/opds.py:258 src/malferma_libro/opds.py:265 src/malferma_libro/opds.py:517
+msgid "Сервер вернул файл неподдерживаемого типа."
+msgstr "Server vrátil nepodporovaný typ souboru."
+
+#: src/malferma_libro/opds.py:213 src/malferma_libro/opds.py:237 src/malferma_libro/opds.py:269 src/malferma_libro/opds.py:541 src/malferma_libro/opds.py:549
+msgid "Сервер передал неполный файл."
+msgstr "Server odeslal neúplný soubor."
+
+#: src/malferma_libro/app.py:368 src/malferma_libro/app.py:416 src/malferma_libro/shortcuts.py:40
+msgid "Сетевые библиотеки"
+msgstr "Síťové knihovny"
+
+#: src/malferma_libro/app.py:2050 src/malferma_libro/app.py:2094
+msgid "Сетевые библиотеки OPDS"
+msgstr "Síťové knihovny OPDS"
+
+#: src/malferma_libro/books.py:415
+msgid "Символические ссылки в архиве книги запрещены"
+msgstr "Symbolické odkazy v archivech knih nejsou povoleny"
+
+#: src/malferma_libro/app.py:1148
+msgid "Системные шрифты, масштаб и оконные кнопки задаёт рабочая среда. Виджеты используют libadwaita."
+msgstr "Systémová písma, měřítko a tlačítka oken určuje pracovní prostředí. Ovládací prvky používají libadwaita."
+
+#: src/malferma_libro/app.py:1153 src/malferma_libro/appearance.py:22
+msgid "Системный"
+msgstr "Podle systému"
+
+#: src/malferma_libro/app.py:2205
+msgid "Скачать {format}"
+msgstr "Stáhnout {format}"
+
+#: src/malferma_libro/app.py:2255
+msgid "Скачивание книги…"
+msgstr "Stahování knihy…"
+
+#: src/malferma_libro/accessibility_ui.py:262 src/malferma_libro/app.py:1218
+msgid "Скорость, %"
+msgstr "Rychlost, %"
+
+#: src/malferma_libro/app.py:527 src/malferma_libro/app.py:870 src/malferma_libro/shortcuts.py:58
+msgid "Следующая глава"
+msgstr "Další kapitola"
+
+#: src/malferma_libro/keyboard_navigation.py:28
+msgid "Следующая страница"
+msgstr "Další stránka"
+
+#: src/malferma_libro/search_ui.py:21
+msgid "Следующее совпадение"
+msgstr "Následující shoda"
+
+#: src/malferma_libro/books.py:399
+msgid "Слишком много файлов в архиве книги"
+msgstr "Příliš mnoho souborů v archivu knihy"
+
+#: src/malferma_libro/djvu.py:77
+msgid "Слишком сложная структура документа DjVu"
+msgstr "Příliš složitá struktura dokumentu DjVu"
+
+#: src/malferma_libro/app.py:1480 src/malferma_libro/bookmarks_ui.py:41
+msgid "Сначала откройте книгу."
+msgstr "Nejprve otevřete knihu."
+
+#: src/malferma_libro/search_ui.py:217
+msgid "Совпадений: {count}"
+msgstr "Shody: {count}"
+
+#: src/malferma_libro/storage.py:355 src/malferma_libro/storage.py:375
+msgid "Создана пустая библиотека. Файлы книг сохранены в папке books; их можно импортировать снова."
+msgstr "Byla vytvořena prázdná knihovna. Soubory knih zůstaly ve složce books a lze je znovu importovat."
+
+#: src/malferma_libro/library_ui.py:41 src/malferma_libro/library_ui.py:43
+msgid "Сортировка библиотеки"
+msgstr "Řazení knihovny"
+
+#: src/malferma_libro/bookmarks_ui.py:176 src/malferma_libro/bookmarks_ui.py:176 src/malferma_libro/keybindings_ui.py:231
+msgid "Сохранить"
+msgstr "Uložit"
+
+#: src/malferma_libro/keybindings_ui.py:168
+msgid "Сочетание занято: {action}"
+msgstr "Zkratka je již přiřazena: {action}"
+
+#: src/malferma_libro/accessibility_ui.py:267 src/malferma_libro/accessibility_ui.py:315 src/malferma_libro/accessibility_ui.py:316 src/malferma_libro/app.py:1196 src/malferma_libro/app.py:529 src/malferma_libro/shortcuts.py:36
+msgid "Специальные возможности"
+msgstr "Přístupnost"
+
+#: src/malferma_libro/storage.py:357 src/malferma_libro/storage.py:377
+msgid "Список книг и настройки восстановлены из последней резервной копии."
+msgstr "Seznam knih a nastavení byly obnoveny z poslední zálohy."
+
+#: src/malferma_libro/app.py:1006 src/malferma_libro/app.py:531 src/malferma_libro/shortcuts.py:54
+msgid "Стандартный размер текста"
+msgstr "Výchozí velikost textu"
+
+#: src/malferma_libro/accessibility_ui.py:238 src/malferma_libro/narration_ui.py:222 src/malferma_libro/shortcuts.py:64
+msgid "Стоп"
+msgstr "Zastavit"
+
+#: src/malferma_libro/books.py:809 src/malferma_libro/books.py:823 src/malferma_libro/cbz.py:528 src/malferma_libro/outline_ui.py:120 src/malferma_libro/outline_ui.py:86
+msgid "Страница {number}"
+msgstr "Stránka {number}"
+
+#: src/malferma_libro/bookmarks_ui.py:34 src/malferma_libro/bookmarks_ui.py:52
+msgid "Страница {page}"
+msgstr "Stránka {page}"
+
+#: src/malferma_libro/app.py:1792 src/malferma_libro/pagination.py:152
+msgid "Страница {page} из {pages}"
+msgstr "Stránka {page} z {pages}"
+
+#: src/malferma_libro/app.py:2033
+msgid "Страница {page} из {pages}  ·  {percent}% книги"
+msgstr "Stránka {page} z {pages}  ·  {percent}% knihy"
+
+#: src/malferma_libro/app.py:1797 src/malferma_libro/app.py:1808
+msgid "Страница без текстового слоя. Скан доступен для просмотра; OCR пока не поддерживается."
+msgstr "Tato stránka nemá textovou vrstvu. Můžete si prohlédnout sken; OCR zatím není podporováno."
+
+#: src/malferma_libro/app.py:957 src/malferma_libro/app.py:960
+msgid "Страница документа"
+msgstr "Stránka dokumentu"
+
+#: src/malferma_libro/app.py:1172 src/malferma_libro/app.py:943 src/malferma_libro/app.py:997 src/malferma_libro/app.py:998
+msgid "Страница книги"
+msgstr "Stránka knihy"
+
+#: src/malferma_libro/outline_ui.py:68
+msgid "Страницы"
+msgstr "Stránky"
+
+#: src/malferma_libro/pagination.py:153
+msgid "Страницы {first}–{last} из {pages}"
+msgstr "Stránky {first}–{last} z {pages}"
+
+#: src/malferma_libro/books.py:577 src/malferma_libro/books.py:724 src/malferma_libro/markup.py:110 src/malferma_libro/markup.py:229 src/malferma_libro/markup.py:380 src/malferma_libro/markup.py:427
+msgid "Текст книги превышает допустимый размер"
+msgstr "Text knihy překračuje povolenou velikost"
+
+#: src/malferma_libro/speech.py:235
+msgid "Текст озвучки должен быть строкой."
+msgstr "Text pro předčítání musí být řetězec."
+
+#: src/malferma_libro/app.py:984 src/malferma_libro/app.py:989
+msgid "Текст страницы · поиск и озвучка"
+msgstr "Text stránky · hledání a předčítání"
+
+#: src/malferma_libro/books.py:869
+msgid "Текстовый файл пуст"
+msgstr "Textový soubor je prázdný"
+
+#: src/malferma_libro/app.py:1150
+msgid "Тёмный"
+msgstr "Tmavý"
+
+#: src/malferma_libro/accessibility_ui.py:296
+msgid "Увеличение лупы"
+msgstr "Zvětšení lupy"
+
+#: src/malferma_libro/app.py:1008 src/malferma_libro/app.py:532 src/malferma_libro/shortcuts.py:50
+msgid "Увеличить текст"
+msgstr "Zvětšit text"
+
+#: src/malferma_libro/bookmarks_ui.py:135
+msgid "Удалить закладку"
+msgstr "Odstranit záložku"
+
+#: src/malferma_libro/app.py:2060
+msgid "Удалить каталог из списка"
+msgstr "Odstranit katalog ze seznamu"
+
+#: src/malferma_libro/app.py:1204
+msgid "Удерживайте правую кнопку мыши и проведите влево или вправо для перехода между главами или страницами."
+msgstr "Podržte stisknuté pravé tlačítko myši a posuňte myš doleva nebo doprava pro přechod mezi kapitolami nebo stránkami."
+
+#: src/malferma_libro/storage.py:824
+msgid "Укажите название каталога."
+msgstr "Zadejte název katalogu."
+
+#: src/malferma_libro/storage.py:173
+msgid "Укажите полный адрес OPDS-каталога: https://example.org/opds."
+msgstr "Zadejte úplnou adresu katalogu OPDS: https://example.org/opds."
+
+#: src/malferma_libro/books.py:795
+msgid "Указанный путь не является файлом"
+msgstr "Zadaná cesta není soubor"
+
+#: src/malferma_libro/app.py:1004 src/malferma_libro/app.py:530 src/malferma_libro/shortcuts.py:52
+msgid "Уменьшить текст"
+msgstr "Zmenšit text"
+
+#: src/malferma_libro/pagination.py:175 src/malferma_libro/pagination.py:177
+msgid "Условные страницы всей книги"
+msgstr "Referenční stránky celé knihy"
+
+#: src/malferma_libro/narration_ui.py:52
+msgid "Установка Piper"
+msgstr "Instalace Piper"
+
+#: src/malferma_libro/djvu.py:157
+msgid "Файл DjVu превышает допустимый размер 64 МиБ"
+msgstr "Soubor DjVu překračuje povolenou velikost 64 MiB"
+
+#: src/malferma_libro/djvu.py:55
+msgid "Файл DjVu пуст или превышает допустимый размер 64 МиБ"
+msgstr "Soubor DjVu je prázdný nebo překračuje povolenou velikost 64 MiB"
+
+#: src/malferma_libro/pdf.py:72
+msgid "Файл PDF пуст или превышает допустимый размер 64 МиБ"
+msgstr "Soubor PDF je prázdný nebo překračuje povolenou velikost 64 MiB"
+
+#: src/malferma_libro/storage.py:354 src/malferma_libro/storage.py:369
+msgid "Файл библиотеки повреждён. Исходный файл сохранён: {preserved}"
+msgstr "Soubor knihovny je poškozený. Původní soubor byl zachován: {preserved}"
+
+#: src/malferma_libro/books.py:417 src/malferma_libro/books.py:434
+msgid "Файл внутри книги превышает допустимый размер"
+msgstr "Soubor uvnitř knihy překračuje povolenou velikost"
+
+#: src/malferma_libro/task_ui.py:191
+msgid "Файл не найден. Выберите книгу снова или проверьте, доступен ли диск."
+msgstr "Soubor nenalezen. Vyberte knihu znovu nebo zkontrolujte, zda je disk dostupný."
+
+#: src/malferma_libro/markup.py:354
+msgid "Файл не содержит доступного текста."
+msgstr "Soubor neobsahuje čitelný text."
+
+#: src/malferma_libro/djvu.py:62
+msgid "Файл не является документом DjVu"
+msgstr "Soubor není dokument DjVu"
+
+#: src/malferma_libro/books.py:705
+msgid "Файл не является книгой FB2"
+msgstr "Soubor není kniha FB2"
+
+#: src/malferma_libro/books.py:276 src/malferma_libro/markup.py:39
+msgid "Файл разметки слишком сложный."
+msgstr "Soubor se značkami je příliš složitý."
+
+#: src/malferma_libro/markup.py:108
+msgid "Файл разметки содержит двоичные данные."
+msgstr "Soubor se značkami obsahuje binární data."
+
+#: src/malferma_libro/voices.py:102 src/malferma_libro/voices.py:179 src/malferma_libro/voices.py:386 src/malferma_libro/voices.py:392 src/malferma_libro/voices.py:394 src/malferma_libro/voices.py:405 src/malferma_libro/voices.py:411 src/malferma_libro/voices.py:421 src/malferma_libro/voices.py:443 src/malferma_libro/voices.py:446 src/malferma_libro/voices.py:460 src/malferma_libro/voices.py:468 src/malferma_libro/voices.py:473 src/malferma_libro/voices.py:481 src/malferma_libro/voices.py:491
+msgid "Файлы голоса Piper не прошли проверку."
+msgstr "Soubory hlasu Piper neprošly ověřením."
+
+#: src/malferma_libro/library_ui.py:40 src/malferma_libro/library_ui.py:42 src/malferma_libro/library_ui.py:48 src/malferma_libro/library_ui.py:50
+msgid "Фильтр библиотеки"
+msgstr "Filtr knihovny"
+
+#: src/malferma_libro/app.py:1188
+msgid "Фон страницы"
+msgstr "Pozadí stránky"
+
+#: src/malferma_libro/opds.py:519
+msgid "Формат ответа не совпадает с форматом книги."
+msgstr "Formát odpovědi neodpovídá formátu knihy."
+
+#: src/malferma_libro/app.py:1173
+msgid "Цвета и шрифты страницы настраиваются отдельно от интерфейса."
+msgstr "Barvy a písma stránky se nastavují nezávisle na rozhraní."
+
+#: src/malferma_libro/app.py:573
+msgid "Читалка EPUB, FB2, TXT, PDF, DjVu, HTML, Markdown и CBZ с локальной библиотекой и каталогами OPDS."
+msgstr "Čtečka EPUB, FB2, TXT, PDF, DjVu, HTML, Markdown a CBZ s místní knihovnou a katalogy OPDS."
+
+#: src/malferma_libro/library_ui.py:13
+msgid "Читаю"
+msgstr "Čtu"
+
+#: src/malferma_libro/app.py:367 src/malferma_libro/app.py:415 src/malferma_libro/shortcuts.py:27 src/malferma_libro/shortcuts.py:39
+msgid "Чтение"
+msgstr "Čtení"
+
+#: src/malferma_libro/djvu.py:358
+msgid "Ширина страницы DjVu должна быть положительным целым числом"
+msgstr "Šířka stránky DjVu musí být kladné celé číslo"
+
+#: src/malferma_libro/pdf.py:259
+msgid "Ширина страницы PDF должна быть положительным целым числом"
+msgstr "Šířka stránky PDF musí být kladné celé číslo"
+
+#: src/malferma_libro/app.py:1190
+msgid "Шрифт книги"
+msgstr "Písmo knihy"
+
+#: src/malferma_libro/keybindings_ui.py:148
+msgid "Это сочетание зарезервировано системой."
+msgstr "Tato zkratka je vyhrazena systémem."
+
+#: src/malferma_libro/storage.py:827
+msgid "Этот каталог уже добавлен."
+msgstr "Tento katalog již byl přidán."
+
+#: src/malferma_libro/opds.py:495
+msgid "Этот формат книги не поддерживается."
+msgstr "Tento formát knihy není podporován."
+
+#: src/malferma_libro/accessibility_ui.py:258 src/malferma_libro/app.py:1217 src/malferma_libro/app.py:590 src/malferma_libro/app.py:591
+msgid "Язык"
+msgstr "Jazyk"
+
+#: src/malferma_libro/app.py:1169 src/malferma_libro/app.py:588
+msgid "Язык интерфейса"
+msgstr "Jazyk rozhraní"
+
+#: src/malferma_libro/storage.py:263
+msgid "Язык озвучки «{language}» больше не поддерживается. Выбрано автоматическое определение языка."
+msgstr "Jazyk předčítání „{language}“ již není podporován. Bylo vybráno automatické rozpoznávání jazyka."
+
+#: src/malferma_libro/app.py:1194
+msgid "Яркость страницы, %"
+msgstr "Jas stránky, %"
+
+#: src/malferma_libro/books.py:596
+msgid "не указан"
+msgstr "neuveden"
+
+#: src/malferma_libro/xmlutil.py:28
+msgid "слишком большая вложенность XML"
+msgstr "příliš hluboké vnoření XML"
+
+#: src/malferma_libro/xmlutil.py:26
+msgid "слишком много элементов XML"
+msgstr "příliš mnoho prvků XML"
+
+#: src/malferma_libro/bookmarks_ui.py:98 src/malferma_libro/shortcuts.py:61
+msgid "＋ Закладка"
+msgstr "＋ Záložka"

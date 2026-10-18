@@ -1,0 +1,1709 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Translation source recovered from the installed GNU gettext catalog.
+
+msgid ""
+msgstr "Project-Id-Version: Malferma Libro 0.1.0\nLanguage: tt\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/malferma_libro/library_ui.py:105
+msgid " · Найдено: {count}"
+msgstr " · Табылды: {count}"
+
+#: src/malferma_libro/app.py:884
+msgid "100% — по ширине окна; вёрстка PDF, DjVu и CBZ сохраняется"
+msgstr "100% — тәрәзә киңлегенә туры китерү; PDF, DjVu һәм CBZ бит төзелеше саклана"
+
+#: src/malferma_libro/djvu.py:127
+msgid "DjVu с внешними файлами не поддерживается"
+msgstr "Тышкы файллары булган DjVu документлары хупланмый"
+
+#: src/malferma_libro/library_ui.py:77
+msgid "EPUB · FB2 · FB2.ZIP · TXT · PDF · DjVu · HTML · Markdown · CBZ. Книги копируются в локальную библиотеку."
+msgstr "EPUB · FB2 · FB2.ZIP · TXT · PDF · DjVu · HTML · Markdown · CBZ. Китаплар җирле китапханәгә күчерелә."
+
+#: src/malferma_libro/books.py:618
+msgid "EPUB не содержит доступных текстовых глав"
+msgstr "EPUB эчендә укырлык текст бүлекләре юк"
+
+#: src/malferma_libro/books.py:543
+msgid "EPUB не содержит описания книги"
+msgstr "EPUB эчендә китап тасвирламасы юк"
+
+#: src/malferma_libro/books.py:775
+msgid "FB2 не содержит доступного текста"
+msgstr "FB2 эчендә укырлык текст юк"
+
+#: src/malferma_libro/app.py:2178 src/malferma_libro/app.py:2179
+msgid "OPDS-каталог"
+msgstr "OPDS каталогы"
+
+#: src/malferma_libro/pdf.py:114
+msgid "PDF защищён паролем. Откройте незашифрованную копию книги."
+msgstr "PDF серсүз белән сакланган. Китапның шифрланмаган күчермәсен ачыгыз."
+
+#: src/malferma_libro/app.py:1195
+msgid "PDF, DjVu и CBZ сохраняют исходные шрифты и цвета; размер меняется масштабом."
+msgstr "PDF, DjVu һәм CBZ башлангыч шрифтларын һәм төсләрен саклый; үлчәмне масштаб аша үзгәртегез."
+
+#: src/malferma_libro/app.py:1532
+msgid "Piper не установлен. Инструкция доступна в руководстве."
+msgstr "Piper урнаштырылмаган. Күрсәтмәләр кулланучы кулланмасында бар."
+
+#: src/malferma_libro/books.py:864
+msgid "TXT должен быть в кодировке UTF-8 или Windows-1251"
+msgstr "TXT файлы UTF-8 яки Windows-1251 кодлавында булырга тиеш"
+
+#: src/malferma_libro/books.py:866
+msgid "TXT содержит двоичные данные"
+msgstr "TXT файлында икеле мәгълүматлар бар"
+
+#: src/malferma_libro/bookmarks_ui.py:195
+msgid "{count} из {limit} символов"
+msgstr "{count} / {limit} тамга"
+
+#: src/malferma_libro/books.py:144
+msgid "{label}: XML превышает допустимый размер"
+msgstr "{label}: XML рөхсәт ителгән үлчәмнән арта"
+
+#: src/malferma_libro/books.py:377
+msgid "{label}: не удалось прочитать текст EPUB"
+msgstr "{label}: EPUB текстын укып булмады"
+
+#: src/malferma_libro/markup.py:106 src/malferma_libro/markup.py:352 src/malferma_libro/markup.py:425
+msgid "{label}: не удалось прочитать текст."
+msgstr "{label}: текстны укып булмады."
+
+#: src/malferma_libro/books.py:366
+msgid "{label}: объявления DTD запрещены"
+msgstr "{label}: DTD белдерүләре тыелган"
+
+#: src/malferma_libro/books.py:150 src/malferma_libro/books.py:156 src/malferma_libro/markup.py:126
+msgid "{label}: объявления DTD и сущностей XML запрещены"
+msgstr "{label}: DTD һәм XML entity белдерүләре тыелган"
+
+#: src/malferma_libro/books.py:363
+msgid "{label}: объявления сущностей запрещены"
+msgstr "{label}: XML entity белдерүләре тыелган"
+
+#: src/malferma_libro/books.py:162
+msgid "{label}: повреждённый XML"
+msgstr "{label}: бозылган XML"
+
+#: src/malferma_libro/app.py:2037 src/malferma_libro/library_ui.py:115 src/malferma_libro/library_ui.py:186
+msgid "{percent}% прочитано"
+msgstr "{percent}% укылган"
+
+#: src/malferma_libro/narration_ui.py:78
+msgid "Автоматически"
+msgstr "Автоматик"
+
+#: src/malferma_libro/app.py:1189
+msgid "Автоматически скрывать панель в полном экране"
+msgstr "Тулы экран режимында панельне автоматик рәвештә яшерү"
+
+#: src/malferma_libro/pdf.py:117
+msgid "Автор PDF запретил извлечение текста из этого документа"
+msgstr "PDF авторы бу документтан текст чыгаруны тыйган"
+
+#: src/malferma_libro/library_ui.py:183
+msgid "Автор не указан"
+msgstr "Автор күрсәтелмәгән"
+
+#: src/malferma_libro/app.py:2114
+msgid "Адрес OPDS-каталога"
+msgstr "OPDS каталогы адресы"
+
+#: src/malferma_libro/storage.py:188
+msgid "Адрес каталога должен начинаться с http:// или https:// и не содержать пароль."
+msgstr "Каталог адресы http:// яки https:// белән башланырга һәм серсүзне үз эченә алмаска тиеш."
+
+#: src/malferma_libro/opds.py:118
+msgid "Адрес содержит недопустимые символы."
+msgstr "Адрес эчендә рөхсәт ителмәгән тамгалар бар."
+
+#: src/malferma_libro/opds.py:124
+msgid "Адреса с логином или паролем не поддерживаются."
+msgstr "Кулланучы исеме яки серсүзе булган адреслар хупланмый."
+
+#: src/malferma_libro/books.py:97
+msgid "Архив CBZ превышает допустимый размер (512 МиБ)"
+msgstr "CBZ архивы рөхсәт ителгән үлчәмнән арта (512 МиБ)"
+
+#: src/malferma_libro/books.py:846
+msgid "Архив FB2 должен содержать ровно один файл .fb2"
+msgstr "FB2 архивында нәкъ бер .fb2 файлы булырга тиеш"
+
+#: src/malferma_libro/opds.py:432
+msgid "Без названия"
+msgstr "Исемсез"
+
+#: src/malferma_libro/storage.py:197
+msgid "Библиотека создана более новой версией программы. Обновите приложение."
+msgstr "Китапханә программаның яңарак версиясендә төзелгән. Кушымтаны яңартыгыз."
+
+#: src/malferma_libro/djvu.py:285
+msgid "В DjVu должно быть от 1 до {max_pages} страниц"
+msgstr "DjVu документында 1дән {max_pages}гә кадәр бит булырга тиеш"
+
+#: src/malferma_libro/djvu.py:82
+msgid "В DjVu допускается не более {max_pages} страниц"
+msgstr "DjVu документында {max_pages}дән артык бит булмаска тиеш"
+
+#: src/malferma_libro/djvu.py:134
+msgid "В DjVu не найден корректный каталог страниц"
+msgstr "DjVu документында дөрес битләр каталогы табылмады"
+
+#: src/malferma_libro/books.py:548
+msgid "В EPUB отсутствуют метаданные, список файлов или порядок глав"
+msgstr "EPUB эчендә метамәгълүматлар, файллар исемлеге яки бүлекләр тәртибе юк"
+
+#: src/malferma_libro/pdf.py:171
+msgid "В PDF должно быть от 1 до {max_pages} страниц"
+msgstr "PDF документында 1дән {max_pages}гә кадәр бит булырга тиеш"
+
+#: src/malferma_libro/cbz.py:425
+msgid "В архиве CBZ нет поддерживаемых изображений."
+msgstr "CBZ архивында хупланган рәсемнәр юк."
+
+#: src/malferma_libro/books.py:427
+msgid "В книге отсутствует файл: {name}"
+msgstr "Китапта файл юк: {name}"
+
+#: src/malferma_libro/app.py:1193
+msgid "В пикселях; на широком окне текст располагается по центру."
+msgstr "Пиксельләрдә; киң тәрәзәдә текст уртага урнаштырыла."
+
+#: src/malferma_libro/app.py:2215
+msgid "В этом разделе книг нет."
+msgstr "Бу бүлемдә китаплар юк."
+
+#: src/malferma_libro/library_ui.py:29
+msgid "Ваша библиотека"
+msgstr "Сезнең китапханә"
+
+#: src/malferma_libro/search_ui.py:23
+msgid "Вернуться к месту до поиска"
+msgstr "Эзләүгә кадәрге урынга кайту"
+
+#: src/malferma_libro/app.py:480
+msgid "Включить дневной режим"
+msgstr "Көндезге режимны кабызу"
+
+#: src/malferma_libro/app.py:480
+msgid "Включить ночной режим"
+msgstr "Төнге режимны кабызу"
+
+#: src/malferma_libro/books.py:453
+msgid "Внутренняя ссылка EPUB выходит за пределы архива"
+msgstr "EPUB эчке сылтамасы архив чикләреннән чыга"
+
+#: src/malferma_libro/books.py:445
+msgid "Внутренняя ссылка EPUB указывает за пределы книги"
+msgstr "EPUB эчке сылтамасы китап чикләреннән тыш күрсәтә"
+
+#: src/malferma_libro/keybindings_ui.py:55
+msgid "Восстановить все сочетания"
+msgstr "Барлык клавишлар тезмәләрен торгызу"
+
+#: src/malferma_libro/library_ui.py:38
+msgid "Все книги"
+msgstr "Барлык китаплар"
+
+#: src/malferma_libro/djvu.py:53
+msgid "Выберите обычный файл DjVu"
+msgstr "Гадәти DjVu файлын сайлагыз"
+
+#: src/malferma_libro/pdf.py:70
+msgid "Выберите обычный файл PDF"
+msgstr "Гадәти PDF файлын сайлагыз"
+
+#: src/malferma_libro/storage.py:608
+msgid "Выберите файл книги."
+msgstr "Китап файлын сайлагыз."
+
+#: src/malferma_libro/narration_ui.py:86
+msgid "Выберите язык или голос."
+msgstr "Телне яки тавышны сайлагыз."
+
+#: src/malferma_libro/task_ui.py:207 src/malferma_libro/task_ui.py:207
+msgid "Выбрать книгу…"
+msgstr "Китап сайлау…"
+
+#: src/malferma_libro/app.py:1048
+msgid "Выделить всё"
+msgstr "Барысын да сайлау"
+
+#: src/malferma_libro/app.py:465 src/malferma_libro/app.py:520
+msgid "Выйти из полноэкранного режима"
+msgstr "Тулы экран режимыннан чыгу"
+
+#: src/malferma_libro/task_ui.py:144
+msgid "Выполнено: {percent}%"
+msgstr "Үтәлде: {percent}%"
+
+#: src/malferma_libro/task_ui.py:52 src/malferma_libro/task_ui.py:70 src/malferma_libro/task_ui.py:71
+msgid "Выполняемые действия"
+msgstr "Башкарыла торган гамәлләр"
+
+#: src/malferma_libro/accessibility_ui.py:276 src/malferma_libro/app.py:1205
+msgid "Высокая контрастность"
+msgstr "Югары контраст"
+
+#: src/malferma_libro/books.py:578 src/malferma_libro/outline_ui.py:121
+msgid "Глава {number}"
+msgstr "Бүлек {number}"
+
+#: src/malferma_libro/app.py:424 src/malferma_libro/app.py:425 src/malferma_libro/shortcuts.py:26
+msgid "Главное меню"
+msgstr "Төп меню"
+
+#: src/malferma_libro/outline_ui.py:70
+msgid "Главы"
+msgstr "Бүлекләр"
+
+#: src/malferma_libro/narration_ui.py:39
+msgid "Голос"
+msgstr "Тавыш"
+
+#: src/malferma_libro/speech.py:387
+msgid "Голос Piper «{language}» не установлен. Загрузите голос в настройках."
+msgstr "«{language}» теле өчен Piper тавышы урнаштырылмаган. Тавышны көйләүләрдән йөкләп алыгыз."
+
+#: src/malferma_libro/voices.py:427
+msgid "Голос Piper для выбранного языка недоступен."
+msgstr "Сайланган тел өчен Piper тавышы юк."
+
+#: src/malferma_libro/narration_ui.py:145 src/malferma_libro/narration_ui.py:193
+msgid "Голос готов: {voice}"
+msgstr "Тавыш әзер: {voice}"
+
+#: src/malferma_libro/narration_ui.py:89
+msgid "Голос установлен"
+msgstr "Тавыш урнаштырылган"
+
+#: src/malferma_libro/accessibility_ui.py:263
+msgid "Голоса Piper"
+msgstr "Piper тавышлары"
+
+#: src/malferma_libro/app.py:421 src/malferma_libro/app.py:664 src/malferma_libro/keybindings_ui.py:39 src/malferma_libro/keybindings_ui.py:46 src/malferma_libro/shortcuts.py:44
+msgid "Горячие клавиши"
+msgstr "Клавишлар тезмәләре"
+
+#: src/malferma_libro/app.py:1531
+msgid "Готово к озвучке"
+msgstr "Тавышландырып укырга әзер"
+
+#: src/malferma_libro/app.py:2075
+msgid "Далее"
+msgstr "Алга"
+
+#: src/malferma_libro/djvu.py:185
+msgid "Данные страницы DjVu превышают допустимый размер"
+msgstr "DjVu бите мәгълүматлары рөхсәт ителгән үлчәмнән арта"
+
+#: src/malferma_libro/pdf.py:120
+msgid "Данные страницы PDF превышают допустимый размер"
+msgstr "PDF бите мәгълүматлары рөхсәт ителгән үлчәмнән арта"
+
+#: src/malferma_libro/task_ui.py:130
+msgid "Действие отменено: {action}. Уже выполненные изменения сохраняются."
+msgstr "Гамәл туктатылды: {action}. Кертелгән үзгәрешләр саклана."
+
+#: src/malferma_libro/speech.py:251
+msgid "Для воспроизведения озвучки установите paplay или aplay."
+msgstr "Тавышландырып укуны уйнату өчен paplay яки aplay урнаштырыгыз."
+
+#: src/malferma_libro/__main__.py:110
+msgid "Для запуска нужны GTK 4, libadwaita и PyGObject. На Debian 13 выполните:\nsudo apt install python3-gi gir1.2-gtk-4.0 gir1.2-adw-1 poppler-utils djvulibre-bin\nЗапускайте приложение через /usr/bin/python3.\nПодробности: {error}"
+msgstr "Эшләтү өчен GTK 4, libadwaita һәм PyGObject кирәк. Debian 13 системасында үтәгез:\nsudo apt install python3-gi gir1.2-gtk-4.0 gir1.2-adw-1 poppler-utils djvulibre-bin\nКушымтаны /usr/bin/python3 аша эшләтегез.\nТәфсилләр: {error}"
+
+#: src/malferma_libro/app.py:2118
+msgid "Для локального Calibre: http://адрес:8080/opds"
+msgstr "Җирле Calibre өчен: http://адрес:8080/opds"
+
+#: src/malferma_libro/speech.py:251
+msgid "Для озвучки установите Piper по инструкции в руководстве пользователя."
+msgstr "Тавышландырып уку өчен Piper программасын кулланучы кулланмасындагы күрсәтмәләр буенча урнаштырыгыз."
+
+#: src/malferma_libro/narration_ui.py:54
+msgid "Для своего голоса выберите файл .onnx с соседним .onnx.json. Условия использования задаёт автор модели."
+msgstr "Үз тавышыгыз өчен шул ук папкада тиешле .onnx.json файлы булган .onnx файлын сайлагыз. Куллану шартларын модель авторы билгели."
+
+#: src/malferma_libro/djvu.py:39
+msgid "Для чтения DjVu установите пакет djvulibre-bin: sudo apt install djvulibre-bin."
+msgstr "DjVu уку өчен djvulibre-bin пакетын урнаштырыгыз: sudo apt install djvulibre-bin."
+
+#: src/malferma_libro/markup.py:386
+msgid "Для чтения Markdown установите пакет python3-markdown-it."
+msgstr "Markdown уку өчен python3-markdown-it пакетын урнаштырыгыз."
+
+#: src/malferma_libro/pdf.py:45
+msgid "Для чтения PDF установите пакет poppler-utils: sudo apt install poppler-utils."
+msgstr "PDF уку өчен poppler-utils пакетын урнаштырыгыз: sudo apt install poppler-utils."
+
+#: src/malferma_libro/narration_ui.py:87
+msgid "Для этого языка добавьте свою модель Piper."
+msgstr "Бу тел өчен үз Piper моделегезне өстәгез."
+
+#: src/malferma_libro/app.py:1175
+msgid "Дневной"
+msgstr "Көндезге"
+
+#: src/malferma_libro/shortcuts.py:48
+msgid "Дневной / ночной режим"
+msgstr "Көндезге / төнге режим"
+
+#: src/malferma_libro/app.py:2108 src/malferma_libro/app.py:812 src/malferma_libro/desktop.py:252
+msgid "Добавить"
+msgstr "Өстәү"
+
+#: src/malferma_libro/app.py:2106
+msgid "Добавить OPDS-каталог"
+msgstr "OPDS каталогын өстәү"
+
+#: src/malferma_libro/narration_ui.py:45
+msgid "Добавить голос…"
+msgstr "Тавыш өстәү…"
+
+#: src/malferma_libro/app.py:2059
+msgid "Добавить каталог"
+msgstr "Каталог өстәү"
+
+#: src/malferma_libro/narration_ui.py:158 src/malferma_libro/narration_ui.py:160
+msgid "Добавить модель Piper"
+msgstr "Piper моделен өстәү"
+
+#: src/malferma_libro/narration_ui.py:196
+msgid "Добавление голоса…"
+msgstr "Тавыш өстәлә…"
+
+#: src/malferma_libro/app.py:858
+msgid "Добавление книг: {count}…"
+msgstr "Китаплар өстәлә: {count}…"
+
+#: src/malferma_libro/app.py:2055 src/malferma_libro/app.py:2103
+msgid "Добавьте каталог"
+msgstr "Каталог өстәгез"
+
+#: src/malferma_libro/app.py:387
+msgid "Добавьте книгу или подключите OPDS-каталог."
+msgstr "Китап өстәгез яки OPDS каталогына тоташыгыз."
+
+#: src/malferma_libro/app.py:1490
+msgid "Дождитесь загрузки страницы."
+msgstr "Битнең йөкләнүен көтегез."
+
+#: src/malferma_libro/opds.py:122
+msgid "Допустимы только адреса HTTP и HTTPS."
+msgstr "HTTP һәм HTTPS адреслары гына рөхсәт ителә."
+
+#: src/malferma_libro/app.py:1209
+msgid "Жесты мышью"
+msgstr "Тычкан ишарәләре"
+
+#: src/malferma_libro/narration_ui.py:44
+msgid "Загрузить голос"
+msgstr "Тавышны йөкләп алу"
+
+#: src/malferma_libro/narration_ui.py:148
+msgid "Загрузка голоса: {voice}"
+msgstr "Тавыш йөкләп алына: {voice}"
+
+#: src/malferma_libro/app.py:2173
+msgid "Загрузка каталога…"
+msgstr "Каталог йөкләнә…"
+
+#: src/malferma_libro/app.py:1744
+msgid "Загрузка страницы {page}"
+msgstr "Бит {page} йөкләнә"
+
+#: src/malferma_libro/app.py:1745 src/malferma_libro/app.py:1822
+msgid "Загрузка страницы {page}…"
+msgstr "Бит {page} йөкләнә…"
+
+#: src/malferma_libro/app.py:962
+msgid "Загрузка страницы…"
+msgstr "Бит йөкләнә…"
+
+#: src/malferma_libro/bookmarks_ui.py:37
+msgid "Закладка"
+msgstr "Кыстыргыч"
+
+#: src/malferma_libro/bookmarks_ui.py:64
+msgid "Закладка больше недоступна."
+msgstr "Кыстыргычка инде кереп булмый."
+
+#: src/malferma_libro/bookmarks_ui.py:60
+msgid "Закладка добавлена."
+msgstr "Кыстыргыч өстәлде."
+
+#: src/malferma_libro/app.py:904 src/malferma_libro/app.py:905
+msgid "Закладки"
+msgstr "Кыстыргычлар"
+
+#: src/malferma_libro/bookmarks_ui.py:105
+msgid "Закладок пока нет."
+msgstr "Әлегә кыстыргычлар юк."
+
+#: src/malferma_libro/task_ui.py:202 src/malferma_libro/task_ui.py:202
+msgid "Закрыть"
+msgstr "Ябу"
+
+#: src/malferma_libro/shortcuts.py:46
+msgid "Закрыть приложение"
+msgstr "Кушымтаны ябу"
+
+#: src/malferma_libro/bookmarks_ui.py:132 src/malferma_libro/bookmarks_ui.py:173 src/malferma_libro/bookmarks_ui.py:187
+msgid "Заметка к закладке"
+msgstr "Кыстыргычка искәрмә"
+
+#: src/malferma_libro/bookmarks_ui.py:222
+msgid "Заметка слишком длинная: максимум {limit} символов."
+msgstr "Искәрмә артык озын: иң күбе {limit} тамга."
+
+#: src/malferma_libro/books.py:413
+msgid "Зашифрованные архивы книг не поддерживаются"
+msgstr "Шифрланган китап архивлары хупланмый"
+
+#: src/malferma_libro/app.py:1531
+msgid "Идёт озвучка текущей главы"
+msgstr "Хәзерге бүлек тавышландырып укыла"
+
+#: src/malferma_libro/keybindings_ui.py:70
+msgid "Изменить сочетание"
+msgstr "Клавишлар тезмәсен үзгәртү"
+
+#: src/malferma_libro/library_ui.py:190 src/malferma_libro/library_ui.py:191
+msgid "Изменить статус чтения"
+msgstr "Уку халәтен үзгәртү"
+
+#: src/malferma_libro/djvu.py:182
+msgid "Изображение страницы DjVu превышает допустимый размер"
+msgstr "DjVu бите рәсеме рөхсәт ителгән үлчәмнән арта"
+
+#: src/malferma_libro/pdf.py:302
+msgid "Изображение страницы PDF превышает допустимый размер"
+msgstr "PDF бите рәсеме рөхсәт ителгән үлчәмнән арта"
+
+#: src/malferma_libro/app.py:1147
+msgid "Интерфейс"
+msgstr "Интерфейс"
+
+#: src/malferma_libro/keybindings_ui.py:150
+msgid "Используйте Ctrl, Alt или функциональную клавишу."
+msgstr "Ctrl, Alt яки функция клавишын кулланыгыз."
+
+#: src/malferma_libro/app.py:1150 src/malferma_libro/app.py:1175
+msgid "Как в системе"
+msgstr "Системадагыча"
+
+#: src/malferma_libro/opds.py:439
+msgid "Каталог"
+msgstr "Каталог"
+
+#: src/malferma_libro/app.py:2216
+msgid "Каталог загружен. Записей: {count}."
+msgstr "Каталог йөкләнде. Язмалар: {count}."
+
+#: src/malferma_libro/app.py:2071
+msgid "Каталог не открыт"
+msgstr "Каталог ачылмаган"
+
+#: src/malferma_libro/opds.py:381
+msgid "Каталог слишком большой."
+msgstr "Каталог артык зур."
+
+#: src/malferma_libro/app.py:2141
+msgid "Каталог удалён из списка."
+msgstr "Каталог исемлектән бетерелде."
+
+#: src/malferma_libro/opds.py:388
+msgid "Каталог: {exc}."
+msgstr "Каталог: {exc}."
+
+#: src/malferma_libro/opds.py:384
+msgid "Каталоги с DTD или XML-сущностями не поддерживаются."
+msgstr "DTD яки XML entity белдерүләре булган каталоглар хупланмый."
+
+#: src/malferma_libro/library_ui.py:104
+msgid "Книг: {count}"
+msgstr "Китаплар: {count}"
+
+#: src/malferma_libro/opds.py:447 src/malferma_libro/opds.py:463 src/malferma_libro/opds.py:469
+msgid "Книга"
+msgstr "Китап"
+
+#: src/malferma_libro/library_ui.py:256
+msgid "Книга «{title}» уже добавлена. Сохранённые закладки и место чтения будут использованы."
+msgstr "«{title}» китабы инде өстәлгән. Сакланган кыстыргычлар һәм уку урыны кулланылачак."
+
+#: src/malferma_libro/app.py:787
+msgid "Книга готова к чтению в библиотеке."
+msgstr "Китап китапханәдә укуга әзер."
+
+#: src/malferma_libro/storage.py:709
+msgid "Книга не найдена: {book_id}"
+msgstr "Китап табылмады: {book_id}"
+
+#: src/malferma_libro/outline_ui.py:48
+msgid "Книга не открыта"
+msgstr "Китап ачылмаган"
+
+#: src/malferma_libro/app.py:1664
+msgid "Книга открыта. Позиция чтения сохраняется автоматически."
+msgstr "Китап ачылды. Уку урыны автоматик рәвештә саклана."
+
+#: src/malferma_libro/books.py:855 src/malferma_libro/books.py:98 src/malferma_libro/markup.py:63 src/malferma_libro/markup.py:67
+msgid "Книга превышает допустимый размер (64 МиБ)"
+msgstr "Китап рөхсәт ителгән үлчәмнән арта (64 МиБ)"
+
+#: src/malferma_libro/opds.py:533
+msgid "Книга превышает допустимый размер."
+msgstr "Китап рөхсәт ителгән үлчәмнән арта."
+
+#: src/malferma_libro/library_ui.py:255
+msgid "Книга уже в библиотеке"
+msgstr "Китап китапханәдә бар инде"
+
+#: src/malferma_libro/desktop.py:28
+msgid "Книги (EPUB, FB2, FB2.ZIP, TXT, PDF, DjVu, HTML, Markdown, CBZ)"
+msgstr "Китаплар (EPUB, FB2, FB2.ZIP, TXT, PDF, DjVu, HTML, Markdown, CBZ)"
+
+#: src/malferma_libro/speech.py:471
+msgid "Код завершения {code}"
+msgstr "Тәмамлау коды {code}"
+
+#: src/malferma_libro/books.py:753
+msgid "Комментарии"
+msgstr "Аңлатмалар"
+
+#: src/malferma_libro/keyboard_navigation.py:30
+msgid "Конец главы или страницы"
+msgstr "Бүлекнең яки битнең ахыры"
+
+#: src/malferma_libro/keyboard_navigation.py:33
+msgid "Конец книги"
+msgstr "Китапның ахыры"
+
+#: src/malferma_libro/djvu.py:296
+msgid "Копирование DjVu не завершено: размер книги изменился"
+msgstr "DjVu күчерү тәмамланмады: китап үлчәме үзгәрде"
+
+#: src/malferma_libro/pdf.py:185
+msgid "Копирование PDF не завершено: размер книги изменился"
+msgstr "PDF күчерү тәмамланмады: китап үлчәме үзгәрде"
+
+#: src/malferma_libro/app.py:1047
+msgid "Копировать"
+msgstr "Күчереп алу"
+
+#: src/malferma_libro/accessibility_ui.py:295
+msgid "Лупа области чтения"
+msgstr "Уку өлкәсенең зурайткычы"
+
+#: src/malferma_libro/app.py:1192
+msgid "Максимальная ширина текста"
+msgstr "Текстның иң зур киңлеге"
+
+#: src/malferma_libro/djvu.py:354
+msgid "Масштаб DjVu должен быть положительным числом"
+msgstr "DjVu масштабы уңай сан булырга тиеш"
+
+#: src/malferma_libro/pdf.py:255
+msgid "Масштаб PDF должен быть положительным числом"
+msgstr "PDF масштабы уңай сан булырга тиеш"
+
+#: src/malferma_libro/app.py:881 src/malferma_libro/app.py:885
+msgid "Масштаб страницы, %"
+msgstr "Бит масштабы, %"
+
+#: src/malferma_libro/accessibility_ui.py:287 src/malferma_libro/app.py:1207
+msgid "Межстрочный интервал"
+msgstr "Юлларара аралык"
+
+#: src/malferma_libro/djvu.py:102
+msgid "Многофайловый DjVu не поддерживается. Сначала объедините книгу в один файл командой djvmcvt -b."
+msgstr "Күп файллы DjVu хупланмый. Башта китапны djvmcvt -b боерыгы белән бер файлга берләштерегез."
+
+#: src/malferma_libro/narration_ui.py:162
+msgid "Модель Piper (*.onnx)"
+msgstr "Piper моделе (*.onnx)"
+
+#: src/malferma_libro/narration_ui.py:76 src/malferma_libro/narration_ui.py:84 src/malferma_libro/narration_ui.py:89
+msgid "Модель голоса не установлена"
+msgstr "Тавыш моделе урнаштырылмаган"
+
+#: src/malferma_libro/app.py:366 src/malferma_libro/app.py:414 src/malferma_libro/shortcuts.py:38
+msgid "Мои книги"
+msgstr "Минем китаплар"
+
+#: src/malferma_libro/app.py:2112
+msgid "Моя библиотека"
+msgstr "Минем китапханә"
+
+#: src/malferma_libro/keyboard_navigation.py:25
+msgid "На экран вверх"
+msgstr "Бер экран өскә"
+
+#: src/malferma_libro/keyboard_navigation.py:26
+msgid "На экран вниз"
+msgstr "Бер экран аска"
+
+#: src/malferma_libro/app.py:1493
+msgid "На этой странице нет доступного текста для озвучки. Распознавание сканов пока не поддерживается."
+msgstr "Бу биттә тавышландырып укырлык текст юк. Сканнардагы текстны тану әлегә хупланмый."
+
+#: src/malferma_libro/keybindings_ui.py:208 src/malferma_libro/keybindings_ui.py:221
+msgid "Нажмите новое сочетание клавиш."
+msgstr "Яңа клавишлар тезмәсенә басыгыз."
+
+#: src/malferma_libro/app.py:2068
+msgid "Назад"
+msgstr "Артка"
+
+#: src/malferma_libro/app.py:2111
+msgid "Название"
+msgstr "Исем"
+
+#: src/malferma_libro/library_ui.py:33
+msgid "Название или автор"
+msgstr "Исем яки автор"
+
+#: src/malferma_libro/search_ui.py:313
+msgid "Найдено в тексте страницы: {query}"
+msgstr "Бит текстында табылды: {query}"
+
+#: src/malferma_libro/search_ui.py:314
+msgid "Найдено: {query}"
+msgstr "Табылды: {query}"
+
+#: src/malferma_libro/app.py:2083 src/malferma_libro/app.py:374 src/malferma_libro/app.py:375 src/malferma_libro/app.py:524 src/malferma_libro/app.py:899 src/malferma_libro/shortcuts.py:32
+msgid "Найти"
+msgstr "Эзләү"
+
+#: src/malferma_libro/app.py:1141 src/malferma_libro/app.py:1144 src/malferma_libro/app.py:419 src/malferma_libro/shortcuts.py:34
+msgid "Настройки"
+msgstr "Көйләүләр"
+
+#: src/malferma_libro/keyboard_navigation.py:29
+msgid "Начало главы или страницы"
+msgstr "Бүлекнең яки битнең башы"
+
+#: src/malferma_libro/keyboard_navigation.py:31
+msgid "Начало книги"
+msgstr "Китапның башы"
+
+#: src/malferma_libro/library_ui.py:13
+msgid "Не начато"
+msgstr "Башланмаган"
+
+#: src/malferma_libro/speech.py:461
+msgid "Не удалось воспроизвести озвучку."
+msgstr "Тавышландырып укуны уйнатып булмады."
+
+#: src/malferma_libro/app.py:625
+msgid "Не удалось выполнить действие"
+msgstr "Гамәлне үтәп булмады"
+
+#: src/malferma_libro/search_ui.py:179
+msgid "Не удалось выполнить поиск."
+msgstr "Эзләүне башкарып булмады."
+
+#: src/malferma_libro/app.py:2128
+msgid "Не удалось добавить каталог"
+msgstr "Каталогны өстәп булмады"
+
+#: src/malferma_libro/speech.py:459
+msgid "Не удалось загрузить голос Piper."
+msgstr "Piper тавышын йөкләп булмады."
+
+#: src/malferma_libro/app.py:1815
+msgid "Не удалось загрузить страницу {page}"
+msgstr "{page} номерлы битне йөкләп булмады"
+
+#: src/malferma_libro/app.py:1816
+msgid "Не удалось загрузить страницу. Нажмите «Повторить» или выберите другую страницу."
+msgstr "Битне йөкләп булмады. «Кабатлау» төймәсенә басыгыз яки башка битне сайлагыз."
+
+#: src/malferma_libro/speech.py:458
+msgid "Не удалось запустить Piper."
+msgstr "Piper программасын эшләтеп булмады."
+
+#: src/malferma_libro/pdf.py:108
+msgid "Не удалось запустить обработчик PDF. "
+msgstr "PDF эшкәрткечен эшләтеп булмады. "
+
+#: src/malferma_libro/djvu.py:191
+msgid "Не удалось обработать DjVu. "
+msgstr "DjVu эшкәртеп булмады. "
+
+#: src/malferma_libro/cbz.py:384 src/malferma_libro/cbz.py:467
+msgid "Не удалось обработать изображение страницы CBZ."
+msgstr "CBZ бите рәсемен эшкәртеп булмады."
+
+#: src/malferma_libro/speech.py:453
+msgid "Не удалось озвучить текст: {error}"
+msgstr "Текстны тавышландырып укып булмады: {error}"
+
+#: src/malferma_libro/speech.py:258
+msgid "Не удалось определить поддерживаемый язык озвучки. Выберите русский, украинский, английский, немецкий, французский, испанский, итальянский или португальский в настройках."
+msgstr "Тавышлап уку өчен хупланган телне билгеләп булмады. Көйләүләрдә рус, украин, инглиз, немец, француз, испан, итальян яки португал телен сайлагыз."
+
+#: src/malferma_libro/djvu.py:320
+msgid "Не удалось определить размер страницы DjVu"
+msgstr "DjVu бите үлчәмнәрен билгеләп булмады"
+
+#: src/malferma_libro/pdf.py:128
+msgid "Не удалось определить размер страницы PDF"
+msgstr "PDF бите үлчәмнәрен билгеләп булмады"
+
+#: src/malferma_libro/app.py:238
+msgid "Не удалось открыть библиотеку"
+msgstr "Китапханәне ачып булмады"
+
+#: src/malferma_libro/djvu.py:51
+msgid "Не удалось открыть файл DjVu"
+msgstr "DjVu файлын ачып булмады"
+
+#: src/malferma_libro/pdf.py:68
+msgid "Не удалось открыть файл PDF"
+msgstr "PDF файлын ачып булмады"
+
+#: src/malferma_libro/opds.py:486
+msgid "Не удалось подобрать свободное имя файла."
+msgstr "Буш файл исемен сайлап булмады."
+
+#: src/malferma_libro/task_ui.py:195
+msgid "Не удалось получить данные. Проверьте соединение и адрес каталога, затем повторите действие."
+msgstr "Мәгълүматны алып булмады. Тоташуны һәм каталог адресын тикшереп, кабатлап карагыз."
+
+#: src/malferma_libro/opds.py:220
+msgid "Не удалось получить данные: {exc}"
+msgstr "Мәгълүматларны алып булмады: {exc}"
+
+#: src/malferma_libro/cbz.py:54
+msgid "Не удалось прочитать CBZ: архив повреждён, не поддерживается или превышает допустимые ограничения."
+msgstr "CBZ укып булмады: архив бозылган, хупланмый яки рөхсәт ителгән чикләрдән артып китә."
+
+#: src/malferma_libro/djvu.py:179
+msgid "Не удалось прочитать DjVu: файл повреждён или имеет неподдерживаемую структуру"
+msgstr "DjVu укып булмады: файл бозылган яки төзелеше хупланмый"
+
+#: src/malferma_libro/pdf.py:118
+msgid "Не удалось прочитать PDF: файл повреждён или имеет неподдерживаемую структуру"
+msgstr "PDF укып булмады: файл бозылган яки төзелеше хупланмый"
+
+#: src/malferma_libro/books.py:874 src/malferma_libro/markup.py:70
+msgid "Не удалось прочитать книгу: {exc}"
+msgstr "Китапны укып булмады: {exc}"
+
+#: src/malferma_libro/search_ui.py:220
+msgid "Не удалось прочитать текст на страницах: {count}."
+msgstr "Тексты укылмаган битләр саны: {count}."
+
+#: src/malferma_libro/books.py:432
+msgid "Не удалось распаковать файл книги: {name}"
+msgstr "Китап архивыннан файлны чыгарып булмады: {name}"
+
+#: src/malferma_libro/speech.py:460
+msgid "Не удалось синтезировать речь Piper."
+msgstr "Piper ярдәмендә сөйләмне синтезлап булмады."
+
+#: src/malferma_libro/voices.py:416 src/malferma_libro/voices.py:418
+msgid "Не удалось скачать голос Piper."
+msgstr "Piper тавышын йөкләп алып булмады."
+
+#: src/malferma_libro/app.py:1580 src/malferma_libro/app.py:1610 src/malferma_libro/app.py:1632 src/malferma_libro/keybindings_ui.py:295 src/malferma_libro/library_ui.py:206
+msgid "Не удалось сохранить библиотеку"
+msgstr "Китапханәне саклап булмады"
+
+#: src/malferma_libro/voices.py:448 src/malferma_libro/voices.py:516
+msgid "Не удалось сохранить голос Piper."
+msgstr "Piper тавышын саклап булмады."
+
+#: src/malferma_libro/bookmarks_ui.py:57
+msgid "Не удалось сохранить закладку"
+msgstr "Кыстыргычны саклап булмады"
+
+#: src/malferma_libro/bookmarks_ui.py:227
+msgid "Не удалось сохранить заметку"
+msgstr "Искәрмәне саклап булмады"
+
+#: src/malferma_libro/cbz.py:498
+msgid "Не удалось сохранить изображение страницы CBZ."
+msgstr "CBZ бите рәсемен саклап булмады."
+
+#: src/malferma_libro/djvu.py:391
+msgid "Не удалось сохранить изображение страницы DjVu"
+msgstr "DjVu бите рәсемен саклап булмады"
+
+#: src/malferma_libro/pdf.py:307
+msgid "Не удалось сохранить изображение страницы PDF"
+msgstr "PDF бите рәсемен саклап булмады"
+
+#: src/malferma_libro/app.py:2017
+msgid "Не удалось сохранить место чтения"
+msgstr "Уку урынын саклап булмады"
+
+#: src/malferma_libro/app.py:2143
+msgid "Не удалось сохранить список каталогов"
+msgstr "Каталоглар исемлеген саклап булмады"
+
+#: src/malferma_libro/bookmarks_ui.py:85
+msgid "Не удалось удалить закладку"
+msgstr "Кыстыргычны бетереп булмады"
+
+#: src/malferma_libro/opds.py:115
+msgid "Не указан адрес каталога."
+msgstr "Каталог адресы күрсәтелмәгән."
+
+#: src/malferma_libro/opds.py:126 src/malferma_libro/opds.py:130 src/malferma_libro/opds.py:146
+msgid "Неверный адрес сервера."
+msgstr "Сервер адресы дөрес түгел."
+
+#: src/malferma_libro/library_ui.py:39
+msgid "Недавние"
+msgstr "Соңгылар"
+
+#: src/malferma_libro/djvu.py:283
+msgid "Недопустимое количество страниц DjVu"
+msgstr "DjVu битләре саны рөхсәт ителмәгән"
+
+#: src/malferma_libro/pdf.py:169
+msgid "Недопустимое количество страниц PDF"
+msgstr "PDF битләре саны рөхсәт ителмәгән"
+
+#: src/malferma_libro/cbz.py:354 src/malferma_libro/cbz.py:453
+msgid "Недопустимые параметры страницы CBZ."
+msgstr "CBZ бите параметрлары дөрес түгел."
+
+#: src/malferma_libro/djvu.py:352
+msgid "Недопустимый масштаб DjVu"
+msgstr "DjVu масштабы рөхсәт ителмәгән"
+
+#: src/malferma_libro/pdf.py:253
+msgid "Недопустимый масштаб PDF"
+msgstr "PDF масштабы рөхсәт ителмәгән"
+
+#: src/malferma_libro/pdf.py:154
+msgid "Недопустимый пароль PDF"
+msgstr "PDF серсүзе дөрес түгел"
+
+#: src/malferma_libro/books.py:408
+msgid "Недопустимый путь в архиве книги"
+msgstr "Китап архивындагы юл рөхсәт ителмәгән"
+
+#: src/malferma_libro/books.py:450
+msgid "Недопустимый путь во внутренней ссылке EPUB"
+msgstr "EPUB эчке сылтамасындагы юл рөхсәт ителмәгән"
+
+#: src/malferma_libro/djvu.py:119
+msgid "Недопустимый размер страницы DjVu"
+msgstr "DjVu бите үлчәмнәре рөхсәт ителмәгән"
+
+#: src/malferma_libro/pdf.py:132 src/malferma_libro/pdf.py:134
+msgid "Недопустимый размер страницы PDF"
+msgstr "PDF бите үлчәмнәре рөхсәт ителмәгән"
+
+#: src/malferma_libro/storage.py:199
+msgid "Неизвестная версия файла библиотеки."
+msgstr "Китапханә файлы версиясе билгесез."
+
+#: src/malferma_libro/speech.py:237
+msgid "Неизвестный язык озвучки: {language}."
+msgstr "Тавышландырып уку теле билгесез: {language}."
+
+#: src/malferma_libro/storage.py:222 src/malferma_libro/storage.py:752 src/malferma_libro/storage.py:788
+msgid "Некорректная закладка."
+msgstr "Кыстыргыч дөрес түгел."
+
+#: src/malferma_libro/storage.py:206
+msgid "Некорректная запись книги."
+msgstr "Китап язмасы дөрес түгел."
+
+#: src/malferma_libro/keybindings_ui.py:151
+msgid "Некорректное сочетание клавиш."
+msgstr "Клавишлар тезмәсе дөрес түгел."
+
+#: src/malferma_libro/storage.py:236
+msgid "Некорректные настройки библиотеки."
+msgstr "Китапханә көйләүләре дөрес түгел."
+
+#: src/malferma_libro/storage.py:139 src/malferma_libro/storage.py:212 src/malferma_libro/storage.py:481 src/malferma_libro/storage.py:483 src/malferma_libro/storage.py:542
+msgid "Некорректные сведения о книге."
+msgstr "Китап турында мәгълүматлар дөрес түгел."
+
+#: src/malferma_libro/storage.py:209
+msgid "Некорректный идентификатор книги."
+msgstr "Китап идентификаторы дөрес түгел."
+
+#: src/malferma_libro/storage.py:242
+msgid "Некорректный каталог."
+msgstr "Каталог дөрес түгел."
+
+#: src/malferma_libro/storage.py:214
+msgid "Некорректный путь к книге."
+msgstr "Китапка юл дөрес түгел."
+
+#: src/malferma_libro/storage.py:58
+msgid "Некорректный размер шрифта."
+msgstr "Шрифт үлчәме дөрес түгел."
+
+#: src/malferma_libro/storage.py:218
+msgid "Некорректный список закладок."
+msgstr "Кыстыргычлар исемлеге дөрес түгел."
+
+#: src/malferma_libro/storage.py:239
+msgid "Некорректный список каталогов."
+msgstr "Каталоглар исемлеге дөрес түгел."
+
+#: src/malferma_libro/storage.py:201
+msgid "Некорректный список книг."
+msgstr "Китаплар исемлеге дөрес түгел."
+
+#: src/malferma_libro/storage.py:194 src/malferma_libro/storage.py:256
+msgid "Некорректный файл библиотеки."
+msgstr "Китапханә файлы дөрес түгел."
+
+#: src/malferma_libro/app.py:854
+msgid "Некоторые книги не удалось открыть"
+msgstr "Кайбер китапларны ачып булмады"
+
+#: src/malferma_libro/cbz.py:487 src/malferma_libro/djvu.py:376 src/malferma_libro/pdf.py:279
+msgid "Нельзя заменить файл книги изображением страницы"
+msgstr "Китап файлын бит рәсеме белән алыштырып булмый"
+
+#: src/malferma_libro/djvu.py:108
+msgid "Неподдерживаемая версия каталога DjVu"
+msgstr "DjVu каталогы версиясе хупланмый"
+
+#: src/malferma_libro/djvu.py:96
+msgid "Неподдерживаемая структура документа DjVu"
+msgstr "DjVu документы төзелеше хупланмый"
+
+#: src/malferma_libro/djvu.py:68
+msgid "Неподдерживаемый тип документа DjVu"
+msgstr "DjVu документы төре хупланмый"
+
+#: src/malferma_libro/books.py:596
+msgid "Неподдерживаемый формат главы EPUB: {media}"
+msgstr "EPUB бүлеге форматы хупланмый: {media}"
+
+#: src/malferma_libro/task_ui.py:193
+msgid "Нет доступа. Проверьте права на файл или выберите другой каталог."
+msgstr "Керү рөхсәт ителми. Файл хокукларын тикшерегез яки башка папка сайлагыз."
+
+#: src/malferma_libro/app.py:2209
+msgid "Нет поддерживаемой прямой загрузки"
+msgstr "Хупланган турыдан-туры йөкләү юк"
+
+#: src/malferma_libro/library_ui.py:160 src/malferma_libro/search_ui.py:218
+msgid "Ничего не найдено."
+msgstr "Берни дә табылмады."
+
+#: src/malferma_libro/djvu.py:310
+msgid "Номер страницы DjVu вне допустимого диапазона"
+msgstr "DjVu бите номеры рөхсәт ителгән чикләрдән тыш"
+
+#: src/malferma_libro/pdf.py:211
+msgid "Номер страницы PDF вне допустимого диапазона"
+msgstr "PDF бите номеры рөхсәт ителгән чикләрдән тыш"
+
+#: src/malferma_libro/app.py:1175
+msgid "Ночной"
+msgstr "Төнге"
+
+#: src/malferma_libro/app.py:422
+msgid "О приложении"
+msgstr "Кушымта турында"
+
+#: src/malferma_libro/cover_ui.py:112 src/malferma_libro/cover_ui.py:120
+msgid "Обложка книги «{title}»"
+msgstr "«{title}» китабының тышлыгы"
+
+#: src/malferma_libro/cover_ui.py:130
+msgid "Обложка недоступна"
+msgstr "Тышлык юк"
+
+#: src/malferma_libro/djvu.py:175
+msgid "Обработка DjVu заняла слишком много времени"
+msgstr "DjVu эшкәртү вакыты чыкты"
+
+#: src/malferma_libro/pdf.py:104
+msgid "Обработка PDF заняла слишком много времени"
+msgstr "PDF эшкәртү вакыты чыкты"
+
+#: src/malferma_libro/djvu.py:245
+msgid "Обработчик DjVu создал недопустимое изображение страницы"
+msgstr "DjVu эшкәрткече яраксыз бит рәсеме ясады"
+
+#: src/malferma_libro/pdf.py:291
+msgid "Обработчик PDF не создал изображение страницы"
+msgstr "PDF эшкәрткече бит рәсеме ясамады"
+
+#: src/malferma_libro/pdf.py:295
+msgid "Обработчик PDF создал недопустимое изображение"
+msgstr "PDF эшкәрткече яраксыз рәсем ясады"
+
+#: src/malferma_libro/app.py:525 src/malferma_libro/app.py:865 src/malferma_libro/app.py:866 src/malferma_libro/outline_ui.py:36 src/malferma_libro/outline_ui.py:47 src/malferma_libro/shortcuts.py:60
+msgid "Оглавление"
+msgstr "Эчтәлек"
+
+#: src/malferma_libro/opds.py:392
+msgid "Ожидался OPDS-каталог в формате Atom."
+msgstr "Atom форматындагы OPDS каталогы көтелгән иде."
+
+#: src/malferma_libro/task_ui.py:106 src/malferma_libro/task_ui.py:147
+msgid "Ожидание данных…"
+msgstr "Мәгълүмат көтелә…"
+
+#: src/malferma_libro/app.py:1000 src/malferma_libro/app.py:1000 src/malferma_libro/app.py:1526 src/malferma_libro/shortcuts.py:63
+msgid "Озвучить"
+msgstr "Тавышландырып уку"
+
+#: src/malferma_libro/accessibility_ui.py:234 src/malferma_libro/app.py:1210
+msgid "Озвучка"
+msgstr "Тавышландырып уку"
+
+#: src/malferma_libro/app.py:1574
+msgid "Озвучка книги завершена."
+msgstr "Китапны тавышландырып уку тәмамланды."
+
+#: src/malferma_libro/app.py:1531
+msgid "Озвучка приостановлена"
+msgstr "Тавышландырып уку туктатылып торылды"
+
+#: src/malferma_libro/app.py:993
+msgid "Озвучка через Piper"
+msgstr "Piper аша тавышландырып уку"
+
+#: src/malferma_libro/keybindings_ui.py:211 src/malferma_libro/keybindings_ui.py:66
+msgid "Отключено"
+msgstr "Сүндерелгән"
+
+#: src/malferma_libro/keybindings_ui.py:229
+msgid "Отключить"
+msgstr "Сүндерү"
+
+#: src/malferma_libro/app.py:907
+msgid "Откройте книгу в библиотеке."
+msgstr "Китапханәдән китап ачыгыз."
+
+#: src/malferma_libro/library_ui.py:76
+msgid "Откройте книгу или подключите OPDS-каталог во вкладке «Сетевые библиотеки»."
+msgstr "Китап ачыгыз яки «Челтәр китапханәләре» салынмасында OPDS каталогына тоташыгыз."
+
+#: src/malferma_libro/app.py:1171
+msgid "Открывать последнюю книгу при запуске"
+msgstr "Кушымта ачылганда соңгы китапны ачу"
+
+#: src/malferma_libro/library_ui.py:247
+msgid "Открытие книги…"
+msgstr "Китап ачыла…"
+
+#: src/malferma_libro/library_ui.py:258
+msgid "Открыть"
+msgstr "Ачу"
+
+#: src/malferma_libro/bookmarks_ui.py:124
+msgid "Открыть закладку: {chapter}. {excerpt}"
+msgstr "Кыстыргычны ачу: {chapter}. {excerpt}"
+
+#: src/malferma_libro/app.py:523 src/malferma_libro/app.py:809 src/malferma_libro/desktop.py:257 src/malferma_libro/shortcuts.py:30
+msgid "Открыть книги"
+msgstr "Китапларны ачу"
+
+#: src/malferma_libro/app.py:2203
+msgid "Открыть раздел"
+msgstr "Бүлемне ачу"
+
+#: src/malferma_libro/app.py:361 src/malferma_libro/narration_ui.py:159
+msgid "Открыть…"
+msgstr "Ачу…"
+
+#: src/malferma_libro/app.py:2107 src/malferma_libro/app.py:813 src/malferma_libro/bookmarks_ui.py:175 src/malferma_libro/bookmarks_ui.py:175 src/malferma_libro/keybindings_ui.py:230 src/malferma_libro/library_ui.py:257 src/malferma_libro/narration_ui.py:159
+msgid "Отмена"
+msgstr "Баш тарту"
+
+#: src/malferma_libro/task_ui.py:127
+msgid "Отмена запрошена"
+msgstr "Туктату соралды"
+
+#: src/malferma_libro/task_ui.py:96 src/malferma_libro/task_ui.py:97
+msgid "Отменить"
+msgstr "Баш тарту"
+
+#: src/malferma_libro/search_ui.py:25
+msgid "Отменить поиск"
+msgstr "Эзләүдән баш тарту"
+
+#: src/malferma_libro/app.py:1170
+msgid "Оформление окна"
+msgstr "Тәрәзә күренеше"
+
+#: src/malferma_libro/app.py:1525
+msgid "Пауза"
+msgstr "Туктатып тору"
+
+#: src/malferma_libro/library_ui.py:39
+msgid "По автору"
+msgstr "Автор буенча"
+
+#: src/malferma_libro/library_ui.py:39
+msgid "По названию"
+msgstr "Исем буенча"
+
+#: src/malferma_libro/app.py:1213
+msgid "По тексту главы"
+msgstr "Бүлек текстыннан билгеләү"
+
+#: src/malferma_libro/keybindings_ui.py:227 src/malferma_libro/keybindings_ui.py:49
+msgid "По умолчанию"
+msgstr "Килешү буенча"
+
+#: src/malferma_libro/djvu.py:130
+msgid "Повреждена структура страницы DjVu"
+msgstr "DjVu бите төзелеше бозылган"
+
+#: src/malferma_libro/djvu.py:65 src/malferma_libro/djvu.py:87 src/malferma_libro/djvu.py:93
+msgid "Повреждена структура файла DjVu"
+msgstr "DjVu файлы төзелеше бозылган"
+
+#: src/malferma_libro/djvu.py:111 src/malferma_libro/djvu.py:116
+msgid "Повреждён каталог страниц DjVu"
+msgstr "DjVu битләре каталогы бозылган"
+
+#: src/malferma_libro/books.py:448 src/malferma_libro/books.py:471
+msgid "Повреждённая внутренняя ссылка EPUB"
+msgstr "EPUB эчке сылтамасы бозылган"
+
+#: src/malferma_libro/books.py:394
+msgid "Повреждённый ZIP-архив книги"
+msgstr "Китапның ZIP архивы бозылган"
+
+#: src/malferma_libro/app.py:1490
+msgid "Повторите загрузку страницы."
+msgstr "Битне яңадан йөкләп карагыз."
+
+#: src/malferma_libro/app.py:889 src/malferma_libro/task_ui.py:204 src/malferma_libro/task_ui.py:204
+msgid "Повторить"
+msgstr "Кабатлау"
+
+#: src/malferma_libro/books.py:410
+msgid "Повторяющиеся имена файлов в архиве книги"
+msgstr "Китап архивында файл исемнәре кабатлана"
+
+#: src/malferma_libro/books.py:557
+msgid "Повторяющийся идентификатор в списке файлов EPUB"
+msgstr "EPUB файллар исемлегендә идентификатор кабатлана"
+
+#: src/malferma_libro/books.py:851
+msgid "Поддерживаются EPUB, FB2, FB2.ZIP, TXT, PDF, DjVu, HTML, Markdown и CBZ"
+msgstr "Хупланган форматлар: EPUB, FB2, FB2.ZIP, TXT, PDF, DjVu, HTML, Markdown һәм CBZ"
+
+#: src/malferma_libro/app.py:2097
+msgid "Поддерживаются прямые загрузки EPUB, FB2, TXT, PDF, DjVu, HTML, Markdown и CBZ. Каталоги с авторизацией и DRM пока не поддерживаются."
+msgstr "EPUB, FB2, TXT, PDF, DjVu, HTML, Markdown һәм CBZ турыдан-туры йөкләүләре хуплана. Керүне раслау яки DRM таләп иткән каталоглар әлегә хупланмый."
+
+#: src/malferma_libro/app.py:2051 src/malferma_libro/app.py:2095
+msgid "Подключите публичный OPDS 1.x каталог или каталог Calibre в локальной сети."
+msgstr "Ачык OPDS 1.x каталогына яки җирле челтәрдәге Calibre каталогына тоташыгыз."
+
+#: src/malferma_libro/app.py:2058 src/malferma_libro/app.py:2063 src/malferma_libro/app.py:2064
+msgid "Подключиться"
+msgstr "Тоташу"
+
+#: src/malferma_libro/app.py:2079
+msgid "Поиск (если каталог его поддерживает)"
+msgstr "Эзләү (каталог хупласа)"
+
+#: src/malferma_libro/app.py:1796 src/malferma_libro/app.py:1807
+msgid "Поиск и озвучка доступны в тексте страницы."
+msgstr "Бит текстында эзләү һәм тавышландырып уку мөмкин."
+
+#: src/malferma_libro/search_ui.py:118 src/malferma_libro/search_ui.py:186
+msgid "Поиск отменён."
+msgstr "Эзләүдән баш тартылды."
+
+#: src/malferma_libro/app.py:1640 src/malferma_libro/app.py:897 src/malferma_libro/search_ui.py:42
+msgid "Поиск по всей книге"
+msgstr "Бөтен китаптан эзләү"
+
+#: src/malferma_libro/search_ui.py:156 src/malferma_libro/search_ui.py:189
+msgid "Поиск по книге…"
+msgstr "Китаптан эзләү…"
+
+#: src/malferma_libro/search_ui.py:216
+msgid "Показаны первые {count} совпадений. Уточните запрос."
+msgstr "Беренче {count} тәңгәллек күрсәтелә. Сорауны төгәлләштерегез."
+
+#: src/malferma_libro/shortcuts.py:42
+msgid "Показать верхнюю панель"
+msgstr "Өске панельне күрсәтү"
+
+#: src/malferma_libro/app.py:382 src/malferma_libro/app.py:465 src/malferma_libro/app.py:521 src/malferma_libro/shortcuts.py:41
+msgid "Полноэкранный режим"
+msgstr "Тулы экран режимы"
+
+#: src/malferma_libro/storage.py:126
+msgid "Положение в книге должно быть целым неотрицательным числом."
+msgstr "Китаптагы урын тискәре булмаган бөтен сан булырга тиеш."
+
+#: src/malferma_libro/accessibility_ui.py:277 src/malferma_libro/app.py:1206
+msgid "Полужирный текст"
+msgstr "Калын текст"
+
+#: src/malferma_libro/keybindings_ui.py:49
+msgid "Пользовательские"
+msgstr "Кулланучы билгеләгән"
+
+#: src/malferma_libro/books.py:593
+msgid "Порядок глав EPUB ссылается на отсутствующий файл"
+msgstr "EPUB бүлекләр тәртибе булмаган файлга сылтый"
+
+#: src/malferma_libro/app.py:526 src/malferma_libro/app.py:869 src/malferma_libro/shortcuts.py:56
+msgid "Предыдущая глава"
+msgstr "Алдагы бүлек"
+
+#: src/malferma_libro/keyboard_navigation.py:27
+msgid "Предыдущая страница"
+msgstr "Алдагы бит"
+
+#: src/malferma_libro/search_ui.py:19
+msgid "Предыдущее совпадение"
+msgstr "Алдагы тәңгәллек"
+
+#: src/malferma_libro/app.py:1185
+msgid "Приглушение цветов страницы; яркость монитора не меняется."
+msgstr "Бит төсләрен сүрәнәйтә; монитор яктылыгы үзгәрми."
+
+#: src/malferma_libro/accessibility_ui.py:288 src/malferma_libro/app.py:1208
+msgid "Применить"
+msgstr "Куллану"
+
+#: src/malferma_libro/books.py:770
+msgid "Примечание {number}"
+msgstr "Искәрмә {number}"
+
+#: src/malferma_libro/books.py:753 src/malferma_libro/outline_ui.py:119 src/malferma_libro/outline_ui.py:66
+msgid "Примечания"
+msgstr "Искәрмәләр"
+
+#: src/malferma_libro/task_ui.py:197
+msgid "Проверьте доступ к файлу или каталогу и повторите действие."
+msgstr "Файлга яки папкага керү мөмкинлеген тикшереп, кабатлап карагыз."
+
+#: src/malferma_libro/app.py:1525
+msgid "Продолжить"
+msgstr "Дәвам итү"
+
+#: src/malferma_libro/library_ui.py:117 src/malferma_libro/library_ui.py:60
+msgid "Продолжить чтение"
+msgstr "Укуны дәвам итү"
+
+#: src/malferma_libro/keyboard_navigation.py:23
+msgid "Прокрутить вверх"
+msgstr "Өскә әйләндерү"
+
+#: src/malferma_libro/keyboard_navigation.py:24
+msgid "Прокрутить вниз"
+msgstr "Аска әйләндерү"
+
+#: src/malferma_libro/narration_ui.py:222 src/malferma_libro/narration_ui.py:50
+msgid "Прослушать образец"
+msgstr "Үрнәкне тыңлау"
+
+#: src/malferma_libro/library_ui.py:14
+msgid "Прочитано"
+msgstr "Укылган"
+
+#: src/malferma_libro/books.py:744
+msgid "Раздел {number}"
+msgstr "Бүлем {number}"
+
+#: src/malferma_libro/opds.py:191 src/malferma_libro/opds.py:209
+msgid "Размер ответа превышает допустимый предел."
+msgstr "Җавап күләме рөхсәт ителгән чиктән арта."
+
+#: src/malferma_libro/accessibility_ui.py:273 src/malferma_libro/app.py:1191
+msgid "Размер текста"
+msgstr "Текст үлчәме"
+
+#: src/malferma_libro/speech.py:128
+msgid "Размер фрагмента должен быть положительным."
+msgstr "Өзек үлчәме уңай сан булырга тиеш."
+
+#: src/malferma_libro/app.py:876
+msgid "Размер шрифта"
+msgstr "Шрифт үлчәме"
+
+#: src/malferma_libro/books.py:420
+msgid "Распакованный размер книги превышает допустимый предел"
+msgstr "Архивтан чыгарылган китап үлчәме рөхсәт ителгән чиктән арта"
+
+#: src/malferma_libro/keybindings_ui.py:48 src/malferma_libro/keybindings_ui.py:51
+msgid "Режим"
+msgstr "Режим"
+
+#: src/malferma_libro/accessibility_ui.py:288 src/malferma_libro/app.py:1208
+msgid "Режим для слабовидящих"
+msgstr "Начар күрүчеләр өчен режим"
+
+#: src/malferma_libro/search_ui.py:311
+msgid "Результат {number} из {count}"
+msgstr "Нәтиҗә {number} / {count}"
+
+#: src/malferma_libro/app.py:420 src/malferma_libro/app.py:582 src/malferma_libro/app.py:603 src/malferma_libro/shortcuts.py:43
+msgid "Руководство пользователя"
+msgstr "Кулланучы кулланмасы"
+
+#: src/malferma_libro/app.py:1150
+msgid "Светлый"
+msgstr "Якты"
+
+#: src/malferma_libro/app.py:1175
+msgid "Сепия"
+msgstr "Сепия"
+
+#: src/malferma_libro/opds.py:390
+msgid "Сервер вернул некорректный XML-каталог."
+msgstr "Сервер бозылган XML каталогын кайтарды."
+
+#: src/malferma_libro/opds.py:219
+msgid "Сервер вернул ошибку HTTP {code}."
+msgstr "Сервер HTTP {code} хатасын кайтарды."
+
+#: src/malferma_libro/opds.py:543
+msgid "Сервер вернул пустой файл."
+msgstr "Сервер буш файл кайтарды."
+
+#: src/malferma_libro/opds.py:258 src/malferma_libro/opds.py:265 src/malferma_libro/opds.py:517
+msgid "Сервер вернул файл неподдерживаемого типа."
+msgstr "Сервер хупланмаган төрдәге файл кайтарды."
+
+#: src/malferma_libro/opds.py:213 src/malferma_libro/opds.py:237 src/malferma_libro/opds.py:269 src/malferma_libro/opds.py:541 src/malferma_libro/opds.py:549
+msgid "Сервер передал неполный файл."
+msgstr "Сервер тулы булмаган файл җибәрде."
+
+#: src/malferma_libro/app.py:368 src/malferma_libro/app.py:416 src/malferma_libro/shortcuts.py:40
+msgid "Сетевые библиотеки"
+msgstr "Челтәр китапханәләре"
+
+#: src/malferma_libro/app.py:2050 src/malferma_libro/app.py:2094
+msgid "Сетевые библиотеки OPDS"
+msgstr "Челтәрдәге OPDS китапханәләре"
+
+#: src/malferma_libro/books.py:415
+msgid "Символические ссылки в архиве книги запрещены"
+msgstr "Китап архивларында символик сылтамалар тыелган"
+
+#: src/malferma_libro/app.py:1148
+msgid "Системные шрифты, масштаб и оконные кнопки задаёт рабочая среда. Виджеты используют libadwaita."
+msgstr "Система шрифтларын, масштабны һәм тәрәзә төймәләрен эш өстәле мохите билгели. Виджетлар libadwaita куллана."
+
+#: src/malferma_libro/app.py:1153 src/malferma_libro/appearance.py:22
+msgid "Системный"
+msgstr "Системадагыча"
+
+#: src/malferma_libro/app.py:2205
+msgid "Скачать {format}"
+msgstr "{format} йөкләп алу"
+
+#: src/malferma_libro/app.py:2255
+msgid "Скачивание книги…"
+msgstr "Китап йөкләп алына…"
+
+#: src/malferma_libro/accessibility_ui.py:262 src/malferma_libro/app.py:1218
+msgid "Скорость, %"
+msgstr "Тизлек, %"
+
+#: src/malferma_libro/app.py:527 src/malferma_libro/app.py:870 src/malferma_libro/shortcuts.py:58
+msgid "Следующая глава"
+msgstr "Киләсе бүлек"
+
+#: src/malferma_libro/keyboard_navigation.py:28
+msgid "Следующая страница"
+msgstr "Киләсе бит"
+
+#: src/malferma_libro/search_ui.py:21
+msgid "Следующее совпадение"
+msgstr "Киләсе тәңгәллек"
+
+#: src/malferma_libro/books.py:399
+msgid "Слишком много файлов в архиве книги"
+msgstr "Китап архивында файллар артык күп"
+
+#: src/malferma_libro/djvu.py:77
+msgid "Слишком сложная структура документа DjVu"
+msgstr "DjVu документы төзелеше артык катлаулы"
+
+#: src/malferma_libro/app.py:1480 src/malferma_libro/bookmarks_ui.py:41
+msgid "Сначала откройте книгу."
+msgstr "Башта китап ачыгыз."
+
+#: src/malferma_libro/search_ui.py:217
+msgid "Совпадений: {count}"
+msgstr "Тәңгәллекләр: {count}"
+
+#: src/malferma_libro/storage.py:355 src/malferma_libro/storage.py:375
+msgid "Создана пустая библиотека. Файлы книг сохранены в папке books; их можно импортировать снова."
+msgstr "Буш китапханә төзелде. Китап файллары books папкасында сакланды; аларны яңадан импортлап була."
+
+#: src/malferma_libro/library_ui.py:41 src/malferma_libro/library_ui.py:43
+msgid "Сортировка библиотеки"
+msgstr "Китапханәне тәртипкә салу"
+
+#: src/malferma_libro/bookmarks_ui.py:176 src/malferma_libro/bookmarks_ui.py:176 src/malferma_libro/keybindings_ui.py:231
+msgid "Сохранить"
+msgstr "Саклау"
+
+#: src/malferma_libro/keybindings_ui.py:168
+msgid "Сочетание занято: {action}"
+msgstr "Клавишлар тезмәсе инде билгеләнгән: {action}"
+
+#: src/malferma_libro/accessibility_ui.py:267 src/malferma_libro/accessibility_ui.py:315 src/malferma_libro/accessibility_ui.py:316 src/malferma_libro/app.py:1196 src/malferma_libro/app.py:529 src/malferma_libro/shortcuts.py:36
+msgid "Специальные возможности"
+msgstr "Махсус мөмкинлекләр"
+
+#: src/malferma_libro/storage.py:357 src/malferma_libro/storage.py:377
+msgid "Список книг и настройки восстановлены из последней резервной копии."
+msgstr "Китаплар исемлеге һәм көйләүләр соңгы резерв күчермәдән торгызылды."
+
+#: src/malferma_libro/app.py:1006 src/malferma_libro/app.py:531 src/malferma_libro/shortcuts.py:54
+msgid "Стандартный размер текста"
+msgstr "Текстның башлангыч зурлыгы"
+
+#: src/malferma_libro/accessibility_ui.py:238 src/malferma_libro/narration_ui.py:222 src/malferma_libro/shortcuts.py:64
+msgid "Стоп"
+msgstr "Туктату"
+
+#: src/malferma_libro/books.py:809 src/malferma_libro/books.py:823 src/malferma_libro/cbz.py:528 src/malferma_libro/outline_ui.py:120 src/malferma_libro/outline_ui.py:86
+msgid "Страница {number}"
+msgstr "Бит {number}"
+
+#: src/malferma_libro/bookmarks_ui.py:34 src/malferma_libro/bookmarks_ui.py:52
+msgid "Страница {page}"
+msgstr "Бит {page}"
+
+#: src/malferma_libro/app.py:1792 src/malferma_libro/pagination.py:152
+msgid "Страница {page} из {pages}"
+msgstr "Бит {page} / {pages}"
+
+#: src/malferma_libro/app.py:2033
+msgid "Страница {page} из {pages}  ·  {percent}% книги"
+msgstr "Бит {page} / {pages}  ·  китапның {percent}%"
+
+#: src/malferma_libro/app.py:1797 src/malferma_libro/app.py:1808
+msgid "Страница без текстового слоя. Скан доступен для просмотра; OCR пока не поддерживается."
+msgstr "Бу биттә текст катламы юк. Сканны карарга мөмкин; OCR әлегә хупланмый."
+
+#: src/malferma_libro/app.py:957 src/malferma_libro/app.py:960
+msgid "Страница документа"
+msgstr "Документ бите"
+
+#: src/malferma_libro/app.py:1172 src/malferma_libro/app.py:943 src/malferma_libro/app.py:997 src/malferma_libro/app.py:998
+msgid "Страница книги"
+msgstr "Китап бите"
+
+#: src/malferma_libro/outline_ui.py:68
+msgid "Страницы"
+msgstr "Битләр"
+
+#: src/malferma_libro/pagination.py:153
+msgid "Страницы {first}–{last} из {pages}"
+msgstr "Битләр {first}–{last} / {pages}"
+
+#: src/malferma_libro/books.py:577 src/malferma_libro/books.py:724 src/malferma_libro/markup.py:110 src/malferma_libro/markup.py:229 src/malferma_libro/markup.py:380 src/malferma_libro/markup.py:427
+msgid "Текст книги превышает допустимый размер"
+msgstr "Китап тексты рөхсәт ителгән үлчәмнән арта"
+
+#: src/malferma_libro/speech.py:235
+msgid "Текст озвучки должен быть строкой."
+msgstr "Тавышландырып укыласы текст юл булырга тиеш."
+
+#: src/malferma_libro/app.py:984 src/malferma_libro/app.py:989
+msgid "Текст страницы · поиск и озвучка"
+msgstr "Бит тексты · эзләү һәм тавышландырып уку"
+
+#: src/malferma_libro/books.py:869
+msgid "Текстовый файл пуст"
+msgstr "Текст файлы буш"
+
+#: src/malferma_libro/app.py:1150
+msgid "Тёмный"
+msgstr "Караңгы"
+
+#: src/malferma_libro/accessibility_ui.py:296
+msgid "Увеличение лупы"
+msgstr "Зурайткыч масштабы"
+
+#: src/malferma_libro/app.py:1008 src/malferma_libro/app.py:532 src/malferma_libro/shortcuts.py:50
+msgid "Увеличить текст"
+msgstr "Текстны зурайту"
+
+#: src/malferma_libro/bookmarks_ui.py:135
+msgid "Удалить закладку"
+msgstr "Кыстыргычны бетерү"
+
+#: src/malferma_libro/app.py:2060
+msgid "Удалить каталог из списка"
+msgstr "Каталогны исемлектән бетерү"
+
+#: src/malferma_libro/app.py:1204
+msgid "Удерживайте правую кнопку мыши и проведите влево или вправо для перехода между главами или страницами."
+msgstr "Бүлекләр яки битләр арасында күчү өчен тычканның уң төймәсен басып торып, аны сулга яки уңга хәрәкәт иттерегез."
+
+#: src/malferma_libro/storage.py:824
+msgid "Укажите название каталога."
+msgstr "Каталог исемен кертегез."
+
+#: src/malferma_libro/storage.py:173
+msgid "Укажите полный адрес OPDS-каталога: https://example.org/opds."
+msgstr "OPDS каталогының тулы адресын кертегез: https://example.org/opds."
+
+#: src/malferma_libro/books.py:795
+msgid "Указанный путь не является файлом"
+msgstr "Күрсәтелгән юл файл түгел"
+
+#: src/malferma_libro/app.py:1004 src/malferma_libro/app.py:530 src/malferma_libro/shortcuts.py:52
+msgid "Уменьшить текст"
+msgstr "Текстны кечерәйтү"
+
+#: src/malferma_libro/pagination.py:175 src/malferma_libro/pagination.py:177
+msgid "Условные страницы всей книги"
+msgstr "Бөтен китапның шартлы битләре"
+
+#: src/malferma_libro/narration_ui.py:52
+msgid "Установка Piper"
+msgstr "Piper урнаштыру"
+
+#: src/malferma_libro/djvu.py:157
+msgid "Файл DjVu превышает допустимый размер 64 МиБ"
+msgstr "DjVu файлы рөхсәт ителгән 64 МиБ үлчәмнән арта"
+
+#: src/malferma_libro/djvu.py:55
+msgid "Файл DjVu пуст или превышает допустимый размер 64 МиБ"
+msgstr "DjVu файлы буш яки рөхсәт ителгән 64 МиБ үлчәмнән арта"
+
+#: src/malferma_libro/pdf.py:72
+msgid "Файл PDF пуст или превышает допустимый размер 64 МиБ"
+msgstr "PDF файлы буш яки рөхсәт ителгән 64 МиБ үлчәмнән арта"
+
+#: src/malferma_libro/storage.py:354 src/malferma_libro/storage.py:369
+msgid "Файл библиотеки повреждён. Исходный файл сохранён: {preserved}"
+msgstr "Китапханә файлы бозылган. Башлангыч файл сакланды: {preserved}"
+
+#: src/malferma_libro/books.py:417 src/malferma_libro/books.py:434
+msgid "Файл внутри книги превышает допустимый размер"
+msgstr "Китап эчендәге файл рөхсәт ителгән үлчәмнән арта"
+
+#: src/malferma_libro/task_ui.py:191
+msgid "Файл не найден. Выберите книгу снова или проверьте, доступен ли диск."
+msgstr "Файл табылмады. Китапны яңадан сайлагыз яки дискка керү мөмкинлеген тикшерегез."
+
+#: src/malferma_libro/markup.py:354
+msgid "Файл не содержит доступного текста."
+msgstr "Файлда укып була торган текст юк."
+
+#: src/malferma_libro/djvu.py:62
+msgid "Файл не является документом DjVu"
+msgstr "Файл DjVu документы түгел"
+
+#: src/malferma_libro/books.py:705
+msgid "Файл не является книгой FB2"
+msgstr "Файл FB2 китабы түгел"
+
+#: src/malferma_libro/books.py:276 src/malferma_libro/markup.py:39
+msgid "Файл разметки слишком сложный."
+msgstr "Билгеләү файлы артык катлаулы."
+
+#: src/malferma_libro/markup.py:108
+msgid "Файл разметки содержит двоичные данные."
+msgstr "Билгеләү файлында икеле мәгълүматлар бар."
+
+#: src/malferma_libro/voices.py:102 src/malferma_libro/voices.py:179 src/malferma_libro/voices.py:386 src/malferma_libro/voices.py:392 src/malferma_libro/voices.py:394 src/malferma_libro/voices.py:405 src/malferma_libro/voices.py:411 src/malferma_libro/voices.py:421 src/malferma_libro/voices.py:443 src/malferma_libro/voices.py:446 src/malferma_libro/voices.py:460 src/malferma_libro/voices.py:468 src/malferma_libro/voices.py:473 src/malferma_libro/voices.py:481 src/malferma_libro/voices.py:491
+msgid "Файлы голоса Piper не прошли проверку."
+msgstr "Piper тавышы файллары тикшерүне узмады."
+
+#: src/malferma_libro/library_ui.py:40 src/malferma_libro/library_ui.py:42 src/malferma_libro/library_ui.py:48 src/malferma_libro/library_ui.py:50
+msgid "Фильтр библиотеки"
+msgstr "Китапханә сөзгече"
+
+#: src/malferma_libro/app.py:1188
+msgid "Фон страницы"
+msgstr "Бит фоны"
+
+#: src/malferma_libro/opds.py:519
+msgid "Формат ответа не совпадает с форматом книги."
+msgstr "Җавап форматы китап форматына туры килми."
+
+#: src/malferma_libro/app.py:1173
+msgid "Цвета и шрифты страницы настраиваются отдельно от интерфейса."
+msgstr "Битнең төсләре һәм шрифтлары интерфейстан аерым көйләнә."
+
+#: src/malferma_libro/app.py:573
+msgid "Читалка EPUB, FB2, TXT, PDF, DjVu, HTML, Markdown и CBZ с локальной библиотекой и каталогами OPDS."
+msgstr "Җирле китапханәсе һәм OPDS каталоглары булган EPUB, FB2, TXT, PDF, DjVu, HTML, Markdown һәм CBZ уку кушымтасы."
+
+#: src/malferma_libro/library_ui.py:13
+msgid "Читаю"
+msgstr "Укыйм"
+
+#: src/malferma_libro/app.py:367 src/malferma_libro/app.py:415 src/malferma_libro/shortcuts.py:27 src/malferma_libro/shortcuts.py:39
+msgid "Чтение"
+msgstr "Уку"
+
+#: src/malferma_libro/djvu.py:358
+msgid "Ширина страницы DjVu должна быть положительным целым числом"
+msgstr "DjVu бите киңлеге уңай бөтен сан булырга тиеш"
+
+#: src/malferma_libro/pdf.py:259
+msgid "Ширина страницы PDF должна быть положительным целым числом"
+msgstr "PDF бите киңлеге уңай бөтен сан булырга тиеш"
+
+#: src/malferma_libro/app.py:1190
+msgid "Шрифт книги"
+msgstr "Китап шрифты"
+
+#: src/malferma_libro/keybindings_ui.py:148
+msgid "Это сочетание зарезервировано системой."
+msgstr "Бу клавишлар тезмәсе система өчен сакланган."
+
+#: src/malferma_libro/storage.py:827
+msgid "Этот каталог уже добавлен."
+msgstr "Бу каталог инде өстәлгән."
+
+#: src/malferma_libro/opds.py:495
+msgid "Этот формат книги не поддерживается."
+msgstr "Бу китап форматы хупланмый."
+
+#: src/malferma_libro/accessibility_ui.py:258 src/malferma_libro/app.py:1217 src/malferma_libro/app.py:590 src/malferma_libro/app.py:591
+msgid "Язык"
+msgstr "Тел"
+
+#: src/malferma_libro/app.py:1169 src/malferma_libro/app.py:588
+msgid "Язык интерфейса"
+msgstr "Интерфейс теле"
+
+#: src/malferma_libro/storage.py:263
+msgid "Язык озвучки «{language}» больше не поддерживается. Выбрано автоматическое определение языка."
+msgstr "«{language}» телендә тавышлап уку бүтән хупланмый. Телне автоматик билгеләү сайланды."
+
+#: src/malferma_libro/app.py:1194
+msgid "Яркость страницы, %"
+msgstr "Бит яктылыгы, %"
+
+#: src/malferma_libro/books.py:596
+msgid "не указан"
+msgstr "күрсәтелмәгән"
+
+#: src/malferma_libro/xmlutil.py:28
+msgid "слишком большая вложенность XML"
+msgstr "XML эчкә урнаштыру дәрәҗәсе артык тирән"
+
+#: src/malferma_libro/xmlutil.py:26
+msgid "слишком много элементов XML"
+msgstr "XML элементлары артык күп"
+
+#: src/malferma_libro/bookmarks_ui.py:98 src/malferma_libro/shortcuts.py:61
+msgid "＋ Закладка"
+msgstr "＋ Кыстыргыч"

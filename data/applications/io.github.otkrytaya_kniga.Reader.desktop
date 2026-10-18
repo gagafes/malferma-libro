@@ -1,0 +1,195 @@
+[Desktop Entry]
+Type=Application
+Name=Malferma Libro
+Name[ru]=Malferma Libro
+Name[eo]=Malferma Libro
+GenericName=E-book Reader
+GenericName[ru]=Читалка электронных книг
+GenericName[eo]=Legilo de bitlibroj
+Comment=Read EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF and DjVu books and browse OPDS libraries
+Comment[ru]=Читайте EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF и DjVu и подключайте библиотеки OPDS
+Comment[eo]=Legu EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF kaj DjVu kaj foliumu OPDS-bibliotekojn
+Exec=malferma-libro %F
+TryExec=malferma-libro
+Icon=io.github.otkrytaya_kniga.Reader
+Terminal=false
+Categories=Office;Viewer;
+MimeType=application/epub+zip;application/x-fictionbook+xml;text/plain;text/html;application/xhtml+xml;text/markdown;application/pdf;image/vnd.djvu;image/x-djvu;application/vnd.comicbook+zip;
+StartupNotify=true
+StartupWMClass=io.github.otkrytaya_kniga.Reader
+
+Name[uk]=Malferma Libro
+GenericName[uk]=Читалка електронних книг
+Comment[uk]=Читайте електронні книги, PDF і DjVu та переглядайте каталоги OPDS
+Name[ar]=Malferma Libro
+GenericName[ar]=قارئ الكتب الإلكترونية
+Comment[ar]=اقرأ الكتب وملفات PDF وDjVu وتصفح فهارس OPDS
+Name[he]=Malferma Libro
+GenericName[he]=קורא ספרים אלקטרוניים
+Comment[he]=קריאת ספרים וקובצי PDF ו־DjVu ועיון בקטלוגי OPDS
+Name[de]=Malferma Libro
+GenericName[de]=E-Book-Betrachter
+Comment[de]=E-Books, PDF und DjVu lesen und OPDS-Kataloge durchsuchen
+Name[kk]=Malferma Libro
+GenericName[kk]=Электрондық кітап оқу құралы
+Comment[kk]=Кітаптарды, PDF пен DjVu файлдарын оқып, OPDS каталогтарын шолыңыз
+Name[fa]=Malferma Libro
+GenericName[fa]=کتاب‌خوان الکترونیکی
+Comment[fa]=کتاب‌ها و PDF و DjVu را بخوانید و فهرست‌های OPDS را مرور کنید
+Name[lt]=Malferma Libro
+GenericName[lt]=Elektroninių knygų skaityklė
+Comment[lt]=Skaitykite el. knygas, PDF ir DjVu bei naršykite OPDS katalogus
+Name[lv]=Malferma Libro
+GenericName[lv]=E-grāmatu lasītājs
+Comment[lv]=Lasiet e-grāmatas, PDF un DjVu un pārlūkojiet OPDS katalogus
+Name[et]=Malferma Libro
+GenericName[et]=E-raamatute lugeja
+Comment[et]=Loe e-raamatuid, PDF- ja DjVu-faile ning sirvi OPDS-katalooge
+
+Name[es]=Malferma Libro
+GenericName[es]=Lector de libros electrónicos
+Comment[es]=Lector de EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF y DjVu con biblioteca local y catálogos OPDS.
+
+Name[fr]=Malferma Libro
+GenericName[fr]=Lecteur de livres numériques
+Comment[fr]=Lecteur EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF et DjVu avec bibliothèque locale et catalogues OPDS.
+
+Name[it]=Malferma Libro
+GenericName[it]=Lettore di libri elettronici
+Comment[it]=Lettore EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF e DjVu con biblioteca locale e cataloghi OPDS.
+
+Name[pt]=Malferma Libro
+GenericName[pt]=Leitor de livros eletrónicos
+Comment[pt]=Leitor de EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF e DjVu com biblioteca local e catálogos OPDS.
+
+Name[ro]=Malferma Libro
+GenericName[ro]=Cititor de cărți electronice
+Comment[ro]=Cititor EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF și DjVu cu bibliotecă locală și cataloage OPDS.
+
+Name[ca]=Malferma Libro
+GenericName[ca]=Lector de llibres electrònics
+Comment[ca]=Lector d'EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF i DjVu amb biblioteca local i catàlegs OPDS.
+
+Name[nl]=Malferma Libro
+GenericName[nl]=E-boeklezer
+Comment[nl]=EPUB-, FB2-, HTML-/XHTML-, Markdown-, CBZ-, TXT-, PDF- en DjVu-lezer met een lokale bibliotheek en OPDS-catalogi.
+
+Name[sv]=Malferma Libro
+GenericName[sv]=E-boksläsare
+Comment[sv]=En läsare för EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF och DjVu med lokalt bibliotek och OPDS-kataloger.
+
+Name[da]=Malferma Libro
+GenericName[da]=E-bogslæser
+Comment[da]=En læser til EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF og DjVu med lokalt bibliotek og OPDS-kataloger.
+
+Name[nb]=Malferma Libro
+GenericName[nb]=E-bokleser
+Comment[nb]=En leser for EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF og DjVu med lokalt bibliotek og OPDS-kataloger.
+
+Name[nn]=Malferma Libro
+GenericName[nn]=Lesar for e-bøker
+Comment[nn]=Ein lesar for EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF og DjVu med lokalt bibliotek og OPDS-katalogar.
+
+Name[is]=Malferma Libro
+GenericName[is]=Rafbókalesari
+Comment[is]=Lesari fyrir EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF og DjVu með bókasafni á tölvunni og OPDS-bókalistum.
+
+Name[tr]=Malferma Libro
+GenericName[tr]=E-kitap okuyucusu
+Comment[tr]=Yerel kitaplık ve OPDS katalogları içeren EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF ve DjVu okuyucusu.
+
+Name[az]=Malferma Libro
+GenericName[az]=Elektron kitab oxuyucusu
+Comment[az]=Yerli kitabxana və OPDS kataloqları olan EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF və DjVu oxuyucusu.
+
+Name[uz]=Malferma Libro
+GenericName[uz]=Elektron kitob oʻqish ilovasi
+Comment[uz]=Mahalliy kutubxona va OPDS kataloglariga ega EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF va DjVu oʻqish ilovasi.
+
+Name[ky]=Malferma Libro
+GenericName[ky]=Электрондук китеп окугуч
+Comment[ky]=Жергиликтүү китепканасы жана OPDS каталогдору бар EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF жана DjVu окугуч.
+
+Name[tt]=Malferma Libro
+GenericName[tt]=Электрон китап уку кушымтасы
+Comment[tt]=Җирле китапханәсе һәм OPDS каталоглары булган EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF һәм DjVu уку кушымтасы.
+
+Name[tk]=Malferma Libro
+GenericName[tk]=Elektron kitap okaýjy
+Comment[tk]=Ýerli kitaphanasy we OPDS kataloglary bolan EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF we DjVu okaýjy.
+
+Name[am]=Malferma Libro
+GenericName[am]=የኤሌክትሮኒክ መጻሕፍት አንባቢ
+Comment[am]=የአካባቢ ቤተ መጻሕፍትና የOPDS ካታሎጎች ያሉት የEPUB፣ FB2፣ HTML/XHTML፣ Markdown፣ CBZ፣ TXT፣ PDF እና DjVu አንባቢ።
+
+Name[mt]=Malferma Libro
+GenericName[mt]=Qarrej tal-kotba elettroniċi
+Comment[mt]=Qarrej ta' EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF u DjVu b'librerija lokali u katalgi OPDS.
+
+Name[yi]=Malferma Libro
+GenericName[yi]=לײענפּראָגראַם פֿאַר עלעקטראָנישע ביכער
+Comment[yi]=אַ לײענפּראָגראַם פֿאַר EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF און DjVu מיט אַ לאָקאַלער ביבליאָטעק און OPDS־קאַטאַלאָגן.
+
+Name[be]=Malferma Libro
+GenericName[be]=Чыталка электронных кніг
+Comment[be]=Праграма для чытання EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF і DjVu з лакальнай бібліятэкай і каталогамі OPDS.
+
+Name[pl]=Malferma Libro
+GenericName[pl]=Czytnik e-booków
+Comment[pl]=Czytnik EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF i DjVu z lokalną biblioteką i katalogami OPDS.
+
+Name[cs]=Malferma Libro
+GenericName[cs]=Čtečka elektronických knih
+Comment[cs]=Čtečka EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF a DjVu s místní knihovnou a katalogy OPDS.
+
+Name[sk]=Malferma Libro
+GenericName[sk]=Čítačka elektronických kníh
+Comment[sk]=Čítačka EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF a DjVu s miestnou knižnicou a katalógmi OPDS.
+
+Name[sl]=Malferma Libro
+GenericName[sl]=Bralnik e-knjig
+Comment[sl]=Bralnik EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF in DjVu s krajevno knjižnico in katalogi OPDS.
+
+Name[hr]=Malferma Libro
+GenericName[hr]=Čitač e-knjiga
+Comment[hr]=Čitač EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF i DjVu knjiga s lokalnom knjižnicom i OPDS katalozima.
+
+Name[bs]=Malferma Libro
+GenericName[bs]=Čitač elektronskih knjiga
+Comment[bs]=Čitač EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF i DjVu knjiga s lokalnom bibliotekom i OPDS katalozima.
+
+Name[sr]=Malferma Libro
+GenericName[sr]=Читач електронских књига
+Comment[sr]=Читач EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF и DjVu књига са локалном библиотеком и OPDS каталозима.
+
+Name[sr@latin]=Malferma Libro
+GenericName[sr@latin]=Čitač elektronskih knjiga
+Comment[sr@latin]=Čitač EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF i DjVu knjiga sa lokalnom bibliotekom i OPDS katalozima.
+
+Name[mk]=Malferma Libro
+GenericName[mk]=Читач на електронски книги
+Comment[mk]=Читач за EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF и DjVu со локална библиотека и каталози OPDS.
+
+Name[bg]=Malferma Libro
+GenericName[bg]=Четец за електронни книги
+Comment[bg]=Четец за EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF и DjVu с локална библиотека и каталози OPDS.
+
+Name[eu]=Malferma Libro
+GenericName[eu]=Liburu elektronikoen irakurgailua
+Comment[eu]=EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF eta DjVu irakurgailua, liburutegi lokala eta OPDS katalogoak dituena.
+
+Name[sq]=Malferma Libro
+GenericName[sq]=Lexues librash elektronikë
+Comment[sq]=Lexues EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF dhe DjVu me bibliotekë lokale dhe katalogë OPDS.
+
+Name[hsb]=Malferma Libro
+GenericName[hsb]=Čitak elektroniskich knihow
+Comment[hsb]=Čitak EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF a DjVu z lokalnej knihownju a OPDS-katalogami.
+
+Name[dsb]=Malferma Libro
+GenericName[dsb]=Cytak elektroniskich knigłow
+Comment[dsb]=Cytak EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF a DjVu z lokalneju knigłownju a OPDS-katalogami.
+
+Name[rue]=Malferma Libro
+GenericName[rue]=Чіталка електронных книжок
+Comment[rue]=Чіталка EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF і DjVu з локалнов бібліотеков і каталоґами OPDS.

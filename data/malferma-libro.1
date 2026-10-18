@@ -1,0 +1,401 @@
+.TH MALFERMA-LIBRO 1 "2026-10-18" "Malferma Libro 0.1.0" "User Commands"
+.SH NAME
+malferma-libro \- GTK ebook reader with OPDS catalogs and offline narration
+.SH SYNOPSIS
+.B malferma-libro
+.RI [ OPTIONS ]
+.RB [ \-\- ]
+.RI [ FILE ...]
+.SH DESCRIPTION
+Malferma Libro is a GTK 4 and libadwaita reader for Debian 13.
+It imports EPUB, FB2, FB2.ZIP, TXT, HTML/XHTML, Markdown, PDF, DjVu and CBZ
+into a local library.
+Reading positions, bookmarks and settings are stored locally.
+PDF and DjVu retain their page layout; CBZ uses image pages.
+EPUB, FB2, TXT, HTML/XHTML and Markdown are presented as text.
+Public OPDS 1.x catalogs can be browsed to download books.
+.PP
+The first group in the main menu opens My books, Reading and Online libraries;
+the default shortcuts are Ctrl+1, Ctrl+2 and Ctrl+3.
+The table of contents preserves
+chapter and subsection hierarchy and groups notes separately. EPUB entries
+with fragment targets navigate to the corresponding position within a chapter.
+FB2 notes remain available through the table of contents.
+.PP
+The header groups opening and navigation, book tools, day/night and fullscreen,
+and accessibility and menu controls. Text-size controls are available in
+Accessibility. One pair of previous/next controls remains in the header;
+the table of contents selects chapters. Page tools appear only for PDF,
+DjVu and CBZ. Keyboard shortcuts and mouse gestures remain available.
+.PP
+The window uses a thin border and a light shadow. Maximized and fullscreen
+windows hide the outer border. Edge resizing remains available; high-contrast
+mode keeps the outline visible.
+.SH BOOK COVERS
+Covers are selected automatically from embedded EPUB/FB2 images, the first
+valid image among at most the first 32 CBZ page candidates, or image URLs
+provided by an OPDS catalog. Thumbnails are prepared in the background and
+saved in the local covers/ cache. Library rows and the continue-reading card
+show them; catalog images are requested only for visible rows.
+Missing, invalid or unreachable covers use a standard book-icon placeholder
+without preventing reading. Failed remote requests are remembered for the
+session; restarting and opening the catalog permits another attempt.
+.PP
+Embedded and OPDS covers accept PNG and JPEG up to 4 MiB, with each dimension at most
+4096 pixels and at most 4 MiPixels in total. No ISBN- or title-based requests
+to external cover-search services are made. Vector application artwork
+requires the Debian librsvg2-common loader package.
+CBZ source-page limits are separate; its cover is scaled to at most 1024
+pixels on the longest edge and saved as PNG.
+.SH OPTIONS
+.TP
+.BR \-h ", " \-\-help
+Print concise help and exit without loading GTK.
+Russian, German or Ukrainian help is used for the corresponding locales;
+all other locales use English.
+.TP
+.BR \-\-manual [=LANG]
+Print the complete bundled user guide and exit without loading GTK.
+The guide is available in Russian, English, German and Ukrainian.
+Without an explicit language, the locale environment selects Russian,
+German or Ukrainian when appropriate, with English as the fallback.
+Use
+.BR \-\-manual=ru ,
+.BR \-\-manual=en ,
+.BR \-\-manual=de
+or
+.B \-\-manual=uk
+to select a language explicitly. No browser or network connection is used.
+.PP
+In the graphical guide, the language selector defaults to automatic selection,
+which follows interface-language changes immediately and uses English for
+other interface languages. Any of the four guide languages can also be selected.
+.TP
+.B \-\-license
+Print the full bundled GNU GPL version 3 text and exit without loading GTK.
+The code and logo/icon artwork are licensed under GPL-3.0-or-later;
+bundled fonts retain their own licenses.
+.TP
+.B \-\-version
+Print the application name and version without loading GTK.
+.TP
+.B \-\-
+End option processing. All following arguments are filenames, including names
+beginning with a hyphen or matching an informational option.
+.PP
+Only one informational mode may be selected per invocation.
+Informational modes do not open books. Unknown options are rejected.
+.SH LIBRARY AND CONTINUING
+The Continue Reading card returns to the last successfully opened book and
+its saved position. Importing a file alone does not replace that book.
+Reopening it automatically at startup is an optional preference, disabled
+by default. An explicit file-open request takes precedence.
+.PP
+The library header has status filters and sorting by recent opening, author,
+or title. The per-book menu can set Not started, Reading or Finished.
+Opening a book marked Not started marks it Reading; reaching the end does not mark it
+Finished automatically. Saved progress and the explicit status are separate.
+.SH PAGE NUMBERS
+A compact counter at the bottom of the reading area shows pages for the
+whole book and updates during scrolling and navigation. If visible text
+spans several reference pages, it shows a range, such as Pages 12–13 of 640.
+EPUB, FB2, TXT, HTML/XHTML and Markdown use continuous reference pages of
+1800 Unicode characters, including spaces and line breaks. Chapters are
+counted consecutively, without empty pages or padding at chapter boundaries.
+Font, line spacing and window size do not change page numbers or the total
+page count. These numbers do not refer to a particular printed edition.
+PDF and DjVu retain their original document pages; CBZ uses images in
+reading order. Zoom and scrolling within an image do not change its number.
+.SH WHOLE-BOOK SEARCH
+Search checks every chapter, or lazily extracts PDF/DjVu page text without
+rasterizing the book. Results contain chapter/page names and excerpts.
+Typing does not change the reading position. Select a result, press Enter
+for the next match, or Shift+Enter for the previous match.
+The return button restores the position where searching began in that book.
+.PP
+At most 200 results are displayed. A truncation notice asks for a more specific
+query when additional matches exist. Case-insensitive matching preserves
+original Unicode selection offsets, including casefold expansions.
+Image-only pages cannot be searched; OCR is not provided.
+CBZ has no text layer, text search or narration.
+.SH BOOKMARKS AND NOTES
+Bookmarks show a chapter title or a one-based PDF/DjVu page number and excerpt.
+For a fixed-layout page the excerpt uses selected text, or the start of the
+text layer; the saved position is the image viewport, not a text offset.
+Notes can be added or edited from each bookmark row, up to 2000 characters.
+An empty note removes its text. Editing cannot target a different book or
+a bookmark that has been removed.
+CBZ bookmarks save the page and image scroll position with a page-number label.
+.SH BACKGROUND ACTIONS
+The header's operation list shows available progress and cancellation controls
+for imports, opening, search, rendering and network actions.
+Cancellation is cooperative: an already blocked network request or external
+decoder need not stop instantly. Already committed imports and other saved
+changes remain. Errors offer Retry where supported; a missing file can offer
+a new file-selection action.
+.SH KEYBOARD
+The bindings below are defaults. The main menu's Keyboard shortcuts reference
+shows the active profile. Normal GTK commands such as Escape are independent
+of the profile.
+These shortcuts apply to the main window. Reading actions, including adding
+a bookmark and stopping narration, require the active reader section and an
+open book. Text inputs and dialogs retain their normal GTK keyboard behavior.
+.TP
+.B Ctrl+O / Ctrl+F / Ctrl+comma
+Open books / search the current section / open preferences.
+.TP
+.B Ctrl+Shift+A
+Open the Accessibility menu, including when the header is hidden in fullscreen.
+Ctrl+Shift+Ф also works with the Russian keyboard layout.
+.TP
+.B Ctrl+Shift+D
+Switch both the application and book page between day and night appearance.
+Ctrl+Shift+В also works with the Russian keyboard layout.
+.TP
+.B Ctrl+1 / Ctrl+2 / Ctrl+3
+Show the library / reader / OPDS catalogs.
+.TP
+.B Ctrl+B
+Add a bookmark at the current reading position.
+.TP
+.B Ctrl+minus / Ctrl+plus / Ctrl+0
+Decrease / increase / reset text size or PDF/DjVu/CBZ zoom.
+.TP
+.B Alt+Left / Alt+Right
+Previous / next chapter or document page.
+.TP
+.B F9 / F11
+Toggle the table of contents / fullscreen mode.
+.TP
+.B F10
+Reveal a hidden header and move keyboard focus to its controls.
+.TP
+.B Escape
+Close a popup, cancel an active mouse gesture, or leave fullscreen.
+.TP
+.B Space / Ctrl+Shift+S
+Play or pause narration when focus is in the reading area / stop narration.
+Space does not replace normal input or focused-button behavior.
+.TP
+.B F1 / Ctrl+question-mark
+Open the offline manual / keyboard shortcut reference.
+The latter is usually Ctrl+Shift+slash.
+.TP
+.B Ctrl+Q
+Close the main window.
+.PP
+Opening a book focuses the reading area for immediate keyboard scrolling.
+Click the text or page image to return after using other controls. Toolbar
+buttons, the table of contents, search field, document text layer, other
+inputs and open menus or dialogs retain their normal key behavior.
+.TP
+.B Up / Down
+Scroll a small distance up / down without changing chapters.
+.TP
+.B Left / Right
+Previous / next page. In text books, scroll by 90% of the viewport height
+with a 10% overlap; at an already reached boundary, open the bottom of the
+previous chapter or the top of the next one. In PDF, DjVu and CBZ, open the
+adjacent document page at its top, even when zoomed and scrolled.
+Directions stay the same in LTR and RTL books: Left goes back, Right forward.
+Page numbers remain continuous across the whole book.
+.TP
+.B Page Up / Page Down
+Scroll by 90% of the viewport height. At an already reached boundary, open
+the bottom of the previous chapter or page, or the top of the next one.
+Navigation stops at the book's ends.
+.TP
+.B Home / End
+Go to the beginning / end of the current chapter or document page.
+.TP
+.B Ctrl+Home / Ctrl+End
+Go to the beginning / end of the whole book. A custom binding for the same
+combination takes precedence.
+.PP
+Tab, Shift+Tab, text selection and copying retain normal GTK behavior.
+Shift variants of navigation keys retain text selection. Numeric-keypad
+navigation works with Num Lock off; with Num Lock on, digits remain digits.
+Reading navigation is also listed in the shortcut reference; a Ctrl combination
+replaced by a custom binding is not listed as a scrolling command.
+.SH SHORTCUT PREFERENCES
+Open Settings, then Keyboard shortcuts. Mode selects Default or Custom;
+Custom inherits every default binding that has not been changed.
+Use Change shortcut beside an action and press the new key combination.
+Disable removes the action's binding; Default restores its original keys.
+These changes are staged until Save applies and persists them immediately.
+Cancel or Escape discards the edit.
+.PP
+A replacement removes the action's old default aliases, including Russian
+layout aliases. Conflicting bindings are rejected, including Latin/Cyrillic
+aliases on the same physical key. Escape, Tab, normal Ctrl+C/V/X/A/Z/Y editing,
+ordinary typing and unmodified navigation keys are reserved.
+Use Ctrl, Alt or a function key; Super combinations are unsupported.
+Unmodified Space is allowed only for narration with focus in the reading area.
+.PP
+Changing Mode takes effect immediately. Returning to Default retains the
+saved Custom profile. Reset all shortcuts immediately clears custom bindings
+and selects Default without changing other preferences.
+.SH DAY AND NIGHT
+The top-bar day/night button or default Ctrl+Shift+D switches the window
+and book page together between light and dark appearance. The choice is saved;
+reading position is retained and paused narration does not resume by itself.
+The original appearance of PDF/DjVu/CBZ image pages remains unchanged.
+System appearance and sepia remain available in the full preferences.
+.SH MOUSE GESTURES
+Hold the right mouse button in the reading area and drag left for the next
+chapter or page, or right for the previous one. Navigation occurs on release.
+Short, vertical and diagonal movements do not turn a page.
+Gestures can be disabled in accessibility preferences.
+.SH FULLSCREEN HEADER
+During fullscreen reading the header can hide after about two seconds of
+inactivity. Move the pointer into the top 24 logical pixels, use F10, or use
+Tab to reveal it. Toolbar focus, open popups, dialogs, gestures and high
+contrast keep it visible. Automatic hiding can be disabled in preferences;
+ordinary windows and other application sections retain the header.
+.SH ACCESSIBILITY AND DISPLAYS
+Preferences include text sizes from 12 to 96, high contrast, bold text,
+line spacing, a low-vision preset, reading-column width and page brightness.
+The Accessibility button in the reader header opens a compact menu with
+text-size controls, high contrast, bold text, line spacing and the low-vision
+preset. Appearance options are also available in preferences.
+Interface text in application windows, dialogs and menus is 15% larger than
+the system font and follows its family and desktop scale. Book text size
+is configured separately.
+Narration-language and text-size controls sit below their labels. The scrollbar
+has its own space beside the content. The menu height fits the window; scroll
+to reach the tools farther down.
+The reading-area magnifier enlarges a region by 2 to 4 times without changing
+text wrapping, the text-size setting or the original PDF/DjVu/CBZ layout. It follows
+the mouse pointer over the reading area; otherwise it magnifies the center.
+Enable it in the Accessibility menu for the current session; it starts disabled
+again after restarting the application.
+PDF/DjVu/CBZ use page zoom instead of changing text in the source image.
+GTK handles display scaling. Only the current PDF/DjVu/CBZ page is rasterized;
+the raster is capped at 4096 pixels on the longest edge and 12 MiPixels.
+An 8K display or large zoom may therefore enlarge a bounded raster.
+.SH NARRATION
+Narration uses Piper exclusively. Install the piper-tts version 1.8.0 Python distribution
+in a per-user virtual environment, normally
+.IR ~/.local/share/malferma-libro/piper/ ,
+and use paplay from pulseaudio-utils or aplay from alsa-utils for playback.
+PIPER_PYTHON can select another Python interpreter with Piper installed.
+The Debian system Python need not be changed; do not use sudo pip.
+Changes to PIPER_PYTHON apply in a newly launched process.
+Adding a voice model does not require a restart.
+.PP
+Voice models are downloaded separately at the user's request from the
+application's catalog of models with checked free licenses. No model is
+included in the application package. After installation, narration is offline
+and does not send book text to a server. Models retain their own licenses.
+Supported narration languages are Russian, Ukrainian, English, German,
+French, Spanish, Italian and Portuguese, subject to a compatible installed
+Piper model for the selected language. The checked download catalog covers
+English, Ukrainian, German, French, Spanish and Italian. Russian and Portuguese
+currently require a local .onnx model with its matching .onnx.json file;
+the application does not certify the license of a user-selected model.
+.PP
+Settings, then Read aloud, provides voice selection, an explicit download
+action, local model import and an offline sample preview. Selecting a voice
+sets its language; an incompatible language change restores automatic voice
+selection. Preview pauses book narration and leaves it paused.
+Models are stored under voices/ in the application data directory.
+Play, pause, resume and stop controls are in the header's Accessibility menu,
+along with language selection and relative speed from 44 to 250 percent,
+defaulting to 100 percent. Actual words per minute depend on the voice and text.
+This does not restrict interface or book languages.
+PDF/DjVu narration requires a text layer; OCR is not provided.
+CBZ contains image pages and cannot be read aloud.
+.SH FILES
+.TP
+.I ~/.local/share/malferma-libro/
+Default directory for new installations. With an absolute XDG_DATA_HOME
+the directory is instead
+.IR $XDG_DATA_HOME/malferma-libro/ .
+If the new directory does not exist but an otkrytaya-kniga directory already
+exists under the same data home, that existing directory is reused.
+User books are not automatically moved or deleted.
+.TP
+.I library.json / library.json.bak
+Library metadata, reading status, last book, settings, bookmarks, notes and
+reading positions / recovery copy.
+.TP
+.I books/
+Managed book copies below the data directory.
+.TP
+.I voices/
+Installed Piper voice models and their configuration and model-card records
+below the data directory.
+.TP
+.I /usr/share/doc/malferma-libro/PIPER_LICENSES.md
+Sources, licenses and review limits for Piper and the download catalog.
+.TP
+.I /usr/share/doc/malferma-libro/MANUAL.md
+Complete Russian guide in the Debian package.
+.TP
+.I /usr/share/doc/malferma-libro/MANUAL.en.md
+Complete English guide. German and Ukrainian versions are provided alongside it
+as MANUAL.de.md and MANUAL.uk.md.
+.TP
+.I /usr/share/doc/malferma-libro/LICENSE
+Full GPL v3 text. See LOGO_LICENSE.md for the artwork permission record,
+FONT_LICENSES.md for fonts and LICENSE_AUDIT.md for the resource audit.
+.SH ENVIRONMENT
+GTK 4 selects the graphical display from the process environment, including
+DISPLAY and WAYLAND_DISPLAY. Display selection is not a reader command-line option.
+.PP
+The locale environment selects the language of concise help and of
+.B \-\-manual
+without an explicit language. The available guide languages are ru, en, de and uk;
+other locales use English. The graphical guide's automatic selection instead
+follows the application interface language.
+.SH EXIT STATUS
+.TP
+.B 0
+Informational command completed successfully or graphical application exited normally.
+.TP
+.B 1
+Required runtime or documentation resource could not be loaded.
+.TP
+.B 2
+Invalid command-line arguments.
+.SH EXAMPLES
+.nf
+malferma-libro "Book with spaces.epub" "Another book.fb2"
+malferma-libro \-\- \-book.txt
+malferma-libro \-\-manual
+malferma-libro \-\-manual=en
+malferma-libro \-\-manual=ru
+malferma-libro \-\-manual=de
+malferma-libro \-\-manual=uk
+malferma-libro \-\-license
+.fi
+.SH LIMITATIONS
+HTML/XHTML (.html, .htm, .xhtml) is read as text without JavaScript, CSS,
+browser layout or external-resource loading. Markdown (.md, .markdown) uses
+CommonMark through markdown-it-py, version 3.0.0 or newer; GFM table and
+footnote extensions are not enabled. Links retain labels, images retain
+alt text and raw HTML is displayed literally. Each HTML/Markdown source file
+is limited to 64 MiB and decoded text to 32 times 1024 times 1024 characters.
+Markup complexity limits may reject a smaller file.
+.PP
+CBZ loads PNG/JPEG pages lazily in natural path/filename order, with 2 before
+10. WebP requires an installed GdkPixbuf loader. Hidden and __MACOSX entries
+are skipped; ComicInfo.xml can supply a title and author. CBZ is limited to
+512 MiB per archive, 1 GiB expanded entries, 10,000 pages and 20,000 ZIP entries.
+Each source image is limited to 32 MiB, 32 MiPixels and 16,384 pixels per edge.
+Rendering is capped at 4096 pixels on the longest edge and 12 MiPixels.
+.PP
+EPUB CSS, inline images and interactive features are not reproduced in text mode.
+Library cover extraction does not add inline image rendering to EPUB text.
+DRM, authenticated catalogs and OPDS 2 are unsupported.
+PDF/DjVu documents are limited to 64 MiB and 10,000 pages.
+External-component DjVu documents must first be bundled.
+.SH LICENSE
+The application code, documentation and logo/icon artwork, including vector assets,
+are licensed under GNU GPL version 3
+or, at your option, any later version. They are distributed without warranty
+as described by that license. The artwork permission is recorded in
+LOGO_LICENSE.md. Bundled fonts retain SIL OFL 1.1; AppStream metadata is CC0-1.0.
+.SH SEE ALSO
+.BR pdftoppm (1),
+.BR ddjvu (1)

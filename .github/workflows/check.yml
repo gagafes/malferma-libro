@@ -1,0 +1,40 @@
+name: Check and build
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  linux:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install distribution dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3 python3-gi python3-markdown-it python3-setuptools python3-wheel dpkg-dev \
+            gir1.2-gtk-4.0 gir1.2-adw-1 gir1.2-pango-1.0 gir1.2-gdkpixbuf-2.0 \
+            librsvg2-common poppler-utils djvulibre-bin xvfb dbus-x11 desktop-file-utils
+      - name: Check source and translations
+        run: make check
+      - name: Check desktop launcher
+        run: desktop-file-validate data/applications/*.desktop
+      - name: Exercise native GTK widgets under Xvfb
+        env:
+          GSK_RENDERER: cairo
+          GTK_A11Y: none
+        run: xvfb-run -a dbus-run-session -- make gui-test
+      - name: Build current release files
+        run: make release
+      - name: Verify release checksums
+        working-directory: dist
+        run: sha256sum --check SHA256SUMS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: malferma-libro-current
+          path: dist/*
+          if-no-files-found: error

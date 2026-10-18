@@ -1,0 +1,12 @@
+include LICENSE Makefile pyproject.toml MANIFEST.in .gitignore .gitattributes .editorconfig
+include *.md
+graft src
+graft data
+graft docs
+graft packaging
+graft po
+graft tests
+graft .github
+global-exclude __pycache__ *.py[cod] *.deb .env .env.* .DS_Store *~
+prune dist
+prune build

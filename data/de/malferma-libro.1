@@ -1,0 +1,447 @@
+.TH MALFERMA-LIBRO 1 "2026-10-18" "Malferma Libro 0.1.0" "Benutzerbefehle"
+.SH BEZEICHNUNG
+malferma-libro \- GTK-Buchleseprogramm mit OPDS-Katalogen und Offline-Vorlesen
+.SH ÜBERSICHT
+.B malferma-libro
+.RI [ OPTIONEN ]
+.RB [ \-\- ]
+.RI [ DATEI ...]
+.SH BESCHREIBUNG
+Malferma Libro ist ein Leseprogramm für Debian 13 mit GTK 4 und libadwaita.
+Es importiert EPUB, FB2, FB2.ZIP, TXT, HTML/XHTML, Markdown, PDF, DjVu und CBZ
+in eine lokale Bibliothek. HTML verwendet .html, .htm oder .xhtml,
+Markdown .md oder .markdown; DjVu kann auch die Endung .djv tragen.
+Lesepositionen, Lesezeichen und Einstellungen werden lokal gespeichert.
+PDF und DjVu behalten ihr Seitenlayout; CBZ zeigt Bildseiten aus einem ZIP-Archiv.
+Die übrigen Formate erscheinen als Text. Markdown verwendet CommonMark
+ohne GFM-Tabellen oder Fußnotenerweiterungen; Skripte und externe Ressourcen
+werden nicht ausgeführt oder geladen.
+Öffentliche OPDS-1.x-Kataloge können zum Herunterladen von Büchern durchsucht werden.
+.PP
+Der erste Abschnitt des Hauptmenüs öffnet Meine Bücher, Lesen und Online-Bibliotheken.
+Die Standardkürzel dafür sind Ctrl+1, Ctrl+2 und Ctrl+3.
+Das Inhaltsverzeichnis erhält die
+Hierarchie von Kapiteln und Unterabschnitten; Anmerkungen werden getrennt
+gruppiert. EPUB-Einträge mit Fragmentzielen führen zur entsprechenden
+Stelle innerhalb eines Kapitels. FB2-Anmerkungen bleiben über das
+Inhaltsverzeichnis erreichbar.
+HTML/XHTML und Markdown bilden jeweils ein Textkapitel; ihre Überschriften
+ergeben hierarchische Inhaltsverzeichniseinträge mit Zielen innerhalb dieses Kapitels.
+Direkte OPDS-Downloads unterstützen EPUB, FB2, TXT, PDF, DjVu, HTML/XHTML,
+Markdown und CBZ.
+.PP
+Das Fenster hat einen schmalen Rand und einen dezenten Schatten.
+Im maximierten Fenster und im Vollbildmodus wird der äußere Rand ausgeblendet.
+Die Fenstergröße lässt sich weiterhin durch Ziehen an den Rändern ändern;
+im Kontrastmodus bleibt die Kontur deutlich sichtbar.
+.SH TITELBILDER
+Titelbilder stammen automatisch aus eingebetteten EPUB-/FB2-Bildern,
+der ersten geeigneten unter den ersten 32 CBZ-Bildseiten oder den Bildadressen eines OPDS-Katalogs.
+Vorschaubilder werden im Hintergrund
+aufbereitet und im lokalen Verzeichnis covers/ zwischengespeichert.
+Sie erscheinen in Bibliothekszeilen und auf der Karte zum Weiterlesen.
+Katalogbilder werden nur für sichtbare Zeilen angefordert.
+Fehlende, ungültige oder nicht erreichbare Bilder werden durch ein Buchsymbol
+ersetzt; das Lesen bleibt möglich. Fehlgeschlagene Abrufe werden für die
+Sitzung vermerkt; nach einem Neustart und erneutem Öffnen des Katalogs
+ist ein weiterer Versuch möglich.
+.PP
+Unterstützt werden PNG und JPEG bis 4 MiB, mit höchstens 4096 Pixeln je
+Bildkante und insgesamt 4 MiPixels. Externe Titelbild-Suchdienste werden
+nicht anhand von ISBN oder Buchtitel abgefragt. Die Vektorgrafiken der
+Anwendung benötigen das Debian-Paket librsvg2-common.
+.SH OPTIONEN
+.TP
+.BR \-h ", " \-\-help
+Kurzhilfe ausgeben und ohne Laden von GTK beenden.
+Sie ist auf Russisch, Englisch, Deutsch und Ukrainisch verfügbar;
+andere Sprachumgebungen verwenden Englisch.
+.TP
+.B \-\-manual
+Das vollständige mitgelieferte Handbuch ausgeben und ohne Laden von GTK beenden.
+Die Sprache wird automatisch anhand der Sprachumgebung gewählt.
+Unterstützt werden Russisch, Englisch, Deutsch und Ukrainisch;
+für andere Sprachen wird Englisch verwendet.
+Ein Browser oder Netzwerkzugriff ist nicht erforderlich.
+.TP
+.BI \-\-manual= SPRACHE
+Die Handbuchsprache ausdrücklich als
+.BR ru ", " en ", " de " oder " uk
+festlegen, zum Beispiel
+.BR \-\-manual=de .
+Dies ist eine Sprachwahl für denselben Handbuchmodus.
+.TP
+.B \-\-license
+Den vollständigen mitgelieferten Text der GNU GPL Version 3 ausgeben und
+ohne Laden von GTK beenden. Code und Logo-/Symbolgrafiken stehen unter
+GPL-3.0-or-later; mitgelieferte Schriftarten behalten ihre eigenen Lizenzen.
+.TP
+.B \-\-version
+Anwendungsname und Version ohne Laden von GTK ausgeben.
+.TP
+.B \-\-
+Optionsauswertung beenden. Alle folgenden Argumente gelten als Dateinamen,
+auch solche, die mit einem Bindestrich beginnen oder einer Informationsoption gleichen.
+.PP
+Pro Aufruf darf nur ein Informationsmodus gewählt werden.
+Informationsmodi öffnen keine Bücher. Unbekannte Optionen werden abgewiesen.
+.SH BIBLIOTHEK UND WEITERLESEN
+Die Karte „Weiterlesen“ führt zum zuletzt erfolgreich geöffneten Buch und
+seiner gespeicherten Position zurück. Ein Import allein ersetzt dieses Buch nicht.
+Das automatische Öffnen beim Start ist optional und standardmäßig ausgeschaltet.
+Eine ausdrückliche Aufforderung zum Öffnen einer Datei hat Vorrang.
+.PP
+Die obere Bibliotheksleiste bietet Statusfilter und Sortierung nach letzter
+Öffnung, Autor oder Titel. Im Buchmenü stehen „Nicht begonnen“, „Wird gelesen“
+und „Gelesen“ zur Verfügung. Das Öffnen eines nicht begonnenen Buches setzt
+„Wird gelesen“; das Erreichen des Endes setzt nicht automatisch „Gelesen“.
+Gespeicherter Fortschritt und ausdrücklich gewählter Status sind getrennt.
+.SH SUCHE IM GESAMTEN BUCH
+Die Suche prüft alle Kapitel oder extrahiert PDF-/DjVu-Seitentext nach Bedarf,
+ohne das Buch zu rastern. Ergebnisse enthalten Kapitel-/Seitentitel und Auszüge.
+Die Eingabe eines Suchbegriffs ändert die Leseposition noch nicht.
+Wählen Sie ein Ergebnis oder drücken Sie Enter für den nächsten Treffer,
+Shift+Enter für den vorherigen. Die Rückkehrschaltfläche stellt die Position
+wieder her, an der die Suche in diesem Buch begonnen hat.
+.PP
+Angezeigt werden höchstens 200 Ergebnisse. Bei weiteren Treffern fordert ein
+Hinweis zum Eingrenzen der Suche auf. Die Suche ohne Unterscheidung von
+Groß- und Kleinschreibung bewahrt die ursprünglichen Unicode-Auswahlpositionen,
+auch bei Zeichenumwandlungen wie ß nach ss.
+Seiten, die nur ein Bild enthalten, sind nicht durchsuchbar; OCR ist nicht vorhanden.
+CBZ enthält für die Anwendung keine Textebene und bietet daher weder
+Wortsuche noch Vorlesen.
+.SH SEITENANZEIGE
+Die Anzeige am unteren Rand des Lesebereichs gilt für das gesamte Buch.
+Sie wird beim Scrollen und beim Wechseln der Leseposition aktualisiert.
+Umfasst der sichtbare Text mehrere Referenzseiten, zeigt sie einen Bereich
+wie Seiten 12–13 von 640.
+EPUB, FB2, TXT, HTML/XHTML und Markdown verwenden durchgehende Referenzseiten
+mit je 1800 Unicode-Zeichen einschließlich Leerzeichen und Zeilenumbrüchen.
+Die Kapiteltexte werden unmittelbar hintereinander gezählt, ohne leere
+Seiten oder Auffüllen am Kapitelende. Schrift, Zeilenabstand und Fenstergröße
+ändern weder die Seitennummern noch die Gesamtseitenzahl. Die Zahlen
+entsprechen keiner bestimmten Druckausgabe.
+PDF und DjVu behalten ihre Dokumentseiten; jede berücksichtigte CBZ-Bilddatei
+ist eine Seite. Zoomen und Scrollen innerhalb des Bildes ändern ihre Nummer nicht.
+.SH LESEZEICHEN UND NOTIZEN
+Lesezeichen zeigen Kapiteltitel oder die mit 1 beginnende PDF-/DjVu-/CBZ-Seitennummer
+und einen Auszug. Bei festem Seitenlayout stammt dieser aus dem ausgewählten
+Text oder vom Anfang der Textebene. Gespeichert wird die Bildlaufposition,
+kein Textoffset. Notizen bis zu 2000 Zeichen können in jeder Lesezeichenzeile
+hinzugefügt oder bearbeitet werden. Leerer Text entfernt die Notiz.
+Änderungen können weder ein anderes Buch noch ein gelöschtes Lesezeichen betreffen.
+CBZ-Lesezeichen zeigen mangels Textebene eine Seitennummer ohne Textauszug.
+.SH HINTERGRUNDVORGÄNGE
+Die Vorgangsliste der oberen Leiste zeigt verfügbaren Fortschritt und
+Abbruchschaltflächen für Import, Öffnen, Suche, Seitendarstellung und Netzwerkaktionen.
+Ein Abbruch wird an geeigneten Unterbrechungspunkten wirksam. Eine bereits
+blockierte Netzwerkanfrage oder ein externer Decoder endet nicht zwingend sofort.
+Bereits abgeschlossene Importe und gespeicherte Änderungen bleiben erhalten.
+Fehler bieten „Erneut versuchen“, wo dies möglich ist; bei fehlender Datei
+kann eine erneute Dateiauswahl angeboten werden.
+.SH OBERE LEISTE
+Die obere Leiste gruppiert Öffnen und Navigation, Buchwerkzeuge, Tag-/Nacht-
+und Vollbildmodus sowie Barrierefreiheit und Hauptmenü. Die Textgröße stellen
+Sie unter „Barrierefreiheit“ ein. Ein Pfeilpaar in der Leiste öffnet das
+vorherige oder nächste Kapitel beziehungsweise die Seite; das Inhaltsverzeichnis
+enthält die Kapitelauswahl. Seitenwerkzeuge erscheinen nur für PDF, DjVu und
+CBZ. Tastenkombinationen und Mausgesten bleiben verfügbar.
+.SH TASTATUR
+Die folgenden Kombinationen gehören zum Standardprofil. „Tastenkombinationen“
+im Hauptmenü zeigt die aktive Belegung. Normale GTK-Befehle wie Escape sind
+vom Profil unabhängig.
+Diese Kürzel gelten im Hauptfenster. Lesebefehle, einschließlich Lesezeichen
+und Beenden des Vorlesens, erfordern den aktiven Bereich „Lesen“ und ein
+geöffnetes Buch. Eingabefelder und Dialoge behalten ihr normales GTK-Verhalten.
+Ctrl entspricht Strg, Shift der Umschalttaste.
+.TP
+.B Ctrl+O / Ctrl+F / Ctrl+Komma
+Bücher öffnen / aktuellen Bereich durchsuchen / Einstellungen öffnen.
+.TP
+.B Ctrl+Shift+A
+Das kompakte Menü „Barrierefreiheit“ öffnen, auch bei ausgeblendeter oberer
+Leiste. Bei kyrillischer Tastaturbelegung funktioniert auch Ctrl+Shift+Ф.
+.TP
+.B Ctrl+Shift+D
+Fenster und Buchseite gemeinsam zwischen Tag- und Nachtmodus umschalten.
+Bei russischer Tastaturbelegung funktioniert auch Ctrl+Shift+В.
+.TP
+.B Ctrl+1 / Ctrl+2 / Ctrl+3
+Bibliothek / Lesebereich / OPDS-Kataloge anzeigen.
+.TP
+.B Ctrl+B
+Lesezeichen an der aktuellen Leseposition hinzufügen.
+.TP
+.B Ctrl+Minus / Ctrl+Plus / Ctrl+0
+Textgröße oder PDF-/DjVu-/CBZ-Zoom verkleinern / vergrößern / zurücksetzen.
+.TP
+.B Alt+Links / Alt+Rechts
+Vorheriges / nächstes Kapitel oder vorherige / nächste Dokumentseite.
+.TP
+.B F9 / F11
+Inhaltsverzeichnis / Vollbildmodus umschalten.
+.TP
+.B F10
+Eine ausgeblendete obere Leiste zeigen und ihre Bedienelemente fokussieren.
+.TP
+.B Escape
+Ein aufklappbares Menü schließen, eine Geste abbrechen oder Vollbild verlassen.
+.TP
+.B Leertaste / Ctrl+Shift+S
+Bei Fokus im Lesebereich vorlesen oder pausieren / Vorlesen beenden.
+Die Leertaste ersetzt weder normale Eingaben noch das Verhalten fokussierter Schaltflächen.
+.TP
+.B F1 / Ctrl+Fragezeichen
+Das Offline-Handbuch / die Übersicht der Tastenkürzel öffnen.
+Das zweite Kürzel entspricht gewöhnlich Ctrl+Shift+Schrägstrich.
+.TP
+.B Ctrl+Q
+Hauptfenster schließen.
+.PP
+Beim Öffnen eines Buches erhält der Lesebereich den Fokus zum sofortigen
+Scrollen mit der Tastatur. Klicken Sie nach dem Bedienen anderer Elemente
+auf den Text oder das Seitenbild, um zurückzukehren. Schaltflächen der
+Leiste, Inhaltsverzeichnis, Suchfeld, Textebene des Dokuments, andere
+Eingabefelder sowie offene Menüs und Dialoge behalten ihre gewohnte
+Tastenbedienung.
+.TP
+.B Pfeil auf / Pfeil ab
+Ein kleines Stück nach oben / unten scrollen, ohne das Kapitel zu wechseln.
+.TP
+.B Pfeil links / Pfeil rechts
+Vorherige / nächste Seite. In Textbüchern um 90 % der sichtbaren Höhe
+mit 10 % Überlappung scrollen; am bereits erreichten Rand das Ende des
+vorherigen oder den Anfang des nächsten Kapitels öffnen. In PDF, DjVu und
+CBZ die benachbarte Dokumentseite an deren Anfang öffnen, auch bei
+Vergrößerung und Bildlauf. Bei LTR- und RTL-Büchern gilt: links zurück,
+rechts vorwärts. Die Seitennummern laufen durch das gesamte Buch.
+.TP
+.B Page Up / Page Down (Bild auf / Bild ab)
+Um 90 % der sichtbaren Höhe scrollen. Am bereits erreichten Rand das Ende
+des vorherigen Kapitels oder der vorherigen Seite beziehungsweise den Anfang
+des nächsten Kapitels oder der nächsten Seite öffnen. Am Anfang und Ende des
+Buches endet die Navigation.
+.TP
+.B Home / End (Pos1 / Ende)
+Zum Anfang / Ende des aktuellen Kapitels oder der aktuellen Dokumentseite.
+.TP
+.B Ctrl+Home / Ctrl+End (Strg+Pos1 / Strg+Ende)
+Zum Anfang / Ende des gesamten Buches. Eine eigene Belegung derselben
+Kombination hat Vorrang.
+.PP
+Tab, Shift+Tab, Textauswahl und Kopieren behalten das normale GTK-Verhalten.
+Varianten der Navigationstasten mit Shift behalten die Textauswahl bei.
+Die Navigationstasten des Ziffernblocks funktionieren bei ausgeschaltetem
+Num Lock; bei eingeschaltetem Num Lock bleiben Ziffern normale Ziffern.
+Diese Lesebefehle stehen auch in der Tastenkürzelübersicht; eine durch eine
+eigene Belegung ersetzte Ctrl-Kombination erscheint nicht als Bildlaufbefehl.
+.SH TASTENBELEGUNG ANPASSEN
+Öffnen Sie „Einstellungen“, dann „Tastenkombinationen“. Unter „Modus“ stehen
+„Standard“ und „Benutzerdefiniert“ zur Wahl. Das eigene Profil übernimmt
+alle unveränderten Standardbelegungen. Wählen Sie neben einer Aktion
+„Tastenkombination ändern“ und drücken Sie die neue Kombination.
+„Deaktivieren“ entfernt die Belegung; „Standard“ stellt die ursprünglichen
+Tasten wieder her. Erst „Speichern“ übernimmt und speichert diese Änderung
+sofort. „Abbrechen“ oder Escape verwirft den Entwurf.
+.PP
+Eine neue Belegung ersetzt auch die russischen Varianten der bisherigen
+Standardtasten. Bereits belegte Kombinationen werden abgewiesen, auch
+lateinische und kyrillische Zeichen auf derselben physischen Taste.
+Escape, Tab, normale Bearbeitungsbefehle Ctrl+C/V/X/A/Z/Y, Texteingaben und
+Navigationstasten ohne Zusatztaste bleiben reserviert. Verwenden Sie Ctrl,
+Alt oder eine Funktionstaste; Super wird nicht unterstützt. Die Leertaste
+allein ist nur für das Vorlesen bei Fokus im Lesebereich zulässig.
+.PP
+Ein Wechsel des Modus gilt sofort. Bei „Standard“ bleibt das eigene Profil
+gespeichert. „Alle Tastenkombinationen zurücksetzen“ löscht dagegen sofort
+alle eigenen Belegungen und aktiviert das Standardprofil, ohne andere
+Einstellungen zu ändern.
+.SH TAG- UND NACHTMODUS
+Die Schaltfläche in der oberen Leiste oder standardmäßig Ctrl+Shift+D
+schaltet Fenster und Buchseite gemeinsam zwischen heller und dunkler
+Darstellung um. Die Auswahl wird gespeichert; Leseposition und pausiertes
+Vorlesen bleiben erhalten. Das Vorlesen wird nicht selbstständig fortgesetzt.
+Ursprüngliche Schriften und Farben der PDF-/DjVu-Seiten ändern sich nicht.
+Die ursprünglichen Bildfarben von CBZ bleiben ebenfalls erhalten.
+Systemdarstellung und Sepia bleiben in den vollständigen Einstellungen verfügbar.
+.SH MAUSGESTEN
+Halten Sie im Lesebereich die rechte Maustaste gedrückt und ziehen Sie nach
+links zum nächsten Kapitel oder zur nächsten Seite, nach rechts zurück.
+Gewechselt wird beim Loslassen. Kurze, vertikale und diagonale Bewegungen
+blättern nicht um. Gesten lassen sich in den Barrierefreiheitseinstellungen ausschalten.
+.SH OBERE LEISTE IM VOLLBILD
+Beim Lesen im Vollbild kann sich die Leiste nach etwa zwei Sekunden ohne
+Aktivität ausblenden. Bewegen Sie den Zeiger in die oberen 24 logischen Pixel,
+drücken Sie F10 oder verwenden Sie Tab, um sie einzublenden. Sichtbarer Tastaturfokus auf der
+Leiste, offene Menüs, Dialoge, Gesten und hoher Kontrast halten sie sichtbar.
+Automatisches Ausblenden lässt sich abschalten. Normale Fenster und andere
+Anwendungsbereiche behalten ihre obere Leiste.
+.SH BARRIEREFREIHEIT UND BILDSCHIRME
+Das kompakte Menü „Barrierefreiheit“ in der oberen Leiste bietet Vorlesen,
+Pause, Fortsetzen und Stopp mit Sprache und Tempo. Dazu kommen Textgröße
+verkleinern, zurücksetzen und vergrößern, hoher Kontrast, Fettdruck,
+Zeilenabstand und die Voreinstellung bei Sehschwäche. Ctrl+Shift+A öffnet
+das Menü auch bei ausgeblendeter Leiste; kyrillisch gilt auch Ctrl+Shift+Ф.
+Die entsprechenden Darstellungseinstellungen bleiben im Einstellungsfenster verfügbar.
+Die Schrift der Oberfläche in Fenstern, Dialogen und Menüs ist 15 % größer
+als die Systemschrift und folgt ihrer Schriftfamilie und der Desktopskalierung.
+Die Buchschriftgröße wird getrennt eingestellt. Vorlesesprache und Textgrößenbefehle stehen unter
+ihren Beschriftungen. Die Bildlaufleiste hat neben dem Inhalt einen eigenen Platz.
+Die Menühöhe passt sich dem Fenster an; weitere Werkzeuge sind durch Scrollen erreichbar.
+.PP
+Die Lesebereichslupe wird in diesem Menü eingeschaltet und vergrößert einen
+Ausschnitt um 2–4×, ohne Schriftgröße, Zeilenumbrüche oder PDF-/DjVu-/CBZ-Layout
+zu verändern. Beim Einschalten und ohne Zeiger im Lesebereich zeigt sie
+die Mitte; innerhalb des Lesebereichs folgt sie dem Mauszeiger.
+Ihre Aktivierung gilt nur für die laufende Sitzung.
+.PP
+Die Einstellungen bieten Textgrößen von 12 bis 96, hohen Kontrast, Fettdruck,
+Zeilenabstand, eine Voreinstellung bei Sehschwäche, Spaltenbreite und Seitenhelligkeit.
+PDF, DjVu und CBZ verwenden Zoom, statt die Schrift im Originalbild zu verändern.
+GTK übernimmt die Bildschirmskalierung. Nur die aktuelle PDF-, DjVu- oder CBZ-Seite
+wird gerastert; das Raster ist auf 4096 Pixel an der längsten Kante und
+12 MiPixels begrenzt. Ein 8K-Bildschirm oder hoher Zoom kann dieses
+begrenzte Raster daher vergrößert darstellen.
+.SH VORLESEN
+Das Vorlesen verwendet ausschließlich Piper. Installieren Sie die
+Python-Distribution piper-tts in Version 1.8.0 in einer eigenen virtuellen Umgebung,
+normalerweise
+.IR ~/.local/share/malferma-libro/piper/ .
+Für die Ausgabe wird paplay aus pulseaudio-utils oder aplay aus alsa-utils
+benötigt. PIPER_PYTHON kann einen anderen Python-Interpreter mit Piper
+auswählen. Ändern Sie nicht den System-Python mit sudo pip.
+Änderungen an PIPER_PYTHON gelten bei einem neuen Anwendungsstart.
+Nach dem Hinzufügen eines Modells ist kein Neustart nötig.
+.PP
+Sprachmodelle werden auf ausdrücklichen Wunsch separat aus dem Katalog
+von Modellen mit geprüften freien Lizenzen heruntergeladen. Das
+Anwendungspaket enthält keine Modelle. Nach der Installation arbeitet
+das Vorlesen ohne Internet; Buchtext wird nicht an einen Server übertragen.
+Die Modelle behalten ihre eigenen Lizenzen.
+Russisch, Ukrainisch, Englisch, Deutsch, Französisch, Spanisch, Italienisch
+und Portugiesisch sind mit einem kompatiblen installierten Piper-Modell
+für die gewünschte Sprache verfügbar. Der geprüfte Downloadkatalog umfasst
+Englisch, Ukrainisch, Deutsch, Französisch, Spanisch und Italienisch.
+Russisch und Portugiesisch benötigen derzeit ein lokales .onnx-Modell mit
+passender .onnx.json-Datei. Dessen Lizenz bestätigt die Anwendung nicht.
+.PP
+„Einstellungen“, dann „Vorlesen“ bietet Stimmenwahl, ausdrücklichen Download,
+Import lokaler Modelle und eine Offline-Hörprobe. Eine Stimmenwahl setzt deren
+Sprache; bei einem unvereinbaren Sprachwechsel wird die Stimme automatisch
+gewählt. Die Hörprobe pausiert das Vorlesen eines Buchs und lässt es pausiert.
+Modelle werden unter voices/ im Datenverzeichnis gespeichert.
+Wählen Sie Sprache und Geschwindigkeit von 44–250% im Menü
+„Barrierefreiheit“; beide Einstellungen sind auch im Einstellungsfenster verfügbar.
+Standard ist 100%. Die tatsächliche Wortzahl pro Minute hängt von Stimme und Text ab.
+Vorlesen, Pause, Fortsetzen und Stopp befinden sich in diesem Menü.
+Dies schränkt weder Oberflächen- noch Buchsprachen ein.
+PDF-/DjVu-Vorlesen erfordert eine Textebene; OCR ist nicht vorhanden.
+CBZ-Bildseiten können nicht vorgelesen werden.
+.SH DATEIEN
+.TP
+.I ~/.local/share/malferma-libro/
+Standardverzeichnis für neue Installationen. Bei absolutem XDG_DATA_HOME
+wird stattdessen
+.I $XDG_DATA_HOME/malferma-libro/
+verwendet. Existiert dieses neue Verzeichnis noch nicht, aber ein bisheriges
+Verzeichnis otkrytaya-kniga unter demselben Datenpfad bereits, verwendet die
+Anwendung dieses weiter. Bücher werden nicht automatisch verschoben oder gelöscht.
+.TP
+.I library.json / library.json.bak
+Bibliotheksmetadaten, Lesestatus, letztes Buch, Einstellungen, Lesezeichen,
+Notizen und Lesepositionen / Wiederherstellungskopie.
+.TP
+.I books/
+Verwaltete Buchkopien im Datenverzeichnis.
+.TP
+.I voices/
+Installierte Piper-Modelle mit Konfiguration und Angaben zu den Modellbedingungen
+im Datenverzeichnis.
+.TP
+.I /usr/share/doc/malferma-libro/PIPER_LICENSES.md
+Quellen, Lizenzen und Grenzen der Prüfung von Piper und dem Downloadkatalog.
+.TP
+.I /usr/share/doc/malferma-libro/MANUAL.de.md
+Vollständiges deutsches Handbuch im Debian-Paket.
+Russische, englische und ukrainische Fassungen werden ebenfalls mitgeliefert.
+.TP
+.I /usr/share/doc/malferma-libro/LICENSE
+Vollständiger GPL-v3-Text. LOGO_LICENSE.md dokumentiert die Grafikerlaubnis,
+FONT_LICENSES.md die Schriftlizenzen und LICENSE_AUDIT.md die Ressourcenprüfung.
+.SH UMGEBUNG
+GTK 4 wählt die grafische Anzeige anhand der Prozessumgebung, darunter
+DISPLAY und WAYLAND_DISPLAY. Die Anzeigeauswahl ist keine Befehlszeilenoption
+des Leseprogramms. Die Sprachumgebung bestimmt die automatische Sprache
+von Kurzhilfe und Terminalhandbuch; andere Sprachen als ru, en, de und uk
+verwenden Englisch.
+.PP
+Im grafischen Handbuch ist standardmäßig „Oberflächensprache“ ausgewählt.
+Das Handbuch folgt einem Wechsel der Oberflächensprache sofort;
+für andere Sprachen wird Englisch verwendet. Russisch, Englisch, Deutsch
+und Ukrainisch lassen sich auch ausdrücklich auswählen.
+.SH RÜCKGABEWERT
+.TP
+.B 0
+Informationsbefehl erfolgreich oder grafische Anwendung normal beendet.
+.TP
+.B 1
+Erforderliche Laufzeitkomponente oder Dokumentationsdatei konnte nicht geladen werden.
+.TP
+.B 2
+Ungültige Befehlszeilenargumente.
+.SH BEISPIELE
+.nf
+malferma-libro "Buch mit Leerzeichen.epub" "Ein weiteres Buch.fb2"
+malferma-libro \-\- \-buch.txt
+malferma-libro \-\-manual
+malferma-libro \-\-manual=de
+malferma-libro \-\-license
+.fi
+.SH GRENZEN
+EPUB-CSS, Bilder im Text und interaktive Funktionen werden im Textmodus nicht nachgebildet.
+Die gesonderte Anzeige von Titelbildern bedeutet keine Unterstützung von Bildern im EPUB-Text.
+HTML/XHTML und Markdown erscheinen als Text statt mit ursprünglichem Browserlayout.
+Markdown wird nach CommonMark eingelesen, ohne GFM-Tabellen oder Fußnotenerweiterungen.
+Rohes HTML in Markdown bleibt wörtlicher Text; Bilder liefern nur ihren
+Alternativtext und Links ihre Beschriftung. Eingerückte oder durch Codezäune
+markierte Codeblöcke bleiben als Text erhalten.
+JavaScript, externe Bilder und Netzwerkressourcen werden nicht geladen oder ausgeführt.
+HTML-/Markdown-Quelldateien sind auf 64 MiB begrenzt, der dekodierte Text
+auf 32 × 1024 × 1024 Zeichen. Zu große Verschachtelung oder Komplexität
+kann auch kleinere Dateien ausschließen.
+Für Markdown wird python3-markdown-it ab Version 3.0.0 benötigt,
+auch beim Start aus dem Quellcode.
+.PP
+UTF-8 wird empfohlen. Eine Byte-Reihenfolge-Markierung erkennt UTF-8,
+UTF-16 und UTF-32. HTML kann unterstützte Textkodierungen in XML- oder
+Meta-Angaben deklarieren. Ohne solche Angaben wird zuerst UTF-8 und danach
+Windows-1251 versucht.
+DRM, Kataloge mit Anmeldung und OPDS 2 werden nicht unterstützt.
+PDF-/DjVu-Dokumente sind auf 64 MiB und 10 000 Seiten begrenzt.
+DjVu-Dokumente mit externen Teilkomponenten müssen zuerst gebündelt werden.
+.PP
+CBZ ist auf 512 MiB Archivgröße, 1 GiB entpackte Daten, 20 000 ZIP-Einträge
+und 10 000 Bildseiten begrenzt. PNG und JPEG werden unterstützt;
+WebP erfordert einen entsprechenden installierten GdkPixbuf-Lader.
+SVG wird nicht als Bildseite geöffnet. Quellbilder dürfen höchstens
+32 MiB, 16 384 Pixel je Kante und insgesamt 32 MiPixels groß sein.
+Die Seitendarstellung bleibt auf 4096 Pixel an der längsten Kante und 12 MiPixels begrenzt.
+.PP
+CBZ-Seiten werden nach Pfaden und Dateinamen mit natürlicher Zahlensortierung
+angeordnet, etwa 2 vor 10. Versteckte Einträge und __MACOSX werden ignoriert.
+Eine geeignete ComicInfo.xml kann Titel und Autor liefern.
+Die Titelbildsuche prüft höchstens die ersten 32 geordneten Bildseiten und
+bereitet die erste gültig dekodierbare Seite als PNG mit höchstens 1024 Pixeln
+je Kante auf. Spätere Seiten bleiben lesbar. Die Titelbildgrenze von 4 MiB
+begrenzt nicht die CBZ-Quellseite; dafür gelten die gesonderten Quellbildgrenzen.
+CBZ hat keine Textebene;
+OCR, Wortsuche und Vorlesen stehen dafür nicht zur Verfügung.
+.SH LIZENZ
+Anwendungscode und Logo-/Symbolgrafiken stehen unter GNU GPL Version 3
+oder nach Ihrer Wahl jeder späteren Version. Sie werden ohne Gewährleistung
+gemäß dieser Lizenz bereitgestellt. Die Grafikerlaubnis steht in LOGO_LICENSE.md.
+Mitgelieferte Schriftarten behalten SIL OFL 1.1; AppStream-Metadaten stehen unter CC0-1.0.
+.SH SIEHE AUCH
+.BR pdftoppm (1),
+.BR ddjvu (1)

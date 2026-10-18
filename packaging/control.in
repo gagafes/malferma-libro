@@ -1,0 +1,15 @@
+Package: malferma-libro
+Version: {version}
+Section: text
+Priority: optional
+Architecture: all
+Maintainer: Malferma Libro contributors
+Installed-Size: {installed_size}
+Depends: python3 (>= 3.11), python3-gi, python3-markdown-it (>= 3.0.0), gir1.2-gtk-4.0 (>= 4.8), gir1.2-adw-1 (>= 1.4), librsvg2-common, poppler-utils, djvulibre-bin
+Recommends: python3-venv, pulseaudio-utils | alsa-utils, xdg-desktop-portal, xdg-desktop-portal-gtk | xdg-desktop-portal-gnome | xdg-desktop-portal-kde
+Description: Malferma Libro GTK reader with OPDS catalogs
+ Free e-book reader with a local library, reading progress, bookmarks,
+ adaptive navigation, accessibility tools and public OPDS 1.x catalogs.
+ Supports EPUB, FB2, TXT, HTML/XHTML, Markdown, PDF, DjVu and CBZ.
+ Optional offline narration uses a separately installed Piper runtime and
+ voice models. DRM, OCR and full EPUB layout are not supported.

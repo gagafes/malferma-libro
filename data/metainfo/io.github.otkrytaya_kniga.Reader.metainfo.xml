@@ -1,0 +1,373 @@
+<?xml version='1.0' encoding='utf-8'?>
+<component type="desktop-application">
+  <id>io.github.otkrytaya_kniga.Reader</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>Malferma Libro</name>
+  <name xml:lang="ru">Malferma Libro</name>
+  <name xml:lang="eo">Malferma Libro</name>
+  <summary>Read ebooks, PDF and DjVu, and browse OPDS catalogs</summary>
+  <summary xml:lang="ru">Читайте книги, PDF и DjVu и подключайте каталоги OPDS</summary>
+  <summary xml:lang="eo">Legu bitlibrojn, PDF kaj DjVu kaj foliumu OPDS-katalogojn</summary>
+  <developer id="io.github.otkrytaya_kniga">
+    <name>Malferma Libro contributors</name>
+  </developer>
+  <description>
+    <p>Malferma Libro is a GTK and libadwaita reader with a local library,
+    reading progress, bookmarks and public OPDS catalogs.</p>
+    <ul>
+      <li>Read EPUB, FB2 and TXT with adjustable fonts and day or night themes.</li>
+      <li>Read HTML/XHTML and Markdown as text, and CBZ comics as image pages.</li>
+      <li>View PDF and DjVu pages with their original layout and illustrations.</li>
+      <li>Search text and listen to books locally with Piper and separately downloaded voice models.</li>
+      <li>Follow desktop appearance, font scaling and system icons.</li>
+      <li>Keep reading-page themes independent and adjust the width of the reading column.</li>
+      <li>Choose files through the system portal and use adaptive navigation in narrow windows.</li>
+      <li>Use forty-nine interface languages, including right-to-left interfaces, and choose an installed narration voice.</li>
+    </ul>
+    <p>Piper narration requires a separately installed runtime and voice model.</p>
+    <p>Search and speech in PDF and DjVu require a text layer. OCR,
+    DRM and catalogs requiring an account are not supported.</p>
+  </description>
+  <description xml:lang="ru">
+    <p>Malferma Libro — читалка на GTK и libadwaita с личной библиотекой,
+    сохранением позиции, закладками и публичными каталогами OPDS.</p>
+    <ul>
+      <li>EPUB, FB2 и TXT с выбором шрифтов и дневным или ночным оформлением.</li>
+      <li>HTML/XHTML и Markdown в текстовом режиме, комиксы CBZ — страницами-изображениями.</li>
+      <li>PDF и DjVu с исходной вёрсткой, иллюстрациями и масштабированием.</li>
+      <li>Поиск и локальная озвучка через Piper с отдельно загружаемыми моделями голосов.</li>
+      <li>Системное оформление, масштаб шрифта и значки рабочего стола.</li>
+      <li>Независимая тема страницы и настройка ширины области чтения.</li>
+      <li>Системный выбор файлов через портал и адаптивное оглавление для узких окон.</li>
+      <li>Интерфейс на 49 языках, поддержка письма справа налево и проверка установленных голосов озвучки.</li>
+    </ul>
+    <p>Для озвучки Piper нужно отдельно установить движок и модель голоса.</p>
+    <p>Для поиска и озвучки PDF и DjVu нужен текстовый слой.
+    OCR, DRM и каталоги с авторизацией не поддерживаются.</p>
+  </description>
+  <description xml:lang="eo">
+    <p>Malferma Libro estas legilo bazita sur GTK kaj libadwaita kun persona
+    biblioteko, konservata legopozicio, legosignoj kaj publikaj OPDS-katalogoj.</p>
+    <ul>
+      <li>Legu EPUB, FB2 kaj TXT kun elekteblaj tiparoj kaj taga aŭ nokta etoso.</li>
+      <li>Legu HTML/XHTML kaj Markdown kiel tekston kaj CBZ-bildstriojn kiel bildpaĝojn.</li>
+      <li>Vidu PDF kaj DjVu kun la originala paĝaranĝo kaj ilustraĵoj, kun eblo zomi.</li>
+      <li>Serĉu tekston kaj aŭskultu librojn loke per Piper kaj aparte elŝutitaj voĉmodeloj.</li>
+      <li>Sekvu la sisteman aspekton, tiparan skalon kaj piktogramojn.</li>
+      <li>Agordu la aspekton kaj larĝon de la legopaĝo aparte de la interfaco.</li>
+      <li>Uzu la sisteman dosierelektilon kaj adaptiĝeman enhavtabelon.</li>
+      <li>Elektu inter kvardek naŭ interfacaj lingvoj, inkluzive de dekstr-al-maldekstraj lingvoj, kaj elektu instalitan voĉon por voĉlegado.</li>
+    </ul>
+    <p>Voĉlegado per Piper bezonas aparte instalitajn rulmedion kaj voĉmodelon.</p>
+    <p>Serĉado kaj voĉlegado en PDF kaj DjVu bezonas tekstotavolon.
+    OCR, DRM kaj katalogoj postulantaj konton ne estas subtenataj.</p>
+  </description>
+  <languages>
+    <lang>ru</lang>
+    <lang>en</lang>
+    <lang>eo</lang>
+    <lang>uk</lang>
+    <lang>ar</lang>
+    <lang>he</lang>
+    <lang>de</lang>
+    <lang>kk</lang>
+    <lang>fa</lang>
+    <lang>lt</lang>
+    <lang>lv</lang>
+    <lang>et</lang>
+    <lang>es</lang>
+    <lang>fr</lang>
+    <lang>it</lang>
+    <lang>pt</lang>
+    <lang>ro</lang>
+    <lang>ca</lang>
+    <lang>nl</lang>
+    <lang>sv</lang>
+    <lang>da</lang>
+    <lang>nb</lang>
+    <lang>nn</lang>
+    <lang>is</lang>
+    <lang>tr</lang>
+    <lang>az</lang>
+    <lang>uz</lang>
+    <lang>ky</lang>
+    <lang>tt</lang>
+    <lang>tk</lang>
+    <lang>am</lang>
+    <lang>mt</lang>
+    <lang>yi</lang>
+    <lang>be</lang>
+    <lang>pl</lang>
+    <lang>cs</lang>
+    <lang>sk</lang>
+    <lang>sl</lang>
+    <lang>hr</lang>
+    <lang>bs</lang>
+    <lang>sr</lang>
+    <lang>sr-Latn</lang>
+    <lang>mk</lang>
+    <lang>bg</lang>
+    <lang>eu</lang>
+    <lang>sq</lang>
+    <lang>hsb</lang>
+    <lang>dsb</lang>
+    <lang>rue</lang>
+  </languages>
+  <launchable type="desktop-id">io.github.otkrytaya_kniga.Reader.desktop</launchable>
+  <provides>
+    <binary>malferma-libro</binary>
+    <mediatype>application/epub+zip</mediatype>
+    <mediatype>application/x-fictionbook+xml</mediatype>
+    <mediatype>text/plain</mediatype>
+    <mediatype>text/html</mediatype>
+    <mediatype>application/xhtml+xml</mediatype>
+    <mediatype>text/markdown</mediatype>
+    <mediatype>application/pdf</mediatype>
+    <mediatype>image/vnd.djvu</mediatype>
+    <mediatype>image/x-djvu</mediatype>
+    <mediatype>application/vnd.comicbook+zip</mediatype>
+  </provides>
+  <categories>
+    <category>Office</category>
+    <category>Viewer</category>
+  </categories>
+  <content_rating type="oars-1.1" />
+  <releases>
+    <release version="0.1.0" date="2026-10-18">
+      <description>
+        <p>Restore editable sources, enlarge interface text and simplify reading controls.</p>
+      </description>
+    </release>
+  </releases>
+  <name xml:lang="uk">Malferma Libro</name>
+  <summary xml:lang="uk">Читайте електронні книги, PDF і DjVu та переглядайте каталоги OPDS</summary>
+  <description xml:lang="uk">
+    <p>Читалка EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF і DjVu з локальною бібліотекою та каталогами OPDS.</p>
+  </description>
+  <name xml:lang="ar">Malferma Libro</name>
+  <summary xml:lang="ar">اقرأ الكتب وملفات PDF وDjVu وتصفح فهارس OPDS</summary>
+  <description xml:lang="ar">
+    <p>قارئ EPUB وFB2 وTXT وPDF وDjVu مع مكتبة محلية وفهارس OPDS.</p>
+  </description>
+  <name xml:lang="he">Malferma Libro</name>
+  <summary xml:lang="he">קריאת ספרים וקובצי PDF ו־DjVu ועיון בקטלוגי OPDS</summary>
+  <description xml:lang="he">
+    <p>קורא EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF ו־DjVu עם ספרייה מקומית וקטלוגי OPDS.</p>
+  </description>
+  <name xml:lang="de">Malferma Libro</name>
+  <summary xml:lang="de">E-Books, PDF und DjVu lesen und OPDS-Kataloge durchsuchen</summary>
+  <description xml:lang="de">
+    <p>Leseprogramm für EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF und DjVu mit lokaler Bibliothek und OPDS-Katalogen.</p>
+  </description>
+  <name xml:lang="kk">Malferma Libro</name>
+  <summary xml:lang="kk">Кітаптарды, PDF пен DjVu файлдарын оқып, OPDS каталогтарын шолыңыз</summary>
+  <description xml:lang="kk">
+    <p>Жергілікті кітапханасы мен OPDS каталогтары бар EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF және DjVu оқу қолданбасы.</p>
+  </description>
+  <name xml:lang="fa">Malferma Libro</name>
+  <summary xml:lang="fa">کتاب‌ها و PDF و DjVu را بخوانید و فهرست‌های OPDS را مرور کنید</summary>
+  <description xml:lang="fa">
+    <p>کتاب‌خوان EPUB، FB2، TXT، PDF و DjVu با کتابخانهٔ محلی و فهرست‌های OPDS.</p>
+  </description>
+  <name xml:lang="lt">Malferma Libro</name>
+  <summary xml:lang="lt">Skaitykite el. knygas, PDF ir DjVu bei naršykite OPDS katalogus</summary>
+  <description xml:lang="lt">
+    <p>EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF ir DjVu skaityklė su vietine biblioteka ir OPDS katalogais.</p>
+  </description>
+  <name xml:lang="lv">Malferma Libro</name>
+  <summary xml:lang="lv">Lasiet e-grāmatas, PDF un DjVu un pārlūkojiet OPDS katalogus</summary>
+  <description xml:lang="lv">
+    <p>EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF un DjVu lasītājs ar vietējo bibliotēku un OPDS katalogiem.</p>
+  </description>
+  <name xml:lang="et">Malferma Libro</name>
+  <summary xml:lang="et">Loe e-raamatuid, PDF- ja DjVu-faile ning sirvi OPDS-katalooge</summary>
+  <description xml:lang="et">
+    <p>EPUB-i, FB2, TXT, PDF-i ja DjVu luger kohaliku raamatukogu ning OPDS-kataloogidega.</p>
+  </description>
+  <name xml:lang="es">Malferma Libro</name>
+  <summary xml:lang="es">Lee libros, PDF y DjVu y consulta catálogos OPDS</summary>
+  <description xml:lang="es">
+    <p>Lector de EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF y DjVu con biblioteca local y catálogos OPDS.</p>
+  </description>
+  <name xml:lang="fr">Malferma Libro</name>
+  <summary xml:lang="fr">Lisez des livres, PDF et DjVu et parcourez les catalogues OPDS</summary>
+  <description xml:lang="fr">
+    <p>Lecteur EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF et DjVu avec bibliothèque locale et catalogues OPDS.</p>
+  </description>
+  <name xml:lang="it">Malferma Libro</name>
+  <summary xml:lang="it">Leggi libri, PDF e DjVu e sfoglia i cataloghi OPDS</summary>
+  <description xml:lang="it">
+    <p>Lettore EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF e DjVu con biblioteca locale e cataloghi OPDS.</p>
+  </description>
+  <name xml:lang="pt">Malferma Libro</name>
+  <summary xml:lang="pt">Leia livros, PDF e DjVu e explore catálogos OPDS</summary>
+  <description xml:lang="pt">
+    <p>Leitor de EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF e DjVu com biblioteca local e catálogos OPDS.</p>
+  </description>
+  <name xml:lang="ro">Malferma Libro</name>
+  <summary xml:lang="ro">Citește cărți, PDF și DjVu și răsfoiește cataloage OPDS</summary>
+  <description xml:lang="ro">
+    <p>Cititor EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF și DjVu cu bibliotecă locală și cataloage OPDS.</p>
+  </description>
+  <name xml:lang="ca">Malferma Libro</name>
+  <summary xml:lang="ca">Llegeix llibres, PDF i DjVu i consulta catàlegs OPDS</summary>
+  <description xml:lang="ca">
+    <p>Lector d'EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF i DjVu amb biblioteca local i catàlegs OPDS.</p>
+  </description>
+  <name xml:lang="nl">Malferma Libro</name>
+  <summary xml:lang="nl">Lees boeken, PDF en DjVu en blader door OPDS-catalogi</summary>
+  <description xml:lang="nl">
+    <p>EPUB-, FB2-, HTML-/XHTML-, Markdown-, CBZ-, TXT-, PDF- en DjVu-lezer met een lokale bibliotheek en OPDS-catalogi.</p>
+  </description>
+  <name xml:lang="sv">Malferma Libro</name>
+  <summary xml:lang="sv">Läs böcker, PDF och DjVu och bläddra i OPDS-kataloger</summary>
+  <description xml:lang="sv">
+    <p>En läsare för EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF och DjVu med lokalt bibliotek och OPDS-kataloger.</p>
+  </description>
+  <name xml:lang="da">Malferma Libro</name>
+  <summary xml:lang="da">Læs bøger, PDF og DjVu og gennemse OPDS-kataloger</summary>
+  <description xml:lang="da">
+    <p>En læser til EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF og DjVu med lokalt bibliotek og OPDS-kataloger.</p>
+  </description>
+  <name xml:lang="nb">Malferma Libro</name>
+  <summary xml:lang="nb">Les bøker, PDF og DjVu og bla i OPDS-kataloger</summary>
+  <description xml:lang="nb">
+    <p>En leser for EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF og DjVu med lokalt bibliotek og OPDS-kataloger.</p>
+  </description>
+  <name xml:lang="nn">Malferma Libro</name>
+  <summary xml:lang="nn">Les bøker, PDF og DjVu og bla i OPDS-katalogar</summary>
+  <description xml:lang="nn">
+    <p>Ein lesar for EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF og DjVu med lokalt bibliotek og OPDS-katalogar.</p>
+  </description>
+  <name xml:lang="is">Malferma Libro</name>
+  <summary xml:lang="is">Lestu bækur, PDF og DjVu og skoðaðu OPDS-bókalista</summary>
+  <description xml:lang="is">
+    <p>Lesari fyrir EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF og DjVu með bókasafni á tölvunni og OPDS-bókalistum.</p>
+  </description>
+  <name xml:lang="tr">Malferma Libro</name>
+  <summary xml:lang="tr">Kitap, PDF ve DjVu okuyun ve OPDS kataloglarına göz atın</summary>
+  <description xml:lang="tr">
+    <p>Yerel kitaplık ve OPDS katalogları içeren EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF ve DjVu okuyucusu.</p>
+  </description>
+  <name xml:lang="az">Malferma Libro</name>
+  <summary xml:lang="az">Kitab, PDF və DjVu oxuyun və OPDS kataloqlarına baxın</summary>
+  <description xml:lang="az">
+    <p>Yerli kitabxana və OPDS kataloqları olan EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF və DjVu oxuyucusu.</p>
+  </description>
+  <name xml:lang="uz">Malferma Libro</name>
+  <summary xml:lang="uz">Kitob, PDF va DjVu oʻqing va OPDS kataloglarini koʻrib chiqing</summary>
+  <description xml:lang="uz">
+    <p>Mahalliy kutubxona va OPDS kataloglariga ega EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF va DjVu oʻqish ilovasi.</p>
+  </description>
+  <name xml:lang="ky">Malferma Libro</name>
+  <summary xml:lang="ky">Китептерди, PDF жана DjVu окуп, OPDS каталогдорун караңыз</summary>
+  <description xml:lang="ky">
+    <p>Жергиликтүү китепканасы жана OPDS каталогдору бар EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF жана DjVu окугуч.</p>
+  </description>
+  <name xml:lang="tt">Malferma Libro</name>
+  <summary xml:lang="tt">Китаплар, PDF һәм DjVu укыгыз һәм OPDS каталогларын карагыз</summary>
+  <description xml:lang="tt">
+    <p>Җирле китапханәсе һәм OPDS каталоглары булган EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF һәм DjVu уку кушымтасы.</p>
+  </description>
+  <name xml:lang="tk">Malferma Libro</name>
+  <summary xml:lang="tk">Kitap, PDF we DjVu okaň hem-de OPDS kataloglaryna serediň</summary>
+  <description xml:lang="tk">
+    <p>Ýerli kitaphanasy we OPDS kataloglary bolan EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF we DjVu okaýjy.</p>
+  </description>
+  <name xml:lang="am">Malferma Libro</name>
+  <summary xml:lang="am">ኢ-መጻሕፍትን፣ PDF እና DjVu ያንብቡ፣ የOPDS ካታሎጎችንም ያስሱ</summary>
+  <description xml:lang="am">
+    <p>የአካባቢ ቤተ መጻሕፍትና የOPDS ካታሎጎች ያሉት የEPUB፣ FB2፣ HTML/XHTML፣ Markdown፣ CBZ፣ TXT፣ PDF እና DjVu አንባቢ።</p>
+  </description>
+  <name xml:lang="mt">Malferma Libro</name>
+  <summary xml:lang="mt">Aqra kotba, PDF u DjVu u bbrawżja katalgi OPDS</summary>
+  <description xml:lang="mt">
+    <p>Qarrej ta' EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF u DjVu b'librerija lokali u katalgi OPDS.</p>
+  </description>
+  <name xml:lang="yi">Malferma Libro</name>
+  <summary xml:lang="yi">לײענען ביכער, PDF און DjVu און בלעטערן OPDS־קאַטאַלאָגן</summary>
+  <description xml:lang="yi">
+    <p>אַ לײענפּראָגראַם פֿאַר EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF און DjVu מיט אַ לאָקאַלער ביבליאָטעק און OPDS־קאַטאַלאָגן.</p>
+  </description>
+  <name xml:lang="be">Malferma Libro</name>
+  <summary xml:lang="be">Чытайце кнігі, PDF і DjVu ды праглядайце каталогі OPDS</summary>
+  <description xml:lang="be">
+    <p>Праграма для чытання EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF і DjVu з лакальнай бібліятэкай і каталогамі OPDS.</p>
+  </description>
+  <name xml:lang="pl">Malferma Libro</name>
+  <summary xml:lang="pl">Czytaj książki, PDF i DjVu oraz przeglądaj katalogi OPDS</summary>
+  <description xml:lang="pl">
+    <p>Czytnik EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF i DjVu z lokalną biblioteką i katalogami OPDS.</p>
+  </description>
+  <name xml:lang="cs">Malferma Libro</name>
+  <summary xml:lang="cs">Čtěte knihy, PDF a DjVu a procházejte katalogy OPDS</summary>
+  <description xml:lang="cs">
+    <p>Čtečka EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF a DjVu s místní knihovnou a katalogy OPDS.</p>
+  </description>
+  <name xml:lang="sk">Malferma Libro</name>
+  <summary xml:lang="sk">Čítajte knihy, PDF a DjVu a prehliadajte katalógy OPDS</summary>
+  <description xml:lang="sk">
+    <p>Čítačka EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF a DjVu s miestnou knižnicou a katalógmi OPDS.</p>
+  </description>
+  <name xml:lang="sl">Malferma Libro</name>
+  <summary xml:lang="sl">Berite knjige, PDF in DjVu ter brskajte po katalogih OPDS</summary>
+  <description xml:lang="sl">
+    <p>Bralnik EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF in DjVu s krajevno knjižnico in katalogi OPDS.</p>
+  </description>
+  <name xml:lang="hr">Malferma Libro</name>
+  <summary xml:lang="hr">Čitajte knjige, PDF i DjVu i pregledavajte OPDS kataloge</summary>
+  <description xml:lang="hr">
+    <p>Čitač EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF i DjVu knjiga s lokalnom knjižnicom i OPDS katalozima.</p>
+  </description>
+  <name xml:lang="bs">Malferma Libro</name>
+  <summary xml:lang="bs">Čitajte knjige, PDF i DjVu i pregledajte OPDS kataloge</summary>
+  <description xml:lang="bs">
+    <p>Čitač EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF i DjVu knjiga s lokalnom bibliotekom i OPDS katalozima.</p>
+  </description>
+  <name xml:lang="sr">Malferma Libro</name>
+  <summary xml:lang="sr">Читајте књиге, PDF и DjVu и прегледајте OPDS каталоге</summary>
+  <description xml:lang="sr">
+    <p>Читач EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF и DjVu књига са локалном библиотеком и OPDS каталозима.</p>
+  </description>
+  <name xml:lang="sr-Latn">Malferma Libro</name>
+  <summary xml:lang="sr-Latn">Čitajte knjige, PDF i DjVu i pregledajte OPDS kataloge</summary>
+  <description xml:lang="sr-Latn">
+    <p>Čitač EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF i DjVu knjiga sa lokalnom bibliotekom i OPDS katalozima.</p>
+  </description>
+  <name xml:lang="mk">Malferma Libro</name>
+  <summary xml:lang="mk">Читајте книги, PDF и DjVu и прелистувајте каталози OPDS</summary>
+  <description xml:lang="mk">
+    <p>Читач за EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF и DjVu со локална библиотека и каталози OPDS.</p>
+  </description>
+  <name xml:lang="bg">Malferma Libro</name>
+  <summary xml:lang="bg">Четете книги, PDF и DjVu и разглеждайте каталози OPDS</summary>
+  <description xml:lang="bg">
+    <p>Четец за EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF и DjVu с локална библиотека и каталози OPDS.</p>
+  </description>
+  <name xml:lang="eu">Malferma Libro</name>
+  <summary xml:lang="eu">Irakurri liburuak, PDFak eta DjVuak eta arakatu OPDS katalogoak</summary>
+  <description xml:lang="eu">
+    <p>EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF eta DjVu irakurgailua, liburutegi lokala eta OPDS katalogoak dituena.</p>
+  </description>
+  <name xml:lang="sq">Malferma Libro</name>
+  <summary xml:lang="sq">Lexoni libra, PDF e DjVu dhe shfletoni katalogë OPDS</summary>
+  <description xml:lang="sq">
+    <p>Lexues EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF dhe DjVu me bibliotekë lokale dhe katalogë OPDS.</p>
+  </description>
+  <name xml:lang="hsb">Malferma Libro</name>
+  <summary xml:lang="hsb">Čitajće knihi, PDF a DjVu a přehladujće OPDS-katalogi</summary>
+  <description xml:lang="hsb">
+    <p>Čitak EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF a DjVu z lokalnej knihownju a OPDS-katalogami.</p>
+  </description>
+  <name xml:lang="dsb">Malferma Libro</name>
+  <summary xml:lang="dsb">Cytajśo knigły, PDF a DjVu a pśeglědujśo OPDS-katalogi</summary>
+  <description xml:lang="dsb">
+    <p>Cytak EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF a DjVu z lokalneju knigłownju a OPDS-katalogami.</p>
+  </description>
+  <name xml:lang="rue">Malferma Libro</name>
+  <summary xml:lang="rue">Чітайте книжкы, PDF і DjVu і переглядайте каталоґы OPDS</summary>
+  <description xml:lang="rue">
+    <p>Чіталка EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF і DjVu з локалнов бібліотеков і каталоґами OPDS.</p>
+  </description>
+</component>
