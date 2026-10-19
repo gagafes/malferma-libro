@@ -50,6 +50,7 @@ class LibraryMixin:
         accessible_label(self.library_controls, _("Фильтр библиотеки"))
 
         self.continue_button = Gtk.Button()
+        self.continue_button.set_vexpand(False)
         self.continue_button.add_css_class("card")
         self.continue_button.connect("clicked", lambda _button: self.continue_reading())
         continue_row = margins(Gtk.Box(spacing=12), 12)

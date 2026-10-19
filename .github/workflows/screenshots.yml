@@ -21,6 +21,13 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+      - name: Check native interface on Debian 13
+        env:
+          GSK_RENDERER: cairo
+          GDK_BACKEND: x11
+          GTK_A11Y: none
+          PYTHONPATH: src
+        run: xvfb-run -a --server-args='-screen 0 1920x1200x24' dbus-run-session -- /usr/bin/python3 -B packaging/check_gui.py --pattern test_gui_ui.py
       - name: Capture actual application windows
         env:
           GSK_RENDERER: cairo

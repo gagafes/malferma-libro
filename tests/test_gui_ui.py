@@ -107,6 +107,31 @@ class ReaderInterfaceTests(unittest.TestCase):
         self.window.show_book(record, book)
         self.pump()
 
+    def test_document_paintable_keeps_static_flags_and_logical_dimensions(self):
+        from malferma_libro.app import DocumentPaintable
+
+        texture = self.Gdk.MemoryTexture.new(
+            2, 1, self.Gdk.MemoryFormat.R8G8B8A8,
+            self.GLib.Bytes.new(b"\xff\xff\xff\xff" * 2), 8)
+        paintable = DocumentPaintable(texture, 40, 20)
+        self.assertEqual(int(paintable.get_flags()), 3)
+        self.assertEqual(paintable.get_intrinsic_width(), 40)
+        self.assertEqual(paintable.get_intrinsic_height(), 20)
+        self.assertEqual(paintable.get_intrinsic_aspect_ratio(), 2.0)
+
+    def test_library_covers_and_continue_card_keep_compact_geometry(self):
+        self.open_text_book()
+        window = self.window
+        window.stack.set_visible_child_name("library")
+        window.refresh_library()
+        self.pump(0.4)
+        self.assertTrue(window.continue_button.get_mapped())
+        self.assertLess(window.continue_button.get_height(), 180)
+        valid, bounds = window.continue_cover.compute_bounds(window.continue_button)
+        self.assertTrue(valid)
+        self.assertLess(bounds.get_x(), 48)
+        self.assertLessEqual(bounds.get_width(), 80)
+
     def test_text_size_has_one_group_in_accessibility_menu(self):
         window = self.window
         buttons = (window.text_size_decrease, window.text_size_reset, window.text_size_increase)

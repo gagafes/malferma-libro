@@ -62,6 +62,8 @@ class CoverUIMixin:
         from gi.repository import Gio, Gtk
 
         stack = Gtk.Stack(halign=Gtk.Align.CENTER, valign=Gtk.Align.CENTER)
+        stack.set_hexpand(False)
+        stack.set_vexpand(False)
         stack.set_size_request(self.COVER_WIDTH, self.COVER_HEIGHT)
         stack.set_can_target(False)
         stack.set_focusable(False)
