@@ -163,9 +163,15 @@ def _element_base(element: ET.Element, parent_base: str) -> str:
 
 class _SafeRedirects(HTTPRedirectHandler):
     def redirect_request(self, req, fp, code, msg, headers, newurl):
-        redirect = super().redirect_request(
-            req, fp, code, msg, headers, _validate_url(newurl)
-        )
+        try:
+            redirect = super().redirect_request(
+                req, fp, code, msg, headers, _validate_url(newurl)
+            )
+        except Exception:
+            # Rejected redirects also own an open server response. Do not
+            # leak its socket, or drain an attacker-controlled response body.
+            fp.close()
+            raise
         if redirect is not None:
             # urllib otherwise reads the entire redirect body without a limit
             # before closing it. Its HTTPResponse.read() returns b"" once closed.
@@ -216,6 +222,9 @@ def _read_bounded(response, limit: int, *, cancel=None) -> bytes:
 
 def _network_error(exc: Exception) -> OPDSError:
     if isinstance(exc, HTTPError):
+        # urllib exposes an error response as a readable exception. It is not
+        # entered by the caller's response context manager when open() fails.
+        exc.close()
         return OPDSError(_("Сервер вернул ошибку HTTP {code}.").format(code=exc.code))
     return OPDSError(_('Не удалось получить данные: {exc}').format(exc=exc))
 

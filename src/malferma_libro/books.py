@@ -12,6 +12,7 @@ import binascii
 from dataclasses import dataclass, field
 import hashlib
 from html.parser import HTMLParser
+import os
 from pathlib import Path
 import posixpath
 import re
@@ -23,6 +24,7 @@ import zipfile
 import zlib
 
 from .i18n import _
+from .cbz import _directory_preflight
 from .illustrations import (
     ImageData, InlineImage, validate_illustration,
     MAX_IMAGE_BYTES as MAX_ILLUSTRATION_BYTES,
@@ -45,6 +47,7 @@ MAX_CBZ_FILE_BYTES = 512 * 1024 * 1024
 MAX_ZIP_BYTES = 128 * 1024 * 1024
 MAX_ENTRY_BYTES = 32 * 1024 * 1024
 MAX_ZIP_ENTRIES = 10_000
+MAX_ZIP_DIRECTORY_BYTES = 8 * 1024 * 1024
 MAX_XML_DEPTH = 128
 MAX_XML_NODES = 200_000
 MAX_TEXT_CHARS = 32 * 1024 * 1024
@@ -383,6 +386,7 @@ class _TextHTML(HTMLParser):
         self.image_limit = image_limit
         self.images: list[_ImageReference] = []
         self.image_contexts: list[tuple[str, str | None]] = []
+        self.element_count = 0
 
     def _image_start(self, tag: str, attributes: dict[str, str | None]) -> None:
         if not self.image_limit:
@@ -416,9 +420,10 @@ class _TextHTML(HTMLParser):
         self.length += len(value)
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        self.element_count += 1
         # EPUB text uses the same depth bound as its XML metadata. Without it,
         # mismatched closing tags repeatedly scan an unbounded element stack.
-        if len(self.elements) + len(self.hidden) >= MAX_XML_DEPTH:
+        if self.element_count > MAX_XML_NODES or len(self.elements) + len(self.hidden) >= MAX_XML_DEPTH:
             raise BookError(_("Файл разметки слишком сложный."))
         attributes = dict(attrs)
         self._image_start(tag, attributes)
@@ -545,9 +550,22 @@ def _html(data: bytes, label: str) -> tuple[str, str]:
 
 class _Archive:
     def __init__(self, path: Path) -> None:
+        self._stream = None
         try:
-            self.zip = zipfile.ZipFile(path)
-        except (OSError, zipfile.BadZipFile) as exc:
+            # ZipFile constructs every ZipInfo before infolist() can enforce a
+            # count. Check the bounded directory on this same open file first.
+            # A path swapped for a pipe must not block before fstat rejects it.
+            source_path = path.resolve(strict=True)
+            self._stream = os.fdopen(os.open(source_path, os.O_RDONLY | os.O_NONBLOCK | os.O_NOFOLLOW), "rb")
+            details = os.fstat(self._stream.fileno())
+            if not stat.S_ISREG(details.st_mode) or not 0 < details.st_size <= MAX_FILE_BYTES:
+                raise ValueError("Invalid ebook archive")
+            _directory_preflight(self._stream, details.st_size, max_entries=MAX_ZIP_ENTRIES,
+                                 max_directory_bytes=MAX_ZIP_DIRECTORY_BYTES)
+            self.zip = zipfile.ZipFile(self._stream)
+        except (OSError, ValueError, RuntimeError, zipfile.BadZipFile) as exc:
+            if self._stream is not None:
+                self._stream.close()
             raise BookError(_("Повреждённый ZIP-архив книги")) from exc
         self.names: set[str] = set()
         try:
@@ -568,6 +586,8 @@ class _Archive:
                 self.names.add(name)
                 if entry.flag_bits & 1:
                     raise BookError(_("Зашифрованные архивы книг не поддерживаются"))
+                if entry.compress_type not in {zipfile.ZIP_STORED, zipfile.ZIP_DEFLATED}:
+                    raise BookError(_("Повреждённый ZIP-архив книги"))
                 if stat.S_ISLNK(entry.external_attr >> 16):
                     raise BookError(_("Символические ссылки в архиве книги запрещены"))
                 if entry.file_size > MAX_ENTRY_BYTES:
@@ -576,7 +596,7 @@ class _Archive:
                 if total > MAX_ZIP_BYTES:
                     raise BookError(_("Распакованный размер книги превышает допустимый предел"))
         except Exception:
-            self.zip.close()
+            self.close()
             raise
 
     def read(self, name: str) -> bytes:
@@ -593,6 +613,7 @@ class _Archive:
 
     def close(self) -> None:
         self.zip.close()
+        self._stream.close()
 
 
 def _reference(base: str, href: str) -> str:
@@ -1073,10 +1094,10 @@ def load_book(path: Path | str, *, cancel=None) -> Book:
             return _epub(path, cancel=cancel)
         if suffix in {".html", ".htm", ".xhtml"}:
             from .markup import load_html
-            return load_html(path)
+            return load_html(path, cancel=cancel)
         if suffix in {".md", ".markdown"}:
             from .markup import load_markdown
-            return load_markdown(path)
+            return load_markdown(path, cancel=cancel)
         if suffix == ".cbz":
             from .cbz import CbzError, load_cbz
             try:
@@ -1094,7 +1115,13 @@ def load_book(path: Path | str, *, cancel=None) -> Book:
                 archive.close()
         if suffix not in {".fb2", ".txt"}:
             raise BookError(_("Поддерживаются EPUB, FB2, FB2.ZIP, TXT, PDF, DjVu, HTML, Markdown и CBZ"))
-        with path.open("rb") as stream:
+        source_path = path.resolve(strict=True)
+        with os.fdopen(os.open(source_path, os.O_RDONLY | os.O_NONBLOCK | os.O_NOFOLLOW), "rb") as stream:
+            details = os.fstat(stream.fileno())
+            if not stat.S_ISREG(details.st_mode):
+                raise BookError(_("Указанный путь не является файлом"))
+            if details.st_size > MAX_FILE_BYTES:
+                raise BookError(file_size_error(path))
             data = stream.read(MAX_FILE_BYTES + 1)
         if len(data) > MAX_FILE_BYTES:
             raise BookError(_("Книга превышает допустимый размер (64 МиБ)"))

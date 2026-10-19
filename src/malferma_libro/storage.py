@@ -9,6 +9,7 @@ import os
 from pathlib import Path
 import re
 import shutil
+import stat
 import tempfile
 import threading
 import unicodedata
@@ -620,7 +621,17 @@ class Library:
             staging = Path(tempfile.mkdtemp(dir=self.books_dir, prefix=".import-"))
             temporary = staging / source.name
             copied = 0
-            with source.open("rb") as incoming, temporary.open("xb") as output:
+            # Validate the opened object, not only the earlier pathname: a
+            # download/sync process can replace a selected file before this
+            # worker opens it. Nonblocking open avoids hanging on a swapped
+            # FIFO; refusing a new final symlink preserves the resolved choice.
+            descriptor = os.open(source, os.O_RDONLY | os.O_NONBLOCK | os.O_NOFOLLOW)
+            with os.fdopen(descriptor, "rb") as incoming, temporary.open("xb") as output:
+                details = os.fstat(incoming.fileno())
+                if not stat.S_ISREG(details.st_mode):
+                    raise ValueError(_("Выберите файл книги."))
+                if details.st_size > limit:
+                    raise ValueError(file_size_error(source))
                 while chunk := incoming.read(min(1024 * 1024, limit - copied + 1)):
                     check_cancel(cancel)
                     copied += len(chunk)

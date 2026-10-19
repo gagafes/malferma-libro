@@ -1,6 +1,6 @@
 """Reviewed Piper voice metadata; no voice weights are bundled.
 
-Primary evidence and exclusions: see docs/PIPER_LICENSES.md. Every weight digest comes
+Primary evidence and exclusions: see PIPER_LICENSES.md. Every weight digest comes
 from the upstream Git LFS pointer and every URL pins the audited revision.
 Configuration/model-card bytes are authenticated by HTTPS and the immutable
 revision; no unverified checksum is invented for those small resources.

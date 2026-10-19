@@ -105,6 +105,62 @@ class LibraryTests(unittest.TestCase):
         self.assertEqual(self.library.books, [])
         self.assertEqual(list(self.library.books_dir.iterdir()), [])
 
+    def test_import_rejects_a_file_swapped_for_a_fifo_before_open(self):
+        original_open = os.open
+
+        def swapped_open(path, flags, *args, **kwargs):
+            if Path(path) == self.source:
+                self.assertTrue(flags & os.O_NONBLOCK)
+                self.source.unlink()
+                os.mkfifo(self.source)
+            return original_open(path, flags, *args, **kwargs)
+
+        with patch("malferma_libro.storage.os.open", side_effect=swapped_open):
+            with self.assertRaises(ValueError):
+                self.import_book()
+        self.assertEqual(self.library.books, [])
+        self.assertEqual(list(self.library.books_dir.iterdir()), [])
+
+    def test_import_rejects_a_new_final_symlink_without_reading_its_target(self):
+        target = self.root / "unselected.txt"
+        target.write_text("Unselected private text", encoding="utf-8")
+        original_open = os.open
+
+        def swapped_open(path, flags, *args, **kwargs):
+            if Path(path) == self.source:
+                self.source.unlink()
+                self.source.symlink_to(target)
+            return original_open(path, flags, *args, **kwargs)
+
+        with patch("malferma_libro.storage.os.open", side_effect=swapped_open):
+            with self.assertRaises(OSError):
+                self.import_book()
+        self.assertEqual(target.read_text(encoding="utf-8"), "Unselected private text")
+        self.assertEqual(self.library.books, [])
+        self.assertEqual(list(self.library.books_dir.iterdir()), [])
+
+    def test_an_intentionally_selected_symlink_to_a_regular_book_still_imports(self):
+        selected = self.root / "selected.txt"
+        selected.symlink_to(self.source)
+        record = self.library.import_book(selected)
+        self.assertEqual(Path(record["path"]).read_bytes(), self.source.read_bytes())
+
+    def test_import_checks_the_size_of_the_opened_snapshot(self):
+        self.source.write_text("small", encoding="utf-8")
+        original_open = os.open
+
+        def grown_open(path, flags, *args, **kwargs):
+            if Path(path) == self.source:
+                self.source.write_bytes(b"too large")
+            return original_open(path, flags, *args, **kwargs)
+
+        with patch("malferma_libro.books.file_size_limit", return_value=8), \
+                patch("malferma_libro.storage.os.open", side_effect=grown_open):
+            with self.assertRaises(ValueError):
+                self.import_book()
+        self.assertEqual(self.library.books, [])
+        self.assertEqual(list(self.library.books_dir.iterdir()), [])
+
     def test_cancelled_import_has_no_side_effects(self):
         token = OperationToken()
         token.cancel()

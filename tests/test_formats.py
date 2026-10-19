@@ -4,6 +4,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 """
 
 from pathlib import Path
+import os
 import shutil
 import struct
 import tempfile
@@ -104,6 +105,50 @@ class LocalMarkupTests(unittest.TestCase):
     def test_markdown_html_is_literal_text_and_never_executed(self):
         book = self.load("literal.markdown", "# Example\n\n<script>alert('inert')</script>\n\n![Picture](https://example.org/a.png)\n")
         self.assertIn("<script>alert('inert')</script>", book.chapters[0].text)
+
+    def test_markup_parsing_can_be_cancelled_after_work_started(self):
+        from malferma_libro.tasks import TaskCancelled
+
+        for name, text in (("cancel.html", "<h1>Title</h1>" + "<p>Paragraph</p>" * 100),
+                           ("cancel.md", "# Title\n\n" + "Paragraph **text**\n\n" * 100)):
+            with self.subTest(name=name):
+                path = self.root / name
+                path.write_text(text, encoding="utf-8")
+                checkpoints = 0
+
+                def cancelled():
+                    nonlocal checkpoints
+                    checkpoints += 1
+                    # The first checks precede reading. Cancellation must also
+                    # be observed inside HTML callbacks and Markdown tokens.
+                    return checkpoints >= 12
+
+                with self.assertRaises(TaskCancelled):
+                    load_book(path, cancel=cancelled)
+                self.assertEqual(checkpoints, 12)
+
+    def test_html_rejects_source_replaced_by_fifo_before_open(self):
+        from malferma_libro.markup import load_html
+
+        path = self.root / "swapped.html"
+        path.write_text("<p>Original text</p>", encoding="utf-8")
+        real_open = os.open
+
+        def swap_then_open(source, flags):
+            path.unlink()
+            os.mkfifo(path)
+            return real_open(source, flags)
+
+        with patch("malferma_libro.markup.os.open", side_effect=swap_then_open):
+            with self.assertRaisesRegex(BookError, "Not a regular file"):
+                load_html(path)
+
+    def test_explicitly_selected_html_symlink_remains_supported(self):
+        path = self.root / "original.html"
+        path.write_text("<p>Selected text</p>", encoding="utf-8")
+        link = self.root / "selected.html"
+        link.symlink_to(path)
+        self.assertIn("Selected text", load_book(link).chapters[0].text)
 
 
 class ComicTests(unittest.TestCase):

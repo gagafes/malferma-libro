@@ -4,6 +4,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 """
 
 from concurrent.futures import ThreadPoolExecutor
+import json
 import os
 from pathlib import Path
 import subprocess
@@ -11,9 +12,11 @@ import sys
 import tempfile
 import time
 import unittest
+from unittest.mock import patch
 from urllib.error import URLError
 
 from malferma_libro.native_process import native_process_cancellation, run_native_command
+from malferma_libro.native_limits import MAX_ADDRESS_SPACE_BYTES, MAX_OUTPUT_FILE_BYTES, _limit
 from malferma_libro.tasks import OperationToken, TaskCancelled, check_cancel, error_category
 
 
@@ -154,6 +157,69 @@ class NativeProcessTests(unittest.TestCase):
                                    timeout=2, check=True)
         self.assertEqual(caught.exception.returncode, 7)
         self.assertFalse(self.pid_file.exists())
+
+    def test_helpers_inherit_memory_file_and_core_limits_without_limiting_the_parent(self):
+        import resource
+
+        kinds = (resource.RLIMIT_AS, resource.RLIMIT_FSIZE, resource.RLIMIT_CORE)
+        previous = [resource.getrlimit(kind) for kind in kinds]
+        command = [sys.executable, "-c", (
+            "import json, resource; "
+            "print(json.dumps([resource.getrlimit(kind) for kind in "
+            "(resource.RLIMIT_AS, resource.RLIMIT_FSIZE, resource.RLIMIT_CORE)]))"
+        )]
+        with tempfile.TemporaryFile() as output:
+            with native_process_cancellation(OperationToken()):
+                result = run_native_command(command, timeout=3, stdout=output, check=True)
+            output.seek(0)
+            limits = json.loads(output.read())
+        for (soft, hard), maximum in zip(
+                limits, (MAX_ADDRESS_SPACE_BYTES, MAX_OUTPUT_FILE_BYTES, 0)):
+            self.assertLessEqual(soft, maximum)
+            self.assertEqual(soft, hard)
+        self.assertEqual([resource.getrlimit(kind) for kind in kinds], previous)
+        self.assertEqual(result.args, command)
+
+    def test_unscoped_helpers_cannot_create_an_output_larger_than_the_file_budget(self):
+        target = self.pid_file.with_name("oversized-output")
+        command = [sys.executable, "-c", (
+            "import errno, os, sys; "
+            "stream = open(sys.argv[1], 'wb'); "
+            "\ntry:\n os.ftruncate(stream.fileno(), int(sys.argv[2]))\n"
+            "except OSError as error:\n raise SystemExit(0 if error.errno == errno.EFBIG else 2)\n"
+            "raise SystemExit(3)\n"
+        ), str(target), str(MAX_OUTPUT_FILE_BYTES + 1)]
+        result = run_native_command(command, timeout=3, stdout=subprocess.DEVNULL,
+                                    stderr=subprocess.DEVNULL)
+        self.assertEqual(result.returncode, 0)
+        self.assertLessEqual(target.stat().st_size, MAX_OUTPUT_FILE_BYTES)
+
+    def test_document_commands_never_accept_shell_execution(self):
+        with self.assertRaises(ValueError):
+            run_native_command("echo unsafe", timeout=2, shell=True)
+
+    def test_child_limits_never_weaken_an_inherited_stronger_limit(self):
+        import resource
+
+        for inherited, expected in (
+                ((resource.RLIM_INFINITY, resource.RLIM_INFINITY), 10),
+                ((3, resource.RLIM_INFINITY), 3),
+                ((3, 5), 3),
+                ((0, 0), 0)):
+            with self.subTest(inherited=inherited), \
+                    patch("malferma_libro.native_limits.resource.getrlimit", return_value=inherited), \
+                    patch("malferma_libro.native_limits.resource.setrlimit") as set_limit:
+                _limit(resource.RLIMIT_FSIZE, 10)
+                set_limit.assert_called_once_with(resource.RLIMIT_FSIZE, (expected, expected))
+
+    def test_unscoped_helper_errors_report_the_original_command(self):
+        command = [sys.executable, "-c", "raise SystemExit(7)"]
+        with self.assertRaises(subprocess.CalledProcessError) as caught:
+            run_native_command(command, timeout=3, check=True)
+        self.assertEqual(caught.exception.cmd, command)
+        with self.assertRaises(subprocess.TimeoutExpired) as caught:
+            run_native_command(self.command, timeout=0.1)
+        self.assertEqual(caught.exception.cmd, self.command)
 
 
 if __name__ == "__main__":

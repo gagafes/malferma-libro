@@ -11,8 +11,10 @@ from __future__ import annotations
 import codecs
 from dataclasses import dataclass
 from html.parser import HTMLParser
+import os
 from pathlib import Path
 import re
+import stat
 import unicodedata
 import uuid
 
@@ -22,6 +24,7 @@ from .books import (
     _title_kind, _SAFE_DOCTYPE,
 )
 from .i18n import _
+from .tasks import check_cancel
 
 
 MAX_HEADINGS = 10000
@@ -55,14 +58,21 @@ class _CharsetHTML(HTMLParser):
                 self.charset = match[1]
 
 
-def _read(path: Path) -> bytes:
+def _read(path: Path, *, cancel=None) -> bytes:
+    check_cancel(cancel)
     try:
-        if not path.is_file():
-            raise OSError("Not a regular file")
-        if path.stat().st_size > MAX_FILE_BYTES:
-            raise BookError(_("Книга превышает допустимый размер (64 МиБ)"))
-        with path.open("rb") as stream:
+        # Resolve an explicitly selected symlink, then validate the actual
+        # opened file. A replacement FIFO must not block between stat/open.
+        source = path.resolve(strict=True)
+        descriptor = os.open(source, os.O_RDONLY | os.O_NONBLOCK | os.O_NOFOLLOW)
+        with os.fdopen(descriptor, "rb") as stream:
+            details = os.fstat(stream.fileno())
+            if not stat.S_ISREG(details.st_mode):
+                raise OSError("Not a regular file")
+            if details.st_size > MAX_FILE_BYTES:
+                raise BookError(_("Книга превышает допустимый размер (64 МиБ)"))
             data = stream.read(MAX_FILE_BYTES + 1)
+        check_cancel(cancel)
         if len(data) > MAX_FILE_BYTES:
             raise BookError(_("Книга превышает допустимый размер (64 МиБ)"))
         return data
@@ -111,9 +121,10 @@ def _decode(data: bytes, label: str, *, html: bool) -> str:
     return text.replace("\r\n", "\n").replace("\r", "\n")
 
 
-def _check_declarations(text: str, label: str) -> None:
+def _check_declarations(text: str, label: str, *, cancel=None) -> None:
     position = 0
     while declaration := _DECLARATION.search(text, position):
+        check_cancel(cancel)
         kind = declaration.group("kind")
         if kind is None:
             closing = "-->" if declaration.group() == "<!--" else "]]>"
@@ -208,8 +219,9 @@ class _Heading:
 class _MarkupHTML(_TextHTML):
     _hidden = _TextHTML._hidden | {"iframe", "object", "canvas"}
 
-    def __init__(self):
+    def __init__(self, *, cancel=None):
         super().__init__()
+        self.cancel = cancel
         self.nodes = 0
         self.nesting: list[str] = []
         self.suppressed: list[str] = []
@@ -250,6 +262,7 @@ class _MarkupHTML(_TextHTML):
         self.capture = None
 
     def handle_starttag(self, tag, attrs):
+        check_cancel(self.cancel)
         # HTML permits an omitted head wrapper and an omitted </head> before
         # body content. Finish metadata without unhiding script/template data.
         if tag == "title" and "head" not in self.nesting and "body" not in self.nesting and not self.hidden and not self.main_text:
@@ -305,6 +318,7 @@ class _MarkupHTML(_TextHTML):
             self.handle_data(attributes["alt"])
 
     def handle_endtag(self, tag):
+        check_cancel(self.cancel)
         if self.suppressed:
             if tag in self.suppressed:
                 index = len(self.suppressed) - 1 - self.suppressed[::-1].index(tag)
@@ -323,6 +337,7 @@ class _MarkupHTML(_TextHTML):
             del self.nesting[index:]
 
     def handle_data(self, data):
+        check_cancel(self.cancel)
         if self.in_title:
             self.title_parts.append(data)
         if self.suppressed:
@@ -339,13 +354,16 @@ class _MarkupHTML(_TextHTML):
         return _clean_protected("".join(self.parts), positions, self.pre_spans)
 
 
-def _book_from_html(text: str, path: Path, format_name: str) -> Book:
-    _check_declarations(text, path.name)
-    parser = _MarkupHTML()
+def _book_from_html(text: str, path: Path, format_name: str, *, cancel=None) -> Book:
+    check_cancel(cancel)
+    _check_declarations(text, path.name, cancel=cancel)
+    parser = _MarkupHTML(cancel=cancel)
     try:
         parser.feed(text)
         parser.close()
+        check_cancel(cancel)
         rendered, positions = parser.finish()
+        check_cancel(cancel)
     except BookError:
         raise
     except (ValueError, RecursionError, AssertionError) as error:
@@ -365,16 +383,18 @@ def _book_from_html(text: str, path: Path, format_name: str) -> Book:
     return Book(title, ", ".join(parser.authors), [chapter], format_name, outline=outline)
 
 
-def load_html(path: Path | str) -> Book:
+def load_html(path: Path | str, *, cancel=None) -> Book:
     """Load HTML/HTM/XHTML as text; no web engine or external resource access."""
     path = Path(path)
-    return _book_from_html(_decode(_read(path), path.name, html=True), path, "HTML")
+    text = _decode(_read(path, cancel=cancel), path.name, html=True)
+    return _book_from_html(text, path, "HTML", cancel=cancel)
 
 
-def load_markdown(path: Path | str) -> Book:
+def load_markdown(path: Path | str, *, cancel=None) -> Book:
     """Read standard CommonMark, with raw HTML disabled and no extensions."""
     path = Path(path)
-    text = _decode(_read(path), path.name, html=False)
+    text = _decode(_read(path, cancel=cancel), path.name, html=False)
+    check_cancel(cancel)
     escaped_size = len(text) + 4 * text.count("&") + 3 * (text.count("<") + text.count(">")) + 5 * text.count('"')
     if escaped_size > MAX_TEXT_CHARS:
         raise BookError(_("Текст книги превышает допустимый размер"))
@@ -392,6 +412,7 @@ def load_markdown(path: Path | str) -> Book:
 
     class BudgetTokens(list):
         def append(self, token):
+            check_cancel(cancel)
             if remaining[0] <= 0:
                 _too_complex()
             remaining[0] -= 1
@@ -404,12 +425,14 @@ def load_markdown(path: Path | str) -> Book:
     block_parse, inline_parse = parser.block.parse, parser.inline.parse
 
     def bounded_block(source, markdown, environment, out_tokens):
+        check_cancel(cancel)
         bounded = BudgetTokens()
         result = block_parse(source, markdown, environment, bounded)
         out_tokens.extend(bounded)
         return out_tokens if result is not None else None
 
     def bounded_inline(source, markdown, environment, out_tokens):
+        check_cancel(cancel)
         bounded = BudgetTokens()
         inline_parse(source, markdown, environment, bounded)
         out_tokens.extend(bounded)
@@ -418,11 +441,13 @@ def load_markdown(path: Path | str) -> Book:
     parser.block.parse, parser.inline.parse = bounded_block, bounded_inline
     try:
         tokens = parser.parse(text)
+        check_cancel(cancel)
         rendered = parser.renderer.render(tokens, parser.options, {})
+        check_cancel(cancel)
     except (RecursionError, ValueError) as error:
         if isinstance(error, BookError):
             raise
         raise BookError(_("{label}: не удалось прочитать текст.").format(label=path.name)) from error
     if len(rendered) > MAX_TEXT_CHARS:
         raise BookError(_("Текст книги превышает допустимый размер"))
-    return _book_from_html(rendered, path, "Markdown")
+    return _book_from_html(rendered, path, "Markdown", cancel=cancel)

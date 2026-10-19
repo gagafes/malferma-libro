@@ -15,6 +15,7 @@ import os
 from pathlib import Path
 import posixpath
 import re
+import stat
 import struct
 import tempfile
 from urllib.parse import unquote, urlsplit
@@ -26,6 +27,8 @@ MAX_COVER_BYTES = 4 * 1024 * 1024
 MAX_COVER_DIMENSION = 4096
 MAX_COVER_PIXELS = 4 * 1024 * 1024
 MAX_COVER_XML_BYTES = 1024 * 1024
+MAX_COVER_REFERENCE_CHARS = 4096
+MAX_COVER_CANDIDATES = 32
 _PNG = b"\x89PNG\r\n\x1a\n"
 _XML_BASE = "{http://www.w3.org/XML/1998/namespace}base"
 _XLINK_HREF = "{http://www.w3.org/1999/xlink}href"
@@ -207,6 +210,9 @@ def _local(tag):
 
 
 def _resolve(base, href):
+    if (not isinstance(base, str) or not isinstance(href, str)
+            or len(base) > MAX_COVER_REFERENCE_CHARS or len(href) > MAX_COVER_REFERENCE_CHARS):
+        raise ValueError("Cover reference exceeds its bounds")
     url = urlsplit(href)
     if url.scheme or url.netloc:
         raise ValueError("External cover reference")
@@ -221,7 +227,10 @@ def _resolve(base, href):
         raise ValueError("Archive reference escapes its root")
     if result == ".":
         return ""
-    return result + ("/" if path.endswith("/") or path in {".", ".."} else "")
+    result += "/" if path.endswith("/") or path in {".", ".."} else ""
+    if len(result) > MAX_COVER_REFERENCE_CHARS:
+        raise ValueError("Cover reference exceeds its bounds")
+    return result
 
 
 def _walk_bases(node, base):
@@ -272,24 +281,41 @@ def epub_cover(archive, package_root: ET.Element, opf_dir: str) -> CoverData | N
                     and node.get("content") in manifest):
                 candidates.append(manifest[node.get("content")])
         visited = set()
+        attempts = 0
+
+        def read_cover(path):
+            nonlocal attempts
+            if attempts >= MAX_COVER_CANDIDATES:
+                return None
+            attempts += 1
+            return _archive_cover(archive, path)
+
         for node, node_base in candidates:
+            if attempts >= MAX_COVER_CANDIDATES:
+                break
             try:
                 path = _resolve(node_base, node.get("href", ""))
             except (UnicodeError, ValueError):
                 continue
             if path not in visited:
                 visited.add(path)
-                cover = _archive_cover(archive, path)
+                cover = read_cover(path)
                 if cover is not None:
                     return cover
         from .books import _xml
 
+        guide_visited = set()
         for node, node_base in nodes:
+            if attempts >= MAX_COVER_CANDIDATES:
+                break
             if _local(node.tag) != "reference" or "cover" not in node.get("type", "").split():
                 continue
             try:
                 path = _resolve(node_base, node.get("href", ""))
-                cover = _archive_cover(archive, path)
+                if path in guide_visited:
+                    continue
+                guide_visited.add(path)
+                cover = read_cover(path)
                 if cover is not None:
                     return cover
                 data = _archive_read(archive, path, MAX_COVER_XML_BYTES)
@@ -299,8 +325,10 @@ def epub_cover(archive, package_root: ET.Element, opf_dir: str) -> CoverData | N
                 for image, image_base in _walk_bases(root, path):
                     if _local(image.tag) != "img" or not image.get("src"):
                         continue
+                    if attempts >= MAX_COVER_CANDIDATES:
+                        break
                     try:
-                        cover = _archive_cover(archive, _resolve(image_base, image.get("src")))
+                        cover = read_cover(_resolve(image_base, image.get("src")))
                     except (UnicodeError, ValueError):
                         continue
                     if cover is not None:
@@ -324,17 +352,25 @@ def fb2_cover(root: ET.Element) -> CoverData | None:
         page = next((node for node in info if _local(node.tag) == "coverpage"), None)
         if page is None:
             return None
+        binaries = {}
+        for binary in root:
+            identifier = binary.get("id")
+            if _local(binary.tag) == "binary" and identifier:
+                binaries[identifier] = None if identifier in binaries else binary
+        attempts = 0
         for image in page.iter():
             if _local(image.tag) != "image":
                 continue
+            if attempts >= MAX_COVER_CANDIDATES:
+                break
+            attempts += 1
             href = image.get(_XLINK_HREF) or image.get("href", "")
-            if not href.startswith("#") or len(href) < 2:
+            if not href.startswith("#") or not 2 <= len(href) <= MAX_COVER_REFERENCE_CHARS:
                 continue
             identifier = unquote(href[1:], errors="strict")
-            binaries = [node for node in root if _local(node.tag) == "binary" and node.get("id") == identifier]
-            if len(binaries) != 1:
+            binary = binaries.get(identifier)
+            if binary is None:
                 continue
-            binary = binaries[0]
             maximum = ((MAX_COVER_BYTES + 2) // 3) * 4
             parts, count = [], 0
             for part in binary.itertext():
@@ -382,7 +418,11 @@ def extract_cover(path: Path | str) -> CoverData | None:
             if data is not None:
                 return epub_cover(archive, _xml(data, package_path), posixpath.dirname(package_path))
         elif suffix == ".fb2":
-            with path.open("rb") as stream:
+            source_path = path.resolve(strict=True)
+            with os.fdopen(os.open(source_path, os.O_RDONLY | os.O_NONBLOCK | os.O_NOFOLLOW), "rb") as stream:
+                details = os.fstat(stream.fileno())
+                if not stat.S_ISREG(details.st_mode) or not 0 < details.st_size <= MAX_FILE_BYTES:
+                    return None
                 data = stream.read(MAX_FILE_BYTES + 1)
             if len(data) <= MAX_FILE_BYTES:
                 return fb2_cover(_xml(data, path.name))

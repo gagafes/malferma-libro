@@ -1,5 +1,10 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Malferma Libro
+Source: https://github.com/gagafes/malferma-libro
+Comment: Developed with assistance from OpenAI Codex. Project concept,
+ requirements, and direction: Andrey Popovich. This acknowledgment describes
+ the development process; it does not identify an AI system as a copyright
+ holder, imply OpenAI endorsement, or alter the licenses below.
 
 Files: *
 Copyright: 2026 Открытая книга contributors

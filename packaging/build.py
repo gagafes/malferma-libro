@@ -193,7 +193,7 @@ def build_deb(root: Path, output: Path, epoch: int) -> Path:
         (control / "control").write_text(template.format(
             version=release_version, installed_size=installed_size), encoding="utf-8")
         (control / "md5sums").write_text("".join(
-            f"{hashlib.md5(path.read_bytes()).hexdigest()}  {path.relative_to(stage).as_posix()}\n"
+            f"{hashlib.md5(path.read_bytes(), usedforsecurity=False).hexdigest()}  {path.relative_to(stage).as_posix()}\n"
             for path in payload), encoding="utf-8")
         for path in [stage, *stage.rglob("*")]:
             if path.is_dir():

@@ -65,7 +65,8 @@ def _local_file(path):
         raise CbzError(_archive_error()) from error
 
 
-def _directory_preflight(stream, size):
+def _directory_preflight(stream, size, *, max_entries=MAX_ENTRIES,
+                         max_directory_bytes=MAX_DIRECTORY_BYTES):
     """Check a conventional single-disk ZIP directory before ZipFile allocation."""
     stream.seek(max(0, size - 65557))
     tail = stream.read(65557)
@@ -80,8 +81,8 @@ def _directory_preflight(stream, size):
                 break
     _, disk, directory_disk, disk_count, count, length, offset, _comment = fields
     end = max(0, size - 65557) + position
-    if (disk or directory_disk or disk_count != count or not 1 <= count <= MAX_ENTRIES
-            or not 0 < length <= MAX_DIRECTORY_BYTES or offset + length != end):
+    if (disk or directory_disk or disk_count != count or not 1 <= count <= max_entries
+            or not 0 < length <= max_directory_bytes or offset + length != end):
         raise ValueError("Unsupported ZIP directory")
     stream.seek(offset)
     directory = stream.read(length)
@@ -98,7 +99,7 @@ def _directory_preflight(stream, size):
                 or b"\x00" in name):
             raise ValueError("Invalid ZIP member name")
         entries += 1
-        if entries > MAX_ENTRIES:
+        if entries > max_entries:
             raise ValueError("Too many ZIP members")
         current = following
     if entries != count:
@@ -109,7 +110,9 @@ def _directory_preflight(stream, size):
 @contextmanager
 def _archive(path):
     try:
-        with Path(path).open("rb") as stream:
+        # Nonblocking open lets the same-descriptor check reject a swapped FIFO.
+        source_path = Path(path).resolve(strict=True)
+        with os.fdopen(os.open(source_path, os.O_RDONLY | os.O_NONBLOCK | os.O_NOFOLLOW), "rb") as stream:
             information = os.fstat(stream.fileno())
             if not stat.S_ISREG(information.st_mode) or not 0 < information.st_size <= MAX_FILE_BYTES:
                 raise ValueError("Invalid comic file")

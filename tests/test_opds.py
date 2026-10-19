@@ -8,8 +8,13 @@ from pathlib import Path
 import tempfile
 import unittest
 from unittest.mock import Mock, patch
+from urllib.error import HTTPError
+from urllib.request import Request
 
-from malferma_libro.opds import Acquisition, OPDSError, download_book, parse_catalog, fetch_catalog
+from malferma_libro.opds import (
+    Acquisition, OPDSError, _SafeRedirects, download_book, download_cover,
+    parse_catalog, fetch_catalog,
+)
 from malferma_libro.tasks import OperationToken, TaskCancelled
 
 
@@ -169,6 +174,41 @@ class DownloadTests(unittest.TestCase):
             with self.assertRaises(OPDSError):
                 download_book(self.acquisition, self.root)
         self.assertEqual(list(self.root.iterdir()), [])
+
+    def test_http_errors_close_the_response_for_all_download_types(self):
+        operations = (
+            lambda: fetch_catalog(BASE),
+            lambda: download_book(self.acquisition, self.root),
+            lambda: download_cover("https://books.example.org/cover.png"),
+        )
+        for operation in operations:
+            body = io.BytesIO(b"Untrusted error response")
+            error = HTTPError(BASE, 503, "Unavailable", {}, body)
+            with self.subTest(operation=operation), patch(
+                "malferma_libro.opds._open_url", side_effect=error
+            ), self.assertRaises(OPDSError):
+                operation()
+            self.assertTrue(body.closed)
+        self.assertEqual(list(self.root.iterdir()), [])
+
+    def test_redirect_responses_close_without_reading_their_body(self):
+        class NoBodyRead(io.BytesIO):
+            def read(self, *_args):
+                raise AssertionError("Redirect bodies must not be drained")
+
+        handler = _SafeRedirects()
+        request = Request(BASE)
+        for target in ("https://books.example.org/next", "file:///etc/passwd",
+                       "https://user:password@books.example.org/next"):
+            response = NoBodyRead(b"Unbounded redirect body")
+            with self.subTest(target=target):
+                if target.startswith("https://books.example.org/"):
+                    redirect = handler.redirect_request(request, response, 302, "Found", {}, target)
+                    self.assertEqual(redirect.full_url, target)
+                else:
+                    with self.assertRaises(OPDSError):
+                        handler.redirect_request(request, response, 302, "Found", {}, target)
+                self.assertTrue(response.closed)
 
     def test_cancelled_download_never_opens_network(self):
         token = OperationToken()

@@ -110,6 +110,14 @@ for compatibility with installed icons and desktop integration.
 See [CONTRIBUTING.md](CONTRIBUTING.md#working-with-github) for instructions
 on contributing changes and working with the GitHub repository.
 
+The scope, corrections and limits of the source security review are recorded
+in [Security review](docs/SECURITY_REVIEW.md).
+
+## Development attribution
+
+Developed with assistance from **OpenAI Codex**. Project concept, requirements,
+and direction: **Andrey Popovich**.
+
 ## License
 
 Code, translations and documentation: [GNU GPL v3 or later](LICENSE).
