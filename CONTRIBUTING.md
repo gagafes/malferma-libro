@@ -4,6 +4,26 @@ Contributions to this project are licensed under GPL-3.0-or-later. Third-party
 files must retain their own licenses and attribution. Do not add books,
 voice models, personal settings, or access tokens to the repository.
 
+## Report a problem or help test
+
+You can contribute without writing code. Use the
+[issue forms](https://github.com/gagafes/malferma-libro/issues/new/choose)
+to report a bug, suggest one improvement, or share a desktop test report.
+Successful test results are useful too; mark checks you did not run as
+**Not tested**. Include the full package version, distribution, desktop,
+screen scale and interface language so others can understand the result.
+
+Search existing issues before opening a new one. Keep each bug or feature
+request focused on one problem. Remove personal data from screenshots and
+logs; do not attach private books or credentials.
+
+New contributors can start with
+[good first issues](https://github.com/gagafes/malferma-libro/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
+Read the task's scope and acceptance criteria, and leave a comment if you
+would like to work on it so others can avoid duplicating the work.
+
+## Development checks
+
 Use Debian 13 and the system `/usr/bin/python3`. Runtime and build dependencies
 are listed in [README.md](README.md).
 

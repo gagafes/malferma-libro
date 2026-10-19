@@ -1,0 +1,33 @@
+name: Feature request
+description: Suggest a focused improvement to the reader.
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please search existing issues first and describe one improvement per request.
+        Suggestions should help keep the reader simple and comfortable to use.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What would you like to do?
+      description: Describe the situation and who would benefit from this improvement.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Explain how the improvement would work from a reader's point of view.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives or workarounds (optional)
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context (optional)
+      description: Add examples or sketches if useful. Remove personal information before sharing.

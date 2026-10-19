@@ -1,0 +1,66 @@
+name: Bug report
+description: Report a reproducible problem with Malferma Libro.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a problem. Please search existing issues first.
+        Do not attach private books, passwords, access tokens or personal library data.
+        Share a small public-domain sample or a sample you are allowed to redistribute when needed.
+  - type: input
+    id: version
+    attributes:
+      label: Application and package version
+      description: Include the full DEB package version, or the commit if running from source.
+      placeholder: "App 0.1.1; DEB 0.1.1-2"
+    validations:
+      required: true
+  - type: dropdown
+    id: installation
+    attributes:
+      label: Installation method
+      options:
+        - DEB from a GitHub release
+        - DEB from a GitHub Actions artifact
+        - Running from source
+        - Other (describe below)
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Desktop environment
+      description: Include your distribution and version, desktop, screen scale and interface language. Add X11 or Wayland if known.
+      placeholder: "Debian 13; XFCE; X11; 100% scale; English; light theme"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Describe what you did, including the book format if relevant.
+      placeholder: |
+        1. Open a book in ... format.
+        2. Select ...
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Screenshots, logs or sample (optional)
+      description: Remove personal information before sharing. A description is enough if you cannot share the book.

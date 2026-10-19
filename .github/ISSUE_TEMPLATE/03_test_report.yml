@@ -1,0 +1,69 @@
+name: Test report
+description: Share results from trying Malferma Libro on your desktop.
+title: "[Test]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Reports of successful checks are welcome too. No programming experience is needed.
+        Mark anything you did not try as "Not tested". Please create a separate bug report
+        for each reproducible problem and link it here.
+        Do not upload private books, passwords, access tokens or personal library data.
+  - type: input
+    id: version
+    attributes:
+      label: Application and package version
+      description: Include the full DEB package version, or the commit if running from source.
+      placeholder: "App 0.1.1; DEB 0.1.1-2"
+    validations:
+      required: true
+  - type: dropdown
+    id: installation
+    attributes:
+      label: Installation method
+      options:
+        - DEB from a GitHub release
+        - DEB from a GitHub Actions artifact
+        - Running from source
+        - Other (describe below)
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Desktop environment
+      description: Include your distribution and version, desktop, screen scale, theme and interface language. Add X11 or Wayland if known.
+      placeholder: "Debian 13; XFCE; X11; 100% scale; English; light theme"
+    validations:
+      required: true
+  - type: textarea
+    id: scenarios
+    attributes:
+      label: Formats and scenarios tested
+      description: Describe the book formats and actions you tried. Use public-domain books or books you may legally use.
+      placeholder: "EPUB with illustrations; import, reading, search and reopening at the saved position."
+    validations:
+      required: true
+  - type: textarea
+    id: results
+    attributes:
+      label: Results
+      description: Replace each result below with Pass, Fail or Not tested. Add any other checks you performed.
+      value: |
+        - Installation and launch: Not tested
+        - Book import and opening: Not tested
+        - Illustrations (where present): Not tested
+        - Search and table of contents: Not tested
+        - Reading position after restarting: Not tested
+        - Light and dark themes: Not tested
+        - Keyboard navigation: Not tested
+        - Window resizing and screen scaling: Not tested
+        - Accessibility tools: Not tested
+        - Piper narration (optional): Not tested
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Related issues, screenshots or logs (optional)
+      description: Link separate bug reports here. Remove personal information before sharing logs or screenshots.
