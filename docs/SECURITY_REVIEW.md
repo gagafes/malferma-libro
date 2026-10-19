@@ -32,7 +32,8 @@ in the changelog; the existing v0.1.1 release assets are unchanged.
   2 GiB virtual address space and no core dumps. Existing timeouts and task
   cancellation remain. Limits are applied by a fresh isolated Python process,
   avoiding unsafe `preexec_fn` use in the multithreaded application.
-- GitHub Actions are pinned to commit hashes. Checkout does not retain
+- GitHub Actions use maintained Node.js 24 releases pinned to commit hashes.
+  Checkout does not retain
   credentials; jobs have timeouts. Write permission remains confined to the
   explicitly requested release job.
 - Debian's required MD5 payload inventory explicitly uses
