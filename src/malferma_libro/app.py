@@ -34,6 +34,8 @@ from .accessibility_ui import AccessibilityMixin
 from .pagination import PageNumberMixin
 from .outline_ui import OutlineMixin
 from .cover_ui import CoverUIMixin
+from .illustration_ui import IllustrationUIMixin
+from .illustrations import TextImageOffsets
 from .keybindings_ui import KeybindingsMixin
 from .narration_ui import NarrationMixin
 from .keyboard_ui import KeyboardNavigationMixin
@@ -254,7 +256,7 @@ class ReaderApplication(Adw.Application):
 
 class ReaderWindow(LibraryMixin, SearchMixin, ImmersiveMixin, TaskMixin, BookmarkMixin,
                    AccessibilityMixin, PageNumberMixin, OutlineMixin, CoverUIMixin, KeybindingsMixin, NarrationMixin,
-                   KeyboardNavigationMixin,
+                   KeyboardNavigationMixin, IllustrationUIMixin,
                    Adw.ApplicationWindow):
     def __init__(self, application):
         library = Library()
@@ -953,6 +955,7 @@ class ReaderWindow(LibraryMixin, SearchMixin, ImmersiveMixin, TaskMixin, Bookmar
         self.speech_tag = self.buffer.create_tag("speech", background="#d4e4b8", foreground="#202820")
         self.reader_scroll = Gtk.ScrolledWindow(has_frame=False)
         self.reader_scroll.set_child(self.text_view)
+        self.init_illustration_ui()
         self.document_picture = Gtk.Picture(can_shrink=False, halign=Gtk.Align.CENTER, valign=Gtk.Align.START)
         bind(self.document_picture, alternative_text=_("Страница документа"))
         self.document_canvas = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
@@ -1543,8 +1546,8 @@ class ReaderWindow(LibraryMixin, SearchMixin, ImmersiveMixin, TaskMixin, Bookmar
         if self.stack.get_visible_child_name() != "reader":
             self.save_progress()
             return
-        begin = self.buffer.get_iter_at_offset(start)
-        finish = self.buffer.get_iter_at_offset(min(end, self.buffer.get_char_count()))
+        begin = self.reader_iter_at_offset(start, after_images=True)
+        finish = self.reader_iter_at_offset(end)
         self.buffer.remove_tag(self.speech_tag, self.buffer.get_start_iter(), self.buffer.get_end_iter())
         self.buffer.apply_tag(self.speech_tag, begin, finish)
         self.buffer.place_cursor(begin)
@@ -1663,9 +1666,20 @@ class ReaderWindow(LibraryMixin, SearchMixin, ImmersiveMixin, TaskMixin, Bookmar
         if not self.is_paged():
             self.set_status(_("Книга открыта. Позиция чтения сохраняется автоматически."))
 
+    def reader_iter_at_offset(self, offset, *, after_images=False):
+        """Translate stable book positions to the buffer's image-anchor positions."""
+        return self.buffer.get_iter_at_offset(
+            self._reader_image_offsets.to_buffer(offset, after_images=after_images))
+
+    def reader_text_offset(self, iterator):
+        """Keep image anchors out of bookmarks, search, speech and page numbers."""
+        return self._reader_image_offsets.to_text(iterator.get_offset())
+
     def set_reader_text(self, text):
         """Style paragraphs without adding controls or changing text offsets."""
+        self.clear_chapter_illustrations()
         self.buffer.set_text(text)
+        self._reader_image_offsets = TextImageOffsets(len(text), ())
         for start, end, direction in paragraph_runs(text):
             self.buffer.apply_tag(
                 self._reader_direction_tags[direction],
@@ -1697,7 +1711,8 @@ class ReaderWindow(LibraryMixin, SearchMixin, ImmersiveMixin, TaskMixin, Bookmar
             self.update_page_number()
             return
         self.set_reader_text(chapter.text)
-        offset = max(0, min(offset, self.buffer.get_char_count()))
+        self.set_chapter_illustrations(chapter.images)
+        offset = max(0, min(offset, len(chapter.text)))
         self.restore_position(offset)
         self.update_page_number()
         self.refresh_bookmarks()
@@ -1902,10 +1917,10 @@ class ReaderWindow(LibraryMixin, SearchMixin, ImmersiveMixin, TaskMixin, Bookmar
 
             self.reader_scroll.add_tick_callback(restore_document)
             return
-        self._pending_offset = max(0, min(offset, self.buffer.get_char_count()))
+        self._pending_offset = max(0, min(offset, self._reader_image_offsets.text_length))
         self._restoring = True
         serial = self._restore_serial
-        mark = self.buffer.create_mark(None, self.buffer.get_iter_at_offset(self._pending_offset), True)
+        mark = self.buffer.create_mark(None, self.reader_iter_at_offset(self._pending_offset), True)
         self._restore_mark = mark
         frames = 0
 
@@ -1970,7 +1985,7 @@ class ReaderWindow(LibraryMixin, SearchMixin, ImmersiveMixin, TaskMixin, Bookmar
         _found, iterator, _trailing = self.text_view.get_iter_at_position(rectangle.x, rectangle.y)
         if not self.text_view.starts_display_line(iterator):
             self.text_view.backward_display_line_start(iterator)
-        return iterator.get_offset()
+        return self.reader_text_offset(iterator)
 
     def reader_layout_tick(self, _widget, _clock):
         if self._closing:
@@ -1991,6 +2006,7 @@ class ReaderWindow(LibraryMixin, SearchMixin, ImmersiveMixin, TaskMixin, Bookmar
                 self.text_view.set_right_margin(padding)
                 if self.book:
                     self.restore_position(offset)
+        self.update_illustration_layout()
         return GLib.SOURCE_CONTINUE
 
     def scroll_changed(self, _adjustment):
@@ -2352,6 +2368,7 @@ class ReaderWindow(LibraryMixin, SearchMixin, ImmersiveMixin, TaskMixin, Bookmar
         self.close_outline_ui()
         self.close_library_ui()
         self.close_cover_ui()
+        self.close_illustration_ui()
         if self._accessibility_popup_tick is not None:
             self.accessibility_button.remove_tick_callback(self._accessibility_popup_tick)
             self._accessibility_popup_tick = None

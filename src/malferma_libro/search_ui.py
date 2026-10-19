@@ -293,9 +293,8 @@ class SearchMixin:
         if not self.is_paged():
             self.cancel_restore()
         self._clear_book_search_highlight()
-        count = self.buffer.get_char_count()
-        begin = self.buffer.get_iter_at_offset(min(count, match.start))
-        end = self.buffer.get_iter_at_offset(min(count, match.end))
+        begin = self.reader_iter_at_offset(match.start, after_images=True)
+        end = self.reader_iter_at_offset(match.end)
         self.buffer.apply_tag(self.search_tag, begin, end)
         self.buffer.select_range(begin, end)
         if self.is_paged():

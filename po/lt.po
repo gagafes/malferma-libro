@@ -2,13 +2,13 @@
 # Translation source recovered from the installed GNU gettext catalog.
 
 msgid ""
-msgstr "Project-Id-Version: Malferma Libro 0.1.0\nLanguage: lt\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+msgstr "Project-Id-Version: Malferma Libro 0.1.1\nLanguage: lt\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: src/malferma_libro/library_ui.py:105
 msgid " · Найдено: {count}"
 msgstr " · Rasta: {count}"
 
-#: src/malferma_libro/app.py:884
+#: src/malferma_libro/app.py:886
 msgid "100% — по ширине окна; вёрстка PDF, DjVu и CBZ сохраняется"
 msgstr "100% — pagal lango plotį; PDF, DjVu ir CBZ maketas išsaugomas"
 
@@ -20,19 +20,19 @@ msgstr "DjVu su išoriniais failais nepalaikomas"
 msgid "EPUB · FB2 · FB2.ZIP · TXT · PDF · DjVu · HTML · Markdown · CBZ. Книги копируются в локальную библиотеку."
 msgstr "EPUB · FB2 · FB2.ZIP · TXT · PDF · DjVu · HTML · Markdown · CBZ. Knygos kopijuojamos į vietinę biblioteką."
 
-#: src/malferma_libro/books.py:618
+#: src/malferma_libro/books.py:808
 msgid "EPUB не содержит доступных текстовых глав"
 msgstr "EPUB nėra skaitomų teksto skyrių"
 
-#: src/malferma_libro/books.py:543
+#: src/malferma_libro/books.py:700
 msgid "EPUB не содержит описания книги"
 msgstr "EPUB nėra knygos aprašo"
 
-#: src/malferma_libro/books.py:775
+#: src/malferma_libro/books.py:1018
 msgid "FB2 не содержит доступного текста"
 msgstr "FB2 nėra skaitomo teksto"
 
-#: src/malferma_libro/app.py:2178 src/malferma_libro/app.py:2179
+#: src/malferma_libro/app.py:2194 src/malferma_libro/app.py:2195
 msgid "OPDS-каталог"
 msgstr "OPDS katalogas"
 
@@ -40,19 +40,19 @@ msgstr "OPDS katalogas"
 msgid "PDF защищён паролем. Откройте незашифрованную копию книги."
 msgstr "PDF apsaugotas slaptažodžiu. Atverkite nešifruotą knygos kopiją."
 
-#: src/malferma_libro/app.py:1195
+#: src/malferma_libro/app.py:1198
 msgid "PDF, DjVu и CBZ сохраняют исходные шрифты и цвета; размер меняется масштабом."
 msgstr "PDF, DjVu ir CBZ išlaiko pradinius šriftus ir spalvas; dydis keičiamas keičiant mastelį."
 
-#: src/malferma_libro/app.py:1532
+#: src/malferma_libro/app.py:1535
 msgid "Piper не установлен. Инструкция доступна в руководстве."
 msgstr "Piper neįdiegtas. Instrukcijos pateiktos naudotojo vadove."
 
-#: src/malferma_libro/books.py:864
+#: src/malferma_libro/books.py:1109
 msgid "TXT должен быть в кодировке UTF-8 или Windows-1251"
 msgstr "TXT turi būti UTF-8 arba Windows-1251 koduotės"
 
-#: src/malferma_libro/books.py:866
+#: src/malferma_libro/books.py:1111
 msgid "TXT содержит двоичные данные"
 msgstr "TXT yra dvejetainių duomenų"
 
@@ -60,11 +60,11 @@ msgstr "TXT yra dvejetainių duomenų"
 msgid "{count} из {limit} символов"
 msgstr "{count} iš {limit} simbolių"
 
-#: src/malferma_libro/books.py:144
+#: src/malferma_libro/books.py:194
 msgid "{label}: XML превышает допустимый размер"
 msgstr "{label}: XML viršija leistiną dydį"
 
-#: src/malferma_libro/books.py:377
+#: src/malferma_libro/books.py:529
 msgid "{label}: не удалось прочитать текст EPUB"
 msgstr "{label}: nepavyko perskaityti EPUB teksto"
 
@@ -72,23 +72,23 @@ msgstr "{label}: nepavyko perskaityti EPUB teksto"
 msgid "{label}: не удалось прочитать текст."
 msgstr "{label}: nepavyko perskaityti teksto."
 
-#: src/malferma_libro/books.py:366
+#: src/malferma_libro/books.py:518
 msgid "{label}: объявления DTD запрещены"
 msgstr "{label}: DTD deklaracijos draudžiamos"
 
-#: src/malferma_libro/books.py:150 src/malferma_libro/books.py:156 src/malferma_libro/markup.py:126
+#: src/malferma_libro/books.py:200 src/malferma_libro/books.py:206 src/malferma_libro/markup.py:126
 msgid "{label}: объявления DTD и сущностей XML запрещены"
 msgstr "{label}: DTD ir XML esybių deklaracijos draudžiamos"
 
-#: src/malferma_libro/books.py:363
+#: src/malferma_libro/books.py:515
 msgid "{label}: объявления сущностей запрещены"
 msgstr "{label}: esybių deklaracijos draudžiamos"
 
-#: src/malferma_libro/books.py:162
+#: src/malferma_libro/books.py:212
 msgid "{label}: повреждённый XML"
 msgstr "{label}: sugadintas XML"
 
-#: src/malferma_libro/app.py:2037 src/malferma_libro/library_ui.py:115 src/malferma_libro/library_ui.py:186
+#: src/malferma_libro/app.py:2053 src/malferma_libro/library_ui.py:115 src/malferma_libro/library_ui.py:186
 msgid "{percent}% прочитано"
 msgstr "Perskaityta {percent}%"
 
@@ -96,7 +96,7 @@ msgstr "Perskaityta {percent}%"
 msgid "Автоматически"
 msgstr "Automatiškai"
 
-#: src/malferma_libro/app.py:1189
+#: src/malferma_libro/app.py:1192
 msgid "Автоматически скрывать панель в полном экране"
 msgstr "Automatiškai slėpti įrankių juostą viso ekrano veiksenoje"
 
@@ -108,7 +108,7 @@ msgstr "PDF autorius uždraudė išgauti tekstą iš šio dokumento"
 msgid "Автор не указан"
 msgstr "Autorius nenurodytas"
 
-#: src/malferma_libro/app.py:2114
+#: src/malferma_libro/app.py:2130
 msgid "Адрес OPDS-каталога"
 msgstr "OPDS katalogo adresas"
 
@@ -124,11 +124,11 @@ msgstr "Adrese yra neleistinų simbolių."
 msgid "Адреса с логином или паролем не поддерживаются."
 msgstr "Adresai su prisijungimo vardu ar slaptažodžiu nepalaikomi."
 
-#: src/malferma_libro/books.py:97
+#: src/malferma_libro/books.py:147
 msgid "Архив CBZ превышает допустимый размер (512 МиБ)"
 msgstr "CBZ archyvas viršija leistiną dydį (512 MiB)"
 
-#: src/malferma_libro/books.py:846
+#: src/malferma_libro/books.py:1091
 msgid "Архив FB2 должен содержать ровно один файл .fb2"
 msgstr "FB2 archyve turi būti lygiai vienas .fb2 failas"
 
@@ -152,7 +152,7 @@ msgstr "DjVu leidžiama ne daugiau kaip {max_pages} puslapių"
 msgid "В DjVu не найден корректный каталог страниц"
 msgstr "DjVu nerastas tinkamas puslapių katalogas"
 
-#: src/malferma_libro/books.py:548
+#: src/malferma_libro/books.py:705
 msgid "В EPUB отсутствуют метаданные, список файлов или порядок глав"
 msgstr "EPUB trūksta metaduomenų, failų sąrašo arba skyrių eilės"
 
@@ -164,15 +164,15 @@ msgstr "PDF turi būti nuo 1 iki {max_pages} puslapių"
 msgid "В архиве CBZ нет поддерживаемых изображений."
 msgstr "CBZ archyve nėra palaikomų paveikslų."
 
-#: src/malferma_libro/books.py:427
+#: src/malferma_libro/books.py:584
 msgid "В книге отсутствует файл: {name}"
 msgstr "Knygoje trūksta failo: {name}"
 
-#: src/malferma_libro/app.py:1193
+#: src/malferma_libro/app.py:1196
 msgid "В пикселях; на широком окне текст располагается по центру."
 msgstr "Pikseliais; plačiame lange tekstas centruojamas."
 
-#: src/malferma_libro/app.py:2215
+#: src/malferma_libro/app.py:2231
 msgid "В этом разделе книг нет."
 msgstr "Šiame skyriuje knygų nėra."
 
@@ -184,19 +184,19 @@ msgstr "Jūsų biblioteka"
 msgid "Вернуться к месту до поиска"
 msgstr "Grįžti į vietą prieš paiešką"
 
-#: src/malferma_libro/app.py:480
+#: src/malferma_libro/app.py:482
 msgid "Включить дневной режим"
 msgstr "Įjungti dieninę veikseną"
 
-#: src/malferma_libro/app.py:480
+#: src/malferma_libro/app.py:482
 msgid "Включить ночной режим"
 msgstr "Įjungti naktinę veikseną"
 
-#: src/malferma_libro/books.py:453
+#: src/malferma_libro/books.py:610
 msgid "Внутренняя ссылка EPUB выходит за пределы архива"
 msgstr "Vidinė EPUB nuoroda veda už archyvo ribų"
 
-#: src/malferma_libro/books.py:445
+#: src/malferma_libro/books.py:602
 msgid "Внутренняя ссылка EPUB указывает за пределы книги"
 msgstr "Vidinė EPUB nuoroda veda už knygos ribų"
 
@@ -216,7 +216,7 @@ msgstr "Pasirinkite įprastą DjVu failą"
 msgid "Выберите обычный файл PDF"
 msgstr "Pasirinkite įprastą PDF failą"
 
-#: src/malferma_libro/storage.py:608
+#: src/malferma_libro/storage.py:609
 msgid "Выберите файл книги."
 msgstr "Pasirinkite knygos failą."
 
@@ -228,11 +228,11 @@ msgstr "Pasirinkite kalbą arba balsą."
 msgid "Выбрать книгу…"
 msgstr "Pasirinkti knygą…"
 
-#: src/malferma_libro/app.py:1048
+#: src/malferma_libro/app.py:1051
 msgid "Выделить всё"
 msgstr "Pažymėti viską"
 
-#: src/malferma_libro/app.py:465 src/malferma_libro/app.py:520
+#: src/malferma_libro/app.py:467 src/malferma_libro/app.py:522
 msgid "Выйти из полноэкранного режима"
 msgstr "Išeiti iš viso ekrano veiksenos"
 
@@ -244,15 +244,15 @@ msgstr "Atlikta: {percent}%"
 msgid "Выполняемые действия"
 msgstr "Vykdomi veiksmai"
 
-#: src/malferma_libro/accessibility_ui.py:279 src/malferma_libro/app.py:1205
+#: src/malferma_libro/accessibility_ui.py:279 src/malferma_libro/app.py:1208
 msgid "Высокая контрастность"
 msgstr "Didelis kontrastas"
 
-#: src/malferma_libro/books.py:578 src/malferma_libro/outline_ui.py:121
+#: src/malferma_libro/books.py:763 src/malferma_libro/outline_ui.py:121
 msgid "Глава {number}"
 msgstr "Skyrius {number}"
 
-#: src/malferma_libro/app.py:424 src/malferma_libro/app.py:425 src/malferma_libro/shortcuts.py:26
+#: src/malferma_libro/app.py:426 src/malferma_libro/app.py:427 src/malferma_libro/shortcuts.py:26
 msgid "Главное меню"
 msgstr "Pagrindinis meniu"
 
@@ -284,15 +284,15 @@ msgstr "Balsas įdiegtas"
 msgid "Голоса Piper"
 msgstr "Piper balsai"
 
-#: src/malferma_libro/app.py:421 src/malferma_libro/app.py:664 src/malferma_libro/keybindings_ui.py:39 src/malferma_libro/keybindings_ui.py:46 src/malferma_libro/shortcuts.py:44
+#: src/malferma_libro/app.py:423 src/malferma_libro/app.py:666 src/malferma_libro/keybindings_ui.py:39 src/malferma_libro/keybindings_ui.py:46 src/malferma_libro/shortcuts.py:44
 msgid "Горячие клавиши"
 msgstr "Spartieji klavišai"
 
-#: src/malferma_libro/app.py:1531
+#: src/malferma_libro/app.py:1534
 msgid "Готово к озвучке"
 msgstr "Paruošta skaityti balsu"
 
-#: src/malferma_libro/app.py:2075
+#: src/malferma_libro/app.py:2091
 msgid "Далее"
 msgstr "Pirmyn"
 
@@ -316,7 +316,7 @@ msgstr "Norėdami atkurti skaitymo balsu garsą, įdiekite paplay arba aplay."
 msgid "Для запуска нужны GTK 4, libadwaita и PyGObject. На Debian 13 выполните:\nsudo apt install python3-gi gir1.2-gtk-4.0 gir1.2-adw-1 poppler-utils djvulibre-bin\nЗапускайте приложение через /usr/bin/python3.\nПодробности: {error}"
 msgstr "Programai paleisti reikia GTK 4, libadwaita ir PyGObject. Debian 13 sistemoje vykdykite:\nsudo apt install python3-gi gir1.2-gtk-4.0 gir1.2-adw-1 poppler-utils djvulibre-bin\nPaleiskite programą per /usr/bin/python3.\nIšsamiau: {error}"
 
-#: src/malferma_libro/app.py:2118
+#: src/malferma_libro/app.py:2134
 msgid "Для локального Calibre: http://адрес:8080/opds"
 msgstr "Vietinei Calibre: http://адрес:8080/opds"
 
@@ -344,7 +344,7 @@ msgstr "PDF skaitymui įdiekite paketą poppler-utils: sudo apt install poppler-
 msgid "Для этого языка добавьте свою модель Piper."
 msgstr "Šiai kalbai pridėkite savo Piper modelį."
 
-#: src/malferma_libro/app.py:1175
+#: src/malferma_libro/app.py:1178
 msgid "Дневной"
 msgstr "Dieninė"
 
@@ -352,11 +352,11 @@ msgstr "Dieninė"
 msgid "Дневной / ночной режим"
 msgstr "Dieninė / naktinė veiksena"
 
-#: src/malferma_libro/app.py:2108 src/malferma_libro/app.py:812 src/malferma_libro/desktop.py:252
+#: src/malferma_libro/app.py:2124 src/malferma_libro/app.py:814 src/malferma_libro/desktop.py:252
 msgid "Добавить"
 msgstr "Pridėti"
 
-#: src/malferma_libro/app.py:2106
+#: src/malferma_libro/app.py:2122
 msgid "Добавить OPDS-каталог"
 msgstr "Pridėti OPDS katalogą"
 
@@ -364,7 +364,7 @@ msgstr "Pridėti OPDS katalogą"
 msgid "Добавить голос…"
 msgstr "Pridėti balsą…"
 
-#: src/malferma_libro/app.py:2059
+#: src/malferma_libro/app.py:2075
 msgid "Добавить каталог"
 msgstr "Pridėti katalogą"
 
@@ -376,19 +376,19 @@ msgstr "Pridėti Piper modelį"
 msgid "Добавление голоса…"
 msgstr "Pridedamas balsas…"
 
-#: src/malferma_libro/app.py:858
+#: src/malferma_libro/app.py:860
 msgid "Добавление книг: {count}…"
 msgstr "Pridedamos knygos: {count}…"
 
-#: src/malferma_libro/app.py:2055 src/malferma_libro/app.py:2103
+#: src/malferma_libro/app.py:2071 src/malferma_libro/app.py:2119
 msgid "Добавьте каталог"
 msgstr "Pridėkite katalogą"
 
-#: src/malferma_libro/app.py:387
+#: src/malferma_libro/app.py:389
 msgid "Добавьте книгу или подключите OPDS-каталог."
 msgstr "Pridėkite knygą arba prisijunkite prie OPDS katalogo."
 
-#: src/malferma_libro/app.py:1490
+#: src/malferma_libro/app.py:1493
 msgid "Дождитесь загрузки страницы."
 msgstr "Palaukite, kol puslapis bus įkeltas."
 
@@ -396,7 +396,7 @@ msgstr "Palaukite, kol puslapis bus įkeltas."
 msgid "Допустимы только адреса HTTP и HTTPS."
 msgstr "Leidžiami tik HTTP ir HTTPS adresai."
 
-#: src/malferma_libro/app.py:1209
+#: src/malferma_libro/app.py:1212
 msgid "Жесты мышью"
 msgstr "Pelės gestai"
 
@@ -408,19 +408,19 @@ msgstr "Atsisiųsti balsą"
 msgid "Загрузка голоса: {voice}"
 msgstr "Atsisiunčiamas balsas: {voice}"
 
-#: src/malferma_libro/app.py:2173
+#: src/malferma_libro/app.py:2189
 msgid "Загрузка каталога…"
 msgstr "Įkeliamas katalogas…"
 
-#: src/malferma_libro/app.py:1744
+#: src/malferma_libro/app.py:1759
 msgid "Загрузка страницы {page}"
 msgstr "Įkeliamas puslapis {page}"
 
-#: src/malferma_libro/app.py:1745 src/malferma_libro/app.py:1822
+#: src/malferma_libro/app.py:1760 src/malferma_libro/app.py:1837
 msgid "Загрузка страницы {page}…"
 msgstr "Įkeliamas puslapis {page}…"
 
-#: src/malferma_libro/app.py:962
+#: src/malferma_libro/app.py:965
 msgid "Загрузка страницы…"
 msgstr "Įkeliamas puslapis…"
 
@@ -436,7 +436,7 @@ msgstr "Žymelė nebepasiekiama."
 msgid "Закладка добавлена."
 msgstr "Žymelė pridėta."
 
-#: src/malferma_libro/app.py:904 src/malferma_libro/app.py:905
+#: src/malferma_libro/app.py:906 src/malferma_libro/app.py:907
 msgid "Закладки"
 msgstr "Žymelės"
 
@@ -460,11 +460,11 @@ msgstr "Žymelės pastaba"
 msgid "Заметка слишком длинная: максимум {limit} символов."
 msgstr "Pastaba per ilga: daugiausia {limit} simbolių."
 
-#: src/malferma_libro/books.py:413
+#: src/malferma_libro/books.py:570
 msgid "Зашифрованные архивы книг не поддерживаются"
 msgstr "Šifruoti knygų archyvai nepalaikomi"
 
-#: src/malferma_libro/app.py:1531
+#: src/malferma_libro/app.py:1534
 msgid "Идёт озвучка текущей главы"
 msgstr "Dabartinis skyrius skaitomas balsu"
 
@@ -484,7 +484,15 @@ msgstr "DjVu puslapio vaizdas viršija leistiną dydį"
 msgid "Изображение страницы PDF превышает допустимый размер"
 msgstr "PDF puslapio vaizdas viršija leistiną dydį"
 
-#: src/malferma_libro/app.py:1147
+#: src/malferma_libro/illustration_ui.py:119 src/malferma_libro/illustration_ui.py:287 src/malferma_libro/illustration_ui.py:293
+msgid "Иллюстрация"
+msgstr "Iliustracija"
+
+#: src/malferma_libro/illustration_ui.py:251 src/malferma_libro/illustration_ui.py:259 src/malferma_libro/illustration_ui.py:260
+msgid "Иллюстрация недоступна"
+msgstr "Iliustracija nepasiekiama"
+
+#: src/malferma_libro/app.py:1150
 msgid "Интерфейс"
 msgstr "Sąsaja"
 
@@ -492,7 +500,7 @@ msgstr "Sąsaja"
 msgid "Используйте Ctrl, Alt или функциональную клавишу."
 msgstr "Naudokite Ctrl, Alt arba funkcinį klavišą."
 
-#: src/malferma_libro/app.py:1150 src/malferma_libro/app.py:1175
+#: src/malferma_libro/app.py:1153 src/malferma_libro/app.py:1178
 msgid "Как в системе"
 msgstr "Kaip sistemoje"
 
@@ -500,11 +508,11 @@ msgstr "Kaip sistemoje"
 msgid "Каталог"
 msgstr "Katalogas"
 
-#: src/malferma_libro/app.py:2216
+#: src/malferma_libro/app.py:2232
 msgid "Каталог загружен. Записей: {count}."
 msgstr "Katalogas įkeltas. Įrašų: {count}."
 
-#: src/malferma_libro/app.py:2071
+#: src/malferma_libro/app.py:2087
 msgid "Каталог не открыт"
 msgstr "Katalogas neatvertas"
 
@@ -512,7 +520,7 @@ msgstr "Katalogas neatvertas"
 msgid "Каталог слишком большой."
 msgstr "Katalogas per didelis."
 
-#: src/malferma_libro/app.py:2141
+#: src/malferma_libro/app.py:2157
 msgid "Каталог удалён из списка."
 msgstr "Katalogas pašalintas iš sąrašo."
 
@@ -536,11 +544,11 @@ msgstr "Knyga"
 msgid "Книга «{title}» уже добавлена. Сохранённые закладки и место чтения будут использованы."
 msgstr "Knyga „{title}“ jau pridėta. Bus naudojamos išsaugotos žymelės ir skaitymo vieta."
 
-#: src/malferma_libro/app.py:787
+#: src/malferma_libro/app.py:789
 msgid "Книга готова к чтению в библиотеке."
 msgstr "Knyga paruošta skaityti bibliotekoje."
 
-#: src/malferma_libro/storage.py:709
+#: src/malferma_libro/storage.py:710
 msgid "Книга не найдена: {book_id}"
 msgstr "Knyga nerasta: {book_id}"
 
@@ -548,11 +556,11 @@ msgstr "Knyga nerasta: {book_id}"
 msgid "Книга не открыта"
 msgstr "Knyga neatverta"
 
-#: src/malferma_libro/app.py:1664
+#: src/malferma_libro/app.py:1667
 msgid "Книга открыта. Позиция чтения сохраняется автоматически."
 msgstr "Knyga atverta. Skaitymo vieta išsaugoma automatiškai."
 
-#: src/malferma_libro/books.py:855 src/malferma_libro/books.py:98 src/malferma_libro/markup.py:63 src/malferma_libro/markup.py:67
+#: src/malferma_libro/books.py:1100 src/malferma_libro/books.py:148 src/malferma_libro/markup.py:63 src/malferma_libro/markup.py:67
 msgid "Книга превышает допустимый размер (64 МиБ)"
 msgstr "Knyga viršija leistiną dydį (64 MiB)"
 
@@ -572,7 +580,7 @@ msgstr "Knygos (EPUB, FB2, FB2.ZIP, TXT, PDF, DjVu, HTML, Markdown, CBZ)"
 msgid "Код завершения {code}"
 msgstr "Baigimo kodas {code}"
 
-#: src/malferma_libro/books.py:753
+#: src/malferma_libro/books.py:995
 msgid "Комментарии"
 msgstr "Komentarai"
 
@@ -592,7 +600,7 @@ msgstr "DjVu kopijavimas nebaigtas: pasikeitė knygos dydis"
 msgid "Копирование PDF не завершено: размер книги изменился"
 msgstr "PDF kopijavimas nebaigtas: pasikeitė knygos dydis"
 
-#: src/malferma_libro/app.py:1047
+#: src/malferma_libro/app.py:1050
 msgid "Копировать"
 msgstr "Kopijuoti"
 
@@ -600,7 +608,7 @@ msgstr "Kopijuoti"
 msgid "Лупа области чтения"
 msgstr "Skaitymo srities didinamasis stiklas"
 
-#: src/malferma_libro/app.py:1192
+#: src/malferma_libro/app.py:1195
 msgid "Максимальная ширина текста"
 msgstr "Didžiausias teksto plotis"
 
@@ -612,11 +620,11 @@ msgstr "DjVu mastelis turi būti teigiamas skaičius"
 msgid "Масштаб PDF должен быть положительным числом"
 msgstr "PDF mastelis turi būti teigiamas skaičius"
 
-#: src/malferma_libro/app.py:881 src/malferma_libro/app.py:885
+#: src/malferma_libro/app.py:883 src/malferma_libro/app.py:887
 msgid "Масштаб страницы, %"
 msgstr "Puslapio mastelis, %"
 
-#: src/malferma_libro/accessibility_ui.py:290 src/malferma_libro/app.py:1207
+#: src/malferma_libro/accessibility_ui.py:290 src/malferma_libro/app.py:1210
 msgid "Межстрочный интервал"
 msgstr "Tarpai tarp eilučių"
 
@@ -632,11 +640,11 @@ msgstr "Piper modelis (*.onnx)"
 msgid "Модель голоса не установлена"
 msgstr "Balso modelis neįdiegtas"
 
-#: src/malferma_libro/app.py:366 src/malferma_libro/app.py:414 src/malferma_libro/shortcuts.py:38
+#: src/malferma_libro/app.py:368 src/malferma_libro/app.py:416 src/malferma_libro/shortcuts.py:38
 msgid "Мои книги"
 msgstr "Mano knygos"
 
-#: src/malferma_libro/app.py:2112
+#: src/malferma_libro/app.py:2128
 msgid "Моя библиотека"
 msgstr "Mano biblioteka"
 
@@ -648,7 +656,7 @@ msgstr "Vienu ekranu aukštyn"
 msgid "На экран вниз"
 msgstr "Vienu ekranu žemyn"
 
-#: src/malferma_libro/app.py:1493
+#: src/malferma_libro/app.py:1496
 msgid "На этой странице нет доступного текста для озвучки. Распознавание сканов пока не поддерживается."
 msgstr "Šiame puslapyje nėra skaitymui balsu prieinamo teksto. Teksto atpažinimas nuskaitytuose vaizduose dar nepalaikomas."
 
@@ -656,11 +664,11 @@ msgstr "Šiame puslapyje nėra skaitymui balsu prieinamo teksto. Teksto atpažin
 msgid "Нажмите новое сочетание клавиш."
 msgstr "Paspauskite naują klavišų derinį."
 
-#: src/malferma_libro/app.py:2068
+#: src/malferma_libro/app.py:2084
 msgid "Назад"
 msgstr "Atgal"
 
-#: src/malferma_libro/app.py:2111
+#: src/malferma_libro/app.py:2127
 msgid "Название"
 msgstr "Pavadinimas"
 
@@ -668,19 +676,19 @@ msgstr "Pavadinimas"
 msgid "Название или автор"
 msgstr "Pavadinimas arba autorius"
 
-#: src/malferma_libro/search_ui.py:313
+#: src/malferma_libro/search_ui.py:312
 msgid "Найдено в тексте страницы: {query}"
 msgstr "Rasta puslapio tekste: {query}"
 
-#: src/malferma_libro/search_ui.py:314
+#: src/malferma_libro/search_ui.py:313
 msgid "Найдено: {query}"
 msgstr "Rasta: {query}"
 
-#: src/malferma_libro/app.py:2083 src/malferma_libro/app.py:374 src/malferma_libro/app.py:375 src/malferma_libro/app.py:524 src/malferma_libro/app.py:899 src/malferma_libro/shortcuts.py:32
+#: src/malferma_libro/app.py:2099 src/malferma_libro/app.py:376 src/malferma_libro/app.py:377 src/malferma_libro/app.py:526 src/malferma_libro/app.py:901 src/malferma_libro/shortcuts.py:32
 msgid "Найти"
 msgstr "Rasti"
 
-#: src/malferma_libro/app.py:1141 src/malferma_libro/app.py:1144 src/malferma_libro/app.py:419 src/malferma_libro/shortcuts.py:34
+#: src/malferma_libro/app.py:1144 src/malferma_libro/app.py:1147 src/malferma_libro/app.py:421 src/malferma_libro/shortcuts.py:34
 msgid "Настройки"
 msgstr "Nuostatos"
 
@@ -700,7 +708,7 @@ msgstr "Nepradėta"
 msgid "Не удалось воспроизвести озвучку."
 msgstr "Nepavyko atkurti skaitymo balsu garso."
 
-#: src/malferma_libro/app.py:625
+#: src/malferma_libro/app.py:627
 msgid "Не удалось выполнить действие"
 msgstr "Nepavyko atlikti veiksmo"
 
@@ -708,7 +716,7 @@ msgstr "Nepavyko atlikti veiksmo"
 msgid "Не удалось выполнить поиск."
 msgstr "Nepavyko atlikti paieškos."
 
-#: src/malferma_libro/app.py:2128
+#: src/malferma_libro/app.py:2144
 msgid "Не удалось добавить каталог"
 msgstr "Nepavyko pridėti katalogo"
 
@@ -716,11 +724,11 @@ msgstr "Nepavyko pridėti katalogo"
 msgid "Не удалось загрузить голос Piper."
 msgstr "Nepavyko įkelti Piper balso."
 
-#: src/malferma_libro/app.py:1815
+#: src/malferma_libro/app.py:1830
 msgid "Не удалось загрузить страницу {page}"
 msgstr "Nepavyko įkelti puslapio {page}"
 
-#: src/malferma_libro/app.py:1816
+#: src/malferma_libro/app.py:1831
 msgid "Не удалось загрузить страницу. Нажмите «Повторить» или выберите другую страницу."
 msgstr "Nepavyko įkelti puslapio. Paspauskite „Bandyti dar kartą“ arba pasirinkite kitą puslapį."
 
@@ -756,7 +764,7 @@ msgstr "Nepavyko nustatyti DjVu puslapio dydžio"
 msgid "Не удалось определить размер страницы PDF"
 msgstr "Nepavyko nustatyti PDF puslapio dydžio"
 
-#: src/malferma_libro/app.py:238
+#: src/malferma_libro/app.py:240
 msgid "Не удалось открыть библиотеку"
 msgstr "Nepavyko atverti bibliotekos"
 
@@ -792,7 +800,7 @@ msgstr "Nepavyko perskaityti DjVu: failas sugadintas arba jo struktūra nepalaik
 msgid "Не удалось прочитать PDF: файл повреждён или имеет неподдерживаемую структуру"
 msgstr "Nepavyko perskaityti PDF: failas sugadintas arba jo struktūra nepalaikoma"
 
-#: src/malferma_libro/books.py:874 src/malferma_libro/markup.py:70
+#: src/malferma_libro/books.py:1119 src/malferma_libro/markup.py:70
 msgid "Не удалось прочитать книгу: {exc}"
 msgstr "Nepavyko perskaityti knygos: {exc}"
 
@@ -800,7 +808,7 @@ msgstr "Nepavyko perskaityti knygos: {exc}"
 msgid "Не удалось прочитать текст на страницах: {count}."
 msgstr "Nepavyko perskaityti teksto {count} puslapiuose."
 
-#: src/malferma_libro/books.py:432
+#: src/malferma_libro/books.py:589
 msgid "Не удалось распаковать файл книги: {name}"
 msgstr "Nepavyko išskleisti failo iš knygos archyvo: {name}"
 
@@ -812,7 +820,7 @@ msgstr "Nepavyko sintezuoti kalbos naudojant Piper."
 msgid "Не удалось скачать голос Piper."
 msgstr "Nepavyko atsisiųsti Piper balso."
 
-#: src/malferma_libro/app.py:1580 src/malferma_libro/app.py:1610 src/malferma_libro/app.py:1632 src/malferma_libro/keybindings_ui.py:295 src/malferma_libro/library_ui.py:206
+#: src/malferma_libro/app.py:1583 src/malferma_libro/app.py:1613 src/malferma_libro/app.py:1635 src/malferma_libro/keybindings_ui.py:295 src/malferma_libro/library_ui.py:206
 msgid "Не удалось сохранить библиотеку"
 msgstr "Nepavyko išsaugoti bibliotekos"
 
@@ -840,11 +848,11 @@ msgstr "Nepavyko išsaugoti DjVu puslapio vaizdo"
 msgid "Не удалось сохранить изображение страницы PDF"
 msgstr "Nepavyko išsaugoti PDF puslapio vaizdo"
 
-#: src/malferma_libro/app.py:2017
+#: src/malferma_libro/app.py:2033
 msgid "Не удалось сохранить место чтения"
 msgstr "Nepavyko išsaugoti skaitymo vietos"
 
-#: src/malferma_libro/app.py:2143
+#: src/malferma_libro/app.py:2159
 msgid "Не удалось сохранить список каталогов"
 msgstr "Nepavyko išsaugoti katalogų sąrašo"
 
@@ -888,11 +896,11 @@ msgstr "Neleistinas PDF mastelis"
 msgid "Недопустимый пароль PDF"
 msgstr "Neleistinas PDF slaptažodis"
 
-#: src/malferma_libro/books.py:408
+#: src/malferma_libro/books.py:565
 msgid "Недопустимый путь в архиве книги"
 msgstr "Neleistinas kelias knygos archyve"
 
-#: src/malferma_libro/books.py:450
+#: src/malferma_libro/books.py:607
 msgid "Недопустимый путь во внутренней ссылке EPUB"
 msgstr "Neleistinas kelias vidinėje EPUB nuorodoje"
 
@@ -912,7 +920,7 @@ msgstr "Nežinoma bibliotekos failo versija."
 msgid "Неизвестный язык озвучки: {language}."
 msgstr "Nežinoma skaitymo balsu kalba: {language}."
 
-#: src/malferma_libro/storage.py:222 src/malferma_libro/storage.py:752 src/malferma_libro/storage.py:788
+#: src/malferma_libro/storage.py:222 src/malferma_libro/storage.py:753 src/malferma_libro/storage.py:789
 msgid "Некорректная закладка."
 msgstr "Netinkama žymelė."
 
@@ -964,7 +972,7 @@ msgstr "Netinkamas knygų sąrašas."
 msgid "Некорректный файл библиотеки."
 msgstr "Netinkamas bibliotekos failas."
 
-#: src/malferma_libro/app.py:854
+#: src/malferma_libro/app.py:856
 msgid "Некоторые книги не удалось открыть"
 msgstr "Kai kurių knygų nepavyko atverti"
 
@@ -984,7 +992,7 @@ msgstr "Nepalaikoma DjVu dokumento struktūra"
 msgid "Неподдерживаемый тип документа DjVu"
 msgstr "Nepalaikomas DjVu dokumento tipas"
 
-#: src/malferma_libro/books.py:596
+#: src/malferma_libro/books.py:785
 msgid "Неподдерживаемый формат главы EPUB: {media}"
 msgstr "Nepalaikomas EPUB skyriaus formatas: {media}"
 
@@ -992,7 +1000,7 @@ msgstr "Nepalaikomas EPUB skyriaus formatas: {media}"
 msgid "Нет доступа. Проверьте права на файл или выберите другой каталог."
 msgstr "Prieiga uždrausta. Patikrinkite failo leidimus arba pasirinkite kitą aplanką."
 
-#: src/malferma_libro/app.py:2209
+#: src/malferma_libro/app.py:2225
 msgid "Нет поддерживаемой прямой загрузки"
 msgstr "Palaikomo tiesioginio atsisiuntimo nėra"
 
@@ -1008,11 +1016,11 @@ msgstr "DjVu puslapio numeris nepatenka į leistiną intervalą"
 msgid "Номер страницы PDF вне допустимого диапазона"
 msgstr "PDF puslapio numeris nepatenka į leistiną intervalą"
 
-#: src/malferma_libro/app.py:1175
+#: src/malferma_libro/app.py:1178
 msgid "Ночной"
 msgstr "Naktinė"
 
-#: src/malferma_libro/app.py:422
+#: src/malferma_libro/app.py:424
 msgid "О приложении"
 msgstr "Apie programą"
 
@@ -1044,7 +1052,7 @@ msgstr "PDF apdorojimo programa nesukūrė puslapio vaizdo"
 msgid "Обработчик PDF создал недопустимое изображение"
 msgstr "PDF apdorojimo programa sukūrė netinkamą vaizdą"
 
-#: src/malferma_libro/app.py:525 src/malferma_libro/app.py:865 src/malferma_libro/app.py:866 src/malferma_libro/outline_ui.py:36 src/malferma_libro/outline_ui.py:47 src/malferma_libro/shortcuts.py:60
+#: src/malferma_libro/app.py:527 src/malferma_libro/app.py:867 src/malferma_libro/app.py:868 src/malferma_libro/outline_ui.py:36 src/malferma_libro/outline_ui.py:47 src/malferma_libro/shortcuts.py:60
 msgid "Оглавление"
 msgstr "Turinys"
 
@@ -1056,23 +1064,23 @@ msgstr "Tikėtasi OPDS katalogo Atom formatu."
 msgid "Ожидание данных…"
 msgstr "Laukiama duomenų…"
 
-#: src/malferma_libro/app.py:1000 src/malferma_libro/app.py:1000 src/malferma_libro/app.py:1526 src/malferma_libro/shortcuts.py:63
+#: src/malferma_libro/app.py:1003 src/malferma_libro/app.py:1003 src/malferma_libro/app.py:1529 src/malferma_libro/shortcuts.py:63
 msgid "Озвучить"
 msgstr "Skaityti balsu"
 
-#: src/malferma_libro/accessibility_ui.py:237 src/malferma_libro/app.py:1210
+#: src/malferma_libro/accessibility_ui.py:237 src/malferma_libro/app.py:1213
 msgid "Озвучка"
 msgstr "Skaitymas balsu"
 
-#: src/malferma_libro/app.py:1574
+#: src/malferma_libro/app.py:1577
 msgid "Озвучка книги завершена."
 msgstr "Knyga baigta skaityti balsu."
 
-#: src/malferma_libro/app.py:1531
+#: src/malferma_libro/app.py:1534
 msgid "Озвучка приостановлена"
 msgstr "Skaitymas balsu pristabdytas"
 
-#: src/malferma_libro/app.py:993
+#: src/malferma_libro/app.py:996
 msgid "Озвучка через Piper"
 msgstr "Skaitymas balsu su Piper"
 
@@ -1084,7 +1092,7 @@ msgstr "Išjungta"
 msgid "Отключить"
 msgstr "Išjungti"
 
-#: src/malferma_libro/app.py:907
+#: src/malferma_libro/app.py:909
 msgid "Откройте книгу в библиотеке."
 msgstr "Atverkite knygą bibliotekoje."
 
@@ -1092,7 +1100,7 @@ msgstr "Atverkite knygą bibliotekoje."
 msgid "Откройте книгу или подключите OPDS-каталог во вкладке «Сетевые библиотеки»."
 msgstr "Atverkite knygą arba prisijunkite prie OPDS katalogo kortelėje „Tinklo bibliotekos“."
 
-#: src/malferma_libro/app.py:1171
+#: src/malferma_libro/app.py:1174
 msgid "Открывать последнюю книгу при запуске"
 msgstr "Paleidžiant atverti paskutinę knygą"
 
@@ -1108,19 +1116,19 @@ msgstr "Atverti"
 msgid "Открыть закладку: {chapter}. {excerpt}"
 msgstr "Atverti žymelę: {chapter}. {excerpt}"
 
-#: src/malferma_libro/app.py:523 src/malferma_libro/app.py:809 src/malferma_libro/desktop.py:257 src/malferma_libro/shortcuts.py:30
+#: src/malferma_libro/app.py:525 src/malferma_libro/app.py:811 src/malferma_libro/desktop.py:257 src/malferma_libro/shortcuts.py:30
 msgid "Открыть книги"
 msgstr "Atverti knygas"
 
-#: src/malferma_libro/app.py:2203
+#: src/malferma_libro/app.py:2219
 msgid "Открыть раздел"
 msgstr "Atverti skyrių"
 
-#: src/malferma_libro/app.py:361 src/malferma_libro/narration_ui.py:159
+#: src/malferma_libro/app.py:363 src/malferma_libro/narration_ui.py:159
 msgid "Открыть…"
 msgstr "Atverti…"
 
-#: src/malferma_libro/app.py:2107 src/malferma_libro/app.py:813 src/malferma_libro/bookmarks_ui.py:175 src/malferma_libro/bookmarks_ui.py:175 src/malferma_libro/keybindings_ui.py:230 src/malferma_libro/library_ui.py:257 src/malferma_libro/narration_ui.py:159
+#: src/malferma_libro/app.py:2123 src/malferma_libro/app.py:815 src/malferma_libro/bookmarks_ui.py:175 src/malferma_libro/bookmarks_ui.py:175 src/malferma_libro/keybindings_ui.py:230 src/malferma_libro/library_ui.py:257 src/malferma_libro/narration_ui.py:159
 msgid "Отмена"
 msgstr "Atsisakyti"
 
@@ -1136,11 +1144,11 @@ msgstr "Atsisakyti"
 msgid "Отменить поиск"
 msgstr "Atšaukti paiešką"
 
-#: src/malferma_libro/app.py:1170
+#: src/malferma_libro/app.py:1173
 msgid "Оформление окна"
 msgstr "Lango išvaizda"
 
-#: src/malferma_libro/app.py:1525
+#: src/malferma_libro/app.py:1528
 msgid "Пауза"
 msgstr "Pristabdyti"
 
@@ -1152,7 +1160,11 @@ msgstr "Pagal autorių"
 msgid "По названию"
 msgstr "Pagal pavadinimą"
 
-#: src/malferma_libro/app.py:1213
+#: src/malferma_libro/illustration_ui.py:308
+msgid "По размеру окна"
+msgstr "Talpinti lange"
+
+#: src/malferma_libro/app.py:1216
 msgid "По тексту главы"
 msgstr "Pagal skyriaus tekstą"
 
@@ -1172,51 +1184,51 @@ msgstr "Sugadinta DjVu failo struktūra"
 msgid "Повреждён каталог страниц DjVu"
 msgstr "Sugadintas DjVu puslapių katalogas"
 
-#: src/malferma_libro/books.py:448 src/malferma_libro/books.py:471
+#: src/malferma_libro/books.py:605 src/malferma_libro/books.py:628
 msgid "Повреждённая внутренняя ссылка EPUB"
 msgstr "Sugadinta vidinė EPUB nuoroda"
 
-#: src/malferma_libro/books.py:394
+#: src/malferma_libro/books.py:551
 msgid "Повреждённый ZIP-архив книги"
 msgstr "Sugadintas knygos ZIP archyvas"
 
-#: src/malferma_libro/app.py:1490
+#: src/malferma_libro/app.py:1493
 msgid "Повторите загрузку страницы."
 msgstr "Bandykite įkelti puslapį dar kartą."
 
-#: src/malferma_libro/app.py:889 src/malferma_libro/task_ui.py:204 src/malferma_libro/task_ui.py:204
+#: src/malferma_libro/app.py:891 src/malferma_libro/task_ui.py:204 src/malferma_libro/task_ui.py:204
 msgid "Повторить"
 msgstr "Bandyti dar kartą"
 
-#: src/malferma_libro/books.py:410
+#: src/malferma_libro/books.py:567
 msgid "Повторяющиеся имена файлов в архиве книги"
 msgstr "Pasikartojantys failų vardai knygos archyve"
 
-#: src/malferma_libro/books.py:557
+#: src/malferma_libro/books.py:715
 msgid "Повторяющийся идентификатор в списке файлов EPUB"
 msgstr "Pasikartojantis identifikatorius EPUB failų sąraše"
 
-#: src/malferma_libro/books.py:851
+#: src/malferma_libro/books.py:1096
 msgid "Поддерживаются EPUB, FB2, FB2.ZIP, TXT, PDF, DjVu, HTML, Markdown и CBZ"
 msgstr "Palaikomi EPUB, FB2, FB2.ZIP, TXT, PDF, DjVu, HTML, Markdown ir CBZ"
 
-#: src/malferma_libro/app.py:2097
+#: src/malferma_libro/app.py:2113
 msgid "Поддерживаются прямые загрузки EPUB, FB2, TXT, PDF, DjVu, HTML, Markdown и CBZ. Каталоги с авторизацией и DRM пока не поддерживаются."
 msgstr "Palaikomi tiesioginiai EPUB, FB2, TXT, PDF, DjVu, HTML, Markdown ir CBZ atsisiuntimai. Katalogai su prisijungimu ir DRM dar nepalaikomi."
 
-#: src/malferma_libro/app.py:2051 src/malferma_libro/app.py:2095
+#: src/malferma_libro/app.py:2067 src/malferma_libro/app.py:2111
 msgid "Подключите публичный OPDS 1.x каталог или каталог Calibre в локальной сети."
 msgstr "Prisijunkite prie viešo OPDS 1.x katalogo arba Calibre katalogo vietiniame tinkle."
 
-#: src/malferma_libro/app.py:2058 src/malferma_libro/app.py:2063 src/malferma_libro/app.py:2064
+#: src/malferma_libro/app.py:2074 src/malferma_libro/app.py:2079 src/malferma_libro/app.py:2080
 msgid "Подключиться"
 msgstr "Prisijungti"
 
-#: src/malferma_libro/app.py:2079
+#: src/malferma_libro/app.py:2095
 msgid "Поиск (если каталог его поддерживает)"
 msgstr "Paieška (jei katalogas ją palaiko)"
 
-#: src/malferma_libro/app.py:1796 src/malferma_libro/app.py:1807
+#: src/malferma_libro/app.py:1811 src/malferma_libro/app.py:1822
 msgid "Поиск и озвучка доступны в тексте страницы."
 msgstr "Puslapio tekste galima ieškoti ir skaityti jį balsu."
 
@@ -1224,7 +1236,7 @@ msgstr "Puslapio tekste galima ieškoti ir skaityti jį balsu."
 msgid "Поиск отменён."
 msgstr "Paieška atšaukta."
 
-#: src/malferma_libro/app.py:1640 src/malferma_libro/app.py:897 src/malferma_libro/search_ui.py:42
+#: src/malferma_libro/app.py:1643 src/malferma_libro/app.py:899 src/malferma_libro/search_ui.py:42
 msgid "Поиск по всей книге"
 msgstr "Ieškoti visoje knygoje"
 
@@ -1240,7 +1252,7 @@ msgstr "Rodomi pirmieji {count} atitikmenys. Patikslinkite užklausą."
 msgid "Показать верхнюю панель"
 msgstr "Rodyti viršutinę juostą"
 
-#: src/malferma_libro/app.py:382 src/malferma_libro/app.py:465 src/malferma_libro/app.py:521 src/malferma_libro/shortcuts.py:41
+#: src/malferma_libro/app.py:384 src/malferma_libro/app.py:467 src/malferma_libro/app.py:523 src/malferma_libro/shortcuts.py:41
 msgid "Полноэкранный режим"
 msgstr "Viso ekrano veiksena"
 
@@ -1248,7 +1260,7 @@ msgstr "Viso ekrano veiksena"
 msgid "Положение в книге должно быть целым неотрицательным числом."
 msgstr "Vieta knygoje turi būti neneigiamas sveikasis skaičius."
 
-#: src/malferma_libro/accessibility_ui.py:280 src/malferma_libro/app.py:1206
+#: src/malferma_libro/accessibility_ui.py:280 src/malferma_libro/app.py:1209
 msgid "Полужирный текст"
 msgstr "Pusjuodis tekstas"
 
@@ -1256,11 +1268,11 @@ msgstr "Pusjuodis tekstas"
 msgid "Пользовательские"
 msgstr "Pasirinktiniai"
 
-#: src/malferma_libro/books.py:593
+#: src/malferma_libro/books.py:782
 msgid "Порядок глав EPUB ссылается на отсутствующий файл"
 msgstr "EPUB skyrių eilė nurodo trūkstamą failą"
 
-#: src/malferma_libro/app.py:526 src/malferma_libro/app.py:869 src/malferma_libro/shortcuts.py:56
+#: src/malferma_libro/app.py:528 src/malferma_libro/app.py:871 src/malferma_libro/shortcuts.py:56
 msgid "Предыдущая глава"
 msgstr "Ankstesnis skyrius"
 
@@ -1272,19 +1284,19 @@ msgstr "Ankstesnis puslapis"
 msgid "Предыдущее совпадение"
 msgstr "Ankstesnis atitikmuo"
 
-#: src/malferma_libro/app.py:1185
+#: src/malferma_libro/app.py:1188
 msgid "Приглушение цветов страницы; яркость монитора не меняется."
 msgstr "Pritemdomos puslapio spalvos; monitoriaus ryškumas nekeičiamas."
 
-#: src/malferma_libro/accessibility_ui.py:291 src/malferma_libro/app.py:1208
+#: src/malferma_libro/accessibility_ui.py:291 src/malferma_libro/app.py:1211
 msgid "Применить"
 msgstr "Taikyti"
 
-#: src/malferma_libro/books.py:770
+#: src/malferma_libro/books.py:1013
 msgid "Примечание {number}"
 msgstr "Pastaba {number}"
 
-#: src/malferma_libro/books.py:753 src/malferma_libro/outline_ui.py:119 src/malferma_libro/outline_ui.py:66
+#: src/malferma_libro/books.py:995 src/malferma_libro/outline_ui.py:119 src/malferma_libro/outline_ui.py:66
 msgid "Примечания"
 msgstr "Pastabos"
 
@@ -1292,7 +1304,7 @@ msgstr "Pastabos"
 msgid "Проверьте доступ к файлу или каталогу и повторите действие."
 msgstr "Patikrinkite prieigą prie failo ar aplanko ir bandykite dar kartą."
 
-#: src/malferma_libro/app.py:1525
+#: src/malferma_libro/app.py:1528
 msgid "Продолжить"
 msgstr "Tęsti"
 
@@ -1316,7 +1328,7 @@ msgstr "Klausyti pavyzdžio"
 msgid "Прочитано"
 msgstr "Perskaityta"
 
-#: src/malferma_libro/books.py:744
+#: src/malferma_libro/books.py:986
 msgid "Раздел {number}"
 msgstr "Dalis {number}"
 
@@ -1324,7 +1336,7 @@ msgstr "Dalis {number}"
 msgid "Размер ответа превышает допустимый предел."
 msgstr "Atsakymo dydis viršija leistiną ribą."
 
-#: src/malferma_libro/accessibility_ui.py:276 src/malferma_libro/app.py:1191
+#: src/malferma_libro/accessibility_ui.py:276 src/malferma_libro/app.py:1194
 msgid "Размер текста"
 msgstr "Teksto dydis"
 
@@ -1332,11 +1344,11 @@ msgstr "Teksto dydis"
 msgid "Размер фрагмента должен быть положительным."
 msgstr "Fragmento dydis turi būti teigiamas."
 
-#: src/malferma_libro/app.py:876
+#: src/malferma_libro/app.py:878
 msgid "Размер шрифта"
 msgstr "Šrifto dydis"
 
-#: src/malferma_libro/books.py:420
+#: src/malferma_libro/books.py:577
 msgid "Распакованный размер книги превышает допустимый предел"
 msgstr "Išskleistos knygos dydis viršija leistiną ribą"
 
@@ -1344,23 +1356,23 @@ msgstr "Išskleistos knygos dydis viršija leistiną ribą"
 msgid "Режим"
 msgstr "Veiksena"
 
-#: src/malferma_libro/accessibility_ui.py:291 src/malferma_libro/app.py:1208
+#: src/malferma_libro/accessibility_ui.py:291 src/malferma_libro/app.py:1211
 msgid "Режим для слабовидящих"
 msgstr "Silpnaregių veiksena"
 
-#: src/malferma_libro/search_ui.py:311
+#: src/malferma_libro/search_ui.py:310
 msgid "Результат {number} из {count}"
 msgstr "Rezultatas {number} iš {count}"
 
-#: src/malferma_libro/app.py:420 src/malferma_libro/app.py:582 src/malferma_libro/app.py:603 src/malferma_libro/shortcuts.py:43
+#: src/malferma_libro/app.py:422 src/malferma_libro/app.py:584 src/malferma_libro/app.py:605 src/malferma_libro/shortcuts.py:43
 msgid "Руководство пользователя"
 msgstr "Naudotojo vadovas"
 
-#: src/malferma_libro/app.py:1150
+#: src/malferma_libro/app.py:1153
 msgid "Светлый"
 msgstr "Šviesi"
 
-#: src/malferma_libro/app.py:1175
+#: src/malferma_libro/app.py:1178
 msgid "Сепия"
 msgstr "Sepija"
 
@@ -1384,39 +1396,39 @@ msgstr "Serveris grąžino nepalaikomo tipo failą."
 msgid "Сервер передал неполный файл."
 msgstr "Serveris perdavė nepilną failą."
 
-#: src/malferma_libro/app.py:368 src/malferma_libro/app.py:416 src/malferma_libro/shortcuts.py:40
+#: src/malferma_libro/app.py:370 src/malferma_libro/app.py:418 src/malferma_libro/shortcuts.py:40
 msgid "Сетевые библиотеки"
 msgstr "Tinklo bibliotekos"
 
-#: src/malferma_libro/app.py:2050 src/malferma_libro/app.py:2094
+#: src/malferma_libro/app.py:2066 src/malferma_libro/app.py:2110
 msgid "Сетевые библиотеки OPDS"
 msgstr "OPDS tinklo bibliotekos"
 
-#: src/malferma_libro/books.py:415
+#: src/malferma_libro/books.py:572
 msgid "Символические ссылки в архиве книги запрещены"
 msgstr "Simbolinės nuorodos knygos archyve draudžiamos"
 
-#: src/malferma_libro/app.py:1148
+#: src/malferma_libro/app.py:1151
 msgid "Системные шрифты, масштаб и оконные кнопки задаёт рабочая среда. Виджеты используют libadwaita."
 msgstr "Sistemos šriftus, mastelį ir lango mygtukus nustato darbalaukio aplinka. Valdikliai naudoja libadwaita."
 
-#: src/malferma_libro/app.py:1153 src/malferma_libro/appearance.py:22
+#: src/malferma_libro/app.py:1156 src/malferma_libro/appearance.py:22
 msgid "Системный"
 msgstr "Sistemos"
 
-#: src/malferma_libro/app.py:2205
+#: src/malferma_libro/app.py:2221
 msgid "Скачать {format}"
 msgstr "Atsisiųsti {format}"
 
-#: src/malferma_libro/app.py:2255
+#: src/malferma_libro/app.py:2271
 msgid "Скачивание книги…"
 msgstr "Atsisiunčiama knyga…"
 
-#: src/malferma_libro/accessibility_ui.py:265 src/malferma_libro/app.py:1218
+#: src/malferma_libro/accessibility_ui.py:265 src/malferma_libro/app.py:1221
 msgid "Скорость, %"
 msgstr "Greitis, %"
 
-#: src/malferma_libro/app.py:527 src/malferma_libro/app.py:870 src/malferma_libro/shortcuts.py:58
+#: src/malferma_libro/app.py:529 src/malferma_libro/app.py:872 src/malferma_libro/shortcuts.py:58
 msgid "Следующая глава"
 msgstr "Kitas skyrius"
 
@@ -1428,7 +1440,7 @@ msgstr "Kitas puslapis"
 msgid "Следующее совпадение"
 msgstr "Kitas atitikmuo"
 
-#: src/malferma_libro/books.py:399
+#: src/malferma_libro/books.py:556
 msgid "Слишком много файлов в архиве книги"
 msgstr "Knygos archyve per daug failų"
 
@@ -1436,7 +1448,7 @@ msgstr "Knygos archyve per daug failų"
 msgid "Слишком сложная структура документа DjVu"
 msgstr "DjVu dokumento struktūra per sudėtinga"
 
-#: src/malferma_libro/app.py:1480 src/malferma_libro/bookmarks_ui.py:41
+#: src/malferma_libro/app.py:1483 src/malferma_libro/bookmarks_ui.py:41
 msgid "Сначала откройте книгу."
 msgstr "Pirmiausia atverkite knygą."
 
@@ -1460,7 +1472,7 @@ msgstr "Išsaugoti"
 msgid "Сочетание занято: {action}"
 msgstr "Klavišų derinys jau priskirtas: {action}"
 
-#: src/malferma_libro/accessibility_ui.py:270 src/malferma_libro/accessibility_ui.py:318 src/malferma_libro/accessibility_ui.py:319 src/malferma_libro/app.py:1196 src/malferma_libro/app.py:529 src/malferma_libro/shortcuts.py:36
+#: src/malferma_libro/accessibility_ui.py:270 src/malferma_libro/accessibility_ui.py:318 src/malferma_libro/accessibility_ui.py:319 src/malferma_libro/app.py:1199 src/malferma_libro/app.py:531 src/malferma_libro/shortcuts.py:36
 msgid "Специальные возможности"
 msgstr "Prieinamumas"
 
@@ -1468,7 +1480,7 @@ msgstr "Prieinamumas"
 msgid "Список книг и настройки восстановлены из последней резервной копии."
 msgstr "Knygų sąrašas ir nuostatos atkurti iš naujausios atsarginės kopijos."
 
-#: src/malferma_libro/app.py:1006 src/malferma_libro/app.py:531 src/malferma_libro/shortcuts.py:54
+#: src/malferma_libro/app.py:1009 src/malferma_libro/app.py:533 src/malferma_libro/shortcuts.py:54
 msgid "Стандартный размер текста"
 msgstr "Numatytasis teksto dydis"
 
@@ -1476,7 +1488,7 @@ msgstr "Numatytasis teksto dydis"
 msgid "Стоп"
 msgstr "Stabdyti"
 
-#: src/malferma_libro/books.py:809 src/malferma_libro/books.py:823 src/malferma_libro/cbz.py:528 src/malferma_libro/outline_ui.py:120 src/malferma_libro/outline_ui.py:86
+#: src/malferma_libro/books.py:1054 src/malferma_libro/books.py:1068 src/malferma_libro/cbz.py:528 src/malferma_libro/outline_ui.py:120 src/malferma_libro/outline_ui.py:86
 msgid "Страница {number}"
 msgstr "Puslapis {number}"
 
@@ -1484,23 +1496,23 @@ msgstr "Puslapis {number}"
 msgid "Страница {page}"
 msgstr "Puslapis {page}"
 
-#: src/malferma_libro/app.py:1792 src/malferma_libro/pagination.py:152
+#: src/malferma_libro/app.py:1807 src/malferma_libro/pagination.py:152
 msgid "Страница {page} из {pages}"
 msgstr "Puslapis {page} iš {pages}"
 
-#: src/malferma_libro/app.py:2033
+#: src/malferma_libro/app.py:2049
 msgid "Страница {page} из {pages}  ·  {percent}% книги"
 msgstr "Puslapis {page} iš {pages}  ·  {percent}% knygos"
 
-#: src/malferma_libro/app.py:1797 src/malferma_libro/app.py:1808
+#: src/malferma_libro/app.py:1812 src/malferma_libro/app.py:1823
 msgid "Страница без текстового слоя. Скан доступен для просмотра; OCR пока не поддерживается."
 msgstr "Puslapyje nėra teksto sluoksnio. Nuskaitytą vaizdą galima peržiūrėti; OCR dar nepalaikomas."
 
-#: src/malferma_libro/app.py:957 src/malferma_libro/app.py:960
+#: src/malferma_libro/app.py:960 src/malferma_libro/app.py:963
 msgid "Страница документа"
 msgstr "Dokumento puslapis"
 
-#: src/malferma_libro/app.py:1172 src/malferma_libro/app.py:943 src/malferma_libro/app.py:997 src/malferma_libro/app.py:998
+#: src/malferma_libro/app.py:1000 src/malferma_libro/app.py:1001 src/malferma_libro/app.py:1175 src/malferma_libro/app.py:945
 msgid "Страница книги"
 msgstr "Knygos puslapis"
 
@@ -1512,7 +1524,7 @@ msgstr "Puslapiai"
 msgid "Страницы {first}–{last} из {pages}"
 msgstr "Puslapiai {first}–{last} iš {pages}"
 
-#: src/malferma_libro/books.py:577 src/malferma_libro/books.py:724 src/malferma_libro/markup.py:110 src/malferma_libro/markup.py:229 src/malferma_libro/markup.py:380 src/malferma_libro/markup.py:427
+#: src/malferma_libro/books.py:762 src/malferma_libro/books.py:963 src/malferma_libro/markup.py:110 src/malferma_libro/markup.py:229 src/malferma_libro/markup.py:380 src/malferma_libro/markup.py:427
 msgid "Текст книги превышает допустимый размер"
 msgstr "Knygos tekstas viršija leistiną dydį"
 
@@ -1520,15 +1532,15 @@ msgstr "Knygos tekstas viršija leistiną dydį"
 msgid "Текст озвучки должен быть строкой."
 msgstr "Balsu skaitomas tekstas turi būti simbolių eilutė."
 
-#: src/malferma_libro/app.py:984 src/malferma_libro/app.py:989
+#: src/malferma_libro/app.py:987 src/malferma_libro/app.py:992
 msgid "Текст страницы · поиск и озвучка"
 msgstr "Puslapio tekstas · paieška ir skaitymas balsu"
 
-#: src/malferma_libro/books.py:869
+#: src/malferma_libro/books.py:1114
 msgid "Текстовый файл пуст"
 msgstr "Tekstinis failas tuščias"
 
-#: src/malferma_libro/app.py:1150
+#: src/malferma_libro/app.py:1153
 msgid "Тёмный"
 msgstr "Tamsi"
 
@@ -1536,7 +1548,11 @@ msgstr "Tamsi"
 msgid "Увеличение лупы"
 msgstr "Didinamojo stiklo mastelis"
 
-#: src/malferma_libro/app.py:1008 src/malferma_libro/app.py:532 src/malferma_libro/shortcuts.py:50
+#: src/malferma_libro/illustration_ui.py:307
+msgid "Увеличить"
+msgstr "Didinti"
+
+#: src/malferma_libro/app.py:1011 src/malferma_libro/app.py:534 src/malferma_libro/shortcuts.py:50
 msgid "Увеличить текст"
 msgstr "Didinti tekstą"
 
@@ -1544,15 +1560,15 @@ msgstr "Didinti tekstą"
 msgid "Удалить закладку"
 msgstr "Pašalinti žymelę"
 
-#: src/malferma_libro/app.py:2060
+#: src/malferma_libro/app.py:2076
 msgid "Удалить каталог из списка"
 msgstr "Pašalinti katalogą iš sąrašo"
 
-#: src/malferma_libro/app.py:1204
+#: src/malferma_libro/app.py:1207
 msgid "Удерживайте правую кнопку мыши и проведите влево или вправо для перехода между главами или страницами."
 msgstr "Laikykite nuspaustą dešinįjį pelės mygtuką ir judinkite pelę į kairę arba į dešinę, kad pereitumėte iš vieno skyriaus ar puslapio į kitą."
 
-#: src/malferma_libro/storage.py:824
+#: src/malferma_libro/storage.py:825
 msgid "Укажите название каталога."
 msgstr "Nurodykite katalogo pavadinimą."
 
@@ -1560,11 +1576,15 @@ msgstr "Nurodykite katalogo pavadinimą."
 msgid "Укажите полный адрес OPDS-каталога: https://example.org/opds."
 msgstr "Nurodykite visą OPDS katalogo adresą: https://example.org/opds."
 
-#: src/malferma_libro/books.py:795
+#: src/malferma_libro/books.py:1040
 msgid "Указанный путь не является файлом"
 msgstr "Nurodytas kelias nėra failas"
 
-#: src/malferma_libro/app.py:1004 src/malferma_libro/app.py:530 src/malferma_libro/shortcuts.py:52
+#: src/malferma_libro/illustration_ui.py:306
+msgid "Уменьшить"
+msgstr "Mažinti"
+
+#: src/malferma_libro/app.py:1007 src/malferma_libro/app.py:532 src/malferma_libro/shortcuts.py:52
 msgid "Уменьшить текст"
 msgstr "Mažinti tekstą"
 
@@ -1592,7 +1612,7 @@ msgstr "PDF failas tuščias arba viršija leistiną 64 MiB dydį"
 msgid "Файл библиотеки повреждён. Исходный файл сохранён: {preserved}"
 msgstr "Bibliotekos failas sugadintas. Pradinis failas išsaugotas: {preserved}"
 
-#: src/malferma_libro/books.py:417 src/malferma_libro/books.py:434
+#: src/malferma_libro/books.py:574 src/malferma_libro/books.py:591
 msgid "Файл внутри книги превышает допустимый размер"
 msgstr "Failas knygos viduje viršija leistiną dydį"
 
@@ -1608,11 +1628,11 @@ msgstr "Faile nėra skaitomo teksto."
 msgid "Файл не является документом DjVu"
 msgstr "Failas nėra DjVu dokumentas"
 
-#: src/malferma_libro/books.py:705
+#: src/malferma_libro/books.py:909
 msgid "Файл не является книгой FB2"
 msgstr "Failas nėra FB2 knyga"
 
-#: src/malferma_libro/books.py:276 src/malferma_libro/markup.py:39
+#: src/malferma_libro/books.py:422 src/malferma_libro/markup.py:39
 msgid "Файл разметки слишком сложный."
 msgstr "Žymėjimo failas per sudėtingas."
 
@@ -1628,7 +1648,7 @@ msgstr "Piper balso failai nepraėjo patikros."
 msgid "Фильтр библиотеки"
 msgstr "Bibliotekos filtras"
 
-#: src/malferma_libro/app.py:1188
+#: src/malferma_libro/app.py:1191
 msgid "Фон страницы"
 msgstr "Puslapio fonas"
 
@@ -1636,11 +1656,11 @@ msgstr "Puslapio fonas"
 msgid "Формат ответа не совпадает с форматом книги."
 msgstr "Atsakymo formatas neatitinka knygos formato."
 
-#: src/malferma_libro/app.py:1173
+#: src/malferma_libro/app.py:1176
 msgid "Цвета и шрифты страницы настраиваются отдельно от интерфейса."
 msgstr "Puslapio spalvos ir šriftai nustatomi atskirai nuo sąsajos."
 
-#: src/malferma_libro/app.py:573
+#: src/malferma_libro/app.py:575
 msgid "Читалка EPUB, FB2, TXT, PDF, DjVu, HTML, Markdown и CBZ с локальной библиотекой и каталогами OPDS."
 msgstr "EPUB, FB2, TXT, PDF, DjVu, HTML, Markdown ir CBZ skaityklė su vietine biblioteka ir OPDS katalogais."
 
@@ -1648,7 +1668,7 @@ msgstr "EPUB, FB2, TXT, PDF, DjVu, HTML, Markdown ir CBZ skaityklė su vietine b
 msgid "Читаю"
 msgstr "Skaitau"
 
-#: src/malferma_libro/app.py:367 src/malferma_libro/app.py:415 src/malferma_libro/shortcuts.py:27 src/malferma_libro/shortcuts.py:39
+#: src/malferma_libro/app.py:369 src/malferma_libro/app.py:417 src/malferma_libro/shortcuts.py:27 src/malferma_libro/shortcuts.py:39
 msgid "Чтение"
 msgstr "Skaitymas"
 
@@ -1660,7 +1680,7 @@ msgstr "DjVu puslapio plotis turi būti teigiamas sveikasis skaičius"
 msgid "Ширина страницы PDF должна быть положительным целым числом"
 msgstr "PDF puslapio plotis turi būti teigiamas sveikasis skaičius"
 
-#: src/malferma_libro/app.py:1190
+#: src/malferma_libro/app.py:1193
 msgid "Шрифт книги"
 msgstr "Knygos šriftas"
 
@@ -1668,7 +1688,7 @@ msgstr "Knygos šriftas"
 msgid "Это сочетание зарезервировано системой."
 msgstr "Šis klavišų derinys rezervuotas sistemos."
 
-#: src/malferma_libro/storage.py:827
+#: src/malferma_libro/storage.py:828
 msgid "Этот каталог уже добавлен."
 msgstr "Šis katalogas jau pridėtas."
 
@@ -1676,11 +1696,11 @@ msgstr "Šis katalogas jau pridėtas."
 msgid "Этот формат книги не поддерживается."
 msgstr "Šis knygos formatas nepalaikomas."
 
-#: src/malferma_libro/accessibility_ui.py:261 src/malferma_libro/app.py:1217 src/malferma_libro/app.py:590 src/malferma_libro/app.py:591
+#: src/malferma_libro/accessibility_ui.py:261 src/malferma_libro/app.py:1220 src/malferma_libro/app.py:592 src/malferma_libro/app.py:593
 msgid "Язык"
 msgstr "Kalba"
 
-#: src/malferma_libro/app.py:1169 src/malferma_libro/app.py:588
+#: src/malferma_libro/app.py:1172 src/malferma_libro/app.py:590
 msgid "Язык интерфейса"
 msgstr "Sąsajos kalba"
 
@@ -1688,11 +1708,11 @@ msgstr "Sąsajos kalba"
 msgid "Язык озвучки «{language}» больше не поддерживается. Выбрано автоматическое определение языка."
 msgstr "Skaitymo balsu kalba „{language}“ nebepalaikoma. Pasirinktas automatinis kalbos nustatymas."
 
-#: src/malferma_libro/app.py:1194
+#: src/malferma_libro/app.py:1197
 msgid "Яркость страницы, %"
 msgstr "Puslapio ryškumas, %"
 
-#: src/malferma_libro/books.py:596
+#: src/malferma_libro/books.py:785
 msgid "не указан"
 msgstr "nenurodytas"
 

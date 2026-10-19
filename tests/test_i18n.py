@@ -27,7 +27,7 @@ SPEC.loader.exec_module(translations)
 
 def header(language="en", plurals="nplurals=2; plural=(n != 1);"):
     return translations.Entry("", {0: (
-        "Project-Id-Version: Malferma Libro 0.1.0\n"
+        "Project-Id-Version: Malferma Libro 0.1.1\n"
         f"Language: {language}\n"
         "MIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\n"
         "Content-Transfer-Encoding: 8bit\n"
@@ -60,7 +60,7 @@ class CatalogTests(unittest.TestCase):
 
     def test_standard_po_multiline_context_and_plural_round_trip(self):
         fixture = '''msgid ""
-msgstr "Project-Id-Version: Malferma Libro 0.1.0\\n"
+msgstr "Project-Id-Version: Malferma Libro 0.1.1\\n"
 "Language: en\\n"
 "Content-Type: text/plain; charset=UTF-8\\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\\n"
@@ -150,7 +150,7 @@ msgstr "line\\nwith \\"quotes\\""
             with self.subTest(language=language):
                 self.assertEqual(manual_language(language), language)
                 self.assertIn(f"--manual={language}", short_help(language))
-                self.assertIn("0.1.0", short_help(language))
+                self.assertIn("0.1.1", short_help(language))
         self.assertEqual(manual_language("ar"), "en")
         self.assertEqual(short_help("he"), short_help("en"))
 

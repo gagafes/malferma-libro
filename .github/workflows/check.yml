@@ -34,6 +34,13 @@ jobs:
           GSK_RENDERER: cairo
           GTK_A11Y: none
         run: xvfb-run -a dbus-run-session -- make gui-test
+      - name: Check illustration layout at 200 percent scale
+        env:
+          GSK_RENDERER: cairo
+          GTK_A11Y: none
+          GDK_SCALE: 2
+          PYTHONPATH: src
+        run: xvfb-run -a --server-args='-screen 0 2560x2048x24' dbus-run-session -- /usr/bin/python3 -B packaging/check_gui.py --pattern test_gui_illustrations.py
       - name: Build current release files
         run: make release
       - name: Verify release checksums

@@ -6,8 +6,11 @@ original layout and are rendered lazily, without executable content.
 
 from __future__ import annotations
 
-from collections.abc import Iterator
+from collections.abc import Callable, Iterator
+import base64
+import binascii
 from dataclasses import dataclass, field
+import hashlib
 from html.parser import HTMLParser
 from pathlib import Path
 import posixpath
@@ -20,6 +23,14 @@ import zipfile
 import zlib
 
 from .i18n import _
+from .illustrations import (
+    ImageData, InlineImage, validate_illustration,
+    MAX_IMAGE_BYTES as MAX_ILLUSTRATION_BYTES,
+    MAX_TOTAL_IMAGE_BYTES as MAX_ILLUSTRATION_TOTAL,
+    MAX_IMAGES as MAX_ILLUSTRATIONS,
+    MAX_IMAGE_REFERENCES,
+)
+from .tasks import check_cancel
 from .xmlutil import XMLLimitError, parse_xml
 
 if TYPE_CHECKING:
@@ -37,6 +48,7 @@ MAX_ZIP_ENTRIES = 10_000
 MAX_XML_DEPTH = 128
 MAX_XML_NODES = 200_000
 MAX_TEXT_CHARS = 32 * 1024 * 1024
+MAX_IMAGE_REFERENCE_CHARS = 4096
 _XML_TOKENS = re.compile(
     br"<!--|<!\[CDATA\[|<!\s*(?P<kind>ENTITY|DOCTYPE)\b", re.I,
 )
@@ -59,6 +71,7 @@ class Chapter:
     kind: str = "chapter"
     level: int = 0
     anchors: dict[str, int] = field(default_factory=dict)
+    images: list[InlineImage] = field(default_factory=list)
 
 
 @dataclass
@@ -86,6 +99,43 @@ class Book:
     def page_document(self) -> PdfDocument | DjvuDocument | CbzDocument | None:
         """Return the lazy backend for a document with fixed page layout."""
         return self.pdf_document or self.djvu_document or self.cbz_document
+
+
+def _merge_image_only_chapters(chapters: list[Chapter], outline: list[NavigationEntry]) -> tuple[list[Chapter], list[NavigationEntry]]:
+    """Keep existing text chapter indices while retaining adjacent artwork.
+
+    Older versions omitted empty-text documents and sections entirely. Their
+    artwork belongs before the next text chapter, or after the final one;
+    image-only books retain their own reading documents instead.
+    """
+    reading = [index for index, chapter in enumerate(chapters) if chapter.text]
+    if not reading or len(reading) == len(chapters):
+        return chapters, outline
+    targets: list[int] = [0] * len(chapters)
+    following = reading[-1]
+    for index in range(len(chapters) - 1, -1, -1):
+        if chapters[index].text:
+            following = index
+        targets[index] = following
+    new_indices = {index: number for number, index in enumerate(reading)}
+    image_groups: list[list[InlineImage]] = [[] for _index in reading]
+    deltas = [0] * len(chapters)
+    for index, chapter in enumerate(chapters):
+        target = targets[index]
+        delta = len(chapters[target].text) if target < index else 0
+        deltas[index] = delta
+        image_groups[new_indices[target]].extend(
+            InlineImage(image.offset + delta, image.image, image.alt) for image in chapter.images)
+        if target != index:
+            for anchor, offset in chapter.anchors.items():
+                chapters[target].anchors.setdefault(anchor, offset + delta)
+    kept = [chapters[index] for index in reading]
+    for chapter, images in zip(kept, image_groups):
+        chapter.images = images
+    navigation = [NavigationEntry(entry.title, new_indices[targets[entry.chapter]],
+                                  entry.offset + deltas[entry.chapter], entry.level, entry.kind)
+                  for entry in outline]
+    return kept, navigation
 
 
 def file_size_limit(path: Path | str) -> int:
@@ -240,6 +290,70 @@ def _element_kind(element: ET.Element) -> str:
     )))
 
 
+class _IllustrationStore:
+    """A book-wide budget and cache; optional artwork never replaces its text."""
+
+    def __init__(self, cancel=None) -> None:
+        self.references = 0
+        self.total_bytes = 0
+        self.assets: dict[bytes, ImageData] = {}
+        self.cache: dict[str, ImageData | None] = {}
+        self.invalid: set[bytes] = set()
+        self.cancel = cancel
+
+    @property
+    def remaining_references(self) -> int:
+        return max(0, MAX_IMAGE_REFERENCES - self.references)
+
+    def load(self, key: str, read: Callable[[], bytes | None]) -> ImageData | None:
+        check_cancel(self.cancel)
+        if not self.remaining_references:
+            return None
+        self.references += 1
+        if key in self.cache:
+            return self.cache[key]
+        self.cache[key] = None
+        data = read()
+        if not data or len(data) > MAX_ILLUSTRATION_BYTES:
+            return None
+        digest = hashlib.sha256(data).digest()
+        if digest in self.invalid:
+            return None
+        image = self.assets.get(digest)
+        if image is not None:
+            self.cache[key] = image
+            return image
+        if len(self.assets) >= MAX_ILLUSTRATIONS or self.total_bytes + len(data) > MAX_ILLUSTRATION_TOTAL:
+            return None
+        image = validate_illustration(data)
+        check_cancel(self.cancel)
+        if image is not None:
+            self.assets[digest] = image
+            self.cache[key] = image
+            self.total_bytes += len(data)
+        else:
+            self.invalid.add(digest)
+        return image
+
+
+@dataclass
+class _ImageReference:
+    offset: int
+    path: str
+    alt: str = ""
+
+
+def _image_reference(base: str | None, value: str) -> str | None:
+    """Bound optional URI expansion before joining inherited xml:base values."""
+    if base is None or len(base) > MAX_IMAGE_REFERENCE_CHARS or len(value) > MAX_IMAGE_REFERENCE_CHARS:
+        return None
+    try:
+        path = _reference(base, value)
+    except BookError:
+        return None
+    return path if len(path) <= MAX_IMAGE_REFERENCE_CHARS else None
+
+
 class _TextHTML(HTMLParser):
     _blocks = {
         "address", "article", "aside", "blockquote", "dd", "div", "dl", "dt",
@@ -248,8 +362,9 @@ class _TextHTML(HTMLParser):
         "tr", "ul",
     }
     _hidden = {"head", "script", "style", "template", "svg", "math"}
+    _void = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}
 
-    def __init__(self) -> None:
+    def __init__(self, *, image_base: str | None = None, image_limit: int = 0) -> None:
         super().__init__(convert_charrefs=True)
         self.parts: list[str] = []
         self.hidden: list[str] = []
@@ -264,6 +379,37 @@ class _TextHTML(HTMLParser):
         self.root_kind = ""
         self.main_text = False
         self.note_text = False
+        self.image_base = image_base
+        self.image_limit = image_limit
+        self.images: list[_ImageReference] = []
+        self.image_contexts: list[tuple[str, str | None]] = []
+
+    def _image_start(self, tag: str, attributes: dict[str, str | None]) -> None:
+        if not self.image_limit:
+            return
+        base = self.image_contexts[-1][1] if self.image_contexts else self.image_base
+        if base is not None and len(base) > MAX_IMAGE_REFERENCE_CHARS:
+            base = None
+        if "xml:base" in attributes and base is not None:
+            value = attributes["xml:base"] or ""
+            base = _image_reference(base, value)
+            if base is not None and urlsplit(value).path.endswith("/"):
+                base = base + "/" if len(base) < MAX_IMAGE_REFERENCE_CHARS else None
+        # Keep SVG wrappers invisible to the text converter, but retain their
+        # embedded raster image references. Script/head/template content stays hidden.
+        allowed = not self.hidden or all(item == "svg" for item in self.hidden)
+        source = None
+        if tag == "img" and not self.hidden:
+            source = attributes.get("src")
+        elif tag == "image" and allowed:
+            source = attributes.get("href") or attributes.get("xlink:href")
+        if source and allowed and base is not None and len(self.images) < self.image_limit:
+            path = _image_reference(base, source)
+            if path is not None:
+                self.images.append(_ImageReference(self.length, path, (attributes.get("alt") or "")[:4096]))
+        # The optional resolver stays bounded even inside ignored SVG markup.
+        if tag not in self._void and len(self.image_contexts) < MAX_XML_DEPTH:
+            self.image_contexts.append((tag, base))
 
     def _append(self, value: str) -> None:
         self.parts.append(value)
@@ -274,6 +420,8 @@ class _TextHTML(HTMLParser):
         # mismatched closing tags repeatedly scan an unbounded element stack.
         if len(self.elements) + len(self.hidden) >= MAX_XML_DEPTH:
             raise BookError(_("Файл разметки слишком сложный."))
+        attributes = dict(attrs)
+        self._image_start(tag, attributes)
         if self.hidden:
             if tag in self._hidden:
                 self.hidden.append(tag)
@@ -281,13 +429,12 @@ class _TextHTML(HTMLParser):
         if tag in self._hidden:
             self.hidden.append(tag)
             return
-        attributes = dict(attrs)
         inherited = self.elements[-1][1] if self.elements else ""
         explicit = _semantic_kind(" ".join(attributes.get(key) or "" for key in ("epub:type", "role")))
         kind = explicit or inherited
         if tag in {"html", "body"} and explicit:
             self.root_kind = explicit
-        if tag not in {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}:
+        if tag not in self._void:
             self.elements.append((tag, kind))
         if tag == "pre":
             self.pre_depth += 1
@@ -310,6 +457,10 @@ class _TextHTML(HTMLParser):
         self.handle_endtag(tag)
 
     def handle_endtag(self, tag: str) -> None:
+        for index in range(len(self.image_contexts) - 1, -1, -1):
+            if self.image_contexts[index][0] == tag:
+                del self.image_contexts[index:]
+                break
         if self.hidden:
             if tag == self.hidden[-1]:
                 self.hidden.pop()
@@ -353,9 +504,10 @@ class _HTMLContent:
     anchors: dict[str, int]
     anchor_kinds: dict[str, str]
     kind: str
+    images: list[_ImageReference] = field(default_factory=list)
 
 
-def _html_details(data: bytes, label: str) -> _HTMLContent:
+def _html_details(data: bytes, label: str, *, image_limit: int = 0) -> _HTMLContent:
     declarations = data.replace(b"\x00", b"")
     for declaration, end in _xml_declarations(declarations):
         kind = declaration.group("kind")
@@ -370,14 +522,19 @@ def _html_details(data: bytes, label: str) -> _HTMLContent:
         else:
             encoding = re.search(br"<\?xml[^>]*encoding\s*=\s*['\"]([^'\"]+)", data[:512], re.I)
             value = data.decode(encoding.group(1).decode("ascii") if encoding else "utf-8-sig")
-        parser = _TextHTML()
+        parser = _TextHTML(image_base=label, image_limit=image_limit)
         parser.feed(value)
         parser.close()
     except (UnicodeError, LookupError, ValueError) as exc:
         raise BookError(_('{label}: не удалось прочитать текст EPUB').format(label=label)) from exc
-    text, mapped = _clean_positions("".join(parser.parts), parser.anchors)
+    positions: dict[object, int] = dict(parser.anchors)
+    positions.update({("image", index): image.offset for index, image in enumerate(parser.images)})
+    text, mapped = _clean_positions("".join(parser.parts), positions)
+    images = [_ImageReference(mapped[("image", index)], image.path, image.alt)
+              for index, image in enumerate(parser.images)]
+    anchors = {key: offset for key, offset in mapped.items() if isinstance(key, str)}
     kind = parser.root_kind or ("notes" if parser.note_text and not parser.main_text else "")
-    return _HTMLContent(text, parser.heading, mapped, parser.anchor_kinds, kind)
+    return _HTMLContent(text, parser.heading, anchors, parser.anchor_kinds, kind, images)
 
 
 def _html(data: bytes, label: str) -> tuple[str, str]:
@@ -534,7 +691,7 @@ def _epub_titles(archive: _Archive, manifest: dict[str, tuple[str, str, str]], s
     return titles
 
 
-def _epub(path: Path) -> Book:
+def _epub(path: Path, *, cancel=None) -> Book:
     archive = _Archive(path)
     try:
         container = _xml(archive.read("META-INF/container.xml"), "container.xml")
@@ -549,13 +706,24 @@ def _epub(path: Path) -> Book:
         title = next((_inline(node) for node in metadata if _local(node.tag) == "title" and _inline(node)), path.stem)
         author = ", ".join(_inline(node) for node in metadata if _local(node.tag) == "creator" and _inline(node))
         manifest: dict[str, tuple[str, str, str]] = {}
+        manifest_ids: set[str] = set()
         for item in manifest_node:
             if _local(item.tag) != "item" or not item.get("id") or not item.get("href"):
                 continue
             item_id = item.attrib["id"]
-            if item_id in manifest:
+            if item_id in manifest_ids:
                 raise BookError(_("Повторяющийся идентификатор в списке файлов EPUB"))
-            manifest[item_id] = (_reference(package_path, item.attrib["href"]), item.get("media-type", ""), item.get("properties", ""))
+            manifest_ids.add(item_id)
+            media = item.get("media-type", "")
+            try:
+                item_path = _reference(package_path, item.attrib["href"])
+            except BookError:
+                if media.startswith("image/"):
+                    # An unusable optional manifest image must not invalidate
+                    # otherwise local, readable chapter documents.
+                    continue
+                raise
+            manifest[item_id] = (item_path, media, item.get("properties", ""))
         navigation = _epub_navigation(archive, manifest, spine)
         titles: dict[str, str] = {}
         links_by_path: dict[str, list[_NavLink]] = {}
@@ -567,25 +735,46 @@ def _epub(path: Path) -> Book:
         details: dict[str, _HTMLContent] = {}
         processed_spine: set[str] = set()
         text_chars = 0
+        text_chapters = 0
+        artwork = _IllustrationStore(cancel)
+
+        def image_bytes(name: str) -> bytes | None:
+            if name not in archive.names or name.endswith("/"):
+                return None
+            if archive.zip.getinfo(name).file_size > MAX_ILLUSTRATION_BYTES:
+                return None
+            try:
+                return archive.read(name)
+            except BookError:
+                return None
 
         def append_document(chapter_path: str, content: _HTMLContent) -> None:
-            nonlocal text_chars
-            if not content.text:
+            nonlocal text_chars, text_chapters
+            images = []
+            for reference in content.images:
+                image = artwork.load(reference.path, lambda name=reference.path: image_bytes(name))
+                if image is not None:
+                    images.append(InlineImage(reference.offset, image, reference.alt))
+            if not content.text and not images:
                 return
             text_chars += len(content.text)
             if text_chars > MAX_TEXT_CHARS:
                 raise BookError(_("Текст книги превышает допустимый размер"))
-            chapter_title = titles.get(chapter_path) or content.heading or _("Глава {number}").format(number=len(chapters) + 1)
+            chapter_title = titles.get(chapter_path) or content.heading or _("Глава {number}").format(
+                number=(text_chapters if content.text else len(chapters)) + 1)
+            if content.text:
+                text_chapters += 1
             document_links = links_by_path.get(chapter_path, [])
             first_link = document_links[0] if document_links else None
             title_kind = _title_kind(chapter_title) if first_link is None or not first_link.fragment or content.anchors.get(first_link.fragment, 0) == 0 else ""
             kind = content.kind or _title_kind(content.heading) or title_kind or "chapter"
             levels = [link.level for link in document_links]
-            chapters.append(Chapter(chapter_title, content.text, kind, min(levels, default=0), content.anchors))
+            chapters.append(Chapter(chapter_title, content.text, kind, min(levels, default=0), content.anchors, images))
             locations.setdefault(chapter_path, len(chapters) - 1)
             details[chapter_path] = content
 
         for itemref in spine:
+            check_cancel(cancel)
             if _local(itemref.tag) != "itemref" or itemref.get("linear", "yes") == "no":
                 continue
             item = manifest.get(itemref.get("idref", ""))
@@ -597,7 +786,8 @@ def _epub(path: Path) -> Book:
             if chapter_path in processed_spine:
                 continue
             processed_spine.add(chapter_path)
-            append_document(chapter_path, _html_details(archive.read(chapter_path), chapter_path))
+            append_document(chapter_path, _html_details(archive.read(chapter_path), chapter_path,
+                                                      image_limit=artwork.remaining_references))
 
         # A publisher may keep the notes outside the linear spine. Import only
         # local manifest documents explicitly linked by the TOC and identified
@@ -608,7 +798,7 @@ def _epub(path: Path) -> Book:
             if link.path in considered or available.get(link.path) not in {"application/xhtml+xml", "text/html"}:
                 continue
             considered.add(link.path)
-            content = _html_details(archive.read(link.path), link.path)
+            content = _html_details(archive.read(link.path), link.path, image_limit=artwork.remaining_references)
             supplementary_kind = content.kind or link.kind or _title_kind(content.heading)
             if supplementary_kind == "notes":
                 append_document(link.path, content)
@@ -640,6 +830,7 @@ def _epub(path: Path) -> Book:
             complete.append(entry)
         complete.extend(missing[cursor:])
         outline = complete
+        chapters, outline = _merge_image_only_chapters(chapters, outline)
         cover = None
         try:
             from .covers import epub_cover
@@ -652,10 +843,13 @@ def _epub(path: Path) -> Book:
         archive.close()
 
 
-def _fb2_render(element: ET.Element, *, include_sections: bool = False) -> tuple[str, dict[str, int], dict[int, int]]:
+def _fb2_render(element: ET.Element, *, include_sections: bool = False,
+                image_loader: Callable[[str], ImageData | None] | None = None,
+                images: list[InlineImage] | None = None) -> tuple[str, dict[str, int], dict[int, int]]:
     parts: list[str] = []
     positions: dict[object, int] = {}
     length = 0
+    artwork: list[tuple[ImageData, str]] = []
     blocks = {"p", "title", "subtitle", "v", "stanza", "poem", "cite", "epigraph", "text-author", "annotation", "section"}
 
     def append(value: str) -> None:
@@ -665,7 +859,15 @@ def _fb2_render(element: ET.Element, *, include_sections: bool = False) -> tuple
 
     def visit(node: ET.Element, *, is_root: bool = False) -> None:
         tag = _local(node.tag)
-        if (tag == "section" and not is_root and not include_sections) or tag in {"image", "binary"}:
+        if (tag == "section" and not is_root and not include_sections) or tag == "binary":
+            return
+        if tag == "image":
+            if image_loader is not None and images is not None:
+                href = node.get("{http://www.w3.org/1999/xlink}href") or node.get("href", "")
+                image = image_loader(href)
+                if image is not None:
+                    positions[("image", len(artwork))] = length
+                    artwork.append((image, node.get("alt", "")[:4096]))
             return
         if tag == "empty-line":
             append("\n\n")
@@ -691,7 +893,9 @@ def _fb2_render(element: ET.Element, *, include_sections: bool = False) -> tuple
     visit(element, is_root=True)
     text, mapped = _clean_positions("".join(parts), positions)
     anchors = {key: offset for key, offset in mapped.items() if isinstance(key, str)}
-    sections = {key[1]: offset for key, offset in mapped.items() if isinstance(key, tuple)}
+    sections = {key[1]: offset for key, offset in mapped.items() if isinstance(key, tuple) and key[0] == "section"}
+    if images is not None:
+        images.extend(InlineImage(mapped[("image", index)], image, alt) for index, (image, alt) in enumerate(artwork))
     return text, anchors, sections
 
 
@@ -699,7 +903,7 @@ def _fb2_text(element: ET.Element) -> str:
     return _fb2_render(element)[0]
 
 
-def _fb2(data: bytes, path: Path) -> Book:
+def _fb2(data: bytes, path: Path, *, cancel=None) -> Book:
     root = _xml(data, path.name)
     if _local(root.tag) != "FictionBook":
         raise BookError(_("Файл не является книгой FB2"))
@@ -716,13 +920,50 @@ def _fb2(data: bytes, path: Path) -> Book:
     outline: list[NavigationEntry] = []
     notes: list[tuple[ET.Element, str, int]] = []
     text_chars = 0
+    text_chapters = 0
+    artwork = _IllustrationStore(cancel)
+    binaries: dict[str, ET.Element | None] = {}
+    for binary in _children(root, "binary"):
+        identifier = binary.get("id", "")
+        if identifier:
+            binaries[identifier] = None if identifier in binaries else binary
+
+    def binary_bytes(identifier: str) -> bytes | None:
+        binary = binaries.get(identifier)
+        if binary is None:
+            return None
+        maximum = ((MAX_ILLUSTRATION_BYTES + 2) // 3) * 4
+        parts, count = [], 0
+        for part in binary.itertext():
+            for start in range(0, len(part), 64 * 1024):
+                check_cancel(cancel)
+                compact = re.sub(r"\s+", "", part[start:start + 64 * 1024])
+                count += len(compact)
+                if count > maximum:
+                    return None
+                parts.append(compact)
+        try:
+            return base64.b64decode("".join(parts).encode("ascii"), validate=True)
+        except (UnicodeError, binascii.Error, ValueError):
+            return None
+
+    def load_image(href: str) -> ImageData | None:
+        if not href.startswith("#") or len(href) < 2:
+            return None
+        try:
+            identifier = unquote(href[1:], errors="strict")
+        except UnicodeError:
+            return None
+        return artwork.load(identifier, lambda: binary_bytes(identifier))
 
     def append_chapter(chapter: Chapter) -> int:
-        nonlocal text_chars
+        nonlocal text_chars, text_chapters
         text_chars += len(chapter.text)
         if text_chars > MAX_TEXT_CHARS:
             raise BookError(_("Текст книги превышает допустимый размер"))
         chapters.append(chapter)
+        if chapter.text:
+            text_chapters += 1
         return len(chapters) - 1
 
     def section(node: ET.Element, default_title: str, level: int, inherited: str = "chapter") -> None:
@@ -732,19 +973,20 @@ def _fb2(data: bytes, path: Path) -> Book:
         if kind == "notes":
             notes.append((node, chapter_title, max(0, level)))
             return
-        text, anchors, _positions = _fb2_render(node)
+        images: list[InlineImage] = []
+        text, anchors, _positions = _fb2_render(node, image_loader=load_image, images=images)
         chapter_index = len(chapters)
         entry = None
-        if text:
-            append_chapter(Chapter(chapter_title, text, kind, max(0, level), anchors))
-        if text or _local(node.tag) == "section":
+        if text or images:
+            append_chapter(Chapter(chapter_title, text, kind, max(0, level), anchors, images))
+        if text or images or _local(node.tag) == "section":
             entry = NavigationEntry(chapter_title, chapter_index, level=max(0, level), kind=kind)
             outline.append(entry)
         for child in _children(node, "section"):
-            section(child, _("Раздел {number}").format(number=len(chapters) + 1), level + 1, kind)
+            section(child, _("Раздел {number}").format(number=text_chapters + 1), level + 1, kind)
         if entry is not None and chapter_index == len(chapters):
             outline.remove(entry)
-        elif entry is not None and not text and node.get("id"):
+        elif entry is not None and not text and not images and node.get("id"):
             chapters[chapter_index].anchors.setdefault(node.attrib["id"], 0)
 
     for body in bodies:
@@ -757,10 +999,11 @@ def _fb2(data: bytes, path: Path) -> Book:
     # Appending grouped note bodies keeps all existing main chapter indices
     # stable, including when a note section appears inside a main section.
     for node, note_title, level in notes:
-        text, anchors, positions = _fb2_render(node, include_sections=True)
-        if not text:
+        images = []
+        text, anchors, positions = _fb2_render(node, include_sections=True, image_loader=load_image, images=images)
+        if not text and not images:
             continue
-        chapter_index = append_chapter(Chapter(note_title, text, "notes", level, anchors))
+        chapter_index = append_chapter(Chapter(note_title, text, "notes", level, anchors, images))
         outline.append(NavigationEntry(note_title, chapter_index, level=level, kind="notes"))
         number = 0
         def note_entries(parent: ET.Element, depth: int) -> None:
@@ -773,6 +1016,7 @@ def _fb2(data: bytes, path: Path) -> Book:
         note_entries(node, level + 1)
     if not chapters:
         raise BookError(_("FB2 не содержит доступного текста"))
+    chapters, outline = _merge_image_only_chapters(chapters, outline)
     cover = None
     try:
         from .covers import fb2_cover
@@ -782,13 +1026,14 @@ def _fb2(data: bytes, path: Path) -> Book:
     return Book(title or path.stem.removesuffix(".fb2"), ", ".join(filter(None, authors)), chapters, "FB2", outline=outline, cover=cover)
 
 
-def load_book(path: Path | str) -> Book:
+def load_book(path: Path | str, *, cancel=None) -> Book:
     """Load supported text books and fixed-layout documents, raising BookError.
 
     PDF and DjVu loading reads metadata only. Page text and raster images are
     requested from ``page_document`` as the reader visits each page.
     """
     path = Path(path)
+    check_cancel(cancel)
     try:
         size = path.stat().st_size
         if not path.is_file():
@@ -825,7 +1070,7 @@ def load_book(path: Path | str) -> Book:
                 document,
             )
         if suffix == ".epub":
-            return _epub(path)
+            return _epub(path, cancel=cancel)
         if suffix in {".html", ".htm", ".xhtml"}:
             from .markup import load_html
             return load_html(path)
@@ -844,7 +1089,7 @@ def load_book(path: Path | str) -> Book:
                 names = [name for name in archive.names if name.lower().endswith(".fb2")]
                 if len(names) != 1:
                     raise BookError(_("Архив FB2 должен содержать ровно один файл .fb2"))
-                return _fb2(archive.read(names[0]), path)
+                return _fb2(archive.read(names[0]), path, cancel=cancel)
             finally:
                 archive.close()
         if suffix not in {".fb2", ".txt"}:
@@ -854,7 +1099,7 @@ def load_book(path: Path | str) -> Book:
         if len(data) > MAX_FILE_BYTES:
             raise BookError(_("Книга превышает допустимый размер (64 МиБ)"))
         if suffix == ".fb2":
-            return _fb2(data, path)
+            return _fb2(data, path, cancel=cancel)
         try:
             text = data.decode("utf-8-sig")
         except UnicodeDecodeError:

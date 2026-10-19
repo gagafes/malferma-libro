@@ -2,13 +2,13 @@
 # Translation source recovered from the installed GNU gettext catalog.
 
 msgid ""
-msgstr "Project-Id-Version: Malferma Libro 0.1.0\nLanguage: mt\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=4; plural=(n == 1 ? 0 : (n == 0 || (n % 100 > 1 && n % 100 < 11)) ? 1 : (n % 100 > 10 && n % 100 < 20) ? 2 : 3);\n"
+msgstr "Project-Id-Version: Malferma Libro 0.1.1\nLanguage: mt\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=4; plural=(n == 1 ? 0 : (n == 0 || (n % 100 > 1 && n % 100 < 11)) ? 1 : (n % 100 > 10 && n % 100 < 20) ? 2 : 3);\n"
 
 #: src/malferma_libro/library_ui.py:105
 msgid " · Найдено: {count}"
 msgstr " · Misjuba: {count}"
 
-#: src/malferma_libro/app.py:884
+#: src/malferma_libro/app.py:886
 msgid "100% — по ширине окна; вёрстка PDF, DjVu и CBZ сохраняется"
 msgstr "100% — mal-wisa' tat-tieqa; it-tqassim tal-PDF, tad-DjVu u tas-CBZ jinżamm"
 
@@ -20,19 +20,19 @@ msgstr "Dokumenti DjVu b'fajls esterni mhumiex appoġġjati"
 msgid "EPUB · FB2 · FB2.ZIP · TXT · PDF · DjVu · HTML · Markdown · CBZ. Книги копируются в локальную библиотеку."
 msgstr "EPUB · FB2 · FB2.ZIP · TXT · PDF · DjVu · HTML · Markdown · CBZ. Il-kotba jiġu kkupjati fil-librerija lokali."
 
-#: src/malferma_libro/books.py:618
+#: src/malferma_libro/books.py:808
 msgid "EPUB не содержит доступных текстовых глав"
 msgstr "L-EPUB ma fihx kapitli b'test aċċessibbli"
 
-#: src/malferma_libro/books.py:543
+#: src/malferma_libro/books.py:700
 msgid "EPUB не содержит описания книги"
 msgstr "L-EPUB ma fihx deskrizzjoni tal-ktieb"
 
-#: src/malferma_libro/books.py:775
+#: src/malferma_libro/books.py:1018
 msgid "FB2 не содержит доступного текста"
 msgstr "L-FB2 ma fihx test aċċessibbli"
 
-#: src/malferma_libro/app.py:2178 src/malferma_libro/app.py:2179
+#: src/malferma_libro/app.py:2194 src/malferma_libro/app.py:2195
 msgid "OPDS-каталог"
 msgstr "Katalgu OPDS"
 
@@ -40,19 +40,19 @@ msgstr "Katalgu OPDS"
 msgid "PDF защищён паролем. Откройте незашифрованную копию книги."
 msgstr "Il-PDF huwa protett b'password. Iftaħ kopja mhux ikkriptata tal-ktieb."
 
-#: src/malferma_libro/app.py:1195
+#: src/malferma_libro/app.py:1198
 msgid "PDF, DjVu и CBZ сохраняют исходные шрифты и цвета; размер меняется масштабом."
 msgstr "Il-PDF, id-DjVu u s-CBZ jżommu t-tipi u l-kuluri oriġinali; id-daqs jinbidel permezz taż-żum."
 
-#: src/malferma_libro/app.py:1532
+#: src/malferma_libro/app.py:1535
 msgid "Piper не установлен. Инструкция доступна в руководстве."
 msgstr "Piper mhux installat. L-istruzzjonijiet jinsabu fil-gwida tal-utent."
 
-#: src/malferma_libro/books.py:864
+#: src/malferma_libro/books.py:1109
 msgid "TXT должен быть в кодировке UTF-8 или Windows-1251"
 msgstr "Il-fajls TXT iridu jkunu kkodifikati f'UTF-8 jew Windows-1251"
 
-#: src/malferma_libro/books.py:866
+#: src/malferma_libro/books.py:1111
 msgid "TXT содержит двоичные данные"
 msgstr "It-TXT fih data binarja"
 
@@ -60,11 +60,11 @@ msgstr "It-TXT fih data binarja"
 msgid "{count} из {limit} символов"
 msgstr "{count} minn {limit} karattru"
 
-#: src/malferma_libro/books.py:144
+#: src/malferma_libro/books.py:194
 msgid "{label}: XML превышает допустимый размер"
 msgstr "{label}: l-XML jaqbeż id-daqs permess"
 
-#: src/malferma_libro/books.py:377
+#: src/malferma_libro/books.py:529
 msgid "{label}: не удалось прочитать текст EPUB"
 msgstr "{label}: ma setax jinqara t-test tal-EPUB"
 
@@ -72,23 +72,23 @@ msgstr "{label}: ma setax jinqara t-test tal-EPUB"
 msgid "{label}: не удалось прочитать текст."
 msgstr "{label}: ma setax jinqara t-test."
 
-#: src/malferma_libro/books.py:366
+#: src/malferma_libro/books.py:518
 msgid "{label}: объявления DTD запрещены"
 msgstr "{label}: id-dikjarazzjonijiet DTD huma pprojbiti"
 
-#: src/malferma_libro/books.py:150 src/malferma_libro/books.py:156 src/malferma_libro/markup.py:126
+#: src/malferma_libro/books.py:200 src/malferma_libro/books.py:206 src/malferma_libro/markup.py:126
 msgid "{label}: объявления DTD и сущностей XML запрещены"
 msgstr "{label}: id-dikjarazzjonijiet DTD u tal-entitajiet XML huma pprojbiti"
 
-#: src/malferma_libro/books.py:363
+#: src/malferma_libro/books.py:515
 msgid "{label}: объявления сущностей запрещены"
 msgstr "{label}: id-dikjarazzjonijiet tal-entitajiet huma pprojbiti"
 
-#: src/malferma_libro/books.py:162
+#: src/malferma_libro/books.py:212
 msgid "{label}: повреждённый XML"
 msgstr "{label}: XML bil-ħsara"
 
-#: src/malferma_libro/app.py:2037 src/malferma_libro/library_ui.py:115 src/malferma_libro/library_ui.py:186
+#: src/malferma_libro/app.py:2053 src/malferma_libro/library_ui.py:115 src/malferma_libro/library_ui.py:186
 msgid "{percent}% прочитано"
 msgstr "{percent}% moqri"
 
@@ -96,7 +96,7 @@ msgstr "{percent}% moqri"
 msgid "Автоматически"
 msgstr "Awtomatikament"
 
-#: src/malferma_libro/app.py:1189
+#: src/malferma_libro/app.py:1192
 msgid "Автоматически скрывать панель в полном экране"
 msgstr "Aħbi l-pannell awtomatikament fl-iskrin sħiħ"
 
@@ -108,7 +108,7 @@ msgstr "L-awtur tal-PDF ipprojbixxa l-estrazzjoni tat-test minn dan id-dokument"
 msgid "Автор не указан"
 msgstr "Awtur mhux speċifikat"
 
-#: src/malferma_libro/app.py:2114
+#: src/malferma_libro/app.py:2130
 msgid "Адрес OPDS-каталога"
 msgstr "Indirizz tal-katalgu OPDS"
 
@@ -124,11 +124,11 @@ msgstr "L-indirizz fih karattri mhux validi."
 msgid "Адреса с логином или паролем не поддерживаются."
 msgstr "Indirizzi b'isem ta' utent jew password mhumiex appoġġjati."
 
-#: src/malferma_libro/books.py:97
+#: src/malferma_libro/books.py:147
 msgid "Архив CBZ превышает допустимый размер (512 МиБ)"
 msgstr "L-arkivju CBZ jaqbeż id-daqs permess (512 MiB)"
 
-#: src/malferma_libro/books.py:846
+#: src/malferma_libro/books.py:1091
 msgid "Архив FB2 должен содержать ровно один файл .fb2"
 msgstr "L-arkivju FB2 irid ikun fih eżattament fajl .fb2 wieħed"
 
@@ -152,7 +152,7 @@ msgstr "Id-DjVu jista' jkollu sa {max_pages} paġni"
 msgid "В DjVu не найден корректный каталог страниц"
 msgstr "Ma nstabx direttorju validu tal-paġni fid-DjVu"
 
-#: src/malferma_libro/books.py:548
+#: src/malferma_libro/books.py:705
 msgid "В EPUB отсутствуют метаданные, список файлов или порядок глав"
 msgstr "L-EPUB ma fihx metadata, lista ta' fajls jew ordni tal-kapitli"
 
@@ -164,15 +164,15 @@ msgstr "Il-PDF irid ikollu bejn 1 u {max_pages} paġni"
 msgid "В архиве CBZ нет поддерживаемых изображений."
 msgstr "L-arkivju CBZ ma fih l-ebda immaġni appoġġjata."
 
-#: src/malferma_libro/books.py:427
+#: src/malferma_libro/books.py:584
 msgid "В книге отсутствует файл: {name}"
 msgstr "Fil-ktieb jonqos il-fajl: {name}"
 
-#: src/malferma_libro/app.py:1193
+#: src/malferma_libro/app.py:1196
 msgid "В пикселях; на широком окне текст располагается по центру."
 msgstr "F'pixels; f'tieqa wiesgħa t-test jitqiegħed fiċ-ċentru."
 
-#: src/malferma_libro/app.py:2215
+#: src/malferma_libro/app.py:2231
 msgid "В этом разделе книг нет."
 msgstr "Ma hemmx kotba f'din it-taqsima."
 
@@ -184,19 +184,19 @@ msgstr "Il-librerija tiegħek"
 msgid "Вернуться к месту до поиска"
 msgstr "Erġa’ lura għall-post ta’ qabel it-tfittxija"
 
-#: src/malferma_libro/app.py:480
+#: src/malferma_libro/app.py:482
 msgid "Включить дневной режим"
 msgstr "Attiva l-modalità tal-jum"
 
-#: src/malferma_libro/app.py:480
+#: src/malferma_libro/app.py:482
 msgid "Включить ночной режим"
 msgstr "Attiva l-modalità tal-lejl"
 
-#: src/malferma_libro/books.py:453
+#: src/malferma_libro/books.py:610
 msgid "Внутренняя ссылка EPUB выходит за пределы архива"
 msgstr "Il-ħolqa interna tal-EPUB toħroġ barra mil-limiti tal-arkivju"
 
-#: src/malferma_libro/books.py:445
+#: src/malferma_libro/books.py:602
 msgid "Внутренняя ссылка EPUB указывает за пределы книги"
 msgstr "Il-ħolqa interna tal-EPUB tindika post barra mill-ktieb"
 
@@ -216,7 +216,7 @@ msgstr "Agħżel fajl DjVu regolari"
 msgid "Выберите обычный файл PDF"
 msgstr "Agħżel fajl PDF regolari"
 
-#: src/malferma_libro/storage.py:608
+#: src/malferma_libro/storage.py:609
 msgid "Выберите файл книги."
 msgstr "Agħżel fajl ta' ktieb."
 
@@ -228,11 +228,11 @@ msgstr "Agħżel lingwa jew leħen."
 msgid "Выбрать книгу…"
 msgstr "Agħżel ktieb…"
 
-#: src/malferma_libro/app.py:1048
+#: src/malferma_libro/app.py:1051
 msgid "Выделить всё"
 msgstr "Agħżel kollox"
 
-#: src/malferma_libro/app.py:465 src/malferma_libro/app.py:520
+#: src/malferma_libro/app.py:467 src/malferma_libro/app.py:522
 msgid "Выйти из полноэкранного режима"
 msgstr "Oħroġ mill-iskrin sħiħ"
 
@@ -244,15 +244,15 @@ msgstr "Lest: {percent}%"
 msgid "Выполняемые действия"
 msgstr "Operazzjonijiet għaddejjin"
 
-#: src/malferma_libro/accessibility_ui.py:279 src/malferma_libro/app.py:1205
+#: src/malferma_libro/accessibility_ui.py:279 src/malferma_libro/app.py:1208
 msgid "Высокая контрастность"
 msgstr "Kuntrast għoli"
 
-#: src/malferma_libro/books.py:578 src/malferma_libro/outline_ui.py:121
+#: src/malferma_libro/books.py:763 src/malferma_libro/outline_ui.py:121
 msgid "Глава {number}"
 msgstr "Kapitlu {number}"
 
-#: src/malferma_libro/app.py:424 src/malferma_libro/app.py:425 src/malferma_libro/shortcuts.py:26
+#: src/malferma_libro/app.py:426 src/malferma_libro/app.py:427 src/malferma_libro/shortcuts.py:26
 msgid "Главное меню"
 msgstr "Menu prinċipali"
 
@@ -284,15 +284,15 @@ msgstr "Il-leħen huwa installat"
 msgid "Голоса Piper"
 msgstr "Ilħna Piper"
 
-#: src/malferma_libro/app.py:421 src/malferma_libro/app.py:664 src/malferma_libro/keybindings_ui.py:39 src/malferma_libro/keybindings_ui.py:46 src/malferma_libro/shortcuts.py:44
+#: src/malferma_libro/app.py:423 src/malferma_libro/app.py:666 src/malferma_libro/keybindings_ui.py:39 src/malferma_libro/keybindings_ui.py:46 src/malferma_libro/shortcuts.py:44
 msgid "Горячие клавиши"
 msgstr "Buttuni tas-shortcut"
 
-#: src/malferma_libro/app.py:1531
+#: src/malferma_libro/app.py:1534
 msgid "Готово к озвучке"
 msgstr "Lest għall-qari b'leħen għoli"
 
-#: src/malferma_libro/app.py:2075
+#: src/malferma_libro/app.py:2091
 msgid "Далее"
 msgstr "Li jmiss"
 
@@ -316,7 +316,7 @@ msgstr "Biex jindaqq il-qari b'leħen għoli, installa paplay jew aplay."
 msgid "Для запуска нужны GTK 4, libadwaita и PyGObject. На Debian 13 выполните:\nsudo apt install python3-gi gir1.2-gtk-4.0 gir1.2-adw-1 poppler-utils djvulibre-bin\nЗапускайте приложение через /usr/bin/python3.\nПодробности: {error}"
 msgstr "Biex tibda għandek bżonn GTK 4, libadwaita u PyGObject. Fuq Debian 13 ħaddem:\nsudo apt install python3-gi gir1.2-gtk-4.0 gir1.2-adw-1 poppler-utils djvulibre-bin\nIbda l-applikazzjoni permezz ta' /usr/bin/python3.\nDettalji: {error}"
 
-#: src/malferma_libro/app.py:2118
+#: src/malferma_libro/app.py:2134
 msgid "Для локального Calibre: http://адрес:8080/opds"
 msgstr "Għal Calibre lokali: http://адрес:8080/opds"
 
@@ -344,7 +344,7 @@ msgstr "Biex taqra PDF, installa l-pakkett poppler-utils: sudo apt install poppl
 msgid "Для этого языка добавьте свою модель Piper."
 msgstr "Għal din il-lingwa, żid il-mudell Piper tiegħek stess."
 
-#: src/malferma_libro/app.py:1175
+#: src/malferma_libro/app.py:1178
 msgid "Дневной"
 msgstr "Jum"
 
@@ -352,11 +352,11 @@ msgstr "Jum"
 msgid "Дневной / ночной режим"
 msgstr "Modalità tal-jum / tal-lejl"
 
-#: src/malferma_libro/app.py:2108 src/malferma_libro/app.py:812 src/malferma_libro/desktop.py:252
+#: src/malferma_libro/app.py:2124 src/malferma_libro/app.py:814 src/malferma_libro/desktop.py:252
 msgid "Добавить"
 msgstr "Żid"
 
-#: src/malferma_libro/app.py:2106
+#: src/malferma_libro/app.py:2122
 msgid "Добавить OPDS-каталог"
 msgstr "Żid katalgu OPDS"
 
@@ -364,7 +364,7 @@ msgstr "Żid katalgu OPDS"
 msgid "Добавить голос…"
 msgstr "Żid leħen…"
 
-#: src/malferma_libro/app.py:2059
+#: src/malferma_libro/app.py:2075
 msgid "Добавить каталог"
 msgstr "Żid katalgu"
 
@@ -376,19 +376,19 @@ msgstr "Żid mudell Piper"
 msgid "Добавление голоса…"
 msgstr "Qed jiżdied il-leħen…"
 
-#: src/malferma_libro/app.py:858
+#: src/malferma_libro/app.py:860
 msgid "Добавление книг: {count}…"
 msgstr "Qed jiżdiedu l-kotba: {count}…"
 
-#: src/malferma_libro/app.py:2055 src/malferma_libro/app.py:2103
+#: src/malferma_libro/app.py:2071 src/malferma_libro/app.py:2119
 msgid "Добавьте каталог"
 msgstr "Żid katalgu"
 
-#: src/malferma_libro/app.py:387
+#: src/malferma_libro/app.py:389
 msgid "Добавьте книгу или подключите OPDS-каталог."
 msgstr "Żid ktieb jew qabbad katalgu OPDS."
 
-#: src/malferma_libro/app.py:1490
+#: src/malferma_libro/app.py:1493
 msgid "Дождитесь загрузки страницы."
 msgstr "Stenna sakemm titgħabba l-paġna."
 
@@ -396,7 +396,7 @@ msgstr "Stenna sakemm titgħabba l-paġna."
 msgid "Допустимы только адреса HTTP и HTTPS."
 msgstr "Huma permessi biss indirizzi HTTP u HTTPS."
 
-#: src/malferma_libro/app.py:1209
+#: src/malferma_libro/app.py:1212
 msgid "Жесты мышью"
 msgstr "Ġesti tal-maws"
 
@@ -408,19 +408,19 @@ msgstr "Niżżel leħen"
 msgid "Загрузка голоса: {voice}"
 msgstr "Qed jitniżżel il-leħen: {voice}"
 
-#: src/malferma_libro/app.py:2173
+#: src/malferma_libro/app.py:2189
 msgid "Загрузка каталога…"
 msgstr "Qed jitgħabba l-katalgu…"
 
-#: src/malferma_libro/app.py:1744
+#: src/malferma_libro/app.py:1759
 msgid "Загрузка страницы {page}"
 msgstr "Qed titgħabba l-paġna {page}"
 
-#: src/malferma_libro/app.py:1745 src/malferma_libro/app.py:1822
+#: src/malferma_libro/app.py:1760 src/malferma_libro/app.py:1837
 msgid "Загрузка страницы {page}…"
 msgstr "Qed titgħabba l-paġna {page}…"
 
-#: src/malferma_libro/app.py:962
+#: src/malferma_libro/app.py:965
 msgid "Загрузка страницы…"
 msgstr "Qed titgħabba l-paġna…"
 
@@ -436,7 +436,7 @@ msgstr "Il-marka tal-paġna m'għadhiex disponibbli."
 msgid "Закладка добавлена."
 msgstr "Il-marka tal-paġna ġiet miżjuda."
 
-#: src/malferma_libro/app.py:904 src/malferma_libro/app.py:905
+#: src/malferma_libro/app.py:906 src/malferma_libro/app.py:907
 msgid "Закладки"
 msgstr "Marki tal-paġni"
 
@@ -460,11 +460,11 @@ msgstr "Nota għall-marka tal-paġna"
 msgid "Заметка слишком длинная: максимум {limit} символов."
 msgstr "In-nota hija twila wisq: massimu ta' {limit} karattru."
 
-#: src/malferma_libro/books.py:413
+#: src/malferma_libro/books.py:570
 msgid "Зашифрованные архивы книг не поддерживаются"
 msgstr "Il-kriptaġġ fl-arkivji tal-kotba mhuwiex appoġġjat"
 
-#: src/malferma_libro/app.py:1531
+#: src/malferma_libro/app.py:1534
 msgid "Идёт озвучка текущей главы"
 msgstr "Qed jinqara b'leħen għoli l-kapitlu attwali"
 
@@ -484,7 +484,15 @@ msgstr "L-immaġni tal-paġna DjVu taqbeż id-daqs permess"
 msgid "Изображение страницы PDF превышает допустимый размер"
 msgstr "L-immaġni tal-paġna PDF taqbeż id-daqs permess"
 
-#: src/malferma_libro/app.py:1147
+#: src/malferma_libro/illustration_ui.py:119 src/malferma_libro/illustration_ui.py:287 src/malferma_libro/illustration_ui.py:293
+msgid "Иллюстрация"
+msgstr "Illustrazzjoni"
+
+#: src/malferma_libro/illustration_ui.py:251 src/malferma_libro/illustration_ui.py:259 src/malferma_libro/illustration_ui.py:260
+msgid "Иллюстрация недоступна"
+msgstr "Illustrazzjoni mhux disponibbli"
+
+#: src/malferma_libro/app.py:1150
 msgid "Интерфейс"
 msgstr "Interfaċċa"
 
@@ -492,7 +500,7 @@ msgstr "Interfaċċa"
 msgid "Используйте Ctrl, Alt или функциональную клавишу."
 msgstr "Uża Ctrl, Alt jew tast tal-funzjoni."
 
-#: src/malferma_libro/app.py:1150 src/malferma_libro/app.py:1175
+#: src/malferma_libro/app.py:1153 src/malferma_libro/app.py:1178
 msgid "Как в системе"
 msgstr "Bħas-sistema"
 
@@ -500,11 +508,11 @@ msgstr "Bħas-sistema"
 msgid "Каталог"
 msgstr "Katalgu"
 
-#: src/malferma_libro/app.py:2216
+#: src/malferma_libro/app.py:2232
 msgid "Каталог загружен. Записей: {count}."
 msgstr "Il-katalgu tgħabba. Entrati: {count}."
 
-#: src/malferma_libro/app.py:2071
+#: src/malferma_libro/app.py:2087
 msgid "Каталог не открыт"
 msgstr "Ebda katalgu miftuħ"
 
@@ -512,7 +520,7 @@ msgstr "Ebda katalgu miftuħ"
 msgid "Каталог слишком большой."
 msgstr "Il-katalgu huwa kbir wisq."
 
-#: src/malferma_libro/app.py:2141
+#: src/malferma_libro/app.py:2157
 msgid "Каталог удалён из списка."
 msgstr "Il-katalgu tneħħa mil-lista."
 
@@ -536,11 +544,11 @@ msgstr "Ktieb"
 msgid "Книга «{title}» уже добавлена. Сохранённые закладки и место чтения будут использованы."
 msgstr "Il-ktieb «{title}» diġà żdied. Se jintużaw il-marki tal-paġni u l-pożizzjoni tal-qari ssejvjati."
 
-#: src/malferma_libro/app.py:787
+#: src/malferma_libro/app.py:789
 msgid "Книга готова к чтению в библиотеке."
 msgstr "Il-ktieb huwa lest għall-qari fil-librerija."
 
-#: src/malferma_libro/storage.py:709
+#: src/malferma_libro/storage.py:710
 msgid "Книга не найдена: {book_id}"
 msgstr "Il-ktieb ma nstabx: {book_id}"
 
@@ -548,11 +556,11 @@ msgstr "Il-ktieb ma nstabx: {book_id}"
 msgid "Книга не открыта"
 msgstr "Ebda ktieb miftuħ"
 
-#: src/malferma_libro/app.py:1664
+#: src/malferma_libro/app.py:1667
 msgid "Книга открыта. Позиция чтения сохраняется автоматически."
 msgstr "Il-ktieb infetaħ. Il-pożizzjoni tal-qari tiġi ssejvjata awtomatikament."
 
-#: src/malferma_libro/books.py:855 src/malferma_libro/books.py:98 src/malferma_libro/markup.py:63 src/malferma_libro/markup.py:67
+#: src/malferma_libro/books.py:1100 src/malferma_libro/books.py:148 src/malferma_libro/markup.py:63 src/malferma_libro/markup.py:67
 msgid "Книга превышает допустимый размер (64 МиБ)"
 msgstr "Il-ktieb jaqbeż id-daqs permess (64 MiB)"
 
@@ -572,7 +580,7 @@ msgstr "Kotba (EPUB, FB2, FB2.ZIP, TXT, PDF, DjVu, HTML, Markdown, CBZ)"
 msgid "Код завершения {code}"
 msgstr "Kodiċi tal-ħruġ {code}"
 
-#: src/malferma_libro/books.py:753
+#: src/malferma_libro/books.py:995
 msgid "Комментарии"
 msgstr "Kummenti"
 
@@ -592,7 +600,7 @@ msgstr "L-ikkupjar tad-DjVu ma tlestiex: id-daqs tal-ktieb inbidel"
 msgid "Копирование PDF не завершено: размер книги изменился"
 msgstr "L-ikkupjar tal-PDF ma tlestiex: id-daqs tal-ktieb inbidel"
 
-#: src/malferma_libro/app.py:1047
+#: src/malferma_libro/app.py:1050
 msgid "Копировать"
 msgstr "Ikkopja"
 
@@ -600,7 +608,7 @@ msgstr "Ikkopja"
 msgid "Лупа области чтения"
 msgstr "Lenti taż-żona tal-qari"
 
-#: src/malferma_libro/app.py:1192
+#: src/malferma_libro/app.py:1195
 msgid "Максимальная ширина текста"
 msgstr "Wisa' massimu tat-test"
 
@@ -612,11 +620,11 @@ msgstr "Il-fattur taż-żum tad-DjVu jrid ikun numru pożittiv"
 msgid "Масштаб PDF должен быть положительным числом"
 msgstr "Il-fattur taż-żum tal-PDF irid ikun numru pożittiv"
 
-#: src/malferma_libro/app.py:881 src/malferma_libro/app.py:885
+#: src/malferma_libro/app.py:883 src/malferma_libro/app.py:887
 msgid "Масштаб страницы, %"
 msgstr "Żum tal-paġna, %"
 
-#: src/malferma_libro/accessibility_ui.py:290 src/malferma_libro/app.py:1207
+#: src/malferma_libro/accessibility_ui.py:290 src/malferma_libro/app.py:1210
 msgid "Межстрочный интервал"
 msgstr "Spazjar bejn il-linji"
 
@@ -632,11 +640,11 @@ msgstr "Mudell Piper (*.onnx)"
 msgid "Модель голоса не установлена"
 msgstr "Il-mudell tal-leħen mhux installat"
 
-#: src/malferma_libro/app.py:366 src/malferma_libro/app.py:414 src/malferma_libro/shortcuts.py:38
+#: src/malferma_libro/app.py:368 src/malferma_libro/app.py:416 src/malferma_libro/shortcuts.py:38
 msgid "Мои книги"
 msgstr "Il-kotba tiegħi"
 
-#: src/malferma_libro/app.py:2112
+#: src/malferma_libro/app.py:2128
 msgid "Моя библиотека"
 msgstr "Il-librerija tiegħi"
 
@@ -648,7 +656,7 @@ msgstr "Skrin wieħed ’il fuq"
 msgid "На экран вниз"
 msgstr "Skrin wieħed ’l isfel"
 
-#: src/malferma_libro/app.py:1493
+#: src/malferma_libro/app.py:1496
 msgid "На этой странице нет доступного текста для озвучки. Распознавание сканов пока не поддерживается."
 msgstr "Din il-paġna ma fihiex test aċċessibbli għall-qari b'leħen għoli. Ir-rikonoxximent tat-test f'dokumenti skenjati għadu mhux appoġġjat."
 
@@ -656,11 +664,11 @@ msgstr "Din il-paġna ma fihiex test aċċessibbli għall-qari b'leħen għoli. 
 msgid "Нажмите новое сочетание клавиш."
 msgstr "Agħfas is-shortcut il-ġdida tat-tastiera."
 
-#: src/malferma_libro/app.py:2068
+#: src/malferma_libro/app.py:2084
 msgid "Назад"
 msgstr "Lura"
 
-#: src/malferma_libro/app.py:2111
+#: src/malferma_libro/app.py:2127
 msgid "Название"
 msgstr "Isem"
 
@@ -668,19 +676,19 @@ msgstr "Isem"
 msgid "Название или автор"
 msgstr "Titlu jew awtur"
 
-#: src/malferma_libro/search_ui.py:313
+#: src/malferma_libro/search_ui.py:312
 msgid "Найдено в тексте страницы: {query}"
 msgstr "Misjub fit-test tal-paġna: {query}"
 
-#: src/malferma_libro/search_ui.py:314
+#: src/malferma_libro/search_ui.py:313
 msgid "Найдено: {query}"
 msgstr "Misjub: {query}"
 
-#: src/malferma_libro/app.py:2083 src/malferma_libro/app.py:374 src/malferma_libro/app.py:375 src/malferma_libro/app.py:524 src/malferma_libro/app.py:899 src/malferma_libro/shortcuts.py:32
+#: src/malferma_libro/app.py:2099 src/malferma_libro/app.py:376 src/malferma_libro/app.py:377 src/malferma_libro/app.py:526 src/malferma_libro/app.py:901 src/malferma_libro/shortcuts.py:32
 msgid "Найти"
 msgstr "Fittex"
 
-#: src/malferma_libro/app.py:1141 src/malferma_libro/app.py:1144 src/malferma_libro/app.py:419 src/malferma_libro/shortcuts.py:34
+#: src/malferma_libro/app.py:1144 src/malferma_libro/app.py:1147 src/malferma_libro/app.py:421 src/malferma_libro/shortcuts.py:34
 msgid "Настройки"
 msgstr "Konfigurazzjoni"
 
@@ -700,7 +708,7 @@ msgstr "Għadu ma nbediex"
 msgid "Не удалось воспроизвести озвучку."
 msgstr "Ma setax jindaqq il-qari b'leħen għoli."
 
-#: src/malferma_libro/app.py:625
+#: src/malferma_libro/app.py:627
 msgid "Не удалось выполнить действие"
 msgstr "Ma setgħetx titwettaq l-azzjoni"
 
@@ -708,7 +716,7 @@ msgstr "Ma setgħetx titwettaq l-azzjoni"
 msgid "Не удалось выполнить поиск."
 msgstr "It-tfittxija ma setgħetx titwettaq."
 
-#: src/malferma_libro/app.py:2128
+#: src/malferma_libro/app.py:2144
 msgid "Не удалось добавить каталог"
 msgstr "Ma setax jiżdied il-katalgu"
 
@@ -716,11 +724,11 @@ msgstr "Ma setax jiżdied il-katalgu"
 msgid "Не удалось загрузить голос Piper."
 msgstr "Ma setax jitgħabba l-leħen ta' Piper."
 
-#: src/malferma_libro/app.py:1815
+#: src/malferma_libro/app.py:1830
 msgid "Не удалось загрузить страницу {page}"
 msgstr "Ma setgħetx titgħabba l-paġna {page}"
 
-#: src/malferma_libro/app.py:1816
+#: src/malferma_libro/app.py:1831
 msgid "Не удалось загрузить страницу. Нажмите «Повторить» или выберите другую страницу."
 msgstr "Ma setgħetx titgħabba l-paġna. Agħfas «Erġa' pprova» jew agħżel paġna oħra."
 
@@ -756,7 +764,7 @@ msgstr "Ma setax jiġi ddeterminat id-daqs tal-paġna DjVu"
 msgid "Не удалось определить размер страницы PDF"
 msgstr "Ma setax jiġi ddeterminat id-daqs tal-paġna PDF"
 
-#: src/malferma_libro/app.py:238
+#: src/malferma_libro/app.py:240
 msgid "Не удалось открыть библиотеку"
 msgstr "Ma setgħetx tinfetaħ il-librerija"
 
@@ -792,7 +800,7 @@ msgstr "Ma setax jinqara d-DjVu: il-fajl għandu l-ħsara jew struttura mhux app
 msgid "Не удалось прочитать PDF: файл повреждён или имеет неподдерживаемую структуру"
 msgstr "Ma setax jinqara l-PDF: il-fajl għandu l-ħsara jew struttura mhux appoġġjata"
 
-#: src/malferma_libro/books.py:874 src/malferma_libro/markup.py:70
+#: src/malferma_libro/books.py:1119 src/malferma_libro/markup.py:70
 msgid "Не удалось прочитать книгу: {exc}"
 msgstr "Ma setax jinqara l-ktieb: {exc}"
 
@@ -800,7 +808,7 @@ msgstr "Ma setax jinqara l-ktieb: {exc}"
 msgid "Не удалось прочитать текст на страницах: {count}."
 msgstr "Għadd ta’ paġni li t-test tagħhom ma setax jinqara: {count}."
 
-#: src/malferma_libro/books.py:432
+#: src/malferma_libro/books.py:589
 msgid "Не удалось распаковать файл книги: {name}"
 msgstr "Ma setax jiġi estratt fajl mill-arkivju tal-ktieb: {name}"
 
@@ -812,7 +820,7 @@ msgstr "Ma setax jiġi sintetizzat id-diskors b'Piper."
 msgid "Не удалось скачать голос Piper."
 msgstr "Ma setax jitniżżel il-leħen ta' Piper."
 
-#: src/malferma_libro/app.py:1580 src/malferma_libro/app.py:1610 src/malferma_libro/app.py:1632 src/malferma_libro/keybindings_ui.py:295 src/malferma_libro/library_ui.py:206
+#: src/malferma_libro/app.py:1583 src/malferma_libro/app.py:1613 src/malferma_libro/app.py:1635 src/malferma_libro/keybindings_ui.py:295 src/malferma_libro/library_ui.py:206
 msgid "Не удалось сохранить библиотеку"
 msgstr "Ma setgħetx tiġi ssejvjata l-librerija"
 
@@ -840,11 +848,11 @@ msgstr "Ma setgħetx tiġi ssejvjata l-immaġni tal-paġna DjVu"
 msgid "Не удалось сохранить изображение страницы PDF"
 msgstr "Ma setgħetx tiġi ssejvjata l-immaġni tal-paġna PDF"
 
-#: src/malferma_libro/app.py:2017
+#: src/malferma_libro/app.py:2033
 msgid "Не удалось сохранить место чтения"
 msgstr "Ma setgħetx tiġi ssejvjata l-pożizzjoni tal-qari"
 
-#: src/malferma_libro/app.py:2143
+#: src/malferma_libro/app.py:2159
 msgid "Не удалось сохранить список каталогов"
 msgstr "Ma setgħetx tiġi ssejvjata l-lista tal-katalgi"
 
@@ -888,11 +896,11 @@ msgstr "Fattur taż-żum tal-PDF mhux validu"
 msgid "Недопустимый пароль PDF"
 msgstr "Password tal-PDF mhux valida"
 
-#: src/malferma_libro/books.py:408
+#: src/malferma_libro/books.py:565
 msgid "Недопустимый путь в архиве книги"
 msgstr "Mogħdija mhux valida fl-arkivju tal-ktieb"
 
-#: src/malferma_libro/books.py:450
+#: src/malferma_libro/books.py:607
 msgid "Недопустимый путь во внутренней ссылке EPUB"
 msgstr "Mogħdija mhux valida fil-ħolqa interna tal-EPUB"
 
@@ -912,7 +920,7 @@ msgstr "Verżjoni mhux magħrufa tal-fajl tal-librerija."
 msgid "Неизвестный язык озвучки: {language}."
 msgstr "Lingwa mhux magħrufa għall-qari b'leħen għoli: {language}."
 
-#: src/malferma_libro/storage.py:222 src/malferma_libro/storage.py:752 src/malferma_libro/storage.py:788
+#: src/malferma_libro/storage.py:222 src/malferma_libro/storage.py:753 src/malferma_libro/storage.py:789
 msgid "Некорректная закладка."
 msgstr "Marka tal-paġna mhux valida."
 
@@ -964,7 +972,7 @@ msgstr "Lista ta' kotba mhux valida."
 msgid "Некорректный файл библиотеки."
 msgstr "Fajl tal-librerija mhux validu."
 
-#: src/malferma_libro/app.py:854
+#: src/malferma_libro/app.py:856
 msgid "Некоторые книги не удалось открыть"
 msgstr "Xi kotba ma setgħux jinfetħu"
 
@@ -984,7 +992,7 @@ msgstr "Struttura tad-dokument DjVu mhux appoġġjata"
 msgid "Неподдерживаемый тип документа DjVu"
 msgstr "Tip ta' dokument DjVu mhux appoġġjat"
 
-#: src/malferma_libro/books.py:596
+#: src/malferma_libro/books.py:785
 msgid "Неподдерживаемый формат главы EPUB: {media}"
 msgstr "Format ta' kapitlu EPUB mhux appoġġjat: {media}"
 
@@ -992,7 +1000,7 @@ msgstr "Format ta' kapitlu EPUB mhux appoġġjat: {media}"
 msgid "Нет доступа. Проверьте права на файл или выберите другой каталог."
 msgstr "Aċċess miċħud. Iċċekkja l-permessi tal-fajl jew agħżel fowlder ieħor."
 
-#: src/malferma_libro/app.py:2209
+#: src/malferma_libro/app.py:2225
 msgid "Нет поддерживаемой прямой загрузки"
 msgstr "Ebda tniżżil dirett appoġġjat"
 
@@ -1008,11 +1016,11 @@ msgstr "In-numru tal-paġna DjVu huwa barra mill-medda permessa"
 msgid "Номер страницы PDF вне допустимого диапазона"
 msgstr "In-numru tal-paġna PDF huwa barra mill-medda permessa"
 
-#: src/malferma_libro/app.py:1175
+#: src/malferma_libro/app.py:1178
 msgid "Ночной"
 msgstr "Lejl"
 
-#: src/malferma_libro/app.py:422
+#: src/malferma_libro/app.py:424
 msgid "О приложении"
 msgstr "Dwar l-applikazzjoni"
 
@@ -1044,7 +1052,7 @@ msgstr "Il-proċessur tal-PDF ma ħoloqx immaġni tal-paġna"
 msgid "Обработчик PDF создал недопустимое изображение"
 msgstr "Il-proċessur tal-PDF ħoloq immaġni mhux valida"
 
-#: src/malferma_libro/app.py:525 src/malferma_libro/app.py:865 src/malferma_libro/app.py:866 src/malferma_libro/outline_ui.py:36 src/malferma_libro/outline_ui.py:47 src/malferma_libro/shortcuts.py:60
+#: src/malferma_libro/app.py:527 src/malferma_libro/app.py:867 src/malferma_libro/app.py:868 src/malferma_libro/outline_ui.py:36 src/malferma_libro/outline_ui.py:47 src/malferma_libro/shortcuts.py:60
 msgid "Оглавление"
 msgstr "Werrej"
 
@@ -1056,23 +1064,23 @@ msgstr "Kien mistenni katalgu OPDS fil-format Atom."
 msgid "Ожидание данных…"
 msgstr "Qed jistenna d-data…"
 
-#: src/malferma_libro/app.py:1000 src/malferma_libro/app.py:1000 src/malferma_libro/app.py:1526 src/malferma_libro/shortcuts.py:63
+#: src/malferma_libro/app.py:1003 src/malferma_libro/app.py:1003 src/malferma_libro/app.py:1529 src/malferma_libro/shortcuts.py:63
 msgid "Озвучить"
 msgstr "Aqra b'leħen għoli"
 
-#: src/malferma_libro/accessibility_ui.py:237 src/malferma_libro/app.py:1210
+#: src/malferma_libro/accessibility_ui.py:237 src/malferma_libro/app.py:1213
 msgid "Озвучка"
 msgstr "Qari b'leħen għoli"
 
-#: src/malferma_libro/app.py:1574
+#: src/malferma_libro/app.py:1577
 msgid "Озвучка книги завершена."
 msgstr "Il-qari tal-ktieb b'leħen għoli tlesta."
 
-#: src/malferma_libro/app.py:1531
+#: src/malferma_libro/app.py:1534
 msgid "Озвучка приостановлена"
 msgstr "Il-qari b'leħen għoli twaqqaf temporanjament"
 
-#: src/malferma_libro/app.py:993
+#: src/malferma_libro/app.py:996
 msgid "Озвучка через Piper"
 msgstr "Qari b’leħen għoli b’Piper"
 
@@ -1084,7 +1092,7 @@ msgstr "Diżattivata"
 msgid "Отключить"
 msgstr "Iddiżattiva"
 
-#: src/malferma_libro/app.py:907
+#: src/malferma_libro/app.py:909
 msgid "Откройте книгу в библиотеке."
 msgstr "Iftaħ ktieb fil-librerija."
 
@@ -1092,7 +1100,7 @@ msgstr "Iftaħ ktieb fil-librerija."
 msgid "Откройте книгу или подключите OPDS-каталог во вкладке «Сетевые библиотеки»."
 msgstr "Iftaħ ktieb jew qabbad katalgu OPDS fit-tab «Libreriji fuq l-internet»."
 
-#: src/malferma_libro/app.py:1171
+#: src/malferma_libro/app.py:1174
 msgid "Открывать последнюю книгу при запуске"
 msgstr "Iftaħ l-aħħar ktieb meta tibda l-applikazzjoni"
 
@@ -1108,19 +1116,19 @@ msgstr "Iftaħ"
 msgid "Открыть закладку: {chapter}. {excerpt}"
 msgstr "Iftaħ il-marka tal-paġna: {chapter}. {excerpt}"
 
-#: src/malferma_libro/app.py:523 src/malferma_libro/app.py:809 src/malferma_libro/desktop.py:257 src/malferma_libro/shortcuts.py:30
+#: src/malferma_libro/app.py:525 src/malferma_libro/app.py:811 src/malferma_libro/desktop.py:257 src/malferma_libro/shortcuts.py:30
 msgid "Открыть книги"
 msgstr "Iftaħ kotba"
 
-#: src/malferma_libro/app.py:2203
+#: src/malferma_libro/app.py:2219
 msgid "Открыть раздел"
 msgstr "Iftaħ it-taqsima"
 
-#: src/malferma_libro/app.py:361 src/malferma_libro/narration_ui.py:159
+#: src/malferma_libro/app.py:363 src/malferma_libro/narration_ui.py:159
 msgid "Открыть…"
 msgstr "Iftaħ…"
 
-#: src/malferma_libro/app.py:2107 src/malferma_libro/app.py:813 src/malferma_libro/bookmarks_ui.py:175 src/malferma_libro/bookmarks_ui.py:175 src/malferma_libro/keybindings_ui.py:230 src/malferma_libro/library_ui.py:257 src/malferma_libro/narration_ui.py:159
+#: src/malferma_libro/app.py:2123 src/malferma_libro/app.py:815 src/malferma_libro/bookmarks_ui.py:175 src/malferma_libro/bookmarks_ui.py:175 src/malferma_libro/keybindings_ui.py:230 src/malferma_libro/library_ui.py:257 src/malferma_libro/narration_ui.py:159
 msgid "Отмена"
 msgstr "Ikkanċella"
 
@@ -1136,11 +1144,11 @@ msgstr "Ikkanċella"
 msgid "Отменить поиск"
 msgstr "Ikkanċella t-tfittxija"
 
-#: src/malferma_libro/app.py:1170
+#: src/malferma_libro/app.py:1173
 msgid "Оформление окна"
 msgstr "Dehra tat-tieqa"
 
-#: src/malferma_libro/app.py:1525
+#: src/malferma_libro/app.py:1528
 msgid "Пауза"
 msgstr "Issospendi"
 
@@ -1152,7 +1160,11 @@ msgstr "Skont l-awtur"
 msgid "По названию"
 msgstr "Skont it-titlu"
 
-#: src/malferma_libro/app.py:1213
+#: src/malferma_libro/illustration_ui.py:308
+msgid "По размеру окна"
+msgstr "Adatta għat-tieqa"
+
+#: src/malferma_libro/app.py:1216
 msgid "По тексту главы"
 msgstr "Skont it-test tal-kapitlu"
 
@@ -1172,51 +1184,51 @@ msgstr "L-istruttura tal-fajl DjVu għandha l-ħsara"
 msgid "Повреждён каталог страниц DjVu"
 msgstr "Id-direttorju tal-paġni DjVu għandu l-ħsara"
 
-#: src/malferma_libro/books.py:448 src/malferma_libro/books.py:471
+#: src/malferma_libro/books.py:605 src/malferma_libro/books.py:628
 msgid "Повреждённая внутренняя ссылка EPUB"
 msgstr "Ħolqa interna tal-EPUB bil-ħsara"
 
-#: src/malferma_libro/books.py:394
+#: src/malferma_libro/books.py:551
 msgid "Повреждённый ZIP-архив книги"
 msgstr "Arkivju ZIP tal-ktieb bil-ħsara"
 
-#: src/malferma_libro/app.py:1490
+#: src/malferma_libro/app.py:1493
 msgid "Повторите загрузку страницы."
 msgstr "Erġa' għabbi l-paġna."
 
-#: src/malferma_libro/app.py:889 src/malferma_libro/task_ui.py:204 src/malferma_libro/task_ui.py:204
+#: src/malferma_libro/app.py:891 src/malferma_libro/task_ui.py:204 src/malferma_libro/task_ui.py:204
 msgid "Повторить"
 msgstr "Erġa' pprova"
 
-#: src/malferma_libro/books.py:410
+#: src/malferma_libro/books.py:567
 msgid "Повторяющиеся имена файлов в архиве книги"
 msgstr "Ismijiet ta' fajls duplikati fl-arkivju tal-ktieb"
 
-#: src/malferma_libro/books.py:557
+#: src/malferma_libro/books.py:715
 msgid "Повторяющийся идентификатор в списке файлов EPUB"
 msgstr "Identifikatur duplikat fil-lista ta' fajls tal-EPUB"
 
-#: src/malferma_libro/books.py:851
+#: src/malferma_libro/books.py:1096
 msgid "Поддерживаются EPUB, FB2, FB2.ZIP, TXT, PDF, DjVu, HTML, Markdown и CBZ"
 msgstr "EPUB, FB2, FB2.ZIP, TXT, PDF, DjVu, HTML, Markdown u CBZ huma appoġġjati"
 
-#: src/malferma_libro/app.py:2097
+#: src/malferma_libro/app.py:2113
 msgid "Поддерживаются прямые загрузки EPUB, FB2, TXT, PDF, DjVu, HTML, Markdown и CBZ. Каталоги с авторизацией и DRM пока не поддерживаются."
 msgstr "It-tniżżil dirett ta' EPUB, FB2, TXT, PDF, DjVu, HTML, Markdown u CBZ huwa appoġġjat. Katalgi li jeħtieġu awtentikazzjoni jew jużaw DRM għadhom mhumiex appoġġjati."
 
-#: src/malferma_libro/app.py:2051 src/malferma_libro/app.py:2095
+#: src/malferma_libro/app.py:2067 src/malferma_libro/app.py:2111
 msgid "Подключите публичный OPDS 1.x каталог или каталог Calibre в локальной сети."
 msgstr "Qabbad katalgu OPDS 1.x pubbliku jew katalgu Calibre fin-netwerk lokali."
 
-#: src/malferma_libro/app.py:2058 src/malferma_libro/app.py:2063 src/malferma_libro/app.py:2064
+#: src/malferma_libro/app.py:2074 src/malferma_libro/app.py:2079 src/malferma_libro/app.py:2080
 msgid "Подключиться"
 msgstr "Qabbad"
 
-#: src/malferma_libro/app.py:2079
+#: src/malferma_libro/app.py:2095
 msgid "Поиск (если каталог его поддерживает)"
 msgstr "Tfittxija (jekk il-katalgu jappoġġjaha)"
 
-#: src/malferma_libro/app.py:1796 src/malferma_libro/app.py:1807
+#: src/malferma_libro/app.py:1811 src/malferma_libro/app.py:1822
 msgid "Поиск и озвучка доступны в тексте страницы."
 msgstr "It-tfittxija u l-qari b'leħen għoli huma disponibbli fit-test tal-paġna."
 
@@ -1224,7 +1236,7 @@ msgstr "It-tfittxija u l-qari b'leħen għoli huma disponibbli fit-test tal-paġ
 msgid "Поиск отменён."
 msgstr "It-tfittxija ġiet ikkanċellata."
 
-#: src/malferma_libro/app.py:1640 src/malferma_libro/app.py:897 src/malferma_libro/search_ui.py:42
+#: src/malferma_libro/app.py:1643 src/malferma_libro/app.py:899 src/malferma_libro/search_ui.py:42
 msgid "Поиск по всей книге"
 msgstr "Fittex fil-ktieb kollu"
 
@@ -1240,7 +1252,7 @@ msgstr "Qed jintwerew l-ewwel {count} sejba. Irfina t-tfittxija."
 msgid "Показать верхнюю панель"
 msgstr "Uri l-istrixxa ta’ fuq"
 
-#: src/malferma_libro/app.py:382 src/malferma_libro/app.py:465 src/malferma_libro/app.py:521 src/malferma_libro/shortcuts.py:41
+#: src/malferma_libro/app.py:384 src/malferma_libro/app.py:467 src/malferma_libro/app.py:523 src/malferma_libro/shortcuts.py:41
 msgid "Полноэкранный режим"
 msgstr "Skrin sħiħ"
 
@@ -1248,7 +1260,7 @@ msgstr "Skrin sħiħ"
 msgid "Положение в книге должно быть целым неотрицательным числом."
 msgstr "Il-pożizzjoni fil-ktieb trid tkun numru sħiħ mhux negattiv."
 
-#: src/malferma_libro/accessibility_ui.py:280 src/malferma_libro/app.py:1206
+#: src/malferma_libro/accessibility_ui.py:280 src/malferma_libro/app.py:1209
 msgid "Полужирный текст"
 msgstr "Test grassett"
 
@@ -1256,11 +1268,11 @@ msgstr "Test grassett"
 msgid "Пользовательские"
 msgstr "Personalizzati"
 
-#: src/malferma_libro/books.py:593
+#: src/malferma_libro/books.py:782
 msgid "Порядок глав EPUB ссылается на отсутствующий файл"
 msgstr "L-ordni tal-kapitli tal-EPUB tirreferi għal fajl nieqes"
 
-#: src/malferma_libro/app.py:526 src/malferma_libro/app.py:869 src/malferma_libro/shortcuts.py:56
+#: src/malferma_libro/app.py:528 src/malferma_libro/app.py:871 src/malferma_libro/shortcuts.py:56
 msgid "Предыдущая глава"
 msgstr "Kapitlu ta' qabel"
 
@@ -1272,19 +1284,19 @@ msgstr "Paġna ta’ qabel"
 msgid "Предыдущее совпадение"
 msgstr "Sejba ta’ qabel"
 
-#: src/malferma_libro/app.py:1185
+#: src/malferma_libro/app.py:1188
 msgid "Приглушение цветов страницы; яркость монитора не меняется."
 msgstr "Ittaffi l-kuluri tal-paġna; il-luminożità tal-monitor ma tinbidilx."
 
-#: src/malferma_libro/accessibility_ui.py:291 src/malferma_libro/app.py:1208
+#: src/malferma_libro/accessibility_ui.py:291 src/malferma_libro/app.py:1211
 msgid "Применить"
 msgstr "Applika"
 
-#: src/malferma_libro/books.py:770
+#: src/malferma_libro/books.py:1013
 msgid "Примечание {number}"
 msgstr "Nota {number}"
 
-#: src/malferma_libro/books.py:753 src/malferma_libro/outline_ui.py:119 src/malferma_libro/outline_ui.py:66
+#: src/malferma_libro/books.py:995 src/malferma_libro/outline_ui.py:119 src/malferma_libro/outline_ui.py:66
 msgid "Примечания"
 msgstr "Noti"
 
@@ -1292,7 +1304,7 @@ msgstr "Noti"
 msgid "Проверьте доступ к файлу или каталогу и повторите действие."
 msgstr "Iċċekkja l-aċċess għall-fajl jew għall-fowlder u erġa’ pprova."
 
-#: src/malferma_libro/app.py:1525
+#: src/malferma_libro/app.py:1528
 msgid "Продолжить"
 msgstr "Kompli"
 
@@ -1316,7 +1328,7 @@ msgstr "Isma’ kampjun"
 msgid "Прочитано"
 msgstr "Moqri"
 
-#: src/malferma_libro/books.py:744
+#: src/malferma_libro/books.py:986
 msgid "Раздел {number}"
 msgstr "Taqsima {number}"
 
@@ -1324,7 +1336,7 @@ msgstr "Taqsima {number}"
 msgid "Размер ответа превышает допустимый предел."
 msgstr "Id-daqs tat-tweġiba jaqbeż il-limitu permess."
 
-#: src/malferma_libro/accessibility_ui.py:276 src/malferma_libro/app.py:1191
+#: src/malferma_libro/accessibility_ui.py:276 src/malferma_libro/app.py:1194
 msgid "Размер текста"
 msgstr "Daqs tat-test"
 
@@ -1332,11 +1344,11 @@ msgstr "Daqs tat-test"
 msgid "Размер фрагмента должен быть положительным."
 msgstr "Id-daqs tal-framment irid ikun pożittiv."
 
-#: src/malferma_libro/app.py:876
+#: src/malferma_libro/app.py:878
 msgid "Размер шрифта"
 msgstr "Daqs tat-tipa"
 
-#: src/malferma_libro/books.py:420
+#: src/malferma_libro/books.py:577
 msgid "Распакованный размер книги превышает допустимый предел"
 msgstr "Id-daqs tal-ktieb dekompressat jaqbeż il-limitu permess"
 
@@ -1344,23 +1356,23 @@ msgstr "Id-daqs tal-ktieb dekompressat jaqbeż il-limitu permess"
 msgid "Режим"
 msgstr "Modalità"
 
-#: src/malferma_libro/accessibility_ui.py:291 src/malferma_libro/app.py:1208
+#: src/malferma_libro/accessibility_ui.py:291 src/malferma_libro/app.py:1211
 msgid "Режим для слабовидящих"
 msgstr "Modalità għal persuni b’vista dgħajfa"
 
-#: src/malferma_libro/search_ui.py:311
+#: src/malferma_libro/search_ui.py:310
 msgid "Результат {number} из {count}"
 msgstr "Riżultat {number} minn {count}"
 
-#: src/malferma_libro/app.py:420 src/malferma_libro/app.py:582 src/malferma_libro/app.py:603 src/malferma_libro/shortcuts.py:43
+#: src/malferma_libro/app.py:422 src/malferma_libro/app.py:584 src/malferma_libro/app.py:605 src/malferma_libro/shortcuts.py:43
 msgid "Руководство пользователя"
 msgstr "Gwida tal-utent"
 
-#: src/malferma_libro/app.py:1150
+#: src/malferma_libro/app.py:1153
 msgid "Светлый"
 msgstr "Ċar"
 
-#: src/malferma_libro/app.py:1175
+#: src/malferma_libro/app.py:1178
 msgid "Сепия"
 msgstr "Sepja"
 
@@ -1384,39 +1396,39 @@ msgstr "Is-server bagħat lura fajl ta' tip mhux appoġġjat."
 msgid "Сервер передал неполный файл."
 msgstr "Is-server bagħat fajl mhux komplut."
 
-#: src/malferma_libro/app.py:368 src/malferma_libro/app.py:416 src/malferma_libro/shortcuts.py:40
+#: src/malferma_libro/app.py:370 src/malferma_libro/app.py:418 src/malferma_libro/shortcuts.py:40
 msgid "Сетевые библиотеки"
 msgstr "Libreriji fuq l-internet"
 
-#: src/malferma_libro/app.py:2050 src/malferma_libro/app.py:2094
+#: src/malferma_libro/app.py:2066 src/malferma_libro/app.py:2110
 msgid "Сетевые библиотеки OPDS"
 msgstr "Libreriji OPDS fuq l-internet"
 
-#: src/malferma_libro/books.py:415
+#: src/malferma_libro/books.py:572
 msgid "Символические ссылки в архиве книги запрещены"
 msgstr "Il-ħoloq simboliċi fl-arkivju tal-ktieb huma pprojbiti"
 
-#: src/malferma_libro/app.py:1148
+#: src/malferma_libro/app.py:1151
 msgid "Системные шрифты, масштаб и оконные кнопки задаёт рабочая среда. Виджеты используют libadwaita."
 msgstr "L-ambjent tax-xogħol jistabbilixxi t-tipi tas-sistema, l-iskala u l-buttuni tat-twieqi. Il-kontrolli jużaw libadwaita."
 
-#: src/malferma_libro/app.py:1153 src/malferma_libro/appearance.py:22
+#: src/malferma_libro/app.py:1156 src/malferma_libro/appearance.py:22
 msgid "Системный"
 msgstr "Tas-sistema"
 
-#: src/malferma_libro/app.py:2205
+#: src/malferma_libro/app.py:2221
 msgid "Скачать {format}"
 msgstr "Niżżel {format}"
 
-#: src/malferma_libro/app.py:2255
+#: src/malferma_libro/app.py:2271
 msgid "Скачивание книги…"
 msgstr "Qed jitniżżel il-ktieb…"
 
-#: src/malferma_libro/accessibility_ui.py:265 src/malferma_libro/app.py:1218
+#: src/malferma_libro/accessibility_ui.py:265 src/malferma_libro/app.py:1221
 msgid "Скорость, %"
 msgstr "Veloċità, %"
 
-#: src/malferma_libro/app.py:527 src/malferma_libro/app.py:870 src/malferma_libro/shortcuts.py:58
+#: src/malferma_libro/app.py:529 src/malferma_libro/app.py:872 src/malferma_libro/shortcuts.py:58
 msgid "Следующая глава"
 msgstr "Kapitlu li jmiss"
 
@@ -1428,7 +1440,7 @@ msgstr "Paġna li jmiss"
 msgid "Следующее совпадение"
 msgstr "Is-sejba li jmiss"
 
-#: src/malferma_libro/books.py:399
+#: src/malferma_libro/books.py:556
 msgid "Слишком много файлов в архиве книги"
 msgstr "Wisq fajls fl-arkivju tal-ktieb"
 
@@ -1436,7 +1448,7 @@ msgstr "Wisq fajls fl-arkivju tal-ktieb"
 msgid "Слишком сложная структура документа DjVu"
 msgstr "L-istruttura tad-dokument DjVu hija kumplessa wisq"
 
-#: src/malferma_libro/app.py:1480 src/malferma_libro/bookmarks_ui.py:41
+#: src/malferma_libro/app.py:1483 src/malferma_libro/bookmarks_ui.py:41
 msgid "Сначала откройте книгу."
 msgstr "L-ewwel iftaħ ktieb."
 
@@ -1460,7 +1472,7 @@ msgstr "Issejvja"
 msgid "Сочетание занято: {action}"
 msgstr "Is-shortcut diġà assenjata: {action}"
 
-#: src/malferma_libro/accessibility_ui.py:270 src/malferma_libro/accessibility_ui.py:318 src/malferma_libro/accessibility_ui.py:319 src/malferma_libro/app.py:1196 src/malferma_libro/app.py:529 src/malferma_libro/shortcuts.py:36
+#: src/malferma_libro/accessibility_ui.py:270 src/malferma_libro/accessibility_ui.py:318 src/malferma_libro/accessibility_ui.py:319 src/malferma_libro/app.py:1199 src/malferma_libro/app.py:531 src/malferma_libro/shortcuts.py:36
 msgid "Специальные возможности"
 msgstr "Aċċessibbiltà"
 
@@ -1468,7 +1480,7 @@ msgstr "Aċċessibbiltà"
 msgid "Список книг и настройки восстановлены из последней резервной копии."
 msgstr "Il-lista tal-kotba u l-konfigurazzjoni ġew restawrati mill-aħħar kopja ta' riżerva."
 
-#: src/malferma_libro/app.py:1006 src/malferma_libro/app.py:531 src/malferma_libro/shortcuts.py:54
+#: src/malferma_libro/app.py:1009 src/malferma_libro/app.py:533 src/malferma_libro/shortcuts.py:54
 msgid "Стандартный размер текста"
 msgstr "Daqs tat-test predefinit"
 
@@ -1476,7 +1488,7 @@ msgstr "Daqs tat-test predefinit"
 msgid "Стоп"
 msgstr "Waqqaf"
 
-#: src/malferma_libro/books.py:809 src/malferma_libro/books.py:823 src/malferma_libro/cbz.py:528 src/malferma_libro/outline_ui.py:120 src/malferma_libro/outline_ui.py:86
+#: src/malferma_libro/books.py:1054 src/malferma_libro/books.py:1068 src/malferma_libro/cbz.py:528 src/malferma_libro/outline_ui.py:120 src/malferma_libro/outline_ui.py:86
 msgid "Страница {number}"
 msgstr "Paġna {number}"
 
@@ -1484,23 +1496,23 @@ msgstr "Paġna {number}"
 msgid "Страница {page}"
 msgstr "Paġna {page}"
 
-#: src/malferma_libro/app.py:1792 src/malferma_libro/pagination.py:152
+#: src/malferma_libro/app.py:1807 src/malferma_libro/pagination.py:152
 msgid "Страница {page} из {pages}"
 msgstr "Paġna {page} minn {pages}"
 
-#: src/malferma_libro/app.py:2033
+#: src/malferma_libro/app.py:2049
 msgid "Страница {page} из {pages}  ·  {percent}% книги"
 msgstr "Paġna {page} minn {pages}  ·  {percent}% tal-ktieb"
 
-#: src/malferma_libro/app.py:1797 src/malferma_libro/app.py:1808
+#: src/malferma_libro/app.py:1812 src/malferma_libro/app.py:1823
 msgid "Страница без текстового слоя. Скан доступен для просмотра; OCR пока не поддерживается."
 msgstr "Il-paġna ma għandhiex saff ta' test. Tista' tara l-immaġni skenjata; l-OCR għadu mhux appoġġjat."
 
-#: src/malferma_libro/app.py:957 src/malferma_libro/app.py:960
+#: src/malferma_libro/app.py:960 src/malferma_libro/app.py:963
 msgid "Страница документа"
 msgstr "Paġna tad-dokument"
 
-#: src/malferma_libro/app.py:1172 src/malferma_libro/app.py:943 src/malferma_libro/app.py:997 src/malferma_libro/app.py:998
+#: src/malferma_libro/app.py:1000 src/malferma_libro/app.py:1001 src/malferma_libro/app.py:1175 src/malferma_libro/app.py:945
 msgid "Страница книги"
 msgstr "Paġna tal-ktieb"
 
@@ -1512,7 +1524,7 @@ msgstr "Paġni"
 msgid "Страницы {first}–{last} из {pages}"
 msgstr "Paġni {first}–{last} minn {pages}"
 
-#: src/malferma_libro/books.py:577 src/malferma_libro/books.py:724 src/malferma_libro/markup.py:110 src/malferma_libro/markup.py:229 src/malferma_libro/markup.py:380 src/malferma_libro/markup.py:427
+#: src/malferma_libro/books.py:762 src/malferma_libro/books.py:963 src/malferma_libro/markup.py:110 src/malferma_libro/markup.py:229 src/malferma_libro/markup.py:380 src/malferma_libro/markup.py:427
 msgid "Текст книги превышает допустимый размер"
 msgstr "It-test tal-ktieb jaqbeż id-daqs permess"
 
@@ -1520,15 +1532,15 @@ msgstr "It-test tal-ktieb jaqbeż id-daqs permess"
 msgid "Текст озвучки должен быть строкой."
 msgstr "It-test għall-qari b'leħen għoli jrid ikun sekwenza ta' karattri."
 
-#: src/malferma_libro/app.py:984 src/malferma_libro/app.py:989
+#: src/malferma_libro/app.py:987 src/malferma_libro/app.py:992
 msgid "Текст страницы · поиск и озвучка"
 msgstr "Test tal-paġna · tfittxija u qari b'leħen għoli"
 
-#: src/malferma_libro/books.py:869
+#: src/malferma_libro/books.py:1114
 msgid "Текстовый файл пуст"
 msgstr "Il-fajl tat-test huwa vojt"
 
-#: src/malferma_libro/app.py:1150
+#: src/malferma_libro/app.py:1153
 msgid "Тёмный"
 msgstr "Skur"
 
@@ -1536,7 +1548,11 @@ msgstr "Skur"
 msgid "Увеличение лупы"
 msgstr "Tkabbir tal-lenti"
 
-#: src/malferma_libro/app.py:1008 src/malferma_libro/app.py:532 src/malferma_libro/shortcuts.py:50
+#: src/malferma_libro/illustration_ui.py:307
+msgid "Увеличить"
+msgstr "Kabbar"
+
+#: src/malferma_libro/app.py:1011 src/malferma_libro/app.py:534 src/malferma_libro/shortcuts.py:50
 msgid "Увеличить текст"
 msgstr "Kabbar it-test"
 
@@ -1544,15 +1560,15 @@ msgstr "Kabbar it-test"
 msgid "Удалить закладку"
 msgstr "Ħassar il-marka tal-paġna"
 
-#: src/malferma_libro/app.py:2060
+#: src/malferma_libro/app.py:2076
 msgid "Удалить каталог из списка"
 msgstr "Neħħi l-katalgu mil-lista"
 
-#: src/malferma_libro/app.py:1204
+#: src/malferma_libro/app.py:1207
 msgid "Удерживайте правую кнопку мыши и проведите влево или вправо для перехода между главами или страницами."
 msgstr "Żomm il-buttuna tal-lemin tal-maws magħfusa u ċaqlaq il-maws lejn ix-xellug jew il-lemin biex taqleb bejn kapitli jew paġni."
 
-#: src/malferma_libro/storage.py:824
+#: src/malferma_libro/storage.py:825
 msgid "Укажите название каталога."
 msgstr "Speċifika l-isem tal-katalgu."
 
@@ -1560,11 +1576,15 @@ msgstr "Speċifika l-isem tal-katalgu."
 msgid "Укажите полный адрес OPDS-каталога: https://example.org/opds."
 msgstr "Speċifika l-indirizz sħiħ tal-katalgu OPDS: https://example.org/opds."
 
-#: src/malferma_libro/books.py:795
+#: src/malferma_libro/books.py:1040
 msgid "Указанный путь не является файлом"
 msgstr "Il-mogħdija speċifikata mhijiex fajl"
 
-#: src/malferma_libro/app.py:1004 src/malferma_libro/app.py:530 src/malferma_libro/shortcuts.py:52
+#: src/malferma_libro/illustration_ui.py:306
+msgid "Уменьшить"
+msgstr "Ċekken"
+
+#: src/malferma_libro/app.py:1007 src/malferma_libro/app.py:532 src/malferma_libro/shortcuts.py:52
 msgid "Уменьшить текст"
 msgstr "Naqqas it-test"
 
@@ -1592,7 +1612,7 @@ msgstr "Il-fajl PDF huwa vojt jew jaqbeż id-daqs permess ta' 64 MiB"
 msgid "Файл библиотеки повреждён. Исходный файл сохранён: {preserved}"
 msgstr "Il-fajl tal-librerija għandu l-ħsara. Il-fajl oriġinali nżamm: {preserved}"
 
-#: src/malferma_libro/books.py:417 src/malferma_libro/books.py:434
+#: src/malferma_libro/books.py:574 src/malferma_libro/books.py:591
 msgid "Файл внутри книги превышает допустимый размер"
 msgstr "Fajl fil-ktieb jaqbeż id-daqs permess"
 
@@ -1608,11 +1628,11 @@ msgstr "Il-fajl ma fih l-ebda test li jista’ jinqara."
 msgid "Файл не является документом DjVu"
 msgstr "Il-fajl mhuwiex dokument DjVu"
 
-#: src/malferma_libro/books.py:705
+#: src/malferma_libro/books.py:909
 msgid "Файл не является книгой FB2"
 msgstr "Il-fajl mhuwiex ktieb FB2"
 
-#: src/malferma_libro/books.py:276 src/malferma_libro/markup.py:39
+#: src/malferma_libro/books.py:422 src/malferma_libro/markup.py:39
 msgid "Файл разметки слишком сложный."
 msgstr "Il-fajl tal-markup huwa kumpless wisq."
 
@@ -1628,7 +1648,7 @@ msgstr "Il-fajls tal-leħen ta' Piper ma għaddewx mill-verifika."
 msgid "Фильтр библиотеки"
 msgstr "Filtru tal-librerija"
 
-#: src/malferma_libro/app.py:1188
+#: src/malferma_libro/app.py:1191
 msgid "Фон страницы"
 msgstr "Sfond tal-paġna"
 
@@ -1636,11 +1656,11 @@ msgstr "Sfond tal-paġna"
 msgid "Формат ответа не совпадает с форматом книги."
 msgstr "Il-format tat-tweġiba ma jaqbilx mal-format tal-ktieb."
 
-#: src/malferma_libro/app.py:1173
+#: src/malferma_libro/app.py:1176
 msgid "Цвета и шрифты страницы настраиваются отдельно от интерфейса."
 msgstr "Il-kuluri u l-fonts tal-paġna jiġu ssettjati separatament mill-interfaċċa."
 
-#: src/malferma_libro/app.py:573
+#: src/malferma_libro/app.py:575
 msgid "Читалка EPUB, FB2, TXT, PDF, DjVu, HTML, Markdown и CBZ с локальной библиотекой и каталогами OPDS."
 msgstr "Qarrej ta' EPUB, FB2, TXT, PDF, DjVu, HTML, Markdown u CBZ b'librerija lokali u katalgi OPDS."
 
@@ -1648,7 +1668,7 @@ msgstr "Qarrej ta' EPUB, FB2, TXT, PDF, DjVu, HTML, Markdown u CBZ b'librerija l
 msgid "Читаю"
 msgstr "Qed naqra"
 
-#: src/malferma_libro/app.py:367 src/malferma_libro/app.py:415 src/malferma_libro/shortcuts.py:27 src/malferma_libro/shortcuts.py:39
+#: src/malferma_libro/app.py:369 src/malferma_libro/app.py:417 src/malferma_libro/shortcuts.py:27 src/malferma_libro/shortcuts.py:39
 msgid "Чтение"
 msgstr "Qari"
 
@@ -1660,7 +1680,7 @@ msgstr "Il-wisa' tal-paġna DjVu jrid ikun numru sħiħ pożittiv"
 msgid "Ширина страницы PDF должна быть положительным целым числом"
 msgstr "Il-wisa' tal-paġna PDF irid ikun numru sħiħ pożittiv"
 
-#: src/malferma_libro/app.py:1190
+#: src/malferma_libro/app.py:1193
 msgid "Шрифт книги"
 msgstr "Tipa tal-ktieb"
 
@@ -1668,7 +1688,7 @@ msgstr "Tipa tal-ktieb"
 msgid "Это сочетание зарезервировано системой."
 msgstr "Din is-shortcut hija riżervata mis-sistema."
 
-#: src/malferma_libro/storage.py:827
+#: src/malferma_libro/storage.py:828
 msgid "Этот каталог уже добавлен."
 msgstr "Dan il-katalgu diġà żdied."
 
@@ -1676,11 +1696,11 @@ msgstr "Dan il-katalgu diġà żdied."
 msgid "Этот формат книги не поддерживается."
 msgstr "Dan il-format ta' ktieb mhuwiex appoġġjat."
 
-#: src/malferma_libro/accessibility_ui.py:261 src/malferma_libro/app.py:1217 src/malferma_libro/app.py:590 src/malferma_libro/app.py:591
+#: src/malferma_libro/accessibility_ui.py:261 src/malferma_libro/app.py:1220 src/malferma_libro/app.py:592 src/malferma_libro/app.py:593
 msgid "Язык"
 msgstr "Lingwa"
 
-#: src/malferma_libro/app.py:1169 src/malferma_libro/app.py:588
+#: src/malferma_libro/app.py:1172 src/malferma_libro/app.py:590
 msgid "Язык интерфейса"
 msgstr "Lingwa tal-interfaċċa"
 
@@ -1688,11 +1708,11 @@ msgstr "Lingwa tal-interfaċċa"
 msgid "Язык озвучки «{language}» больше не поддерживается. Выбрано автоматическое определение языка."
 msgstr "Il-lingwa tal-qari b’leħen għoli “{language}” m’għadhiex appoġġjata. Intgħażel ir-rikonoxximent awtomatiku tal-lingwa."
 
-#: src/malferma_libro/app.py:1194
+#: src/malferma_libro/app.py:1197
 msgid "Яркость страницы, %"
 msgstr "Luminożità tal-paġna, %"
 
-#: src/malferma_libro/books.py:596
+#: src/malferma_libro/books.py:785
 msgid "не указан"
 msgstr "mhux speċifikat"
 

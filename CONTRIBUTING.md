@@ -23,7 +23,7 @@ are listed in [README.md](README.md).
 Edit translations in `po/*.po`; MO files are compiled output.
 Check the catalogs with `/usr/bin/python3 packaging/translations.py --check`.
 Do not automatically bump the version for every change. The current release
-line is 0.1.0; version 1.0 is reserved for a production-ready release.
+line is 0.1.1; version 1.0 is reserved for a production-ready release.
 
 Build archives, caches, virtual environments, and personal book libraries are
 excluded from Git. Before committing, check `git status` and review the staged
@@ -82,7 +82,7 @@ alone does not publish a GitHub Release. After a successful **Check and build**
 run in [Actions](https://github.com/gagafes/malferma-libro/actions), download
 the `malferma-libro-current` artifact containing the DEB package, source
 archives, and `SHA256SUMS`. You must be signed in to GitHub to download it.
-The [0.1.0 development prerelease](https://github.com/gagafes/malferma-libro/releases/tag/v0.1.0)
+The [0.1.1 development prerelease](https://github.com/gagafes/malferma-libro/releases/tag/v0.1.1)
 provides a direct DEB download, matching source archives, and checksums.
 When publishing a release, use the files from one current build in `dist/`,
 keeping older builds outside the current source tree.

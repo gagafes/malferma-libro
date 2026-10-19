@@ -575,7 +575,8 @@ class Library:
             # Parse the managed copy outside the metadata lock in that case.
             from .books import load_book
 
-            book = load_book(record["path"])
+            book = (load_book(record["path"], cancel=cancel) if cancel is not None
+                    else load_book(record["path"]))
         if book.pdf_document is not None:
             book.pdf_document = book.pdf_document.with_path(record["path"])
         if book.djvu_document is not None:
@@ -643,7 +644,7 @@ class Library:
                     # compressed FB2, even if the incoming file was renamed.
                     canonical = staging / (source.stem + parse_suffix)
                     temporary = temporary.rename(canonical)
-                book = load_book(temporary)
+                book = load_book(temporary, cancel=cancel) if cancel is not None else load_book(temporary)
             check_cancel(cancel)
             with self._lock:
                 # This is the last cancellation boundary. A completed commit

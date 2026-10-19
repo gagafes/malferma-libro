@@ -2,13 +2,13 @@
 # Translation source recovered from the installed GNU gettext catalog.
 
 msgid ""
-msgstr "Project-Id-Version: Malferma Libro 0.1.0\nLanguage: fr\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n > 1);\n"
+msgstr "Project-Id-Version: Malferma Libro 0.1.1\nLanguage: fr\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: src/malferma_libro/library_ui.py:105
 msgid " · Найдено: {count}"
 msgstr " · Résultats : {count}"
 
-#: src/malferma_libro/app.py:884
+#: src/malferma_libro/app.py:886
 msgid "100% — по ширине окна; вёрстка PDF, DjVu и CBZ сохраняется"
 msgstr "100 % — adapté à la largeur de la fenêtre ; la mise en page des PDF, DjVu et CBZ est conservée"
 
@@ -20,19 +20,19 @@ msgstr "Les documents DjVu avec des fichiers externes ne sont pas pris en charge
 msgid "EPUB · FB2 · FB2.ZIP · TXT · PDF · DjVu · HTML · Markdown · CBZ. Книги копируются в локальную библиотеку."
 msgstr "EPUB · FB2 · FB2.ZIP · TXT · PDF · DjVu · HTML · Markdown · CBZ. Les livres sont copiés dans la bibliothèque locale."
 
-#: src/malferma_libro/books.py:618
+#: src/malferma_libro/books.py:808
 msgid "EPUB не содержит доступных текстовых глав"
 msgstr "Le fichier EPUB ne contient aucun chapitre textuel accessible"
 
-#: src/malferma_libro/books.py:543
+#: src/malferma_libro/books.py:700
 msgid "EPUB не содержит описания книги"
 msgstr "Le fichier EPUB ne contient pas de description du livre"
 
-#: src/malferma_libro/books.py:775
+#: src/malferma_libro/books.py:1018
 msgid "FB2 не содержит доступного текста"
 msgstr "Le fichier FB2 ne contient aucun texte accessible"
 
-#: src/malferma_libro/app.py:2178 src/malferma_libro/app.py:2179
+#: src/malferma_libro/app.py:2194 src/malferma_libro/app.py:2195
 msgid "OPDS-каталог"
 msgstr "Catalogue OPDS"
 
@@ -40,19 +40,19 @@ msgstr "Catalogue OPDS"
 msgid "PDF защищён паролем. Откройте незашифрованную копию книги."
 msgstr "Le PDF est protégé par un mot de passe. Ouvrez une copie non chiffrée du livre."
 
-#: src/malferma_libro/app.py:1195
+#: src/malferma_libro/app.py:1198
 msgid "PDF, DjVu и CBZ сохраняют исходные шрифты и цвета; размер меняется масштабом."
 msgstr "Les PDF, DjVu et CBZ conservent les polices et les couleurs d'origine ; leur taille se règle avec le zoom."
 
-#: src/malferma_libro/app.py:1532
+#: src/malferma_libro/app.py:1535
 msgid "Piper не установлен. Инструкция доступна в руководстве."
 msgstr "Piper n’est pas installé. Les instructions sont disponibles dans le manuel d’utilisation."
 
-#: src/malferma_libro/books.py:864
+#: src/malferma_libro/books.py:1109
 msgid "TXT должен быть в кодировке UTF-8 или Windows-1251"
 msgstr "Le fichier TXT doit être encodé en UTF-8 ou Windows-1251"
 
-#: src/malferma_libro/books.py:866
+#: src/malferma_libro/books.py:1111
 msgid "TXT содержит двоичные данные"
 msgstr "Le fichier TXT contient des données binaires"
 
@@ -60,11 +60,11 @@ msgstr "Le fichier TXT contient des données binaires"
 msgid "{count} из {limit} символов"
 msgstr "{count} sur {limit} caractères"
 
-#: src/malferma_libro/books.py:144
+#: src/malferma_libro/books.py:194
 msgid "{label}: XML превышает допустимый размер"
 msgstr "{label} : le XML dépasse la taille autorisée"
 
-#: src/malferma_libro/books.py:377
+#: src/malferma_libro/books.py:529
 msgid "{label}: не удалось прочитать текст EPUB"
 msgstr "{label} : impossible de lire le texte de l'EPUB"
 
@@ -72,23 +72,23 @@ msgstr "{label} : impossible de lire le texte de l'EPUB"
 msgid "{label}: не удалось прочитать текст."
 msgstr "{label} : impossible de lire le texte."
 
-#: src/malferma_libro/books.py:366
+#: src/malferma_libro/books.py:518
 msgid "{label}: объявления DTD запрещены"
 msgstr "{label} : les déclarations DTD sont interdites"
 
-#: src/malferma_libro/books.py:150 src/malferma_libro/books.py:156 src/malferma_libro/markup.py:126
+#: src/malferma_libro/books.py:200 src/malferma_libro/books.py:206 src/malferma_libro/markup.py:126
 msgid "{label}: объявления DTD и сущностей XML запрещены"
 msgstr "{label} : les déclarations DTD et d'entités XML sont interdites"
 
-#: src/malferma_libro/books.py:363
+#: src/malferma_libro/books.py:515
 msgid "{label}: объявления сущностей запрещены"
 msgstr "{label} : les déclarations d'entités sont interdites"
 
-#: src/malferma_libro/books.py:162
+#: src/malferma_libro/books.py:212
 msgid "{label}: повреждённый XML"
 msgstr "{label} : XML endommagé"
 
-#: src/malferma_libro/app.py:2037 src/malferma_libro/library_ui.py:115 src/malferma_libro/library_ui.py:186
+#: src/malferma_libro/app.py:2053 src/malferma_libro/library_ui.py:115 src/malferma_libro/library_ui.py:186
 msgid "{percent}% прочитано"
 msgstr "{percent}% lu"
 
@@ -96,7 +96,7 @@ msgstr "{percent}% lu"
 msgid "Автоматически"
 msgstr "Automatiquement"
 
-#: src/malferma_libro/app.py:1189
+#: src/malferma_libro/app.py:1192
 msgid "Автоматически скрывать панель в полном экране"
 msgstr "Masquer automatiquement la barre d’outils en plein écran"
 
@@ -108,7 +108,7 @@ msgstr "L'auteur du PDF a interdit l'extraction du texte de ce document"
 msgid "Автор не указан"
 msgstr "Auteur non renseigné"
 
-#: src/malferma_libro/app.py:2114
+#: src/malferma_libro/app.py:2130
 msgid "Адрес OPDS-каталога"
 msgstr "Adresse du catalogue OPDS"
 
@@ -124,11 +124,11 @@ msgstr "L'adresse contient des caractères non valides."
 msgid "Адреса с логином или паролем не поддерживаются."
 msgstr "Les adresses contenant un identifiant ou un mot de passe ne sont pas prises en charge."
 
-#: src/malferma_libro/books.py:97
+#: src/malferma_libro/books.py:147
 msgid "Архив CBZ превышает допустимый размер (512 МиБ)"
 msgstr "L’archive CBZ dépasse la taille autorisée (512 Mio)"
 
-#: src/malferma_libro/books.py:846
+#: src/malferma_libro/books.py:1091
 msgid "Архив FB2 должен содержать ровно один файл .fb2"
 msgstr "L'archive FB2 doit contenir exactement un fichier .fb2"
 
@@ -152,7 +152,7 @@ msgstr "Le DjVu ne peut pas contenir plus de {max_pages} pages"
 msgid "В DjVu не найден корректный каталог страниц"
 msgstr "Aucun répertoire de pages valide n'a été trouvé dans le DjVu"
 
-#: src/malferma_libro/books.py:548
+#: src/malferma_libro/books.py:705
 msgid "В EPUB отсутствуют метаданные, список файлов или порядок глав"
 msgstr "Il manque les métadonnées, la liste des fichiers ou l'ordre des chapitres dans l'EPUB"
 
@@ -164,15 +164,15 @@ msgstr "Le PDF doit contenir entre 1 et {max_pages} pages"
 msgid "В архиве CBZ нет поддерживаемых изображений."
 msgstr "L’archive CBZ ne contient aucune image prise en charge."
 
-#: src/malferma_libro/books.py:427
+#: src/malferma_libro/books.py:584
 msgid "В книге отсутствует файл: {name}"
 msgstr "Un fichier manque dans le livre : {name}"
 
-#: src/malferma_libro/app.py:1193
+#: src/malferma_libro/app.py:1196
 msgid "В пикселях; на широком окне текст располагается по центру."
 msgstr "En pixels ; le texte est centré dans les fenêtres larges."
 
-#: src/malferma_libro/app.py:2215
+#: src/malferma_libro/app.py:2231
 msgid "В этом разделе книг нет."
 msgstr "Cette rubrique ne contient aucun livre."
 
@@ -184,19 +184,19 @@ msgstr "Votre bibliothèque"
 msgid "Вернуться к месту до поиска"
 msgstr "Revenir à la position avant la recherche"
 
-#: src/malferma_libro/app.py:480
+#: src/malferma_libro/app.py:482
 msgid "Включить дневной режим"
 msgstr "Activer le mode jour"
 
-#: src/malferma_libro/app.py:480
+#: src/malferma_libro/app.py:482
 msgid "Включить ночной режим"
 msgstr "Activer le mode nuit"
 
-#: src/malferma_libro/books.py:453
+#: src/malferma_libro/books.py:610
 msgid "Внутренняя ссылка EPUB выходит за пределы архива"
 msgstr "Un lien interne de l'EPUB pointe en dehors de l'archive"
 
-#: src/malferma_libro/books.py:445
+#: src/malferma_libro/books.py:602
 msgid "Внутренняя ссылка EPUB указывает за пределы книги"
 msgstr "Un lien interne de l'EPUB pointe en dehors du livre"
 
@@ -216,7 +216,7 @@ msgstr "Sélectionnez un fichier DjVu ordinaire"
 msgid "Выберите обычный файл PDF"
 msgstr "Sélectionnez un fichier PDF ordinaire"
 
-#: src/malferma_libro/storage.py:608
+#: src/malferma_libro/storage.py:609
 msgid "Выберите файл книги."
 msgstr "Sélectionnez un fichier de livre."
 
@@ -228,11 +228,11 @@ msgstr "Choisissez une langue ou une voix."
 msgid "Выбрать книгу…"
 msgstr "Choisir un livre…"
 
-#: src/malferma_libro/app.py:1048
+#: src/malferma_libro/app.py:1051
 msgid "Выделить всё"
 msgstr "Tout sélectionner"
 
-#: src/malferma_libro/app.py:465 src/malferma_libro/app.py:520
+#: src/malferma_libro/app.py:467 src/malferma_libro/app.py:522
 msgid "Выйти из полноэкранного режима"
 msgstr "Quitter le plein écran"
 
@@ -244,15 +244,15 @@ msgstr "Terminé : {percent}%"
 msgid "Выполняемые действия"
 msgstr "Opérations en cours"
 
-#: src/malferma_libro/accessibility_ui.py:279 src/malferma_libro/app.py:1205
+#: src/malferma_libro/accessibility_ui.py:279 src/malferma_libro/app.py:1208
 msgid "Высокая контрастность"
 msgstr "Contraste élevé"
 
-#: src/malferma_libro/books.py:578 src/malferma_libro/outline_ui.py:121
+#: src/malferma_libro/books.py:763 src/malferma_libro/outline_ui.py:121
 msgid "Глава {number}"
 msgstr "Chapitre {number}"
 
-#: src/malferma_libro/app.py:424 src/malferma_libro/app.py:425 src/malferma_libro/shortcuts.py:26
+#: src/malferma_libro/app.py:426 src/malferma_libro/app.py:427 src/malferma_libro/shortcuts.py:26
 msgid "Главное меню"
 msgstr "Menu principal"
 
@@ -284,15 +284,15 @@ msgstr "Voix installée"
 msgid "Голоса Piper"
 msgstr "Voix Piper"
 
-#: src/malferma_libro/app.py:421 src/malferma_libro/app.py:664 src/malferma_libro/keybindings_ui.py:39 src/malferma_libro/keybindings_ui.py:46 src/malferma_libro/shortcuts.py:44
+#: src/malferma_libro/app.py:423 src/malferma_libro/app.py:666 src/malferma_libro/keybindings_ui.py:39 src/malferma_libro/keybindings_ui.py:46 src/malferma_libro/shortcuts.py:44
 msgid "Горячие клавиши"
 msgstr "Raccourcis clavier"
 
-#: src/malferma_libro/app.py:1531
+#: src/malferma_libro/app.py:1534
 msgid "Готово к озвучке"
 msgstr "Prêt pour la lecture vocale"
 
-#: src/malferma_libro/app.py:2075
+#: src/malferma_libro/app.py:2091
 msgid "Далее"
 msgstr "Suivant"
 
@@ -316,7 +316,7 @@ msgstr "Pour écouter la lecture vocale, installez paplay ou aplay."
 msgid "Для запуска нужны GTK 4, libadwaita и PyGObject. На Debian 13 выполните:\nsudo apt install python3-gi gir1.2-gtk-4.0 gir1.2-adw-1 poppler-utils djvulibre-bin\nЗапускайте приложение через /usr/bin/python3.\nПодробности: {error}"
 msgstr "GTK 4, libadwaita et PyGObject sont nécessaires au démarrage. Sous Debian 13, exécutez :\nsudo apt install python3-gi gir1.2-gtk-4.0 gir1.2-adw-1 poppler-utils djvulibre-bin\nLancez l'application avec /usr/bin/python3.\nDétails : {error}"
 
-#: src/malferma_libro/app.py:2118
+#: src/malferma_libro/app.py:2134
 msgid "Для локального Calibre: http://адрес:8080/opds"
 msgstr "Pour Calibre en local : http://адрес:8080/opds"
 
@@ -344,7 +344,7 @@ msgstr "Pour lire les PDF, installez le paquet poppler-utils : sudo apt install 
 msgid "Для этого языка добавьте свою модель Piper."
 msgstr "Pour cette langue, ajoutez votre propre modèle Piper."
 
-#: src/malferma_libro/app.py:1175
+#: src/malferma_libro/app.py:1178
 msgid "Дневной"
 msgstr "Jour"
 
@@ -352,11 +352,11 @@ msgstr "Jour"
 msgid "Дневной / ночной режим"
 msgstr "Mode jour / nuit"
 
-#: src/malferma_libro/app.py:2108 src/malferma_libro/app.py:812 src/malferma_libro/desktop.py:252
+#: src/malferma_libro/app.py:2124 src/malferma_libro/app.py:814 src/malferma_libro/desktop.py:252
 msgid "Добавить"
 msgstr "Ajouter"
 
-#: src/malferma_libro/app.py:2106
+#: src/malferma_libro/app.py:2122
 msgid "Добавить OPDS-каталог"
 msgstr "Ajouter un catalogue OPDS"
 
@@ -364,7 +364,7 @@ msgstr "Ajouter un catalogue OPDS"
 msgid "Добавить голос…"
 msgstr "Ajouter une voix…"
 
-#: src/malferma_libro/app.py:2059
+#: src/malferma_libro/app.py:2075
 msgid "Добавить каталог"
 msgstr "Ajouter un catalogue"
 
@@ -376,19 +376,19 @@ msgstr "Ajouter un modèle Piper"
 msgid "Добавление голоса…"
 msgstr "Ajout de la voix…"
 
-#: src/malferma_libro/app.py:858
+#: src/malferma_libro/app.py:860
 msgid "Добавление книг: {count}…"
 msgstr "Ajout des livres : {count}…"
 
-#: src/malferma_libro/app.py:2055 src/malferma_libro/app.py:2103
+#: src/malferma_libro/app.py:2071 src/malferma_libro/app.py:2119
 msgid "Добавьте каталог"
 msgstr "Ajoutez un catalogue"
 
-#: src/malferma_libro/app.py:387
+#: src/malferma_libro/app.py:389
 msgid "Добавьте книгу или подключите OPDS-каталог."
 msgstr "Ajoutez un livre ou connectez un catalogue OPDS."
 
-#: src/malferma_libro/app.py:1490
+#: src/malferma_libro/app.py:1493
 msgid "Дождитесь загрузки страницы."
 msgstr "Attendez le chargement de la page."
 
@@ -396,7 +396,7 @@ msgstr "Attendez le chargement de la page."
 msgid "Допустимы только адреса HTTP и HTTPS."
 msgstr "Seules les adresses HTTP et HTTPS sont autorisées."
 
-#: src/malferma_libro/app.py:1209
+#: src/malferma_libro/app.py:1212
 msgid "Жесты мышью"
 msgstr "Gestes de la souris"
 
@@ -408,19 +408,19 @@ msgstr "Télécharger une voix"
 msgid "Загрузка голоса: {voice}"
 msgstr "Téléchargement de la voix : {voice}"
 
-#: src/malferma_libro/app.py:2173
+#: src/malferma_libro/app.py:2189
 msgid "Загрузка каталога…"
 msgstr "Chargement du catalogue…"
 
-#: src/malferma_libro/app.py:1744
+#: src/malferma_libro/app.py:1759
 msgid "Загрузка страницы {page}"
 msgstr "Chargement de la page {page}"
 
-#: src/malferma_libro/app.py:1745 src/malferma_libro/app.py:1822
+#: src/malferma_libro/app.py:1760 src/malferma_libro/app.py:1837
 msgid "Загрузка страницы {page}…"
 msgstr "Chargement de la page {page}…"
 
-#: src/malferma_libro/app.py:962
+#: src/malferma_libro/app.py:965
 msgid "Загрузка страницы…"
 msgstr "Chargement de la page…"
 
@@ -436,7 +436,7 @@ msgstr "Ce marque-page n’est plus disponible."
 msgid "Закладка добавлена."
 msgstr "Marque-page ajouté."
 
-#: src/malferma_libro/app.py:904 src/malferma_libro/app.py:905
+#: src/malferma_libro/app.py:906 src/malferma_libro/app.py:907
 msgid "Закладки"
 msgstr "Marque-pages"
 
@@ -460,11 +460,11 @@ msgstr "Note du marque-page"
 msgid "Заметка слишком длинная: максимум {limit} символов."
 msgstr "La note est trop longue : maximum {limit} caractères."
 
-#: src/malferma_libro/books.py:413
+#: src/malferma_libro/books.py:570
 msgid "Зашифрованные архивы книг не поддерживаются"
 msgstr "Les archives de livres chiffrées ne sont pas prises en charge"
 
-#: src/malferma_libro/app.py:1531
+#: src/malferma_libro/app.py:1534
 msgid "Идёт озвучка текущей главы"
 msgstr "Lecture vocale du chapitre en cours"
 
@@ -484,7 +484,15 @@ msgstr "L'image de la page DjVu dépasse la taille autorisée"
 msgid "Изображение страницы PDF превышает допустимый размер"
 msgstr "L'image de la page PDF dépasse la taille autorisée"
 
-#: src/malferma_libro/app.py:1147
+#: src/malferma_libro/illustration_ui.py:119 src/malferma_libro/illustration_ui.py:287 src/malferma_libro/illustration_ui.py:293
+msgid "Иллюстрация"
+msgstr "Illustration"
+
+#: src/malferma_libro/illustration_ui.py:251 src/malferma_libro/illustration_ui.py:259 src/malferma_libro/illustration_ui.py:260
+msgid "Иллюстрация недоступна"
+msgstr "Illustration indisponible"
+
+#: src/malferma_libro/app.py:1150
 msgid "Интерфейс"
 msgstr "Interface"
 
@@ -492,7 +500,7 @@ msgstr "Interface"
 msgid "Используйте Ctrl, Alt или функциональную клавишу."
 msgstr "Utilisez Ctrl, Alt ou une touche de fonction."
 
-#: src/malferma_libro/app.py:1150 src/malferma_libro/app.py:1175
+#: src/malferma_libro/app.py:1153 src/malferma_libro/app.py:1178
 msgid "Как в системе"
 msgstr "Suivre le système"
 
@@ -500,11 +508,11 @@ msgstr "Suivre le système"
 msgid "Каталог"
 msgstr "Catalogue"
 
-#: src/malferma_libro/app.py:2216
+#: src/malferma_libro/app.py:2232
 msgid "Каталог загружен. Записей: {count}."
 msgstr "Catalogue chargé. Entrées : {count}."
 
-#: src/malferma_libro/app.py:2071
+#: src/malferma_libro/app.py:2087
 msgid "Каталог не открыт"
 msgstr "Aucun catalogue ouvert"
 
@@ -512,7 +520,7 @@ msgstr "Aucun catalogue ouvert"
 msgid "Каталог слишком большой."
 msgstr "Le catalogue est trop volumineux."
 
-#: src/malferma_libro/app.py:2141
+#: src/malferma_libro/app.py:2157
 msgid "Каталог удалён из списка."
 msgstr "Catalogue retiré de la liste."
 
@@ -536,11 +544,11 @@ msgstr "Livre"
 msgid "Книга «{title}» уже добавлена. Сохранённые закладки и место чтения будут использованы."
 msgstr "Le livre «{title}» a déjà été ajouté. Les marque-pages et la position de lecture enregistrés seront utilisés."
 
-#: src/malferma_libro/app.py:787
+#: src/malferma_libro/app.py:789
 msgid "Книга готова к чтению в библиотеке."
 msgstr "Le livre est prêt à être lu dans la bibliothèque."
 
-#: src/malferma_libro/storage.py:709
+#: src/malferma_libro/storage.py:710
 msgid "Книга не найдена: {book_id}"
 msgstr "Livre introuvable : {book_id}"
 
@@ -548,11 +556,11 @@ msgstr "Livre introuvable : {book_id}"
 msgid "Книга не открыта"
 msgstr "Aucun livre ouvert"
 
-#: src/malferma_libro/app.py:1664
+#: src/malferma_libro/app.py:1667
 msgid "Книга открыта. Позиция чтения сохраняется автоматически."
 msgstr "Livre ouvert. La position de lecture est enregistrée automatiquement."
 
-#: src/malferma_libro/books.py:855 src/malferma_libro/books.py:98 src/malferma_libro/markup.py:63 src/malferma_libro/markup.py:67
+#: src/malferma_libro/books.py:1100 src/malferma_libro/books.py:148 src/malferma_libro/markup.py:63 src/malferma_libro/markup.py:67
 msgid "Книга превышает допустимый размер (64 МиБ)"
 msgstr "Le livre dépasse la taille autorisée (64 Mio)"
 
@@ -572,7 +580,7 @@ msgstr "Livres (EPUB, FB2, FB2.ZIP, TXT, PDF, DjVu, HTML, Markdown, CBZ)"
 msgid "Код завершения {code}"
 msgstr "Code de sortie {code}"
 
-#: src/malferma_libro/books.py:753
+#: src/malferma_libro/books.py:995
 msgid "Комментарии"
 msgstr "Commentaires"
 
@@ -592,7 +600,7 @@ msgstr "La copie du DjVu n'a pas abouti : la taille du livre a changé"
 msgid "Копирование PDF не завершено: размер книги изменился"
 msgstr "La copie du PDF n'a pas abouti : la taille du livre a changé"
 
-#: src/malferma_libro/app.py:1047
+#: src/malferma_libro/app.py:1050
 msgid "Копировать"
 msgstr "Copier"
 
@@ -600,7 +608,7 @@ msgstr "Copier"
 msgid "Лупа области чтения"
 msgstr "Loupe de la zone de lecture"
 
-#: src/malferma_libro/app.py:1192
+#: src/malferma_libro/app.py:1195
 msgid "Максимальная ширина текста"
 msgstr "Largeur maximale du texte"
 
@@ -612,11 +620,11 @@ msgstr "Le zoom du DjVu doit être un nombre positif"
 msgid "Масштаб PDF должен быть положительным числом"
 msgstr "Le zoom du PDF doit être un nombre positif"
 
-#: src/malferma_libro/app.py:881 src/malferma_libro/app.py:885
+#: src/malferma_libro/app.py:883 src/malferma_libro/app.py:887
 msgid "Масштаб страницы, %"
 msgstr "Zoom de la page, %"
 
-#: src/malferma_libro/accessibility_ui.py:290 src/malferma_libro/app.py:1207
+#: src/malferma_libro/accessibility_ui.py:290 src/malferma_libro/app.py:1210
 msgid "Межстрочный интервал"
 msgstr "Interligne"
 
@@ -632,11 +640,11 @@ msgstr "Modèle Piper (*.onnx)"
 msgid "Модель голоса не установлена"
 msgstr "Modèle vocal non installé"
 
-#: src/malferma_libro/app.py:366 src/malferma_libro/app.py:414 src/malferma_libro/shortcuts.py:38
+#: src/malferma_libro/app.py:368 src/malferma_libro/app.py:416 src/malferma_libro/shortcuts.py:38
 msgid "Мои книги"
 msgstr "Mes livres"
 
-#: src/malferma_libro/app.py:2112
+#: src/malferma_libro/app.py:2128
 msgid "Моя библиотека"
 msgstr "Ma bibliothèque"
 
@@ -648,7 +656,7 @@ msgstr "Monter d’un écran"
 msgid "На экран вниз"
 msgstr "Descendre d’un écran"
 
-#: src/malferma_libro/app.py:1493
+#: src/malferma_libro/app.py:1496
 msgid "На этой странице нет доступного текста для озвучки. Распознавание сканов пока не поддерживается."
 msgstr "Cette page ne contient aucun texte accessible pour la lecture vocale. La reconnaissance du texte des pages numérisées n'est pas encore prise en charge."
 
@@ -656,11 +664,11 @@ msgstr "Cette page ne contient aucun texte accessible pour la lecture vocale. La
 msgid "Нажмите новое сочетание клавиш."
 msgstr "Appuyez sur le nouveau raccourci clavier."
 
-#: src/malferma_libro/app.py:2068
+#: src/malferma_libro/app.py:2084
 msgid "Назад"
 msgstr "Retour"
 
-#: src/malferma_libro/app.py:2111
+#: src/malferma_libro/app.py:2127
 msgid "Название"
 msgstr "Nom"
 
@@ -668,19 +676,19 @@ msgstr "Nom"
 msgid "Название или автор"
 msgstr "Titre ou auteur"
 
-#: src/malferma_libro/search_ui.py:313
+#: src/malferma_libro/search_ui.py:312
 msgid "Найдено в тексте страницы: {query}"
 msgstr "Trouvé dans le texte de la page : {query}"
 
-#: src/malferma_libro/search_ui.py:314
+#: src/malferma_libro/search_ui.py:313
 msgid "Найдено: {query}"
 msgstr "Trouvé : {query}"
 
-#: src/malferma_libro/app.py:2083 src/malferma_libro/app.py:374 src/malferma_libro/app.py:375 src/malferma_libro/app.py:524 src/malferma_libro/app.py:899 src/malferma_libro/shortcuts.py:32
+#: src/malferma_libro/app.py:2099 src/malferma_libro/app.py:376 src/malferma_libro/app.py:377 src/malferma_libro/app.py:526 src/malferma_libro/app.py:901 src/malferma_libro/shortcuts.py:32
 msgid "Найти"
 msgstr "Rechercher"
 
-#: src/malferma_libro/app.py:1141 src/malferma_libro/app.py:1144 src/malferma_libro/app.py:419 src/malferma_libro/shortcuts.py:34
+#: src/malferma_libro/app.py:1144 src/malferma_libro/app.py:1147 src/malferma_libro/app.py:421 src/malferma_libro/shortcuts.py:34
 msgid "Настройки"
 msgstr "Préférences"
 
@@ -700,7 +708,7 @@ msgstr "Non commencé"
 msgid "Не удалось воспроизвести озвучку."
 msgstr "Impossible de lire la sortie audio de la lecture vocale."
 
-#: src/malferma_libro/app.py:625
+#: src/malferma_libro/app.py:627
 msgid "Не удалось выполнить действие"
 msgstr "Impossible d'effectuer l'action"
 
@@ -708,7 +716,7 @@ msgstr "Impossible d'effectuer l'action"
 msgid "Не удалось выполнить поиск."
 msgstr "Impossible d’effectuer la recherche."
 
-#: src/malferma_libro/app.py:2128
+#: src/malferma_libro/app.py:2144
 msgid "Не удалось добавить каталог"
 msgstr "Impossible d'ajouter le catalogue"
 
@@ -716,11 +724,11 @@ msgstr "Impossible d'ajouter le catalogue"
 msgid "Не удалось загрузить голос Piper."
 msgstr "Impossible de charger la voix Piper."
 
-#: src/malferma_libro/app.py:1815
+#: src/malferma_libro/app.py:1830
 msgid "Не удалось загрузить страницу {page}"
 msgstr "Impossible de charger la page {page}"
 
-#: src/malferma_libro/app.py:1816
+#: src/malferma_libro/app.py:1831
 msgid "Не удалось загрузить страницу. Нажмите «Повторить» или выберите другую страницу."
 msgstr "Impossible de charger la page. Cliquez sur « Réessayer » ou choisissez une autre page."
 
@@ -756,7 +764,7 @@ msgstr "Impossible de déterminer les dimensions de la page DjVu"
 msgid "Не удалось определить размер страницы PDF"
 msgstr "Impossible de déterminer les dimensions de la page PDF"
 
-#: src/malferma_libro/app.py:238
+#: src/malferma_libro/app.py:240
 msgid "Не удалось открыть библиотеку"
 msgstr "Impossible d'ouvrir la bibliothèque"
 
@@ -792,7 +800,7 @@ msgstr "Impossible de lire le DjVu : le fichier est endommagé ou sa structure n
 msgid "Не удалось прочитать PDF: файл повреждён или имеет неподдерживаемую структуру"
 msgstr "Impossible de lire le PDF : le fichier est endommagé ou sa structure n'est pas prise en charge"
 
-#: src/malferma_libro/books.py:874 src/malferma_libro/markup.py:70
+#: src/malferma_libro/books.py:1119 src/malferma_libro/markup.py:70
 msgid "Не удалось прочитать книгу: {exc}"
 msgstr "Impossible de lire le livre : {exc}"
 
@@ -800,7 +808,7 @@ msgstr "Impossible de lire le livre : {exc}"
 msgid "Не удалось прочитать текст на страницах: {count}."
 msgstr "Impossible de lire le texte sur {count} pages."
 
-#: src/malferma_libro/books.py:432
+#: src/malferma_libro/books.py:589
 msgid "Не удалось распаковать файл книги: {name}"
 msgstr "Impossible d'extraire un fichier du livre : {name}"
 
@@ -812,7 +820,7 @@ msgstr "Impossible de synthétiser la parole avec Piper."
 msgid "Не удалось скачать голос Piper."
 msgstr "Impossible de télécharger la voix Piper."
 
-#: src/malferma_libro/app.py:1580 src/malferma_libro/app.py:1610 src/malferma_libro/app.py:1632 src/malferma_libro/keybindings_ui.py:295 src/malferma_libro/library_ui.py:206
+#: src/malferma_libro/app.py:1583 src/malferma_libro/app.py:1613 src/malferma_libro/app.py:1635 src/malferma_libro/keybindings_ui.py:295 src/malferma_libro/library_ui.py:206
 msgid "Не удалось сохранить библиотеку"
 msgstr "Impossible d'enregistrer la bibliothèque"
 
@@ -840,11 +848,11 @@ msgstr "Impossible d'enregistrer l'image de la page DjVu"
 msgid "Не удалось сохранить изображение страницы PDF"
 msgstr "Impossible d'enregistrer l'image de la page PDF"
 
-#: src/malferma_libro/app.py:2017
+#: src/malferma_libro/app.py:2033
 msgid "Не удалось сохранить место чтения"
 msgstr "Impossible d'enregistrer la position de lecture"
 
-#: src/malferma_libro/app.py:2143
+#: src/malferma_libro/app.py:2159
 msgid "Не удалось сохранить список каталогов"
 msgstr "Impossible d'enregistrer la liste des catalogues"
 
@@ -888,11 +896,11 @@ msgstr "Zoom du PDF non valide"
 msgid "Недопустимый пароль PDF"
 msgstr "Mot de passe PDF non valide"
 
-#: src/malferma_libro/books.py:408
+#: src/malferma_libro/books.py:565
 msgid "Недопустимый путь в архиве книги"
 msgstr "Chemin non valide dans l'archive du livre"
 
-#: src/malferma_libro/books.py:450
+#: src/malferma_libro/books.py:607
 msgid "Недопустимый путь во внутренней ссылке EPUB"
 msgstr "Chemin non valide dans un lien interne de l'EPUB"
 
@@ -912,7 +920,7 @@ msgstr "Version inconnue du fichier de bibliothèque."
 msgid "Неизвестный язык озвучки: {language}."
 msgstr "Langue de lecture vocale inconnue : {language}."
 
-#: src/malferma_libro/storage.py:222 src/malferma_libro/storage.py:752 src/malferma_libro/storage.py:788
+#: src/malferma_libro/storage.py:222 src/malferma_libro/storage.py:753 src/malferma_libro/storage.py:789
 msgid "Некорректная закладка."
 msgstr "Marque-page non valide."
 
@@ -964,7 +972,7 @@ msgstr "Liste de livres non valide."
 msgid "Некорректный файл библиотеки."
 msgstr "Fichier de bibliothèque non valide."
 
-#: src/malferma_libro/app.py:854
+#: src/malferma_libro/app.py:856
 msgid "Некоторые книги не удалось открыть"
 msgstr "Impossible d'ouvrir certains livres"
 
@@ -984,7 +992,7 @@ msgstr "Structure du document DjVu non prise en charge"
 msgid "Неподдерживаемый тип документа DjVu"
 msgstr "Type de document DjVu non pris en charge"
 
-#: src/malferma_libro/books.py:596
+#: src/malferma_libro/books.py:785
 msgid "Неподдерживаемый формат главы EPUB: {media}"
 msgstr "Format de chapitre EPUB non pris en charge : {media}"
 
@@ -992,7 +1000,7 @@ msgstr "Format de chapitre EPUB non pris en charge : {media}"
 msgid "Нет доступа. Проверьте права на файл или выберите другой каталог."
 msgstr "Accès refusé. Vérifiez les permissions du fichier ou choisissez un autre dossier."
 
-#: src/malferma_libro/app.py:2209
+#: src/malferma_libro/app.py:2225
 msgid "Нет поддерживаемой прямой загрузки"
 msgstr "Aucun téléchargement direct pris en charge"
 
@@ -1008,11 +1016,11 @@ msgstr "Numéro de page DjVu hors de la plage autorisée"
 msgid "Номер страницы PDF вне допустимого диапазона"
 msgstr "Numéro de page PDF hors de la plage autorisée"
 
-#: src/malferma_libro/app.py:1175
+#: src/malferma_libro/app.py:1178
 msgid "Ночной"
 msgstr "Nuit"
 
-#: src/malferma_libro/app.py:422
+#: src/malferma_libro/app.py:424
 msgid "О приложении"
 msgstr "À propos"
 
@@ -1044,7 +1052,7 @@ msgstr "Le processeur PDF n'a pas produit d'image de page"
 msgid "Обработчик PDF создал недопустимое изображение"
 msgstr "Le processeur PDF a produit une image non valide"
 
-#: src/malferma_libro/app.py:525 src/malferma_libro/app.py:865 src/malferma_libro/app.py:866 src/malferma_libro/outline_ui.py:36 src/malferma_libro/outline_ui.py:47 src/malferma_libro/shortcuts.py:60
+#: src/malferma_libro/app.py:527 src/malferma_libro/app.py:867 src/malferma_libro/app.py:868 src/malferma_libro/outline_ui.py:36 src/malferma_libro/outline_ui.py:47 src/malferma_libro/shortcuts.py:60
 msgid "Оглавление"
 msgstr "Sommaire"
 
@@ -1056,23 +1064,23 @@ msgstr "Un catalogue OPDS au format Atom était attendu."
 msgid "Ожидание данных…"
 msgstr "En attente de données…"
 
-#: src/malferma_libro/app.py:1000 src/malferma_libro/app.py:1000 src/malferma_libro/app.py:1526 src/malferma_libro/shortcuts.py:63
+#: src/malferma_libro/app.py:1003 src/malferma_libro/app.py:1003 src/malferma_libro/app.py:1529 src/malferma_libro/shortcuts.py:63
 msgid "Озвучить"
 msgstr "Lire à voix haute"
 
-#: src/malferma_libro/accessibility_ui.py:237 src/malferma_libro/app.py:1210
+#: src/malferma_libro/accessibility_ui.py:237 src/malferma_libro/app.py:1213
 msgid "Озвучка"
 msgstr "Lecture vocale"
 
-#: src/malferma_libro/app.py:1574
+#: src/malferma_libro/app.py:1577
 msgid "Озвучка книги завершена."
 msgstr "La lecture vocale du livre est terminée."
 
-#: src/malferma_libro/app.py:1531
+#: src/malferma_libro/app.py:1534
 msgid "Озвучка приостановлена"
 msgstr "Lecture vocale en pause"
 
-#: src/malferma_libro/app.py:993
+#: src/malferma_libro/app.py:996
 msgid "Озвучка через Piper"
 msgstr "Lecture à voix haute avec Piper"
 
@@ -1084,7 +1092,7 @@ msgstr "Désactivé"
 msgid "Отключить"
 msgstr "Désactiver"
 
-#: src/malferma_libro/app.py:907
+#: src/malferma_libro/app.py:909
 msgid "Откройте книгу в библиотеке."
 msgstr "Ouvrez un livre de la bibliothèque."
 
@@ -1092,7 +1100,7 @@ msgstr "Ouvrez un livre de la bibliothèque."
 msgid "Откройте книгу или подключите OPDS-каталог во вкладке «Сетевые библиотеки»."
 msgstr "Ouvrez un livre ou connectez un catalogue OPDS dans l'onglet « Bibliothèques en ligne »."
 
-#: src/malferma_libro/app.py:1171
+#: src/malferma_libro/app.py:1174
 msgid "Открывать последнюю книгу при запуске"
 msgstr "Ouvrir le dernier livre au démarrage"
 
@@ -1108,19 +1116,19 @@ msgstr "Ouvrir"
 msgid "Открыть закладку: {chapter}. {excerpt}"
 msgstr "Ouvrir le marque-page : {chapter}. {excerpt}"
 
-#: src/malferma_libro/app.py:523 src/malferma_libro/app.py:809 src/malferma_libro/desktop.py:257 src/malferma_libro/shortcuts.py:30
+#: src/malferma_libro/app.py:525 src/malferma_libro/app.py:811 src/malferma_libro/desktop.py:257 src/malferma_libro/shortcuts.py:30
 msgid "Открыть книги"
 msgstr "Ouvrir des livres"
 
-#: src/malferma_libro/app.py:2203
+#: src/malferma_libro/app.py:2219
 msgid "Открыть раздел"
 msgstr "Ouvrir la rubrique"
 
-#: src/malferma_libro/app.py:361 src/malferma_libro/narration_ui.py:159
+#: src/malferma_libro/app.py:363 src/malferma_libro/narration_ui.py:159
 msgid "Открыть…"
 msgstr "Ouvrir…"
 
-#: src/malferma_libro/app.py:2107 src/malferma_libro/app.py:813 src/malferma_libro/bookmarks_ui.py:175 src/malferma_libro/bookmarks_ui.py:175 src/malferma_libro/keybindings_ui.py:230 src/malferma_libro/library_ui.py:257 src/malferma_libro/narration_ui.py:159
+#: src/malferma_libro/app.py:2123 src/malferma_libro/app.py:815 src/malferma_libro/bookmarks_ui.py:175 src/malferma_libro/bookmarks_ui.py:175 src/malferma_libro/keybindings_ui.py:230 src/malferma_libro/library_ui.py:257 src/malferma_libro/narration_ui.py:159
 msgid "Отмена"
 msgstr "Annuler"
 
@@ -1136,11 +1144,11 @@ msgstr "Annuler"
 msgid "Отменить поиск"
 msgstr "Annuler la recherche"
 
-#: src/malferma_libro/app.py:1170
+#: src/malferma_libro/app.py:1173
 msgid "Оформление окна"
 msgstr "Apparence de la fenêtre"
 
-#: src/malferma_libro/app.py:1525
+#: src/malferma_libro/app.py:1528
 msgid "Пауза"
 msgstr "Pause"
 
@@ -1152,7 +1160,11 @@ msgstr "Par auteur"
 msgid "По названию"
 msgstr "Par titre"
 
-#: src/malferma_libro/app.py:1213
+#: src/malferma_libro/illustration_ui.py:308
+msgid "По размеру окна"
+msgstr "Ajuster à la fenêtre"
+
+#: src/malferma_libro/app.py:1216
 msgid "По тексту главы"
 msgstr "Selon le texte du chapitre"
 
@@ -1172,51 +1184,51 @@ msgstr "La structure du fichier DjVu est endommagée"
 msgid "Повреждён каталог страниц DjVu"
 msgstr "Le répertoire des pages DjVu est endommagé"
 
-#: src/malferma_libro/books.py:448 src/malferma_libro/books.py:471
+#: src/malferma_libro/books.py:605 src/malferma_libro/books.py:628
 msgid "Повреждённая внутренняя ссылка EPUB"
 msgstr "Lien interne de l'EPUB endommagé"
 
-#: src/malferma_libro/books.py:394
+#: src/malferma_libro/books.py:551
 msgid "Повреждённый ZIP-архив книги"
 msgstr "L'archive ZIP du livre est endommagée"
 
-#: src/malferma_libro/app.py:1490
+#: src/malferma_libro/app.py:1493
 msgid "Повторите загрузку страницы."
 msgstr "Relancez le chargement de la page."
 
-#: src/malferma_libro/app.py:889 src/malferma_libro/task_ui.py:204 src/malferma_libro/task_ui.py:204
+#: src/malferma_libro/app.py:891 src/malferma_libro/task_ui.py:204 src/malferma_libro/task_ui.py:204
 msgid "Повторить"
 msgstr "Réessayer"
 
-#: src/malferma_libro/books.py:410
+#: src/malferma_libro/books.py:567
 msgid "Повторяющиеся имена файлов в архиве книги"
 msgstr "L'archive du livre contient des noms de fichiers en double"
 
-#: src/malferma_libro/books.py:557
+#: src/malferma_libro/books.py:715
 msgid "Повторяющийся идентификатор в списке файлов EPUB"
 msgstr "La liste des fichiers de l'EPUB contient un identifiant en double"
 
-#: src/malferma_libro/books.py:851
+#: src/malferma_libro/books.py:1096
 msgid "Поддерживаются EPUB, FB2, FB2.ZIP, TXT, PDF, DjVu, HTML, Markdown и CBZ"
 msgstr "Les formats EPUB, FB2, FB2.ZIP, TXT, PDF, DjVu, HTML, Markdown et CBZ sont pris en charge"
 
-#: src/malferma_libro/app.py:2097
+#: src/malferma_libro/app.py:2113
 msgid "Поддерживаются прямые загрузки EPUB, FB2, TXT, PDF, DjVu, HTML, Markdown и CBZ. Каталоги с авторизацией и DRM пока не поддерживаются."
 msgstr "Les téléchargements directs d'EPUB, FB2, TXT, PDF, DjVu, HTML, Markdown et CBZ sont pris en charge. Les catalogues nécessitant une authentification ou utilisant des DRM ne sont pas encore pris en charge."
 
-#: src/malferma_libro/app.py:2051 src/malferma_libro/app.py:2095
+#: src/malferma_libro/app.py:2067 src/malferma_libro/app.py:2111
 msgid "Подключите публичный OPDS 1.x каталог или каталог Calibre в локальной сети."
 msgstr "Connectez un catalogue public OPDS 1.x ou un catalogue Calibre du réseau local."
 
-#: src/malferma_libro/app.py:2058 src/malferma_libro/app.py:2063 src/malferma_libro/app.py:2064
+#: src/malferma_libro/app.py:2074 src/malferma_libro/app.py:2079 src/malferma_libro/app.py:2080
 msgid "Подключиться"
 msgstr "Se connecter"
 
-#: src/malferma_libro/app.py:2079
+#: src/malferma_libro/app.py:2095
 msgid "Поиск (если каталог его поддерживает)"
 msgstr "Recherche (si le catalogue la prend en charge)"
 
-#: src/malferma_libro/app.py:1796 src/malferma_libro/app.py:1807
+#: src/malferma_libro/app.py:1811 src/malferma_libro/app.py:1822
 msgid "Поиск и озвучка доступны в тексте страницы."
 msgstr "La recherche et la lecture vocale sont disponibles dans le texte de la page."
 
@@ -1224,7 +1236,7 @@ msgstr "La recherche et la lecture vocale sont disponibles dans le texte de la p
 msgid "Поиск отменён."
 msgstr "Recherche annulée."
 
-#: src/malferma_libro/app.py:1640 src/malferma_libro/app.py:897 src/malferma_libro/search_ui.py:42
+#: src/malferma_libro/app.py:1643 src/malferma_libro/app.py:899 src/malferma_libro/search_ui.py:42
 msgid "Поиск по всей книге"
 msgstr "Rechercher dans tout le livre"
 
@@ -1240,7 +1252,7 @@ msgstr "Les {count} premières correspondances sont affichées. Affinez votre re
 msgid "Показать верхнюю панель"
 msgstr "Afficher la barre supérieure"
 
-#: src/malferma_libro/app.py:382 src/malferma_libro/app.py:465 src/malferma_libro/app.py:521 src/malferma_libro/shortcuts.py:41
+#: src/malferma_libro/app.py:384 src/malferma_libro/app.py:467 src/malferma_libro/app.py:523 src/malferma_libro/shortcuts.py:41
 msgid "Полноэкранный режим"
 msgstr "Plein écran"
 
@@ -1248,7 +1260,7 @@ msgstr "Plein écran"
 msgid "Положение в книге должно быть целым неотрицательным числом."
 msgstr "La position dans le livre doit être un entier positif ou nul."
 
-#: src/malferma_libro/accessibility_ui.py:280 src/malferma_libro/app.py:1206
+#: src/malferma_libro/accessibility_ui.py:280 src/malferma_libro/app.py:1209
 msgid "Полужирный текст"
 msgstr "Texte gras"
 
@@ -1256,11 +1268,11 @@ msgstr "Texte gras"
 msgid "Пользовательские"
 msgstr "Personnalisés"
 
-#: src/malferma_libro/books.py:593
+#: src/malferma_libro/books.py:782
 msgid "Порядок глав EPUB ссылается на отсутствующий файл"
 msgstr "L'ordre des chapitres de l'EPUB fait référence à un fichier manquant"
 
-#: src/malferma_libro/app.py:526 src/malferma_libro/app.py:869 src/malferma_libro/shortcuts.py:56
+#: src/malferma_libro/app.py:528 src/malferma_libro/app.py:871 src/malferma_libro/shortcuts.py:56
 msgid "Предыдущая глава"
 msgstr "Chapitre précédent"
 
@@ -1272,19 +1284,19 @@ msgstr "Page précédente"
 msgid "Предыдущее совпадение"
 msgstr "Correspondance précédente"
 
-#: src/malferma_libro/app.py:1185
+#: src/malferma_libro/app.py:1188
 msgid "Приглушение цветов страницы; яркость монитора не меняется."
 msgstr "Atténue les couleurs de la page ; la luminosité de l'écran ne change pas."
 
-#: src/malferma_libro/accessibility_ui.py:291 src/malferma_libro/app.py:1208
+#: src/malferma_libro/accessibility_ui.py:291 src/malferma_libro/app.py:1211
 msgid "Применить"
 msgstr "Appliquer"
 
-#: src/malferma_libro/books.py:770
+#: src/malferma_libro/books.py:1013
 msgid "Примечание {number}"
 msgstr "Note {number}"
 
-#: src/malferma_libro/books.py:753 src/malferma_libro/outline_ui.py:119 src/malferma_libro/outline_ui.py:66
+#: src/malferma_libro/books.py:995 src/malferma_libro/outline_ui.py:119 src/malferma_libro/outline_ui.py:66
 msgid "Примечания"
 msgstr "Notes"
 
@@ -1292,7 +1304,7 @@ msgstr "Notes"
 msgid "Проверьте доступ к файлу или каталогу и повторите действие."
 msgstr "Vérifiez l’accès au fichier ou au dossier et réessayez."
 
-#: src/malferma_libro/app.py:1525
+#: src/malferma_libro/app.py:1528
 msgid "Продолжить"
 msgstr "Reprendre"
 
@@ -1316,7 +1328,7 @@ msgstr "Écouter un échantillon"
 msgid "Прочитано"
 msgstr "Terminé"
 
-#: src/malferma_libro/books.py:744
+#: src/malferma_libro/books.py:986
 msgid "Раздел {number}"
 msgstr "Section {number}"
 
@@ -1324,7 +1336,7 @@ msgstr "Section {number}"
 msgid "Размер ответа превышает допустимый предел."
 msgstr "La taille de la réponse dépasse la limite autorisée."
 
-#: src/malferma_libro/accessibility_ui.py:276 src/malferma_libro/app.py:1191
+#: src/malferma_libro/accessibility_ui.py:276 src/malferma_libro/app.py:1194
 msgid "Размер текста"
 msgstr "Taille du texte"
 
@@ -1332,11 +1344,11 @@ msgstr "Taille du texte"
 msgid "Размер фрагмента должен быть положительным."
 msgstr "La taille du fragment doit être positive."
 
-#: src/malferma_libro/app.py:876
+#: src/malferma_libro/app.py:878
 msgid "Размер шрифта"
 msgstr "Taille de police"
 
-#: src/malferma_libro/books.py:420
+#: src/malferma_libro/books.py:577
 msgid "Распакованный размер книги превышает допустимый предел"
 msgstr "La taille décompressée du livre dépasse la limite autorisée"
 
@@ -1344,23 +1356,23 @@ msgstr "La taille décompressée du livre dépasse la limite autorisée"
 msgid "Режим"
 msgstr "Mode"
 
-#: src/malferma_libro/accessibility_ui.py:291 src/malferma_libro/app.py:1208
+#: src/malferma_libro/accessibility_ui.py:291 src/malferma_libro/app.py:1211
 msgid "Режим для слабовидящих"
 msgstr "Mode pour personnes malvoyantes"
 
-#: src/malferma_libro/search_ui.py:311
+#: src/malferma_libro/search_ui.py:310
 msgid "Результат {number} из {count}"
 msgstr "Résultat {number} sur {count}"
 
-#: src/malferma_libro/app.py:420 src/malferma_libro/app.py:582 src/malferma_libro/app.py:603 src/malferma_libro/shortcuts.py:43
+#: src/malferma_libro/app.py:422 src/malferma_libro/app.py:584 src/malferma_libro/app.py:605 src/malferma_libro/shortcuts.py:43
 msgid "Руководство пользователя"
 msgstr "Guide d’utilisation"
 
-#: src/malferma_libro/app.py:1150
+#: src/malferma_libro/app.py:1153
 msgid "Светлый"
 msgstr "Clair"
 
-#: src/malferma_libro/app.py:1175
+#: src/malferma_libro/app.py:1178
 msgid "Сепия"
 msgstr "Sépia"
 
@@ -1384,39 +1396,39 @@ msgstr "Le serveur a renvoyé un fichier d'un type non pris en charge."
 msgid "Сервер передал неполный файл."
 msgstr "Le serveur a envoyé un fichier incomplet."
 
-#: src/malferma_libro/app.py:368 src/malferma_libro/app.py:416 src/malferma_libro/shortcuts.py:40
+#: src/malferma_libro/app.py:370 src/malferma_libro/app.py:418 src/malferma_libro/shortcuts.py:40
 msgid "Сетевые библиотеки"
 msgstr "Bibliothèques en ligne"
 
-#: src/malferma_libro/app.py:2050 src/malferma_libro/app.py:2094
+#: src/malferma_libro/app.py:2066 src/malferma_libro/app.py:2110
 msgid "Сетевые библиотеки OPDS"
 msgstr "Bibliothèques en ligne OPDS"
 
-#: src/malferma_libro/books.py:415
+#: src/malferma_libro/books.py:572
 msgid "Символические ссылки в архиве книги запрещены"
 msgstr "Les liens symboliques sont interdits dans l'archive du livre"
 
-#: src/malferma_libro/app.py:1148
+#: src/malferma_libro/app.py:1151
 msgid "Системные шрифты, масштаб и оконные кнопки задаёт рабочая среда. Виджеты используют libadwaita."
 msgstr "L'environnement de bureau définit les polices système, la mise à l'échelle et les boutons des fenêtres. Les composants utilisent libadwaita."
 
-#: src/malferma_libro/app.py:1153 src/malferma_libro/appearance.py:22
+#: src/malferma_libro/app.py:1156 src/malferma_libro/appearance.py:22
 msgid "Системный"
 msgstr "Du système"
 
-#: src/malferma_libro/app.py:2205
+#: src/malferma_libro/app.py:2221
 msgid "Скачать {format}"
 msgstr "Télécharger {format}"
 
-#: src/malferma_libro/app.py:2255
+#: src/malferma_libro/app.py:2271
 msgid "Скачивание книги…"
 msgstr "Téléchargement du livre…"
 
-#: src/malferma_libro/accessibility_ui.py:265 src/malferma_libro/app.py:1218
+#: src/malferma_libro/accessibility_ui.py:265 src/malferma_libro/app.py:1221
 msgid "Скорость, %"
 msgstr "Vitesse, %"
 
-#: src/malferma_libro/app.py:527 src/malferma_libro/app.py:870 src/malferma_libro/shortcuts.py:58
+#: src/malferma_libro/app.py:529 src/malferma_libro/app.py:872 src/malferma_libro/shortcuts.py:58
 msgid "Следующая глава"
 msgstr "Chapitre suivant"
 
@@ -1428,7 +1440,7 @@ msgstr "Page suivante"
 msgid "Следующее совпадение"
 msgstr "Correspondance suivante"
 
-#: src/malferma_libro/books.py:399
+#: src/malferma_libro/books.py:556
 msgid "Слишком много файлов в архиве книги"
 msgstr "L'archive du livre contient trop de fichiers"
 
@@ -1436,7 +1448,7 @@ msgstr "L'archive du livre contient trop de fichiers"
 msgid "Слишком сложная структура документа DjVu"
 msgstr "La structure du document DjVu est trop complexe"
 
-#: src/malferma_libro/app.py:1480 src/malferma_libro/bookmarks_ui.py:41
+#: src/malferma_libro/app.py:1483 src/malferma_libro/bookmarks_ui.py:41
 msgid "Сначала откройте книгу."
 msgstr "Ouvrez d'abord un livre."
 
@@ -1460,7 +1472,7 @@ msgstr "Enregistrer"
 msgid "Сочетание занято: {action}"
 msgstr "Raccourci déjà attribué : {action}"
 
-#: src/malferma_libro/accessibility_ui.py:270 src/malferma_libro/accessibility_ui.py:318 src/malferma_libro/accessibility_ui.py:319 src/malferma_libro/app.py:1196 src/malferma_libro/app.py:529 src/malferma_libro/shortcuts.py:36
+#: src/malferma_libro/accessibility_ui.py:270 src/malferma_libro/accessibility_ui.py:318 src/malferma_libro/accessibility_ui.py:319 src/malferma_libro/app.py:1199 src/malferma_libro/app.py:531 src/malferma_libro/shortcuts.py:36
 msgid "Специальные возможности"
 msgstr "Accessibilité"
 
@@ -1468,7 +1480,7 @@ msgstr "Accessibilité"
 msgid "Список книг и настройки восстановлены из последней резервной копии."
 msgstr "La liste des livres et les paramètres ont été restaurés depuis la dernière sauvegarde."
 
-#: src/malferma_libro/app.py:1006 src/malferma_libro/app.py:531 src/malferma_libro/shortcuts.py:54
+#: src/malferma_libro/app.py:1009 src/malferma_libro/app.py:533 src/malferma_libro/shortcuts.py:54
 msgid "Стандартный размер текста"
 msgstr "Taille du texte par défaut"
 
@@ -1476,7 +1488,7 @@ msgstr "Taille du texte par défaut"
 msgid "Стоп"
 msgstr "Arrêter"
 
-#: src/malferma_libro/books.py:809 src/malferma_libro/books.py:823 src/malferma_libro/cbz.py:528 src/malferma_libro/outline_ui.py:120 src/malferma_libro/outline_ui.py:86
+#: src/malferma_libro/books.py:1054 src/malferma_libro/books.py:1068 src/malferma_libro/cbz.py:528 src/malferma_libro/outline_ui.py:120 src/malferma_libro/outline_ui.py:86
 msgid "Страница {number}"
 msgstr "Page {number}"
 
@@ -1484,23 +1496,23 @@ msgstr "Page {number}"
 msgid "Страница {page}"
 msgstr "Page {page}"
 
-#: src/malferma_libro/app.py:1792 src/malferma_libro/pagination.py:152
+#: src/malferma_libro/app.py:1807 src/malferma_libro/pagination.py:152
 msgid "Страница {page} из {pages}"
 msgstr "Page {page} sur {pages}"
 
-#: src/malferma_libro/app.py:2033
+#: src/malferma_libro/app.py:2049
 msgid "Страница {page} из {pages}  ·  {percent}% книги"
 msgstr "Page {page} sur {pages}  ·  {percent} % du livre"
 
-#: src/malferma_libro/app.py:1797 src/malferma_libro/app.py:1808
+#: src/malferma_libro/app.py:1812 src/malferma_libro/app.py:1823
 msgid "Страница без текстового слоя. Скан доступен для просмотра; OCR пока не поддерживается."
 msgstr "Page sans couche de texte. La numérisation est consultable ; l'OCR n'est pas encore pris en charge."
 
-#: src/malferma_libro/app.py:957 src/malferma_libro/app.py:960
+#: src/malferma_libro/app.py:960 src/malferma_libro/app.py:963
 msgid "Страница документа"
 msgstr "Page du document"
 
-#: src/malferma_libro/app.py:1172 src/malferma_libro/app.py:943 src/malferma_libro/app.py:997 src/malferma_libro/app.py:998
+#: src/malferma_libro/app.py:1000 src/malferma_libro/app.py:1001 src/malferma_libro/app.py:1175 src/malferma_libro/app.py:945
 msgid "Страница книги"
 msgstr "Page du livre"
 
@@ -1512,7 +1524,7 @@ msgstr "Pages"
 msgid "Страницы {first}–{last} из {pages}"
 msgstr "Pages {first}–{last} sur {pages}"
 
-#: src/malferma_libro/books.py:577 src/malferma_libro/books.py:724 src/malferma_libro/markup.py:110 src/malferma_libro/markup.py:229 src/malferma_libro/markup.py:380 src/malferma_libro/markup.py:427
+#: src/malferma_libro/books.py:762 src/malferma_libro/books.py:963 src/malferma_libro/markup.py:110 src/malferma_libro/markup.py:229 src/malferma_libro/markup.py:380 src/malferma_libro/markup.py:427
 msgid "Текст книги превышает допустимый размер"
 msgstr "Le texte du livre dépasse la taille autorisée"
 
@@ -1520,15 +1532,15 @@ msgstr "Le texte du livre dépasse la taille autorisée"
 msgid "Текст озвучки должен быть строкой."
 msgstr "Le texte de la lecture vocale doit être une chaîne de caractères."
 
-#: src/malferma_libro/app.py:984 src/malferma_libro/app.py:989
+#: src/malferma_libro/app.py:987 src/malferma_libro/app.py:992
 msgid "Текст страницы · поиск и озвучка"
 msgstr "Texte de la page · recherche et lecture vocale"
 
-#: src/malferma_libro/books.py:869
+#: src/malferma_libro/books.py:1114
 msgid "Текстовый файл пуст"
 msgstr "Le fichier texte est vide"
 
-#: src/malferma_libro/app.py:1150
+#: src/malferma_libro/app.py:1153
 msgid "Тёмный"
 msgstr "Sombre"
 
@@ -1536,7 +1548,11 @@ msgstr "Sombre"
 msgid "Увеличение лупы"
 msgstr "Grossissement de la loupe"
 
-#: src/malferma_libro/app.py:1008 src/malferma_libro/app.py:532 src/malferma_libro/shortcuts.py:50
+#: src/malferma_libro/illustration_ui.py:307
+msgid "Увеличить"
+msgstr "Zoom avant"
+
+#: src/malferma_libro/app.py:1011 src/malferma_libro/app.py:534 src/malferma_libro/shortcuts.py:50
 msgid "Увеличить текст"
 msgstr "Agrandir le texte"
 
@@ -1544,15 +1560,15 @@ msgstr "Agrandir le texte"
 msgid "Удалить закладку"
 msgstr "Supprimer le marque-page"
 
-#: src/malferma_libro/app.py:2060
+#: src/malferma_libro/app.py:2076
 msgid "Удалить каталог из списка"
 msgstr "Retirer le catalogue de la liste"
 
-#: src/malferma_libro/app.py:1204
+#: src/malferma_libro/app.py:1207
 msgid "Удерживайте правую кнопку мыши и проведите влево или вправо для перехода между главами или страницами."
 msgstr "Maintenez le bouton droit de la souris enfoncé et déplacez-la vers la gauche ou la droite pour passer d’un chapitre ou d’une page à l’autre."
 
-#: src/malferma_libro/storage.py:824
+#: src/malferma_libro/storage.py:825
 msgid "Укажите название каталога."
 msgstr "Indiquez le nom du catalogue."
 
@@ -1560,11 +1576,15 @@ msgstr "Indiquez le nom du catalogue."
 msgid "Укажите полный адрес OPDS-каталога: https://example.org/opds."
 msgstr "Indiquez l'adresse complète du catalogue OPDS : https://example.org/opds."
 
-#: src/malferma_libro/books.py:795
+#: src/malferma_libro/books.py:1040
 msgid "Указанный путь не является файлом"
 msgstr "Le chemin indiqué ne désigne pas un fichier"
 
-#: src/malferma_libro/app.py:1004 src/malferma_libro/app.py:530 src/malferma_libro/shortcuts.py:52
+#: src/malferma_libro/illustration_ui.py:306
+msgid "Уменьшить"
+msgstr "Zoom arrière"
+
+#: src/malferma_libro/app.py:1007 src/malferma_libro/app.py:532 src/malferma_libro/shortcuts.py:52
 msgid "Уменьшить текст"
 msgstr "Réduire le texte"
 
@@ -1592,7 +1612,7 @@ msgstr "Le fichier PDF est vide ou dépasse la taille autorisée de 64 Mio"
 msgid "Файл библиотеки повреждён. Исходный файл сохранён: {preserved}"
 msgstr "Le fichier de bibliothèque est endommagé. Le fichier d'origine a été conservé : {preserved}"
 
-#: src/malferma_libro/books.py:417 src/malferma_libro/books.py:434
+#: src/malferma_libro/books.py:574 src/malferma_libro/books.py:591
 msgid "Файл внутри книги превышает допустимый размер"
 msgstr "Un fichier à l'intérieur du livre dépasse la taille autorisée"
 
@@ -1608,11 +1628,11 @@ msgstr "Le fichier ne contient aucun texte lisible."
 msgid "Файл не является документом DjVu"
 msgstr "Le fichier n'est pas un document DjVu"
 
-#: src/malferma_libro/books.py:705
+#: src/malferma_libro/books.py:909
 msgid "Файл не является книгой FB2"
 msgstr "Le fichier n'est pas un livre FB2"
 
-#: src/malferma_libro/books.py:276 src/malferma_libro/markup.py:39
+#: src/malferma_libro/books.py:422 src/malferma_libro/markup.py:39
 msgid "Файл разметки слишком сложный."
 msgstr "Le fichier de balisage est trop complexe."
 
@@ -1628,7 +1648,7 @@ msgstr "Les fichiers de la voix Piper n'ont pas passé la vérification."
 msgid "Фильтр библиотеки"
 msgstr "Filtre de la bibliothèque"
 
-#: src/malferma_libro/app.py:1188
+#: src/malferma_libro/app.py:1191
 msgid "Фон страницы"
 msgstr "Fond de la page"
 
@@ -1636,11 +1656,11 @@ msgstr "Fond de la page"
 msgid "Формат ответа не совпадает с форматом книги."
 msgstr "Le format de la réponse ne correspond pas au format du livre."
 
-#: src/malferma_libro/app.py:1173
+#: src/malferma_libro/app.py:1176
 msgid "Цвета и шрифты страницы настраиваются отдельно от интерфейса."
 msgstr "Les couleurs et les polices de la page se règlent séparément de l'interface."
 
-#: src/malferma_libro/app.py:573
+#: src/malferma_libro/app.py:575
 msgid "Читалка EPUB, FB2, TXT, PDF, DjVu, HTML, Markdown и CBZ с локальной библиотекой и каталогами OPDS."
 msgstr "Lecteur EPUB, FB2, TXT, PDF, DjVu, HTML, Markdown et CBZ avec bibliothèque locale et catalogues OPDS."
 
@@ -1648,7 +1668,7 @@ msgstr "Lecteur EPUB, FB2, TXT, PDF, DjVu, HTML, Markdown et CBZ avec bibliothè
 msgid "Читаю"
 msgstr "En cours"
 
-#: src/malferma_libro/app.py:367 src/malferma_libro/app.py:415 src/malferma_libro/shortcuts.py:27 src/malferma_libro/shortcuts.py:39
+#: src/malferma_libro/app.py:369 src/malferma_libro/app.py:417 src/malferma_libro/shortcuts.py:27 src/malferma_libro/shortcuts.py:39
 msgid "Чтение"
 msgstr "Lecture"
 
@@ -1660,7 +1680,7 @@ msgstr "La largeur de la page DjVu doit être un entier strictement positif"
 msgid "Ширина страницы PDF должна быть положительным целым числом"
 msgstr "La largeur de la page PDF doit être un entier strictement positif"
 
-#: src/malferma_libro/app.py:1190
+#: src/malferma_libro/app.py:1193
 msgid "Шрифт книги"
 msgstr "Police du livre"
 
@@ -1668,7 +1688,7 @@ msgstr "Police du livre"
 msgid "Это сочетание зарезервировано системой."
 msgstr "Ce raccourci est réservé par le système."
 
-#: src/malferma_libro/storage.py:827
+#: src/malferma_libro/storage.py:828
 msgid "Этот каталог уже добавлен."
 msgstr "Ce catalogue a déjà été ajouté."
 
@@ -1676,11 +1696,11 @@ msgstr "Ce catalogue a déjà été ajouté."
 msgid "Этот формат книги не поддерживается."
 msgstr "Ce format de livre n'est pas pris en charge."
 
-#: src/malferma_libro/accessibility_ui.py:261 src/malferma_libro/app.py:1217 src/malferma_libro/app.py:590 src/malferma_libro/app.py:591
+#: src/malferma_libro/accessibility_ui.py:261 src/malferma_libro/app.py:1220 src/malferma_libro/app.py:592 src/malferma_libro/app.py:593
 msgid "Язык"
 msgstr "Langue"
 
-#: src/malferma_libro/app.py:1169 src/malferma_libro/app.py:588
+#: src/malferma_libro/app.py:1172 src/malferma_libro/app.py:590
 msgid "Язык интерфейса"
 msgstr "Langue de l'interface"
 
@@ -1688,11 +1708,11 @@ msgstr "Langue de l'interface"
 msgid "Язык озвучки «{language}» больше не поддерживается. Выбрано автоматическое определение языка."
 msgstr "La langue de lecture à voix haute « {language} » n’est plus prise en charge. La détection automatique de la langue a été sélectionnée."
 
-#: src/malferma_libro/app.py:1194
+#: src/malferma_libro/app.py:1197
 msgid "Яркость страницы, %"
 msgstr "Luminosité de la page, %"
 
-#: src/malferma_libro/books.py:596
+#: src/malferma_libro/books.py:785
 msgid "не указан"
 msgstr "non renseigné"
 

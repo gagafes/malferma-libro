@@ -23,7 +23,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "src" / "malferma_libro"
 PO_DIR = ROOT / "po"
 DOMAIN = "malferma-libro"
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 
 
 @dataclass

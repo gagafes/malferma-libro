@@ -1,6 +1,6 @@
 # Malferma Libro — user guide
 
-Version 0.1.0. An application for Debian 13 built with GTK 4 and libadwaita.
+Version 0.1.1. An application for Debian 13 built with GTK 4 and libadwaita.
 This English guide is bundled with the application and is available without
 an internet connection. Open it from the main menu, with F1 by default, or with
 `malferma-libro --manual=en`.
@@ -580,10 +580,24 @@ are not implemented.
 
 ## Format limitations and troubleshooting
 
-EPUB and FB2 are converted into text chapters. Original EPUB CSS, inline
-illustrations, interactive elements and exact layout are not reproduced.
-Covers are extracted separately for the library; showing them does not add
-support for images within EPUB text.
+EPUB and FB2 are converted into text chapters with illustrations. Images fit
+the reading column; select one to open a separate viewer. Use “Zoom in”,
+“Zoom out” and “Fit to window” to adjust its size; the +, − and 0 keys
+perform the same actions, respectively. Escape closes the viewer
+and returns to the book. Illustrations do not change the text used by search,
+narration, bookmarks or the page count across the book.
+
+EPUB supports local PNG and JPEG images, including raster images inside SVG
+wrappers; FB2 and FB2.ZIP support embedded images from binary blocks. WebP
+requires a suitable installed GdkPixbuf loader. Vector SVG artwork, external
+images, original CSS, interactive elements and exact layout are not reproduced.
+Reading a book does not download images from the internet. Missing, damaged,
+unsupported or oversized illustrations do not prevent the text from opening.
+
+Each illustration is limited to 8 MiB; encoded image data retained when
+parsing a book is limited to 32 MiB. At most 512 distinct images and 2048 image references are
+processed. Library covers are prepared separately.
+
 TXT is displayed as text; PDF and DjVu preserve the page image and element
 positions. DRM-protected books are not supported. The graphical interface
 does not yet provide password entry for protected PDFs. Standalone DjVu

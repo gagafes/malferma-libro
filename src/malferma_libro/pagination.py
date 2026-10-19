@@ -132,7 +132,7 @@ class PageNumberMixin:
         if self.text_view.forward_display_line(end):
             if not self.text_view.starts_display_line(end):
                 self.text_view.backward_display_line_start(end)
-            stop = end.get_offset()
+            stop = self.reader_text_offset(end)
         else:
             stop = length
         return start, max(start, min(length, stop))

@@ -2,13 +2,13 @@
 # Translation source recovered from the installed GNU gettext catalog.
 
 msgid ""
-msgstr "Project-Id-Version: Malferma Libro 0.1.0\nLanguage: kk\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n!=1);\n"
+msgstr "Project-Id-Version: Malferma Libro 0.1.1\nLanguage: kk\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n!=1);\n"
 
 #: src/malferma_libro/library_ui.py:105
 msgid " · Найдено: {count}"
 msgstr " · Табылғаны: {count}"
 
-#: src/malferma_libro/app.py:884
+#: src/malferma_libro/app.py:886
 msgid "100% — по ширине окна; вёрстка PDF, DjVu и CBZ сохраняется"
 msgstr "100% — терезе еніне сай; PDF, DjVu және CBZ беттерінің орналасуы сақталады"
 
@@ -20,19 +20,19 @@ msgstr "Сыртқы файлдары бар DjVu құжаттарына қол�
 msgid "EPUB · FB2 · FB2.ZIP · TXT · PDF · DjVu · HTML · Markdown · CBZ. Книги копируются в локальную библиотеку."
 msgstr "EPUB · FB2 · FB2.ZIP · TXT · PDF · DjVu · HTML · Markdown · CBZ. Кітаптар жергілікті кітапханаға көшіріледі."
 
-#: src/malferma_libro/books.py:618
+#: src/malferma_libro/books.py:808
 msgid "EPUB не содержит доступных текстовых глав"
 msgstr "EPUB ішінде оқуға болатын мәтіндік тараулар жоқ"
 
-#: src/malferma_libro/books.py:543
+#: src/malferma_libro/books.py:700
 msgid "EPUB не содержит описания книги"
 msgstr "EPUB ішінде кітап сипаттамасы жоқ"
 
-#: src/malferma_libro/books.py:775
+#: src/malferma_libro/books.py:1018
 msgid "FB2 не содержит доступного текста"
 msgstr "FB2 ішінде оқуға болатын мәтін жоқ"
 
-#: src/malferma_libro/app.py:2178 src/malferma_libro/app.py:2179
+#: src/malferma_libro/app.py:2194 src/malferma_libro/app.py:2195
 msgid "OPDS-каталог"
 msgstr "OPDS каталогы"
 
@@ -40,19 +40,19 @@ msgstr "OPDS каталогы"
 msgid "PDF защищён паролем. Откройте незашифрованную копию книги."
 msgstr "PDF құпиясөзбен қорғалған. Кітаптың шифрланбаған көшірмесін ашыңыз."
 
-#: src/malferma_libro/app.py:1195
+#: src/malferma_libro/app.py:1198
 msgid "PDF, DjVu и CBZ сохраняют исходные шрифты и цвета; размер меняется масштабом."
 msgstr "PDF, DjVu және CBZ бастапқы қаріптер мен түстерді сақтайды; өлшемін масштабтау арқылы өзгертуге болады."
 
-#: src/malferma_libro/app.py:1532
+#: src/malferma_libro/app.py:1535
 msgid "Piper не установлен. Инструкция доступна в руководстве."
 msgstr "Piper орнатылмаған. Нұсқаулар пайдаланушы нұсқаулығында берілген."
 
-#: src/malferma_libro/books.py:864
+#: src/malferma_libro/books.py:1109
 msgid "TXT должен быть в кодировке UTF-8 или Windows-1251"
 msgstr "TXT файлы UTF-8 немесе Windows-1251 кодтамасында болуы тиіс"
 
-#: src/malferma_libro/books.py:866
+#: src/malferma_libro/books.py:1111
 msgid "TXT содержит двоичные данные"
 msgstr "TXT ішінде екілік деректер бар"
 
@@ -60,11 +60,11 @@ msgstr "TXT ішінде екілік деректер бар"
 msgid "{count} из {limit} символов"
 msgstr "{count} / {limit} таңба"
 
-#: src/malferma_libro/books.py:144
+#: src/malferma_libro/books.py:194
 msgid "{label}: XML превышает допустимый размер"
 msgstr "{label}: XML көлемі рұқсат етілген шектен асады"
 
-#: src/malferma_libro/books.py:377
+#: src/malferma_libro/books.py:529
 msgid "{label}: не удалось прочитать текст EPUB"
 msgstr "{label}: EPUB мәтінін оқу мүмкін болмады"
 
@@ -72,23 +72,23 @@ msgstr "{label}: EPUB мәтінін оқу мүмкін болмады"
 msgid "{label}: не удалось прочитать текст."
 msgstr "{label}: мәтінді оқу мүмкін болмады."
 
-#: src/malferma_libro/books.py:366
+#: src/malferma_libro/books.py:518
 msgid "{label}: объявления DTD запрещены"
 msgstr "{label}: DTD мәлімдемелеріне тыйым салынған"
 
-#: src/malferma_libro/books.py:150 src/malferma_libro/books.py:156 src/malferma_libro/markup.py:126
+#: src/malferma_libro/books.py:200 src/malferma_libro/books.py:206 src/malferma_libro/markup.py:126
 msgid "{label}: объявления DTD и сущностей XML запрещены"
 msgstr "{label}: DTD және XML нысандарының мәлімдемелеріне тыйым салынған"
 
-#: src/malferma_libro/books.py:363
+#: src/malferma_libro/books.py:515
 msgid "{label}: объявления сущностей запрещены"
 msgstr "{label}: нысандар мәлімдемелеріне тыйым салынған"
 
-#: src/malferma_libro/books.py:162
+#: src/malferma_libro/books.py:212
 msgid "{label}: повреждённый XML"
 msgstr "{label}: XML бүлінген"
 
-#: src/malferma_libro/app.py:2037 src/malferma_libro/library_ui.py:115 src/malferma_libro/library_ui.py:186
+#: src/malferma_libro/app.py:2053 src/malferma_libro/library_ui.py:115 src/malferma_libro/library_ui.py:186
 msgid "{percent}% прочитано"
 msgstr "{percent}% оқылды"
 
@@ -96,7 +96,7 @@ msgstr "{percent}% оқылды"
 msgid "Автоматически"
 msgstr "Автоматты түрде"
 
-#: src/malferma_libro/app.py:1189
+#: src/malferma_libro/app.py:1192
 msgid "Автоматически скрывать панель в полном экране"
 msgstr "Толық экран режимінде панельді автоматты түрде жасыру"
 
@@ -108,7 +108,7 @@ msgstr "PDF авторы осы құжаттан мәтін шығаруға т�
 msgid "Автор не указан"
 msgstr "Автор көрсетілмеген"
 
-#: src/malferma_libro/app.py:2114
+#: src/malferma_libro/app.py:2130
 msgid "Адрес OPDS-каталога"
 msgstr "OPDS каталогының мекенжайы"
 
@@ -124,11 +124,11 @@ msgstr "Мекенжайда жарамсыз таңбалар бар."
 msgid "Адреса с логином или паролем не поддерживаются."
 msgstr "Логин немесе құпиясөз бар мекенжайларға қолдау көрсетілмейді."
 
-#: src/malferma_libro/books.py:97
+#: src/malferma_libro/books.py:147
 msgid "Архив CBZ превышает допустимый размер (512 МиБ)"
 msgstr "CBZ мұрағаты рұқсат етілген көлемнен асады (512 МиБ)"
 
-#: src/malferma_libro/books.py:846
+#: src/malferma_libro/books.py:1091
 msgid "Архив FB2 должен содержать ровно один файл .fb2"
 msgstr "FB2 архивінде бір ғана .fb2 файлы болуы тиіс"
 
@@ -152,7 +152,7 @@ msgstr "DjVu ішіндегі бет саны {max_pages} мәнінен асп�
 msgid "В DjVu не найден корректный каталог страниц"
 msgstr "DjVu ішінде жарамды беттер каталогы табылмады"
 
-#: src/malferma_libro/books.py:548
+#: src/malferma_libro/books.py:705
 msgid "В EPUB отсутствуют метаданные, список файлов или порядок глав"
 msgstr "EPUB ішінде метадеректер, файлдар тізімі немесе тараулар реті жоқ"
 
@@ -164,15 +164,15 @@ msgstr "PDF ішіндегі бет саны 1 мен {max_pages} аралығы
 msgid "В архиве CBZ нет поддерживаемых изображений."
 msgstr "CBZ мұрағатында қолдау көрсетілетін кескіндер жоқ."
 
-#: src/malferma_libro/books.py:427
+#: src/malferma_libro/books.py:584
 msgid "В книге отсутствует файл: {name}"
 msgstr "Кітапта мына файл жоқ: {name}"
 
-#: src/malferma_libro/app.py:1193
+#: src/malferma_libro/app.py:1196
 msgid "В пикселях; на широком окне текст располагается по центру."
 msgstr "Пиксельмен; кең терезеде мәтін ортаға тураланады."
 
-#: src/malferma_libro/app.py:2215
+#: src/malferma_libro/app.py:2231
 msgid "В этом разделе книг нет."
 msgstr "Бұл бөлімде кітап жоқ."
 
@@ -184,19 +184,19 @@ msgstr "Сіздің кітапханаңыз"
 msgid "Вернуться к месту до поиска"
 msgstr "Іздеуге дейінгі орынға қайту"
 
-#: src/malferma_libro/app.py:480
+#: src/malferma_libro/app.py:482
 msgid "Включить дневной режим"
 msgstr "Күндізгі режимді қосу"
 
-#: src/malferma_libro/app.py:480
+#: src/malferma_libro/app.py:482
 msgid "Включить ночной режим"
 msgstr "Түнгі режимді қосу"
 
-#: src/malferma_libro/books.py:453
+#: src/malferma_libro/books.py:610
 msgid "Внутренняя ссылка EPUB выходит за пределы архива"
 msgstr "EPUB ішкі сілтемесі архив шегінен шығып кетеді"
 
-#: src/malferma_libro/books.py:445
+#: src/malferma_libro/books.py:602
 msgid "Внутренняя ссылка EPUB указывает за пределы книги"
 msgstr "EPUB ішкі сілтемесі кітаптан тыс жерге сілтейді"
 
@@ -216,7 +216,7 @@ msgstr "Кәдімгі DjVu файлын таңдаңыз"
 msgid "Выберите обычный файл PDF"
 msgstr "Кәдімгі PDF файлын таңдаңыз"
 
-#: src/malferma_libro/storage.py:608
+#: src/malferma_libro/storage.py:609
 msgid "Выберите файл книги."
 msgstr "Кітап файлын таңдаңыз."
 
@@ -228,11 +228,11 @@ msgstr "Тілді немесе дауысты таңдаңыз."
 msgid "Выбрать книгу…"
 msgstr "Кітапты таңдау…"
 
-#: src/malferma_libro/app.py:1048
+#: src/malferma_libro/app.py:1051
 msgid "Выделить всё"
 msgstr "Барлығын таңдау"
 
-#: src/malferma_libro/app.py:465 src/malferma_libro/app.py:520
+#: src/malferma_libro/app.py:467 src/malferma_libro/app.py:522
 msgid "Выйти из полноэкранного режима"
 msgstr "Толық экран режимінен шығу"
 
@@ -244,15 +244,15 @@ msgstr "Орындалды: {percent}%"
 msgid "Выполняемые действия"
 msgstr "Орындалып жатқан әрекеттер"
 
-#: src/malferma_libro/accessibility_ui.py:279 src/malferma_libro/app.py:1205
+#: src/malferma_libro/accessibility_ui.py:279 src/malferma_libro/app.py:1208
 msgid "Высокая контрастность"
 msgstr "Жоғары контраст"
 
-#: src/malferma_libro/books.py:578 src/malferma_libro/outline_ui.py:121
+#: src/malferma_libro/books.py:763 src/malferma_libro/outline_ui.py:121
 msgid "Глава {number}"
 msgstr "{number}-тарау"
 
-#: src/malferma_libro/app.py:424 src/malferma_libro/app.py:425 src/malferma_libro/shortcuts.py:26
+#: src/malferma_libro/app.py:426 src/malferma_libro/app.py:427 src/malferma_libro/shortcuts.py:26
 msgid "Главное меню"
 msgstr "Негізгі мәзір"
 
@@ -284,15 +284,15 @@ msgstr "Дауыс орнатылған"
 msgid "Голоса Piper"
 msgstr "Piper дауыстары"
 
-#: src/malferma_libro/app.py:421 src/malferma_libro/app.py:664 src/malferma_libro/keybindings_ui.py:39 src/malferma_libro/keybindings_ui.py:46 src/malferma_libro/shortcuts.py:44
+#: src/malferma_libro/app.py:423 src/malferma_libro/app.py:666 src/malferma_libro/keybindings_ui.py:39 src/malferma_libro/keybindings_ui.py:46 src/malferma_libro/shortcuts.py:44
 msgid "Горячие клавиши"
 msgstr "Пернелер тіркесімдері"
 
-#: src/malferma_libro/app.py:1531
+#: src/malferma_libro/app.py:1534
 msgid "Готово к озвучке"
 msgstr "Дыбыстауға дайын"
 
-#: src/malferma_libro/app.py:2075
+#: src/malferma_libro/app.py:2091
 msgid "Далее"
 msgstr "Келесі"
 
@@ -316,7 +316,7 @@ msgstr "Дыбыстауды ойнату үшін paplay немесе aplay о�
 msgid "Для запуска нужны GTK 4, libadwaita и PyGObject. На Debian 13 выполните:\nsudo apt install python3-gi gir1.2-gtk-4.0 gir1.2-adw-1 poppler-utils djvulibre-bin\nЗапускайте приложение через /usr/bin/python3.\nПодробности: {error}"
 msgstr "Іске қосу үшін GTK 4, libadwaita және PyGObject қажет. Debian 13 жүйесінде орындаңыз:\nsudo apt install python3-gi gir1.2-gtk-4.0 gir1.2-adw-1 poppler-utils djvulibre-bin\nҚолданбаны /usr/bin/python3 арқылы іске қосыңыз.\nТолығырақ: {error}"
 
-#: src/malferma_libro/app.py:2118
+#: src/malferma_libro/app.py:2134
 msgid "Для локального Calibre: http://адрес:8080/opds"
 msgstr "Жергілікті Calibre үшін: http://address:8080/opds"
 
@@ -344,7 +344,7 @@ msgstr "PDF оқу үшін poppler-utils дестесін орнатыңыз: s
 msgid "Для этого языка добавьте свою модель Piper."
 msgstr "Бұл тіл үшін өз Piper моделіңізді қосыңыз."
 
-#: src/malferma_libro/app.py:1175
+#: src/malferma_libro/app.py:1178
 msgid "Дневной"
 msgstr "Күндізгі"
 
@@ -352,11 +352,11 @@ msgstr "Күндізгі"
 msgid "Дневной / ночной режим"
 msgstr "Күндізгі / түнгі режим"
 
-#: src/malferma_libro/app.py:2108 src/malferma_libro/app.py:812 src/malferma_libro/desktop.py:252
+#: src/malferma_libro/app.py:2124 src/malferma_libro/app.py:814 src/malferma_libro/desktop.py:252
 msgid "Добавить"
 msgstr "Қосу"
 
-#: src/malferma_libro/app.py:2106
+#: src/malferma_libro/app.py:2122
 msgid "Добавить OPDS-каталог"
 msgstr "OPDS каталогын қосу"
 
@@ -364,7 +364,7 @@ msgstr "OPDS каталогын қосу"
 msgid "Добавить голос…"
 msgstr "Дауыс қосу…"
 
-#: src/malferma_libro/app.py:2059
+#: src/malferma_libro/app.py:2075
 msgid "Добавить каталог"
 msgstr "Каталог қосу"
 
@@ -376,19 +376,19 @@ msgstr "Piper моделін қосу"
 msgid "Добавление голоса…"
 msgstr "Дауыс қосылуда…"
 
-#: src/malferma_libro/app.py:858
+#: src/malferma_libro/app.py:860
 msgid "Добавление книг: {count}…"
 msgstr "Кітаптар қосылуда: {count}…"
 
-#: src/malferma_libro/app.py:2055 src/malferma_libro/app.py:2103
+#: src/malferma_libro/app.py:2071 src/malferma_libro/app.py:2119
 msgid "Добавьте каталог"
 msgstr "Каталог қосыңыз"
 
-#: src/malferma_libro/app.py:387
+#: src/malferma_libro/app.py:389
 msgid "Добавьте книгу или подключите OPDS-каталог."
 msgstr "Кітап қосыңыз немесе OPDS каталогына қосылыңыз."
 
-#: src/malferma_libro/app.py:1490
+#: src/malferma_libro/app.py:1493
 msgid "Дождитесь загрузки страницы."
 msgstr "Беттің жүктелуін күтіңіз."
 
@@ -396,7 +396,7 @@ msgstr "Беттің жүктелуін күтіңіз."
 msgid "Допустимы только адреса HTTP и HTTPS."
 msgstr "Тек HTTP және HTTPS мекенжайларына рұқсат етіледі."
 
-#: src/malferma_libro/app.py:1209
+#: src/malferma_libro/app.py:1212
 msgid "Жесты мышью"
 msgstr "Тінтуір қимылдары"
 
@@ -408,19 +408,19 @@ msgstr "Дауысты жүктеп алу"
 msgid "Загрузка голоса: {voice}"
 msgstr "Дауыс жүктеп алынуда: {voice}"
 
-#: src/malferma_libro/app.py:2173
+#: src/malferma_libro/app.py:2189
 msgid "Загрузка каталога…"
 msgstr "Каталог жүктелуде…"
 
-#: src/malferma_libro/app.py:1744
+#: src/malferma_libro/app.py:1759
 msgid "Загрузка страницы {page}"
 msgstr "{page}-бет жүктелуде"
 
-#: src/malferma_libro/app.py:1745 src/malferma_libro/app.py:1822
+#: src/malferma_libro/app.py:1760 src/malferma_libro/app.py:1837
 msgid "Загрузка страницы {page}…"
 msgstr "{page}-бет жүктелуде…"
 
-#: src/malferma_libro/app.py:962
+#: src/malferma_libro/app.py:965
 msgid "Загрузка страницы…"
 msgstr "Бет жүктелуде…"
 
@@ -436,7 +436,7 @@ msgstr "Бетбелгі енді қолжетімді емес."
 msgid "Закладка добавлена."
 msgstr "Бетбелгі қосылды."
 
-#: src/malferma_libro/app.py:904 src/malferma_libro/app.py:905
+#: src/malferma_libro/app.py:906 src/malferma_libro/app.py:907
 msgid "Закладки"
 msgstr "Бетбелгілер"
 
@@ -460,11 +460,11 @@ msgstr "Бетбелгіге ескертпе"
 msgid "Заметка слишком длинная: максимум {limit} символов."
 msgstr "Ескертпе тым ұзын: ең көбі {limit} таңба."
 
-#: src/malferma_libro/books.py:413
+#: src/malferma_libro/books.py:570
 msgid "Зашифрованные архивы книг не поддерживаются"
 msgstr "Шифрланған кітап архивтеріне қолдау көрсетілмейді"
 
-#: src/malferma_libro/app.py:1531
+#: src/malferma_libro/app.py:1534
 msgid "Идёт озвучка текущей главы"
 msgstr "Ағымдағы тарау дыбысталуда"
 
@@ -484,7 +484,15 @@ msgstr "DjVu беті кескінінің көлемі рұқсат етілг�
 msgid "Изображение страницы PDF превышает допустимый размер"
 msgstr "PDF беті кескінінің көлемі рұқсат етілген шектен асады"
 
-#: src/malferma_libro/app.py:1147
+#: src/malferma_libro/illustration_ui.py:119 src/malferma_libro/illustration_ui.py:287 src/malferma_libro/illustration_ui.py:293
+msgid "Иллюстрация"
+msgstr "Иллюстрация"
+
+#: src/malferma_libro/illustration_ui.py:251 src/malferma_libro/illustration_ui.py:259 src/malferma_libro/illustration_ui.py:260
+msgid "Иллюстрация недоступна"
+msgstr "Иллюстрация қолжетімсіз"
+
+#: src/malferma_libro/app.py:1150
 msgid "Интерфейс"
 msgstr "Интерфейс"
 
@@ -492,7 +500,7 @@ msgstr "Интерфейс"
 msgid "Используйте Ctrl, Alt или функциональную клавишу."
 msgstr "Ctrl, Alt немесе функционалдық пернені қолданыңыз."
 
-#: src/malferma_libro/app.py:1150 src/malferma_libro/app.py:1175
+#: src/malferma_libro/app.py:1153 src/malferma_libro/app.py:1178
 msgid "Как в системе"
 msgstr "Жүйедегідей"
 
@@ -500,11 +508,11 @@ msgstr "Жүйедегідей"
 msgid "Каталог"
 msgstr "Каталог"
 
-#: src/malferma_libro/app.py:2216
+#: src/malferma_libro/app.py:2232
 msgid "Каталог загружен. Записей: {count}."
 msgstr "Каталог жүктелді. Жазба саны: {count}."
 
-#: src/malferma_libro/app.py:2071
+#: src/malferma_libro/app.py:2087
 msgid "Каталог не открыт"
 msgstr "Каталог ашылмаған"
 
@@ -512,7 +520,7 @@ msgstr "Каталог ашылмаған"
 msgid "Каталог слишком большой."
 msgstr "Каталог тым үлкен."
 
-#: src/malferma_libro/app.py:2141
+#: src/malferma_libro/app.py:2157
 msgid "Каталог удалён из списка."
 msgstr "Каталог тізімнен өшірілді."
 
@@ -536,11 +544,11 @@ msgstr "Кітап"
 msgid "Книга «{title}» уже добавлена. Сохранённые закладки и место чтения будут использованы."
 msgstr "«{title}» кітабы бұрын қосылған. Сақталған бетбелгілер мен оқу орны пайдаланылады."
 
-#: src/malferma_libro/app.py:787
+#: src/malferma_libro/app.py:789
 msgid "Книга готова к чтению в библиотеке."
 msgstr "Кітап кітапханада оқуға дайын."
 
-#: src/malferma_libro/storage.py:709
+#: src/malferma_libro/storage.py:710
 msgid "Книга не найдена: {book_id}"
 msgstr "Кітап табылмады: {book_id}"
 
@@ -548,11 +556,11 @@ msgstr "Кітап табылмады: {book_id}"
 msgid "Книга не открыта"
 msgstr "Кітап ашылмаған"
 
-#: src/malferma_libro/app.py:1664
+#: src/malferma_libro/app.py:1667
 msgid "Книга открыта. Позиция чтения сохраняется автоматически."
 msgstr "Кітап ашылды. Оқу орны автоматты түрде сақталады."
 
-#: src/malferma_libro/books.py:855 src/malferma_libro/books.py:98 src/malferma_libro/markup.py:63 src/malferma_libro/markup.py:67
+#: src/malferma_libro/books.py:1100 src/malferma_libro/books.py:148 src/malferma_libro/markup.py:63 src/malferma_libro/markup.py:67
 msgid "Книга превышает допустимый размер (64 МиБ)"
 msgstr "Кітап көлемі рұқсат етілген шектен (64 МиБ) асады"
 
@@ -572,7 +580,7 @@ msgstr "Кітаптар (EPUB, FB2, FB2.ZIP, TXT, PDF, DjVu, HTML, Markdown, CB
 msgid "Код завершения {code}"
 msgstr "Аяқталу коды: {code}"
 
-#: src/malferma_libro/books.py:753
+#: src/malferma_libro/books.py:995
 msgid "Комментарии"
 msgstr "Түсініктемелер"
 
@@ -592,7 +600,7 @@ msgstr "DjVu көшіру аяқталмады: кітап көлемі өзге
 msgid "Копирование PDF не завершено: размер книги изменился"
 msgstr "PDF көшіру аяқталмады: кітап көлемі өзгерді"
 
-#: src/malferma_libro/app.py:1047
+#: src/malferma_libro/app.py:1050
 msgid "Копировать"
 msgstr "Көшіру"
 
@@ -600,7 +608,7 @@ msgstr "Көшіру"
 msgid "Лупа области чтения"
 msgstr "Оқу аймағының ұлғайтқышы"
 
-#: src/malferma_libro/app.py:1192
+#: src/malferma_libro/app.py:1195
 msgid "Максимальная ширина текста"
 msgstr "Мәтіннің ең үлкен ені"
 
@@ -612,11 +620,11 @@ msgstr "DjVu масштабы оң сан болуы тиіс"
 msgid "Масштаб PDF должен быть положительным числом"
 msgstr "PDF масштабы оң сан болуы тиіс"
 
-#: src/malferma_libro/app.py:881 src/malferma_libro/app.py:885
+#: src/malferma_libro/app.py:883 src/malferma_libro/app.py:887
 msgid "Масштаб страницы, %"
 msgstr "Бет масштабы, %"
 
-#: src/malferma_libro/accessibility_ui.py:290 src/malferma_libro/app.py:1207
+#: src/malferma_libro/accessibility_ui.py:290 src/malferma_libro/app.py:1210
 msgid "Межстрочный интервал"
 msgstr "Жоларалық интервал"
 
@@ -632,11 +640,11 @@ msgstr "Piper моделі (*.onnx)"
 msgid "Модель голоса не установлена"
 msgstr "Дауыс моделі орнатылмаған"
 
-#: src/malferma_libro/app.py:366 src/malferma_libro/app.py:414 src/malferma_libro/shortcuts.py:38
+#: src/malferma_libro/app.py:368 src/malferma_libro/app.py:416 src/malferma_libro/shortcuts.py:38
 msgid "Мои книги"
 msgstr "Кітаптарым"
 
-#: src/malferma_libro/app.py:2112
+#: src/malferma_libro/app.py:2128
 msgid "Моя библиотека"
 msgstr "Кітапханам"
 
@@ -648,7 +656,7 @@ msgstr "Бір экран жоғары"
 msgid "На экран вниз"
 msgstr "Бір экран төмен"
 
-#: src/malferma_libro/app.py:1493
+#: src/malferma_libro/app.py:1496
 msgid "На этой странице нет доступного текста для озвучки. Распознавание сканов пока не поддерживается."
 msgstr "Бұл бетте дыбыстауға болатын мәтін жоқ. Сканерленген мәтінді тануға әзірге қолдау көрсетілмейді."
 
@@ -656,11 +664,11 @@ msgstr "Бұл бетте дыбыстауға болатын мәтін жоқ.
 msgid "Нажмите новое сочетание клавиш."
 msgstr "Жаңа пернелер тіркесімін басыңыз."
 
-#: src/malferma_libro/app.py:2068
+#: src/malferma_libro/app.py:2084
 msgid "Назад"
 msgstr "Артқа"
 
-#: src/malferma_libro/app.py:2111
+#: src/malferma_libro/app.py:2127
 msgid "Название"
 msgstr "Атауы"
 
@@ -668,19 +676,19 @@ msgstr "Атауы"
 msgid "Название или автор"
 msgstr "Атауы немесе авторы"
 
-#: src/malferma_libro/search_ui.py:313
+#: src/malferma_libro/search_ui.py:312
 msgid "Найдено в тексте страницы: {query}"
 msgstr "Бет мәтінінен табылды: {query}"
 
-#: src/malferma_libro/search_ui.py:314
+#: src/malferma_libro/search_ui.py:313
 msgid "Найдено: {query}"
 msgstr "Табылды: {query}"
 
-#: src/malferma_libro/app.py:2083 src/malferma_libro/app.py:374 src/malferma_libro/app.py:375 src/malferma_libro/app.py:524 src/malferma_libro/app.py:899 src/malferma_libro/shortcuts.py:32
+#: src/malferma_libro/app.py:2099 src/malferma_libro/app.py:376 src/malferma_libro/app.py:377 src/malferma_libro/app.py:526 src/malferma_libro/app.py:901 src/malferma_libro/shortcuts.py:32
 msgid "Найти"
 msgstr "Іздеу"
 
-#: src/malferma_libro/app.py:1141 src/malferma_libro/app.py:1144 src/malferma_libro/app.py:419 src/malferma_libro/shortcuts.py:34
+#: src/malferma_libro/app.py:1144 src/malferma_libro/app.py:1147 src/malferma_libro/app.py:421 src/malferma_libro/shortcuts.py:34
 msgid "Настройки"
 msgstr "Баптаулар"
 
@@ -700,7 +708,7 @@ msgstr "Басталмаған"
 msgid "Не удалось воспроизвести озвучку."
 msgstr "Дыбыстауды ойнату мүмкін болмады."
 
-#: src/malferma_libro/app.py:625
+#: src/malferma_libro/app.py:627
 msgid "Не удалось выполнить действие"
 msgstr "Әрекетті орындау мүмкін болмады"
 
@@ -708,7 +716,7 @@ msgstr "Әрекетті орындау мүмкін болмады"
 msgid "Не удалось выполнить поиск."
 msgstr "Іздеуді орындау мүмкін болмады."
 
-#: src/malferma_libro/app.py:2128
+#: src/malferma_libro/app.py:2144
 msgid "Не удалось добавить каталог"
 msgstr "Каталогты қосу мүмкін болмады"
 
@@ -716,11 +724,11 @@ msgstr "Каталогты қосу мүмкін болмады"
 msgid "Не удалось загрузить голос Piper."
 msgstr "Piper дауысын жүктеу мүмкін болмады."
 
-#: src/malferma_libro/app.py:1815
+#: src/malferma_libro/app.py:1830
 msgid "Не удалось загрузить страницу {page}"
 msgstr "{page}-бетті жүктеу мүмкін болмады"
 
-#: src/malferma_libro/app.py:1816
+#: src/malferma_libro/app.py:1831
 msgid "Не удалось загрузить страницу. Нажмите «Повторить» или выберите другую страницу."
 msgstr "Бетті жүктеу мүмкін болмады. «Қайталау» түймесін басыңыз немесе басқа бетті таңдаңыз."
 
@@ -756,7 +764,7 @@ msgstr "DjVu бетінің өлшемін анықтау мүмкін болм�
 msgid "Не удалось определить размер страницы PDF"
 msgstr "PDF бетінің өлшемін анықтау мүмкін болмады"
 
-#: src/malferma_libro/app.py:238
+#: src/malferma_libro/app.py:240
 msgid "Не удалось открыть библиотеку"
 msgstr "Кітапхананы ашу мүмкін болмады"
 
@@ -792,7 +800,7 @@ msgstr "DjVu оқу мүмкін болмады: файл бүлінген не�
 msgid "Не удалось прочитать PDF: файл повреждён или имеет неподдерживаемую структуру"
 msgstr "PDF оқу мүмкін болмады: файл бүлінген немесе оның құрылымына қолдау көрсетілмейді"
 
-#: src/malferma_libro/books.py:874 src/malferma_libro/markup.py:70
+#: src/malferma_libro/books.py:1119 src/malferma_libro/markup.py:70
 msgid "Не удалось прочитать книгу: {exc}"
 msgstr "Кітапты оқу мүмкін болмады: {exc}"
 
@@ -800,7 +808,7 @@ msgstr "Кітапты оқу мүмкін болмады: {exc}"
 msgid "Не удалось прочитать текст на страницах: {count}."
 msgstr "Мәтіні оқылмаған беттер саны: {count}."
 
-#: src/malferma_libro/books.py:432
+#: src/malferma_libro/books.py:589
 msgid "Не удалось распаковать файл книги: {name}"
 msgstr "Кітап ішіндегі файлды архивтен шығару мүмкін болмады: {name}"
 
@@ -812,7 +820,7 @@ msgstr "Piper көмегімен сөйлеуді синтездеу мүмкі�
 msgid "Не удалось скачать голос Piper."
 msgstr "Piper дауысын жүктеп алу мүмкін болмады."
 
-#: src/malferma_libro/app.py:1580 src/malferma_libro/app.py:1610 src/malferma_libro/app.py:1632 src/malferma_libro/keybindings_ui.py:295 src/malferma_libro/library_ui.py:206
+#: src/malferma_libro/app.py:1583 src/malferma_libro/app.py:1613 src/malferma_libro/app.py:1635 src/malferma_libro/keybindings_ui.py:295 src/malferma_libro/library_ui.py:206
 msgid "Не удалось сохранить библиотеку"
 msgstr "Кітапхананы сақтау мүмкін болмады"
 
@@ -840,11 +848,11 @@ msgstr "DjVu бетінің кескінін сақтау мүмкін болм�
 msgid "Не удалось сохранить изображение страницы PDF"
 msgstr "PDF бетінің кескінін сақтау мүмкін болмады"
 
-#: src/malferma_libro/app.py:2017
+#: src/malferma_libro/app.py:2033
 msgid "Не удалось сохранить место чтения"
 msgstr "Оқу орнын сақтау мүмкін болмады"
 
-#: src/malferma_libro/app.py:2143
+#: src/malferma_libro/app.py:2159
 msgid "Не удалось сохранить список каталогов"
 msgstr "Каталогтар тізімін сақтау мүмкін болмады"
 
@@ -888,11 +896,11 @@ msgstr "PDF масштабы жарамсыз"
 msgid "Недопустимый пароль PDF"
 msgstr "PDF құпиясөзі жарамсыз"
 
-#: src/malferma_libro/books.py:408
+#: src/malferma_libro/books.py:565
 msgid "Недопустимый путь в архиве книги"
 msgstr "Кітап архивіндегі жол жарамсыз"
 
-#: src/malferma_libro/books.py:450
+#: src/malferma_libro/books.py:607
 msgid "Недопустимый путь во внутренней ссылке EPUB"
 msgstr "EPUB ішкі сілтемесіндегі жол жарамсыз"
 
@@ -912,7 +920,7 @@ msgstr "Кітапхана файлының нұсқасы белгісіз."
 msgid "Неизвестный язык озвучки: {language}."
 msgstr "Дыбыстау тілі белгісіз: {language}."
 
-#: src/malferma_libro/storage.py:222 src/malferma_libro/storage.py:752 src/malferma_libro/storage.py:788
+#: src/malferma_libro/storage.py:222 src/malferma_libro/storage.py:753 src/malferma_libro/storage.py:789
 msgid "Некорректная закладка."
 msgstr "Бетбелгі дұрыс емес."
 
@@ -964,7 +972,7 @@ msgstr "Кітаптар тізімі дұрыс емес."
 msgid "Некорректный файл библиотеки."
 msgstr "Кітапхана файлы дұрыс емес."
 
-#: src/malferma_libro/app.py:854
+#: src/malferma_libro/app.py:856
 msgid "Некоторые книги не удалось открыть"
 msgstr "Кейбір кітаптарды ашу мүмкін болмады"
 
@@ -984,7 +992,7 @@ msgstr "DjVu құжатының құрылымына қолдау көрсеті
 msgid "Неподдерживаемый тип документа DjVu"
 msgstr "DjVu құжатының түріне қолдау көрсетілмейді"
 
-#: src/malferma_libro/books.py:596
+#: src/malferma_libro/books.py:785
 msgid "Неподдерживаемый формат главы EPUB: {media}"
 msgstr "EPUB тарауының пішіміне қолдау көрсетілмейді: {media}"
 
@@ -992,7 +1000,7 @@ msgstr "EPUB тарауының пішіміне қолдау көрсетілм
 msgid "Нет доступа. Проверьте права на файл или выберите другой каталог."
 msgstr "Қатынас жоқ. Файл рұқсаттарын тексеріңіз немесе басқа буманы таңдаңыз."
 
-#: src/malferma_libro/app.py:2209
+#: src/malferma_libro/app.py:2225
 msgid "Нет поддерживаемой прямой загрузки"
 msgstr "Қолдау көрсетілетін тікелей жүктеу жоқ"
 
@@ -1008,11 +1016,11 @@ msgstr "DjVu бетінің нөмірі рұқсат етілген ауқым�
 msgid "Номер страницы PDF вне допустимого диапазона"
 msgstr "PDF бетінің нөмірі рұқсат етілген ауқымнан тыс"
 
-#: src/malferma_libro/app.py:1175
+#: src/malferma_libro/app.py:1178
 msgid "Ночной"
 msgstr "Түнгі"
 
-#: src/malferma_libro/app.py:422
+#: src/malferma_libro/app.py:424
 msgid "О приложении"
 msgstr "Қолданба туралы"
 
@@ -1044,7 +1052,7 @@ msgstr "PDF өңдегіші бет кескінін жасамады"
 msgid "Обработчик PDF создал недопустимое изображение"
 msgstr "PDF өңдегіші жарамсыз кескін жасады"
 
-#: src/malferma_libro/app.py:525 src/malferma_libro/app.py:865 src/malferma_libro/app.py:866 src/malferma_libro/outline_ui.py:36 src/malferma_libro/outline_ui.py:47 src/malferma_libro/shortcuts.py:60
+#: src/malferma_libro/app.py:527 src/malferma_libro/app.py:867 src/malferma_libro/app.py:868 src/malferma_libro/outline_ui.py:36 src/malferma_libro/outline_ui.py:47 src/malferma_libro/shortcuts.py:60
 msgid "Оглавление"
 msgstr "Мазмұны"
 
@@ -1056,23 +1064,23 @@ msgstr "Atom пішіміндегі OPDS каталогы күтілген ед�
 msgid "Ожидание данных…"
 msgstr "Деректер күтілуде…"
 
-#: src/malferma_libro/app.py:1000 src/malferma_libro/app.py:1000 src/malferma_libro/app.py:1526 src/malferma_libro/shortcuts.py:63
+#: src/malferma_libro/app.py:1003 src/malferma_libro/app.py:1003 src/malferma_libro/app.py:1529 src/malferma_libro/shortcuts.py:63
 msgid "Озвучить"
 msgstr "Дыбыстау"
 
-#: src/malferma_libro/accessibility_ui.py:237 src/malferma_libro/app.py:1210
+#: src/malferma_libro/accessibility_ui.py:237 src/malferma_libro/app.py:1213
 msgid "Озвучка"
 msgstr "Дыбыстау"
 
-#: src/malferma_libro/app.py:1574
+#: src/malferma_libro/app.py:1577
 msgid "Озвучка книги завершена."
 msgstr "Кітапты дыбыстау аяқталды."
 
-#: src/malferma_libro/app.py:1531
+#: src/malferma_libro/app.py:1534
 msgid "Озвучка приостановлена"
 msgstr "Дыбыстау кідіртілді"
 
-#: src/malferma_libro/app.py:993
+#: src/malferma_libro/app.py:996
 msgid "Озвучка через Piper"
 msgstr "Piper арқылы дыбыстау"
 
@@ -1084,7 +1092,7 @@ msgstr "Өшірілген"
 msgid "Отключить"
 msgstr "Өшіру"
 
-#: src/malferma_libro/app.py:907
+#: src/malferma_libro/app.py:909
 msgid "Откройте книгу в библиотеке."
 msgstr "Кітапханадан кітап ашыңыз."
 
@@ -1092,7 +1100,7 @@ msgstr "Кітапханадан кітап ашыңыз."
 msgid "Откройте книгу или подключите OPDS-каталог во вкладке «Сетевые библиотеки»."
 msgstr "Кітап ашыңыз немесе «Желілік кітапханалар» қойындысында OPDS каталогына қосылыңыз."
 
-#: src/malferma_libro/app.py:1171
+#: src/malferma_libro/app.py:1174
 msgid "Открывать последнюю книгу при запуске"
 msgstr "Іске қосылғанда соңғы кітапты ашу"
 
@@ -1108,19 +1116,19 @@ msgstr "Ашу"
 msgid "Открыть закладку: {chapter}. {excerpt}"
 msgstr "Бетбелгіні ашу: {chapter}. {excerpt}"
 
-#: src/malferma_libro/app.py:523 src/malferma_libro/app.py:809 src/malferma_libro/desktop.py:257 src/malferma_libro/shortcuts.py:30
+#: src/malferma_libro/app.py:525 src/malferma_libro/app.py:811 src/malferma_libro/desktop.py:257 src/malferma_libro/shortcuts.py:30
 msgid "Открыть книги"
 msgstr "Кітаптарды ашу"
 
-#: src/malferma_libro/app.py:2203
+#: src/malferma_libro/app.py:2219
 msgid "Открыть раздел"
 msgstr "Бөлімді ашу"
 
-#: src/malferma_libro/app.py:361 src/malferma_libro/narration_ui.py:159
+#: src/malferma_libro/app.py:363 src/malferma_libro/narration_ui.py:159
 msgid "Открыть…"
 msgstr "Ашу…"
 
-#: src/malferma_libro/app.py:2107 src/malferma_libro/app.py:813 src/malferma_libro/bookmarks_ui.py:175 src/malferma_libro/bookmarks_ui.py:175 src/malferma_libro/keybindings_ui.py:230 src/malferma_libro/library_ui.py:257 src/malferma_libro/narration_ui.py:159
+#: src/malferma_libro/app.py:2123 src/malferma_libro/app.py:815 src/malferma_libro/bookmarks_ui.py:175 src/malferma_libro/bookmarks_ui.py:175 src/malferma_libro/keybindings_ui.py:230 src/malferma_libro/library_ui.py:257 src/malferma_libro/narration_ui.py:159
 msgid "Отмена"
 msgstr "Болдырмау"
 
@@ -1136,11 +1144,11 @@ msgstr "Болдырмау"
 msgid "Отменить поиск"
 msgstr "Іздеуден бас тарту"
 
-#: src/malferma_libro/app.py:1170
+#: src/malferma_libro/app.py:1173
 msgid "Оформление окна"
 msgstr "Терезе безендірілуі"
 
-#: src/malferma_libro/app.py:1525
+#: src/malferma_libro/app.py:1528
 msgid "Пауза"
 msgstr "Кідірту"
 
@@ -1152,7 +1160,11 @@ msgstr "Автор бойынша"
 msgid "По названию"
 msgstr "Атауы бойынша"
 
-#: src/malferma_libro/app.py:1213
+#: src/malferma_libro/illustration_ui.py:308
+msgid "По размеру окна"
+msgstr "Терезеге сыйдыру"
+
+#: src/malferma_libro/app.py:1216
 msgid "По тексту главы"
 msgstr "Тарау мәтіні бойынша"
 
@@ -1172,51 +1184,51 @@ msgstr "DjVu файлының құрылымы бүлінген"
 msgid "Повреждён каталог страниц DjVu"
 msgstr "DjVu беттерінің каталогы бүлінген"
 
-#: src/malferma_libro/books.py:448 src/malferma_libro/books.py:471
+#: src/malferma_libro/books.py:605 src/malferma_libro/books.py:628
 msgid "Повреждённая внутренняя ссылка EPUB"
 msgstr "EPUB ішкі сілтемесі бүлінген"
 
-#: src/malferma_libro/books.py:394
+#: src/malferma_libro/books.py:551
 msgid "Повреждённый ZIP-архив книги"
 msgstr "Кітаптың ZIP архиві бүлінген"
 
-#: src/malferma_libro/app.py:1490
+#: src/malferma_libro/app.py:1493
 msgid "Повторите загрузку страницы."
 msgstr "Бетті жүктеуді қайталаңыз."
 
-#: src/malferma_libro/app.py:889 src/malferma_libro/task_ui.py:204 src/malferma_libro/task_ui.py:204
+#: src/malferma_libro/app.py:891 src/malferma_libro/task_ui.py:204 src/malferma_libro/task_ui.py:204
 msgid "Повторить"
 msgstr "Қайталау"
 
-#: src/malferma_libro/books.py:410
+#: src/malferma_libro/books.py:567
 msgid "Повторяющиеся имена файлов в архиве книги"
 msgstr "Кітап архивінде қайталанатын файл атаулары бар"
 
-#: src/malferma_libro/books.py:557
+#: src/malferma_libro/books.py:715
 msgid "Повторяющийся идентификатор в списке файлов EPUB"
 msgstr "EPUB файлдар тізімінде қайталанатын идентификатор бар"
 
-#: src/malferma_libro/books.py:851
+#: src/malferma_libro/books.py:1096
 msgid "Поддерживаются EPUB, FB2, FB2.ZIP, TXT, PDF, DjVu, HTML, Markdown и CBZ"
 msgstr "EPUB, FB2, FB2.ZIP, TXT, PDF, DjVu, HTML, Markdown және CBZ пішімдеріне қолдау көрсетіледі"
 
-#: src/malferma_libro/app.py:2097
+#: src/malferma_libro/app.py:2113
 msgid "Поддерживаются прямые загрузки EPUB, FB2, TXT, PDF, DjVu, HTML, Markdown и CBZ. Каталоги с авторизацией и DRM пока не поддерживаются."
 msgstr "EPUB, FB2, TXT, PDF, DjVu, HTML, Markdown және CBZ пішімдерін тікелей жүктеуге қолдау көрсетіледі. Авторизация қажет ететін каталогтар мен DRM жүйесіне әзірге қолдау көрсетілмейді."
 
-#: src/malferma_libro/app.py:2051 src/malferma_libro/app.py:2095
+#: src/malferma_libro/app.py:2067 src/malferma_libro/app.py:2111
 msgid "Подключите публичный OPDS 1.x каталог или каталог Calibre в локальной сети."
 msgstr "Ашық OPDS 1.x каталогына немесе жергілікті желідегі Calibre каталогына қосылыңыз."
 
-#: src/malferma_libro/app.py:2058 src/malferma_libro/app.py:2063 src/malferma_libro/app.py:2064
+#: src/malferma_libro/app.py:2074 src/malferma_libro/app.py:2079 src/malferma_libro/app.py:2080
 msgid "Подключиться"
 msgstr "Қосылу"
 
-#: src/malferma_libro/app.py:2079
+#: src/malferma_libro/app.py:2095
 msgid "Поиск (если каталог его поддерживает)"
 msgstr "Іздеу (каталог қолдаса)"
 
-#: src/malferma_libro/app.py:1796 src/malferma_libro/app.py:1807
+#: src/malferma_libro/app.py:1811 src/malferma_libro/app.py:1822
 msgid "Поиск и озвучка доступны в тексте страницы."
 msgstr "Іздеу мен дыбыстау бет мәтінінде қолжетімді."
 
@@ -1224,7 +1236,7 @@ msgstr "Іздеу мен дыбыстау бет мәтінінде қолже�
 msgid "Поиск отменён."
 msgstr "Іздеуден бас тартылды."
 
-#: src/malferma_libro/app.py:1640 src/malferma_libro/app.py:897 src/malferma_libro/search_ui.py:42
+#: src/malferma_libro/app.py:1643 src/malferma_libro/app.py:899 src/malferma_libro/search_ui.py:42
 msgid "Поиск по всей книге"
 msgstr "Бүкіл кітаптан іздеу"
 
@@ -1240,7 +1252,7 @@ msgstr "Алғашқы {count} сәйкестік көрсетілген. Сұр
 msgid "Показать верхнюю панель"
 msgstr "Жоғарғы панельді көрсету"
 
-#: src/malferma_libro/app.py:382 src/malferma_libro/app.py:465 src/malferma_libro/app.py:521 src/malferma_libro/shortcuts.py:41
+#: src/malferma_libro/app.py:384 src/malferma_libro/app.py:467 src/malferma_libro/app.py:523 src/malferma_libro/shortcuts.py:41
 msgid "Полноэкранный режим"
 msgstr "Толық экран режимі"
 
@@ -1248,7 +1260,7 @@ msgstr "Толық экран режимі"
 msgid "Положение в книге должно быть целым неотрицательным числом."
 msgstr "Кітаптағы орын теріс емес бүтін сан болуы тиіс."
 
-#: src/malferma_libro/accessibility_ui.py:280 src/malferma_libro/app.py:1206
+#: src/malferma_libro/accessibility_ui.py:280 src/malferma_libro/app.py:1209
 msgid "Полужирный текст"
 msgstr "Қалың мәтін"
 
@@ -1256,11 +1268,11 @@ msgstr "Қалың мәтін"
 msgid "Пользовательские"
 msgstr "Пайдаланушы орнатқан"
 
-#: src/malferma_libro/books.py:593
+#: src/malferma_libro/books.py:782
 msgid "Порядок глав EPUB ссылается на отсутствующий файл"
 msgstr "EPUB тарауларының реті жоқ файлға сілтейді"
 
-#: src/malferma_libro/app.py:526 src/malferma_libro/app.py:869 src/malferma_libro/shortcuts.py:56
+#: src/malferma_libro/app.py:528 src/malferma_libro/app.py:871 src/malferma_libro/shortcuts.py:56
 msgid "Предыдущая глава"
 msgstr "Алдыңғы тарау"
 
@@ -1272,19 +1284,19 @@ msgstr "Алдыңғы бет"
 msgid "Предыдущее совпадение"
 msgstr "Алдыңғы сәйкестік"
 
-#: src/malferma_libro/app.py:1185
+#: src/malferma_libro/app.py:1188
 msgid "Приглушение цветов страницы; яркость монитора не меняется."
 msgstr "Бет түстерін бәсеңдету; монитор жарықтығы өзгермейді."
 
-#: src/malferma_libro/accessibility_ui.py:291 src/malferma_libro/app.py:1208
+#: src/malferma_libro/accessibility_ui.py:291 src/malferma_libro/app.py:1211
 msgid "Применить"
 msgstr "Қолдану"
 
-#: src/malferma_libro/books.py:770
+#: src/malferma_libro/books.py:1013
 msgid "Примечание {number}"
 msgstr "Ескертпе {number}"
 
-#: src/malferma_libro/books.py:753 src/malferma_libro/outline_ui.py:119 src/malferma_libro/outline_ui.py:66
+#: src/malferma_libro/books.py:995 src/malferma_libro/outline_ui.py:119 src/malferma_libro/outline_ui.py:66
 msgid "Примечания"
 msgstr "Ескертпелер"
 
@@ -1292,7 +1304,7 @@ msgstr "Ескертпелер"
 msgid "Проверьте доступ к файлу или каталогу и повторите действие."
 msgstr "Файлға не бумаға қатынасты тексеріп, қайталап көріңіз."
 
-#: src/malferma_libro/app.py:1525
+#: src/malferma_libro/app.py:1528
 msgid "Продолжить"
 msgstr "Жалғастыру"
 
@@ -1316,7 +1328,7 @@ msgstr "Үлгіні тыңдау"
 msgid "Прочитано"
 msgstr "Оқылған"
 
-#: src/malferma_libro/books.py:744
+#: src/malferma_libro/books.py:986
 msgid "Раздел {number}"
 msgstr "{number}-бөлім"
 
@@ -1324,7 +1336,7 @@ msgstr "{number}-бөлім"
 msgid "Размер ответа превышает допустимый предел."
 msgstr "Жауап көлемі рұқсат етілген шектен асады."
 
-#: src/malferma_libro/accessibility_ui.py:276 src/malferma_libro/app.py:1191
+#: src/malferma_libro/accessibility_ui.py:276 src/malferma_libro/app.py:1194
 msgid "Размер текста"
 msgstr "Мәтін өлшемі"
 
@@ -1332,11 +1344,11 @@ msgstr "Мәтін өлшемі"
 msgid "Размер фрагмента должен быть положительным."
 msgstr "Үзінді өлшемі оң сан болуы тиіс."
 
-#: src/malferma_libro/app.py:876
+#: src/malferma_libro/app.py:878
 msgid "Размер шрифта"
 msgstr "Қаріп өлшемі"
 
-#: src/malferma_libro/books.py:420
+#: src/malferma_libro/books.py:577
 msgid "Распакованный размер книги превышает допустимый предел"
 msgstr "Архивтен шығарылған кітап көлемі рұқсат етілген шектен асады"
 
@@ -1344,23 +1356,23 @@ msgstr "Архивтен шығарылған кітап көлемі рұқса
 msgid "Режим"
 msgstr "Режим"
 
-#: src/malferma_libro/accessibility_ui.py:291 src/malferma_libro/app.py:1208
+#: src/malferma_libro/accessibility_ui.py:291 src/malferma_libro/app.py:1211
 msgid "Режим для слабовидящих"
 msgstr "Нашар көретіндерге арналған режим"
 
-#: src/malferma_libro/search_ui.py:311
+#: src/malferma_libro/search_ui.py:310
 msgid "Результат {number} из {count}"
 msgstr "Нәтиже {number} / {count}"
 
-#: src/malferma_libro/app.py:420 src/malferma_libro/app.py:582 src/malferma_libro/app.py:603 src/malferma_libro/shortcuts.py:43
+#: src/malferma_libro/app.py:422 src/malferma_libro/app.py:584 src/malferma_libro/app.py:605 src/malferma_libro/shortcuts.py:43
 msgid "Руководство пользователя"
 msgstr "Пайдаланушы нұсқаулығы"
 
-#: src/malferma_libro/app.py:1150
+#: src/malferma_libro/app.py:1153
 msgid "Светлый"
 msgstr "Жарық"
 
-#: src/malferma_libro/app.py:1175
+#: src/malferma_libro/app.py:1178
 msgid "Сепия"
 msgstr "Сепия"
 
@@ -1384,39 +1396,39 @@ msgstr "Сервер түріне қолдау көрсетілмейтін фа
 msgid "Сервер передал неполный файл."
 msgstr "Сервер файлды толық жібермеді."
 
-#: src/malferma_libro/app.py:368 src/malferma_libro/app.py:416 src/malferma_libro/shortcuts.py:40
+#: src/malferma_libro/app.py:370 src/malferma_libro/app.py:418 src/malferma_libro/shortcuts.py:40
 msgid "Сетевые библиотеки"
 msgstr "Желілік кітапханалар"
 
-#: src/malferma_libro/app.py:2050 src/malferma_libro/app.py:2094
+#: src/malferma_libro/app.py:2066 src/malferma_libro/app.py:2110
 msgid "Сетевые библиотеки OPDS"
 msgstr "Желілік OPDS кітапханалары"
 
-#: src/malferma_libro/books.py:415
+#: src/malferma_libro/books.py:572
 msgid "Символические ссылки в архиве книги запрещены"
 msgstr "Кітап архивінде символдық сілтемелерге тыйым салынған"
 
-#: src/malferma_libro/app.py:1148
+#: src/malferma_libro/app.py:1151
 msgid "Системные шрифты, масштаб и оконные кнопки задаёт рабочая среда. Виджеты используют libadwaita."
 msgstr "Жүйелік қаріптерді, масштаб пен терезе түймелерін жұмыс үстелі ортасы басқарады. Виджеттер libadwaita кітапханасын қолданады."
 
-#: src/malferma_libro/app.py:1153 src/malferma_libro/appearance.py:22
+#: src/malferma_libro/app.py:1156 src/malferma_libro/appearance.py:22
 msgid "Системный"
 msgstr "Жүйелік"
 
-#: src/malferma_libro/app.py:2205
+#: src/malferma_libro/app.py:2221
 msgid "Скачать {format}"
 msgstr "{format} жүктеу"
 
-#: src/malferma_libro/app.py:2255
+#: src/malferma_libro/app.py:2271
 msgid "Скачивание книги…"
 msgstr "Кітап жүктелуде…"
 
-#: src/malferma_libro/accessibility_ui.py:265 src/malferma_libro/app.py:1218
+#: src/malferma_libro/accessibility_ui.py:265 src/malferma_libro/app.py:1221
 msgid "Скорость, %"
 msgstr "Жылдамдық, %"
 
-#: src/malferma_libro/app.py:527 src/malferma_libro/app.py:870 src/malferma_libro/shortcuts.py:58
+#: src/malferma_libro/app.py:529 src/malferma_libro/app.py:872 src/malferma_libro/shortcuts.py:58
 msgid "Следующая глава"
 msgstr "Келесі тарау"
 
@@ -1428,7 +1440,7 @@ msgstr "Келесі бет"
 msgid "Следующее совпадение"
 msgstr "Келесі сәйкестік"
 
-#: src/malferma_libro/books.py:399
+#: src/malferma_libro/books.py:556
 msgid "Слишком много файлов в архиве книги"
 msgstr "Кітап архивінде файлдар тым көп"
 
@@ -1436,7 +1448,7 @@ msgstr "Кітап архивінде файлдар тым көп"
 msgid "Слишком сложная структура документа DjVu"
 msgstr "DjVu құжатының құрылымы тым күрделі"
 
-#: src/malferma_libro/app.py:1480 src/malferma_libro/bookmarks_ui.py:41
+#: src/malferma_libro/app.py:1483 src/malferma_libro/bookmarks_ui.py:41
 msgid "Сначала откройте книгу."
 msgstr "Алдымен кітапты ашыңыз."
 
@@ -1460,7 +1472,7 @@ msgstr "Сақтау"
 msgid "Сочетание занято: {action}"
 msgstr "Бұл пернелер тіркесімі қолданылуда: {action}"
 
-#: src/malferma_libro/accessibility_ui.py:270 src/malferma_libro/accessibility_ui.py:318 src/malferma_libro/accessibility_ui.py:319 src/malferma_libro/app.py:1196 src/malferma_libro/app.py:529 src/malferma_libro/shortcuts.py:36
+#: src/malferma_libro/accessibility_ui.py:270 src/malferma_libro/accessibility_ui.py:318 src/malferma_libro/accessibility_ui.py:319 src/malferma_libro/app.py:1199 src/malferma_libro/app.py:531 src/malferma_libro/shortcuts.py:36
 msgid "Специальные возможности"
 msgstr "Арнайы мүмкіндіктер"
 
@@ -1468,7 +1480,7 @@ msgstr "Арнайы мүмкіндіктер"
 msgid "Список книг и настройки восстановлены из последней резервной копии."
 msgstr "Кітаптар тізімі мен баптаулар соңғы сақтық көшірмеден қалпына келтірілді."
 
-#: src/malferma_libro/app.py:1006 src/malferma_libro/app.py:531 src/malferma_libro/shortcuts.py:54
+#: src/malferma_libro/app.py:1009 src/malferma_libro/app.py:533 src/malferma_libro/shortcuts.py:54
 msgid "Стандартный размер текста"
 msgstr "Мәтіннің әдепкі өлшемі"
 
@@ -1476,7 +1488,7 @@ msgstr "Мәтіннің әдепкі өлшемі"
 msgid "Стоп"
 msgstr "Тоқтату"
 
-#: src/malferma_libro/books.py:809 src/malferma_libro/books.py:823 src/malferma_libro/cbz.py:528 src/malferma_libro/outline_ui.py:120 src/malferma_libro/outline_ui.py:86
+#: src/malferma_libro/books.py:1054 src/malferma_libro/books.py:1068 src/malferma_libro/cbz.py:528 src/malferma_libro/outline_ui.py:120 src/malferma_libro/outline_ui.py:86
 msgid "Страница {number}"
 msgstr "{number}-бет"
 
@@ -1484,23 +1496,23 @@ msgstr "{number}-бет"
 msgid "Страница {page}"
 msgstr "{page}-бет"
 
-#: src/malferma_libro/app.py:1792 src/malferma_libro/pagination.py:152
+#: src/malferma_libro/app.py:1807 src/malferma_libro/pagination.py:152
 msgid "Страница {page} из {pages}"
 msgstr "{page}/{pages} бет"
 
-#: src/malferma_libro/app.py:2033
+#: src/malferma_libro/app.py:2049
 msgid "Страница {page} из {pages}  ·  {percent}% книги"
 msgstr "{page}/{pages} бет  ·  кітаптың {percent}%-ы"
 
-#: src/malferma_libro/app.py:1797 src/malferma_libro/app.py:1808
+#: src/malferma_libro/app.py:1812 src/malferma_libro/app.py:1823
 msgid "Страница без текстового слоя. Скан доступен для просмотра; OCR пока не поддерживается."
 msgstr "Бетте мәтіндік қабат жоқ. Сканерленген кескінді көруге болады; OCR жүйесіне әзірге қолдау көрсетілмейді."
 
-#: src/malferma_libro/app.py:957 src/malferma_libro/app.py:960
+#: src/malferma_libro/app.py:960 src/malferma_libro/app.py:963
 msgid "Страница документа"
 msgstr "Құжат беті"
 
-#: src/malferma_libro/app.py:1172 src/malferma_libro/app.py:943 src/malferma_libro/app.py:997 src/malferma_libro/app.py:998
+#: src/malferma_libro/app.py:1000 src/malferma_libro/app.py:1001 src/malferma_libro/app.py:1175 src/malferma_libro/app.py:945
 msgid "Страница книги"
 msgstr "Кітап беті"
 
@@ -1512,7 +1524,7 @@ msgstr "Беттер"
 msgid "Страницы {first}–{last} из {pages}"
 msgstr "{first}–{last}/{pages} беттер"
 
-#: src/malferma_libro/books.py:577 src/malferma_libro/books.py:724 src/malferma_libro/markup.py:110 src/malferma_libro/markup.py:229 src/malferma_libro/markup.py:380 src/malferma_libro/markup.py:427
+#: src/malferma_libro/books.py:762 src/malferma_libro/books.py:963 src/malferma_libro/markup.py:110 src/malferma_libro/markup.py:229 src/malferma_libro/markup.py:380 src/malferma_libro/markup.py:427
 msgid "Текст книги превышает допустимый размер"
 msgstr "Кітап мәтінінің көлемі рұқсат етілген шектен асады"
 
@@ -1520,15 +1532,15 @@ msgstr "Кітап мәтінінің көлемі рұқсат етілген �
 msgid "Текст озвучки должен быть строкой."
 msgstr "Дыбысталатын мәтін жол түрінде болуы тиіс."
 
-#: src/malferma_libro/app.py:984 src/malferma_libro/app.py:989
+#: src/malferma_libro/app.py:987 src/malferma_libro/app.py:992
 msgid "Текст страницы · поиск и озвучка"
 msgstr "Бет мәтіні · іздеу және дыбыстау"
 
-#: src/malferma_libro/books.py:869
+#: src/malferma_libro/books.py:1114
 msgid "Текстовый файл пуст"
 msgstr "Мәтіндік файл бос"
 
-#: src/malferma_libro/app.py:1150
+#: src/malferma_libro/app.py:1153
 msgid "Тёмный"
 msgstr "Қараңғы"
 
@@ -1536,7 +1548,11 @@ msgstr "Қараңғы"
 msgid "Увеличение лупы"
 msgstr "Ұлғайтқыш масштабы"
 
-#: src/malferma_libro/app.py:1008 src/malferma_libro/app.py:532 src/malferma_libro/shortcuts.py:50
+#: src/malferma_libro/illustration_ui.py:307
+msgid "Увеличить"
+msgstr "Үлкейту"
+
+#: src/malferma_libro/app.py:1011 src/malferma_libro/app.py:534 src/malferma_libro/shortcuts.py:50
 msgid "Увеличить текст"
 msgstr "Мәтінді үлкейту"
 
@@ -1544,15 +1560,15 @@ msgstr "Мәтінді үлкейту"
 msgid "Удалить закладку"
 msgstr "Бетбелгіні өшіру"
 
-#: src/malferma_libro/app.py:2060
+#: src/malferma_libro/app.py:2076
 msgid "Удалить каталог из списка"
 msgstr "Каталогты тізімнен өшіру"
 
-#: src/malferma_libro/app.py:1204
+#: src/malferma_libro/app.py:1207
 msgid "Удерживайте правую кнопку мыши и проведите влево или вправо для перехода между главами или страницами."
 msgstr "Тараулар немесе беттер арасында ауысу үшін тінтуірдің оң жақ түймесін басып тұрып, оны солға немесе оңға жылжытыңыз."
 
-#: src/malferma_libro/storage.py:824
+#: src/malferma_libro/storage.py:825
 msgid "Укажите название каталога."
 msgstr "Каталог атауын көрсетіңіз."
 
@@ -1560,11 +1576,15 @@ msgstr "Каталог атауын көрсетіңіз."
 msgid "Укажите полный адрес OPDS-каталога: https://example.org/opds."
 msgstr "OPDS каталогының толық мекенжайын көрсетіңіз: https://example.org/opds."
 
-#: src/malferma_libro/books.py:795
+#: src/malferma_libro/books.py:1040
 msgid "Указанный путь не является файлом"
 msgstr "Көрсетілген жол файлға апармайды"
 
-#: src/malferma_libro/app.py:1004 src/malferma_libro/app.py:530 src/malferma_libro/shortcuts.py:52
+#: src/malferma_libro/illustration_ui.py:306
+msgid "Уменьшить"
+msgstr "Кішірейту"
+
+#: src/malferma_libro/app.py:1007 src/malferma_libro/app.py:532 src/malferma_libro/shortcuts.py:52
 msgid "Уменьшить текст"
 msgstr "Мәтінді кішірейту"
 
@@ -1592,7 +1612,7 @@ msgstr "PDF файлы бос немесе көлемі рұқсат етілг�
 msgid "Файл библиотеки повреждён. Исходный файл сохранён: {preserved}"
 msgstr "Кітапхана файлы бүлінген. Бастапқы файл сақталды: {preserved}"
 
-#: src/malferma_libro/books.py:417 src/malferma_libro/books.py:434
+#: src/malferma_libro/books.py:574 src/malferma_libro/books.py:591
 msgid "Файл внутри книги превышает допустимый размер"
 msgstr "Кітап ішіндегі файл көлемі рұқсат етілген шектен асады"
 
@@ -1608,11 +1628,11 @@ msgstr "Файлда оқуға болатын мәтін жоқ."
 msgid "Файл не является документом DjVu"
 msgstr "Файл DjVu құжаты емес"
 
-#: src/malferma_libro/books.py:705
+#: src/malferma_libro/books.py:909
 msgid "Файл не является книгой FB2"
 msgstr "Файл FB2 кітабы емес"
 
-#: src/malferma_libro/books.py:276 src/malferma_libro/markup.py:39
+#: src/malferma_libro/books.py:422 src/malferma_libro/markup.py:39
 msgid "Файл разметки слишком сложный."
 msgstr "Белгілеу файлы тым күрделі."
 
@@ -1628,7 +1648,7 @@ msgstr "Piper дауысының файлдары тексеруден өтпе�
 msgid "Фильтр библиотеки"
 msgstr "Кітапхана сүзгісі"
 
-#: src/malferma_libro/app.py:1188
+#: src/malferma_libro/app.py:1191
 msgid "Фон страницы"
 msgstr "Бет фоны"
 
@@ -1636,11 +1656,11 @@ msgstr "Бет фоны"
 msgid "Формат ответа не совпадает с форматом книги."
 msgstr "Жауап пішімі кітап пішіміне сәйкес келмейді."
 
-#: src/malferma_libro/app.py:1173
+#: src/malferma_libro/app.py:1176
 msgid "Цвета и шрифты страницы настраиваются отдельно от интерфейса."
 msgstr "Бет түстері мен қаріптері интерфейстен бөлек бапталады."
 
-#: src/malferma_libro/app.py:573
+#: src/malferma_libro/app.py:575
 msgid "Читалка EPUB, FB2, TXT, PDF, DjVu, HTML, Markdown и CBZ с локальной библиотекой и каталогами OPDS."
 msgstr "Жергілікті кітапханасы мен OPDS каталогтары бар EPUB, FB2, TXT, PDF, DjVu, HTML, Markdown және CBZ оқу қолданбасы."
 
@@ -1648,7 +1668,7 @@ msgstr "Жергілікті кітапханасы мен OPDS каталогт
 msgid "Читаю"
 msgstr "Оқып жатырмын"
 
-#: src/malferma_libro/app.py:367 src/malferma_libro/app.py:415 src/malferma_libro/shortcuts.py:27 src/malferma_libro/shortcuts.py:39
+#: src/malferma_libro/app.py:369 src/malferma_libro/app.py:417 src/malferma_libro/shortcuts.py:27 src/malferma_libro/shortcuts.py:39
 msgid "Чтение"
 msgstr "Оқу"
 
@@ -1660,7 +1680,7 @@ msgstr "DjVu бетінің ені оң бүтін сан болуы тиіс"
 msgid "Ширина страницы PDF должна быть положительным целым числом"
 msgstr "PDF бетінің ені оң бүтін сан болуы тиіс"
 
-#: src/malferma_libro/app.py:1190
+#: src/malferma_libro/app.py:1193
 msgid "Шрифт книги"
 msgstr "Кітап қарпі"
 
@@ -1668,7 +1688,7 @@ msgstr "Кітап қарпі"
 msgid "Это сочетание зарезервировано системой."
 msgstr "Бұл пернелер тіркесімі жүйеге арналған."
 
-#: src/malferma_libro/storage.py:827
+#: src/malferma_libro/storage.py:828
 msgid "Этот каталог уже добавлен."
 msgstr "Бұл каталог қосылған."
 
@@ -1676,11 +1696,11 @@ msgstr "Бұл каталог қосылған."
 msgid "Этот формат книги не поддерживается."
 msgstr "Бұл кітап пішіміне қолдау көрсетілмейді."
 
-#: src/malferma_libro/accessibility_ui.py:261 src/malferma_libro/app.py:1217 src/malferma_libro/app.py:590 src/malferma_libro/app.py:591
+#: src/malferma_libro/accessibility_ui.py:261 src/malferma_libro/app.py:1220 src/malferma_libro/app.py:592 src/malferma_libro/app.py:593
 msgid "Язык"
 msgstr "Тіл"
 
-#: src/malferma_libro/app.py:1169 src/malferma_libro/app.py:588
+#: src/malferma_libro/app.py:1172 src/malferma_libro/app.py:590
 msgid "Язык интерфейса"
 msgstr "Интерфейс тілі"
 
@@ -1688,11 +1708,11 @@ msgstr "Интерфейс тілі"
 msgid "Язык озвучки «{language}» больше не поддерживается. Выбрано автоматическое определение языка."
 msgstr "«{language}» тілінде дауыстап оқуға енді қолдау көрсетілмейді. Тілді автоматты түрде анықтау таңдалды."
 
-#: src/malferma_libro/app.py:1194
+#: src/malferma_libro/app.py:1197
 msgid "Яркость страницы, %"
 msgstr "Бет жарықтығы, %"
 
-#: src/malferma_libro/books.py:596
+#: src/malferma_libro/books.py:785
 msgid "не указан"
 msgstr "көрсетілмеген"
 

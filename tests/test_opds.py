@@ -125,7 +125,7 @@ class CatalogTests(unittest.TestCase):
         request = opener.open.call_args.args[0]
         self.assertEqual(request.host, "xn--bcher-kva.example.org")
         request.selector.encode("ascii")
-        self.assertEqual(request.get_header("User-agent"), "MalfermaLibro/0.1.0")
+        self.assertEqual(request.get_header("User-agent"), "MalfermaLibro/0.1.1")
         self.assertEqual(page.title, "Відкрита бібліотека")
 
     def test_encoded_paths_and_local_ipv6_catalogs_are_preserved(self):

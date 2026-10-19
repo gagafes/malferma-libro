@@ -1,6 +1,6 @@
 # Malferma Libro — Benutzerhandbuch
 
-Version 0.1.0. Eine Anwendung für Debian 13 mit GTK 4 und libadwaita.
+Version 0.1.1. Eine Anwendung für Debian 13 mit GTK 4 und libadwaita.
 Dieses vollständige deutsche Handbuch wird mit der Anwendung geliefert und
 ist ohne Internetverbindung verfügbar. Öffnen Sie es im Hauptmenü, standardmäßig mit F1
 oder ausdrücklich auf Deutsch mit `malferma-libro --manual=de`.
@@ -676,10 +676,28 @@ Cloud-Speicherung sind nicht implementiert.
 
 ## Formatgrenzen und Fehlerbehebung
 
-EPUB und FB2 werden in Textkapitel umgewandelt. Die ursprünglichen CSS-Stile,
-Abbildungen im Text, interaktive Elemente und das genaue Layout werden nicht
-nachgebildet. Titelbilder werden gesondert für die Bibliothek ausgelesen;
-ihre Anzeige bedeutet keine Unterstützung von Abbildungen im EPUB-Text.
+EPUB und FB2 werden in Textkapitel mit Abbildungen umgewandelt. Bilder passen
+sich der Breite des Lesebereichs an. Klicken Sie auf ein Bild, um es in einem
+eigenen Fenster zu öffnen. Mit „Vergrößern“, „Verkleinern“ und „An Fenster
+anpassen“ ändern Sie seine Größe. Dieselben Funktionen sind über die Tasten
++, − und 0 erreichbar. Escape schließt die Ansicht und führt zum
+Buch zurück. Abbildungen verändern nicht den Text, auf dem Suche, Vorlesen,
+Lesezeichen und die Seitenzählung des gesamten Buches beruhen.
+
+EPUB unterstützt lokale PNG- und JPEG-Bilder, auch Rasterbilder innerhalb
+von SVG-Hüllen. FB2 und FB2.ZIP unterstützen eingebettete Bilder aus
+binary-Blöcken. Für WebP wird ein geeigneter installierter GdkPixbuf-Lader
+benötigt. SVG-Vektorgrafiken, externe Bilder, ursprüngliche CSS-Stile,
+interaktive Elemente und das genaue Layout werden nicht nachgebildet.
+Beim Lesen werden keine Bilder aus dem Internet geladen. Fehlende,
+beschädigte, nicht unterstützte oder zu große Abbildungen verhindern
+nicht das Lesen des Textes.
+
+Jede Abbildung ist auf 8 MiB begrenzt; beim Einlesen eines Buches werden
+höchstens 32 MiB kodierte Bilddaten gespeichert. Es werden bis zu 512 verschiedene Bilder
+und 2048 Bildverweise verarbeitet. Titelbilder für die Bibliothek werden
+gesondert aufbereitet.
+
 TXT, HTML/XHTML und Markdown werden als Text dargestellt; das ursprüngliche
 Webseitenlayout und CSS werden nicht nachgebildet. Markdown wird nach
 CommonMark eingelesen, ohne Erweiterungen für GFM-Tabellen oder Fußnoten.

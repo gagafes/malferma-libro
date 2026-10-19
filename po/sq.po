@@ -2,13 +2,13 @@
 # Translation source recovered from the installed GNU gettext catalog.
 
 msgid ""
-msgstr "Project-Id-Version: Malferma Libro 0.1.0\nLanguage: sq\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+msgstr "Project-Id-Version: Malferma Libro 0.1.1\nLanguage: sq\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/malferma_libro/library_ui.py:105
 msgid " · Найдено: {count}"
 msgstr " · U gjetën: {count}"
 
-#: src/malferma_libro/app.py:884
+#: src/malferma_libro/app.py:886
 msgid "100% — по ширине окна; вёрстка PDF, DjVu и CBZ сохраняется"
 msgstr "100% — sipas gjerësisë së dritares; faqosja e PDF, DjVu dhe CBZ ruhet"
 
@@ -20,19 +20,19 @@ msgstr "Dokumentet DjVu me skedarë të jashtëm nuk mbështeten"
 msgid "EPUB · FB2 · FB2.ZIP · TXT · PDF · DjVu · HTML · Markdown · CBZ. Книги копируются в локальную библиотеку."
 msgstr "EPUB · FB2 · FB2.ZIP · TXT · PDF · DjVu · HTML · Markdown · CBZ. Librat kopjohen në bibliotekën lokale."
 
-#: src/malferma_libro/books.py:618
+#: src/malferma_libro/books.py:808
 msgid "EPUB не содержит доступных текстовых глав"
 msgstr "EPUB nuk përmban kapituj me tekst të lexueshëm"
 
-#: src/malferma_libro/books.py:543
+#: src/malferma_libro/books.py:700
 msgid "EPUB не содержит описания книги"
 msgstr "EPUB nuk përmban përshkrimin e librit"
 
-#: src/malferma_libro/books.py:775
+#: src/malferma_libro/books.py:1018
 msgid "FB2 не содержит доступного текста"
 msgstr "FB2 nuk përmban tekst të lexueshëm"
 
-#: src/malferma_libro/app.py:2178 src/malferma_libro/app.py:2179
+#: src/malferma_libro/app.py:2194 src/malferma_libro/app.py:2195
 msgid "OPDS-каталог"
 msgstr "Katalog OPDS"
 
@@ -40,19 +40,19 @@ msgstr "Katalog OPDS"
 msgid "PDF защищён паролем. Откройте незашифрованную копию книги."
 msgstr "PDF mbrohet me fjalëkalim. Hapni një kopje të pashifruar të librit."
 
-#: src/malferma_libro/app.py:1195
+#: src/malferma_libro/app.py:1198
 msgid "PDF, DjVu и CBZ сохраняют исходные шрифты и цвета; размер меняется масштабом."
 msgstr "PDF, DjVu dhe CBZ ruajnë llojet e shkrimit dhe ngjyrat origjinale; madhësia ndryshohet përmes zmadhimit."
 
-#: src/malferma_libro/app.py:1532
+#: src/malferma_libro/app.py:1535
 msgid "Piper не установлен. Инструкция доступна в руководстве."
 msgstr "Piper nuk është instaluar. Udhëzimet gjenden te udhëzuesi i përdoruesit."
 
-#: src/malferma_libro/books.py:864
+#: src/malferma_libro/books.py:1109
 msgid "TXT должен быть в кодировке UTF-8 или Windows-1251"
 msgstr "Skedarët TXT duhet të përdorin kodimin UTF-8 ose Windows-1251"
 
-#: src/malferma_libro/books.py:866
+#: src/malferma_libro/books.py:1111
 msgid "TXT содержит двоичные данные"
 msgstr "TXT përmban të dhëna binare"
 
@@ -60,11 +60,11 @@ msgstr "TXT përmban të dhëna binare"
 msgid "{count} из {limit} символов"
 msgstr "{count} nga {limit} karaktere"
 
-#: src/malferma_libro/books.py:144
+#: src/malferma_libro/books.py:194
 msgid "{label}: XML превышает допустимый размер"
 msgstr "{label}: XML tejkalon madhësinë e lejuar"
 
-#: src/malferma_libro/books.py:377
+#: src/malferma_libro/books.py:529
 msgid "{label}: не удалось прочитать текст EPUB"
 msgstr "{label}: teksti i EPUB nuk mund të lexohej"
 
@@ -72,23 +72,23 @@ msgstr "{label}: teksti i EPUB nuk mund të lexohej"
 msgid "{label}: не удалось прочитать текст."
 msgstr "{label}: teksti nuk mund të lexohej."
 
-#: src/malferma_libro/books.py:366
+#: src/malferma_libro/books.py:518
 msgid "{label}: объявления DTD запрещены"
 msgstr "{label}: deklarimet DTD janë të ndaluara"
 
-#: src/malferma_libro/books.py:150 src/malferma_libro/books.py:156 src/malferma_libro/markup.py:126
+#: src/malferma_libro/books.py:200 src/malferma_libro/books.py:206 src/malferma_libro/markup.py:126
 msgid "{label}: объявления DTD и сущностей XML запрещены"
 msgstr "{label}: deklarimet DTD dhe të entiteteve XML janë të ndaluara"
 
-#: src/malferma_libro/books.py:363
+#: src/malferma_libro/books.py:515
 msgid "{label}: объявления сущностей запрещены"
 msgstr "{label}: deklarimet e entiteteve janë të ndaluara"
 
-#: src/malferma_libro/books.py:162
+#: src/malferma_libro/books.py:212
 msgid "{label}: повреждённый XML"
 msgstr "{label}: XML i dëmtuar"
 
-#: src/malferma_libro/app.py:2037 src/malferma_libro/library_ui.py:115 src/malferma_libro/library_ui.py:186
+#: src/malferma_libro/app.py:2053 src/malferma_libro/library_ui.py:115 src/malferma_libro/library_ui.py:186
 msgid "{percent}% прочитано"
 msgstr "{percent}% e lexuar"
 
@@ -96,7 +96,7 @@ msgstr "{percent}% e lexuar"
 msgid "Автоматически"
 msgstr "Automatikisht"
 
-#: src/malferma_libro/app.py:1189
+#: src/malferma_libro/app.py:1192
 msgid "Автоматически скрывать панель в полном экране"
 msgstr "Fshih automatikisht panelin në ekran të plotë"
 
@@ -108,7 +108,7 @@ msgstr "Autori i PDF ka ndaluar nxjerrjen e tekstit nga ky dokument"
 msgid "Автор не указан"
 msgstr "Autori nuk është përcaktuar"
 
-#: src/malferma_libro/app.py:2114
+#: src/malferma_libro/app.py:2130
 msgid "Адрес OPDS-каталога"
 msgstr "Adresa e katalogut OPDS"
 
@@ -124,11 +124,11 @@ msgstr "Adresa përmban shenja të palejuara."
 msgid "Адреса с логином или паролем не поддерживаются."
 msgstr "Adresat me emër përdoruesi ose fjalëkalim nuk mbështeten."
 
-#: src/malferma_libro/books.py:97
+#: src/malferma_libro/books.py:147
 msgid "Архив CBZ превышает допустимый размер (512 МиБ)"
 msgstr "Arkivi CBZ tejkalon madhësinë e lejuar (512 MiB)"
 
-#: src/malferma_libro/books.py:846
+#: src/malferma_libro/books.py:1091
 msgid "Архив FB2 должен содержать ровно один файл .fb2"
 msgstr "Arkivi FB2 duhet të përmbajë saktësisht një skedar .fb2"
 
@@ -152,7 +152,7 @@ msgstr "DjVu mund të ketë jo më shumë se {max_pages} faqe"
 msgid "В DjVu не найден корректный каталог страниц"
 msgstr "Në DjVu nuk u gjet një drejtori e vlefshme faqesh"
 
-#: src/malferma_libro/books.py:548
+#: src/malferma_libro/books.py:705
 msgid "В EPUB отсутствуют метаданные, список файлов или порядок глав"
 msgstr "Në EPUB mungojnë metatëdhënat, lista e skedarëve ose rendi i kapitujve"
 
@@ -164,15 +164,15 @@ msgstr "PDF duhet të ketë nga 1 deri në {max_pages} faqe"
 msgid "В архиве CBZ нет поддерживаемых изображений."
 msgstr "Arkivi CBZ nuk përmban figura të mbështetura."
 
-#: src/malferma_libro/books.py:427
+#: src/malferma_libro/books.py:584
 msgid "В книге отсутствует файл: {name}"
 msgstr "Në libër mungon skedari: {name}"
 
-#: src/malferma_libro/app.py:1193
+#: src/malferma_libro/app.py:1196
 msgid "В пикселях; на широком окне текст располагается по центру."
 msgstr "Në pikselë; në një dritare të gjerë, teksti vendoset në qendër."
 
-#: src/malferma_libro/app.py:2215
+#: src/malferma_libro/app.py:2231
 msgid "В этом разделе книг нет."
 msgstr "Nuk ka libra në këtë pjesë."
 
@@ -184,19 +184,19 @@ msgstr "Biblioteka juaj"
 msgid "Вернуться к месту до поиска"
 msgstr "Kthehu te vendi para kërkimit"
 
-#: src/malferma_libro/app.py:480
+#: src/malferma_libro/app.py:482
 msgid "Включить дневной режим"
 msgstr "Aktivizo mënyrën e ditës"
 
-#: src/malferma_libro/app.py:480
+#: src/malferma_libro/app.py:482
 msgid "Включить ночной режим"
 msgstr "Aktivizo mënyrën e natës"
 
-#: src/malferma_libro/books.py:453
+#: src/malferma_libro/books.py:610
 msgid "Внутренняя ссылка EPUB выходит за пределы архива"
 msgstr "Lidhja e brendshme e EPUB del jashtë arkivit"
 
-#: src/malferma_libro/books.py:445
+#: src/malferma_libro/books.py:602
 msgid "Внутренняя ссылка EPUB указывает за пределы книги"
 msgstr "Lidhja e brendshme e EPUB tregon jashtë librit"
 
@@ -216,7 +216,7 @@ msgstr "Zgjidhni një skedar të zakonshëm DjVu"
 msgid "Выберите обычный файл PDF"
 msgstr "Zgjidhni një skedar të zakonshëm PDF"
 
-#: src/malferma_libro/storage.py:608
+#: src/malferma_libro/storage.py:609
 msgid "Выберите файл книги."
 msgstr "Zgjidhni një skedar libri."
 
@@ -228,11 +228,11 @@ msgstr "Zgjidhni një gjuhë ose zë."
 msgid "Выбрать книгу…"
 msgstr "Zgjidhni një libër…"
 
-#: src/malferma_libro/app.py:1048
+#: src/malferma_libro/app.py:1051
 msgid "Выделить всё"
 msgstr "Përzgjidh të gjitha"
 
-#: src/malferma_libro/app.py:465 src/malferma_libro/app.py:520
+#: src/malferma_libro/app.py:467 src/malferma_libro/app.py:522
 msgid "Выйти из полноэкранного режима"
 msgstr "Dil nga mënyra me ekran të plotë"
 
@@ -244,15 +244,15 @@ msgstr "Përfunduar: {percent}%"
 msgid "Выполняемые действия"
 msgstr "Veprime në vazhdim"
 
-#: src/malferma_libro/accessibility_ui.py:279 src/malferma_libro/app.py:1205
+#: src/malferma_libro/accessibility_ui.py:279 src/malferma_libro/app.py:1208
 msgid "Высокая контрастность"
 msgstr "Kontrast i lartë"
 
-#: src/malferma_libro/books.py:578 src/malferma_libro/outline_ui.py:121
+#: src/malferma_libro/books.py:763 src/malferma_libro/outline_ui.py:121
 msgid "Глава {number}"
 msgstr "Kapitulli {number}"
 
-#: src/malferma_libro/app.py:424 src/malferma_libro/app.py:425 src/malferma_libro/shortcuts.py:26
+#: src/malferma_libro/app.py:426 src/malferma_libro/app.py:427 src/malferma_libro/shortcuts.py:26
 msgid "Главное меню"
 msgstr "Menuja kryesore"
 
@@ -284,15 +284,15 @@ msgstr "Zëri është instaluar"
 msgid "Голоса Piper"
 msgstr "Zërat Piper"
 
-#: src/malferma_libro/app.py:421 src/malferma_libro/app.py:664 src/malferma_libro/keybindings_ui.py:39 src/malferma_libro/keybindings_ui.py:46 src/malferma_libro/shortcuts.py:44
+#: src/malferma_libro/app.py:423 src/malferma_libro/app.py:666 src/malferma_libro/keybindings_ui.py:39 src/malferma_libro/keybindings_ui.py:46 src/malferma_libro/shortcuts.py:44
 msgid "Горячие клавиши"
 msgstr "Shkurtoret e tastierës"
 
-#: src/malferma_libro/app.py:1531
+#: src/malferma_libro/app.py:1534
 msgid "Готово к озвучке"
 msgstr "Gati për lexim me zë"
 
-#: src/malferma_libro/app.py:2075
+#: src/malferma_libro/app.py:2091
 msgid "Далее"
 msgstr "Përpara"
 
@@ -316,7 +316,7 @@ msgstr "Për të luajtur leximin me zë, instaloni paplay ose aplay."
 msgid "Для запуска нужны GTK 4, libadwaita и PyGObject. На Debian 13 выполните:\nsudo apt install python3-gi gir1.2-gtk-4.0 gir1.2-adw-1 poppler-utils djvulibre-bin\nЗапускайте приложение через /usr/bin/python3.\nПодробности: {error}"
 msgstr "Për nisjen nevojiten GTK 4, libadwaita dhe PyGObject. Në Debian 13 ekzekutoni:\nsudo apt install python3-gi gir1.2-gtk-4.0 gir1.2-adw-1 poppler-utils djvulibre-bin\nNiseni aplikacionin përmes /usr/bin/python3.\nHollësi: {error}"
 
-#: src/malferma_libro/app.py:2118
+#: src/malferma_libro/app.py:2134
 msgid "Для локального Calibre: http://адрес:8080/opds"
 msgstr "Për Calibre lokal: http://адрес:8080/opds"
 
@@ -344,7 +344,7 @@ msgstr "Për të lexuar PDF, instaloni paketën poppler-utils: sudo apt install 
 msgid "Для этого языка добавьте свою модель Piper."
 msgstr "Për këtë gjuhë, shtoni modelin tuaj Piper."
 
-#: src/malferma_libro/app.py:1175
+#: src/malferma_libro/app.py:1178
 msgid "Дневной"
 msgstr "Ditë"
 
@@ -352,11 +352,11 @@ msgstr "Ditë"
 msgid "Дневной / ночной режим"
 msgstr "Mënyra e ditës / natës"
 
-#: src/malferma_libro/app.py:2108 src/malferma_libro/app.py:812 src/malferma_libro/desktop.py:252
+#: src/malferma_libro/app.py:2124 src/malferma_libro/app.py:814 src/malferma_libro/desktop.py:252
 msgid "Добавить"
 msgstr "Shto"
 
-#: src/malferma_libro/app.py:2106
+#: src/malferma_libro/app.py:2122
 msgid "Добавить OPDS-каталог"
 msgstr "Shto katalog OPDS"
 
@@ -364,7 +364,7 @@ msgstr "Shto katalog OPDS"
 msgid "Добавить голос…"
 msgstr "Shto zë…"
 
-#: src/malferma_libro/app.py:2059
+#: src/malferma_libro/app.py:2075
 msgid "Добавить каталог"
 msgstr "Shto katalog"
 
@@ -376,19 +376,19 @@ msgstr "Shto model Piper"
 msgid "Добавление голоса…"
 msgstr "Po shtohet zëri…"
 
-#: src/malferma_libro/app.py:858
+#: src/malferma_libro/app.py:860
 msgid "Добавление книг: {count}…"
 msgstr "Po shtohen libra: {count}…"
 
-#: src/malferma_libro/app.py:2055 src/malferma_libro/app.py:2103
+#: src/malferma_libro/app.py:2071 src/malferma_libro/app.py:2119
 msgid "Добавьте каталог"
 msgstr "Shtoni një katalog"
 
-#: src/malferma_libro/app.py:387
+#: src/malferma_libro/app.py:389
 msgid "Добавьте книгу или подключите OPDS-каталог."
 msgstr "Shtoni një libër ose lidhni një katalog OPDS."
 
-#: src/malferma_libro/app.py:1490
+#: src/malferma_libro/app.py:1493
 msgid "Дождитесь загрузки страницы."
 msgstr "Prisni derisa të ngarkohet faqja."
 
@@ -396,7 +396,7 @@ msgstr "Prisni derisa të ngarkohet faqja."
 msgid "Допустимы только адреса HTTP и HTTPS."
 msgstr "Lejohen vetëm adresat HTTP dhe HTTPS."
 
-#: src/malferma_libro/app.py:1209
+#: src/malferma_libro/app.py:1212
 msgid "Жесты мышью"
 msgstr "Gjestet e miut"
 
@@ -408,19 +408,19 @@ msgstr "Shkarko zërin"
 msgid "Загрузка голоса: {voice}"
 msgstr "Po shkarkohet zëri: {voice}"
 
-#: src/malferma_libro/app.py:2173
+#: src/malferma_libro/app.py:2189
 msgid "Загрузка каталога…"
 msgstr "Po ngarkohet katalogu…"
 
-#: src/malferma_libro/app.py:1744
+#: src/malferma_libro/app.py:1759
 msgid "Загрузка страницы {page}"
 msgstr "Po ngarkohet faqja {page}"
 
-#: src/malferma_libro/app.py:1745 src/malferma_libro/app.py:1822
+#: src/malferma_libro/app.py:1760 src/malferma_libro/app.py:1837
 msgid "Загрузка страницы {page}…"
 msgstr "Po ngarkohet faqja {page}…"
 
-#: src/malferma_libro/app.py:962
+#: src/malferma_libro/app.py:965
 msgid "Загрузка страницы…"
 msgstr "Po ngarkohet faqja…"
 
@@ -436,7 +436,7 @@ msgstr "Faqerojtësi nuk është më i disponueshëm."
 msgid "Закладка добавлена."
 msgstr "Faqerojtësi u shtua."
 
-#: src/malferma_libro/app.py:904 src/malferma_libro/app.py:905
+#: src/malferma_libro/app.py:906 src/malferma_libro/app.py:907
 msgid "Закладки"
 msgstr "Faqerojtës"
 
@@ -460,11 +460,11 @@ msgstr "Shënim për faqerojtësin"
 msgid "Заметка слишком длинная: максимум {limit} символов."
 msgstr "Shënimi është shumë i gjatë: maksimumi {limit} karaktere."
 
-#: src/malferma_libro/books.py:413
+#: src/malferma_libro/books.py:570
 msgid "Зашифрованные архивы книг не поддерживаются"
 msgstr "Arkivat e shifruara të librave nuk mbështeten"
 
-#: src/malferma_libro/app.py:1531
+#: src/malferma_libro/app.py:1534
 msgid "Идёт озвучка текущей главы"
 msgstr "Po lexohet me zë kapitulli aktual"
 
@@ -484,7 +484,15 @@ msgstr "Figura e faqes DjVu tejkalon madhësinë e lejuar"
 msgid "Изображение страницы PDF превышает допустимый размер"
 msgstr "Figura e faqes PDF tejkalon madhësinë e lejuar"
 
-#: src/malferma_libro/app.py:1147
+#: src/malferma_libro/illustration_ui.py:119 src/malferma_libro/illustration_ui.py:287 src/malferma_libro/illustration_ui.py:293
+msgid "Иллюстрация"
+msgstr "Ilustrim"
+
+#: src/malferma_libro/illustration_ui.py:251 src/malferma_libro/illustration_ui.py:259 src/malferma_libro/illustration_ui.py:260
+msgid "Иллюстрация недоступна"
+msgstr "Ilustrimi nuk është i disponueshëm"
+
+#: src/malferma_libro/app.py:1150
 msgid "Интерфейс"
 msgstr "Ndërfaqja"
 
@@ -492,7 +500,7 @@ msgstr "Ndërfaqja"
 msgid "Используйте Ctrl, Alt или функциональную клавишу."
 msgstr "Përdorni Ctrl, Alt ose një tast funksioni."
 
-#: src/malferma_libro/app.py:1150 src/malferma_libro/app.py:1175
+#: src/malferma_libro/app.py:1153 src/malferma_libro/app.py:1178
 msgid "Как в системе"
 msgstr "Si në sistem"
 
@@ -500,11 +508,11 @@ msgstr "Si në sistem"
 msgid "Каталог"
 msgstr "Katalog"
 
-#: src/malferma_libro/app.py:2216
+#: src/malferma_libro/app.py:2232
 msgid "Каталог загружен. Записей: {count}."
 msgstr "Katalogu u ngarkua. Zëra: {count}."
 
-#: src/malferma_libro/app.py:2071
+#: src/malferma_libro/app.py:2087
 msgid "Каталог не открыт"
 msgstr "Nuk ka katalog të hapur"
 
@@ -512,7 +520,7 @@ msgstr "Nuk ka katalog të hapur"
 msgid "Каталог слишком большой."
 msgstr "Katalogu është tepër i madh."
 
-#: src/malferma_libro/app.py:2141
+#: src/malferma_libro/app.py:2157
 msgid "Каталог удалён из списка."
 msgstr "Katalogu u hoq nga lista."
 
@@ -536,11 +544,11 @@ msgstr "Libër"
 msgid "Книга «{title}» уже добавлена. Сохранённые закладки и место чтения будут использованы."
 msgstr "Libri «{title}» është shtuar tashmë. Do të përdoren faqerojtësit e ruajtur dhe pozicioni i ruajtur i leximit."
 
-#: src/malferma_libro/app.py:787
+#: src/malferma_libro/app.py:789
 msgid "Книга готова к чтению в библиотеке."
 msgstr "Libri është gati për t'u lexuar në bibliotekë."
 
-#: src/malferma_libro/storage.py:709
+#: src/malferma_libro/storage.py:710
 msgid "Книга не найдена: {book_id}"
 msgstr "Libri nuk u gjet: {book_id}"
 
@@ -548,11 +556,11 @@ msgstr "Libri nuk u gjet: {book_id}"
 msgid "Книга не открыта"
 msgstr "Nuk ka libër të hapur"
 
-#: src/malferma_libro/app.py:1664
+#: src/malferma_libro/app.py:1667
 msgid "Книга открыта. Позиция чтения сохраняется автоматически."
 msgstr "Libri u hap. Pozicioni i leximit ruhet automatikisht."
 
-#: src/malferma_libro/books.py:855 src/malferma_libro/books.py:98 src/malferma_libro/markup.py:63 src/malferma_libro/markup.py:67
+#: src/malferma_libro/books.py:1100 src/malferma_libro/books.py:148 src/malferma_libro/markup.py:63 src/malferma_libro/markup.py:67
 msgid "Книга превышает допустимый размер (64 МиБ)"
 msgstr "Libri tejkalon madhësinë e lejuar (64 MiB)"
 
@@ -572,7 +580,7 @@ msgstr "Libra (EPUB, FB2, FB2.ZIP, TXT, PDF, DjVu, HTML, Markdown, CBZ)"
 msgid "Код завершения {code}"
 msgstr "Kodi i daljes {code}"
 
-#: src/malferma_libro/books.py:753
+#: src/malferma_libro/books.py:995
 msgid "Комментарии"
 msgstr "Komente"
 
@@ -592,7 +600,7 @@ msgstr "Kopjimi i DjVu nuk përfundoi: madhësia e librit ndryshoi"
 msgid "Копирование PDF не завершено: размер книги изменился"
 msgstr "Kopjimi i PDF nuk përfundoi: madhësia e librit ndryshoi"
 
-#: src/malferma_libro/app.py:1047
+#: src/malferma_libro/app.py:1050
 msgid "Копировать"
 msgstr "Kopjo"
 
@@ -600,7 +608,7 @@ msgstr "Kopjo"
 msgid "Лупа области чтения"
 msgstr "Zmadhuesi i zonës së leximit"
 
-#: src/malferma_libro/app.py:1192
+#: src/malferma_libro/app.py:1195
 msgid "Максимальная ширина текста"
 msgstr "Gjerësia maksimale e tekstit"
 
@@ -612,11 +620,11 @@ msgstr "Faktori i zmadhimit të DjVu duhet të jetë numër pozitiv"
 msgid "Масштаб PDF должен быть положительным числом"
 msgstr "Faktori i zmadhimit të PDF duhet të jetë numër pozitiv"
 
-#: src/malferma_libro/app.py:881 src/malferma_libro/app.py:885
+#: src/malferma_libro/app.py:883 src/malferma_libro/app.py:887
 msgid "Масштаб страницы, %"
 msgstr "Zmadhimi i faqes, %"
 
-#: src/malferma_libro/accessibility_ui.py:290 src/malferma_libro/app.py:1207
+#: src/malferma_libro/accessibility_ui.py:290 src/malferma_libro/app.py:1210
 msgid "Межстрочный интервал"
 msgstr "Hapësira ndërmjet rreshtave"
 
@@ -632,11 +640,11 @@ msgstr "Model Piper (*.onnx)"
 msgid "Модель голоса не установлена"
 msgstr "Modeli i zërit nuk është instaluar"
 
-#: src/malferma_libro/app.py:366 src/malferma_libro/app.py:414 src/malferma_libro/shortcuts.py:38
+#: src/malferma_libro/app.py:368 src/malferma_libro/app.py:416 src/malferma_libro/shortcuts.py:38
 msgid "Мои книги"
 msgstr "Librat e mi"
 
-#: src/malferma_libro/app.py:2112
+#: src/malferma_libro/app.py:2128
 msgid "Моя библиотека"
 msgstr "Biblioteka ime"
 
@@ -648,7 +656,7 @@ msgstr "Një ekran lart"
 msgid "На экран вниз"
 msgstr "Një ekran poshtë"
 
-#: src/malferma_libro/app.py:1493
+#: src/malferma_libro/app.py:1496
 msgid "На этой странице нет доступного текста для озвучки. Распознавание сканов пока не поддерживается."
 msgstr "Kjo faqe nuk ka tekst të lexueshëm për lexim me zë. Njohja e tekstit në dokumentet e skanuara ende nuk mbështetet."
 
@@ -656,11 +664,11 @@ msgstr "Kjo faqe nuk ka tekst të lexueshëm për lexim me zë. Njohja e tekstit
 msgid "Нажмите новое сочетание клавиш."
 msgstr "Shtypni shkurtoren e re të tastierës."
 
-#: src/malferma_libro/app.py:2068
+#: src/malferma_libro/app.py:2084
 msgid "Назад"
 msgstr "Prapa"
 
-#: src/malferma_libro/app.py:2111
+#: src/malferma_libro/app.py:2127
 msgid "Название"
 msgstr "Emri"
 
@@ -668,19 +676,19 @@ msgstr "Emri"
 msgid "Название или автор"
 msgstr "Titulli ose autori"
 
-#: src/malferma_libro/search_ui.py:313
+#: src/malferma_libro/search_ui.py:312
 msgid "Найдено в тексте страницы: {query}"
 msgstr "U gjet në tekstin e faqes: {query}"
 
-#: src/malferma_libro/search_ui.py:314
+#: src/malferma_libro/search_ui.py:313
 msgid "Найдено: {query}"
 msgstr "U gjet: {query}"
 
-#: src/malferma_libro/app.py:2083 src/malferma_libro/app.py:374 src/malferma_libro/app.py:375 src/malferma_libro/app.py:524 src/malferma_libro/app.py:899 src/malferma_libro/shortcuts.py:32
+#: src/malferma_libro/app.py:2099 src/malferma_libro/app.py:376 src/malferma_libro/app.py:377 src/malferma_libro/app.py:526 src/malferma_libro/app.py:901 src/malferma_libro/shortcuts.py:32
 msgid "Найти"
 msgstr "Kërko"
 
-#: src/malferma_libro/app.py:1141 src/malferma_libro/app.py:1144 src/malferma_libro/app.py:419 src/malferma_libro/shortcuts.py:34
+#: src/malferma_libro/app.py:1144 src/malferma_libro/app.py:1147 src/malferma_libro/app.py:421 src/malferma_libro/shortcuts.py:34
 msgid "Настройки"
 msgstr "Cilësimet"
 
@@ -700,7 +708,7 @@ msgstr "I pafilluar"
 msgid "Не удалось воспроизвести озвучку."
 msgstr "Leximi me zë nuk mund të luhej."
 
-#: src/malferma_libro/app.py:625
+#: src/malferma_libro/app.py:627
 msgid "Не удалось выполнить действие"
 msgstr "Veprimi nuk mund të kryhej"
 
@@ -708,7 +716,7 @@ msgstr "Veprimi nuk mund të kryhej"
 msgid "Не удалось выполнить поиск."
 msgstr "Kërkimi nuk mund të kryhej."
 
-#: src/malferma_libro/app.py:2128
+#: src/malferma_libro/app.py:2144
 msgid "Не удалось добавить каталог"
 msgstr "Katalogu nuk mund të shtohej"
 
@@ -716,11 +724,11 @@ msgstr "Katalogu nuk mund të shtohej"
 msgid "Не удалось загрузить голос Piper."
 msgstr "Zëri Piper nuk mund të ngarkohej."
 
-#: src/malferma_libro/app.py:1815
+#: src/malferma_libro/app.py:1830
 msgid "Не удалось загрузить страницу {page}"
 msgstr "Faqja {page} nuk mund të ngarkohej"
 
-#: src/malferma_libro/app.py:1816
+#: src/malferma_libro/app.py:1831
 msgid "Не удалось загрузить страницу. Нажмите «Повторить» или выберите другую страницу."
 msgstr "Faqja nuk mund të ngarkohej. Shtypni «Provo sërish» ose zgjidhni një faqe tjetër."
 
@@ -756,7 +764,7 @@ msgstr "Madhësia e faqes DjVu nuk mund të përcaktohej"
 msgid "Не удалось определить размер страницы PDF"
 msgstr "Madhësia e faqes PDF nuk mund të përcaktohej"
 
-#: src/malferma_libro/app.py:238
+#: src/malferma_libro/app.py:240
 msgid "Не удалось открыть библиотеку"
 msgstr "Biblioteka nuk mund të hapej"
 
@@ -792,7 +800,7 @@ msgstr "DjVu nuk mund të lexohej: skedari është i dëmtuar ose ka strukturë 
 msgid "Не удалось прочитать PDF: файл повреждён или имеет неподдерживаемую структуру"
 msgstr "PDF nuk mund të lexohej: skedari është i dëmtuar ose ka strukturë të pambështetur"
 
-#: src/malferma_libro/books.py:874 src/malferma_libro/markup.py:70
+#: src/malferma_libro/books.py:1119 src/malferma_libro/markup.py:70
 msgid "Не удалось прочитать книгу: {exc}"
 msgstr "Libri nuk mund të lexohej: {exc}"
 
@@ -800,7 +808,7 @@ msgstr "Libri nuk mund të lexohej: {exc}"
 msgid "Не удалось прочитать текст на страницах: {count}."
 msgstr "Numri i faqeve ku teksti nuk mund të lexohej: {count}."
 
-#: src/malferma_libro/books.py:432
+#: src/malferma_libro/books.py:589
 msgid "Не удалось распаковать файл книги: {name}"
 msgstr "Një skedar brenda librit nuk mund të shpaketohej: {name}"
 
@@ -812,7 +820,7 @@ msgstr "Të folurit nuk mund të sintetizohej me Piper."
 msgid "Не удалось скачать голос Piper."
 msgstr "Zëri Piper nuk mund të shkarkohej."
 
-#: src/malferma_libro/app.py:1580 src/malferma_libro/app.py:1610 src/malferma_libro/app.py:1632 src/malferma_libro/keybindings_ui.py:295 src/malferma_libro/library_ui.py:206
+#: src/malferma_libro/app.py:1583 src/malferma_libro/app.py:1613 src/malferma_libro/app.py:1635 src/malferma_libro/keybindings_ui.py:295 src/malferma_libro/library_ui.py:206
 msgid "Не удалось сохранить библиотеку"
 msgstr "Biblioteka nuk mund të ruhej"
 
@@ -840,11 +848,11 @@ msgstr "Figura e faqes DjVu nuk mund të ruhej"
 msgid "Не удалось сохранить изображение страницы PDF"
 msgstr "Figura e faqes PDF nuk mund të ruhej"
 
-#: src/malferma_libro/app.py:2017
+#: src/malferma_libro/app.py:2033
 msgid "Не удалось сохранить место чтения"
 msgstr "Pozicioni i leximit nuk mund të ruhej"
 
-#: src/malferma_libro/app.py:2143
+#: src/malferma_libro/app.py:2159
 msgid "Не удалось сохранить список каталогов"
 msgstr "Lista e katalogëve nuk mund të ruhej"
 
@@ -888,11 +896,11 @@ msgstr "Faktor i pavlefshëm zmadhimi për PDF"
 msgid "Недопустимый пароль PDF"
 msgstr "Fjalëkalim i pavlefshëm për PDF"
 
-#: src/malferma_libro/books.py:408
+#: src/malferma_libro/books.py:565
 msgid "Недопустимый путь в архиве книги"
 msgstr "Shteg i palejuar në arkivin e librit"
 
-#: src/malferma_libro/books.py:450
+#: src/malferma_libro/books.py:607
 msgid "Недопустимый путь во внутренней ссылке EPUB"
 msgstr "Shteg i palejuar në lidhjen e brendshme të EPUB"
 
@@ -912,7 +920,7 @@ msgstr "Version i panjohur i skedarit të bibliotekës."
 msgid "Неизвестный язык озвучки: {language}."
 msgstr "Gjuhë e panjohur për lexim me zë: {language}."
 
-#: src/malferma_libro/storage.py:222 src/malferma_libro/storage.py:752 src/malferma_libro/storage.py:788
+#: src/malferma_libro/storage.py:222 src/malferma_libro/storage.py:753 src/malferma_libro/storage.py:789
 msgid "Некорректная закладка."
 msgstr "Faqerojtës i pavlefshëm."
 
@@ -964,7 +972,7 @@ msgstr "Listë e pavlefshme librash."
 msgid "Некорректный файл библиотеки."
 msgstr "Skedar i pavlefshëm i bibliotekës."
 
-#: src/malferma_libro/app.py:854
+#: src/malferma_libro/app.py:856
 msgid "Некоторые книги не удалось открыть"
 msgstr "Disa libra nuk mund të hapeshin"
 
@@ -984,7 +992,7 @@ msgstr "Strukturë e pambështetur e dokumentit DjVu"
 msgid "Неподдерживаемый тип документа DjVu"
 msgstr "Lloj i pambështetur dokumenti DjVu"
 
-#: src/malferma_libro/books.py:596
+#: src/malferma_libro/books.py:785
 msgid "Неподдерживаемый формат главы EPUB: {media}"
 msgstr "Format i pambështetur kapitulli EPUB: {media}"
 
@@ -992,7 +1000,7 @@ msgstr "Format i pambështetur kapitulli EPUB: {media}"
 msgid "Нет доступа. Проверьте права на файл или выберите другой каталог."
 msgstr "Hyrja u refuzua. Kontrolloni lejet e skedarit ose zgjidhni një dosje tjetër."
 
-#: src/malferma_libro/app.py:2209
+#: src/malferma_libro/app.py:2225
 msgid "Нет поддерживаемой прямой загрузки"
 msgstr "Nuk ka shkarkim të drejtpërdrejtë të mbështetur"
 
@@ -1008,11 +1016,11 @@ msgstr "Numri i faqes DjVu është jashtë intervalit të lejuar"
 msgid "Номер страницы PDF вне допустимого диапазона"
 msgstr "Numri i faqes PDF është jashtë intervalit të lejuar"
 
-#: src/malferma_libro/app.py:1175
+#: src/malferma_libro/app.py:1178
 msgid "Ночной"
 msgstr "Natë"
 
-#: src/malferma_libro/app.py:422
+#: src/malferma_libro/app.py:424
 msgid "О приложении"
 msgstr "Rreth aplikacionit"
 
@@ -1044,7 +1052,7 @@ msgstr "Përpunuesi i PDF nuk krijoi figurën e faqes"
 msgid "Обработчик PDF создал недопустимое изображение"
 msgstr "Përpunuesi i PDF krijoi një figurë të pavlefshme"
 
-#: src/malferma_libro/app.py:525 src/malferma_libro/app.py:865 src/malferma_libro/app.py:866 src/malferma_libro/outline_ui.py:36 src/malferma_libro/outline_ui.py:47 src/malferma_libro/shortcuts.py:60
+#: src/malferma_libro/app.py:527 src/malferma_libro/app.py:867 src/malferma_libro/app.py:868 src/malferma_libro/outline_ui.py:36 src/malferma_libro/outline_ui.py:47 src/malferma_libro/shortcuts.py:60
 msgid "Оглавление"
 msgstr "Pasqyra e lëndës"
 
@@ -1056,23 +1064,23 @@ msgstr "Pritej një katalog OPDS në formatin Atom."
 msgid "Ожидание данных…"
 msgstr "Në pritje të të dhënave…"
 
-#: src/malferma_libro/app.py:1000 src/malferma_libro/app.py:1000 src/malferma_libro/app.py:1526 src/malferma_libro/shortcuts.py:63
+#: src/malferma_libro/app.py:1003 src/malferma_libro/app.py:1003 src/malferma_libro/app.py:1529 src/malferma_libro/shortcuts.py:63
 msgid "Озвучить"
 msgstr "Lexo me zë"
 
-#: src/malferma_libro/accessibility_ui.py:237 src/malferma_libro/app.py:1210
+#: src/malferma_libro/accessibility_ui.py:237 src/malferma_libro/app.py:1213
 msgid "Озвучка"
 msgstr "Lexim me zë"
 
-#: src/malferma_libro/app.py:1574
+#: src/malferma_libro/app.py:1577
 msgid "Озвучка книги завершена."
 msgstr "Leximi i librit me zë përfundoi."
 
-#: src/malferma_libro/app.py:1531
+#: src/malferma_libro/app.py:1534
 msgid "Озвучка приостановлена"
 msgstr "Leximi me zë është pezulluar"
 
-#: src/malferma_libro/app.py:993
+#: src/malferma_libro/app.py:996
 msgid "Озвучка через Piper"
 msgstr "Lexim me zë me Piper"
 
@@ -1084,7 +1092,7 @@ msgstr "E çaktivizuar"
 msgid "Отключить"
 msgstr "Çaktivizoni"
 
-#: src/malferma_libro/app.py:907
+#: src/malferma_libro/app.py:909
 msgid "Откройте книгу в библиотеке."
 msgstr "Hapni një libër nga biblioteka."
 
@@ -1092,7 +1100,7 @@ msgstr "Hapni një libër nga biblioteka."
 msgid "Откройте книгу или подключите OPDS-каталог во вкладке «Сетевые библиотеки»."
 msgstr "Hapni një libër ose lidhni një katalog OPDS te skeda «Biblioteka në rrjet»."
 
-#: src/malferma_libro/app.py:1171
+#: src/malferma_libro/app.py:1174
 msgid "Открывать последнюю книгу при запуске"
 msgstr "Hap librin e fundit në nisje"
 
@@ -1108,19 +1116,19 @@ msgstr "Hap"
 msgid "Открыть закладку: {chapter}. {excerpt}"
 msgstr "Hap faqerojtësin: {chapter}. {excerpt}"
 
-#: src/malferma_libro/app.py:523 src/malferma_libro/app.py:809 src/malferma_libro/desktop.py:257 src/malferma_libro/shortcuts.py:30
+#: src/malferma_libro/app.py:525 src/malferma_libro/app.py:811 src/malferma_libro/desktop.py:257 src/malferma_libro/shortcuts.py:30
 msgid "Открыть книги"
 msgstr "Hap libra"
 
-#: src/malferma_libro/app.py:2203
+#: src/malferma_libro/app.py:2219
 msgid "Открыть раздел"
 msgstr "Hap pjesën"
 
-#: src/malferma_libro/app.py:361 src/malferma_libro/narration_ui.py:159
+#: src/malferma_libro/app.py:363 src/malferma_libro/narration_ui.py:159
 msgid "Открыть…"
 msgstr "Hap…"
 
-#: src/malferma_libro/app.py:2107 src/malferma_libro/app.py:813 src/malferma_libro/bookmarks_ui.py:175 src/malferma_libro/bookmarks_ui.py:175 src/malferma_libro/keybindings_ui.py:230 src/malferma_libro/library_ui.py:257 src/malferma_libro/narration_ui.py:159
+#: src/malferma_libro/app.py:2123 src/malferma_libro/app.py:815 src/malferma_libro/bookmarks_ui.py:175 src/malferma_libro/bookmarks_ui.py:175 src/malferma_libro/keybindings_ui.py:230 src/malferma_libro/library_ui.py:257 src/malferma_libro/narration_ui.py:159
 msgid "Отмена"
 msgstr "Anulo"
 
@@ -1136,11 +1144,11 @@ msgstr "Anulo"
 msgid "Отменить поиск"
 msgstr "Anulo kërkimin"
 
-#: src/malferma_libro/app.py:1170
+#: src/malferma_libro/app.py:1173
 msgid "Оформление окна"
 msgstr "Pamja e dritares"
 
-#: src/malferma_libro/app.py:1525
+#: src/malferma_libro/app.py:1528
 msgid "Пауза"
 msgstr "Pezullo"
 
@@ -1152,7 +1160,11 @@ msgstr "Sipas autorit"
 msgid "По названию"
 msgstr "Sipas titullit"
 
-#: src/malferma_libro/app.py:1213
+#: src/malferma_libro/illustration_ui.py:308
+msgid "По размеру окна"
+msgstr "Përshtat me dritaren"
+
+#: src/malferma_libro/app.py:1216
 msgid "По тексту главы"
 msgstr "Sipas tekstit të kapitullit"
 
@@ -1172,51 +1184,51 @@ msgstr "Struktura e skedarit DjVu është e dëmtuar"
 msgid "Повреждён каталог страниц DjVu"
 msgstr "Drejtoria e faqeve DjVu është e dëmtuar"
 
-#: src/malferma_libro/books.py:448 src/malferma_libro/books.py:471
+#: src/malferma_libro/books.py:605 src/malferma_libro/books.py:628
 msgid "Повреждённая внутренняя ссылка EPUB"
 msgstr "Lidhje e brendshme EPUB e dëmtuar"
 
-#: src/malferma_libro/books.py:394
+#: src/malferma_libro/books.py:551
 msgid "Повреждённый ZIP-архив книги"
 msgstr "Arkiv ZIP i dëmtuar i librit"
 
-#: src/malferma_libro/app.py:1490
+#: src/malferma_libro/app.py:1493
 msgid "Повторите загрузку страницы."
 msgstr "Provoni sërish ngarkimin e faqes."
 
-#: src/malferma_libro/app.py:889 src/malferma_libro/task_ui.py:204 src/malferma_libro/task_ui.py:204
+#: src/malferma_libro/app.py:891 src/malferma_libro/task_ui.py:204 src/malferma_libro/task_ui.py:204
 msgid "Повторить"
 msgstr "Provo sërish"
 
-#: src/malferma_libro/books.py:410
+#: src/malferma_libro/books.py:567
 msgid "Повторяющиеся имена файлов в архиве книги"
 msgstr "Emra të përsëritur skedarësh në arkivin e librit"
 
-#: src/malferma_libro/books.py:557
+#: src/malferma_libro/books.py:715
 msgid "Повторяющийся идентификатор в списке файлов EPUB"
 msgstr "Identifikues i përsëritur në listën e skedarëve EPUB"
 
-#: src/malferma_libro/books.py:851
+#: src/malferma_libro/books.py:1096
 msgid "Поддерживаются EPUB, FB2, FB2.ZIP, TXT, PDF, DjVu, HTML, Markdown и CBZ"
 msgstr "Mbështeten EPUB, FB2, FB2.ZIP, TXT, PDF, DjVu, HTML, Markdown dhe CBZ"
 
-#: src/malferma_libro/app.py:2097
+#: src/malferma_libro/app.py:2113
 msgid "Поддерживаются прямые загрузки EPUB, FB2, TXT, PDF, DjVu, HTML, Markdown и CBZ. Каталоги с авторизацией и DRM пока не поддерживаются."
 msgstr "Mbështeten shkarkimet e drejtpërdrejta të EPUB, FB2, TXT, PDF, DjVu, HTML, Markdown dhe CBZ. Katalogët që kërkojnë vërtetim identiteti ose përdorin DRM ende nuk mbështeten."
 
-#: src/malferma_libro/app.py:2051 src/malferma_libro/app.py:2095
+#: src/malferma_libro/app.py:2067 src/malferma_libro/app.py:2111
 msgid "Подключите публичный OPDS 1.x каталог или каталог Calibre в локальной сети."
 msgstr "Lidhni një katalog publik OPDS 1.x ose një katalog Calibre në rrjetin lokal."
 
-#: src/malferma_libro/app.py:2058 src/malferma_libro/app.py:2063 src/malferma_libro/app.py:2064
+#: src/malferma_libro/app.py:2074 src/malferma_libro/app.py:2079 src/malferma_libro/app.py:2080
 msgid "Подключиться"
 msgstr "Lidhu"
 
-#: src/malferma_libro/app.py:2079
+#: src/malferma_libro/app.py:2095
 msgid "Поиск (если каталог его поддерживает)"
 msgstr "Kërkim (nëse katalogu e mbështet)"
 
-#: src/malferma_libro/app.py:1796 src/malferma_libro/app.py:1807
+#: src/malferma_libro/app.py:1811 src/malferma_libro/app.py:1822
 msgid "Поиск и озвучка доступны в тексте страницы."
 msgstr "Kërkimi dhe leximi me zë janë të disponueshëm në tekstin e faqes."
 
@@ -1224,7 +1236,7 @@ msgstr "Kërkimi dhe leximi me zë janë të disponueshëm në tekstin e faqes."
 msgid "Поиск отменён."
 msgstr "Kërkimi u anulua."
 
-#: src/malferma_libro/app.py:1640 src/malferma_libro/app.py:897 src/malferma_libro/search_ui.py:42
+#: src/malferma_libro/app.py:1643 src/malferma_libro/app.py:899 src/malferma_libro/search_ui.py:42
 msgid "Поиск по всей книге"
 msgstr "Kërko në të gjithë librin"
 
@@ -1240,7 +1252,7 @@ msgstr "Shfaqen {count} përputhjet e para. Saktësoni kërkimin."
 msgid "Показать верхнюю панель"
 msgstr "Shfaq shiritin e sipërm"
 
-#: src/malferma_libro/app.py:382 src/malferma_libro/app.py:465 src/malferma_libro/app.py:521 src/malferma_libro/shortcuts.py:41
+#: src/malferma_libro/app.py:384 src/malferma_libro/app.py:467 src/malferma_libro/app.py:523 src/malferma_libro/shortcuts.py:41
 msgid "Полноэкранный режим"
 msgstr "Mënyra me ekran të plotë"
 
@@ -1248,7 +1260,7 @@ msgstr "Mënyra me ekran të plotë"
 msgid "Положение в книге должно быть целым неотрицательным числом."
 msgstr "Pozicioni në libër duhet të jetë numër i plotë jonegativ."
 
-#: src/malferma_libro/accessibility_ui.py:280 src/malferma_libro/app.py:1206
+#: src/malferma_libro/accessibility_ui.py:280 src/malferma_libro/app.py:1209
 msgid "Полужирный текст"
 msgstr "Tekst i trashë"
 
@@ -1256,11 +1268,11 @@ msgstr "Tekst i trashë"
 msgid "Пользовательские"
 msgstr "Të personalizuara"
 
-#: src/malferma_libro/books.py:593
+#: src/malferma_libro/books.py:782
 msgid "Порядок глав EPUB ссылается на отсутствующий файл"
 msgstr "Rendi i kapitujve EPUB i referohet një skedari që mungon"
 
-#: src/malferma_libro/app.py:526 src/malferma_libro/app.py:869 src/malferma_libro/shortcuts.py:56
+#: src/malferma_libro/app.py:528 src/malferma_libro/app.py:871 src/malferma_libro/shortcuts.py:56
 msgid "Предыдущая глава"
 msgstr "Kapitulli i mëparshëm"
 
@@ -1272,19 +1284,19 @@ msgstr "Faqja e mëparshme"
 msgid "Предыдущее совпадение"
 msgstr "Përputhja e mëparshme"
 
-#: src/malferma_libro/app.py:1185
+#: src/malferma_libro/app.py:1188
 msgid "Приглушение цветов страницы; яркость монитора не меняется."
 msgstr "Zbeh ngjyrat e faqes; ndriçimi i ekranit nuk ndryshon."
 
-#: src/malferma_libro/accessibility_ui.py:291 src/malferma_libro/app.py:1208
+#: src/malferma_libro/accessibility_ui.py:291 src/malferma_libro/app.py:1211
 msgid "Применить"
 msgstr "Zbato"
 
-#: src/malferma_libro/books.py:770
+#: src/malferma_libro/books.py:1013
 msgid "Примечание {number}"
 msgstr "Shënim {number}"
 
-#: src/malferma_libro/books.py:753 src/malferma_libro/outline_ui.py:119 src/malferma_libro/outline_ui.py:66
+#: src/malferma_libro/books.py:995 src/malferma_libro/outline_ui.py:119 src/malferma_libro/outline_ui.py:66
 msgid "Примечания"
 msgstr "Shënimet"
 
@@ -1292,7 +1304,7 @@ msgstr "Shënimet"
 msgid "Проверьте доступ к файлу или каталогу и повторите действие."
 msgstr "Kontrolloni hyrjen te skedari ose dosja dhe provoni përsëri."
 
-#: src/malferma_libro/app.py:1525
+#: src/malferma_libro/app.py:1528
 msgid "Продолжить"
 msgstr "Vazhdo"
 
@@ -1316,7 +1328,7 @@ msgstr "Dëgjo një shembull"
 msgid "Прочитано"
 msgstr "I lexuar"
 
-#: src/malferma_libro/books.py:744
+#: src/malferma_libro/books.py:986
 msgid "Раздел {number}"
 msgstr "Pjesa {number}"
 
@@ -1324,7 +1336,7 @@ msgstr "Pjesa {number}"
 msgid "Размер ответа превышает допустимый предел."
 msgstr "Madhësia e përgjigjes tejkalon kufirin e lejuar."
 
-#: src/malferma_libro/accessibility_ui.py:276 src/malferma_libro/app.py:1191
+#: src/malferma_libro/accessibility_ui.py:276 src/malferma_libro/app.py:1194
 msgid "Размер текста"
 msgstr "Madhësia e tekstit"
 
@@ -1332,11 +1344,11 @@ msgstr "Madhësia e tekstit"
 msgid "Размер фрагмента должен быть положительным."
 msgstr "Madhësia e fragmentit duhet të jetë pozitive."
 
-#: src/malferma_libro/app.py:876
+#: src/malferma_libro/app.py:878
 msgid "Размер шрифта"
 msgstr "Madhësia e shkronjave"
 
-#: src/malferma_libro/books.py:420
+#: src/malferma_libro/books.py:577
 msgid "Распакованный размер книги превышает допустимый предел"
 msgstr "Madhësia e librit të shpaketuar tejkalon kufirin e lejuar"
 
@@ -1344,23 +1356,23 @@ msgstr "Madhësia e librit të shpaketuar tejkalon kufirin e lejuar"
 msgid "Режим"
 msgstr "Mënyra"
 
-#: src/malferma_libro/accessibility_ui.py:291 src/malferma_libro/app.py:1208
+#: src/malferma_libro/accessibility_ui.py:291 src/malferma_libro/app.py:1211
 msgid "Режим для слабовидящих"
 msgstr "Mënyra për personat me shikim të dobët"
 
-#: src/malferma_libro/search_ui.py:311
+#: src/malferma_libro/search_ui.py:310
 msgid "Результат {number} из {count}"
 msgstr "Rezultati {number} nga {count}"
 
-#: src/malferma_libro/app.py:420 src/malferma_libro/app.py:582 src/malferma_libro/app.py:603 src/malferma_libro/shortcuts.py:43
+#: src/malferma_libro/app.py:422 src/malferma_libro/app.py:584 src/malferma_libro/app.py:605 src/malferma_libro/shortcuts.py:43
 msgid "Руководство пользователя"
 msgstr "Udhëzuesi i përdoruesit"
 
-#: src/malferma_libro/app.py:1150
+#: src/malferma_libro/app.py:1153
 msgid "Светлый"
 msgstr "I çelët"
 
-#: src/malferma_libro/app.py:1175
+#: src/malferma_libro/app.py:1178
 msgid "Сепия"
 msgstr "Sepia"
 
@@ -1384,39 +1396,39 @@ msgstr "Shërbyesi ktheu një skedar të një lloji të pambështetur."
 msgid "Сервер передал неполный файл."
 msgstr "Shërbyesi dërgoi një skedar të paplotë."
 
-#: src/malferma_libro/app.py:368 src/malferma_libro/app.py:416 src/malferma_libro/shortcuts.py:40
+#: src/malferma_libro/app.py:370 src/malferma_libro/app.py:418 src/malferma_libro/shortcuts.py:40
 msgid "Сетевые библиотеки"
 msgstr "Biblioteka në rrjet"
 
-#: src/malferma_libro/app.py:2050 src/malferma_libro/app.py:2094
+#: src/malferma_libro/app.py:2066 src/malferma_libro/app.py:2110
 msgid "Сетевые библиотеки OPDS"
 msgstr "Biblioteka OPDS në rrjet"
 
-#: src/malferma_libro/books.py:415
+#: src/malferma_libro/books.py:572
 msgid "Символические ссылки в архиве книги запрещены"
 msgstr "Lidhjet simbolike në arkivin e librit janë të ndaluara"
 
-#: src/malferma_libro/app.py:1148
+#: src/malferma_libro/app.py:1151
 msgid "Системные шрифты, масштаб и оконные кнопки задаёт рабочая среда. Виджеты используют libadwaita."
 msgstr "Mjedisi i punës përcakton llojet e shkrimit të sistemit, shkallëzimin dhe butonat e dritareve. Elementet e ndërfaqes përdorin libadwaita."
 
-#: src/malferma_libro/app.py:1153 src/malferma_libro/appearance.py:22
+#: src/malferma_libro/app.py:1156 src/malferma_libro/appearance.py:22
 msgid "Системный"
 msgstr "Sipas sistemit"
 
-#: src/malferma_libro/app.py:2205
+#: src/malferma_libro/app.py:2221
 msgid "Скачать {format}"
 msgstr "Shkarko {format}"
 
-#: src/malferma_libro/app.py:2255
+#: src/malferma_libro/app.py:2271
 msgid "Скачивание книги…"
 msgstr "Po shkarkohet libri…"
 
-#: src/malferma_libro/accessibility_ui.py:265 src/malferma_libro/app.py:1218
+#: src/malferma_libro/accessibility_ui.py:265 src/malferma_libro/app.py:1221
 msgid "Скорость, %"
 msgstr "Shpejtësia, %"
 
-#: src/malferma_libro/app.py:527 src/malferma_libro/app.py:870 src/malferma_libro/shortcuts.py:58
+#: src/malferma_libro/app.py:529 src/malferma_libro/app.py:872 src/malferma_libro/shortcuts.py:58
 msgid "Следующая глава"
 msgstr "Kapitulli pasues"
 
@@ -1428,7 +1440,7 @@ msgstr "Faqja tjetër"
 msgid "Следующее совпадение"
 msgstr "Përputhja pasuese"
 
-#: src/malferma_libro/books.py:399
+#: src/malferma_libro/books.py:556
 msgid "Слишком много файлов в архиве книги"
 msgstr "Tepër skedarë në arkivin e librit"
 
@@ -1436,7 +1448,7 @@ msgstr "Tepër skedarë në arkivin e librit"
 msgid "Слишком сложная структура документа DjVu"
 msgstr "Struktura e dokumentit DjVu është tepër e ndërlikuar"
 
-#: src/malferma_libro/app.py:1480 src/malferma_libro/bookmarks_ui.py:41
+#: src/malferma_libro/app.py:1483 src/malferma_libro/bookmarks_ui.py:41
 msgid "Сначала откройте книгу."
 msgstr "Fillimisht hapni një libër."
 
@@ -1460,7 +1472,7 @@ msgstr "Ruaj"
 msgid "Сочетание занято: {action}"
 msgstr "Shkurtorja është caktuar tashmë: {action}"
 
-#: src/malferma_libro/accessibility_ui.py:270 src/malferma_libro/accessibility_ui.py:318 src/malferma_libro/accessibility_ui.py:319 src/malferma_libro/app.py:1196 src/malferma_libro/app.py:529 src/malferma_libro/shortcuts.py:36
+#: src/malferma_libro/accessibility_ui.py:270 src/malferma_libro/accessibility_ui.py:318 src/malferma_libro/accessibility_ui.py:319 src/malferma_libro/app.py:1199 src/malferma_libro/app.py:531 src/malferma_libro/shortcuts.py:36
 msgid "Специальные возможности"
 msgstr "Aksesueshmëria"
 
@@ -1468,7 +1480,7 @@ msgstr "Aksesueshmëria"
 msgid "Список книг и настройки восстановлены из последней резервной копии."
 msgstr "Lista e librave dhe cilësimet u rikthyen nga kopja e fundit rezervë."
 
-#: src/malferma_libro/app.py:1006 src/malferma_libro/app.py:531 src/malferma_libro/shortcuts.py:54
+#: src/malferma_libro/app.py:1009 src/malferma_libro/app.py:533 src/malferma_libro/shortcuts.py:54
 msgid "Стандартный размер текста"
 msgstr "Madhësia e parazgjedhur e tekstit"
 
@@ -1476,7 +1488,7 @@ msgstr "Madhësia e parazgjedhur e tekstit"
 msgid "Стоп"
 msgstr "Ndalo"
 
-#: src/malferma_libro/books.py:809 src/malferma_libro/books.py:823 src/malferma_libro/cbz.py:528 src/malferma_libro/outline_ui.py:120 src/malferma_libro/outline_ui.py:86
+#: src/malferma_libro/books.py:1054 src/malferma_libro/books.py:1068 src/malferma_libro/cbz.py:528 src/malferma_libro/outline_ui.py:120 src/malferma_libro/outline_ui.py:86
 msgid "Страница {number}"
 msgstr "Faqja {number}"
 
@@ -1484,23 +1496,23 @@ msgstr "Faqja {number}"
 msgid "Страница {page}"
 msgstr "Faqja {page}"
 
-#: src/malferma_libro/app.py:1792 src/malferma_libro/pagination.py:152
+#: src/malferma_libro/app.py:1807 src/malferma_libro/pagination.py:152
 msgid "Страница {page} из {pages}"
 msgstr "Faqja {page} nga {pages}"
 
-#: src/malferma_libro/app.py:2033
+#: src/malferma_libro/app.py:2049
 msgid "Страница {page} из {pages}  ·  {percent}% книги"
 msgstr "Faqja {page} nga {pages}  ·  {percent}% e librit"
 
-#: src/malferma_libro/app.py:1797 src/malferma_libro/app.py:1808
+#: src/malferma_libro/app.py:1812 src/malferma_libro/app.py:1823
 msgid "Страница без текстового слоя. Скан доступен для просмотра; OCR пока не поддерживается."
 msgstr "Faqja nuk ka shtresë teksti. Figura e skanuar mund të shihet; OCR ende nuk mbështetet."
 
-#: src/malferma_libro/app.py:957 src/malferma_libro/app.py:960
+#: src/malferma_libro/app.py:960 src/malferma_libro/app.py:963
 msgid "Страница документа"
 msgstr "Faqja e dokumentit"
 
-#: src/malferma_libro/app.py:1172 src/malferma_libro/app.py:943 src/malferma_libro/app.py:997 src/malferma_libro/app.py:998
+#: src/malferma_libro/app.py:1000 src/malferma_libro/app.py:1001 src/malferma_libro/app.py:1175 src/malferma_libro/app.py:945
 msgid "Страница книги"
 msgstr "Faqja e librit"
 
@@ -1512,7 +1524,7 @@ msgstr "Faqet"
 msgid "Страницы {first}–{last} из {pages}"
 msgstr "Faqet {first}–{last} nga {pages}"
 
-#: src/malferma_libro/books.py:577 src/malferma_libro/books.py:724 src/malferma_libro/markup.py:110 src/malferma_libro/markup.py:229 src/malferma_libro/markup.py:380 src/malferma_libro/markup.py:427
+#: src/malferma_libro/books.py:762 src/malferma_libro/books.py:963 src/malferma_libro/markup.py:110 src/malferma_libro/markup.py:229 src/malferma_libro/markup.py:380 src/malferma_libro/markup.py:427
 msgid "Текст книги превышает допустимый размер"
 msgstr "Teksti i librit tejkalon madhësinë e lejuar"
 
@@ -1520,15 +1532,15 @@ msgstr "Teksti i librit tejkalon madhësinë e lejuar"
 msgid "Текст озвучки должен быть строкой."
 msgstr "Teksti për lexim me zë duhet të jetë varg shenjash."
 
-#: src/malferma_libro/app.py:984 src/malferma_libro/app.py:989
+#: src/malferma_libro/app.py:987 src/malferma_libro/app.py:992
 msgid "Текст страницы · поиск и озвучка"
 msgstr "Teksti i faqes · kërkim dhe lexim me zë"
 
-#: src/malferma_libro/books.py:869
+#: src/malferma_libro/books.py:1114
 msgid "Текстовый файл пуст"
 msgstr "Skedari i tekstit është bosh"
 
-#: src/malferma_libro/app.py:1150
+#: src/malferma_libro/app.py:1153
 msgid "Тёмный"
 msgstr "I errët"
 
@@ -1536,7 +1548,11 @@ msgstr "I errët"
 msgid "Увеличение лупы"
 msgstr "Zmadhimi i zmadhuesit"
 
-#: src/malferma_libro/app.py:1008 src/malferma_libro/app.py:532 src/malferma_libro/shortcuts.py:50
+#: src/malferma_libro/illustration_ui.py:307
+msgid "Увеличить"
+msgstr "Zmadho"
+
+#: src/malferma_libro/app.py:1011 src/malferma_libro/app.py:534 src/malferma_libro/shortcuts.py:50
 msgid "Увеличить текст"
 msgstr "Zmadho tekstin"
 
@@ -1544,15 +1560,15 @@ msgstr "Zmadho tekstin"
 msgid "Удалить закладку"
 msgstr "Fshi faqerojtësin"
 
-#: src/malferma_libro/app.py:2060
+#: src/malferma_libro/app.py:2076
 msgid "Удалить каталог из списка"
 msgstr "Hiq katalogun nga lista"
 
-#: src/malferma_libro/app.py:1204
+#: src/malferma_libro/app.py:1207
 msgid "Удерживайте правую кнопку мыши и проведите влево или вправо для перехода между главами или страницами."
 msgstr "Mbani të shtypur butonin e djathtë të miut dhe lëvizeni miun majtas ose djathtas për të kaluar midis kapitujve ose faqeve."
 
-#: src/malferma_libro/storage.py:824
+#: src/malferma_libro/storage.py:825
 msgid "Укажите название каталога."
 msgstr "Përcaktoni emrin e katalogut."
 
@@ -1560,11 +1576,15 @@ msgstr "Përcaktoni emrin e katalogut."
 msgid "Укажите полный адрес OPDS-каталога: https://example.org/opds."
 msgstr "Përcaktoni adresën e plotë të katalogut OPDS: https://example.org/opds."
 
-#: src/malferma_libro/books.py:795
+#: src/malferma_libro/books.py:1040
 msgid "Указанный путь не является файлом"
 msgstr "Shtegu i përcaktuar nuk është skedar"
 
-#: src/malferma_libro/app.py:1004 src/malferma_libro/app.py:530 src/malferma_libro/shortcuts.py:52
+#: src/malferma_libro/illustration_ui.py:306
+msgid "Уменьшить"
+msgstr "Zvogëlo"
+
+#: src/malferma_libro/app.py:1007 src/malferma_libro/app.py:532 src/malferma_libro/shortcuts.py:52
 msgid "Уменьшить текст"
 msgstr "Zvogëlo tekstin"
 
@@ -1592,7 +1612,7 @@ msgstr "Skedari PDF është bosh ose tejkalon madhësinë e lejuar prej 64 MiB"
 msgid "Файл библиотеки повреждён. Исходный файл сохранён: {preserved}"
 msgstr "Skedari i bibliotekës është i dëmtuar. Skedari origjinal u ruajt: {preserved}"
 
-#: src/malferma_libro/books.py:417 src/malferma_libro/books.py:434
+#: src/malferma_libro/books.py:574 src/malferma_libro/books.py:591
 msgid "Файл внутри книги превышает допустимый размер"
 msgstr "Një skedar brenda librit tejkalon madhësinë e lejuar"
 
@@ -1608,11 +1628,11 @@ msgstr "Skedari nuk përmban tekst të lexueshëm."
 msgid "Файл не является документом DjVu"
 msgstr "Skedari nuk është dokument DjVu"
 
-#: src/malferma_libro/books.py:705
+#: src/malferma_libro/books.py:909
 msgid "Файл не является книгой FB2"
 msgstr "Skedari nuk është libër FB2"
 
-#: src/malferma_libro/books.py:276 src/malferma_libro/markup.py:39
+#: src/malferma_libro/books.py:422 src/malferma_libro/markup.py:39
 msgid "Файл разметки слишком сложный."
 msgstr "Skedari i shënjimit është tepër i ndërlikuar."
 
@@ -1628,7 +1648,7 @@ msgstr "Skedarët e zërit Piper nuk e kaluan verifikimin."
 msgid "Фильтр библиотеки"
 msgstr "Filtri i bibliotekës"
 
-#: src/malferma_libro/app.py:1188
+#: src/malferma_libro/app.py:1191
 msgid "Фон страницы"
 msgstr "Sfondi i faqes"
 
@@ -1636,11 +1656,11 @@ msgstr "Sfondi i faqes"
 msgid "Формат ответа не совпадает с форматом книги."
 msgstr "Formati i përgjigjes nuk përputhet me formatin e librit."
 
-#: src/malferma_libro/app.py:1173
+#: src/malferma_libro/app.py:1176
 msgid "Цвета и шрифты страницы настраиваются отдельно от интерфейса."
 msgstr "Ngjyrat dhe llojet e shkrimit të faqes rregullohen veçmas nga ndërfaqja."
 
-#: src/malferma_libro/app.py:573
+#: src/malferma_libro/app.py:575
 msgid "Читалка EPUB, FB2, TXT, PDF, DjVu, HTML, Markdown и CBZ с локальной библиотекой и каталогами OPDS."
 msgstr "Lexues EPUB, FB2, TXT, PDF, DjVu, HTML, Markdown dhe CBZ me bibliotekë lokale dhe katalogë OPDS."
 
@@ -1648,7 +1668,7 @@ msgstr "Lexues EPUB, FB2, TXT, PDF, DjVu, HTML, Markdown dhe CBZ me bibliotekë 
 msgid "Читаю"
 msgstr "Po lexoj"
 
-#: src/malferma_libro/app.py:367 src/malferma_libro/app.py:415 src/malferma_libro/shortcuts.py:27 src/malferma_libro/shortcuts.py:39
+#: src/malferma_libro/app.py:369 src/malferma_libro/app.py:417 src/malferma_libro/shortcuts.py:27 src/malferma_libro/shortcuts.py:39
 msgid "Чтение"
 msgstr "Lexim"
 
@@ -1660,7 +1680,7 @@ msgstr "Gjerësia e faqes DjVu duhet të jetë numër i plotë pozitiv"
 msgid "Ширина страницы PDF должна быть положительным целым числом"
 msgstr "Gjerësia e faqes PDF duhet të jetë numër i plotë pozitiv"
 
-#: src/malferma_libro/app.py:1190
+#: src/malferma_libro/app.py:1193
 msgid "Шрифт книги"
 msgstr "Lloji i shkrimit të librit"
 
@@ -1668,7 +1688,7 @@ msgstr "Lloji i shkrimit të librit"
 msgid "Это сочетание зарезервировано системой."
 msgstr "Kjo shkurtore është e rezervuar nga sistemi."
 
-#: src/malferma_libro/storage.py:827
+#: src/malferma_libro/storage.py:828
 msgid "Этот каталог уже добавлен."
 msgstr "Ky katalog është shtuar tashmë."
 
@@ -1676,11 +1696,11 @@ msgstr "Ky katalog është shtuar tashmë."
 msgid "Этот формат книги не поддерживается."
 msgstr "Ky format libri nuk mbështetet."
 
-#: src/malferma_libro/accessibility_ui.py:261 src/malferma_libro/app.py:1217 src/malferma_libro/app.py:590 src/malferma_libro/app.py:591
+#: src/malferma_libro/accessibility_ui.py:261 src/malferma_libro/app.py:1220 src/malferma_libro/app.py:592 src/malferma_libro/app.py:593
 msgid "Язык"
 msgstr "Gjuha"
 
-#: src/malferma_libro/app.py:1169 src/malferma_libro/app.py:588
+#: src/malferma_libro/app.py:1172 src/malferma_libro/app.py:590
 msgid "Язык интерфейса"
 msgstr "Gjuha e ndërfaqes"
 
@@ -1688,11 +1708,11 @@ msgstr "Gjuha e ndërfaqes"
 msgid "Язык озвучки «{language}» больше не поддерживается. Выбрано автоматическое определение языка."
 msgstr "Gjuha e leximit me zë «{language}» nuk mbështetet më. Është zgjedhur zbulimi automatik i gjuhës."
 
-#: src/malferma_libro/app.py:1194
+#: src/malferma_libro/app.py:1197
 msgid "Яркость страницы, %"
 msgstr "Ndriçimi i faqes, %"
 
-#: src/malferma_libro/books.py:596
+#: src/malferma_libro/books.py:785
 msgid "не указан"
 msgstr "nuk është përcaktuar"
 

@@ -1,6 +1,6 @@
 # Malferma Libro
 
-**0.1.0 · Debian 13 · GTK 4 / libadwaita · GPL-3.0-or-later**
+**0.1.1 · Debian 13 · GTK 4 / libadwaita · GPL-3.0-or-later**
 
 A free and open-source desktop ebook reader with a local library and support
 for OPDS catalogs. The book occupies most of the window; the table of contents
@@ -13,8 +13,9 @@ keyboard navigation, mouse gestures and accessibility tools. The interface
 supports 49 languages and writing variants; language changes take effect
 without restarting the application.
 
-EPUB and FB2 books are displayed as text, without their original CSS layout
-or inline illustrations. Search and narration in PDF/DjVu files depend on
+EPUB and FB2 books show text with embedded illustrations. Select an illustration
+to open a larger view with zoom controls. The original CSS layout and interactive
+content are not reproduced. Search and narration in PDF/DjVu files depend on
 the availability of a text layer. OCR and DRM are not supported. CBZ files
 are displayed as a sequence of images.
 
@@ -24,16 +25,16 @@ To download the source without Git, choose **Code → Download ZIP**.
 
 ## Installation and launch
 
-**[Download Malferma Libro 0.1.0 for Debian (.deb)](https://github.com/gagafes/malferma-libro/releases/download/v0.1.0/malferma-libro_0.1.0_all.deb)**
+**[Download Malferma Libro 0.1.1 for Debian (.deb)](https://github.com/gagafes/malferma-libro/releases/download/v0.1.1/malferma-libro_0.1.1_all.deb)**
 
-Version 0.1.0 is a development prerelease for Debian 13. The
-[release page](https://github.com/gagafes/malferma-libro/releases/tag/v0.1.0)
+Version 0.1.1 is a development prerelease for Debian 13. The
+[release page](https://github.com/gagafes/malferma-libro/releases/tag/v0.1.1)
 also provides the complete source archives and `SHA256SUMS`.
 
 From the folder where you saved the DEB package, run:
 
 ```sh
-sudo apt install ./malferma-libro_0.1.0_all.deb
+sudo apt install ./malferma-libro_0.1.1_all.deb
 malferma-libro
 ```
 
@@ -47,7 +48,7 @@ Development builds are also available after a successful GitHub Actions run: ope
 The ZIP contains the DEB package, source archives and `SHA256SUMS`.
 
 If an earlier build with a higher version number is installed, APT may report
-a downgrade: the project owner assigned **0.1.0** to this new development series.
+a downgrade: this development series began at **0.1.0** by the project owner's decision.
 
 To run from source on Debian 13:
 

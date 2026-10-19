@@ -239,7 +239,7 @@ class LibraryMixin:
 
         def load():
             token.check()
-            book = load_book(item["path"])
+            book = load_book(item["path"], cancel=token)
             token.check()
             return book
 

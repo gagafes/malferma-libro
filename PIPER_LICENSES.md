@@ -1,6 +1,7 @@
 # Piper runtime and voice licensing evidence
 
-Upstream research recorded on 2026-10-17 and retained for Malferma Libro 0.1.0. This record distinguishes
+Upstream research recorded on 2026-10-17 for Malferma Libro 0.1.0 is retained
+for 0.1.1. This record distinguishes
 the reader's GPL license, the separately installed Piper runtime, and each
 voice model's upstream terms. It does not relicense downloaded or imported
 models. No voice weights are included in the application source or Debian package.

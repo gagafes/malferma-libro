@@ -134,6 +134,11 @@
   </categories>
   <content_rating type="oars-1.1" />
   <releases>
+    <release version="0.1.1" date="2026-10-19">
+      <description>
+        <p>View EPUB and FB2 illustrations alongside the text and open them at a larger size.</p>
+      </description>
+    </release>
     <release version="0.1.0" date="2026-10-18">
       <description>
         <p>Restore editable sources, enlarge interface text and simplify reading controls.</p>
