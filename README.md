@@ -1,4 +1,4 @@
-# Malferma Libro — Between the Lines
+# Malferma Libro
 
 **0.1.0 · Debian 13 · GTK 4 / libadwaita · GPL-3.0-or-later**
 
