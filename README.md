@@ -47,19 +47,21 @@ The sample book is Lesya Ukrainka's *Надія* in the original Ukrainian.
 
 ## Installation and launch
 
-**[Download Malferma Libro 0.1.1-1 for Debian (.deb)](https://github.com/gagafes/malferma-libro/releases/download/v0.1.1-1/malferma-libro_0.1.1-1_all.deb)**
+**[Download Malferma Libro 0.1.1-2 for Debian (.deb)](https://github.com/gagafes/malferma-libro/releases/download/v0.1.1-2/malferma-libro_0.1.1-2_all.deb)**
 
-Debian package **0.1.1-1** includes the security fixes and development attribution
-documented in the [security review](docs/SECURITY_REVIEW.md). The application
-version remains **0.1.1**. This development prerelease upgrades the original
-0.1.1 package; the original release files remain unchanged. The
-[release page](https://github.com/gagafes/malferma-libro/releases/tag/v0.1.1-1)
+Debian package **0.1.1-2** fixes GTK compatibility on Debian 13 and keeps library
+covers and the continue-reading card compact. It also includes the security
+fixes and development attribution from 0.1.1-1, documented in the
+[security review](docs/SECURITY_REVIEW.md). The application version remains
+**0.1.1**. This development prerelease upgrades earlier 0.1.1 packages;
+previous release files remain unchanged. The
+[release page](https://github.com/gagafes/malferma-libro/releases/tag/v0.1.1-2)
 also provides the matching complete source archives and `SHA256SUMS`.
 
 From the folder where you saved the DEB package, run:
 
 ```sh
-sudo apt install ./malferma-libro_0.1.1-1_all.deb
+sudo apt install ./malferma-libro_0.1.1-2_all.deb
 malferma-libro
 ```
 

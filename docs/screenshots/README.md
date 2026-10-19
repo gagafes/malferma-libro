@@ -45,7 +45,8 @@ distribution's GTK, fonts and image libraries.
 The manual **Capture screenshots** GitHub Actions workflow reproduces this
 process in a `debian:13` container. The
 [capture run](https://github.com/gagafes/malferma-libro/actions/runs/39259007086)
-also checks the native interface geometry. Runtime application version 0.1.1 is shown;
-the published DEB remains 0.1.1-1. The capture also uncovered a GTK flag-alias
-compatibility fix and excessive expansion of library cover/card widgets in
-current source; these fixes do not replace released assets.
+also checks the native interface geometry. Runtime application version 0.1.1 is shown.
+At capture time, the published DEB was 0.1.1-1. The capture uncovered a GTK
+flag-alias compatibility issue and excessive expansion of library cover/card
+widgets; the fixes are included in Debian package 0.1.1-2. Earlier release
+assets remain unchanged.
