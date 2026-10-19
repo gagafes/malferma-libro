@@ -201,7 +201,9 @@ class DocumentPaintable(GObject.Object, Gdk.Paintable):
         return self.width / self.height
 
     def do_get_flags(self):
-        return Gdk.PaintableFlags.STATIC_SIZE | Gdk.PaintableFlags.STATIC_CONTENTS
+        # Static size (bit 0) and contents (bit 1); GI versions expose these
+        # as either STATIC_SIZE/STATIC_CONTENTS or SIZE/CONTENTS.
+        return Gdk.PaintableFlags(3)
 
     def do_snapshot(self, snapshot, width, height):
         self.texture.snapshot(snapshot, width, height)

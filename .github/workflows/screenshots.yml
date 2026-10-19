@@ -17,7 +17,7 @@ jobs:
           apt-get update
           apt-get install -y --no-install-recommends git ca-certificates python3 python3-gi python3-cairo \
             python3-markdown-it gir1.2-gtk-4.0 gir1.2-adw-1 gir1.2-pango-1.0 \
-            gir1.2-gdkpixbuf-2.0 librsvg2-common xvfb xauth dbus-x11 imagemagick fonts-noto-core
+            gir1.2-gdkpixbuf-2.0 librsvg2-common adwaita-icon-theme xvfb xauth dbus-x11 imagemagick fonts-noto-core
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false

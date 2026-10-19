@@ -259,8 +259,11 @@ def _capture(scene: str, output: Path) -> dict:
             window._status_toast.dismiss()
         window.set_focus(None)
         _pump(GLib, 0.7)
-        if (window.get_width(), window.get_height()) != (WIDTH, HEIGHT):
-            raise RuntimeError(f"Unexpected window dimensions: {window.get_width()}×{window.get_height()}")
+        # GTK's X11 client-side decorations can subtract their shadow extents
+        # from the default content size. Keep the native allocation intact.
+        window_width, window_height = window.get_width(), window.get_height()
+        if not (1200 <= window_width <= WIDTH and 800 <= window_height <= HEIGHT):
+            raise RuntimeError(f"Unexpected window dimensions: {window_width}×{window_height}")
         xid = GdkX11.X11Surface.get_xid(window.get_surface())
         subprocess.run(["import", "-window", str(xid), "-strip", str(output)],
                        check=True, timeout=30)
@@ -269,7 +272,7 @@ def _capture(scene: str, output: Path) -> dict:
             raise RuntimeError("The native screenshot was not saved as PNG")
         width, height = struct.unpack(">II", data[16:24])
         return {"file": output.name, "scene": scene, "width": width, "height": height,
-                "window_width": WIDTH, "window_height": HEIGHT,
+                "window_width": window_width, "window_height": window_height,
                 "sha256": hashlib.sha256(data).hexdigest(),
                 "application_version": __version__, "gtk_version": '.'.join(map(str, (
                     Gtk.get_major_version(), Gtk.get_minor_version(), Gtk.get_micro_version()))),
