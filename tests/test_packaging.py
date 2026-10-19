@@ -129,6 +129,49 @@ class ReleaseBuildTests(unittest.TestCase):
         self.assertEqual((output / "SHA256SUMS").read_text(),
                          f"{hashlib.sha256(b'release').hexdigest()}  {artifact.name}\n")
 
+    @unittest.skipUnless(shutil.which("dpkg-deb") and shutil.which("dpkg"),
+                         "Debian package tools are unavailable")
+    def test_debian_revision_upgrades_and_preserves_reproducible_corresponding_source(self):
+        self.put("packaging/revision", "1\n")
+        for directory in builder.SOURCE_DIRECTORIES:
+            self.put(f"{directory}/release-input.txt", "Corresponding source input\n")
+        output = self.root / "dist"
+        self.assertEqual(builder.version(self.root), "0.1.0")
+        self.assertEqual(builder.package_version(self.root), "0.1.0-1")
+        package = builder.build_deb(self.root, output, 0)
+        self.assertEqual(package.name, "malferma-libro_0.1.0-1_all.deb")
+        metadata = subprocess.check_output(["dpkg-deb", "-f", str(package), "Version"], text=True)
+        self.assertEqual(metadata.strip(), "0.1.0-1")
+        subprocess.run(["dpkg", "--compare-versions", metadata.strip(), "gt", "0.1.0"], check=True)
+        source = builder.build_source(self.root, output, 0)
+        original = [path.read_bytes() for path in [package, *source]]
+        prefix = "malferma-libro-0.1.0-1/"
+        with zipfile.ZipFile(source[1]) as archive:
+            self.assertEqual(archive.read(prefix + "packaging/revision"), b"1\n")
+            archive.extractall(Path(self.temporary.name) / "extracted")
+        extracted = Path(self.temporary.name) / "extracted" / prefix
+        corresponding = Path(self.temporary.name) / "rebuilt"
+        rebuilt = [builder.build_deb(extracted, corresponding, 0),
+                   *builder.build_source(extracted, corresponding, 0)]
+        self.assertEqual([path.read_bytes() for path in rebuilt], original)
+        builder.write_checksums(output, builder.package_version(self.root))
+        expected = "".join(f"{hashlib.sha256(contents).hexdigest()}  {path.name}\n"
+                           for path, contents in zip([package, *source], original))
+        self.assertEqual((output / "SHA256SUMS").read_text(), expected)
+
+    def test_optional_and_invalid_debian_revisions(self):
+        self.assertEqual(builder.package_version(self.root), builder.version(self.root))
+        for value in ("", "0", "-1", "01", "1.0", "1-2", "١", "1\n2"):
+            with self.subTest(value=value):
+                self.put("packaging/revision", value)
+                with self.assertRaises(ValueError):
+                    builder.package_version(self.root)
+        revision = self.root / "packaging/revision"
+        revision.unlink()
+        revision.symlink_to(self.root / "missing-revision")
+        with self.assertRaises(ValueError):
+            builder.package_version(self.root)
+
     def test_incomplete_release_inputs_fail_before_writing_archives(self):
         for name in ("LICENSE", "Makefile", "tests"):
             path = self.root / name

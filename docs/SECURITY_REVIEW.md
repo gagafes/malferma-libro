@@ -1,9 +1,10 @@
 # Security review
 
-Review date: 19 October 2026. Scope: the current source tree after release
-0.1.1, including application modules, packaging and GitHub Actions. The
-application version remains 0.1.1. These changes are recorded under Unreleased
-in the changelog; the existing v0.1.1 release assets are unchanged.
+Review date: 19 October 2026. Scope: the source tree for Debian package
+0.1.1-1, including application modules, packaging and GitHub Actions. The
+application version remains 0.1.1. This package revision contains the fixes
+below and matching complete sources, recorded under 0.1.1-1 in the changelog.
+The existing v0.1.1 release assets are unchanged.
 
 ## Reviewed boundaries
 

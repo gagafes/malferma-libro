@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """Build reproducible Debian and source archives without root or network access.
 
-The single version source is src/malferma_libro/__init__.py. Set
+The application version source is src/malferma_libro/__init__.py. An optional
+positive Debian revision in packaging/revision identifies packaging updates. Set
 SOURCE_DATE_EPOCH to a nonnegative Unix timestamp to choose archive timestamps;
 the default is zero. Source archives contain project inputs, never dist/, Git
 metadata, caches, local environments or previously built packages.
@@ -58,6 +59,22 @@ def version(root: Path = ROOT) -> str:
     raise ValueError("__version__ must be a literal major.minor.patch string")
 
 
+def package_version(root: Path = ROOT) -> str:
+    """Keep Debian updates ordered without changing the application version."""
+    upstream = version(root)
+    revision_path = root / "packaging/revision"
+    if revision_path.is_symlink():
+        raise ValueError("packaging/revision must be a regular file")
+    if not revision_path.exists():
+        return upstream
+    if not revision_path.is_file():
+        raise ValueError("packaging/revision must be a regular file")
+    revision = revision_path.read_text(encoding="ascii").strip()
+    if not re.fullmatch(r"[1-9][0-9]*", revision):
+        raise ValueError("packaging/revision must contain a positive ASCII integer")
+    return f"{upstream}-{revision}"
+
+
 def source_epoch() -> int:
     raw = os.environ.get("SOURCE_DATE_EPOCH", "0")
     if not raw.isascii() or not raw.isdecimal():
@@ -100,7 +117,7 @@ def file_mode(path: Path, root: Path) -> int:
 
 def build_source(root: Path, output: Path, epoch: int) -> list[Path]:
     files = source_files(root)
-    release_version = version(root)
+    release_version = package_version(root)
     prefix = f"malferma-libro-{release_version}"
     output.mkdir(parents=True, exist_ok=True)
     archive_paths = [output / f"malferma-libro_{release_version}_source.tar.gz",
@@ -160,7 +177,7 @@ def build_deb(root: Path, output: Path, epoch: int) -> Path:
     # Apply the same release boundary to both formats: a symlinked source
     # ancestor or document must not silently import external/private files.
     source_files(root)
-    release_version = version(root)
+    release_version = package_version(root)
     if shutil.which("dpkg-deb") is None:
         raise RuntimeError("dpkg-deb is required; install the Debian dpkg-dev package")
     output.mkdir(parents=True, exist_ok=True)
@@ -231,7 +248,7 @@ def main(argv: list[str] | None = None) -> int:
             paths.append(build_deb(ROOT, args.output, epoch))
         if args.target in {"source", "all"}:
             paths.extend(build_source(ROOT, args.output, epoch))
-        write_checksums(args.output, version(ROOT))
+        write_checksums(args.output, package_version(ROOT))
         for path in paths:
             print(path)
     except (OSError, ValueError, RuntimeError, subprocess.CalledProcessError) as error:

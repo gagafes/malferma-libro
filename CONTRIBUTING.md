@@ -24,6 +24,18 @@ Edit translations in `po/*.po`; MO files are compiled output.
 Check the catalogs with `/usr/bin/python3 packaging/translations.py --check`.
 Do not automatically bump the version for every change. The current release
 line is 0.1.1; version 1.0 is reserved for a production-ready release.
+The application version and Debian package revision are separate:
+`packaging/revision` contains `1`, producing package version `0.1.1-1`
+without changing the application's `--version` output. Build and publication
+scripts use the shared `package_version` helper so that DEB metadata, artifact
+names and the release tag agree. Change the revision only for an authorized
+package release; do not reuse an already published package version.
+
+To read the complete package version from the source tree:
+
+```sh
+/usr/bin/python3 -c 'import runpy; build = runpy.run_path("packaging/build.py"); print(build["package_version"]())'
+```
 
 Build archives, caches, virtual environments, and personal book libraries are
 excluded from Git. Before committing, check `git status` and review the staged
@@ -82,7 +94,7 @@ alone does not publish a GitHub Release. After a successful **Check and build**
 run in [Actions](https://github.com/gagafes/malferma-libro/actions), download
 the `malferma-libro-current` artifact containing the DEB package, source
 archives, and `SHA256SUMS`. You must be signed in to GitHub to download it.
-The [0.1.1 development prerelease](https://github.com/gagafes/malferma-libro/releases/tag/v0.1.1)
+The [0.1.1-1 development prerelease](https://github.com/gagafes/malferma-libro/releases/tag/v0.1.1-1)
 provides a direct DEB download, matching source archives, and checksums.
 When publishing a release, use the files from one current build in `dist/`,
 keeping older builds outside the current source tree.
@@ -90,3 +102,5 @@ keeping older builds outside the current source tree.
 To publish a development prerelease, open **Actions → Check and build → Run workflow**
 on `main` and enable `publish_release`. Publication runs only after the checks
 and build succeed, using the DEB, source archives, and checksums from that run.
+Update `packaging/release-notes.md` before publication; it supplies the release
+description. The tag uses the complete package version, such as `v0.1.1-1`.

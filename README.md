@@ -25,16 +25,19 @@ To download the source without Git, choose **Code → Download ZIP**.
 
 ## Installation and launch
 
-**[Download Malferma Libro 0.1.1 for Debian (.deb)](https://github.com/gagafes/malferma-libro/releases/download/v0.1.1/malferma-libro_0.1.1_all.deb)**
+**[Download Malferma Libro 0.1.1-1 for Debian (.deb)](https://github.com/gagafes/malferma-libro/releases/download/v0.1.1-1/malferma-libro_0.1.1-1_all.deb)**
 
-Version 0.1.1 is a development prerelease for Debian 13. The
-[release page](https://github.com/gagafes/malferma-libro/releases/tag/v0.1.1)
-also provides the complete source archives and `SHA256SUMS`.
+Debian package **0.1.1-1** includes the security fixes and development attribution
+documented in the [security review](docs/SECURITY_REVIEW.md). The application
+version remains **0.1.1**. This development prerelease upgrades the original
+0.1.1 package; the original release files remain unchanged. The
+[release page](https://github.com/gagafes/malferma-libro/releases/tag/v0.1.1-1)
+also provides the matching complete source archives and `SHA256SUMS`.
 
 From the folder where you saved the DEB package, run:
 
 ```sh
-sudo apt install ./malferma-libro_0.1.1_all.deb
+sudo apt install ./malferma-libro_0.1.1-1_all.deb
 malferma-libro
 ```
 

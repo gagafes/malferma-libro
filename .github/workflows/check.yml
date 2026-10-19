@@ -77,7 +77,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          version=$(PYTHONPATH=src /usr/bin/python3 -c 'from malferma_libro import __version__; print(__version__)')
+          version=$(/usr/bin/python3 -c 'import runpy; build = runpy.run_path("packaging/build.py"); print(build["package_version"]())')
           gh release create "v$version" \
             "dist/malferma-libro_${version}_all.deb" \
             "dist/malferma-libro_${version}_source.zip" \
@@ -85,5 +85,5 @@ jobs:
             dist/SHA256SUMS \
             --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" \
             --title "Malferma Libro $version (development prerelease)" \
-            --notes 'Development prerelease for Debian 13. Complete corresponding source archives, license notices and SHA256 checksums are attached. See README for installation.' \
+            --notes-file packaging/release-notes.md \
             --prerelease --latest=false
