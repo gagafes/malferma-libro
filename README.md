@@ -23,6 +23,28 @@ The source code is available at
 [gagafes/malferma-libro](https://github.com/gagafes/malferma-libro), on the `main` branch.
 To download the source without Git, choose **Code → Download ZIP**.
 
+## Screenshots
+
+Actual application windows captured on Debian 13 at 100% scale.
+The sample book is Lesya Ukrainka's *Надія* in the original Ukrainian.
+
+![Day mode: Ukrainian poetry, an inline illustration and the contents sidebar](docs/screenshots/reading-light.png)
+
+<details>
+<summary>Night mode and the local library</summary>
+
+**Night mode**
+
+![Night mode with the same illustrated Ukrainian book](docs/screenshots/reading-dark.png)
+
+**Local library with covers**
+
+![The local library with three demonstration books and their covers](docs/screenshots/library-light.png)
+
+</details>
+
+[Capture environment, sample content and reproduction instructions](docs/screenshots/README.md).
+
 ## Installation and launch
 
 **[Download Malferma Libro 0.1.1-1 for Debian (.deb)](https://github.com/gagafes/malferma-libro/releases/download/v0.1.1-1/malferma-libro_0.1.1-1_all.deb)**
