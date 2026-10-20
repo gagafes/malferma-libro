@@ -166,12 +166,16 @@ class IllustrationInterfaceTests(unittest.TestCase):
         self.open_book("Before\n\nAfter\n", [InlineImage(8, self.image(1600, 800))])
         window = self.window
         window._illustration_items[0].button.emit("clicked")
-        self.wait_for(lambda: window._illustration_viewer_state["picture"].get_paintable() is not None)
+        state = window._illustration_viewer_state
+        self.wait_for(lambda: state["picture"].get_paintable() is not None
+                      and state["size"] == (state["scroller"].get_width(),
+                                             state["scroller"].get_height()))
         viewer = window._illustration_viewer
         self.assertIs(viewer.get_transient_for(), window)
         self.assertTrue(viewer.get_modal())
-        state = window._illustration_viewer_state
         initial = state["zoom"]
+        width, height = state["size"]
+        self.assertAlmostEqual(initial, min(1.0, (width - 24) / 1600, (height - 24) / 800))
         window._zoom_illustration(1.25)
         self.assertAlmostEqual(state["zoom"], initial * 1.25)
         self.assertFalse(state["fit"])
@@ -181,6 +185,28 @@ class IllustrationInterfaceTests(unittest.TestCase):
         self.pump()
         self.assertIsNone(window._illustration_viewer)
         self.assertIsNone(window._illustration_viewer_state)
+
+    def test_viewer_waits_for_a_usable_allocation_before_fitting(self):
+        from malferma_libro.illustrations import InlineImage
+        self.open_book("An illustration.\n", [InlineImage(0, self.image(1600, 800))])
+        window = self.window
+        with patch.object(self.Gtk.ScrolledWindow, "get_width", return_value=0), \
+                patch.object(self.Gtk.ScrolledWindow, "get_height", return_value=24):
+            window._illustration_items[0].button.emit("clicked")
+            self.pump()
+            state = window._illustration_viewer_state
+            window._fit_illustration()
+            window._zoom_illustration(1.25)
+            self.assertIsNone(state["size"])
+            self.assertTrue(state["fit"])
+            self.assertEqual(state["zoom"], 1.0)
+        self.wait_for(lambda: state["size"] is not None)
+        width, height = state["size"]
+        self.assertGreater(width, 24)
+        self.assertGreater(height, 24)
+        self.assertAlmostEqual(state["zoom"],
+                               min(1.0, (width - 24) / 1600, (height - 24) / 800))
+        self.assertGreater(min(state["picture"].display_size), 1)
 
     def test_chapter_change_discards_a_late_background_decode(self):
         from malferma_libro.illustrations import InlineImage, decode_illustration

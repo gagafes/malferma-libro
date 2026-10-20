@@ -338,7 +338,7 @@ class IllustrationUIMixin:
 
     def _zoom_illustration(self, factor):
         state = self._illustration_viewer_state
-        if state is not None:
+        if state is not None and state["size"] is not None:
             state["fit"] = False
             state["zoom"] = min(8.0, max(0.02, state["zoom"] * factor))
             self._size_illustration_viewer()
@@ -354,7 +354,6 @@ class IllustrationUIMixin:
             return False
         size = widget.get_width(), widget.get_height()
         if size != state["size"]:
-            state["size"] = size
             self._size_illustration_viewer()
         return True
 
@@ -363,9 +362,15 @@ class IllustrationUIMixin:
         if state is None:
             return
         image, scroller = state["image"], state["scroller"]
+        width, height = scroller.get_width(), scroller.get_height()
+        # A frame tick can precede GTK's first allocation. Keep waiting rather
+        # than fitting the image into a fictitious one-pixel viewport.
+        if width <= 24 or height <= 24:
+            return
+        state["size"] = width, height
         if state["fit"]:
-            state["zoom"] = min(1.0, max(1, scroller.get_width() - 24) / max(1, image.width),
-                                max(1, scroller.get_height() - 24) / max(1, image.height))
+            state["zoom"] = min(1.0, (width - 24) / max(1, image.width),
+                                (height - 24) / max(1, image.height))
         zoom = state["zoom"]
         state["picture"].set_display_size(min(32768, max(1, round(image.width * zoom))),
                                           min(32768, max(1, round(image.height * zoom))))
