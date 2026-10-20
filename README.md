@@ -2,9 +2,9 @@
 
 **0.1.1 · Debian 13 · GTK 4 / libadwaita · GPL-3.0-or-later**
 
-**[Download for Debian 13 — DEB 0.1.1-2](https://github.com/gagafes/malferma-libro/releases/download/v0.1.1-2/malferma-libro_0.1.1-2_all.deb)**
+**[Download for Debian 13 — DEB 0.1.1-3](https://github.com/gagafes/malferma-libro/releases/download/v0.1.1-3/malferma-libro_0.1.1-3_all.deb)**
 
-Latest published package · Development prerelease · 2.44 MB · [Installation instructions](#installation-and-launch)
+Latest published package · 2.45 MB · [Installation instructions](#installation-and-launch)
 
 A free and open-source desktop ebook reader with a local library and support
 for OPDS catalogs. The book occupies most of the window; the table of contents
@@ -51,29 +51,31 @@ The sample book is Lesya Ukrainka's *Надія* in the original Ukrainian.
 
 ## Installation and launch
 
-Debian package **0.1.1-2** fixes GTK compatibility on Debian 13 and keeps library
-covers and the continue-reading card compact. It also includes the security
-fixes and development attribution from 0.1.1-1, documented in the
-[security review](docs/SECURITY_REVIEW.md). The application version remains
-**0.1.1**. This development prerelease upgrades earlier 0.1.1 packages;
-previous release files remain unchanged. The
-[release page](https://github.com/gagafes/malferma-libro/releases/tag/v0.1.1-2)
-also provides the matching complete source archives and `SHA256SUMS`.
+Debian package **0.1.1-3** improves German accessibility translations and fixes
+the initial image fit in the illustration viewer. It includes updated
+documentation and retains the GTK compatibility and security fixes from
+previous revisions. The application version remains **0.1.1**; version **1.0**
+is reserved for the project's production milestone.
+
+Fresh installation and upgrade from **0.1.1-2** passed automated checks on
+Debian 13, including preservation of a test library and settings. The owner
+reported no problems with the candidate on **XFCE 4.20**. The
+[release checklist](docs/RELEASE_CHECKLIST.md) records the checks and their
+scope; earlier security corrections are documented in the
+[security review](docs/SECURITY_REVIEW.md).
+
+The [release page](https://github.com/gagafes/malferma-libro/releases/tag/v0.1.1-3)
+provides the matching complete source archives and `SHA256SUMS`.
 
 From the folder where you saved the DEB package, run:
 
 ```sh
-sudo apt install ./malferma-libro_0.1.1-2_all.deb
+sudo apt install ./malferma-libro_0.1.1-3_all.deb
 malferma-libro
 ```
 
 If you build locally, the generated package is in `dist/`; install it from
 that directory or include `dist/` in the package path.
-
-Debian revision **0.1.1-3** has passed its candidate checks, and the owner reported
-no problems on XFCE 4.20. The [release checklist](docs/RELEASE_CHECKLIST.md)
-records the results and their scope. Publication is being finalized; the
-published download above remains **0.1.1-2** until the new revision is released.
 
 Development builds are also available after a successful GitHub Actions run: open
 [Actions](https://github.com/gagafes/malferma-libro/actions), select a green

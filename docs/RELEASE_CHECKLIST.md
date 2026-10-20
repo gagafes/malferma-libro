@@ -3,10 +3,16 @@
 # Release readiness: Debian 0.1.1-3
 
 Application version: **0.1.1**. Debian package revision: **0.1.1-3**.
-This revision is approved by the owner for an ordinary GitHub release.
-The candidate passed automated checks and received the desktop report below.
-Publication still requires a successful workflow run on the final source commit.
+[Version 0.1.1-3](https://github.com/gagafes/malferma-libro/releases/tag/v0.1.1-3)
+was published on 2026-10-20 as an ordinary release and marked **Latest**.
+The [publication workflow](https://github.com/gagafes/malferma-libro/actions/runs/39457172853)
+passed for final source commit `0a2f49ef704a4043f28d389e52bd81cdc09a55bd`.
+The release contains the DEB, matching ZIP and TAR.GZ source archives, and
+`SHA256SUMS`; the published checksums match GitHub's asset digests.
 Version 1.0 remains reserved for the owner's production milestone.
+
+Published DEB: **2,446,352 bytes**. SHA-256:
+`fff7a03912353b2f3313061181af7db780f2ea746a29480d9ba119143179241f`.
 
 ## Automated checks
 
@@ -49,10 +55,10 @@ The reusable detailed procedure remains in [TESTING.md](TESTING.md).
 | Piper with an actual voice and audio device (optional) | Not verified | Runtime and models are separate; no audio result supplied |
 | System screen reader (optional) | Not verified | No screen-reader result supplied |
 
-Final preparation only updates documentation relative to the tested candidate;
+Final preparation only updated documentation relative to the tested candidate;
 application code and runtime assets are unchanged. Documentation is included in
-the DEB, so the final package is rebuilt and receives a new checksum. The release
-workflow tests that final package again before publication.
+the DEB, so the final package was rebuilt and received a new checksum. The release
+workflow tested that final package again before publication.
 
 Missing optional hardware or tools is **Not tested**. Do not convert unperformed
 checks into a pass. Resolve reproducible blocking failures before publication;
