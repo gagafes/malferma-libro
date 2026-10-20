@@ -13,6 +13,10 @@ Successful test results are useful too; mark checks you did not run as
 **Not tested**. Include the full package version, distribution, desktop,
 screen scale and interface language so others can understand the result.
 
+Follow the [manual desktop smoke-test checklist](docs/TESTING.md) for short
+actions and observable expected results. Record the checks you actually ran
+in the existing [test-report form](https://github.com/gagafes/malferma-libro/issues/new?template=03_test_report.yml).
+
 Search existing issues before opening a new one. Keep each bug or feature
 request focused on one problem. Remove personal data from screenshots and
 logs; do not attach private books or credentials.
