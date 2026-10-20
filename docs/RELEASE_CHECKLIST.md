@@ -3,8 +3,9 @@
 # Release readiness: Debian 0.1.1-3
 
 Application version: **0.1.1**. Debian package revision: **0.1.1-3**.
-This revision is being prepared for an ordinary GitHub release. Its release
-status is pending the checks below; preparing these files does not publish it.
+This revision is approved by the owner for an ordinary GitHub release.
+The candidate passed automated checks and received the desktop report below.
+Publication still requires a successful workflow run on the final source commit.
 Version 1.0 remains reserved for the owner's production milestone.
 
 ## Automated checks
@@ -25,22 +26,33 @@ The installation test uses an isolated profile under an unprivileged test
 account. Its automated library checks do not represent a user's personal
 library or a manual session on physical hardware.
 
+Candidate commit: `d389e4b0ba1bfc3fc650e69eeb3f714ff55ffde0`.
+[Candidate workflow 39455884597](https://github.com/gagafes/malferma-libro/actions/runs/39455884597)
+passed on 2026-10-20: 257 source-suite entries (two native test classes skipped
+there and exercised separately), 48 translation catalogs, 18 native UI tests
+and eight illustration tests at 200% scale on both Ubuntu 24.04 and Debian 13.
+The Debian job also passed fresh installation and upgrade from 0.1.1-2 with
+the seeded library preserved.
+
 ## Manual desktop result
 
-Test the candidate DEB on Debian 13 using [TESTING.md](TESTING.md). Record the
-candidate SHA-256, desktop, X11/Wayland session, language and screen scale.
-At minimum, check installation or upgrade, reopening a book at the saved
-position, contents, search, illustrations, text size, themes, keyboard,
-fullscreen and the accessibility menu. Include each book format actually
-tested and one available OPDS catalog. A catalog outage should be recorded
-separately from an application failure.
+On 2026-10-20, after being asked to test the candidate linked above, the owner
+reported **XFCE 4.20; no problems found**. This is an owner-reported result.
+The OS version, X11/Wayland session, interface language, display scale, candidate
+checksum and individual checklist outcomes were not supplied.
+The reusable detailed procedure remains in [TESTING.md](TESTING.md).
 
 | Check | Result | Evidence |
 | --- | --- | --- |
-| Ordinary Debian 13 desktop session | Not tested | Awaiting a desktop test report |
-| Live OPDS catalog | Not tested | Awaiting a catalog test report |
-| Piper with an actual voice and audio device (optional) | Not tested | Runtime and models are separate |
-| System screen reader (optional) | Not tested | Record the actual desktop and screen reader if tested |
+| XFCE 4.20 desktop use | No issues reported by owner | Owner's report on 2026-10-20 |
+| Individual formats and live OPDS catalog | Not separately reported | No per-format results or catalog URL supplied |
+| Piper with an actual voice and audio device (optional) | Not verified | Runtime and models are separate; no audio result supplied |
+| System screen reader (optional) | Not verified | No screen-reader result supplied |
+
+Final preparation only updates documentation relative to the tested candidate;
+application code and runtime assets are unchanged. Documentation is included in
+the DEB, so the final package is rebuilt and receives a new checksum. The release
+workflow tests that final package again before publication.
 
 Missing optional hardware or tools is **Not tested**. Do not convert unperformed
 checks into a pass. Resolve reproducible blocking failures before publication;

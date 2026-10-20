@@ -9,6 +9,8 @@ Malferma Libro Debian package **0.1.1-3** includes the reviewed German accessibi
 
 The checks above are automated. The [validation record](https://github.com/gagafes/malferma-libro/blob/v0.1.1-3/VALIDATION.md) and [release checklist](https://github.com/gagafes/malferma-libro/blob/v0.1.1-3/docs/RELEASE_CHECKLIST.md) distinguish them from manual desktop, screen-reader and audio checks.
 
+The owner reported no problems with the candidate on **XFCE 4.20**. Individual format, live OPDS, audio and screen-reader results were not separately supplied. Final preparation updates documentation only; application code and runtime assets match that candidate.
+
 Assets include the DEB, corresponding complete source archives (ZIP and TAR.GZ), and `SHA256SUMS`. Earlier published assets remain unchanged. Code, translations and documentation are GPL-3.0-or-later; fonts and AppStream metadata retain their own license notices.
 
 Piper and voice models are installed separately. OCR, DRM and the publisher's complete EPUB layout are not supported.
