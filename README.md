@@ -102,7 +102,8 @@ See the [user guide](docs/MANUAL.en.md#narration) and
 - Command-line help: `malferma-libro --help`, `--manual`, `--manual=en`,
   `--version` and `--license`. These commands work without a graphical session.
 - Man page: `man malferma-libro`, with `man-db` installed.
-- [Recovery notes](RECOVERY.md) and [validation scope](VALIDATION.md).
+- Recovery notes: [English](docs/RECOVERY.en.md), [Russian](RECOVERY.md);
+  [validation scope](VALIDATION.md).
 
 ## Development and building
 
