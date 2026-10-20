@@ -2,6 +2,10 @@
 
 **0.1.1 · Debian 13 · GTK 4 / libadwaita · GPL-3.0-or-later**
 
+**[Download for Debian 13 — DEB 0.1.1-2](https://github.com/gagafes/malferma-libro/releases/download/v0.1.1-2/malferma-libro_0.1.1-2_all.deb)**
+
+Latest published package · Development prerelease · 2.44 MB · [Installation instructions](#installation-and-launch)
+
 A free and open-source desktop ebook reader with a local library and support
 for OPDS catalogs. The book occupies most of the window; the table of contents
 opens in a sidebar, and reading tools are grouped in the top bar.
@@ -46,8 +50,6 @@ The sample book is Lesya Ukrainka's *Надія* in the original Ukrainian.
 [Capture environment, sample content and reproduction instructions](docs/screenshots/README.md).
 
 ## Installation and launch
-
-**[Download Malferma Libro 0.1.1-2 for Debian (.deb)](https://github.com/gagafes/malferma-libro/releases/download/v0.1.1-2/malferma-libro_0.1.1-2_all.deb)**
 
 Debian package **0.1.1-2** fixes GTK compatibility on Debian 13 and keeps library
 covers and the continue-reading card compact. It also includes the security
