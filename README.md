@@ -70,6 +70,10 @@ malferma-libro
 If you build locally, the generated package is in `dist/`; install it from
 that directory or include `dist/` in the package path.
 
+The current source tree prepares Debian revision **0.1.1-3**. Its
+[release checklist](docs/RELEASE_CHECKLIST.md) records the remaining checks;
+the published download above remains **0.1.1-2** until the new revision is released.
+
 Development builds are also available after a successful GitHub Actions run: open
 [Actions](https://github.com/gagafes/malferma-libro/actions), select a green
 **Check and build** run, then download `malferma-libro-current` from the

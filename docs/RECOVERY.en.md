@@ -8,6 +8,6 @@ The current build scripts, project configuration, and tests were created anew. E
 
 At the owner's decision, the first reconstructed release was assigned version **0.1.0**. After further development, the current application version is **0.1.1**. The project directory is named `malferma-libro`, the Python module is `malferma_libro`, and the user command is `malferma-libro`. Older builds and archives are not part of the current project.
 
-The source tree for the current release is intended to build Debian package version **0.1.1-2**. Earlier reports of hundreds of tests do not represent verification results for this reconstructed tree. Current verification results and limitations are recorded in [VALIDATION.md](../VALIDATION.md).
+The source tree is intended to build Debian package version **0.1.1-3**. Earlier reports of hundreds of tests do not represent verification results for this reconstructed tree. Current verification results and limitations are recorded in [VALIDATION.md](../VALIDATION.md).
 
 For the original Russian note, see [RECOVERY.md](../RECOVERY.md).

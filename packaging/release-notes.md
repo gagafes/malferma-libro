@@ -1,14 +1,13 @@
-Malferma Libro Debian package **0.1.1-2** includes the latest GTK compatibility and library layout fixes. The application version remains **0.1.1**; APT can upgrade **0.1.1-1** to this Debian revision.
+Malferma Libro Debian package **0.1.1-3** includes the reviewed German accessibility translations and the current documentation. The application version remains **0.1.1**. APT can upgrade the previously published **0.1.1-2** package to this revision.
 
-- Fix static image/page flags across GTK/PyGObject bindings, including Debian 13.
-- Keep book covers and the Continue reading card compact, leaving space for the library list.
-- Add native regression tests and actual light, dark and library screenshots captured on Debian 13.
-- Include all security corrections and OpenAI Codex development attribution from revision 0.1.1-1.
+- Clarify German narration, magnifier, speech-rate and keyboard labels, and synchronize the German manual.
+- Add an English source-recovery note and a reusable manual desktop test checklist.
+- Verify fresh installation and upgrade from 0.1.1-2 in Debian 13, including preservation of a seeded library, reading position, bookmarks, notes and settings.
+- Exercise the installed GTK interface and illustrations at normal and 200% scale on Debian 13.
+- Keep the existing GTK compatibility, compact library layout, security corrections and OpenAI Codex attribution.
 
-See [Validation](https://github.com/gagafes/malferma-libro/blob/v0.1.1-2/VALIDATION.md) and the earlier [Security review](https://github.com/gagafes/malferma-libro/blob/v0.1.1-2/docs/SECURITY_REVIEW.md) for checks and limitations.
+The checks above are automated. The [validation record](https://github.com/gagafes/malferma-libro/blob/v0.1.1-3/VALIDATION.md) and [release checklist](https://github.com/gagafes/malferma-libro/blob/v0.1.1-3/docs/RELEASE_CHECKLIST.md) distinguish them from manual desktop, screen-reader and audio checks.
 
-Assets include the DEB, matching complete source archives (ZIP and TAR.GZ), and `SHA256SUMS`. Application code, translations and documentation remain GPL-3.0-or-later; bundled fonts and AppStream metadata retain their own license notices.
+Assets include the DEB, corresponding complete source archives (ZIP and TAR.GZ), and `SHA256SUMS`. Earlier published assets remain unchanged. Code, translations and documentation are GPL-3.0-or-later; fonts and AppStream metadata retain their own license notices.
 
-Earlier published release files remain unchanged. The screenshots use public-domain Ukrainian poetry and original demonstration artwork; their source and license notes are included.
-
-This is a **development prerelease**, not the planned production 1.0 release. Piper and voice models are installed separately.
+Piper and voice models are installed separately. OCR, DRM and the publisher's complete EPUB layout are not supported.
