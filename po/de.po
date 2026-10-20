@@ -498,7 +498,7 @@ msgstr "Oberfläche"
 
 #: src/malferma_libro/keybindings_ui.py:150
 msgid "Используйте Ctrl, Alt или функциональную клавишу."
-msgstr "Verwenden Sie Ctrl, Alt oder eine Funktionstaste."
+msgstr "Verwenden Sie Strg, Alt oder eine Funktionstaste."
 
 #: src/malferma_libro/app.py:1153 src/malferma_libro/app.py:1178
 msgid "Как в системе"
@@ -1078,7 +1078,7 @@ msgstr "Vorlesen des Buches abgeschlossen."
 
 #: src/malferma_libro/app.py:1534
 msgid "Озвучка приостановлена"
-msgstr "Vorlesen angehalten"
+msgstr "Vorlesen pausiert"
 
 #: src/malferma_libro/app.py:996
 msgid "Озвучка через Piper"
@@ -1426,7 +1426,7 @@ msgstr "Buch wird heruntergeladen…"
 
 #: src/malferma_libro/accessibility_ui.py:265 src/malferma_libro/app.py:1221
 msgid "Скорость, %"
-msgstr "Geschwindigkeit, %"
+msgstr "Sprechtempo (%)"
 
 #: src/malferma_libro/app.py:529 src/malferma_libro/app.py:872 src/malferma_libro/shortcuts.py:58
 msgid "Следующая глава"
@@ -1546,7 +1546,7 @@ msgstr "Dunkel"
 
 #: src/malferma_libro/accessibility_ui.py:299
 msgid "Увеличение лупы"
-msgstr "Vergrößerung der Lupe"
+msgstr "Vergrößerungsfaktor"
 
 #: src/malferma_libro/illustration_ui.py:307
 msgid "Увеличить"

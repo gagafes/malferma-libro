@@ -322,7 +322,7 @@ funktioniert auch Ctrl+Shift+Ф. Das Tastenkürzel öffnet das Menü auch bei
 ausgeblendeter oberer Leiste.
 
 Das Menü enthält Vorlesen, Pause, Fortsetzen und Stopp sowie die Auswahl
-von Vorlesesprache und Tempo. Es bietet außerdem Textgröße verkleinern,
+von Vorlesesprache und „Sprechtempo (%)“. Es bietet außerdem Textgröße verkleinern,
 zurücksetzen und vergrößern, hohen Kontrast, Fettdruck, Zeilenabstand und
 die Voreinstellung für Menschen mit Sehschwäche. Die entsprechenden
 Darstellungseinstellungen bleiben auch im Einstellungsfenster verfügbar.
@@ -348,10 +348,11 @@ Auch CBZ-Bildseiten werden über den Zoom vergrößert; Schriftwahl und
 Zeilenabstand verändern die in den Bildern enthaltenen Buchstaben nicht.
 
 Im kompakten Menü können Sie außerdem die Lupe für den Lesebereich
-einschalten und ihre Vergrößerung von 2–4× wählen. Sie vergrößert einen
-Ausschnitt des Buchinhalts, ohne Schriftgröße, Zeilenumbrüche oder das
-Layout einer PDF-, DjVu- oder CBZ-Seite zu ändern. Beim Einschalten zeigt sie die
-Mitte des Lesebereichs vergrößert. Innerhalb des Lesebereichs folgt sie
+einschalten und unter „Vergrößerungsfaktor“ einen Wert von 2–4× wählen.
+Sie vergrößert einen Ausschnitt des Buchinhalts, ohne Schriftgröße,
+Zeilenumbrüche oder das Layout einer PDF-, DjVu- oder CBZ-Seite zu ändern.
+Beim Einschalten zeigt sie die Mitte des Lesebereichs vergrößert.
+Innerhalb des Lesebereichs folgt sie
 dem Mauszeiger; außerhalb davon wird wieder die Mitte vergrößert.
 Damit ist sie auch ohne Mausbewegung nutzbar. Die Aktivierung gilt nur
 für die laufende Sitzung und wird beim nächsten Start nicht übernommen.
@@ -416,19 +417,22 @@ Stimme vorgelesen. Laufendes Vorlesen eines Buchs wird pausiert und bleibt
 pausiert. Die Schaltfläche zur Piper-Installationsanleitung öffnet dieses
 Handbuch. Heruntergeladene Modelle liegen unter `voices/` im Datenverzeichnis.
 
-Wählen Sie Sprache und Geschwindigkeit von 44–250% im Menü „Barrierefreiheit“; dieselben
-Auswahlen finden Sie auch in den Einstellungen. Die Auswahl
+Wählen Sie im Menü „Barrierefreiheit“ die Sprache und unter „Sprechtempo (%)“
+einen Wert von 44–250 %. Dieselben Einstellungen finden Sie auch im
+Einstellungsfenster. Die Auswahl
 „Anhand des Kapiteltexts erkennen“ versucht, eine dieser acht Sprachen zu
 erkennen. Bei kurzem oder mehrdeutigem Text sollten Sie die Sprache
 manuell festlegen. Für andere Sprachen wird keine Vorleseunterstützung
 zugesagt; dies schränkt weder Oberflächenübersetzungen noch die Anzeige
 von Büchern ein.
-100% entspricht dem normalen Tempo des Modells. Die Prozentangabe bestimmt
+100 % entspricht dem normalen Tempo des Modells. Die Prozentangabe bestimmt
 die relative Synthesegeschwindigkeit; die tatsächliche Wortzahl pro Minute
 hängt vom Modell und vom Text ab.
 
 Die Vorleseschaltfläche im Menü „Barrierefreiheit“ beginnt an der aktuellen
-Lesestelle, pausiert und setzt das Vorlesen fort. Dasselbe gilt für die
+Lesestelle, pausiert und setzt das Vorlesen fort. Während einer Pause lautet
+die Statusmeldung „Vorlesen pausiert“; mit „Fortsetzen“ geht es an derselben
+Stelle weiter. Dasselbe gilt für die
 Leertaste, wenn der Fokus im Lesebereich und nicht in einem Eingabefeld
 oder auf einer Schaltfläche liegt. Zum Beenden verwenden Sie
 „Stopp“ im selben Menü oder Ctrl+Shift+S. Beim Verlassen des Bereichs „Lesen“
@@ -531,7 +535,7 @@ für die russische Tastaturbelegung. Bereits belegte Kombinationen werden
 abgewiesen; dabei werden auch lateinische und kyrillische Zeichen auf
 derselben physischen Taste berücksichtigt. Escape, Tab, die üblichen
 Bearbeitungsbefehle Ctrl+C/V/X/A/Z/Y, normale Texteingaben und Navigationstasten
-ohne Zusatztaste bleiben reserviert. Verwenden Sie Ctrl, Alt oder eine
+ohne Zusatztaste bleiben reserviert. Verwenden Sie Strg (Ctrl), Alt oder eine
 Funktionstaste; Kombinationen mit Super werden nicht unterstützt. Die
 Leertaste allein ist nur für das Vorlesen zulässig und wirkt bei Fokus
 im Lesebereich.
