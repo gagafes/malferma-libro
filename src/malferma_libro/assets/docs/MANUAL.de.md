@@ -654,10 +654,8 @@ Informationsmodi gewählt werden.
 
 Neue Installationen speichern Daten unter `~/.local/share/malferma-libro/`
 oder, bei absolut gesetztem XDG_DATA_HOME, unter
-`$XDG_DATA_HOME/malferma-libro/`. Existiert das neue Verzeichnis noch nicht,
-aber das bisherige Verzeichnis `otkrytaya-kniga` unter demselben Datenpfad
-bereits, verwendet die Anwendung dieses weiter. So bleibt die vorhandene
-Bibliothek erreichbar. Bücher werden nicht automatisch verschoben oder gelöscht.
+`$XDG_DATA_HOME/malferma-libro/`.
+Bücher werden nicht automatisch verschoben oder gelöscht.
 
 Das Verzeichnis enthält `library.json` mit Bibliothek, Einstellungen,
 Lesestatus, zuletzt geöffnetem Buch, Lesezeichen, Notizen und Lesepositionen,

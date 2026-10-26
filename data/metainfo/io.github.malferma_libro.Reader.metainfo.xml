@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <component type="desktop-application">
-  <id>io.github.otkrytaya_kniga.Reader</id>
+  <id>io.github.malferma_libro.Reader</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-or-later</project_license>
   <name>Malferma Libro</name>
@@ -9,7 +9,7 @@
   <summary>Read ebooks, PDF and DjVu, and browse OPDS catalogs</summary>
   <summary xml:lang="ru">Читайте книги, PDF и DjVu и подключайте каталоги OPDS</summary>
   <summary xml:lang="eo">Legu bitlibrojn, PDF kaj DjVu kaj foliumu OPDS-katalogojn</summary>
-  <developer id="io.github.otkrytaya_kniga">
+  <developer id="io.github.malferma_libro">
     <name>Malferma Libro contributors</name>
   </developer>
   <description>
@@ -114,7 +114,7 @@
     <lang>dsb</lang>
     <lang>rue</lang>
   </languages>
-  <launchable type="desktop-id">io.github.otkrytaya_kniga.Reader.desktop</launchable>
+  <launchable type="desktop-id">io.github.malferma_libro.Reader.desktop</launchable>
   <provides>
     <binary>malferma-libro</binary>
     <mediatype>application/epub+zip</mediatype>

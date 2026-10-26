@@ -10,7 +10,7 @@ from urllib.parse import quote
 
 from gi.repository import Adw, Gdk, Gio, GLib, GObject, Gtk, Pango
 
-from . import APP_NAME, __version__
+from . import APP_ID, APP_NAME, __version__
 from .i18n import (
     configure_language, is_rtl_language, LANGUAGE_CHOICES, SPEECH_LANGUAGE_CHOICES,
     INTERFACE_LANGUAGE_CODES, SPEECH_LANGUAGE_CODES,
@@ -56,7 +56,6 @@ from .cbz import CbzError
 
 
 LOG = logging.getLogger(__name__)
-APP_ID = "io.github.otkrytaya_kniga.Reader"
 BRANDING_DIR = Path(__file__).resolve().parent / "assets" / "branding"
 
 BUTTON_ICONS = {

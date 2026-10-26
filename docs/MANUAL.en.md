@@ -555,11 +555,8 @@ selected in a single invocation.
 ## Data storage and backups
 
 New installations store data in `~/.local/share/malferma-libro/`, or
-`$XDG_DATA_HOME/malferma-libro/` when XDG_DATA_HOME is absolute. If the new
-directory does not yet exist but the previous `otkrytaya-kniga` directory
-already exists under the same data home, the application keeps using it to
-preserve access to the existing library. User books are not automatically
-moved or deleted.
+`$XDG_DATA_HOME/malferma-libro/` when XDG_DATA_HOME is absolute.
+User books are not automatically moved or deleted.
 
 It contains `library.json` with the library, settings, reading statuses,
 last opened book, bookmarks, notes and reading positions; the recovery copy

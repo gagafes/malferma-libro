@@ -141,8 +141,9 @@ dist/               build output, excluded from Git
 
 The project directory is named `malferma-libro`; the Python package is
 `malferma_libro`. The application is named **Malferma Libro**, and its only
-launch command is `malferma-libro`. The stable application ID is retained
-for compatibility with installed icons and desktop integration.
+launch command is `malferma-libro`. The application ID
+`io.github.malferma_libro.Reader` is shared by GTK, the desktop launcher,
+AppStream metadata and the installed icons.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md#working-with-github) for instructions
 on contributing changes and working with the GitHub repository.
