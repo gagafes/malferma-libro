@@ -1,6 +1,6 @@
 # Malferma Libro
 
-**0.1.1 · Debian 13 · GTK 4 / libadwaita · GPL-3.0-or-later**
+**0.1.1 · Debian 13 · Ubuntu 24.04 · GTK 4 / libadwaita · GPL-3.0-or-later**
 
 **[Download for Debian 13 — DEB 0.1.1-4](https://github.com/gagafes/malferma-libro/releases/download/v0.1.1-4/malferma-libro_0.1.1-4_all.deb)**
 
@@ -58,7 +58,8 @@ release publication. The application version remains **0.1.1**; version **1.0**
 is reserved for the project's production milestone.
 
 The release workflow checks fresh installation and upgrade from **0.1.1-3** on
-Debian 13, including preservation of a seeded test library and settings. On
+Debian 13, including preservation of a seeded test library and settings.
+Source and native GTK checks also run on **Ubuntu 24.04**. On
 26 October 2026 the owner confirmed a manual check of the new build. The
 [release checklist](docs/RELEASE_CHECKLIST.md) records the scope and limits;
 the fixes are documented in the [security review](docs/SECURITY_REVIEW.md).
@@ -89,7 +90,7 @@ The ZIP contains the DEB package, source archives and `SHA256SUMS`.
 If an earlier build with a higher version number is installed, APT may report
 a downgrade: this development series began at **0.1.0** by the project owner's decision.
 
-To run from source on Debian 13:
+To run from source on Debian 13 or Ubuntu 24.04:
 
 ```sh
 sudo apt install python3 python3-gi gir1.2-gtk-4.0 gir1.2-adw-1 \
