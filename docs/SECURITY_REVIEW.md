@@ -6,11 +6,11 @@ application version remains 0.1.1. This package revision contains the fixes
 below and matching complete sources, recorded under 0.1.1-1 in the changelog.
 The existing v0.1.1 release assets are unchanged.
 
-## Follow-up corrections — 26 October 2026 (unreleased)
+## Follow-up corrections — 26 October 2026 (Debian 0.1.1-4)
 
 These corrections follow the review of commit
 `168fe69d6c8635ebbdb6985b53b7482f47de1353`. They are source changes for the
-next release, not changes to the published 0.1.1-3 artifacts.
+0.1.1-4 security update. The published 0.1.1-3 artifacts remain unchanged.
 
 - OPDS URLs are limited to 8,192 characters both before parsing and after
   IRI encoding. Resolution checks inherited XML bases and has shared limits

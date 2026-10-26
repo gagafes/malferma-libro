@@ -2,8 +2,8 @@
 
 # Release publication controls
 
-These controls apply to the unreleased source after the October 2026 security
-follow-up. They do not modify existing tags or the published 0.1.1-3 assets.
+These controls apply to the 0.1.1-4 security update and subsequent source
+revisions. They do not modify existing tags or the published 0.1.1-3 assets.
 
 ## Source controls
 
@@ -16,7 +16,8 @@ follow-up. They do not modify existing tags or the published 0.1.1-3 assets.
   from GitHub, and refuses a stale run or an existing release tag. A failed or
   malformed API read stops publication. The guard performs only read operations.
 - The existing `gh release create` command does not update an existing release.
-  Use a new package revision for the next release; do not reuse `0.1.1-3`.
+  Use a new package revision for each release; this update uses `0.1.1-4`.
+  Do not reuse `0.1.1-3`.
 
 These checks are defense in depth for the checked workflow. They are not an
 authorization boundary against a repository writer who can replace workflows
@@ -52,6 +53,15 @@ Until main is protected, the updated workflow skips `publish` even when the
 manual publish input is selected. Ordinary source/build/installation checks
 continue to run. An environment is not considered configured just because its
 name appears in YAML or in a successful CI run where `publish` was skipped.
+
+## Repository controls verified on 26 October 2026
+
+Main requires a pull request, an up-to-date branch, and the GitHub Actions
+checks `linux` and `Install and upgrade on Debian 13`. Administrator bypass,
+force pushes and deletion are disabled. No independent review approval is
+required. The `github-release` environment permits exactly the main branch
+and zero tags, with administrator bypass disabled. These settings were
+verified separately from the source workflow.
 
 ## Verification before the next release
 
