@@ -143,7 +143,7 @@ jobs:
             /usr/bin/python3 -B packaging/check_gui.py --pattern test_gui_illustrations.py
 
   publish:
-    if: github.event_name == 'workflow_dispatch' && inputs.publish_release
+    if: github.event_name == 'workflow_dispatch' && inputs.publish_release && github.ref == 'refs/heads/main'
     needs: [linux, debian]
     runs-on: ubuntu-24.04
     timeout-minutes: 20

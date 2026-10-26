@@ -15,6 +15,7 @@ import unittest
 from unittest.mock import patch
 
 from malferma_libro.tasks import OperationToken, TaskCancelled
+from malferma_libro import voices
 from malferma_libro.voices import LANGUAGES, VOICE_CATALOG, VoiceEntry, VoiceError, VoiceFile, VoiceManager
 
 
@@ -103,6 +104,27 @@ class VoiceStoreTests(unittest.TestCase):
         self.opener.files[self.entry.files[0].url] = b"x" * len(self.model)
         with self.assertRaises(VoiceError):
             self.manager.install(self.entry.id)
+        self.assert_no_partial_install()
+
+    def test_default_transport_keeps_voice_policy_limits_and_cancellation(self):
+        manager = VoiceManager(self.store, catalog=(self.entry,))
+        token = OperationToken()
+        def response(request, **options):
+            self.assertEqual(options["policy"], "voice")
+            self.assertIs(options["cancel"], token)
+            name = request.full_url.rsplit("/", 1)[-1]
+            self.assertEqual(options["limit"], voices._LIMITS[name])
+            self.assertEqual(options["total_timeout"], voices.VOICE_TRANSFER_TIMEOUT)
+            return self.opener.open(request, timeout=20)
+        with patch.object(voices, "fetch_response", side_effect=response) as transport:
+            model = manager.install(self.entry.id, cancel=token)
+        self.assertEqual(model.read_bytes(), self.model)
+        self.assertEqual(transport.call_count, 3)
+
+    def test_default_transport_cancellation_never_publishes_staged_voice(self):
+        manager = VoiceManager(self.store, catalog=(self.entry,))
+        with patch.object(voices, "fetch_response", side_effect=TaskCancelled), self.assertRaises(TaskCancelled):
+            manager.install(self.entry.id)
         self.assert_no_partial_install()
 
     def test_declared_size_and_redirect_destination_are_checked(self):

@@ -139,10 +139,17 @@ def _png_data(data):
     return None
 
 
-def _jpeg_dimensions(data):
+def _jpeg_data(data, *, max_dimension=MAX_COVER_DIMENSION, max_pixels=MAX_COVER_PIXELS):
+    """Validate the entire marker stream and remove APP2/ICC before decoding.
+
+    ICC profiles are optional color metadata, handled by native loaders even
+    after the frame header. Walk every scan rather than searching raw bytes:
+    stuffed entropy bytes and restart markers must remain unchanged.
+    """
     if not data.startswith(b"\xff\xd8"):
         return None
     position, dimensions, entropy, saw_scan = 2, None, False, False
+    output, kept, segments = None, 0, 0
     while position < len(data):
         if data[position] != 0xFF:
             if not entropy:
@@ -150,6 +157,7 @@ def _jpeg_dimensions(data):
             position = data.find(b"\xff", position)
             if position < 0:
                 return None
+        start = position
         while position < len(data) and data[position] == 0xFF:
             position += 1
         if position >= len(data):
@@ -163,8 +171,15 @@ def _jpeg_dimensions(data):
         if marker in range(0xD0, 0xD8) or marker == 0x01:
             continue
         if marker == 0xD9:
-            return dimensions if dimensions and saw_scan and position == len(data) else None
+            if not dimensions or not saw_scan or position != len(data):
+                return None
+            if output is not None:
+                output.extend(data[kept:position])
+            return (bytes(output) if output is not None else data), dimensions
         if marker == 0xD8 or position + 2 > len(data):
+            return None
+        segments += 1
+        if segments > 20_000:
             return None
         length = int.from_bytes(data[position:position + 2], "big")
         if length < 2 or position + length > len(data):
@@ -174,7 +189,8 @@ def _jpeg_dimensions(data):
                 return None
             precision, height, width, components = struct.unpack(">BHHB", data[position + 2:position + 8])
             if (precision != 8 or components not in (1, 3, 4) or length != 8 + components * 3
-                    or not _dimensions(width, height)):
+                    or not 0 < width <= max_dimension or not 0 < height <= max_dimension
+                    or width * height > max_pixels):
                 return None
             dimensions = width, height
         if marker == 0xDA:
@@ -185,7 +201,17 @@ def _jpeg_dimensions(data):
         else:
             entropy = False
         position += length
+        if marker == 0xE2:
+            if output is None:
+                output = bytearray()
+            output.extend(data[kept:start])
+            kept = position
     return None
+
+
+def _jpeg_dimensions(data):
+    result = _jpeg_data(data)
+    return result[1] if result is not None else None
 
 
 def validate_cover(data: bytes, mime_type: str | None = None) -> CoverData | None:
@@ -193,15 +219,17 @@ def validate_cover(data: bytes, mime_type: str | None = None) -> CoverData | Non
 
     A server's MIME is only a hint, never permission to decode another format.
     Structural validation precedes decoding; malformed pixel streams are also
-    rejected by ``load_thumbnail``. PNG metadata is removed before caching.
+    rejected by ``load_thumbnail``. PNG metadata and JPEG APP2/ICC profiles
+    are removed before caching and before any native image loader sees them.
     """
     if not isinstance(data, bytes) or not 0 < len(data) <= MAX_COVER_BYTES:
         return None
     png = _png_data(data)
     if png is not None:
         return CoverData(png[0], "image/png")
-    if _jpeg_dimensions(data) is not None:
-        return CoverData(data, "image/jpeg")
+    jpeg = _jpeg_data(data)
+    if jpeg is not None:
+        return CoverData(jpeg[0], "image/jpeg")
     return None
 
 

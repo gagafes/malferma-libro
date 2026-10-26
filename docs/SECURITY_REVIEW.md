@@ -6,6 +6,48 @@ application version remains 0.1.1. This package revision contains the fixes
 below and matching complete sources, recorded under 0.1.1-1 in the changelog.
 The existing v0.1.1 release assets are unchanged.
 
+## Follow-up corrections — 26 October 2026 (unreleased)
+
+These corrections follow the review of commit
+`168fe69d6c8635ebbdb6985b53b7482f47de1353`. They are source changes for the
+next release, not changes to the published 0.1.1-3 artifacts.
+
+- OPDS URLs are limited to 8,192 characters both before parsing and after
+  IRI encoding. Resolution checks inherited XML bases and has shared limits
+  of 8,192 references and 2 MiB of resolved URL characters, counting duplicates
+  and unused links. A page allows at most 2,048 entries and 128 links per
+  entry or feed. Oversized pages fail explicitly; unsafe individual links
+  are omitted. Cancellation is checked around XML parsing and during entry
+  and link processing. Existing byte, XML node and depth limits remain.
+- HTTP transfers run in a private helper process with streamed bounded
+  output. The owning worker checks cancellation and an absolute deadline
+  while waiting for DNS, connection, redirects, headers and body; it kills
+  and reaps the helper on cancellation, timeout or early response close.
+  Total budgets are 30 seconds for catalogs, 15 seconds for covers, five
+  minutes for books and ten minutes per Piper file. Socket inactivity
+  timeouts remain 20 seconds, or eight seconds for covers. URLs are passed
+  through a private file rather than command-line arguments. HTTP(S)/LAN
+  OPDS and the separate trusted HTTPS Piper redirect policy are preserved.
+- A shared JPEG preflight walks the entire marker stream, including all
+  scans, and removes every APP2 segment before native decoding. This removes
+  optional ICC color profiles, including malformed/repeated profile chunks,
+  from covers, inline illustrations and CBZ pages. Cached or hand-constructed
+  cover data is revalidated at the decoder boundary. JPEGs without APP2 retain
+  their bytes; removing a color profile may change color rendering. This
+  mitigates the reviewed ICC input path; it does not patch or sandbox the
+  system GdkPixbuf library. Supported, updated native packages remain required.
+- The manual release job additionally requires `refs/heads/main` and still
+  depends on the Linux and Debian checks. Required reviews and branch
+  protection are repository administration settings, outside this source fix.
+
+Regressions use loopback HTTP servers and bounded benign JPEG fixtures: slow
+headers and trickle bodies, cancellation and process cleanup, early close,
+byte caps, short responses, redirects, atomic downloads, URL amplification,
+duplicate references, profiles around scan boundaries, and native pixel
+equality after sanitization. Run `make check` and `make release`; CI also
+exercises the installed Debian package and GTK at normal and 200% scale.
+No hostile native decoder payload is needed for these regressions.
+
 ## Reviewed boundaries
 
 - EPUB, FB2, FB2.ZIP, TXT, HTML, Markdown, CBZ, PDF and DjVu input handling,

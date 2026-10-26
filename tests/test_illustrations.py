@@ -31,11 +31,12 @@ def png(width=8, height=4, *, metadata=b"", compressed=None):
 
 
 def jpeg_header(width, height):
-    # Header-only JPEG suffices to exercise preflight/target limits. Tests patch
-    # the native loader; the real decoder also rejects its missing pixel stream.
+    # A complete marker stream exercises preflight/target limits. Tests patch
+    # the native loader; this fixture does not contain decodable pixel data.
     return (b"\xff\xd8\xff\xc0\x00\x11"
             + struct.pack(">BHHB", 8, height, width, 3)
-            + b"\x01\x11\0\x02\x11\0\x03\x11\0\xff\xd9")
+            + b"\x01\x11\0\x02\x11\0\x03\x11\0"
+            + b"\xff\xda\x00\x0c\x03\x01\0\x02\0\x03\0\0\x3f\0\0\xff\xd9")
 
 
 class TextImageOffsetTests(unittest.TestCase):
