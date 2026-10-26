@@ -4,20 +4,6 @@ on:
   push:
   pull_request:
   workflow_dispatch:
-    inputs:
-      publish_release:
-        description: Publish the checked build
-        type: boolean
-        required: false
-        default: false
-      release_channel:
-        description: Use release only after the manual desktop checks pass
-        type: choice
-        options:
-          - prerelease
-          - release
-        required: true
-        default: prerelease
 
 permissions:
   contents: read
@@ -141,51 +127,3 @@ jobs:
             GSK_RENDERER=cairo GDK_BACKEND=x11 GTK_A11Y=none GDK_SCALE=2 \
             xvfb-run -a --server-args='-screen 0 2560x2048x24' dbus-run-session -- \
             /usr/bin/python3 -B packaging/check_gui.py --pattern test_gui_illustrations.py
-
-  publish:
-    if: github.event_name == 'workflow_dispatch' && inputs.publish_release
-    needs: [linux, debian]
-    runs-on: ubuntu-24.04
-    timeout-minutes: 20
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
-        with:
-          name: malferma-libro-current
-          path: dist
-      - name: Verify release checksums
-        working-directory: dist
-        run: sha256sum --check SHA256SUMS
-      - name: Publish checked release files
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          RELEASE_CHANNEL: ${{ inputs.release_channel }}
-        run: |
-          version=$(/usr/bin/python3 -c 'import runpy; build = runpy.run_path("packaging/build.py"); print(build["package_version"]())')
-          case "$RELEASE_CHANNEL" in
-            release)
-              release_title="Malferma Libro $version"
-              release_flags=(--latest)
-              ;;
-            prerelease)
-              release_title="Malferma Libro $version (development prerelease)"
-              release_flags=(--prerelease --latest=false)
-              ;;
-            *)
-              printf '%s\n' 'Unknown release channel' >&2
-              exit 1
-              ;;
-          esac
-          gh release create "v$version" \
-            "dist/malferma-libro_${version}_all.deb" \
-            "dist/malferma-libro_${version}_source.zip" \
-            "dist/malferma-libro_${version}_source.tar.gz" \
-            dist/SHA256SUMS \
-            --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" \
-            --title "$release_title" \
-            --notes-file packaging/release-notes.md \
-            "${release_flags[@]}"
