@@ -12,6 +12,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 from __future__ import annotations
 
 import argparse
+import ast
 import gzip
 import hashlib
 import json
@@ -25,7 +26,6 @@ import tempfile
 
 INSTALLED = Path("/usr/share/malferma-libro")
 LAUNCHER = "/usr/bin/malferma-libro"
-APP_ID = "io.github.otkrytaya_kniga.Reader"
 BOOK_TEXT = ("A small book for an installation test.\n\n"
              "Українська: читання. Deutsch: Bücher. Esperanto: libro.\n") * 60
 
@@ -54,6 +54,24 @@ def run(*command: str, cwd: str | Path = "/tmp") -> str:
                             stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                             text=True, encoding="utf-8", timeout=30)
     return result.stdout
+
+
+def installed_application_id(module) -> str:
+    application_id = getattr(module, "APP_ID", None)
+    if application_id is None:
+        # Earlier packages defined the ID in app.py instead of __init__.py.
+        # Read that metadata without importing GTK or starting the application.
+        source = Path(module.__file__).with_name("app.py")
+        for node in ast.parse(source.read_text(encoding="utf-8")).body:
+            if isinstance(node, ast.Assign) and any(
+                isinstance(target, ast.Name) and target.id == "APP_ID"
+                for target in node.targets
+            ):
+                application_id = ast.literal_eval(node.value)
+                break
+    require(isinstance(application_id, str) and bool(application_id),
+            "The installed application has no application ID")
+    return application_id
 
 
 def file_hashes(root: Path) -> dict[str, str]:
@@ -138,11 +156,12 @@ def check(package_version: str, module) -> None:
     for name in ("LICENSE", "copyright", "README.md", "FONT_LICENSES.md", "LOGO_LICENSE.md"):
         require((Path("/usr/share/doc/malferma-libro") / name).stat().st_size > 0,
                 f"Installed documentation is empty: {name}")
-    desktop = f"/usr/share/applications/{APP_ID}.desktop"
+    application_id = installed_application_id(module)
+    desktop = f"/usr/share/applications/{application_id}.desktop"
     run("desktop-file-validate", desktop)
     for path in (
-        Path(f"/usr/share/icons/hicolor/scalable/apps/{APP_ID}.svg"),
-        Path(f"/usr/share/metainfo/{APP_ID}.metainfo.xml"),
+        Path(f"/usr/share/icons/hicolor/scalable/apps/{application_id}.svg"),
+        Path(f"/usr/share/metainfo/{application_id}.metainfo.xml"),
     ):
         require(path.stat().st_size > 0, f"Missing installed desktop resource: {path}")
     for language in ("", "de", "uk"):

@@ -10,7 +10,7 @@ to perform, not desktops or features that have already been verified.
 
 - Follow the [installation instructions](../README.md#installation-and-launch).
   Record the application version and full package version, such as application
-  `0.1.1` and DEB `0.1.1-2`. The DEB filename or your system's package manager
+  `0.1.1` and DEB `0.1.1-3`. The DEB filename or your system's package manager
   shows the package version. For a source build, record the commit instead.
 - Choose a local test book you may freely share, preferably an EPUB with at
   least two chapters, several screens of text and a known embedded illustration.

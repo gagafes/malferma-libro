@@ -14,7 +14,7 @@ body:
     attributes:
       label: Application and package version
       description: Include the full DEB package version, or the commit if running from source.
-      placeholder: "App 0.1.1; DEB 0.1.1-2"
+      placeholder: "App 0.1.1; DEB 0.1.1-3"
     validations:
       required: true
   - type: dropdown

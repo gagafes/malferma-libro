@@ -53,21 +53,21 @@ File paths use the current Python module name; image bytes and attribution
 are preserved from the saved package.
 
 ```text
-8025aa045ef0808a775a1a0426e58ffaa0310c16100708af61918f47e18ca38e  data/icons/hicolor/128x128/apps/io.github.otkrytaya_kniga.Reader.png
-c83bce1492abce814100628e39e41c7000365731fb865229d82304cfb3f5e8b4  data/icons/hicolor/16x16/apps/io.github.otkrytaya_kniga.Reader.png
-af4632fa8df2458e14a481d0d4be2e1208bcec511e121c20e0111b3cf0444983  data/icons/hicolor/22x22/apps/io.github.otkrytaya_kniga.Reader.png
-8a07d067d45979f3bf76aa1e97bcee9e967a1464dfc2b3908255df873b58e84f  data/icons/hicolor/24x24/apps/io.github.otkrytaya_kniga.Reader.png
-013ae39020dab8af3f82875f248488db0965d86e36e2a897a07eac5a068b11ab  data/icons/hicolor/256x256/apps/io.github.otkrytaya_kniga.Reader.png
-7b05497dbeb5d0c567597dd7781ff154366e54cb9d7b24241510ea4a9292fec1  data/icons/hicolor/32x32/apps/io.github.otkrytaya_kniga.Reader.png
-16f5a8d2c12d7ee48a18b7091f7b50d6b25d6511f40d724c9747383e300622b9  data/icons/hicolor/48x48/apps/io.github.otkrytaya_kniga.Reader.png
-08d04483e7886b0e27ef38fd39feb4e79304ce9768a0d03cc230aaec283df6d4  data/icons/hicolor/512x512/apps/io.github.otkrytaya_kniga.Reader.png
-9fd9a387e71652af70d77ed80b1def95b78e0221116d07d3f240ee3c69dc184d  data/icons/hicolor/64x64/apps/io.github.otkrytaya_kniga.Reader.png
-682e89c0ad75d7011541b9e46e27084d48596e035f72459237ca328b3752fc5c  data/icons/hicolor/96x96/apps/io.github.otkrytaya_kniga.Reader.png
-569cc540c2a963cde2cc9ff55e166a4dfc0e5c439c7edfbd71c752266a0067a3  data/icons/hicolor/scalable/apps/io.github.otkrytaya_kniga.Reader.svg
+8025aa045ef0808a775a1a0426e58ffaa0310c16100708af61918f47e18ca38e  data/icons/hicolor/128x128/apps/io.github.malferma_libro.Reader.png
+c83bce1492abce814100628e39e41c7000365731fb865229d82304cfb3f5e8b4  data/icons/hicolor/16x16/apps/io.github.malferma_libro.Reader.png
+af4632fa8df2458e14a481d0d4be2e1208bcec511e121c20e0111b3cf0444983  data/icons/hicolor/22x22/apps/io.github.malferma_libro.Reader.png
+8a07d067d45979f3bf76aa1e97bcee9e967a1464dfc2b3908255df873b58e84f  data/icons/hicolor/24x24/apps/io.github.malferma_libro.Reader.png
+013ae39020dab8af3f82875f248488db0965d86e36e2a897a07eac5a068b11ab  data/icons/hicolor/256x256/apps/io.github.malferma_libro.Reader.png
+7b05497dbeb5d0c567597dd7781ff154366e54cb9d7b24241510ea4a9292fec1  data/icons/hicolor/32x32/apps/io.github.malferma_libro.Reader.png
+16f5a8d2c12d7ee48a18b7091f7b50d6b25d6511f40d724c9747383e300622b9  data/icons/hicolor/48x48/apps/io.github.malferma_libro.Reader.png
+08d04483e7886b0e27ef38fd39feb4e79304ce9768a0d03cc230aaec283df6d4  data/icons/hicolor/512x512/apps/io.github.malferma_libro.Reader.png
+9fd9a387e71652af70d77ed80b1def95b78e0221116d07d3f240ee3c69dc184d  data/icons/hicolor/64x64/apps/io.github.malferma_libro.Reader.png
+682e89c0ad75d7011541b9e46e27084d48596e035f72459237ca328b3752fc5c  data/icons/hicolor/96x96/apps/io.github.malferma_libro.Reader.png
+569cc540c2a963cde2cc9ff55e166a4dfc0e5c439c7edfbd71c752266a0067a3  data/icons/hicolor/scalable/apps/io.github.malferma_libro.Reader.svg
 08d04483e7886b0e27ef38fd39feb4e79304ce9768a0d03cc230aaec283df6d4  src/malferma_libro/assets/branding/app-icon.png
 569cc540c2a963cde2cc9ff55e166a4dfc0e5c439c7edfbd71c752266a0067a3  src/malferma_libro/assets/branding/app-icon.svg
-08d04483e7886b0e27ef38fd39feb4e79304ce9768a0d03cc230aaec283df6d4  src/malferma_libro/assets/branding/io.github.otkrytaya_kniga.Reader.png
-569cc540c2a963cde2cc9ff55e166a4dfc0e5c439c7edfbd71c752266a0067a3  src/malferma_libro/assets/branding/io.github.otkrytaya_kniga.Reader.svg
+08d04483e7886b0e27ef38fd39feb4e79304ce9768a0d03cc230aaec283df6d4  src/malferma_libro/assets/branding/io.github.malferma_libro.Reader.png
+569cc540c2a963cde2cc9ff55e166a4dfc0e5c439c7edfbd71c752266a0067a3  src/malferma_libro/assets/branding/io.github.malferma_libro.Reader.svg
 0ab853fead61aa580cef368f16719f1e1d75bafed8e6a1aee6424404a662bb07  src/malferma_libro/assets/branding/logo.png
 7c8502e8185a608f0fa164965ca6208773937e4e8c2b420104fbc7d5472e9aa2  src/malferma_libro/assets/branding/logo.svg
 ```

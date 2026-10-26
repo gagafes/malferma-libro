@@ -11,12 +11,12 @@ Comment[ru]=Читайте EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF и DjV
 Comment[eo]=Legu EPUB, FB2, HTML/XHTML, Markdown, CBZ, TXT, PDF kaj DjVu kaj foliumu OPDS-bibliotekojn
 Exec=malferma-libro %F
 TryExec=malferma-libro
-Icon=io.github.otkrytaya_kniga.Reader
+Icon=io.github.malferma_libro.Reader
 Terminal=false
 Categories=Office;Viewer;
 MimeType=application/epub+zip;application/x-fictionbook+xml;text/plain;text/html;application/xhtml+xml;text/markdown;application/pdf;image/vnd.djvu;image/x-djvu;application/vnd.comicbook+zip;
 StartupNotify=true
-StartupWMClass=io.github.otkrytaya_kniga.Reader
+StartupWMClass=io.github.malferma_libro.Reader
 
 Name[uk]=Malferma Libro
 GenericName[uk]=Читалка електронних книг

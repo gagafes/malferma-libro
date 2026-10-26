@@ -22,7 +22,7 @@ License: GPL-3+
  The complete license is in /usr/share/common-licenses/GPL-3
  on Debian systems and in LICENSE in the source distribution.
 
-Files: data/metainfo/io.github.otkrytaya_kniga.Reader.metainfo.xml
+Files: data/metainfo/io.github.malferma_libro.Reader.metainfo.xml
 Copyright: 2026 Открытая книга contributors
 License: CC0-1.0
 Comment: The AppStream metadata declares CC0-1.0 separately from the
@@ -30,8 +30,8 @@ Comment: The AppStream metadata declares CC0-1.0 separately from the
  the application, not the licence of the metadata document itself.
 
 Files: data/branding/*
- data/icons/hicolor/*/apps/io.github.otkrytaya_kniga.Reader.png
- data/icons/hicolor/scalable/apps/io.github.otkrytaya_kniga.Reader.svg
+ data/icons/hicolor/*/apps/io.github.malferma_libro.Reader.png
+ data/icons/hicolor/scalable/apps/io.github.malferma_libro.Reader.svg
  src/malferma_libro/assets/branding/*
 Copyright: Malferma Libro project owner, who supplied and licensed the logo.
 License: GPL-3+

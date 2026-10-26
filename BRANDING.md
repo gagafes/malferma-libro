@@ -11,9 +11,9 @@
 | `src/malferma_libro/assets/branding/app-icon.svg` | Векторная эмблема без надписи |
 | `src/malferma_libro/assets/branding/logo.png` | Полный растровый логотип |
 | `src/malferma_libro/assets/branding/app-icon.png` | Растровая эмблема |
-| `src/malferma_libro/assets/branding/io.github.otkrytaya_kniga.Reader.*` | Те же значки для поиска по стабильному имени приложения |
-| `data/icons/hicolor/scalable/apps/io.github.otkrytaya_kniga.Reader.svg` | Масштабируемый значок рабочего стола |
-| `data/icons/hicolor/<размер>/apps/io.github.otkrytaya_kniga.Reader.png` | Значки от 16 до 512 пикселей |
+| `src/malferma_libro/assets/branding/io.github.malferma_libro.Reader.*` | Те же значки для поиска по идентификатору приложения |
+| `data/icons/hicolor/scalable/apps/io.github.malferma_libro.Reader.svg` | Масштабируемый значок рабочего стола |
+| `data/icons/hicolor/<размер>/apps/io.github.malferma_libro.Reader.png` | Значки от 16 до 512 пикселей |
 
 SVG содержат замкнутые векторные контуры, включая контуры букв. Они не
 требуют внешних шрифтов или сетевых ресурсов и не содержат встроенных
@@ -32,6 +32,5 @@ SVG/PNG, но не отдельный исходный JPEG, растровый 
 
 Каталог исходников — `malferma-libro`, модуль Python — `malferma_libro`.
 Пользовательская команда и бренд — `malferma-libro` и **Malferma Libro**.
-Стабильный идентификатор `io.github.otkrytaya_kniga.Reader` сохранён для
-совместимости: это идентификатор и имя файлов значков, а не старый каталог
-исходников.
+Идентификатор `io.github.malferma_libro.Reader` согласован в приложении GTK,
+ярлыке рабочего стола, метаданных AppStream и именах файлов значков.
