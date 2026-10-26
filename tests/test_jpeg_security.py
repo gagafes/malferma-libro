@@ -63,6 +63,8 @@ class JPEGSecurityTests(unittest.TestCase):
             cache = CoverCache(Path(directory))
             path = cache.store("book", cover)
             self.assertEqual(path.read_bytes(), JPEG)
+            # Older cache entries may still contain raw optional profiles.
+            path.write_bytes(cover.data)
             self.assertEqual(cache.load("book").data, JPEG)
         pixbuf = Mock()
         pixbuf.get_width.return_value, pixbuf.get_height.return_value = 2, 3

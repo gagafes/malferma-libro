@@ -33,6 +33,35 @@ class _Handler(BaseHTTPRequestHandler):
         if self.path == "/headers":
             self.server.stop.wait(5)
             return
+        if self.path in {"/large-selected-header", "/many-headers", "/long-header-line"}:
+            try:
+                self.send_response(200)
+                if self.path == "/large-selected-header":
+                    self.send_header("Content-Type", "x" * 1025)
+                elif self.path == "/many-headers":
+                    for number in range(105):
+                        self.send_header(f"X-Fixture-{number}", "value")
+                else:
+                    self.send_header("X-Fixture", "x" * 65537)
+                self.end_headers()
+                self.wfile.write(b"ignored")
+            except (BrokenPipeError, ConnectionResetError):
+                pass
+            return
+        if self.path.startswith("/redirect-chain/") or self.path == "/redirect-trickle":
+            try:
+                self.send_response(302)
+                target = ("/data" if self.path == "/redirect-trickle" else
+                          f"/redirect-chain/{int(self.path.rsplit('/', 1)[1]) + 1}")
+                self.send_header("Location", target)
+                self.end_headers()
+                if self.path == "/redirect-trickle":
+                    while not self.server.stop.wait(0.02):
+                        self.wfile.write(b"x")
+                        self.wfile.flush()
+            except (BrokenPipeError, ConnectionResetError):
+                pass
+            return
         if self.path in {"/redirect", "/unsafe"}:
             self.send_response(302)
             self.send_header("Location", "/data" if self.path == "/redirect" else "ftp://example.org/book.txt")
@@ -185,6 +214,22 @@ class NetworkTests(unittest.TestCase):
             self.open(base + "/data", policy="voice")
         self.assertFalse(server.started.is_set())
 
+    def test_header_value_line_and_count_limits_reject_before_reading_a_body(self):
+        with local_server() as (_server, base):
+            for path in ("/large-selected-header", "/many-headers", "/long-header-line"):
+                with self.subTest(path=path), self.assertRaises(URLError):
+                    with self.open(base + path) as response:
+                        consume(response)
+
+    def test_redirect_chains_are_bounded_and_redirect_bodies_are_not_drained(self):
+        with local_server() as (_server, base):
+            with self.assertRaises(HTTPError) as caught:
+                self.open(base + "/redirect-chain/0")
+            self.assertEqual(caught.exception.code, 302)
+            caught.exception.close()
+            with self.open(base + "/redirect-trickle", total_timeout=2) as response:
+                self.assertEqual(consume(response), PAYLOAD)
+
     def test_early_close_reaps_child_and_clears_pipe(self):
         with local_server() as (_server, base):
             response = self.open(base + "/trickle")
@@ -216,3 +261,64 @@ class NetworkTests(unittest.TestCase):
             helper.write_text("import time\ntime.sleep(10)\n", encoding="utf-8")
             with patch.object(network, "_WORKER", helper), self.assertRaises(TimeoutError):
                 self.open("https://example.invalid/", total_timeout=0.2)
+
+    def test_blocked_getaddrinfo_observes_deadline_and_cancellation_and_is_reaped(self):
+        # Exercise the real transport with a resolver that never returns. The
+        # fixture makes no outbound connection, even if a proxy is configured.
+        original = network._WORKER.resolve()
+        with tempfile.TemporaryDirectory() as directory:
+            marker = Path(directory) / "resolver-started"
+            helper = Path(directory) / "blocked_resolver.py"
+            helper.write_text(
+                "import runpy, socket, time\nfrom pathlib import Path\n"
+                "def blocked(*args, **kwargs):\n"
+                f"    Path({str(marker)!r}).touch()\n"
+                "    time.sleep(30)\n    raise socket.gaierror('fixture')\n"
+                "socket.getaddrinfo = blocked\n"
+                f"runpy.run_path({str(original)!r}, run_name='__main__')\n", encoding="utf-8")
+            for mode in ("deadline", "cancellation"):
+                with self.subTest(mode=mode):
+                    marker.unlink(missing_ok=True)
+                    token, processes, outcome = OperationToken(), [], []
+                    real_popen = subprocess.Popen
+                    def launch(*args, **kwargs):
+                        process = real_popen(*args, **kwargs)
+                        processes.append(process)
+                        return process
+                    def transfer():
+                        try:
+                            with self.open("https://resolver.invalid/", cancel=token,
+                                           total_timeout=3) as response:
+                                consume(response)
+                        except BaseException as error:
+                            outcome.append(error)
+                    with patch.object(network, "_WORKER", helper), patch.object(
+                            network.subprocess, "Popen", side_effect=launch):
+                        started = time.monotonic()
+                        worker = threading.Thread(target=transfer, daemon=True)
+                        worker.start()
+                        try:
+                            while not marker.exists() and time.monotonic() - started < 2:
+                                worker.join(timeout=0.01)
+                            self.assertTrue(marker.exists(), "Resolver fixture was not reached")
+                            cancelled_at = time.monotonic()
+                            if mode == "cancellation":
+                                token.cancel()
+                            worker.join(timeout=4)
+                            self.assertFalse(worker.is_alive())
+                            if mode == "cancellation":
+                                self.assertLess(time.monotonic() - cancelled_at, 1.5)
+                            self.assertLess(time.monotonic() - started, 4.5)
+                        finally:
+                            token.cancel()
+                            # A failing regression must not leave its fixture
+                            # running for 30 seconds or leak a test subprocess.
+                            for process in processes:
+                                if process.poll() is None:
+                                    network._stop_process_group(process)
+                            worker.join(timeout=2)
+                    self.assertEqual(len(outcome), 1)
+                    self.assertIsInstance(outcome[0], TimeoutError if mode == "deadline" else TaskCancelled)
+                    self.assertEqual(len(processes), 1)
+                    self.assertIsNotNone(processes[0].poll())
+                    self.assertTrue(processes[0].stdout.closed)

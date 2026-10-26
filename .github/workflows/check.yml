@@ -143,10 +143,14 @@ jobs:
             /usr/bin/python3 -B packaging/check_gui.py --pattern test_gui_illustrations.py
 
   publish:
-    if: github.event_name == 'workflow_dispatch' && inputs.publish_release && github.ref == 'refs/heads/main'
+    if: github.event_name == 'workflow_dispatch' && inputs.publish_release && github.ref == 'refs/heads/main' && github.ref_protected
     needs: [linux, debian]
     runs-on: ubuntu-24.04
     timeout-minutes: 20
+    environment: github-release
+    concurrency:
+      group: github-release
+      cancel-in-progress: false
     permissions:
       contents: write
     steps:
@@ -165,6 +169,8 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           RELEASE_CHANNEL: ${{ inputs.release_channel }}
         run: |
+          set -euo pipefail
+          /usr/bin/python3 -B packaging/release_guard.py
           version=$(/usr/bin/python3 -c 'import runpy; build = runpy.run_path("packaging/build.py"); print(build["package_version"]())')
           case "$RELEASE_CHANNEL" in
             release)

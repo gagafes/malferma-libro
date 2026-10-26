@@ -36,9 +36,15 @@ next release, not changes to the published 0.1.1-3 artifacts.
   their bytes; removing a color profile may change color rendering. This
   mitigates the reviewed ICC input path; it does not patch or sandbox the
   system GdkPixbuf library. Supported, updated native packages remain required.
-- The manual release job additionally requires `refs/heads/main` and still
-  depends on the Linux and Debian checks. Required reviews and branch
-  protection are repository administration settings, outside this source fix.
+- The manual release job additionally requires protected `refs/heads/main`,
+  references the `github-release` environment, serializes publication attempts,
+  and still depends on the Linux and Debian checks. A read-only preflight
+  rejects a different checkout, moved/unprotected main, failed metadata reads,
+  or an existing tag. Repository/environment rules still require administrator
+  configuration; these source checks do not secure historical workflow refs or
+  constrain a trusted writer who replaces the workflow. See
+  [release publication controls](RELEASE_SECURITY.md) for the exact boundary
+  and administrator setup.
 
 Regressions use loopback HTTP servers and bounded benign JPEG fixtures: slow
 headers and trickle bodies, cancellation and process cleanup, early close,
@@ -47,6 +53,11 @@ duplicate references, profiles around scan boundaries, and native pixel
 equality after sanitization. Run `make check` and `make release`; CI also
 exercises the installed Debian package and GTK at normal and 200% scale.
 No hostile native decoder payload is needed for these regressions.
+
+Additional regressions exercise a blocked `getaddrinfo` with both timeout and
+cancellation, oversized header values/lines/counts, redirect chains and slow
+redirect bodies, raw preexisting cover-cache data, and release preflight
+rejection paths. These tests do not publish releases or change GitHub settings.
 
 ## Reviewed boundaries
 
