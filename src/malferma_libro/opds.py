@@ -15,23 +15,32 @@ import re
 import tempfile
 from urllib.error import HTTPError, URLError
 from urllib.parse import quote, unquote, urljoin, urlsplit, urlunsplit
-from urllib.request import HTTPRedirectHandler, Request, build_opener
+from urllib.request import HTTPRedirectHandler, Request
 import xml.etree.ElementTree as ET
 
 from .i18n import _
 from . import __version__
 from .covers import CoverData, MAX_COVER_BYTES, validate_cover
+from .network import fetch_response
 from .tasks import check_cancel, report_progress
 from .xmlutil import XMLLimitError, parse_xml
 
 
 DEFAULT_TIMEOUT = 20
 COVER_TIMEOUT = 8
+CATALOG_TRANSFER_TIMEOUT = 30
+COVER_TRANSFER_TIMEOUT = 15
+BOOK_TRANSFER_TIMEOUT = 300
 MAX_CATALOG_BYTES = 5 * 1024 * 1024
 MAX_BOOK_BYTES = 64 * 1024 * 1024
 MAX_CBZ_DOWNLOAD_BYTES = 512 * 1024 * 1024
 MAX_XML_DEPTH = 128
 MAX_XML_NODES = 200_000
+MAX_URL_CHARS = 8192
+MAX_CATALOG_ENTRIES = 2048
+MAX_ENTRY_LINKS = 128
+MAX_CATALOG_REFERENCES = 8192
+MAX_CATALOG_URL_CHARS = 2 * 1024 * 1024
 MAX_FILENAME_BYTES = 255
 _COLLISION_SUFFIX = " (9999)"
 USER_AGENT = f"MalfermaLibro/{__version__}"
@@ -113,6 +122,8 @@ class CatalogPage:
 def _validate_url(url: str) -> str:
     if not isinstance(url, str) or not url:
         raise OPDSError(_("Не указан адрес каталога."))
+    if len(url) > MAX_URL_CHARS:
+        raise OPDSError(_("Неверный адрес сервера."))
     url = url.strip()
     if any(ord(char) < 32 or ord(char) == 127 for char in url):
         raise OPDSError(_("Адрес содержит недопустимые символы."))
@@ -144,10 +155,15 @@ def _validate_url(url: str) -> str:
         if isinstance(exc, OPDSError):
             raise
         raise OPDSError(_("Неверный адрес сервера.")) from exc
-    return urlunsplit(parts)
+    result = urlunsplit(parts)
+    if len(result) > MAX_URL_CHARS:
+        raise OPDSError(_("Неверный адрес сервера."))
+    return result
 
 
 def _resolve_url(href: str, base: str) -> str | None:
+    if len(href) > MAX_URL_CHARS or len(base) > MAX_URL_CHARS:
+        return None
     if not href.strip():
         return None
     try:
@@ -156,9 +172,33 @@ def _resolve_url(href: str, base: str) -> str | None:
         return None
 
 
-def _element_base(element: ET.Element, parent_base: str) -> str:
-    value = element.get(_XML_BASE)
-    return (_resolve_url(value, parent_base) or parent_base) if value else parent_base
+class _CatalogURLs:
+    """Budget resolution work and retained URLs, including duplicate links."""
+
+    def __init__(self, cancel):
+        self.cancel = cancel
+        self.references = self.characters = 0
+
+    def resolve(self, href, base):
+        check_cancel(self.cancel)
+        self.references += 1
+        if self.references > MAX_CATALOG_REFERENCES:
+            raise OPDSError(_("Каталог слишком большой."))
+        url = _resolve_url(href, base)
+        self.characters += len(url) if url else 0
+        if self.characters > MAX_CATALOG_URL_CHARS:
+            raise OPDSError(_("Каталог слишком большой."))
+        return url
+
+    def base(self, element, parent):
+        value = element.get(_XML_BASE)
+        return (self.resolve(value, parent) or parent) if value else parent
+
+    def links(self, element):
+        links = _children(element, "link")
+        if len(links) > MAX_ENTRY_LINKS:
+            raise OPDSError(_("Каталог слишком большой."))
+        return links
 
 
 class _SafeRedirects(HTTPRedirectHandler):
@@ -179,11 +219,14 @@ class _SafeRedirects(HTTPRedirectHandler):
         return redirect
 
 
-def _open_url(url: str, accept: str, *, timeout=None):
+def _open_url(url: str, accept: str, *, timeout=None, limit=MAX_CATALOG_BYTES,
+              cancel=None, total_timeout=CATALOG_TRANSFER_TIMEOUT):
     request = Request(
         _validate_url(url), headers={"User-Agent": USER_AGENT, "Accept": accept}
     )
-    return build_opener(_SafeRedirects()).open(request, timeout=DEFAULT_TIMEOUT if timeout is None else timeout)
+    return fetch_response(request, policy="opds", limit=limit, cancel=cancel,
+                          socket_timeout=DEFAULT_TIMEOUT if timeout is None else timeout,
+                          total_timeout=total_timeout)
 
 
 def _check_length(response, limit: int) -> int | None:
@@ -233,12 +276,13 @@ def fetch_catalog(url: str, *, cancel=None) -> CatalogPage:
     """Fetch an Atom feed with a timeout and a bounded response size."""
     try:
         check_cancel(cancel)
-        with _open_url(url, "application/atom+xml, application/xml;q=0.9") as response:
+        with _open_url(url, "application/atom+xml, application/xml;q=0.9",
+                       cancel=cancel) as response:
             check_cancel(cancel)
             final_url = _validate_url(response.geturl())
             data = _read_bounded(response, MAX_CATALOG_BYTES, cancel=cancel)
         check_cancel(cancel)
-        page = parse_catalog(data, final_url)
+        page = parse_catalog(data, final_url, cancel=cancel)
         check_cancel(cancel)
         return page
     except IncompleteRead as exc:
@@ -259,7 +303,9 @@ def download_cover(url: str, *, token=None) -> CoverData | None:
     check_cancel(token)
     url = _validate_url(url)
     try:
-        with _open_url(url, "image/png, image/jpeg", timeout=COVER_TIMEOUT) as response:
+        with _open_url(url, "image/png, image/jpeg", timeout=COVER_TIMEOUT,
+                       limit=MAX_COVER_BYTES, cancel=token,
+                       total_timeout=COVER_TRANSFER_TIMEOUT) as response:
             check_cancel(token)
             _validate_url(response.geturl())
             content_type = _mime(response.headers.get("Content-Type", ""))
@@ -379,12 +425,13 @@ def _book_format(extension: str) -> str:
     return {".htm": ".html", ".xhtml": ".html", ".markdown": ".md"}.get(extension, extension)
 
 
-def parse_catalog(data: bytes, base_url: str) -> CatalogPage:
+def parse_catalog(data: bytes, base_url: str, *, cancel=None) -> CatalogPage:
     """Parse OPDS 1.x Atom; unsafe links and unsupported acquisition flows are omitted.
 
     A direct search template is exposed only when it contains ``{searchTerms}``.
     OpenSearch description documents are not fetched automatically.
     """
+    check_cancel(cancel)
     base_url = _validate_url(base_url)
     if len(data) > MAX_CATALOG_BYTES:
         raise OPDSError(_("Каталог слишком большой."))
@@ -397,29 +444,35 @@ def parse_catalog(data: bytes, base_url: str) -> CatalogPage:
         raise OPDSError(_('Каталог: {exc}.').format(exc=exc)) from exc
     except (ET.ParseError, LookupError, ValueError) as exc:
         raise OPDSError(_("Сервер вернул некорректный XML-каталог.")) from exc
+    check_cancel(cancel)
     if _local_name(root) != "feed":
         raise OPDSError(_("Ожидался OPDS-каталог в формате Atom."))
-    feed_base = _element_base(root, base_url)
+    urls = _CatalogURLs(cancel)
+    feed_base = urls.base(root, base_url)
     next_url = None
     search_url = None
-    for link in _children(root, "link"):
+    for link in urls.links(root):
         rels = set(link.get("rel", "").split())
-        url = _resolve_url(link.get("href", ""), _element_base(link, feed_base))
+        url = urls.resolve(link.get("href", ""), urls.base(link, feed_base))
         if "next" in rels and url:
             next_url = url
         if ("search" in rels and url and "{searchTerms}" in url
                 and _mime(link.get("type", "")) in _ATOM_TYPES | {""}):
             search_url = url
     entries = []
-    for element in _children(root, "entry"):
-        entry_base = _element_base(element, feed_base)
+    elements = _children(root, "entry")
+    if len(elements) > MAX_CATALOG_ENTRIES:
+        raise OPDSError(_("Каталог слишком большой."))
+    for element in elements:
+        check_cancel(cancel)
+        entry_base = urls.base(element, feed_base)
         downloads = []
         catalog_url = None
         cover_url = None
         cover_rank = 2
         seen = set()
-        for link in _children(element, "link"):
-            url = _resolve_url(link.get("href", ""), _element_base(link, entry_base))
+        for link in urls.links(element):
+            url = urls.resolve(link.get("href", ""), urls.base(link, entry_base))
             if not url:
                 continue
             rels = set(link.get("rel", "").split())
@@ -508,7 +561,8 @@ def download_book(acquisition: Acquisition, destination_dir: Path, *, cancel=Non
     try:
         directory.mkdir(parents=True, exist_ok=True)
         check_cancel(cancel)
-        with _open_url(url, acquisition.mime_type or "application/octet-stream") as response:
+        with _open_url(url, acquisition.mime_type or "application/octet-stream",
+                       limit=limit, cancel=cancel, total_timeout=BOOK_TRANSFER_TIMEOUT) as response:
             check_cancel(cancel)
             final_url = _validate_url(response.geturl())
             content_type = _mime(response.headers.get("Content-Type", ""))

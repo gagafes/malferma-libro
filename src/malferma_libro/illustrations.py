@@ -39,7 +39,7 @@ class InlineImage:
 
 
 def validate_illustration(data: bytes) -> ImageData | None:
-    """Preflight raster geometry and discard optional PNG metadata, offline.
+    """Preflight raster geometry and discard PNG metadata/JPEG ICC, offline.
 
     The shared CBZ reader checks compressed PNG row lengths and rejects images
     exceeding 16,384 pixels per side or 32 megapixels before native decoding.

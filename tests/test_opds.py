@@ -11,6 +11,7 @@ from unittest.mock import Mock, patch
 from urllib.error import HTTPError
 from urllib.request import Request
 
+from malferma_libro import opds
 from malferma_libro.opds import (
     Acquisition, OPDSError, _SafeRedirects, download_book, download_cover,
     parse_catalog, fetch_catalog,
@@ -39,6 +40,45 @@ class FakeResponse(io.BytesIO):
 
 
 class CatalogTests(unittest.TestCase):
+    def test_oversized_url_is_rejected_before_parsing_and_after_iri_encoding(self):
+        with patch.object(opds, "urlsplit") as split, self.assertRaises(OPDSError):
+            opds._validate_url("https://example.org/" + "a" * opds.MAX_URL_CHARS)
+        split.assert_not_called()
+        with self.assertRaises(OPDSError):
+            opds._validate_url("https://example.org/" + "я" * 2000)
+        self.assertIsNone(opds._resolve_url("a" * (opds.MAX_URL_CHARS + 1), BASE))
+        # A malicious inherited base must not amplify short relative links.
+        page = parse_catalog(feed('<entry><link type="application/atom+xml" href="child"/></entry>',
+                                  attributes='xml:base="https://example.org/' + "a" * 65536 + '/"'), BASE)
+        self.assertEqual(page.entries[0].catalog_url, "https://books.example.org/opds/child")
+
+    def test_total_resolved_url_budget_includes_duplicates_and_xml_bases(self):
+        links = f'<link rel="{ACQUIRE}" type="text/plain" href="same.txt"/>' * 2
+        unit = len("https://books.example.org/opds/same.txt")
+        with patch.object(opds, "MAX_CATALOG_URL_CHARS", unit * 2 - 1), self.assertRaises(OPDSError):
+            parse_catalog(feed(f'<entry>{links}</entry>'), BASE)
+        with patch.object(opds, "MAX_CATALOG_REFERENCES", 2), self.assertRaises(OPDSError):
+            parse_catalog(feed('<entry xml:base="a/"><link xml:base="b/" href="c"/></entry>'), BASE)
+
+    def test_entry_and_link_budgets_and_parse_cancellation(self):
+        with self.assertRaises(OPDSError):
+            parse_catalog(feed("<entry/>" * (opds.MAX_CATALOG_ENTRIES + 1)), BASE)
+        for body in ('<link href="a"/>' * (opds.MAX_ENTRY_LINKS + 1),
+                     '<entry>' + '<link href="a"/>' * (opds.MAX_ENTRY_LINKS + 1) + '</entry>'):
+            with self.subTest(body=body[:20]), self.assertRaises(OPDSError):
+                parse_catalog(feed(body), BASE)
+        token = OperationToken()
+        token.cancel()
+        with patch.object(opds, "parse_xml") as parser, self.assertRaises(TaskCancelled):
+            parse_catalog(feed(""), BASE, cancel=token)
+        parser.assert_not_called()
+        def cancel_after_xml(*args, **kwargs):
+            token.cancel()
+            return opds.ET.fromstring(feed("<entry/>"))
+        token = OperationToken()
+        with patch.object(opds, "parse_xml", side_effect=cancel_after_xml), self.assertRaises(TaskCancelled):
+            parse_catalog(feed("<entry/>"), BASE, cancel=token)
+
     def test_namespace_metadata_and_relative_urls(self):
         xml = feed(f'''<link rel="next" href="?page=2"/><link rel="search" type="application/atom+xml" href="search?q={{searchTerms}}"/>
         <entry><title>Contra spem spero!</title><author><name>Леся Українка</name></author><author><name>Редактор</name></author>
@@ -123,11 +163,9 @@ class CatalogTests(unittest.TestCase):
 
     def test_unicode_catalog_request_is_ascii_before_urllib_opens_it(self):
         response = FakeResponse(feed(""), url="https://bücher.example.org/книги/каталог", content_type="application/atom+xml")
-        opener = Mock()
-        opener.open.return_value = response
-        with patch("malferma_libro.opds.build_opener", return_value=opener):
+        with patch("malferma_libro.opds.fetch_response", return_value=response) as transport:
             page = fetch_catalog("https://bücher.example.org/книги/каталог?q=поезія")
-        request = opener.open.call_args.args[0]
+        request = transport.call_args.args[0]
         self.assertEqual(request.host, "xn--bcher-kva.example.org")
         request.selector.encode("ascii")
         self.assertEqual(request.get_header("User-agent"), "MalfermaLibro/0.1.1")

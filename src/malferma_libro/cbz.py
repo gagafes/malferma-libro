@@ -2,7 +2,7 @@
 
 Only raster PNG, JPEG and optionally WebP reach GdkPixbuf. ZIP directory bounds
 are checked before Python allocates ZipInfo objects, image dimensions before
-native decoding, and PNG ancillary metadata is discarded before decoding.
+native decoding, and optional PNG/JPEG color metadata is discarded before decoding.
 Page indices and rendering follow the PDF/DjVu document contract; CBZ has no
 text layer or OCR. The model does not initialize GTK or require a display.
 """
@@ -22,7 +22,7 @@ import xml.etree.ElementTree as ET
 import zipfile
 import zlib
 
-from .covers import CoverData, validate_cover
+from .covers import CoverData, _jpeg_data, validate_cover
 from .i18n import _
 from .xmlutil import XMLLimitError, parse_xml
 
@@ -42,8 +42,6 @@ MAX_RENDER_PIXELS = 12 * 1024 * 1024
 MAX_PNG_BYTES = 64 * 1024 * 1024
 _EXTENSIONS = frozenset({".png", ".jpg", ".jpeg", ".jpe", ".webp"})
 _PNG = b"\x89PNG\r\n\x1a\n"
-_JPEG_SOF = frozenset({0xC0, 0xC1, 0xC2, 0xC3, 0xC5, 0xC6, 0xC7,
-                       0xC9, 0xCA, 0xCB, 0xCD, 0xCE, 0xCF})
 
 
 class CbzError(ValueError):
@@ -261,33 +259,11 @@ def _png_image(data):
     raise ValueError("Incomplete PNG image")
 
 
-def _jpeg_size(data):
-    position = 2
-    while position < len(data):
-        if data[position] != 0xff:
-            raise ValueError("Invalid JPEG marker")
-        while position < len(data) and data[position] == 0xff:
-            position += 1
-        if position >= len(data):
-            break
-        marker = data[position]
-        position += 1
-        if marker in range(0xd0, 0xda) or marker == 0x01:
-            continue
-        if marker in {0, 0xda, 0xd9} or position + 2 > len(data):
-            break
-        length = int.from_bytes(data[position:position + 2], "big")
-        if length < 2 or position + length > len(data):
-            break
-        if marker in _JPEG_SOF:
-            if length < 8:
-                break
-            precision, height, width, components = struct.unpack(">BHHB", data[position + 2:position + 8])
-            if precision != 8 or components not in (1, 3, 4) or length != 8 + components * 3:
-                break
-            return _dimensions(width, height)
-        position += length
-    raise ValueError("Missing JPEG image dimensions")
+def _jpeg_image(data):
+    image = _jpeg_data(data, max_dimension=MAX_IMAGE_DIMENSION, max_pixels=MAX_IMAGE_PIXELS)
+    if image is None:
+        raise ValueError("Invalid JPEG image")
+    return image[0], "jpeg", image[1]
 
 
 def _webp_size(data):
@@ -332,7 +308,7 @@ def _image(data):
     if data.startswith(_PNG):
         return _png_image(data)
     if data.startswith(b"\xff\xd8"):
-        return data, "jpeg", _jpeg_size(data)
+        return _jpeg_image(data)
     if data.startswith(b"RIFF") and data[8:12] == b"WEBP":
         return data, "webp", _webp_size(data)
     raise ValueError("Unsupported comic image")

@@ -26,11 +26,12 @@ import threading
 import time
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlsplit
-from urllib.request import HTTPRedirectHandler, Request, build_opener
+from urllib.request import HTTPRedirectHandler, Request
 from uuid import uuid4
 
 from . import __version__
 from .i18n import _
+from .network import fetch_response
 from .paths import user_data_directory
 from .tasks import check_cancel, report_progress
 from .voice_catalog import CURATED_VOICES
@@ -41,6 +42,7 @@ MAX_MODEL_BYTES = 200 * 1024 * 1024
 MAX_CONFIG_BYTES = 1024 * 1024
 MAX_CARD_BYTES = 256 * 1024
 MAX_RECEIPT_BYTES = 64 * 1024
+VOICE_TRANSFER_TIMEOUT = 600
 _LIMITS = {"model.onnx": MAX_MODEL_BYTES, "model.onnx.json": MAX_CONFIG_BYTES, "MODEL_CARD": MAX_CARD_BYTES}
 _ID = re.compile(r"[A-Za-z][A-Za-z0-9_.-]{0,95}\Z")
 _SHA256 = re.compile(r"[a-f0-9]{64}\Z")
@@ -377,10 +379,12 @@ class VoiceManager:
     def _download(self, file, target, cancel, progress_offset, total):
         _trusted_url(file.url)
         request = Request(file.url, headers={"User-Agent": f"Malferma-Libro/{__version__}", "Accept-Encoding": "identity"})
-        opener = self._opener or build_opener(_VoiceRedirects())
         digest, done = hashlib.sha256(), 0
         try:
-            with opener.open(request, timeout=20) as response, target.open("xb") as destination:
+            response = (self._opener.open(request, timeout=20) if self._opener is not None else
+                        fetch_response(request, policy="voice", limit=_LIMITS[file.name],
+                                       cancel=cancel, total_timeout=VOICE_TRANSFER_TIMEOUT))
+            with response, target.open("xb") as destination:
                 _trusted_url(response.geturl())
                 if getattr(response, "status", 200) != 200 or response.headers.get("Content-Encoding", "identity").lower() not in {"", "identity"}:
                     raise VoiceError(_("Файлы голоса Piper не прошли проверку."))

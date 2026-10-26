@@ -66,9 +66,15 @@ retain the actual remaining limitations in the release notes.
 
 ## Publish the checked revision
 
+For unreleased source, first complete the administrator setup and verification
+in [release publication controls](RELEASE_SECURITY.md). The updated publisher
+requires protected main, the `github-release` environment, the current main
+head, and a new tag. Increase the package revision before the next release;
+the published `0.1.1-3` tag and assets must remain unchanged.
+
 1. Confirm that the candidate files match the source commit and checksums.
 2. Record the manual results and ensure the final commit's workflow is green.
-3. Run **Check and build** on that commit with **Publish the checked build**
+3. Run **Check and build** from protected **main** on that commit with **Publish the checked build**
    enabled and **release_channel = release**. The default channel remains
    `prerelease` for development builds.
 4. Verify the release contains the DEB, both matching source archives and
