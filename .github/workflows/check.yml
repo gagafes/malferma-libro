@@ -94,7 +94,7 @@ jobs:
           set -- ./*.deb
           test "$#" -eq 1
           candidate_version=$(dpkg-deb -f "$1" Version)
-          dpkg --compare-versions "$candidate_version" gt 0.1.1-2
+          dpkg --compare-versions "$candidate_version" gt 0.1.1-3
           apt-get install -y --no-install-recommends "$1"
           runuser -u reader-test -- /usr/bin/python3 -B \
             "$GITHUB_WORKSPACE/packaging/check_installed.py" check \
@@ -104,15 +104,15 @@ jobs:
           set -eu
           curl --fail --location --retry 3 \
             --output /tmp/malferma-libro-baseline.deb \
-            https://github.com/gagafes/malferma-libro/releases/download/v0.1.1-2/malferma-libro_0.1.1-2_all.deb
+            https://github.com/gagafes/malferma-libro/releases/download/v0.1.1-3/malferma-libro_0.1.1-3_all.deb
           printf '%s  %s\n' \
-            e72117b46ef7f95a8366fd2d82b1459ec661c2252d3fa46a6c8261ff238ec136 \
+            fff7a03912353b2f3313061181af7db780f2ea746a29480d9ba119143179241f \
             /tmp/malferma-libro-baseline.deb | sha256sum --check --strict
           apt-get purge -y malferma-libro
           apt-get install -y --no-install-recommends /tmp/malferma-libro-baseline.deb
           runuser -u reader-test -- /usr/bin/python3 -B \
             "$GITHUB_WORKSPACE/packaging/check_installed.py" check \
-            --package-version 0.1.1-2
+            --package-version 0.1.1-3
           runuser -u reader-test -- /usr/bin/python3 -B \
             "$GITHUB_WORKSPACE/packaging/check_installed.py" seed \
             --profile /tmp/malferma-upgrade-profile
