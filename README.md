@@ -58,9 +58,12 @@ release publication. The application version remains **0.1.1**; version **1.0**
 is reserved for the project's production milestone.
 
 The release workflow checks fresh installation and upgrade from **0.1.1-3** on
-Debian 13, including preservation of a seeded test library and settings.
-Source and native GTK checks also run on **Ubuntu 24.04**. On
-26 October 2026 the owner confirmed a manual check of the new build. The
+**Debian 13 and Ubuntu 24.04**, including preservation of a seeded test library
+and settings. Installed GTK checks run at normal and 200% scale. The published
+0.1.1-4 DEB also passed a separate Ubuntu installation/upgrade check on
+27 October 2026; see the [validation record](VALIDATION.md).
+The owner confirmed a manual check of the new build on 26 October and successful
+Ubuntu installation on 27 October. The
 [release checklist](docs/RELEASE_CHECKLIST.md) records the scope and limits;
 the fixes are documented in the [security review](docs/SECURITY_REVIEW.md).
 
