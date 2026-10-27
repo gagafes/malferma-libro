@@ -35,6 +35,13 @@ jobs:
           test "$VERSION_ID" = 24.04
           cat /etc/os-release
           dpkg --print-architecture
+          test "$(dpkg --print-architecture)" = amd64
+          # The minimal Ubuntu image excludes documentation and man pages.
+          # Retain the full installed payload so dpkg verification and man work.
+          if [ -f /etc/dpkg/dpkg.cfg.d/excludes ]; then
+            cat /etc/dpkg/dpkg.cfg.d/excludes
+            mv /etc/dpkg/dpkg.cfg.d/excludes /tmp/ubuntu-container-dpkg-excludes
+          fi
           test "$(dpkg-query -W -f='${Status}' malferma-libro 2>/dev/null || true)" != "install ok installed"
           apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30 update
           apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30 \
