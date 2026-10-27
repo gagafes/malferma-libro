@@ -2,13 +2,17 @@
 
 # Release publication controls
 
-These controls apply to the 0.1.1-4 security update and subsequent source
-revisions. They do not modify existing tags or the published 0.1.1-3 assets.
+These controls describe the current source workflow, including the Ubuntu
+publication gate added on 27 October 2026. Existing release tags and assets
+retain their original contents and historical workflows.
 
 ## Source controls
 
 - `publish` runs only for an explicitly requested manual run on protected
-  `refs/heads/main`, after the Linux and Debian jobs succeed.
+  `refs/heads/main`, after Linux, Debian and both Ubuntu fresh/upgrade jobs succeed.
+- Ubuntu jobs validate the candidate DEB and SHA256SUMS from the same workflow
+  run, including data preservation across the checksum-pinned 0.1.1-3 baseline.
+  Their job dependency blocks publication on failure or a skipped required job.
 - The job references the `github-release` environment and serializes publication
   attempts. This YAML reference alone does **not** configure environment rules.
 - Immediately before publication, `packaging/release_guard.py` checks the local
@@ -61,7 +65,9 @@ checks `linux` and `Install and upgrade on Debian 13`. Administrator bypass,
 force pushes and deletion are disabled. No independent review approval is
 required. The `github-release` environment permits exactly the main branch
 and zero tags, with administrator bypass disabled. These settings were
-verified separately from the source workflow.
+verified separately from the source workflow. The Ubuntu publication gate is
+an additional source-workflow dependency; the branch-protection snapshot above
+records the checks configured on 26 October.
 
 ## Verification before the next release
 

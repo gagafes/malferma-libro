@@ -127,8 +127,9 @@ To publish, open **Actions → Check and build → Run workflow** on `main` and 
 `publish_release`. Choose `release_channel = prerelease` for a development build
 (the default), or `release` for an ordinary release after recording the desktop
 checks in [the release checklist](docs/RELEASE_CHECKLIST.md).
-Publication requires both the source/build checks and the Debian 13 installation
-and upgrade checks to succeed, then uses the DEB, source archives and checksums
-from that run.
+Publication requires the source/build checks, the Debian 13 installation/upgrade
+job and both Ubuntu 24.04 fresh/upgrade scenarios to succeed, then uses the DEB,
+source archives and checksums from that run. Ubuntu checks the same candidate
+artifact as the publishing job.
 Update `packaging/release-notes.md` before publication; it supplies the release
 description. The tag uses the complete package version, such as `v0.1.1-4`.
