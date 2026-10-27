@@ -1,6 +1,7 @@
 # Malferma Libro — user guide
 
-Version 0.1.1. An application for Debian 13 built with GTK 4 and libadwaita.
+Version 0.1.1. An application for Debian 13 and Ubuntu 24.04 built with GTK 4
+and libadwaita.
 This English guide is bundled with the application and is available without
 an internet connection. Open it from the main menu, with F1 by default, or with
 `malferma-libro --manual=en`.
@@ -308,7 +309,7 @@ are downloaded separately at your request; the catalog offers only models
 whose free licenses have been checked.
 
 Install Piper in a separate per-user Python environment, rather than using
-`sudo pip` with Debian's system Python. Audio playback requires `paplay`
+`sudo pip` with the system Python. Audio playback requires `paplay`
 from `pulseaudio-utils` or `aplay` from `alsa-utils`. A typical setup with
 PulseAudio or PipeWire is:
 
@@ -632,7 +633,7 @@ A CBZ cover is prepared separately from the first valid image among the
 first 32 pages, scaled to at most 1024 pixels on the longest edge. Source-page limits are listed
 above; later pages remain available for reading.
 
-If the interface will not start, Debian 13 requires `python3-gi`,
+If the interface will not start, Debian 13 and Ubuntu 24.04 require `python3-gi`,
 `gir1.2-gtk-4.0` and `gir1.2-adw-1`; the vector logo requires
 `librsvg2-common`. When running from source, use the system
 `/usr/bin/python3`; Markdown requires `python3-markdown-it`.
