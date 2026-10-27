@@ -2,7 +2,7 @@
 
 **0.1.1 · Debian 13 · Ubuntu 24.04 · GTK 4 / libadwaita · GPL-3.0-or-later**
 
-**[Download for Debian 13 — DEB 0.1.1-4](https://github.com/gagafes/malferma-libro/releases/download/v0.1.1-4/malferma-libro_0.1.1-4_all.deb)**
+**[Download for Debian 13/ Ubuntu 24.04 — DEB 0.1.1-4](https://github.com/gagafes/malferma-libro/releases/download/v0.1.1-4/malferma-libro_0.1.1-4_all.deb)**
 
 Security update · [Installation instructions](#installation-and-launch)
 
