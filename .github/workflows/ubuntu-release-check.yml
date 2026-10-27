@@ -47,6 +47,14 @@ jobs:
           apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30 \
             install -y --no-install-recommends git ca-certificates curl python3 \
             xvfb xauth dbus-x11 desktop-file-utils man-db adwaita-icon-theme
+          # Match Ubuntu's unminimize handling of the placeholder man command.
+          dpkg-divert --list /usr/bin/man
+          if [ "$(dpkg-divert --truename /usr/bin/man)" = /usr/bin/man.REAL ]; then
+            test -x /usr/bin/man.REAL
+            mv /usr/bin/man /tmp/ubuntu-container-man-stub
+            dpkg-divert --quiet --remove --rename /usr/bin/man
+          fi
+          man --version
           useradd --create-home reader-test
 
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
