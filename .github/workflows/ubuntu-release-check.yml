@@ -115,6 +115,13 @@ jobs:
             xvfb-run -a --server-args='-screen 0 2560x2048x24' dbus-run-session -- \
             /usr/bin/python3 -B "$GITHUB_WORKSPACE/packaging/check_gui.py" --pattern test_gui_illustrations.py
 
+      - name: Inspect installed files and dpkg filters after a failure
+        if: failure()
+        run: |
+          dpkg --audit
+          dpkg --verify malferma-libro || true
+          grep -R -nE 'path-(exclude|include)' /etc/dpkg/dpkg.cfg /etc/dpkg/dpkg.cfg.d/ || true
+
       - name: Record successful validation scope
         env:
           TEST_SCENARIO: ${{ matrix.scenario }}
