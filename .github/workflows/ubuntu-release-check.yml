@@ -1,0 +1,133 @@
+name: Verify published DEB on Ubuntu 24.04
+
+on:
+  push:
+    branches:
+      - verify/ubuntu-24.04-published-deb
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  installed-package:
+    name: Ubuntu 24.04 - ${{ matrix.scenario }}
+    runs-on: ubuntu-24.04
+    container: ubuntu:24.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        scenario: [fresh, upgrade]
+    defaults:
+      run:
+        shell: bash
+    env:
+      DEBIAN_FRONTEND: noninteractive
+      LC_ALL: C.UTF-8
+
+    steps:
+      - name: Verify clean Ubuntu environment and install test tools
+        run: |
+          set -euo pipefail
+          source /etc/os-release
+          test "$ID" = ubuntu
+          test "$VERSION_ID" = 24.04
+          cat /etc/os-release
+          dpkg --print-architecture
+          test "$(dpkg-query -W -f='${Status}' malferma-libro 2>/dev/null || true)" != "install ok installed"
+          apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30 update
+          apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30 \
+            install -y --no-install-recommends git ca-certificates curl python3 \
+            xvfb xauth dbus-x11 desktop-file-utils man-db adwaita-icon-theme
+          useradd --create-home reader-test
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Download and verify the published 0.1.1-4 package
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 --connect-timeout 30 --max-time 180 \
+            --output /tmp/malferma-libro_0.1.1-4_all.deb \
+            https://github.com/gagafes/malferma-libro/releases/download/v0.1.1-4/malferma-libro_0.1.1-4_all.deb
+          printf '%s  %s\n' \
+            51fdda0cf7f41e3dff4ac536436035e60be05ee94732596eb23acb98d46bb7b4 \
+            /tmp/malferma-libro_0.1.1-4_all.deb | sha256sum --check --strict
+          test "$(dpkg-deb -f /tmp/malferma-libro_0.1.1-4_all.deb Version)" = 0.1.1-4
+          test "$(dpkg-deb -f /tmp/malferma-libro_0.1.1-4_all.deb Architecture)" = all
+
+      - name: Install published 0.1.1-3 and seed an isolated test library
+        if: matrix.scenario == 'upgrade'
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 --connect-timeout 30 --max-time 180 \
+            --output /tmp/malferma-libro_0.1.1-3_all.deb \
+            https://github.com/gagafes/malferma-libro/releases/download/v0.1.1-3/malferma-libro_0.1.1-3_all.deb
+          printf '%s  %s\n' \
+            fff7a03912353b2f3313061181af7db780f2ea746a29480d9ba119143179241f \
+            /tmp/malferma-libro_0.1.1-3_all.deb | sha256sum --check --strict
+          test "$(dpkg-deb -f /tmp/malferma-libro_0.1.1-3_all.deb Version)" = 0.1.1-3
+          apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30 \
+            install -y --no-install-recommends /tmp/malferma-libro_0.1.1-3_all.deb
+          runuser -u reader-test -- /usr/bin/python3 -B \
+            "$GITHUB_WORKSPACE/packaging/check_installed.py" check --package-version 0.1.1-3
+          runuser -u reader-test -- /usr/bin/python3 -B \
+            "$GITHUB_WORKSPACE/packaging/check_installed.py" seed --profile /tmp/malferma-ubuntu-upgrade-profile
+
+      - name: Install published 0.1.1-4 through APT and verify the installed package
+        run: |
+          set -euo pipefail
+          apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30 \
+            install -y --no-install-recommends /tmp/malferma-libro_0.1.1-4_all.deb
+          apt-get check
+          runuser -u reader-test -- /usr/bin/python3 -B \
+            "$GITHUB_WORKSPACE/packaging/check_installed.py" check --package-version 0.1.1-4
+          dpkg-query -W -f='${Package} ${Version}\n' \
+            malferma-libro python3 python3-gi python3-markdown-it \
+            gir1.2-gtk-4.0 gir1.2-adw-1 librsvg2-common poppler-utils djvulibre-bin
+
+      - name: Verify all seeded library data after the upgrade
+        if: matrix.scenario == 'upgrade'
+        run: |
+          set -euo pipefail
+          runuser -u reader-test -- /usr/bin/python3 -B \
+            "$GITHUB_WORKSPACE/packaging/check_installed.py" verify --profile /tmp/malferma-ubuntu-upgrade-profile
+
+      - name: Exercise installed GTK widgets at normal scale
+        run: |
+          set -euo pipefail
+          cd /tmp
+          runuser -u reader-test -- env \
+            PYTHONPATH=/usr/share/malferma-libro \
+            GSK_RENDERER=cairo GDK_BACKEND=x11 GTK_A11Y=none \
+            xvfb-run -a --server-args='-screen 0 1920x1200x24' dbus-run-session -- \
+            /usr/bin/python3 -B "$GITHUB_WORKSPACE/packaging/check_gui.py"
+
+      - name: Exercise installed illustrations at 200 percent scale
+        run: |
+          set -euo pipefail
+          cd /tmp
+          runuser -u reader-test -- env \
+            PYTHONPATH=/usr/share/malferma-libro \
+            GSK_RENDERER=cairo GDK_BACKEND=x11 GTK_A11Y=none GDK_SCALE=2 \
+            xvfb-run -a --server-args='-screen 0 2560x2048x24' dbus-run-session -- \
+            /usr/bin/python3 -B "$GITHUB_WORKSPACE/packaging/check_gui.py" --pattern test_gui_illustrations.py
+
+      - name: Record successful validation scope
+        env:
+          TEST_SCENARIO: ${{ matrix.scenario }}
+        run: |
+          set -euo pipefail
+          {
+            printf '## Ubuntu 24.04: %s passed\n\n' "$TEST_SCENARIO"
+            printf '%s\n' \
+              '- Published DEB 0.1.1-4 verified against its pinned SHA-256.' \
+              '- Installed CLI, manuals, desktop resources, dependencies and test library passed.' \
+              '- Installed native GTK and 200% illustration tests passed under Xvfb.'
+            if [ "$TEST_SCENARIO" = upgrade ]; then
+              printf '%s\n' '- Upgrade from published 0.1.1-3 preserved book bytes, reading position, bookmarks, notes, settings and catalog configuration.'
+            fi
+            printf '\n%s\n' 'Scope: Ubuntu 24.04 amd64 container, automated X11 virtual display. Live desktop, audio output, screen reader and network OPDS interaction were not tested.'
+          } >> "$GITHUB_STEP_SUMMARY"
