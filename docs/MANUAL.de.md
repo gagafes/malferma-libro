@@ -1,6 +1,7 @@
 # Malferma Libro — Benutzerhandbuch
 
-Version 0.1.1. Eine Anwendung für Debian 13 mit GTK 4 und libadwaita.
+Version 0.1.1. Eine Anwendung für Debian 13 und Ubuntu 24.04 mit GTK 4
+und libadwaita.
 Dieses vollständige deutsche Handbuch wird mit der Anwendung geliefert und
 ist ohne Internetverbindung verfügbar. Öffnen Sie es im Hauptmenü, standardmäßig mit F1
 oder ausdrücklich auf Deutsch mit `malferma-libro --manual=de`.
@@ -374,7 +375,7 @@ separat heruntergeladen. Der Katalog bietet nur Modelle mit geprüfter
 freier Lizenz an.
 
 Installieren Sie Piper in einer eigenen Python-Umgebung im Benutzerkonto,
-statt `sudo pip` mit dem systemweiten Python von Debian zu verwenden.
+statt `sudo pip` mit dem systemweiten Python zu verwenden.
 Für die Audioausgabe benötigen Sie `paplay` aus `pulseaudio-utils` oder
 `aplay` aus `alsa-utils`. Eine übliche Einrichtung mit PulseAudio oder PipeWire:
 
@@ -755,7 +756,7 @@ Für Titelbilder werden PNG und JPEG bis zu 4 MiB unterstützt, mit höchstens
 4096 Pixeln je Bildkante und insgesamt höchstens 4 MiPixels. Nicht unterstützte,
 zu große oder beschädigte Bilder werden übersprungen; das Buch bleibt verfügbar.
 
-Falls die Oberfläche nicht startet, benötigen Sie unter Debian 13
+Falls die Oberfläche nicht startet, benötigen Sie unter Debian 13 oder Ubuntu 24.04
 `python3-gi`, `gir1.2-gtk-4.0` und `gir1.2-adw-1`; für das Vektorlogo wird
 `librsvg2-common` benötigt. Verwenden Sie beim
 Start aus dem Quellcode das systemeigene `/usr/bin/python3`; Kurzhilfe und
