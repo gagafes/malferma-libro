@@ -170,3 +170,7 @@ The logo uses the same license, with [permission confirmed by its owner](LOGO_LI
 The nine bundled fonts retain their [SIL OFL 1.1](FONT_LICENSES.md) licenses;
 AppStream metadata is licensed under CC0-1.0. System dependencies and voice
 models retain their own license terms. See [LICENSE_AUDIT.md](LICENSE_AUDIT.md).
+
+## More from the author
+
+[Blind Pew](https://github.com/gagafes/blind-pew) — offline transliteration for Linux, with seven languages, eight profiles, QWERTY/QWERTZ and F12 or tray-wheel switching. Supports Debian and Ubuntu with GNOME and Xfce.
