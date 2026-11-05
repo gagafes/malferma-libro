@@ -18,11 +18,12 @@ import stat
 import struct
 import tempfile
 import threading
-import xml.etree.ElementTree as ET
+# ElementTree is used for types/traversal; untrusted input uses xmlutil.parse_xml.
+import xml.etree.ElementTree as ET  # nosemgrep: python.lang.security.use-defused-xml.use-defused-xml
 import zipfile
 import zlib
 
-from .covers import CoverData, _jpeg_data, validate_cover
+from .covers import _jpeg_data, validate_cover
 from .i18n import _
 from .xmlutil import XMLLimitError, parse_xml
 

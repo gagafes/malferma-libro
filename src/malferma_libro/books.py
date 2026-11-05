@@ -19,7 +19,8 @@ import re
 import stat
 from typing import TYPE_CHECKING
 from urllib.parse import unquote, urlsplit
-import xml.etree.ElementTree as ET
+# ElementTree is used for types/traversal; untrusted input uses xmlutil.parse_xml.
+import xml.etree.ElementTree as ET  # nosemgrep: python.lang.security.use-defused-xml.use-defused-xml
 import zipfile
 import zlib
 

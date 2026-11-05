@@ -18,7 +18,7 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "Topic :: Office/Business",
 ]
-dependencies = ["markdown-it-py>=3.0.0", "PyGObject>=3.42"]
+dependencies = ["markdown-it-py>=3.0.0", "defusedxml>=0.7.1", "PyGObject>=3.42"]
 
 [project.scripts]
 malferma-libro = "malferma_libro.__main__:main"

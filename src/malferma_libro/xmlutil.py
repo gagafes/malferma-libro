@@ -2,7 +2,9 @@
 
 from __future__ import annotations
 
-import xml.etree.ElementTree as ET
+from defusedxml.ElementTree import DefusedXMLParser
+# The standard library is used only for bounded tree construction and types.
+import xml.etree.ElementTree as ET  # nosemgrep: python.lang.security.use-defused-xml.use-defused-xml
 
 from .i18n import _
 
@@ -36,5 +38,11 @@ class _BoundedTreeBuilder(ET.TreeBuilder):
 
 def parse_xml(data: bytes, *, max_nodes: int, max_depth: int) -> ET.Element:
     """Parse without first allocating an unrestricted tree for later inspection."""
-    parser = ET.XMLParser(target=_BoundedTreeBuilder(max_nodes, max_depth))
-    return ET.fromstring(data, parser=parser)
+    # Legacy navigation can declare a DTD without loading or using its entities.
+    # Forbid entity definitions and all external references in the parser itself.
+    parser = DefusedXMLParser(
+        target=_BoundedTreeBuilder(max_nodes, max_depth),
+        forbid_dtd=False, forbid_entities=True, forbid_external=True,
+    )
+    parser.feed(data)
+    return parser.close()

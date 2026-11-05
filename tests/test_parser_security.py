@@ -15,6 +15,7 @@ import xml.etree.ElementTree as ET
 import zipfile
 
 from malferma_libro import books, cbz, covers, opds
+from malferma_libro.xmlutil import XMLLimitError, parse_xml
 
 
 class ParserSecurityTests(unittest.TestCase):
@@ -29,6 +30,20 @@ class ParserSecurityTests(unittest.TestCase):
             for index in range(entries):
                 archive.writestr(f"chapter{index}.xhtml", "<p>Readable text</p>")
         return path
+
+    def test_defused_parser_rejects_entities_and_keeps_resource_limits(self):
+        # Exercise the parser itself, bypassing caller prefilters.
+        hostile = b'<!DOCTYPE book [<!ENTITY x "expanded">]><book>&x;</book>'
+        with self.assertRaises(ValueError):
+            parse_xml(hostile, max_nodes=20, max_depth=10)
+        with self.assertRaises(XMLLimitError):
+            parse_xml(b"<root><a/><b/></root>", max_nodes=2, max_depth=4)
+        with self.assertRaises(XMLLimitError):
+            parse_xml(b"<root><a><b/></a></root>", max_nodes=20, max_depth=2)
+        # A bare external DTD is legal for legacy content, but is not fetched.
+        benign = b'<!DOCTYPE root SYSTEM "https://example.invalid/test.dtd"><root/>'
+        with patch("socket.create_connection", side_effect=AssertionError("External DTD request")):
+            self.assertEqual(parse_xml(benign, max_nodes=20, max_depth=10).tag, "root")
 
     def test_entry_limit_is_checked_before_zipinfo_allocation(self):
         path = self.archive()
