@@ -46,7 +46,9 @@ def installed_module():
     return malferma_libro
 
 
-def run(*command: str, cwd: str | Path = "/tmp") -> str:
+def run(*command: str, cwd: str | Path | None = None) -> str:
+    if cwd is None:
+        cwd = tempfile.gettempdir()
     environment = dict(os.environ, LC_ALL="C.UTF-8")
     for variable in ("PYTHONPATH", "PYTHONHOME", "DISPLAY", "WAYLAND_DISPLAY"):
         environment.pop(variable, None)

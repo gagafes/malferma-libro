@@ -91,7 +91,7 @@ class JPEGSecurityTests(unittest.TestCase):
         try:
             import gi
             gi.require_version("GdkPixbuf", "2.0")
-            from gi.repository import GdkPixbuf
+            from gi.repository import GdkPixbuf as _GdkPixbuf  # Availability probe.
         except (ImportError, ValueError):
             self.skipTest("GdkPixbuf is unavailable")
         tagged = JPEG[:2] + app2() + JPEG[2:]

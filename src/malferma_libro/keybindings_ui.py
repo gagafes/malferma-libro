@@ -28,7 +28,7 @@ class KeybindingsMixin:
     """Persist only validated changes; canonical dispatch lives in shortcuts.py."""
 
     def build_shortcut_preferences(self, target):
-        from .app import accessible_label, bind, button, translated, translated_dropdown
+        from .app import accessible_label, button, translated, translated_dropdown
 
         self.shortcut_dialog = None
         self._shortcut_ui_closed = False
@@ -185,7 +185,7 @@ class KeybindingsMixin:
         return valid
 
     def show_shortcut_editor(self, action):
-        from .app import accessible_label, bind, label, margins, translated, translated_dialog_button
+        from .app import accessible_label, label, margins, translated, translated_dialog_button
 
         if self._shortcut_ui_closed:
             return None

@@ -2,7 +2,8 @@
 
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
-from xml.sax.saxutils import escape
+# XML escaping serializes data and does not parse untrusted XML.
+from xml.sax.saxutils import escape  # nosemgrep: python.lang.security.use-defused-xml.use-defused-xml
 import logging
 import math
 import tempfile

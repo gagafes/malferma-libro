@@ -20,7 +20,7 @@ import uuid
 
 from .books import (
     Book, BookError, Chapter, NavigationEntry, MAX_FILE_BYTES, MAX_TEXT_CHARS,
-    MAX_XML_DEPTH, MAX_XML_NODES, _TextHTML, _clean_positions, _semantic_kind,
+    MAX_XML_DEPTH, MAX_XML_NODES, _TextHTML, _clean_positions,
     _title_kind, _SAFE_DOCTYPE,
 )
 from .i18n import _
