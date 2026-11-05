@@ -33,9 +33,7 @@ jobs:
       - name: Install analysis tools
         run: python -m pip install 'ruff>=0.15,<1' 'bandit>=1.8,<2' 'semgrep>=1.140,<2'
       - name: Ruff (syntax and correctness rules)
-        # F401 currently has pre-existing unused imports; keep correctness gate
-        # while those are cleaned up in a separate code-only change.
-        run: ruff check --select E9,F --ignore F401 src packaging tests
+        run: ruff check --select E9,F src packaging tests
       - name: Bandit (medium/high confidence and severity)
         run: bandit -r src/malferma_libro packaging -ll -ii
       - name: Semgrep (error-severity security rules)
@@ -96,7 +94,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends \
-            python3 python3-pytest python3-gi python3-markdown-it \
+            python3 python3-pytest python3-gi python3-markdown-it python3-defusedxml \
             gir1.2-gtk-4.0 gir1.2-adw-1 gir1.2-pango-1.0 gir1.2-gdkpixbuf-2.0 \
             librsvg2-common poppler-utils djvulibre-bin xvfb dbus-x11
       - name: Run existing unittest suites through pytest

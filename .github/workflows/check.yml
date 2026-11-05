@@ -34,7 +34,7 @@ jobs:
         run: |
           sudo apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30 update
           sudo apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30 \
-            install -y --no-install-recommends python3 python3-gi python3-markdown-it python3-setuptools python3-wheel dpkg-dev \
+            install -y --no-install-recommends python3 python3-gi python3-markdown-it python3-defusedxml python3-setuptools python3-wheel dpkg-dev \
             gir1.2-gtk-4.0 gir1.2-adw-1 gir1.2-pango-1.0 gir1.2-gdkpixbuf-2.0 \
             librsvg2-common poppler-utils djvulibre-bin xvfb dbus-x11 desktop-file-utils
       - name: Check source and translations
@@ -95,7 +95,7 @@ jobs:
           set -- ./*.deb
           test "$#" -eq 1
           candidate_version=$(dpkg-deb -f "$1" Version)
-          dpkg --compare-versions "$candidate_version" gt 0.1.1-3
+          dpkg --compare-versions "$candidate_version" gt 0.1.1-4
           apt-get install -y --no-install-recommends "$1"
           runuser -u reader-test -- /usr/bin/python3 -B \
             "$GITHUB_WORKSPACE/packaging/check_installed.py" check \
@@ -105,15 +105,15 @@ jobs:
           set -eu
           curl --fail --location --retry 3 \
             --output /tmp/malferma-libro-baseline.deb \
-            https://github.com/gagafes/malferma-libro/releases/download/v0.1.1-3/malferma-libro_0.1.1-3_all.deb
+            https://github.com/gagafes/malferma-libro/releases/download/v0.1.1-4/malferma-libro_0.1.1-4_all.deb
           printf '%s  %s\n' \
-            fff7a03912353b2f3313061181af7db780f2ea746a29480d9ba119143179241f \
+            51fdda0cf7f41e3dff4ac536436035e60be05ee94732596eb23acb98d46bb7b4 \
             /tmp/malferma-libro-baseline.deb | sha256sum --check --strict
           apt-get purge -y malferma-libro
           apt-get install -y --no-install-recommends /tmp/malferma-libro-baseline.deb
           runuser -u reader-test -- /usr/bin/python3 -B \
             "$GITHUB_WORKSPACE/packaging/check_installed.py" check \
-            --package-version 0.1.1-3
+            --package-version 0.1.1-4
           runuser -u reader-test -- /usr/bin/python3 -B \
             "$GITHUB_WORKSPACE/packaging/check_installed.py" seed \
             --profile /tmp/malferma-upgrade-profile
@@ -211,25 +211,25 @@ jobs:
           test "$(dpkg-deb -f "$1" Architecture)" = all
           candidate_version=$(dpkg-deb -f "$1" Version)
           [[ "$candidate_version" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[1-9][0-9]*)?$ ]]
-          dpkg --compare-versions "$candidate_version" gt 0.1.1-3
+          dpkg --compare-versions "$candidate_version" gt 0.1.1-4
           cp -- "$1" /tmp/malferma-candidate.deb
           printf 'CANDIDATE_VERSION=%s\n' "$candidate_version" >> "$GITHUB_ENV"
 
-      - name: Install published 0.1.1-3 and seed an isolated test library
+      - name: Install published 0.1.1-4 and seed an isolated test library
         if: matrix.scenario == 'upgrade'
         run: |
           set -euo pipefail
           curl --fail --location --retry 3 --connect-timeout 30 --max-time 180 \
-            --output /tmp/malferma-libro_0.1.1-3_all.deb \
-            https://github.com/gagafes/malferma-libro/releases/download/v0.1.1-3/malferma-libro_0.1.1-3_all.deb
+            --output /tmp/malferma-libro_0.1.1-4_all.deb \
+            https://github.com/gagafes/malferma-libro/releases/download/v0.1.1-4/malferma-libro_0.1.1-4_all.deb
           printf '%s  %s\n' \
-            fff7a03912353b2f3313061181af7db780f2ea746a29480d9ba119143179241f \
-            /tmp/malferma-libro_0.1.1-3_all.deb | sha256sum --check --strict
-          test "$(dpkg-deb -f /tmp/malferma-libro_0.1.1-3_all.deb Version)" = 0.1.1-3
+            51fdda0cf7f41e3dff4ac536436035e60be05ee94732596eb23acb98d46bb7b4 \
+            /tmp/malferma-libro_0.1.1-4_all.deb | sha256sum --check --strict
+          test "$(dpkg-deb -f /tmp/malferma-libro_0.1.1-4_all.deb Version)" = 0.1.1-4
           apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30 \
-            install -y --no-install-recommends /tmp/malferma-libro_0.1.1-3_all.deb
+            install -y --no-install-recommends /tmp/malferma-libro_0.1.1-4_all.deb
           runuser -u reader-test -- /usr/bin/python3 -B \
-            "$GITHUB_WORKSPACE/packaging/check_installed.py" check --package-version 0.1.1-3
+            "$GITHUB_WORKSPACE/packaging/check_installed.py" check --package-version 0.1.1-4
           runuser -u reader-test -- /usr/bin/python3 -B \
             "$GITHUB_WORKSPACE/packaging/check_installed.py" seed --profile /tmp/malferma-ubuntu-upgrade-profile
 
@@ -242,7 +242,7 @@ jobs:
           runuser -u reader-test -- /usr/bin/python3 -B \
             "$GITHUB_WORKSPACE/packaging/check_installed.py" check --package-version "$CANDIDATE_VERSION"
           dpkg-query -W -f='${Package} ${Version}\n' \
-            malferma-libro python3 python3-gi python3-markdown-it \
+            malferma-libro python3 python3-gi python3-markdown-it python3-defusedxml \
             gir1.2-gtk-4.0 gir1.2-adw-1 librsvg2-common poppler-utils djvulibre-bin
 
       - name: Verify all seeded library data after the upgrade
@@ -291,7 +291,7 @@ jobs:
               '- Installed CLI, manuals, desktop resources, dependencies and test library passed.' \
               '- Installed native GTK and 200% illustration tests passed under Xvfb.'
             if [ "$TEST_SCENARIO" = upgrade ]; then
-              printf '%s\n' '- Upgrade from published 0.1.1-3 preserved book bytes, reading position, bookmarks, notes, settings and catalog configuration.'
+              printf '%s\n' '- Upgrade from published 0.1.1-4 preserved book bytes, reading position, bookmarks, notes, settings and catalog configuration.'
             fi
             printf '\n%s\n' 'Scope: Ubuntu 24.04 amd64 container, automated X11 virtual display. Live desktop, audio output, screen reader and network OPDS interaction were not tested.'
           } >> "$GITHUB_STEP_SUMMARY"
