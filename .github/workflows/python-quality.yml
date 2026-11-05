@@ -39,6 +39,7 @@ jobs:
       - name: Bandit (medium/high confidence and severity)
         run: bandit -r src/malferma_libro packaging -ll -ii
       - name: Semgrep (error-severity security rules)
+        if: ${{ !cancelled() }}
         env:
           SEMGREP_SEND_METRICS: 'off'
         run: semgrep scan --config p/python --config p/security-audit --severity ERROR --error --metrics=off src/malferma_libro packaging
