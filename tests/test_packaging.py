@@ -226,7 +226,7 @@ class ReleaseBuildTests(unittest.TestCase):
             # Compare metadata fields while keeping names and version bounds exact.
             requirements = {"".join(value.split()) for value in
                             Parser().parsestr(metadata).get_all("Requires-Dist", [])}
-            self.assertEqual(requirements, {"PyGObject>=3.42", "markdown-it-py>=3.0.0"})
+            self.assertEqual(requirements, {"PyGObject>=3.42", "markdown-it-py>=3.0.0", "defusedxml>=0.7.1"})
             entry_points = archive.read("malferma_libro-0.1.0.dist-info/entry_points.txt").decode()
             self.assertIn("malferma-libro = malferma_libro.__main__:main", entry_points)
         with tarfile.open(next((self.root / "dist").glob("*.tar.gz"))) as archive:

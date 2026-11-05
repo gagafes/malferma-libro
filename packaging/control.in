@@ -5,7 +5,7 @@ Priority: optional
 Architecture: all
 Maintainer: Malferma Libro contributors
 Installed-Size: {installed_size}
-Depends: python3 (>= 3.11), python3-gi, python3-markdown-it (>= 3.0.0), gir1.2-gtk-4.0 (>= 4.8), gir1.2-adw-1 (>= 1.4), librsvg2-common, poppler-utils, djvulibre-bin
+Depends: python3 (>= 3.11), python3-gi, python3-markdown-it (>= 3.0.0), python3-defusedxml (>= 0.7.1), gir1.2-gtk-4.0 (>= 4.8), gir1.2-adw-1 (>= 1.4), librsvg2-common, poppler-utils, djvulibre-bin
 Recommends: python3-venv, pulseaudio-utils | alsa-utils, xdg-desktop-portal, xdg-desktop-portal-gtk | xdg-desktop-portal-gnome | xdg-desktop-portal-kde
 Description: Malferma Libro GTK reader with OPDS catalogs
  Free e-book reader with a local library, reading progress, bookmarks,

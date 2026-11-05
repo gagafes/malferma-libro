@@ -2,7 +2,8 @@
 
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
-from xml.sax.saxutils import escape
+# XML escaping serializes data and does not parse untrusted XML.
+from xml.sax.saxutils import escape  # nosemgrep: python.lang.security.use-defused-xml.use-defused-xml
 import logging
 import math
 import tempfile
@@ -16,7 +17,6 @@ from .i18n import (
     INTERFACE_LANGUAGE_CODES, SPEECH_LANGUAGE_CODES,
 )
 from .live_i18n import LocalizedText, TranslationBindings, localized as _, localized_join
-from .books import load_book
 from .opds import download_book, fetch_catalog
 from .storage import (
     Library, FONT_SIZE_MIN, FONT_SIZE_MAX, READER_WIDTH_MIN, READER_WIDTH_MAX,

@@ -16,7 +16,8 @@ import tempfile
 from urllib.error import HTTPError, URLError
 from urllib.parse import quote, unquote, urljoin, urlsplit, urlunsplit
 from urllib.request import HTTPRedirectHandler, Request
-import xml.etree.ElementTree as ET
+# ElementTree is used for types/traversal; untrusted input uses xmlutil.parse_xml.
+import xml.etree.ElementTree as ET  # nosemgrep: python.lang.security.use-defused-xml.use-defused-xml
 
 from .i18n import _
 from . import __version__

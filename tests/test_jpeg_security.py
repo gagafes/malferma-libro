@@ -92,6 +92,7 @@ class JPEGSecurityTests(unittest.TestCase):
             import gi
             gi.require_version("GdkPixbuf", "2.0")
             from gi.repository import GdkPixbuf
+            _ = GdkPixbuf.Pixbuf  # Force availability check for the native decoder.
         except (ImportError, ValueError):
             self.skipTest("GdkPixbuf is unavailable")
         tagged = JPEG[:2] + app2() + JPEG[2:]

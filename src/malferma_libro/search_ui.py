@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from gi.repository import Gdk, GLib, Gtk, Pango
+from gi.repository import Gdk, Gtk, Pango
 
 from .live_i18n import localized as _
 from .search import MAX_QUERY_CHARS, SearchReport, search_book
