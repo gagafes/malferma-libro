@@ -316,7 +316,7 @@ def main() -> int:
             (root / "runtime").mkdir(mode=0o700)
             # Scene is one of the literal SCENES names and is passed without a shell.
             result = subprocess.run(  # nosemgrep: python.lang.security.audit.dangerous-subprocess-use-tainted-env-args.dangerous-subprocess-use-tainted-env-args
-                [sys.executable, "-B", str(Path(__file__).resolve()),
+                [sys.executable, "-B", str(Path(__file__).resolve()),  # nosemgrep: python.lang.security.audit.dangerous-subprocess-use-tainted-env-args.dangerous-subprocess-use-tainted-env-args
                                      "--scene", scene, "--output", str(output)],
                                     env=environment, capture_output=True, text=True, timeout=60)
             if result.returncode:

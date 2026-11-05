@@ -64,7 +64,7 @@ def main() -> int:
         try:
             # Local unittest IDs are passed as argv, never through a shell.
             result = subprocess.run(  # nosemgrep: python.lang.security.audit.dangerous-subprocess-use-tainted-env-args.dangerous-subprocess-use-tainted-env-args
-                [sys.executable, "-B", str(Path(__file__).resolve()),
+                [sys.executable, "-B", str(Path(__file__).resolve()),  # nosemgrep: python.lang.security.audit.dangerous-subprocess-use-tainted-env-args.dangerous-subprocess-use-tainted-env-args
                                      "--case", case], timeout=120, check=False)
             failures += result.returncode != 0
         except subprocess.TimeoutExpired:

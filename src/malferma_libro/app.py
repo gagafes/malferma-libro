@@ -17,7 +17,6 @@ from .i18n import (
     INTERFACE_LANGUAGE_CODES, SPEECH_LANGUAGE_CODES,
 )
 from .live_i18n import LocalizedText, TranslationBindings, localized as _, localized_join
-from .books import load_book
 from .opds import download_book, fetch_catalog
 from .storage import (
     Library, FONT_SIZE_MIN, FONT_SIZE_MAX, READER_WIDTH_MIN, READER_WIDTH_MAX,
