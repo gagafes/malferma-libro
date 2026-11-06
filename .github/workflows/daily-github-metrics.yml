@@ -1,0 +1,34 @@
+name: Daily GitHub metrics
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/daily-github-metrics.yml'
+      - 'tools/collect_github_metrics.py'
+  schedule:
+    - cron: '23 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-repository-metrics
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    name: Save release downloads and repository traffic
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Validate collector
+        run: python3 -m py_compile tools/collect_github_metrics.py
+      - name: Store daily metrics and charts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TRAFFIC_READ_TOKEN: ${{ secrets.TRAFFIC_READ_TOKEN }}
+        run: python3 tools/collect_github_metrics.py
