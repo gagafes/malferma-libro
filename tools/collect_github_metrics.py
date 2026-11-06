@@ -200,8 +200,15 @@ def dashboard(history, rows):
         "|---|---:|---:|---:|",
     ]
     for d in reversed(monthly_data[-24:]):
-        lines.append("| %s | %d | %d | %d |" %
-                     (d["month"], d["views"], d["clones"], d["observed_new_downloads"]))
+        has_download_delta = any(
+            r["date"].startswith(d["month"]) and r["observed_new_downloads"] != ""
+            for r in rows
+        )
+        views = str(d["views"]) if history["traffic"]["views"] else "—"
+        clones = str(d["clones"]) if history["traffic"]["clones"] else "—"
+        downloads = str(d["observed_new_downloads"]) if has_download_delta else "—"
+        lines.append("| %s | %s | %s | %s |" %
+                     (d["month"], views, clones, downloads))
     lines.extend(["", "## Release assets: current download counters", "",
                   "| Release | Asset | Downloads |", "|---|---|---:|"])
     for asset in sorted(latest.values(), key=lambda a: (a["release"], a["name"]), reverse=True):
