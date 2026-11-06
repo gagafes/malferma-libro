@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 300" role="img">
+<rect width="820" height="300" fill="#fafafa"/>
+<text x="48" y="30" font-family="sans-serif" font-size="18" fill="#111827">Observed new release downloads by month</text>
+<line x1="48" y1="250" x2="800" y2="250" stroke="#9ca3af"/>
+<text x="410" y="145" text-anchor="middle" font-family="sans-serif" fill="#6b7280">No recorded data yet</text>
+</svg>
