@@ -51,6 +51,6 @@
     "clones": {},
     "views": {}
   },
-  "traffic_status": "not configured (TRAFFIC_READ_TOKEN missing)",
-  "updated_at": "2026-11-07T07:13:27+00:00"
+  "traffic_status": "ERROR \u2014 see GitHub Actions log",
+  "updated_at": "2026-11-07T07:53:40+00:00"
 }
