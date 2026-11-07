@@ -1,6 +1,6 @@
 # GitHub statistics — gagafes/malferma-libro
 
-**Updated (UTC):** 2026-11-06T07:30:26+00:00  
+**Updated (UTC):** 2026-11-07T04:14:40+00:00  
 **Traffic API:** not configured (TRAFFIC_READ_TOKEN missing)
 
 ## Monthly graphs
@@ -15,7 +15,7 @@
 
 | Month (UTC) | Views | Clones | Observed new downloads |
 |---|---:|---:|---:|
-| 2026-11 | — | — | — |
+| 2026-11 | — | — | 15 |
 
 ## Release assets: current download counters
 
@@ -23,7 +23,7 @@
 |---|---|---:|
 | v0.1.1-4 | malferma-libro_0.1.1-4_source.zip | 0 |
 | v0.1.1-4 | malferma-libro_0.1.1-4_source.tar.gz | 0 |
-| v0.1.1-4 | malferma-libro_0.1.1-4_all.deb | 22 |
+| v0.1.1-4 | malferma-libro_0.1.1-4_all.deb | 37 |
 | v0.1.1-4 | SHA256SUMS | 0 |
 
 ## Raw data and limitations
