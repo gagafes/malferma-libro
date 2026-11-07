@@ -2,5 +2,7 @@
 <rect width="820" height="300" fill="#fafafa"/>
 <text x="48" y="30" font-family="sans-serif" font-size="18" fill="#111827">Observed new release downloads by month</text>
 <line x1="48" y1="250" x2="800" y2="250" stroke="#9ca3af"/>
-<text x="410" y="145" text-anchor="middle" font-family="sans-serif" fill="#6b7280">No recorded data yet</text>
+<rect x="198.0" y="80.0" width="450.0" height="170.0" fill="#2563eb"/>
+<text x="423.0" y="74.0" text-anchor="middle" font-size="12" font-family="sans-serif">15</text>
+<text x="423.0" y="271" text-anchor="middle" font-size="12" font-family="sans-serif">2026-11</text>
 </svg>
