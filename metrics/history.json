@@ -43,9 +43,31 @@
         "name": "malferma-libro_0.1.1-4_all.deb",
         "release": "v0.1.1-4"
       }
+    },
+    "2026-11-08": {
+      "679108575": {
+        "downloads": 0,
+        "name": "malferma-libro_0.1.1-4_source.zip",
+        "release": "v0.1.1-4"
+      },
+      "679108576": {
+        "downloads": 0,
+        "name": "SHA256SUMS",
+        "release": "v0.1.1-4"
+      },
+      "679108577": {
+        "downloads": 0,
+        "name": "malferma-libro_0.1.1-4_source.tar.gz",
+        "release": "v0.1.1-4"
+      },
+      "679108578": {
+        "downloads": 37,
+        "name": "malferma-libro_0.1.1-4_all.deb",
+        "release": "v0.1.1-4"
+      }
     }
   },
-  "last_traffic_success_at": "2026-11-07T07:59:39+00:00",
+  "last_traffic_success_at": "2026-11-08T04:16:31+00:00",
   "repository": "gagafes/malferma-libro",
   "schema": 1,
   "traffic": {
@@ -167,5 +189,5 @@
     }
   },
   "traffic_status": "active",
-  "updated_at": "2026-11-07T07:59:39+00:00"
+  "updated_at": "2026-11-08T04:16:31+00:00"
 }
