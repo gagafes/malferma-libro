@@ -2,10 +2,10 @@
 <rect width="820" height="300" fill="#fafafa"/>
 <text x="48" y="30" font-family="sans-serif" font-size="18" fill="#111827">Repository clones by month</text>
 <line x1="48" y1="250" x2="800" y2="250" stroke="#9ca3af"/>
-<rect x="123.0" y="212.9" width="225.0" height="37.1" fill="#2563eb"/>
-<text x="235.5" y="206.9" text-anchor="middle" font-size="12" font-family="sans-serif">242</text>
+<rect x="123.0" y="214.6" width="225.0" height="35.4" fill="#2563eb"/>
+<text x="235.5" y="208.6" text-anchor="middle" font-size="12" font-family="sans-serif">242</text>
 <text x="235.5" y="271" text-anchor="middle" font-size="12" font-family="sans-serif">2026-10</text>
 <rect x="498.0" y="80.0" width="225.0" height="170.0" fill="#2563eb"/>
-<text x="610.5" y="74.0" text-anchor="middle" font-size="12" font-family="sans-serif">1110</text>
+<text x="610.5" y="74.0" text-anchor="middle" font-size="12" font-family="sans-serif">1162</text>
 <text x="610.5" y="271" text-anchor="middle" font-size="12" font-family="sans-serif">2026-11</text>
 </svg>
