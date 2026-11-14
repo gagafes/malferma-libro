@@ -1,6 +1,6 @@
 # GitHub statistics — gagafes/malferma-libro
 
-**Updated (UTC):** 2026-11-13T04:21:35+00:00  
+**Updated (UTC):** 2026-11-14T04:16:18+00:00  
 **Traffic API:** active
 
 ## Monthly graphs
@@ -15,7 +15,7 @@
 
 | Month (UTC) | Views | Clones | Observed new downloads |
 |---|---:|---:|---:|
-| 2026-11 | 24 | 1110 | 15 |
+| 2026-11 | 29 | 1162 | 15 |
 | 2026-10 | 21 | 242 | — |
 
 ## Release assets: current download counters
