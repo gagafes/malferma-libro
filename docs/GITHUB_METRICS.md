@@ -3,9 +3,9 @@
 This project runs a lightweight, Python-standard-library-only collector using
 [GitHub Actions](https://github.com/gagafes/malferma-libro/actions/workflows/daily-github-metrics.yml).
 
-- **Schedule:** 03:23 UTC every day. Manual runs are available in the Actions tab.
+- **Schedule:** Traffic is collected every day at 03:23 UTC. Manual runs are available in the Actions tab.
 - **Archive:** [dashboard, charts, CSV and original JSON](https://github.com/gagafes/malferma-libro/tree/metrics-history/metrics) on the separate `metrics-history` branch.
-- **Downloads:** cumulative GitHub release asset download counters (with observed daily increases after the first snapshot).
+- **Downloads:** Release asset counters are refreshed on manual runs or collector changes. The archive records increases between snapshots.
 - **Traffic:** GitHub repository page views and clones, archived from the rolling 14-day Traffic API.
 
 ## Required one-time setup for traffic
@@ -16,7 +16,7 @@ but **not** for GitHub's Traffic API. Create a [fine-grained personal access tok
 Then open [Actions secrets](https://github.com/gagafes/malferma-libro/settings/secrets/actions), create a repository secret named **`TRAFFIC_READ_TOKEN`**, and paste the token there.
 
 Do **not** paste the token into chats, issues, code or README files. Rotate it before it expires. Until
-this secret is configured the workflow saves downloads but explicitly reports Traffic as unavailable.
+this secret is configured the workflow reports traffic as unavailable. Non-scheduled runs can still save download counters.
 An invalid/expired configured token causes the workflow to fail visibly.
 
 ## Notes
