@@ -192,7 +192,8 @@ def dashboard(history, rows):
     repo = history["repository"]
     monthly_data = monthly(rows)
     snapshots = history["downloads"]
-    latest = snapshots[max(snapshots)] if snapshots else {}
+    latest_day = max(snapshots, default="")
+    latest = snapshots[latest_day] if latest_day else {}
     lines = [
         "# GitHub statistics — " + repo, "",
         "**Updated (UTC):** " + history["updated_at"] + "  ",
@@ -215,7 +216,10 @@ def dashboard(history, rows):
         downloads = str(d["observed_new_downloads"]) if has_download_delta else "—"
         lines.append("| %s | %s | %s | %s |" %
                      (d["month"], views, clones, downloads))
-    lines.extend(["", "## Release assets: current download counters", "",
+    download_heading = "## Release asset downloads"
+    if latest_day:
+        download_heading += " — last recorded on " + latest_day + " (UTC)"
+    lines.extend(["", download_heading, "",
                   "| Release | Asset | Downloads |", "|---|---|---:|"])
     for asset in sorted(latest.values(), key=lambda a: (a["release"], a["name"]), reverse=True):
         lines.append("| %s | %s | %s |" %
@@ -226,12 +230,12 @@ def dashboard(history, rows):
     lines.extend([
         "", "## Raw data and limitations", "",
         "- [Daily CSV](daily.csv) / [Complete JSON history](history.json).",
-        "- GitHub supplies traffic for the rolling last 14 days. Daily snapshots here preserve earlier days.",
+        "- GitHub supplies traffic for the rolling last 14 days. Daily traffic snapshots preserve earlier days.",
         "- Monthly view/clone event totals are sums of daily figures, NOT unique monthly users.",
         "- Download changes are measured between saved snapshots. The first observation",
         "  of each release asset is a baseline, not a historical daily count.",
         "- Missing snapshot dates cannot be reconstructed precisely. Deleted assets are absent from",
-        "  current release download totals; auto-generated GitHub source archives are not included.",
+        "  later release snapshots; auto-generated GitHub source archives are not included.",
         "- All dates use UTC. No personal access tokens are written into these files.", "",
     ])
     return "\n".join(lines)
@@ -250,7 +254,8 @@ def main():
         "traffic": {"views": {}, "clones": {}},
     }
     history["updated_at"] = now.isoformat(timespec="seconds")
-    history["downloads"][day] = releases(repo, token)
+    if os.environ.get("GITHUB_EVENT_NAME") != "schedule":
+        history["downloads"][day] = releases(repo, token)
     error = None
     if traffic_token:
         try:
