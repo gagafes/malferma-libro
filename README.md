@@ -1,167 +1,40 @@
 # Malferma Libro
 
-**0.1.2 · Debian 13 · Ubuntu 24.04 · GTK 4 / libadwaita · GPL-3.0-or-later**
+Open-source GTK 4 / libadwaita ebook reader for Debian 13 and Ubuntu 24.04, with a local library and OPDS catalogs.
 
-**[Download for Debian 13 / Ubuntu 24.04 — DEB 0.1.2-1](https://github.com/gagafes/malferma-libro/releases/download/v0.1.2-1/malferma-libro_0.1.2-1_all.deb)**
-
-Security update · [Installation instructions](#installation-and-launch)
-
-A free and open-source desktop ebook reader with a local library and support
-for OPDS catalogs. The book occupies most of the window; the table of contents
-opens in a sidebar, and reading tools are grouped in the top bar.
-
-Supported formats: EPUB, FB2 and FB2.ZIP, TXT, PDF, DjVu, HTML/XHTML, Markdown
-and CBZ. Features include bookmarks and notes, search, light and dark modes,
-font settings, page numbering across the entire book, fullscreen mode,
-keyboard navigation, mouse gestures and accessibility tools. The interface
-supports 49 languages and writing variants; language changes take effect
-without restarting the application.
-
-EPUB and FB2 books show text with embedded illustrations. Select an illustration
-to open a larger view with zoom controls. The original CSS layout and interactive
-content are not reproduced. Search and narration in PDF/DjVu files depend on
-the availability of a text layer. OCR and DRM are not supported. CBZ files
-are displayed as a sequence of images.
-
-The source code is available at
-[gagafes/malferma-libro](https://github.com/gagafes/malferma-libro), on the `main` branch.
-To download the source without Git, choose **Code → Download ZIP**.
-
-## Screenshots
-
-Actual application windows captured on Debian 13 at 100% scale.
-The sample book is Lesya Ukrainka's *Надія* in the original Ukrainian.
-
-![Day mode: Ukrainian poetry, an inline illustration and the contents sidebar](docs/screenshots/reading-light.png)
-
-<details>
-<summary>Night mode and the local library</summary>
-
-**Night mode**
-
-![Night mode with the same illustrated Ukrainian book](docs/screenshots/reading-dark.png)
-
-**Local library with covers**
-
-![The local library with three demonstration books and their covers](docs/screenshots/library-light.png)
-
-</details>
-
-[Capture environment, sample content and reproduction instructions](docs/screenshots/README.md).
+- **Formats** — EPUB, FB2/FB2.ZIP, TXT, PDF, DjVu, HTML/XHTML, Markdown and CBZ.
+- **Reading** — bookmarks, notes, search, adjustable fonts, themes, fullscreen, keyboard and mouse controls, and accessibility tools. EPUB and FB2 support zoomable illustrations. The interface supports 49 languages and writing variants.
+- **Limits** — PDF/DjVu search and narration require a text layer. OCR and DRM are unsupported. Narration requires [Piper and voice models](docs/MANUAL.en.md#narration), installed separately.
 
 ## Installation and launch
 
-Debian package **0.1.2-1** uses defusedxml for EPUB, CBZ metadata and OPDS.
-It also limits PDF passwords before passing them to Poppler and avoids an
-extra list allocation when sorting the library.
-
-The release workflow checks fresh installation and upgrade from **0.1.1-4** on
-**Debian 13 and Ubuntu 24.04**, including preservation of a seeded test library
-and settings. Installed GTK checks run at normal and 200% scale. The owner
-confirmed the manual desktop and installation checks on 17 November 2026.
-See the [release checklist](docs/RELEASE_CHECKLIST.md) and
-[validation record](VALIDATION.md).
-
-The current data directory is `$XDG_DATA_HOME/malferma-libro` (normally
-`~/.local/share/malferma-libro`). Earlier project-named directories are no
-longer automatically detected; existing files are not moved or deleted.
-
-The [release page](https://github.com/gagafes/malferma-libro/releases/tag/v0.1.2-1)
-provides the matching complete source archives and `SHA256SUMS`.
-
-From the folder where you saved the DEB package, run:
+[Download DEB 0.1.2-1](https://github.com/gagafes/malferma-libro/releases/download/v0.1.2-1/malferma-libro_0.1.2-1_all.deb) · [Release notes, source archives and SHA256SUMS](https://github.com/gagafes/malferma-libro/releases/tag/v0.1.2-1)
 
 ```sh
 sudo apt install ./malferma-libro_0.1.2-1_all.deb
 malferma-libro
 ```
 
-If you build locally, the generated package is in `dist/`; install it from
-that directory or include `dist/` in the package path.
+Run these commands from the download directory. Library data lives in `$XDG_DATA_HOME/malferma-libro` (usually `~/.local/share/malferma-libro`).
 
-Development builds are also available after a successful GitHub Actions run: open
-[Actions](https://github.com/gagafes/malferma-libro/actions), select a green
-**Check and build** run, then download `malferma-libro-current` from the
-**Artifacts** section. You must be signed in to GitHub to download the artifact.
-The ZIP contains the DEB package, source archives and `SHA256SUMS`.
-
-If an earlier build with a higher version number is installed, APT may report
-a downgrade: this development series began at **0.1.0** by the project owner's decision.
-
-To run from source on Debian 13 or Ubuntu 24.04:
+## Run from source
 
 ```sh
-sudo apt install python3 python3-gi gir1.2-gtk-4.0 gir1.2-adw-1 \
-  python3-markdown-it python3-defusedxml poppler-utils djvulibre-bin librsvg2-common
+sudo apt install python3 python3-gi python3-markdown-it python3-defusedxml \
+  gir1.2-gtk-4.0 gir1.2-adw-1 poppler-utils djvulibre-bin librsvg2-common
 make run
 ```
 
-The application uses the system `/usr/bin/python3` so that PyGObject dependencies
-installed through APT are available. It follows the system font, scaling and
-symbolic icons; GTK/libadwaita appearance depends on the desktop environment
-and installed themes.
-
-Narration uses **Piper** exclusively. The engine and voice models must be
-installed separately; they are not included in this DEB package or source archive.
-See the [user guide](docs/MANUAL.en.md#narration) and
-[voice licensing notes](PIPER_LICENSES.md).
+`make check` runs tests and checks translations. With `dpkg-dev` installed, `make release` writes the DEB, source archives and checksums to `dist/`.
 
 ## Documentation
 
-- User guide: [Russian](MANUAL.md), [English](docs/MANUAL.en.md),
-  [German](docs/MANUAL.de.md), [Ukrainian](docs/MANUAL.uk.md).
-- Command-line help: `malferma-libro --help`, `--manual`, `--manual=en`,
-  `--version` and `--license`. These commands work without a graphical session.
-- Man page: `man malferma-libro`, with `man-db` installed.
-- Recovery notes: [English](docs/RECOVERY.en.md), [Russian](RECOVERY.md);
-  [validation scope](VALIDATION.md).
+- User guides in [English](docs/MANUAL.en.md), [Russian](MANUAL.md), [German](docs/MANUAL.de.md) and [Ukrainian](docs/MANUAL.uk.md).
+- CLI reference via `malferma-libro --help`, `malferma-libro --manual=en` or `man malferma-libro`.
+- [Recovery](docs/RECOVERY.en.md) · [Validation](VALIDATION.md) · [Security review](docs/SECURITY_REVIEW.md) · [Contributing](CONTRIBUTING.md) · [More screenshots](docs/screenshots/README.md)
 
-## Development and building
+![Reader with an illustration and the table of contents](docs/screenshots/reading-light.png)
 
-Install `dpkg-dev` to build the DEB package. The build does not download
-dependencies from the network.
+[GPL-3.0-or-later](LICENSE) · [Asset and dependency licenses](LICENSE_AUDIT.md)
 
-```sh
-make test
-make translations
-make release
-```
-
-`make release` creates the DEB package and complete source archives in ZIP
-and TAR.GZ formats. Separate targets are available: `make deb` and `make source`.
-For reproducible builds, set `SOURCE_DATE_EPOCH`; the default is `0`.
-
-```text
-src/malferma_libro/  application and bundled resources
-po/                 editable translation catalogs
-tests/              tests reconstructed for the current project
-data/               desktop/AppStream files, icons and man pages
-docs/               translated user guides
-packaging/          shared build script and licensing information
-dist/               build output, excluded from Git
-```
-
-The project directory is named `malferma-libro`; the Python package is
-`malferma_libro`. The application is named **Malferma Libro**, and its only
-launch command is `malferma-libro`. The application ID
-`io.github.malferma_libro.Reader` is shared by GTK, the desktop launcher,
-AppStream metadata and the installed icons.
-
-See [CONTRIBUTING.md](CONTRIBUTING.md#working-with-github) for instructions
-on contributing changes and working with the GitHub repository.
-
-The scope, corrections and limits of the source security review are recorded
-in [Security review](docs/SECURITY_REVIEW.md).
-
-## Development attribution
-
-Developed with assistance from **OpenAI Codex**. Project concept, requirements,
-and direction: **Andrey Popovich**.
-
-## License
-
-Code, translations and documentation: [GNU GPL v3 or later](LICENSE).
-The logo uses the same license, with [permission confirmed by its owner](LOGO_LICENSE.md).
-The nine bundled fonts retain their [SIL OFL 1.1](FONT_LICENSES.md) licenses;
-AppStream metadata is licensed under CC0-1.0. System dependencies and voice
-models retain their own license terms. See [LICENSE_AUDIT.md](LICENSE_AUDIT.md).
+Project by Andrey Popovich, developed with assistance from OpenAI Codex.
