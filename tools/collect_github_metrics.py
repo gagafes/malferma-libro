@@ -11,10 +11,16 @@ from collections import defaultdict
 from datetime import datetime, timezone
 from urllib.error import HTTPError
 from urllib.parse import quote
-from urllib.request import Request, urlopen
+from urllib.request import HTTPRedirectHandler, Request, build_opener
 
 BRANCH = "metrics-history"
 API = "https://api.github.com"
+
+
+class _NoRedirect(HTTPRedirectHandler):
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        # Keep the API credential on the original GitHub request.
+        return None
 
 
 def request(method, path, token, data=None):
@@ -29,7 +35,7 @@ def request(method, path, token, data=None):
     req = Request(API + path, data=None if data is None else json.dumps(data).encode(),
                   headers=headers, method=method)
     try:
-        with urlopen(req, timeout=30) as r:
+        with build_opener(_NoRedirect()).open(req, timeout=30) as r:
             raw = r.read()
             return json.loads(raw) if raw else None
     except HTTPError as e:

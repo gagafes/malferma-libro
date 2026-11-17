@@ -504,7 +504,8 @@ class Library:
                 return (opened is None, -(opened if opened is not None else 0.0),
                         added is None, -(added if added is not None else 0.0), title, author, book["id"])
 
-            return sorted(books, key=key)
+            books.sort(key=key)
+            return books
 
     def last_opened_book(self) -> dict[str, Any] | None:
         with self._lock:
