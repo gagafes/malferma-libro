@@ -1,6 +1,6 @@
 # Malferma Libro — Benutzerhandbuch
 
-Version 0.1.1. Eine Anwendung für Debian 13 und Ubuntu 24.04 mit GTK 4
+Version 0.1.2. Eine Anwendung für Debian 13 und Ubuntu 24.04 mit GTK 4
 und libadwaita.
 Dieses vollständige deutsche Handbuch wird mit der Anwendung geliefert und
 ist ohne Internetverbindung verfügbar. Öffnen Sie es im Hauptmenü, standardmäßig mit F1

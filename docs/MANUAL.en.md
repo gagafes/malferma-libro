@@ -1,6 +1,6 @@
 # Malferma Libro — user guide
 
-Version 0.1.1. An application for Debian 13 and Ubuntu 24.04 built with GTK 4
+Version 0.1.2. An application for Debian 13 and Ubuntu 24.04 built with GTK 4
 and libadwaita.
 This English guide is bundled with the application and is available without
 an internet connection. Open it from the main menu, with F1 by default, or with

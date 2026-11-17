@@ -150,7 +150,12 @@ class PdfDocument:
     def __init__(self, path: Path | str, password: str | None = None):
         self.path, details = _local_file(path)
         self._file_size = details.st_size
-        if password is not None and (not isinstance(password, str) or "\x00" in password):
+        # Bound the actual argv bytes before Poppler sees an R6 password
+        # (CVE-2026-107705). Character counts do not bound UTF-8 passwords.
+        if password is not None and (
+            not isinstance(password, str) or "\x00" in password
+            or len(os.fsencode(password)) > 127
+        ):
             raise PdfError(_("Недопустимый пароль PDF"))
         self._password = password
         self._sizes: dict[int, tuple[float, float]] = {}

@@ -28,9 +28,9 @@ class CommandLineTests(unittest.TestCase):
             env={**os.environ, "DISPLAY": "", "WAYLAND_DISPLAY": ""},
             capture_output=True, text=True, check=True,
         )
-        self.assertEqual(result.stdout, "Malferma Libro 0.1.1\n")
+        self.assertEqual(result.stdout, "Malferma Libro 0.1.2\n")
         self.assertEqual(result.stderr, "")
-        self.assertEqual(__version__, "0.1.1")
+        self.assertEqual(__version__, "0.1.2")
 
     def test_dash_filename_after_separator_is_a_book(self):
         options = parse_arguments(["--", "-book.txt", "--version"])

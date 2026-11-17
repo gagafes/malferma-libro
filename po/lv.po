@@ -2,7 +2,7 @@
 # Translation source recovered from the installed GNU gettext catalog.
 
 msgid ""
-msgstr "Project-Id-Version: Malferma Libro 0.1.1\nLanguage: lv\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n!=0 ? 1 : 2);\n"
+msgstr "Project-Id-Version: Malferma Libro 0.1.2\nLanguage: lv\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n!=0 ? 1 : 2);\n"
 
 #: src/malferma_libro/library_ui.py:105
 msgid " · Найдено: {count}"
