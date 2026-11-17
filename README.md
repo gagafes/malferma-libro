@@ -1,8 +1,8 @@
 # Malferma Libro
 
-**0.1.1 · Debian 13 · Ubuntu 24.04 · GTK 4 / libadwaita · GPL-3.0-or-later**
+**0.1.2 · Debian 13 · Ubuntu 24.04 · GTK 4 / libadwaita · GPL-3.0-or-later**
 
-**[Download for Debian 13 / Ubuntu 24.04 — DEB 0.1.1-4](https://github.com/gagafes/malferma-libro/releases/download/v0.1.1-4/malferma-libro_0.1.1-4_all.deb)**
+**[Download for Debian 13 / Ubuntu 24.04 — DEB 0.1.2-1](https://github.com/gagafes/malferma-libro/releases/download/v0.1.2-1/malferma-libro_0.1.2-1_all.deb)**
 
 Security update · [Installation instructions](#installation-and-launch)
 
@@ -51,33 +51,28 @@ The sample book is Lesya Ukrainka's *Надія* in the original Ukrainian.
 
 ## Installation and launch
 
-Debian package **0.1.1-4** is a security update: it bounds OPDS URL work,
-enforces network cancellation and deadlines, and strips JPEG APP2/ICC profiles
-before native decoding. It also unifies the application identity and hardens
-release publication. The application version remains **0.1.1**; version **1.0**
-is reserved for the project's production milestone.
+Debian package **0.1.2-1** uses defusedxml for EPUB, CBZ metadata and OPDS.
+It also limits PDF passwords before passing them to Poppler and avoids an
+extra list allocation when sorting the library.
 
-The release workflow checks fresh installation and upgrade from **0.1.1-3** on
+The release workflow checks fresh installation and upgrade from **0.1.1-4** on
 **Debian 13 and Ubuntu 24.04**, including preservation of a seeded test library
-and settings. Installed GTK checks run at normal and 200% scale. The published
-0.1.1-4 DEB also passed a separate Ubuntu installation/upgrade check on
-27 October 2026; see the [validation record](VALIDATION.md).
-The owner confirmed a manual check of the new build on 26 October and successful
-Ubuntu installation on 27 October. The
-[release checklist](docs/RELEASE_CHECKLIST.md) records the scope and limits;
-the fixes are documented in the [security review](docs/SECURITY_REVIEW.md).
+and settings. Installed GTK checks run at normal and 200% scale. The owner
+confirmed the manual desktop and installation checks on 17 November 2026.
+See the [release checklist](docs/RELEASE_CHECKLIST.md) and
+[validation record](VALIDATION.md).
 
 The current data directory is `$XDG_DATA_HOME/malferma-libro` (normally
 `~/.local/share/malferma-libro`). Earlier project-named directories are no
 longer automatically detected; existing files are not moved or deleted.
 
-The [release page](https://github.com/gagafes/malferma-libro/releases/tag/v0.1.1-4)
+The [release page](https://github.com/gagafes/malferma-libro/releases/tag/v0.1.2-1)
 provides the matching complete source archives and `SHA256SUMS`.
 
 From the folder where you saved the DEB package, run:
 
 ```sh
-sudo apt install ./malferma-libro_0.1.1-4_all.deb
+sudo apt install ./malferma-libro_0.1.2-1_all.deb
 malferma-libro
 ```
 
@@ -97,7 +92,7 @@ To run from source on Debian 13 or Ubuntu 24.04:
 
 ```sh
 sudo apt install python3 python3-gi gir1.2-gtk-4.0 gir1.2-adw-1 \
-  python3-markdown-it poppler-utils djvulibre-bin librsvg2-common
+  python3-markdown-it python3-defusedxml poppler-utils djvulibre-bin librsvg2-common
 make run
 ```
 
