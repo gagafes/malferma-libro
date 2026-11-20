@@ -1,14 +1,17 @@
 # Application screenshots
 
 These PNGs show the actual Malferma Libro GTK4/libadwaita application running
-on Debian 13 with an X11 virtual display, scale 100%, and English interface.
+on Debian 13 with an X11 virtual display at scale 100%. The Skovoroda scene
+uses the Ukrainian interface. The other three scenes use English.
 They capture the application window rather than a complete desktop session.
 The screenshots preserve native window pixels without compositing a mock UI.
 
 - `reading-light.png`: the day reading theme, an inline illustration and contents.
 - `reading-dark.png`: the same book in the night theme.
 - `library-light.png`: local EPUB and FB2 demonstration books with covers.
-- `capture-manifest.json`: capture date, runtime versions, dimensions and SHA256.
+- `skovoroda-dark.png`: Hryhorii Skovoroda’s Ukrainian prose in the dark reading theme.
+- `capture-manifest.json`: capture date, interface language, runtime versions,
+  dimensions and SHA-256 for each image.
 
 ## Sample content and licensing
 
@@ -18,8 +21,12 @@ Its historical spelling and accents follow the
 The original poem is in the public domain. The original printed ornament
 and other artwork from that edition are not included.
 
-The sample book covers, landscape illustration and English demonstration
-prose are created by `packaging/screenshots.py` and use GPL-3.0-or-later.
+The Skovoroda scene shows a short modern Ukrainian adaptation of
+«Бджола та Шершень», fable 27 from *Байки Харківські*. The adaptation follows
+the original text in the [academic edition, pp. 171–172](https://skovoroda.man.gov.ua/storage/files/Povna_akademichna_zbirka_tvoriv_zbirka.pdf).
+
+The sample book covers, landscape illustration, English demonstration prose
+and Ukrainian adaptation in `packaging/screenshots.py` use GPL-3.0-or-later.
 They are demonstration material for the reader. The screenshots and capture
 script use the project's GPL-3.0-or-later license; existing font and UI library
 licenses remain unchanged. No personal library or external catalog is used.
@@ -37,15 +44,16 @@ xvfb-run -a --server-args='-screen 0 1920x1200x24' dbus-run-session -- \
 
 Each scene runs in a fresh process with temporary XDG data, configuration,
 cache and runtime directories. The regular personal library is not opened.
-The script waits for covers and the reading illustration before capturing.
+The script waits for each scene’s covers, illustration or prose before capturing.
 Native shadow and window extents may differ with GTK versions; the manifest
 records the actual PNG and content dimensions. Rendering may vary with the
 distribution's GTK, fonts and image libraries.
 
 The manual **Capture screenshots** GitHub Actions workflow reproduces this
 process in a `debian:13` container. The
-[capture run](https://github.com/gagafes/malferma-libro/actions/runs/39259007086)
-also checks the native interface geometry. Runtime application version 0.1.1 is shown.
+[2026-10-19 capture run](https://github.com/gagafes/malferma-libro/actions/runs/39259007086)
+produced the three original gallery scenes with version 0.1.1 and checked the
+native interface geometry.
 At capture time, the published DEB was 0.1.1-1. The capture uncovered a GTK
 flag-alias compatibility issue and excessive expansion of library cover/card
 widgets; the fixes are included in Debian package 0.1.1-2. Earlier release

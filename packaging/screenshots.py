@@ -34,7 +34,8 @@ import zipfile
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SCENES = ("reading-light", "reading-dark", "library-light")
+SKOVORODA_SCENE = "skovoroda-dark"
+SCENES = ("reading-light", "reading-dark", "library-light", SKOVORODA_SCENE)
 WIDTH, HEIGHT = 1440, 1000
 POEM_SOURCE = "https://uk.wikisource.org/wiki/Сторінка:Леся_Українка._На_крилах_пісень._1892.pdf/28"
 POEM = """Ні долі ні волі у ме́не нема
@@ -52,6 +53,25 @@ POEM = """Ні долі ні волі у ме́не нема
 Ні долі, ні волі у мене нема,
 Зосталася тілько надія одна.
 """
+SKOVORODA_SOURCE = "https://skovoroda.man.gov.ua/storage/files/Povna_akademichna_zbirka_tvoriv_zbirka.pdf"
+SKOVORODA_PROSE = """— Скажи, Бджоло, навіщо ти й досі збираєш мед? Плоди твоєї праці більше служать
+людям, ніж тобі самій. Буває, що за мед ви платите життям. А вас багато, і всі,
+мов зачаровані, летите по нього знову.
+
+— От і порадник знайшовся! — відповіла Бджола. — Мед любить і ведмідь. Ви,
+шершні, теж добуваєте його хитрощами. Якби й нас вабив самий мед, ми могли б
+красти його, як часом робить і наша братія. Та нам куди радісніше збирати мед,
+ніж їсти.
+
+Поки живемо, доти й літатимемо по мед: для цього ми з’явилися на світ.
+Без цієї праці навіть серед повних стільників життя було б нам за смерть.
+"""
+SKOVORODA_MORAL = (
+    "Шершень уособлює тих, хто живе з чужої праці й дбає лише про їжу та питво. "
+    "Бджола нагадує мудру людину, яка знайшла своє сродне діло. Хіба не "
+    "занудьгує бджола серед повних стільників, якщо замкнути її саме тоді, "
+    "коли розквітають луки?"
+)
 
 
 def _art(path: Path, *, cover: bool = False, variant: int = 0) -> bytes:
@@ -199,6 +219,29 @@ def _fixture_library(root: Path):
     return library, record, book
 
 
+def _skovoroda_library(root: Path):
+    from malferma_libro.books import load_book
+    from malferma_libro.storage import Library
+
+    title = "Бджола та Шершень"
+    prose = "".join(f"<p>{escape(' '.join(paragraph.splitlines()))}</p>"
+                    for paragraph in SKOVORODA_PROSE.strip().split("\n\n"))
+    path = root / f"{title}.fb2"
+    path.write_text('<FictionBook xmlns="http://www.gribuser.ru/xml/fictionbook/2.0">'
+                    '<description><title-info><author><first-name>Григорій</first-name>'
+                    '<last-name>Сковорода</last-name></author>'
+                    '<book-title>Байка 27</book-title><lang>uk</lang></title-info></description>'
+                    f'<body><section><title><p>{title}</p></title>'
+                    f'{prose}<subtitle>Сила</subtitle><p>{escape(SKOVORODA_MORAL)}</p></section>'
+                    '<section><title><p>Про текст</p></title>'
+                    '<p>Григорій Сковорода. «Байки Харківські», байка 27.</p>'
+                    '<p>Адаптований уривок сучасною українською мовою.</p>'
+                    '</section></body></FictionBook>', encoding="utf-8")
+    library = Library()
+    book = load_book(path)
+    return library, library.import_book(path, book), book
+
+
 def _pump(GLib, duration=0.1):
     deadline = time.monotonic() + duration
     context = GLib.MainContext.default()
@@ -231,10 +274,14 @@ def _capture(scene: str, output: Path) -> dict:
     from malferma_libro.app import ReaderApplication, ReaderWindow
 
     root = Path(os.environ["XDG_DATA_HOME"]).parent
-    library, record, book = _fixture_library(root)
+    skovoroda = scene == SKOVORODA_SCENE
+    language = "uk" if skovoroda else "en"
+    library, record, book = _skovoroda_library(root) if skovoroda else _fixture_library(root)
     theme = "dark" if scene.endswith("dark") else "light"
-    library.settings.update({"interface_language": "en", "theme": theme,
+    library.settings.update({"interface_language": language, "theme": theme,
                              "interface_theme": theme, "auto_hide_header": False})
+    if skovoroda:
+        library.settings.update({"font_size": 26, "reader_width": 880})
     library.save()
     application = ReaderApplication()
     application.set_flags(application.get_flags() | Gio.ApplicationFlags.NON_UNIQUE)
@@ -245,7 +292,11 @@ def _capture(scene: str, output: Path) -> dict:
         window.present()
         _pump(GLib, 0.3)
         window.show_book(record, book)
-        if scene.startswith("library"):
+        if skovoroda:
+            window.reader_split.set_show_sidebar(True)
+            _wait(GLib, lambda: window.text_view.get_mapped() and window.buffer.get_char_count() > 0,
+                  "The demonstration prose did not finish loading")
+        elif scene.startswith("library"):
             window.stack.set_visible_child_name("library")
             window.refresh_library()
             def covers_ready():
@@ -275,6 +326,8 @@ def _capture(scene: str, output: Path) -> dict:
         return {"file": output.name, "scene": scene, "width": width, "height": height,
                 "window_width": window_width, "window_height": window_height,
                 "sha256": hashlib.sha256(data).hexdigest(),
+                "captured_at": datetime.now(timezone.utc).isoformat(),
+                "interface_language": language,
                 "application_version": __version__, "gtk_version": '.'.join(map(str, (
                     Gtk.get_major_version(), Gtk.get_minor_version(), Gtk.get_micro_version()))),
                 "libadwaita_version": '.'.join(map(str, (
@@ -324,12 +377,13 @@ def main() -> int:
                 return result.returncode
             captures.append(json.loads(result.stdout.strip().splitlines()[-1]))
             print(f"Captured {scene}.png", flush=True)
-    manifest = {"captured_at": datetime.now(timezone.utc).isoformat(),
-                "capture_method": "Unaltered native X11 window captured with ImageMagick import",
-                "interface_language": "en", "scale": 1, "screenshots": captures,
+    manifest = {"capture_method": "Unaltered native X11 window captured with ImageMagick import",
+                "scale": 1, "screenshots": captures,
                 "content": {"poem": "Леся Українка. Надія (1880), original Ukrainian text",
                             "poem_source": POEM_SOURCE,
                             "poem_license": "Public domain (author died in 1913)",
+                            "skovoroda": "Григорій Сковорода. Бджола та Шершень, adapted excerpt in Ukrainian",
+                            "skovoroda_source": SKOVORODA_SOURCE,
                             "demo_prose_and_artwork": "Original fixtures generated by packaging/screenshots.py",
                             "demo_license": "GPL-3.0-or-later"}}
     (output / "capture-manifest.json").write_text(
