@@ -10,7 +10,6 @@ import sys
 from collections import defaultdict
 from datetime import datetime, timezone
 from urllib.error import HTTPError
-from urllib.parse import quote
 from urllib.request import HTTPRedirectHandler, Request, build_opener
 
 BRANCH = "metrics-history"
@@ -52,35 +51,48 @@ def optional_request(method, path, token):
         raise
 
 
-def read_file(repo, path, token):
-    encoded = quote(path, safe="/")
-    result = optional_request("GET", "/repos/%s/contents/%s?ref=%s" % (repo, encoded, BRANCH), token)
+def branch_head(repo, base_sha, token):
+    ref = f"/repos/{repo}/git/ref/heads/{BRANCH}"
+    result = optional_request("GET", ref, token)
     if result is None:
-        return None, None
-    return base64.b64decode(result["content"]).decode("utf-8"), result["sha"]
-
-
-def write_file(repo, path, content, token):
-    _, sha = read_file(repo, path, token)
-    payload = {
-        "message": "metrics: update " + path,
-        "branch": BRANCH,
-        "content": base64.b64encode(content.encode("utf-8")).decode("ascii"),
-    }
-    if sha:
-        payload["sha"] = sha
-    request("PUT", "/repos/%s/contents/%s" % (repo, quote(path, safe="/")), token, payload)
-
-
-def ensure_branch(repo, base_sha, token):
-    ref = "/repos/%s/git/ref/heads/%s" % (repo, BRANCH)
-    if optional_request("GET", ref, token) is None:
         try:
-            request("POST", "/repos/%s/git/refs" % repo, token,
-                    {"ref": "refs/heads/" + BRANCH, "sha": base_sha})
-        except RuntimeError as e:
-            if "GitHub API error 422 " not in str(e):
+            result = request("POST", f"/repos/{repo}/git/refs", token,
+                             {"ref": f"refs/heads/{BRANCH}", "sha": base_sha})
+        except RuntimeError as exc:
+            if "GitHub API error 422 " not in str(exc):
                 raise
+            result = optional_request("GET", ref, token)
+            if result is None:
+                raise
+    return result["object"]["sha"]
+
+
+def read_history(repo, head, token):
+    path = f"/repos/{repo}/contents/metrics/history.json?ref={head}"
+    result = optional_request("GET", path, token)
+    if result is None:
+        return None
+    return json.loads(base64.b64decode(result["content"]))
+
+
+def write_snapshot(repo, head, day, files, token):
+    prefix = f"/repos/{repo}/git"
+    parent = request("GET", f"{prefix}/commits/{head}", token)
+    tree = request("POST", f"{prefix}/trees", token, {
+        "base_tree": parent["tree"]["sha"],
+        "tree": [
+            {"path": path, "mode": "100644", "type": "blob", "content": content}
+            for path, content in files.items()
+        ],
+    })
+    commit = request("POST", f"{prefix}/commits", token, {
+        "message": f"metrics: record snapshot for {day}",
+        "tree": tree["sha"],
+        "parents": [head],
+    })
+    # Reject concurrent changes instead of publishing a stale snapshot.
+    request("PATCH", f"{prefix}/refs/heads/{BRANCH}", token,
+            {"sha": commit["sha"], "force": False})
 
 
 def releases(repo, token):
@@ -247,12 +259,13 @@ def main():
     traffic_token = os.environ.get("TRAFFIC_READ_TOKEN", "")
     now = datetime.now(timezone.utc)
     day = now.strftime("%Y-%m-%d")
-    ensure_branch(repo, os.environ["GITHUB_SHA"], token)
-    previous, _ = read_file(repo, "metrics/history.json", token)
-    history = json.loads(previous) if previous else {
-        "schema": 1, "repository": repo, "downloads": {},
-        "traffic": {"views": {}, "clones": {}},
-    }
+    head = branch_head(repo, os.environ["GITHUB_SHA"], token)
+    history = read_history(repo, head, token)
+    if history is None:
+        history = {
+            "schema": 1, "repository": repo, "downloads": {},
+            "traffic": {"views": {}, "clones": {}},
+        }
     history["updated_at"] = now.isoformat(timespec="seconds")
     if os.environ.get("GITHUB_EVENT_NAME") != "schedule":
         history["downloads"][day] = releases(repo, token)
@@ -283,8 +296,7 @@ def main():
         "metrics/monthly-downloads.svg": svg_chart(report, "observed_new_downloads",
                                                    "Observed new release downloads by month"),
     }
-    for path, content in output.items():
-        write_file(repo, path, content, token)
+    write_snapshot(repo, head, day, output, token)
     print("Dashboard: https://github.com/%s/blob/%s/metrics/README.md" % (repo, BRANCH))
     if not traffic_token:
         print("::warning::Traffic metrics require TRAFFIC_READ_TOKEN repository secret")

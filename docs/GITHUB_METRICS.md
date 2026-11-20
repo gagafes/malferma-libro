@@ -4,8 +4,8 @@ This project runs a lightweight, Python-standard-library-only collector using
 [GitHub Actions](https://github.com/gagafes/malferma-libro/actions/workflows/daily-github-metrics.yml).
 
 - **Schedule:** Traffic is collected every day at 03:23 UTC. Manual runs are available in the Actions tab.
-- **Archive:** [dashboard, charts, CSV and original JSON](https://github.com/gagafes/malferma-libro/tree/metrics-history/metrics) on the separate `metrics-history` branch.
-- **Downloads:** Release asset counters are refreshed on manual runs or collector changes. The archive records increases between snapshots.
+- **Archive:** Each run saves the [dashboard, charts, CSV and original JSON](https://github.com/gagafes/malferma-libro/tree/metrics-history/metrics) in one commit on the `metrics-history` branch.
+- **Downloads:** Release asset counters are refreshed on manual runs or changes to the collector or its workflow. The archive records increases between snapshots.
 - **Traffic:** GitHub repository page views and clones, archived from the rolling 14-day Traffic API.
 
 ## Required one-time setup for traffic

@@ -1,16 +1,11 @@
 # Piper runtime and voice licensing evidence
 
-Upstream research recorded on 2026-10-17 for Malferma Libro 0.1.0 is retained
-for 0.1.1. This record distinguishes
-the reader's GPL license, the separately installed Piper runtime, and each
-voice model's upstream terms. It does not relicense downloaded or imported
-models. No voice weights are included in the application source or Debian package.
+This record covers the reader, the separately installed Piper runtime and
+the upstream terms for each supported voice model. It was first recorded on
+2026-10-17.
 
-The current application-only Debian package does not include Piper runtime
-binaries. The earlier runtime bundle build scripts were not present in the
-saved package and are not available in this recovered release. Optional
-external-runtime installation remains supported; see [MANUAL.md](MANUAL.md)
-and [PIPER_BUNDLE.md](PIPER_BUNDLE.md). No actual synthesis is claimed here.
+The DEB and source archives contain the Piper integration. Install the runtime
+and voice weights separately, following the [narration instructions](MANUAL.md#озвучка).
 
 ## Runtime
 

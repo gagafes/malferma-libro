@@ -2,16 +2,15 @@
 
 # Release publication controls
 
-These controls describe the current source workflow, including the Ubuntu
-publication gate added on 27 October 2026. Existing release tags and assets
-retain their original contents and historical workflows.
+These controls apply to release publication from the current `main` branch.
 
 ## Source controls
 
 - `publish` runs only for an explicitly requested manual run on protected
   `refs/heads/main`, after Linux, Debian and both Ubuntu fresh/upgrade jobs succeed.
 - Ubuntu jobs validate the candidate DEB and SHA256SUMS from the same workflow
-  run, including data preservation across the checksum-pinned 0.1.1-3 baseline.
+  run, including data preservation across the checksum-pinned upgrade baseline
+  listed in the [release checklist](RELEASE_CHECKLIST.md).
   Their job dependency blocks publication on failure or a skipped required job.
 - The job references the `github-release` environment and serializes publication
   attempts. This YAML reference alone does **not** configure environment rules.
@@ -20,8 +19,7 @@ retain their original contents and historical workflows.
   from GitHub, and refuses a stale run or an existing release tag. A failed or
   malformed API read stops publication. The guard performs only read operations.
 - The existing `gh release create` command does not update an existing release.
-  Use a new package revision for each release; this update uses `0.1.1-4`.
-  Do not reuse `0.1.1-3`.
+  Use an unpublished full package version for each release.
 
 These checks are defense in depth for the checked workflow. They are not an
 authorization boundary against a repository writer who can replace workflows
@@ -31,8 +29,7 @@ already running jobs. Never rewrite release history to update old workflows.
 
 ## Repository administrator setup
 
-The connected managed GitHub App does not have administration access. Source
-changes cannot enable or verify all of the following settings on its behalf.
+Configure the following settings in the GitHub repository.
 
 1. In [branch settings](https://github.com/gagafes/malferma-libro/settings/branches),
    protect `main`: require successful `linux` and `Install and upgrade on Debian 13`

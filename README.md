@@ -15,23 +15,23 @@ sudo apt install ./malferma-libro_0.1.2-1_all.deb
 malferma-libro
 ```
 
-Run these commands from the download directory. Library data lives in `$XDG_DATA_HOME/malferma-libro` (usually `~/.local/share/malferma-libro`).
+Run these commands from the download directory. Library data lives in `$XDG_DATA_HOME/malferma-libro` when `XDG_DATA_HOME` is an absolute path, and in `~/.local/share/malferma-libro` otherwise.
 
 ## Run from source
 
 ```sh
-sudo apt install python3 python3-gi python3-markdown-it python3-defusedxml \
+sudo apt install make python3 python3-gi python3-markdown-it python3-defusedxml \
   gir1.2-gtk-4.0 gir1.2-adw-1 poppler-utils djvulibre-bin librsvg2-common
 make run
 ```
 
-`make check` runs tests and checks translations. With `dpkg-dev` installed, `make release` writes the DEB, source archives and checksums to `dist/`.
+Run these commands from the source directory. See [Contributing](CONTRIBUTING.md) for development checks and release builds.
 
 ## Documentation
 
 - User guides in [English](docs/MANUAL.en.md), [Russian](MANUAL.md), [German](docs/MANUAL.de.md) and [Ukrainian](docs/MANUAL.uk.md).
 - CLI reference via `malferma-libro --help`, `malferma-libro --manual=en` or `man malferma-libro`.
-- [Recovery](docs/RECOVERY.en.md) · [Validation](VALIDATION.md) · [Security review](docs/SECURITY_REVIEW.md) · [Contributing](CONTRIBUTING.md) · [More screenshots](docs/screenshots/README.md)
+- [Recovery](docs/RECOVERY.en.md) · [Validation](VALIDATION.md) · [Security review](docs/SECURITY_REVIEW.md) · [More screenshots](docs/screenshots/README.md)
 
 ![Reader with an illustration and the table of contents](docs/screenshots/reading-light.png)
 
