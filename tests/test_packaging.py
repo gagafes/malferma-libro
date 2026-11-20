@@ -43,6 +43,7 @@ class ReleaseBuildTests(unittest.TestCase):
         self.put("packaging/malferma-libro", "#!/usr/bin/python3\n")
         self.put("packaging/build.py", BUILDER_PATH.read_text(encoding="utf-8"))
         self.put("packaging/copyright", "Copyright test fixture\n")
+        self.put("packaging/README.Debian.md", "Installed package guide\n")
         self.put("packaging/control.in", (BUILDER_PATH.parent / "control.in").read_text())
         self.put("data/malferma-libro.1", ".TH MALFERMA-LIBRO 1\n")
         self.put("data/applications/example.desktop", "[Desktop Entry]\nName=Example\n")
@@ -87,15 +88,18 @@ class ReleaseBuildTests(unittest.TestCase):
         # output directories should exclude them from a source release.
         self.put("tests/fixtures/book.zip", "archive fixture")
         self.put("data/example.txt.gz", "compressed data")
+        self.put("tools/collect_github_metrics.py", "# Metrics collector\n")
         paths = builder.build_source(self.root, self.root / "dist", 0)
         with zipfile.ZipFile(paths[1]) as archive:
-            for name in ("tests/fixtures/book.zip", "data/example.txt.gz"):
+            for name in ("tests/fixtures/book.zip", "data/example.txt.gz", "tools/collect_github_metrics.py"):
                 self.assertEqual(archive.read(f"malferma-libro-0.1.0/{name}"),
                                  (self.root / name).read_bytes())
 
     @unittest.skipUnless(shutil.which("dpkg-deb"), "dpkg-deb is unavailable")
     def test_debian_payload_control_and_reproducible_build(self):
         self.put("src/malferma_libro/.env.local", "TOKEN=secret")
+        self.put("docs/MANUAL.en.md", "English manual\n")
+        self.put("docs/RELEASE_CHECKLIST.md", "Maintainer instructions\n")
         output = self.root / "dist"
         path = builder.build_deb(self.root, output, 0)
         original = path.read_bytes()
@@ -107,6 +111,10 @@ class ReleaseBuildTests(unittest.TestCase):
             self.assertIn("./usr/share/malferma-libro/malferma_libro/reader.py", names)
             self.assertIn("./usr/share/man/man1/malferma-libro.1.gz", names)
             self.assertIn("./usr/share/doc/malferma-libro/copyright", names)
+            self.assertIn("./usr/share/doc/malferma-libro/MANUAL.en.md", names)
+            with archive.extractfile("./usr/share/doc/malferma-libro/README.md") as readme:
+                self.assertEqual(readme.read(), b"Installed package guide\n")
+            self.assertNotIn("./usr/share/doc/malferma-libro/RELEASE_CHECKLIST.md", names)
             self.assertFalse(any("/dist/" in name or "/tests/" in name for name in names))
             self.assertFalse(any(".env" in name for name in names))
             for member in archive.getmembers():
@@ -206,6 +214,7 @@ class ReleaseBuildTests(unittest.TestCase):
     def test_python_distributions_include_runtime_and_source_inputs(self):
         self.put("MANIFEST.in", (BUILDER_PATH.parents[1] / "MANIFEST.in").read_text())
         self.put(".github/workflows/check.yml", "name: Source fixture\n")
+        self.put("tools/collect_github_metrics.py", "# Metrics collector\n")
         self.put("po/en.po", 'msgid "Book"\nmsgstr "Book"\n')
         self.put("src/malferma_libro/locale/en/LC_MESSAGES/malferma-libro.mo", "compiled catalog")
         self.put("src/malferma_libro/.env.local", "TOKEN=secret")
@@ -233,7 +242,7 @@ class ReleaseBuildTests(unittest.TestCase):
             names = {name.split("/", 1)[1] for name in archive.getnames() if "/" in name}
             self.assertFalse(any(".env" in name or name.endswith("~") for name in names))
             for name in ("LICENSE", "Makefile", "packaging/build.py", "po/en.po",
-                         ".github/workflows/check.yml"):
+                         ".github/workflows/check.yml", "tools/collect_github_metrics.py"):
                 self.assertIn(name, names)
 
     def test_source_symlinks_cannot_pull_files_from_outside_project(self):

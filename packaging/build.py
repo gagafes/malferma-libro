@@ -27,10 +27,15 @@ import tempfile
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE_DIRECTORIES = ("src", "data", "docs", "packaging", "po", "tests", ".github")
+SOURCE_DIRECTORIES = ("src", "data", "docs", "packaging", "po", "tests", "tools", ".github")
 SOURCE_FILES = (
     "LICENSE", "README.md", "Makefile", "pyproject.toml", "MANIFEST.in",
     ".gitignore", ".gitattributes", ".editorconfig",
+)
+DEB_DOCS = (
+    "CHANGELOG.md", "MANUAL.md", "docs/MANUAL.en.md",
+    "docs/MANUAL.de.md", "docs/MANUAL.uk.md", "LICENSE_AUDIT.md",
+    "FONT_LICENSES.md", "LOGO_LICENSE.md", "PIPER_LICENSES.md",
 )
 IGNORED_DIRECTORIES = {"__pycache__", ".git", ".venv", "venv", "build", "dist", ".pytest_cache"}
 IGNORED_SUFFIXES = {".pyc", ".pyo", ".deb"}
@@ -190,10 +195,11 @@ def build_deb(root: Path, output: Path, epoch: int) -> Path:
         for name in ("applications", "icons", "metainfo"):
             _copy_tree(root / "data" / name, stage / "usr/share" / name)
         documentation = stage / "usr/share/doc/malferma-libro"
-        for path in sorted(root.glob("*.md")):
-            _copy_file(path, documentation / path.name)
-        for path in sorted((root / "docs").glob("*.md")):
-            _copy_file(path, documentation / path.name)
+        for name in DEB_DOCS:
+            path = root / name
+            if path.is_file():
+                _copy_file(path, documentation / path.name)
+        _copy_file(root / "packaging/README.Debian.md", documentation / "README.md")
         _copy_file(root / "LICENSE", documentation / "LICENSE")
         _copy_file(root / "packaging/copyright", documentation / "copyright")
         for path in sorted((root / "data").rglob("malferma-libro.1")):

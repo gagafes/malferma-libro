@@ -2,4 +2,4 @@ blank_issues_enabled: true
 contact_links:
   - name: User guide
     url: https://github.com/gagafes/malferma-libro/blob/main/docs/MANUAL.en.md
-    about: Read the guide for installation, reading controls and Piper narration.
+    about: Read the guide for reading controls, library management and Piper narration.

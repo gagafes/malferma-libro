@@ -29,8 +29,7 @@ Comment: The AppStream metadata declares CC0-1.0 separately from the
  GPL-3.0-or-later application code. Its project_license field describes
  the application, not the licence of the metadata document itself.
 
-Files: data/branding/*
- data/icons/hicolor/*/apps/io.github.malferma_libro.Reader.png
+Files: data/icons/hicolor/*/apps/io.github.malferma_libro.Reader.png
  data/icons/hicolor/scalable/apps/io.github.malferma_libro.Reader.svg
  src/malferma_libro/assets/branding/*
 Copyright: Malferma Libro project owner, who supplied and licensed the logo.

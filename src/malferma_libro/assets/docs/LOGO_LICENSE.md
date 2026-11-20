@@ -34,8 +34,8 @@ and its derived icons under GPL-3.0-or-later. The exact reply was:
 
 This current source tree was recovered from an installed Debian payload.
 The editable vector sources are
-[`logo.svg`](src/malferma_libro/assets/branding/logo.svg) and
-[`app-icon.svg`](src/malferma_libro/assets/branding/app-icon.svg).
+[`logo.svg`](https://github.com/gagafes/malferma-libro/blob/main/src/malferma_libro/assets/branding/logo.svg) and
+[`app-icon.svg`](https://github.com/gagafes/malferma-libro/blob/main/src/malferma_libro/assets/branding/app-icon.svg).
 They contain closed Bézier paths, including the lettering outlines; there
 are no embedded raster images, external fonts or external rendering resources.
 The installed PNG and desktop-icon copies are also present.
@@ -44,7 +44,7 @@ The original supplied JPEG, the separate PNG emblem master and the former
 export scripts were not in the saved DEB and could not be recovered. They
 are not described as files included in this release. Their absence does
 not withdraw the owner's grant for the supplied logo and its derivatives.
-Available SVG files can be edited directly; see [BRANDING.md](BRANDING.md).
+Available SVG files can be edited directly; see [BRANDING.md](https://github.com/gagafes/malferma-libro/blob/main/BRANDING.md).
 
 ## Current artwork manifest
 
@@ -74,5 +74,5 @@ af4632fa8df2458e14a481d0d4be2e1208bcec511e121c20e0111b3cf0444983  data/icons/hic
 
 This grant covers the logo materials. The fonts, AppStream metadata and
 independent system components retain the separate terms documented in
-[FONT_LICENSES.md](FONT_LICENSES.md), `packaging/copyright` and
+[FONT_LICENSES.md](https://github.com/gagafes/malferma-libro/blob/main/FONT_LICENSES.md), `packaging/copyright` and
 [LICENSE_AUDIT.md](LICENSE_AUDIT.md).
