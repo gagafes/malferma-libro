@@ -33,7 +33,7 @@ Run these commands from the source directory. See [Contributing](CONTRIBUTING.md
 - CLI reference via `malferma-libro --help`, `malferma-libro --manual=en` or `man malferma-libro`.
 - [Recovery](docs/RECOVERY.en.md) · [Validation](VALIDATION.md) · [Security review](docs/SECURITY_REVIEW.md) · [More screenshots](docs/screenshots/README.md)
 
-![Reader with an illustration and the table of contents](docs/screenshots/reading-light.png)
+![Malferma Libro in dark mode displaying Hryhorii Skovoroda’s fable «Бджола та Шершень» in Ukrainian](docs/screenshots/skovoroda-dark.png)
 
 [GPL-3.0-or-later](LICENSE) · [Asset and dependency licenses](LICENSE_AUDIT.md)
 
