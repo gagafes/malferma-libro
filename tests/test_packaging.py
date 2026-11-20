@@ -88,10 +88,9 @@ class ReleaseBuildTests(unittest.TestCase):
         # output directories should exclude them from a source release.
         self.put("tests/fixtures/book.zip", "archive fixture")
         self.put("data/example.txt.gz", "compressed data")
-        self.put("tools/collect_github_metrics.py", "# Metrics collector\n")
         paths = builder.build_source(self.root, self.root / "dist", 0)
         with zipfile.ZipFile(paths[1]) as archive:
-            for name in ("tests/fixtures/book.zip", "data/example.txt.gz", "tools/collect_github_metrics.py"):
+            for name in ("tests/fixtures/book.zip", "data/example.txt.gz"):
                 self.assertEqual(archive.read(f"malferma-libro-0.1.0/{name}"),
                                  (self.root / name).read_bytes())
 
@@ -214,7 +213,6 @@ class ReleaseBuildTests(unittest.TestCase):
     def test_python_distributions_include_runtime_and_source_inputs(self):
         self.put("MANIFEST.in", (BUILDER_PATH.parents[1] / "MANIFEST.in").read_text())
         self.put(".github/workflows/check.yml", "name: Source fixture\n")
-        self.put("tools/collect_github_metrics.py", "# Metrics collector\n")
         self.put("po/en.po", 'msgid "Book"\nmsgstr "Book"\n')
         self.put("src/malferma_libro/locale/en/LC_MESSAGES/malferma-libro.mo", "compiled catalog")
         self.put("src/malferma_libro/.env.local", "TOKEN=secret")
@@ -242,7 +240,7 @@ class ReleaseBuildTests(unittest.TestCase):
             names = {name.split("/", 1)[1] for name in archive.getnames() if "/" in name}
             self.assertFalse(any(".env" in name or name.endswith("~") for name in names))
             for name in ("LICENSE", "Makefile", "packaging/build.py", "po/en.po",
-                         ".github/workflows/check.yml", "tools/collect_github_metrics.py"):
+                         ".github/workflows/check.yml"):
                 self.assertIn(name, names)
 
     def test_source_symlinks_cannot_pull_files_from_outside_project(self):

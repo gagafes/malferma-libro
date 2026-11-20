@@ -55,8 +55,6 @@ package version determines the DEB metadata, artifact names and release tag.
 The [Check and build workflow] provides the `malferma-libro-current` artifact
 after the build job succeeds. See the [release checklist](docs/RELEASE_CHECKLIST.md)
 for publication and the [release page] for the currently published files.
-The [GitHub metrics guide](docs/GITHUB_METRICS.md) describes the separate
-traffic and download archive.
 
 [Check and build workflow]: https://github.com/gagafes/malferma-libro/actions/workflows/check.yml
 [release page]: https://github.com/gagafes/malferma-libro/releases/latest

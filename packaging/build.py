@@ -27,7 +27,7 @@ import tempfile
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE_DIRECTORIES = ("src", "data", "docs", "packaging", "po", "tests", "tools", ".github")
+SOURCE_DIRECTORIES = ("src", "data", "docs", "packaging", "po", "tests", ".github")
 SOURCE_FILES = (
     "LICENSE", "README.md", "Makefile", "pyproject.toml", "MANIFEST.in",
     ".gitignore", ".gitattributes", ".editorconfig",

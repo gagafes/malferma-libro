@@ -6,7 +6,6 @@ graft docs
 graft packaging
 graft po
 graft tests
-graft tools
 graft .github
 global-exclude __pycache__ *.py[cod] *.deb .env .env.* .DS_Store *~
 prune dist
