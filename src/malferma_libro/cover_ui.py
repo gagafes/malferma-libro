@@ -56,6 +56,8 @@ class CoverUIMixin:
             self._cover_cache = None
         self._cover_executor = ThreadPoolExecutor(max_workers=self._COVER_WORKERS,
                                                   thread_name_prefix="book-cover")
+        if self._cover_cache is not None:
+            self._cover_executor.submit(self._cover_cache.prune)
 
     def cover_thumbnail(self, record=None):
         """Create one fixed-size placeholder; a mapped visible row loads lazily."""

@@ -2,12 +2,72 @@
 
 from __future__ import annotations
 
-from http.client import IncompleteRead
+from http.client import HTTPConnection, HTTPSConnection, IncompleteRead
+from ipaddress import IPv6Address, ip_address, ip_network
 import json
 from pathlib import Path
+import socket
 import sys
 from urllib.error import HTTPError
-from urllib.request import Request, build_opener
+from urllib.request import HTTPHandler, HTTPSHandler, ProxyHandler, Request, build_opener
+
+
+_NAT64_PREFIXES = (ip_network("64:ff9b::/96"), ip_network("64:ff9b:1::/48"))
+
+
+def _public_address(address):
+    ip = ip_address(address)
+    if isinstance(ip, IPv6Address):
+        if ip.ipv4_mapped is not None:
+            ip = ip.ipv4_mapped
+        elif (ip.is_site_local or ip.sixtofour is not None or ip.teredo is not None
+              or any(ip in prefix for prefix in _NAT64_PREFIXES)):
+            return False
+    return ip.is_global and not ip.is_multicast and not ip.is_reserved
+
+
+def _connect_public(destination, timeout, source_address=None):
+    host, port = destination
+    last_error = None
+    for family, kind, protocol, _name, address in socket.getaddrinfo(
+        host, port, type=socket.SOCK_STREAM, proto=socket.IPPROTO_TCP
+    ):
+        if not _public_address(address[0]) or (family == socket.AF_INET6 and address[3]):
+            continue
+        connection = socket.socket(family, kind, protocol)
+        try:
+            connection.settimeout(timeout)
+            if source_address is not None:
+                connection.bind(source_address)
+            # Connect to the exact resolver result that passed the policy.
+            connection.connect(address)
+            return connection
+        except OSError as error:
+            connection.close()
+            last_error = error
+    if last_error is not None:
+        raise last_error
+    raise OSError("OPDS cover destination is not a public IP address")
+
+
+def _public_connection(connection_type):
+    def create(*args, **kwargs):
+        connection = connection_type(*args, **kwargs)
+        # Preserve the original hostname for HTTP Host, TLS SNI and certificate
+        # verification. Only the socket creation differs from the stdlib.
+        connection._create_connection = _connect_public
+        return connection
+    return create
+
+
+class _PublicHTTPHandler(HTTPHandler):
+    def http_open(self, request):
+        return self.do_open(_public_connection(HTTPConnection), request)
+
+
+class _PublicHTTPSHandler(HTTPSHandler):
+    def https_open(self, request):
+        return self.do_open(_public_connection(HTTPSConnection), request, context=self._context)
 
 
 def _transfer():
@@ -16,7 +76,7 @@ def _transfer():
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
     specification = json.loads(sys.stdin.buffer.read(65537))
     policy = specification["policy"]
-    if policy == "opds":
+    if policy in {"opds", "opds-cover"}:
         from malferma_libro.opds import _SafeRedirects, _validate_url
         validate, redirects = _validate_url, _SafeRedirects
     elif policy == "voice":
@@ -30,7 +90,12 @@ def _transfer():
     url = specification["url"]
     validate(url)
     request = Request(url, headers=specification["headers"])
-    with build_opener(redirects()).open(request, timeout=timeout) as response:
+    handlers = [redirects()]
+    if policy == "opds-cover":
+        # A proxy resolves the destination independently. Disable ambient
+        # proxies for covers so the same socket policy applies to every hop.
+        handlers.extend((ProxyHandler({}), _PublicHTTPHandler(), _PublicHTTPSHandler()))
+    with build_opener(*handlers).open(request, timeout=timeout) as response:
         final_url = response.geturl()
         validate(final_url)
         if len(final_url) > 8192:

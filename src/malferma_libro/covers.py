@@ -8,7 +8,9 @@ Thumbnail decoding is available separately through a lazy GdkPixbuf import.
 from __future__ import annotations
 
 import base64
+from contextlib import contextmanager
 from dataclasses import dataclass
+import fcntl
 import hashlib
 import math
 import os
@@ -30,6 +32,10 @@ MAX_COVER_PIXELS = 4 * 1024 * 1024
 MAX_COVER_XML_BYTES = 1024 * 1024
 MAX_COVER_REFERENCE_CHARS = 4096
 MAX_COVER_CANDIDATES = 32
+MAX_COVER_CACHE_BYTES = 64 * 1024 * 1024
+MAX_COVER_CACHE_ENTRIES = 2048
+_CACHE_FILENAME = re.compile(r"[0-9a-f]{64}\.cover")
+_CACHE_TEMP_FILENAME = re.compile(r"\.cover-[a-z0-9_]{8}")
 _PNG = b"\x89PNG\r\n\x1a\n"
 _XML_BASE = "{http://www.w3.org/XML/1998/namespace}base"
 _XLINK_HREF = "{http://www.w3.org/1999/xlink}href"
@@ -484,36 +490,85 @@ class CoverCache:
 
     def load(self, book_id: str) -> CoverData | None:
         try:
-            with self.path_for(book_id).open("rb") as stream:
+            fd = os.open(self.path_for(book_id), os.O_RDONLY | os.O_NONBLOCK | os.O_NOFOLLOW)
+            with os.fdopen(fd, "rb") as stream:
+                if not stat.S_ISREG(os.fstat(stream.fileno()).st_mode):
+                    return None
                 data = stream.read(MAX_COVER_BYTES + 1)
             return validate_cover(data)
         except (OSError, ValueError, UnicodeError):
             return None
 
+    @contextmanager
+    def _locked_directory(self):
+        # Instances used by imports, the cover workers, and other application
+        # processes all serialize quota checks and publication on this directory.
+        fd = os.open(self.directory, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW)
+        try:
+            fcntl.flock(fd, fcntl.LOCK_EX)
+            yield
+        finally:
+            os.close(fd)
+
+    def _prune_locked(self, incoming=None, incoming_bytes=0):
+        entries = []
+        total_bytes = incoming_bytes
+        found_incoming = False
+        for path in self.directory.iterdir():
+            if _CACHE_TEMP_FILENAME.fullmatch(path.name):
+                # Atomic stores hold the same lock, so these are interrupted writes.
+                if stat.S_ISREG(path.lstat().st_mode):
+                    path.unlink()
+                continue
+            if not _CACHE_FILENAME.fullmatch(path.name):
+                continue
+            details = path.lstat()
+            if stat.S_ISREG(details.st_mode):
+                entries.append((path == incoming, details.st_mtime_ns, path, details.st_size))
+                found_incoming |= path == incoming
+                total_bytes += details.st_size
+        count = len(entries) + int(incoming is not None and not found_incoming)
+        if count <= MAX_COVER_CACHE_ENTRIES and total_bytes <= MAX_COVER_CACHE_BYTES:
+            return
+        for replacing, _age, path, size in sorted(entries):
+            path.unlink()
+            if not replacing:
+                count -= 1
+            total_bytes -= size
+            if count <= MAX_COVER_CACHE_ENTRIES and total_bytes <= MAX_COVER_CACHE_BYTES:
+                break
+
+    def prune(self):
+        """Enforce the quota on caches created by older versions."""
+        try:
+            with self._locked_directory():
+                self._prune_locked()
+        except OSError:
+            pass
+
     def store(self, book_id: str, cover: CoverData) -> Path | None:
-        temporary = None
         try:
             cover = validate_cover(cover.data, cover.mime_type)
-            if cover is None:
+            if cover is None or len(cover.data) > MAX_COVER_CACHE_BYTES or MAX_COVER_CACHE_ENTRIES < 1:
                 return None
             path = self.path_for(book_id)
             self.directory.mkdir(parents=True, exist_ok=True, mode=0o700)
-            with tempfile.NamedTemporaryFile(dir=self.directory, prefix=".cover-", delete=False) as stream:
-                temporary = Path(stream.name)
-                stream.write(cover.data)
-                stream.flush()
-                os.fsync(stream.fileno())
-            os.replace(temporary, path)
-            temporary = None
+            with self._locked_directory():
+                self._prune_locked(path, len(cover.data))
+                temporary = None
+                try:
+                    with tempfile.NamedTemporaryFile(dir=self.directory, prefix=".cover-", delete=False) as stream:
+                        temporary = Path(stream.name)
+                        stream.write(cover.data)
+                        stream.flush()
+                        os.fsync(stream.fileno())
+                    os.replace(temporary, path)
+                finally:
+                    if temporary is not None:
+                        temporary.unlink(missing_ok=True)
             return path
         except (OSError, ValueError, AttributeError, UnicodeError):
             return None
-        finally:
-            if temporary is not None:
-                try:
-                    temporary.unlink(missing_ok=True)
-                except OSError:
-                    pass
 
 
 def load_thumbnail(cover: CoverData, width: int = 160, height: int = 240):

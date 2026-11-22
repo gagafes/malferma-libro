@@ -221,11 +221,11 @@ class _SafeRedirects(HTTPRedirectHandler):
 
 
 def _open_url(url: str, accept: str, *, timeout=None, limit=MAX_CATALOG_BYTES,
-              cancel=None, total_timeout=CATALOG_TRANSFER_TIMEOUT):
+              cancel=None, total_timeout=CATALOG_TRANSFER_TIMEOUT, policy="opds"):
     request = Request(
         _validate_url(url), headers={"User-Agent": USER_AGENT, "Accept": accept}
     )
-    return fetch_response(request, policy="opds", limit=limit, cancel=cancel,
+    return fetch_response(request, policy=policy, limit=limit, cancel=cancel,
                           socket_timeout=DEFAULT_TIMEOUT if timeout is None else timeout,
                           total_timeout=total_timeout)
 
@@ -306,7 +306,7 @@ def download_cover(url: str, *, token=None) -> CoverData | None:
     try:
         with _open_url(url, "image/png, image/jpeg", timeout=COVER_TIMEOUT,
                        limit=MAX_COVER_BYTES, cancel=token,
-                       total_timeout=COVER_TRANSFER_TIMEOUT) as response:
+                       total_timeout=COVER_TRANSFER_TIMEOUT, policy="opds-cover") as response:
             check_cancel(token)
             _validate_url(response.geturl())
             content_type = _mime(response.headers.get("Content-Type", ""))
