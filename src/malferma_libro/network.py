@@ -31,7 +31,7 @@ _WORKER = Path(__file__).with_name("network_worker.py")
 
 class _NetworkResponse:
     def __init__(self, request, *, policy, limit, cancel, socket_timeout, total_timeout):
-        if (policy not in {"opds", "voice"} or type(limit) is not int
+        if (policy not in {"opds", "opds-cover", "voice"} or type(limit) is not int
                 or not 0 < limit <= _MAX_TRANSFER_BYTES
                 or not math.isfinite(socket_timeout) or not 0 < socket_timeout <= 60
                 or not math.isfinite(total_timeout) or not 0 < total_timeout <= 3600):
